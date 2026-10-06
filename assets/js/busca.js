@@ -24,7 +24,8 @@
           d.forEach(function (e) {
             e._t = norm(e.t);
             e._k = chave(e.t);
-            e._h = norm(e.t + ' ' + (e.d || '') + ' ' + (e.x || ''));
+            e._g = norm(e.g || '');
+            e._h = norm(e.t + ' ' + (e.d || '') + ' ' + (e.x || '') + ' ' + (e.g || ''));
           });
           index = d;
           return d;
@@ -41,8 +42,10 @@
       var score = 0;
       for (var i = 0; i < toks.length; i++) {
         if (e._h.indexOf(toks[i]) === -1) return;
-        score += e._t.indexOf(toks[i]) !== -1 ? 3 : 1;
+        score += e._t.indexOf(toks[i]) !== -1 ? 3 : e._g.indexOf(toks[i]) !== -1 ? 2 : 1; // titulo > tag > texto
       }
+      if (e.c === 'Tag') score += 2; // a pagina da tag aparece primeiro
+      if (e._k === chave(q)) score += 10; // nome identico ao digitado (tag, pagina do jogo) vem primeiro
       out.push({ score: score, e: e });
     });
     out.sort(function (a, b) {

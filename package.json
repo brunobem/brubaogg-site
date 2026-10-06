@@ -14,6 +14,8 @@
     "rascunho": "node _ferramentas/gerar-site.mjs --rascunho",
     "pendentes": "node _ferramentas/pendentes.mjs",
     "nova": "node _ferramentas/nova-materia.mjs",
-    "verificar": "node _ferramentas/verificar-links.mjs"
+    "verificar": "node _ferramentas/verificar-links.mjs",
+    "aprovar": "node _ferramentas/aprovar-materia.mjs",
+    "previa": "node _ferramentas/gerar-site.mjs --com-rascunhos"
   }
 }

@@ -17,6 +17,19 @@ const ignorar = new Set(['_ferramentas', '_conteudo', '_marca', 'node_modules', 
 })(raiz);
 
 let quebrados = 0;
+
+// o site nao pode estar gerado em modo de teste (previa com rascunhos ou lorem ipsum)
+if (fs.existsSync(path.join(raiz, '_ferramentas', 'cache', 'MODO-TESTE'))) {
+  console.log('SITE EM MODO DE TESTE: contem rascunhos ou texto de exemplo. Rode npm run gerar antes de publicar.');
+  quebrados++;
+}
+
+// URLs que nao podem mudar (indexacao ja pedida no Google). Ver README: "URLs que NAO podem mudar".
+const protegidas = ['index.html', 'gta6.html'];
+for (const f of protegidas) {
+  if (!fs.existsSync(path.join(raiz, f))) { console.log(`URL PROTEGIDA AUSENTE  ${f} (nao pode ser renomeada, movida ou apagada)`); quebrados++; }
+}
+
 for (const pg of paginas) {
   const html = fs.readFileSync(pg, 'utf8');
   for (const m of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
@@ -28,7 +41,7 @@ for (const pg of paginas) {
     if (!fs.existsSync(arq)) { console.log(`QUEBRADO  ${path.relative(raiz, pg)} -> ${alvo}`); quebrados++; }
   }
 }
-for (const f of ['assets/data/playlists.json', 'assets/data/ultimo-video.json', 'assets/data/busca.json', 'assets/css/style.css', 'assets/js/busca.js', 'assets/js/contador.js', 'assets/js/ultimo-video.js', 'assets/img/logo.png', 'CNAME', '404.html']) {
+for (const f of ['assets/data/playlists.json', 'assets/data/busca.json', 'assets/css/style.css', 'assets/js/busca.js', 'assets/js/contador.js', 'assets/img/logo.png', 'assets/img/rodape/cena.svg', 'CNAME', '404.html']) {
   if (!fs.existsSync(path.join(raiz, f))) { console.log(`FALTANDO  ${f}`); quebrados++; }
 }
 console.log(`${paginas.length} paginas verificadas, ${quebrados} problema(s).`);

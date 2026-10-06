@@ -1,0 +1,80 @@
+{
+  "gta-6": {
+    "nome": "GTA 6",
+    "alias": [
+      "GTA VI",
+      "GTA 6 (GTA VI)",
+      "Grand Theft Auto VI",
+      "Grand Theft Auto 6"
+    ],
+    "pagina": "gta6.html"
+  },
+  "resident-evil": {
+    "nome": "Resident Evil"
+  },
+  "resident-evil-6": {
+    "nome": "Resident Evil 6",
+    "pai": "resident-evil"
+  },
+  "resident-evil-7": {
+    "nome": "Resident Evil 7",
+    "pai": "resident-evil"
+  },
+  "resident-evil-village": {
+    "nome": "Resident Evil Village",
+    "pai": "resident-evil"
+  },
+  "god-of-war": {
+    "nome": "God of War"
+  },
+  "god-of-war-laufey": {
+    "nome": "God of War Laufey",
+    "pai": "god-of-war"
+  },
+  "control": {
+    "nome": "Control"
+  },
+  "control-resonant": {
+    "nome": "Control Resonant",
+    "pai": "control"
+  },
+  "alan-wake": {
+    "nome": "Alan Wake"
+  },
+  "alan-wake-2": {
+    "nome": "Alan Wake 2",
+    "pai": "alan-wake"
+  },
+  "minecraft": {
+    "nome": "Minecraft"
+  },
+  "minecraft-dungeons-ii": {
+    "nome": "Minecraft Dungeons II",
+    "pai": "minecraft"
+  },
+  "silent-hill": {
+    "nome": "Silent Hill"
+  },
+  "silent-hill-townfall": {
+    "nome": "Silent Hill: Townfall",
+    "pai": "silent-hill"
+  },
+  "the-witcher-3": {
+    "nome": "The Witcher 3"
+  },
+  "the-witcher-3-remastered": {
+    "nome": "The Witcher 3 Remastered",
+    "pai": "the-witcher-3"
+  },
+  "assassin-s-creed-black-flag": {
+    "nome": "Assassin's Creed Black Flag"
+  },
+  "assassin-s-creed-iv-black-flag": {
+    "nome": "Assassin's Creed IV: Black Flag",
+    "pai": "assassin-s-creed-black-flag"
+  },
+  "assassin-s-creed-black-flag-resynced": {
+    "nome": "Assassin's Creed Black Flag Resynced",
+    "pai": "assassin-s-creed-black-flag"
+  }
+}

@@ -1,4 +1,4 @@
-// Lista os videos que ainda NAO tem materia (sem arquivo em _conteudo/materias/), por categoria.
+// Mostra, por categoria, o que ja foi publicado, o que esta em RASCUNHO (aguardando revisao) e o que ainda nao tem texto.
 // Uso: npm run pendentes
 import fs from 'node:fs';
 import path from 'node:path';
@@ -10,14 +10,25 @@ const nomes = {
   'PL44WUlM7naLV5Ypnm6UslXWoD5JvUWWgb': 'Notícias',
   'PL44WUlM7naLUWOwjOwJco-tovC9JrjYbp': 'Reviews',
   'PLLjQdJWDu4qk': 'Lançamentos',
+  'PLYgWUqxV5Uao': 'GTA 6 Novidades',
 };
 
-let total = 0;
-for (const [id, nome] of Object.entries(nomes)) {
-  const todos = playlists[id] ?? [];
-  const faltam = todos.filter((v) => !fs.existsSync(path.join(site, '_conteudo', 'materias', `${v.id}.json`)));
-  console.log(`\n${nome}: ${todos.length - faltam.length} publicadas, ${faltam.length} aguardando texto`);
-  for (const v of faltam) console.log(`  ${v.id}  ${v.published.slice(0, 10)}  ${v.title}`);
-  total += faltam.length;
+function estado(id) {
+  const f = path.join(site, '_conteudo', 'materias', `${id}.json`);
+  if (!fs.existsSync(f)) return 'sem texto';
+  try { return JSON.parse(fs.readFileSync(f, 'utf8')).status === 'rascunho' ? 'rascunho' : 'publicada'; }
+  catch { return 'json invalido'; }
 }
-console.log(`\nPara começar uma matéria:  npm run nova -- <ID_DO_VIDEO>`);
+
+for (const [pl, nome] of Object.entries(nomes)) {
+  const todos = playlists[pl] ?? [];
+  const por = { publicada: [], rascunho: [], 'sem texto': [], 'json invalido': [] };
+  todos.forEach((v) => por[estado(v.id)].push(v));
+  console.log('');
+  console.log(`${nome}: ${por.publicada.length} publicadas | ${por.rascunho.length} em rascunho | ${por['sem texto'].length} sem texto`);
+  for (const v of por['json invalido']) console.log(`  !! JSON INVALIDO  ${v.id}  ${v.title}`);
+  for (const v of por.rascunho) console.log(`  [rascunho]  ${v.id}  ${v.published.slice(0, 10)}  ${v.title}`);
+  for (const v of por['sem texto']) console.log(`  [sem texto] ${v.id}  ${v.published.slice(0, 10)}  ${v.title}`);
+}
+console.log('');
+console.log('Novo rascunho: npm run nova -- <ID>   |   Aprovar: npm run aprovar -- <ID> [<ID> ...]');
