@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brubaogg.com.br/sitemap.xml

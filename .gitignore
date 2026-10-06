@@ -1,0 +1,11 @@
+# dependencias e lixo de sistema
+node_modules/
+.DS_Store
+Thumbs.db
+~$*
+*.log
+
+# nunca versionar credenciais
+.env
+.env.*
+tokens.json

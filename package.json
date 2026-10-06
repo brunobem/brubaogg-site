@@ -1,0 +1,19 @@
+{
+  "name": "site-brubaogg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site do canal BRUBAOGG (brubaogg.com.br), publicado no GitHub Pages",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "atualizar": "node _ferramentas/atualizar-videos.mjs && node _ferramentas/gerar-site.mjs",
+    "videos": "node _ferramentas/atualizar-videos.mjs",
+    "gerar": "node _ferramentas/gerar-site.mjs",
+    "rascunho": "node _ferramentas/gerar-site.mjs --rascunho",
+    "pendentes": "node _ferramentas/pendentes.mjs",
+    "nova": "node _ferramentas/nova-materia.mjs",
+    "verificar": "node _ferramentas/verificar-links.mjs"
+  }
+}
