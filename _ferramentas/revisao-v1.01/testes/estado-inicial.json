@@ -1,0 +1,1169 @@
+{
+ "quando": "2026-10-07T05:03:18.766Z",
+ "achados": [
+  {
+   "sev": "info",
+   "teste": "links",
+   "msg": "1924 referencias conferidas com caixa exata (HTML, CSS, JS e sitemap)",
+   "onde": ""
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "cortes.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "cortes.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "gta6.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "gta6.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "lives.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "lives.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "mcp-tiktok.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "mcp-tiktok.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "mcp-youtube.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "mcp-youtube.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "privacidade-tiktok.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "privacidade-tiktok.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "2 <h1> na mesma pagina (deveria ter um so)",
+   "onde": "privacidade-tiktok.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "privacidade-youtube.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "privacidade-youtube.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "2 <h1> na mesma pagina (deveria ter um so)",
+   "onde": "privacidade-youtube.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "privacidade.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "privacidade.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "2 <h1> na mesma pagina (deveria ter um so)",
+   "onde": "privacidade.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "termos-tiktok.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "termos-tiktok.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "2 <h1> na mesma pagina (deveria ter um so)",
+   "onde": "termos-tiktok.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "termos-youtube.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "termos-youtube.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "2 <h1> na mesma pagina (deveria ter um so)",
+   "onde": "termos-youtube.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:title (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "termos.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "falta og:description (o link compartilhado no Discord/WhatsApp/TikTok sai sem previa)",
+   "onde": "termos.html"
+  },
+  {
+   "sev": "medio",
+   "teste": "html",
+   "msg": "2 <h1> na mesma pagina (deveria ter um so)",
+   "onde": "termos.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "meta description com 22 caracteres (ideal 45 a 160)",
+   "onde": "404.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "404.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "meta description com 32 caracteres (ideal 45 a 160)",
+   "onde": "busca.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "busca.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 70 caracteres (o Google corta perto de 60)",
+   "onde": "gta6-novidades/voce-zerou-gta-5-a-maioria-nao.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "gta6-novidades/voce-zerou-gta-5-a-maioria-nao.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 70 caracteres (o Google corta perto de 60)",
+   "onde": "lancamentos/call-of-duty-final-fantasy-e-mais-6-bombas-em-outubro.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 68 caracteres (o Google corta perto de 60)",
+   "onde": "lancamentos/maio-vai-ser-insano-10-jogos-que-nao-pode-perder.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 74 caracteres (o Google corta perto de 60)",
+   "onde": "lancamentos/os-games-mais-esperados-de-julho-chegaram.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 68 caracteres (o Google corta perto de 60)",
+   "onde": "lancamentos/setembro-vai-ser-insano-os-9-melhores-jogos-do-mes.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "lancamentos.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "mcp-tiktok.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "mcp-youtube.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 73 caracteres (o Google corta perto de 60)",
+   "onde": "noticias/a-rockstar-perdeu-a-nocao-com-esse-preco-do-gta-6.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 73 caracteres (o Google corta perto de 60)",
+   "onde": "noticias/a-steam-provou-que-jogo-acessivel-vence-a-pirataria.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 66 caracteres (o Google corta perto de 60)",
+   "onde": "noticias/inside-jogo-curtinho-com-o-final-mais-bizarro-que-ja-vi.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 63 caracteres (o Google corta perto de 60)",
+   "onde": "noticias/pre-venda-de-god-of-war-laufey-abriu-veja-as-edicoes.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 63 caracteres (o Google corta perto de 60)",
+   "onde": "noticias/the-witcher-3-remastered-tem-a-maior-nota-de-2026.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 72 caracteres (o Google corta perto de 60)",
+   "onde": "noticias/zeramos-storebound-com-os-amigos-e-a-verdade-doi.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "noticias.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 63 caracteres (o Google corta perto de 60)",
+   "onde": "reviews/garten-of-banban-o-pior-jogo-que-ja-joguei.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 72 caracteres (o Google corta perto de 60)",
+   "onde": "reviews/o-bebe-de-amarelo-bom-ou-ruim.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 64 caracteres (o Google corta perto de 60)",
+   "onde": "reviews/poppy-playtime-nao-e-jogo-de-crianca.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 64 caracteres (o Google corta perto de 60)",
+   "onde": "reviews/por-que-alan-wake-2-nao-e-pra-todo-mundo.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 63 caracteres (o Google corta perto de 60)",
+   "onde": "reviews/resident-evil-6-a-ada-wong-clonada-faz-sentido.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 68 caracteres (o Google corta perto de 60)",
+   "onde": "reviews/resident-evil-7-vale-a-pena-o-maior-acerto-da-capcom.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 65 caracteres (o Google corta perto de 60)",
+   "onde": "reviews/resident-evil-village-re8-tudo-que-voce-precisa-saber.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 68 caracteres (o Google corta perto de 60)",
+   "onde": "reviews/vale-a-pena-jogar-storebound-antes-dele-chegar-no-console.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "reviews.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "titulo com 64 caracteres (o Google corta perto de 60)",
+   "onde": "tag/assassin-s-creed-black-flag-resynced.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/assassin-s-creed-black-flag-resynced.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/assassin-s-creed-black-flag.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/control-resonant.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/control.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/god-of-war-laufey.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/god-of-war.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/inside.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/resident-evil-6.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/resident-evil-7.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/resident-evil.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/silent-hill.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/storebound.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tag/the-witch-s-bakery.html"
+  },
+  {
+   "sev": "baixo",
+   "teste": "html",
+   "msg": "salto na ordem dos titulos (h1 para h3)",
+   "onde": "tags.html"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "404.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "busca.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "cortes.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "gta6-novidades/voce-zerou-gta-5-a-maioria-nao.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "gta6.html (11)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "index.html (20)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "lancamentos/9-jogos-indie-que-chegam-em-outubro-de-2026.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "lancamentos/agosto-2026-tem-tudo-hell-let-loose-vietnam-elden-ring-no-switch-2-e-m.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "lancamentos/call-of-duty-final-fantasy-e-mais-6-bombas-em-outubro.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "lancamentos/maio-vai-ser-insano-10-jogos-que-nao-pode-perder.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "lancamentos/os-games-mais-esperados-de-julho-chegaram.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "lancamentos/os-melhores-jogos-de-junho.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "lancamentos/setembro-vai-ser-insano-os-9-melhores-jogos-do-mes.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "lancamentos.html (13)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "lives.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "mcp-tiktok.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "mcp-youtube.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/a-faye-vai-ser-mesmo-a-protagonista-de-god-of-war.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/a-rockstar-odeia-criadores-de-mods.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/a-rockstar-perdeu-a-nocao-com-esse-preco-do-gta-6.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/a-steam-provou-que-jogo-acessivel-vence-a-pirataria.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/eu-nao-gosto-nada-do-fim-da-midia-fisica.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/inside-jogo-curtinho-com-o-final-mais-bizarro-que-ja-vi.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/minecraft-ganhou-a-primeira-dimensao-nova-em-14-anos.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/o-que-vai-ter-debaixo-do-mar-em-gta-6.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/os-produtores-de-resident-evil-querem-silent-hill.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/pre-venda-de-god-of-war-laufey-abriu-veja-as-edicoes.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/quem-vai-ser-o-mimir-da-faye-em-god-of-war.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/the-witcher-3-remastered-tem-a-maior-nota-de-2026.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/vai-dar-pra-ter-pet-em-gta-6.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias/zeramos-storebound-com-os-amigos-e-a-verdade-doi.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "noticias.html (20)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "privacidade-tiktok.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "privacidade-youtube.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "privacidade.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/control-vale-jogar-antes-do-resonant.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/garten-of-banban-o-pior-jogo-que-ja-joguei.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/inside-o-jogo-curtinho-com-o-final-mais-bizarro-que-ja-vi.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/o-bebe-de-amarelo-bom-ou-ruim.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/o-terror-que-virou-comedia-com-os-amigos-shift-at-midnight.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/poppy-playtime-nao-e-jogo-de-crianca.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/por-que-alan-wake-2-nao-e-pra-todo-mundo.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/pragmata-a-diana-me-pegou-de-surpresa.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/resident-evil-6-a-ada-wong-clonada-faz-sentido.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/resident-evil-6-chris-redfield-o-soldado-que-perdeu-tudo.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/resident-evil-6-jake-e-sherry-contra-o-ustanak-vale-a-pena.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/resident-evil-7-vale-a-pena-o-maior-acerto-da-capcom.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/resident-evil-village-re8-tudo-que-voce-precisa-saber.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/vale-a-pena-jogar-storebound-antes-dele-chegar-no-console.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews/voltei-pro-black-flag-depois-de-13-anos-resynced-vale-a-pena.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "reviews.html (21)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/assassin-s-creed-black-flag-resynced.html (8)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/assassin-s-creed-black-flag.html (8)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/control-resonant.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/control.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/god-of-war-laufey.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/god-of-war.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/inside.html (8)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/resident-evil-6.html (9)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/resident-evil-7.html (8)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/resident-evil.html (12)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/silent-hill.html (8)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/storebound.html (8)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tag/the-witch-s-bakery.html (8)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "tags.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "termos-tiktok.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "termos-youtube.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "imagens sem width/height (pode causar salto de layout; ver Bloco 7)",
+   "onde": "termos.html (6)"
+  },
+  {
+   "sev": "info",
+   "teste": "html",
+   "msg": "68 paginas HTML analisadas",
+   "onde": ""
+  },
+  {
+   "sev": "alto",
+   "teste": "contrato",
+   "msg": "6 materia(s) aprovada(s) estao entre os 3 ultimos videos do feed e saem dele em breve (sem categoria/publicado, o gerador vai parar; NAO acrescentar so esses campos: o endereco muda)",
+   "onde": ""
+  },
+  {
+   "sev": "medio",
+   "teste": "contrato",
+   "msg": "titulo com 73 caracteres (o Google corta perto de 60)",
+   "onde": "_conteudo/materias/a5aaRHkUOHE.json"
+  },
+  {
+   "sev": "medio",
+   "teste": "contrato",
+   "msg": "titulo com 73 caracteres (o Google corta perto de 60)",
+   "onde": "_conteudo/materias/fC69eu4pLe4.json"
+  },
+  {
+   "sev": "medio",
+   "teste": "contrato",
+   "msg": "titulo com 72 caracteres (o Google corta perto de 60)",
+   "onde": "_conteudo/materias/hj23XGC6j9w.json"
+  },
+  {
+   "sev": "medio",
+   "teste": "contrato",
+   "msg": "titulo com 72 caracteres (o Google corta perto de 60)",
+   "onde": "_conteudo/materias/WIKBqiaE4m4.json"
+  },
+  {
+   "sev": "medio",
+   "teste": "contrato",
+   "msg": "titulo com 74 caracteres (o Google corta perto de 60)",
+   "onde": "_conteudo/materias/zL2mablKurQ.json"
+  },
+  {
+   "sev": "medio",
+   "teste": "contrato",
+   "msg": "37 materia(s) aprovada(s) dependem do feed dos 15 recentes para endereco, data e categoria (achado adiado no PLANO)",
+   "onde": ""
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "22 tags (o guia pede no maximo 8; so 8 aparecem na pagina)",
+   "onde": "_conteudo/materias/2aSQPI59sic.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "5 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/2aSQPI59sic.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 61 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/2xS0eFbU55o.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 70 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/3EfvUSgNuPQ.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "7 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/3EfvUSgNuPQ.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 63 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/3L9W3tiliNs.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 68 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/5w30a1BZuRw.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 64 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/7zhb47qaXOM.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "2 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/7zhb47qaXOM.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "2 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/87DN_-QWjOk.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "1 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/8fnl6OufKH0.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 63 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/9xoZYLMSjXo.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "2 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/9xoZYLMSjXo.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 66 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/CT68uW4KT9I.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "1 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/EpjLkNom1FY.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 63 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/fdyf_JuMt3Q.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "1 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/GudFV-hOLvE.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "1 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/hj23XGC6j9w.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 64 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/HqEM8jLL0Fk.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "2 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/HqEM8jLL0Fk.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "10 tags (o guia pede no maximo 8; so 8 aparecem na pagina)",
+   "onde": "_conteudo/materias/istrvyDj62U.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 68 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/istrvyDj62U.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "1 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/istrvyDj62U.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "14 tags (o guia pede no maximo 8; so 8 aparecem na pagina)",
+   "onde": "_conteudo/materias/kbJzIpS2NS0.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 68 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/kbJzIpS2NS0.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "1 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/LQ2FwUHtphA.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 68 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/LxlEqXsAHtM.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "1 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/LxlEqXsAHtM.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "13 tags (o guia pede no maximo 8; so 8 aparecem na pagina)",
+   "onde": "_conteudo/materias/pi-SHrsZgdE.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "2 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/pi-SHrsZgdE.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 61 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/q1T0PqdDRC4.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 63 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/RaF6cnHlAFc.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "9 tags (o guia pede no maximo 8; so 8 aparecem na pagina)",
+   "onde": "_conteudo/materias/UXPaW49sUTY.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "7 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/UXPaW49sUTY.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 65 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/wzuyfZcf-9U.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "2 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/wzuyfZcf-9U.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "titulo com 70 caracteres (o guia pede ate 60)",
+   "onde": "_conteudo/materias/xI4qEFLfiPA.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "10 tags (o guia pede no maximo 8; so 8 aparecem na pagina)",
+   "onde": "_conteudo/materias/zL2mablKurQ.json"
+  },
+  {
+   "sev": "baixo",
+   "teste": "contrato",
+   "msg": "1 paragrafo(s) com mais de 120 palavras (dificil de ler no celular)",
+   "onde": "_conteudo/materias/zL2mablKurQ.json"
+  },
+  {
+   "sev": "info",
+   "teste": "contrato",
+   "msg": "37 arquivos de materia (37 aprovados, 0 rascunhos)",
+   "onde": ""
+  },
+  {
+   "sev": "baixo",
+   "teste": "seo",
+   "msg": "37 paginas de materia sem dados estruturados (Article/VideoObject)",
+   "onde": ""
+  },
+  {
+   "sev": "info",
+   "teste": "seo",
+   "msg": "66 URLs no sitemap",
+   "onde": ""
+  },
+  {
+   "sev": "info",
+   "teste": "publico",
+   "msg": "97 arquivos publicados, 1.9 MB",
+   "onde": ""
+  },
+  {
+   "sev": "info",
+   "teste": "gerador",
+   "msg": "gerador rodou limpo duas vezes numa copia (103 arquivos publicaveis)",
+   "onde": ""
+  },
+  {
+   "sev": "info",
+   "teste": "gerador",
+   "msg": "saida do gerador: Materias no site: 37 (37 com texto) | videos ainda sem materia, fora do site: 4 | abas visiveis: noticias, reviews, lancamentos, gta6-novidades",
+   "onde": ""
+  }
+ ]
+}

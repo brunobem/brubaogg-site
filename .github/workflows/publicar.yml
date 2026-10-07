@@ -1,0 +1,60 @@
+# Publica o site no GitHub Pages a cada envio para a branch main (e quando voce mandar rodar na aba Actions).
+# O que ele faz: confere o site, monta a pasta _site/ so com o que deve ser publicado, cria o indice da busca (Pagefind) dentro dela e publica.
+# Nada disso e guardado no repositorio: o indice da busca e refeito aqui, no servidor, a cada envio.
+name: Publicar site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  montar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar o indexador da busca
+        run: npm ci
+
+      # confere os links (com a caixa exata das letras, que o Linux exige) e as paginas; se achar problema grave, NADA e publicado
+      - name: Conferir o site
+        run: npm run verificar
+
+      # os testes completos tambem rodam, mas por enquanto so avisam (continue-on-error): depois da primeira rodada verde, tire esta linha
+      - name: Testes
+        run: npm run testar
+        continue-on-error: true
+
+      - name: Montar o site e criar o indice da busca
+        run: npm run indexar
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    needs: montar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+    steps:
+      - id: publicacao
+        uses: actions/deploy-pages@v4

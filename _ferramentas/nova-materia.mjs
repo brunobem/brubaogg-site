@@ -1,14 +1,17 @@
 // Cria o arquivo modelo de uma materia: _conteudo/materias/<ID>.json
-// Uso: npm run nova -- <ID_DO_VIDEO>      (os IDs saem de: npm run pendentes)
+// Uso: npm run nova -- <ID ou link do video>      (os IDs saem de: npm run pendentes)
+// Ja grava o "formato" (short ou horizontal), consultando o YouTube na hora; sem resposta clara, nao cria o arquivo.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { TEXTO_DE_MODELO, lerJson, normalizarId } from './gerador/util.mjs';
+import { formatoDe } from './gerador/youtube.mjs';
 
 const site = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const id = process.argv[2];
-if (!id) { console.error('Informe o ID do video. Veja os IDs com: npm run pendentes'); process.exit(1); }
+const id = normalizarId(process.argv[2]);
+if (!id) { console.error(`Informe o ID do video (11 caracteres) ou o link dele${process.argv[2] ? `; nao entendi "${process.argv[2]}"` : ''}. Veja os IDs com: npm run pendentes`); process.exit(1); }
 
-const playlists = JSON.parse(fs.readFileSync(path.join(site, 'assets', 'data', 'playlists.json'), 'utf8'));
+const playlists = lerJson(path.join(site, 'assets', 'data', 'playlists.json'), 'assets/data/playlists.json');
 const arg = (nome) => { const i = process.argv.indexOf(`--${nome}`); return i > 0 ? process.argv[i + 1] : undefined; };
 let video = Object.values(playlists).flat().find((v) => v.id === id);
 let extra = {};
@@ -26,12 +29,15 @@ if (!video) {
 const arq = path.join(site, '_conteudo', 'materias', `${id}.json`);
 if (fs.existsSync(arq)) { console.error(`Ja existe: ${arq}`); process.exit(1); }
 
+const f = await formatoDe(id);
+if (f.erro) { console.error(`Nao criei o arquivo: nao consegui confirmar o formato do video ${id} (${f.erro}). Tente de novo com internet.`); process.exit(1); }
+
 fs.mkdirSync(path.dirname(arq), { recursive: true });
 fs.writeFileSync(arq, JSON.stringify({
+  formato: f.formato,
   status: 'rascunho',
   ...extra,
   titulo: video.title.replace(/(\s+#\w+)+\s*$/u, '').trim(),
-  resumo: 'Escreva 1 ou 2 frases que aparecem na lista de matérias.',
-  corpo: ['Primeiro parágrafo.', 'Segundo parágrafo.'],
+  ...TEXTO_DE_MODELO,
 }, null, 2) + '\n', 'utf8');
-console.log(`Criado: _conteudo/materias/${id}.json\nPreencha o texto, revise e aprove com: npm run aprovar -- ID (depois npm run gerar)`);
+console.log(`Criado: _conteudo/materias/${id}.json (formato: ${f.formato})\nPreencha o texto, revise e aprove com: npm run aprovar -- ID (depois npm run gerar)`);

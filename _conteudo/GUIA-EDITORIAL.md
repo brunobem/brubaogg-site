@@ -15,23 +15,27 @@ Este arquivo guarda só o que o site e as ferramentas precisam, e que pode ser p
 - Os endereços `index.html` e `gta6.html` são protegidos (ver README).
 
 ## Comandos úteis
-- `npm run pendentes`: lista vídeos sem texto e rascunhos.
+- `npm run pendentes`: lista os rascunhos (inclusive de vídeos antigos) com tamanho e pendências, e os vídeos recentes sem texto. `npm run pendentes -- --rascunhos`: só a lista de rascunhos.
 - `npm run nova -- ID`: cria o modelo já como rascunho.
+- `npm run formato -- ID`: diz se o vídeo é `short` ou `horizontal` (valor do campo `formato`). Responde `NAO SEI` em vez de chutar.
 - `npm run aprovar -- ID`: aprovação feita pelo Bruno (recusa matéria com `[CONFERIR`).
 
 ## Formato do arquivo
 ```json
 {
+  "formato": "short",
   "status": "rascunho",
-  "titulo": "Opcional. Só se o título do vídeo estiver ruim.",
+  "titulo": "Obrigatório. Até 60 caracteres, jogo no começo. Define o endereço da página.",
   "resumo": "1 a 2 frases, até 160 caracteres. Vira a descrição no Google e o trecho na lista.",
   "tags": ["Nome do jogo"],
   "corpo": ["Parágrafo 1.", "Parágrafo 2.", "Parágrafo 3."]
 }
 ```
+`formato` é **obrigatório**: `"short"` (vertical) ou `"horizontal"` (16:9). Descubra com `npm run formato -- ID`. Se o comando disser `NAO SEI`, não chute: avise o Bruno. O layout da página depende disso.
 `corpo` é uma lista de parágrafos em **texto puro**: sem markdown, HTML, links ou marcadores.
 `tags` é uma lista com o nome oficial de cada jogo citado (lançamentos podem ter várias; notícia e review, em geral uma). O site **usa** as tags: elas aparecem como etiquetas clicáveis na matéria, viram páginas em `/tag/` e entram na busca (digitar o nome do jogo mostra a tag primeiro).
-`resumo` e `corpo` (ao menos 1 parágrafo) são obrigatórios; sem eles o site dá erro ao gerar.
+`resumo` e `corpo` (ao menos 1 parágrafo, nenhum vazio) são obrigatórios; sem eles o site dá erro ao gerar.
+`status`: use **exatamente** `"rascunho"`. Qualquer outro valor (`"Rascunho"`, `"draft"`...) é recusado pelo gerador. Grave o arquivo em UTF-8 (com ou sem BOM funciona).
 
 ## Regras que valem sempre
 - Não inventar fatos, datas, preços ou nomes; dúvida não resolvida: omitir ou marcar `[CONFERIR: ...]`.
@@ -48,15 +52,17 @@ Este arquivo guarda só o que o site e as ferramentas precisam, e que pode ser p
 - Uma tag com **uma só matéria** não ganha página (fica só na busca); com 2 ou mais, ganha. Franquias (Resident Evil, God of War...) são ligadas ao jogo específico em `_conteudo/tags.json` (campo `pai`), então **não precisa repetir a franquia** nas tags: basta o jogo.
 - **Lançamentos mensais:** no máximo **8 tags**, só os jogos de destaque do vídeo. Listas com 20 tags poluem a página e a busca.
 
-## Título (para o Google)
-- **Até 60 caracteres.** Títulos maiores são cortados nos resultados de busca. Hoje 12 matérias passam disso; ao revisar, encurte.
-- Coloque o nome do jogo no começo e o gancho depois (ex.: `Control Resonant: vale jogar o original antes?`).
+## Título (obrigatório) e endereço da página
+- `titulo` é **obrigatório**. **O endereço (URL) da página nasce dele quando a matéria é aprovada e depois nunca muda**, mesmo que o título seja editado (o endereço fica registrado em `_conteudo/enderecos.json`, que é do site). Por isso o título tem que estar **final** antes de entregar.
+- **Até 60 caracteres** (títulos maiores são cortados no Google). Nome do jogo no começo e o gancho depois (ex.: `Control: vale jogar o original antes de Control Resonant?`).
+- O título do **vídeo** no YouTube pode mudar à vontade (testes A/B): o site não depende dele.
+- **Não sobrescreva** o arquivo de uma matéria que já foi aprovada: regravar como `rascunho` tira a página do ar. O gerador avisa quando uma página publicada deixaria de existir.
 
 ## Parágrafos
 - No celular, parágrafo com mais de ~90 palavras vira bloco difícil de ler. Divida os longos (principalmente nas listas de lançamentos: um parágrafo por jogo).
 
 ## Vídeos antigos (legado)
-O site só conhece os **15 vídeos mais recentes** de cada playlist. Para uma matéria de um vídeo **mais antigo**, o próprio arquivo precisa dizer onde ela entra:
+O feed do YouTube só traz os **15 vídeos mais recentes** de cada playlist. Para uma matéria de um vídeo **mais antigo**, o próprio arquivo precisa dizer onde ela entra (depois de aprovada, o site guarda isso no registro de endereços e a matéria não depende mais do feed):
 
 ```json
 {
@@ -72,7 +78,8 @@ O site só conhece os **15 vídeos mais recentes** de cada playlist. Para uma ma
 - `categoria`: `noticias`, `reviews`, `lancamentos` ou `gta6-novidades`.
 - `publicado`: data de publicação do vídeo, `AAAA-MM-DD` (o MCP `youtube_list_videos` traz a data e o ID).
 - Atalho: `npm run nova -- ID --categoria noticias --publicado 2026-09-30 --titulo "Título do vídeo"` cria o modelo já com esses campos.
-- Sem esses dois campos, o `npm run gerar` para com um erro que diz o que falta (nunca ignora em silêncio).
+- `publicado` precisa ser uma data real: entre 2005 e hoje (data no futuro ou no passado remoto é recusada).
+- Sem esses dois campos, a aprovação e o `npm run gerar` param com um erro que diz o que falta (nunca ignoram em silêncio).
 
 ## O que aparece no site
 **Só aparece vídeo que tem matéria aprovada.** Vídeo sem arquivo, ou com `"status": "rascunho"`, não gera página, não vira cartão, não entra na busca. Pode subir aos poucos.

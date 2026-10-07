@@ -5,7 +5,14 @@ Thumbs.db
 ~$*
 *.log
 
+# o site montado para publicar e o indice da busca: o servidor do GitHub refaz a cada envio (npm run indexar)
+_site/
+pagefind/
+
 # nunca versionar credenciais
 .env
 .env.*
 tokens.json
+
+# resultado temporario dos testes (o estado-inicial.json, esse sim, fica)
+_ferramentas/revisao-v1.01/testes/resultado-ultimo.json

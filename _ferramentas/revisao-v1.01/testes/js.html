@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Teste do JavaScript</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; margin: 24px; background: #1d1b20; color: #eee; }
+  button { font: inherit; padding: 8px 18px; border-radius: 8px; border: 0; background: #792DCF; color: #fff; cursor: pointer; }
+  table { border-collapse: collapse; margin-top: 16px; width: 100%; }
+  td, th { border-bottom: 1px solid #444; padding: 6px 10px; text-align: left; vertical-align: top; }
+  .alto, .critico { color: #ff7b7b; font-weight: 700; } .medio { color: #ffd166; } .baixo, .info { color: #9aa; }
+</style>
+</head>
+<body>
+<h1>Teste do JavaScript (busca e contador)</h1>
+<p>Roda a busca de verdade (Pagefind), teclado, foco, falha de rede, a pagina de resultados, o modo sem JavaScript e o contador.
+Precisa do site MONTADO: <code>npm run indexar -- --com-testes</code> e depois abrir a pasta <code>_site/</code> num servidor local (esta pagina fica em <code>_site/_testes/js.html</code>).</p>
+<button id="rodar">Rodar tudo</button>
+<div id="estado"></div>
+<table id="tabela"><thead><tr><th>Gravidade</th><th>Onde</th><th>O que</th></tr></thead><tbody></tbody></table>
+<script src="js.js"></script>
+<script>
+document.getElementById('rodar').onclick = async () => {
+  const t0 = performance.now();
+  const r = await jsTeste.rodar();
+  window.__resultadoJs = r;
+  document.getElementById('estado').textContent = `${r.total} verificacoes em ${((performance.now() - t0) / 1000).toFixed(0)}s: ${r.achados.length} achado(s)`;
+  document.querySelector('#tabela tbody').innerHTML = r.achados.map((x) => `<tr><td class="${x.sev}">${x.sev}</td><td>${x.onde}</td><td>${x.msg.replace(/</g, '&lt;')}</td></tr>`).join('');
+};
+</script>
+</body>
+</html>

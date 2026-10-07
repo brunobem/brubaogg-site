@@ -13,9 +13,19 @@
     "gerar": "node _ferramentas/gerar-site.mjs",
     "rascunho": "node _ferramentas/gerar-site.mjs --rascunho",
     "pendentes": "node _ferramentas/pendentes.mjs",
+    "formato": "node _ferramentas/formato-video.mjs",
     "nova": "node _ferramentas/nova-materia.mjs",
     "verificar": "node _ferramentas/verificar-links.mjs",
+    "validar-html": "node _ferramentas/validar-html.mjs",
     "aprovar": "node _ferramentas/aprovar-materia.mjs",
-    "previa": "node _ferramentas/gerar-site.mjs --com-rascunhos"
+    "endereco": "node _ferramentas/endereco.mjs",
+    "retirar": "node _ferramentas/retirar-materia.mjs",
+    "previa": "node _ferramentas/gerar-site.mjs --com-rascunhos",
+    "indexar": "node _ferramentas/montar-site.mjs",
+    "estresse": "node _ferramentas/revisao-v1.01/testes/estresse.mjs",
+    "testar": "node _ferramentas/revisao-v1.01/testes/testar.mjs"
+  },
+  "devDependencies": {
+    "pagefind": "1.5.2"
   }
 }

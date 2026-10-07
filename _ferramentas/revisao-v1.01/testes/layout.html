@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Teste de layout</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; margin: 24px; background: #1d1b20; color: #eee; }
+  button { font: inherit; padding: 8px 18px; border-radius: 8px; border: 0; background: #792DCF; color: #fff; cursor: pointer; }
+  table { border-collapse: collapse; margin-top: 16px; width: 100%; }
+  td, th { border-bottom: 1px solid #444; padding: 6px 10px; text-align: left; vertical-align: top; }
+  .alto, .critico { color: #ff7b7b; font-weight: 700; } .medio { color: #ffd166; } .baixo, .info { color: #9aa; }
+  #estado { margin: 12px 0; }
+</style>
+</head>
+<body>
+<h1>Teste de layout</h1>
+<p>Abre cada pagina da amostra em cada tamanho de tela (matriz-de-telas.json) e mede rolagem horizontal, player, elementos cobertos, alvos de toque e fontes.
+Precisa ser aberto por um servidor local (a pagina e os iframes tem de ser da mesma origem).</p>
+<button id="rodar">Rodar tudo</button> <label><input type="checkbox" id="so-celulares"> so celulares (ate 440px)</label>
+<div id="estado"></div>
+<table id="tabela"><thead><tr><th>Gravidade</th><th>Pagina</th><th>O que</th><th>Telas</th></tr></thead><tbody></tbody></table>
+<script src="layout.js"></script>
+<script>
+document.getElementById('rodar').onclick = async () => {
+  const matriz = await (await fetch('matriz-de-telas.json')).json();
+  const amostra = await (await fetch('amostra.json')).json();
+  let larguras = matriz.larguras; if (document.getElementById('so-celulares').checked) larguras = larguras.filter((w) => w <= 440);
+  const telas = [...larguras.map((w) => [w, matriz.alturaPadrao]), ...matriz.deitados, ...matriz.baixas];
+  const estado = document.getElementById('estado'); const t0 = performance.now(); let feitas = 0;
+  const r = await layoutTeste.rodar({ paginas: amostra.map((x) => x.pagina), telas, aoProgresso: (p) => { feitas++; estado.textContent = `${feitas}/${amostra.length} paginas (${p})`; } });
+  window.__resultado = layoutTeste.resumir(r.achados);
+  estado.textContent = `${r.total} medicoes em ${((performance.now() - t0) / 1000).toFixed(0)}s: ${window.__resultado.filter((x) => x.sev === 'alto' || x.sev === 'critico').length} achado(s) alto(s)`;
+  document.querySelector('#tabela tbody').innerHTML = window.__resultado.map((x) => `<tr><td class="${x.sev}">${x.sev}</td><td>${x.pagina}</td><td>${x.msg}</td><td>${x.telas.join(', ')}</td></tr>`).join('');
+};
+</script>
+</body>
+</html>
