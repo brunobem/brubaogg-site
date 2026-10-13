@@ -65,7 +65,7 @@ if (fs.existsSync(reg) && !fs.existsSync(path.join(raiz, '_ferramentas', 'cache'
   for (const [id, e] of Object.entries(JSON.parse(fs.readFileSync(reg, 'utf8').replace(/^\uFEFF/, '')))) {
     const pag = `${e.categoria}/${e.slug}.html`;
     if (!fs.existsSync(path.join(raiz, pag))) { console.log(`PAGINA PUBLICADA SUMIU  ${pag} (materia ${id}${e.retirada ? ', retirada' : ''}). Restaure o arquivo da materia ou use: npm run retirar -- ${id}`); quebrados++; }
-    for (const velho of e.antigos ?? []) if (!fs.existsSync(path.join(raiz, `${e.categoria}/${velho}.html`))) { console.log(`REDIRECIONAMENTO AUSENTE  ${e.categoria}/${velho}.html (endereco antigo da materia ${id}; rode npm run gerar)`); quebrados++; }
+    for (const velho of e.antigos ?? []) if (!fs.existsSync(path.join(raiz, `${velho.includes('/') ? velho : `${e.categoria}/${velho}`}.html`))) { console.log(`REDIRECIONAMENTO AUSENTE  ${velho.includes('/') ? velho : `${e.categoria}/${velho}`}.html (endereco antigo da materia ${id}; rode npm run gerar)`); quebrados++; }
   }
 }
 for (const f of ['assets/data/playlists.json', 'assets/data/atalhos.json', 'assets/data/lista/manifesto.json', 'assets/css/style.css', 'assets/js/busca.js', 'assets/js/contador.js', 'assets/img/logo.png', 'assets/img/rodape/cena.svg', 'CNAME', '404.html']) {

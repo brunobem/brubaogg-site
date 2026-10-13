@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-05-11",
+  "titulo": "Sony explica a verificação de 30 dias dos jogos digitais",
+  "resumo": "A Sony diz que a verificação de 30 dias em jogos digitais do PS4 e do PS5 é uma checagem online única, e não recorrente.",
+  "tags": [
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Game File",
+      "url": "https://www.gamefile.news/p/sony-30-day-playstation-check-in-explained"
+    },
+    {
+      "nome": "Hitmarker",
+      "url": "https://hitmarker.net/news/sony-confirms-new-one-time-drm-check-for-digital-playstation-games-1702580"
+    },
+    {
+      "nome": "T-Break",
+      "url": "https://tbreak.com/playstation-drm-license-check-policy/"
+    },
+    {
+      "nome": "ChannelNews",
+      "url": "https://www.channelnews.com.au/sony-backtracks-on-ps5-drm-fears-confirms-one-time-check-only/"
+    }
+  ],
+  "corpo": [
+    "Usuários de PS4 e PS5 notaram, em jogos digitais comprados a partir de março ou de meados de abril de 2026, conforme a fonte, um contador de 30 dias, e surgiu o temor de que o jogo exigisse conexão periódica para continuar acessível. Explico que o DRM é um sistema de verificação de compra, que confere as IDs do que o jogador comprou contra as chaves que ele possui para saber se o jogo foi pirateado.",
+    "Em esclarecimento ao Game File, a Sony disse que só é preciso uma checagem online única depois da compra para confirmar a licença, e que depois disso a licença funciona sem novas verificações. Testes da comunidade ligam o contador à política de reembolso de 14 dias da PlayStation, mas a Sony não confirmou o motivo. Jogos em disco não são afetados.",
+    "Entendo que a Sony voltou atrás: a verificação seria feita uma única vez, 30 dias depois da compra, e nunca mais. Sem essa explicação, o jogador não teria um jogo de verdade, porque ficar 30 dias offline poderia significar perder o acesso."
+  ]
+}

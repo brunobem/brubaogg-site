@@ -1,0 +1,30 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-06-19",
+  "titulo": "Emulador de Xbox 360 para Android chega via GitHub",
+  "resumo": "Emuladores de Xbox 360 para Android distribuídos pelo GitHub, como X360 Mobile e XenDroid, rodam só parte dos jogos, segundo as fontes.",
+  "tags": [
+    "Xbox 360"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "GitHub",
+      "url": "https://github.com/Ashnar2602/X360-Mobile---OFFICIAL"
+    },
+    {
+      "nome": "APKCombo",
+      "url": "https://apkcombo.com/x360-mobile/emu.x360.mobile/"
+    },
+    {
+      "nome": "Android Authority",
+      "url": "https://androidauthority.com/xendroid-xbox-360-emulator-android-3699252"
+    }
+  ],
+  "corpo": [
+    "Mostrei um novo emulador de Xbox 360 para Android que, pelo que vi, roda a maioria dos jogos do console e não está nas lojas de aplicativos: o APK é baixado pelo GitHub, repositório onde desenvolvedores disponibilizam projetos de graça. Não cito o nome do programa. Entre os emuladores desse tipo que apareceram no período estão o X360 Mobile, versão pública 0.5 de 1º de junho de 2026, e o XenDroid, lançado no GitHub semanas antes de 17 de agosto.",
+    "As fontes não confirmam que algum deles rode a maioria dos jogos. O X360 Mobile se descreve como emulação experimental em ARM64, com renderizador Vulkan, e diz que compatibilidade e desempenho variam muito por jogo, aparelho, driver de GPU e configuração. O Android Authority testou o XenDroid e conseguiu jogar Call of Duty 2, Forza Motorsport 2 e Project Gotham Racing 3, e recomenda um aparelho com Snapdragon 8 Gen 2 ou superior.",
+    "Aviso que o uso não é oficial e que é preciso ter a imagem (ISO) do jogo que se quer jogar, mas digo que o emulador está rodando muito bem. Peço para aproveitar e usar com sabedoria."
+  ]
+}

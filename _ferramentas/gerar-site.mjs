@@ -1,4 +1,4 @@
-// Gera as paginas de materias do site a partir de assets/data/playlists.json e de _conteudo/materias/*.json.
+// Gera as paginas de materias do site a partir de assets/data/playlists.json e de _conteudo/materias/*.json (e o conteudo da Wiki, que pode ser so texto, de _conteudo/wiki/*.json).
 //
 //  - Listas:   noticias.html, reviews.html, lancamentos.html
 //  - Materias: noticias/<slug>.html, reviews/<slug>.html, lancamentos/<slug>.html, gta6-novidades/<slug>.html
@@ -21,7 +21,7 @@ import { criarIcones } from './gerador/icones.mjs';
 import { criarModelos } from './gerador/modelos.mjs';
 import { criarTags } from './gerador/tags.mjs';
 import { carregarDados } from './gerador/dados.mjs';
-import { construirArquivo, construirFixas, construirMaterias, construirRedirecionamentos, construirTags } from './gerador/paginas.mjs';
+import { construirArquivo, construirFixas, construirMaterias, construirRedirecionamentos, construirTags, construirWiki } from './gerador/paginas.mjs';
 import { gravarTudo } from './gerador/saida.mjs';
 import { ErroDeDados } from './gerador/util.mjs';
 
@@ -42,7 +42,11 @@ const ctx = {
   indice: [], listaMaterias: [], itensPorCategoria: {}, publicadas: new Map(), // o que as paginas produzem (indice = atalhos da busca: tags e paginas)
   contagemTags: new Map(), porTag: new Map(), temTags: false,
   contadores: { total: 0, reais: 0, aguardando: 0 },
+  // o instante em que o site esta sendo gerado: so decide entre a contagem e o estado "lancado" do GTA 6 (config.mjs, GTA6). Para ver como o site fica em outra data (teste ou
+  // previa): BRUBAO_AGORA=2026-11-19T00:00:01-03:00 node _ferramentas/gerar-site.mjs  (nao grave o resultado: o site de verdade usa a data de hoje)
+  agora: process.env.BRUBAO_AGORA ? new Date(process.env.BRUBAO_AGORA) : new Date(),
 };
+if (Number.isNaN(ctx.agora.getTime())) { console.error(`BRUBAO_AGORA invalida: "${process.env.BRUBAO_AGORA}" (use o formato 2026-11-19T00:00:01-03:00)`); process.exit(1); }
 ctx.icone = criarIcones(site);
 
 try {
@@ -50,6 +54,7 @@ try {
   Object.assign(ctx, criarTags(ctx), criarModelos(ctx));
   construirMaterias(ctx);                   // materias e listas de categoria
   construirTags(ctx);                       // paginas de tag
+  construirWiki(ctx);                       // wiki/<jogo>.html (depois das tags: usa as tags "filhas" de cada jogo)
   construirArquivo(ctx);                    // arquivo por mes (links estaticos para todas as materias)
   construirFixas(ctx);                      // 404, busca e indice da busca
   construirRedirecionamentos(ctx);          // enderecos antigos levam para o atual
@@ -71,4 +76,4 @@ console.log(COM_RASCUNHOS
   ? `PREVIA COM RASCUNHOS: ${total} paginas (${reais} com texto, ${aguardando} so com o video). NAO publique: rode npm run gerar antes do commit.`
   : RASCUNHO
   ? `RASCUNHO: ${total} materias geradas (${reais} com texto real, ${total - reais} com texto ficticio). Nao publique este modo.`
-  : `Materias no site: ${total} (${reais} com texto)${SO_COM_MATERIA ? ` | videos ainda sem materia, fora do site: ${aguardando}` : ` | paginas so com o video: ${aguardando}`} | abas visiveis: ${[...ctx.visiveis].join(', ') || 'nenhuma'}`);
+  : `Paginas de materia no site: ${total} (${reais} materias com texto${ctx.paginasDeAssunto ? `; ${ctx.paginasDeAssunto} pagina(s) de assunto juntam varias` : ''})${SO_COM_MATERIA ? ` | videos ainda sem materia, fora do site: ${aguardando}` : ` | paginas so com o video: ${aguardando}`} | abas visiveis: ${[...ctx.visiveis].join(', ') || 'nenhuma'}`);

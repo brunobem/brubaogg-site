@@ -2,16 +2,46 @@
   "formato": "horizontal",
   "categoria": "reviews",
   "publicado": "2025-05-21",
-  "titulo": "AI Limit: o soulslike de anime barato vale a pena?",
-  "resumo": "AI Limit, da Sense Games, mistura soulslike e anime com barra de sincronização no lugar de estamina. O Brubão dá nota 7 e destaca o preço baixo.",
+  "titulo": "AI Limit vale a pena? Minha nota é 7",
+  "resumo": "Joguei AI Limit por 20 horas no PS5 e dou nota 7: soulslike de anime gostoso de jogar, com sincronização no lugar da estamina, a um preço baixo.",
   "tags": [
     "AI Limit"
   ],
+  "veredito": {
+    "nota": 7,
+    "recomendacao": "compre",
+    "preco": "Entre R$ 100 e R$ 120 no PS5 e na Steam (paguei R$ 89 na pré-venda)",
+    "horas": "cerca de 20",
+    "plataforma": "PS5 (também no PC)",
+    "paraQuem": "Quem gosta de soulslike e quer um jogo acessível, com visual de anime, por pouco dinheiro."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Fextralife",
+      "url": "https://fextralife.com/a-i-limit-review/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/software/platforms/five-new-steam-games-you-probably-missed-march-31-2025/"
+    },
+    {
+      "nome": "Fextralife",
+      "url": "https://fextralife.com/ai-limit-release-date-time-based-region/"
+    }
+  ],
   "corpo": [
-    "O veredito do Brubão sobre AI Limit é de nota 7 em 10, e ele recomenda para quem gosta de soulslike, sobretudo pelo preço: o jogo custa entre R$ 100 e R$ 120 no PlayStation 5 e na Steam, e ele comprou na pré-venda por R$ 89. Segundo ele, não é um Souls de verdade, porque não é da FromSoftware, e também não chega ao nível de Lies of P, mas é um jogo gostoso para passar o tempo enfrentando chefes.",
-    "O jogo foi lançado em 27 de março de 2025 para PlayStation 5 e PC pela Sense Games, estúdio chinês que fez aqui um primeiro título grande. O Brubão jogou cerca de 20 horas no PS5 e ainda não platinou, porque falta o New Game Plus. Ele elogia os assets e a movimentação para um estúdio estreante, e o visual é mais sombrio. Como pontos fracos, cita asset repetido, como Kombis em sequência num esgoto, e quedas de taxa de quadros numa igreja no PS5 base.",
-    "A principal novidade é a barra de sincronização, que substitui a de estamina. Ela cresce ao atacar e, quando está cheia, aumenta o dano e libera feitiços e a defesa. Há atributos de força, destreza, que o jogo chama de técnica, e vitalidade, e armas variadas, como espadas, adagas duplas e uma foice, cada uma com golpes próprios. Os elementos, como raio e veneno, e as armaduras, que alteram o visual, completam a build.",
-    "Ele destaca quatro magias: escudo, dash de raio, contra-ataque e perfuração. Não há parry: defender gasta sincronização, e inimigos com perfuração ainda causam dano. Como a personagem é leve, ela dá dashes rápidos, mas o ataque ainda tem peso. As fogueiras são ramos de árvore, e o mapa tem atalhos e teleporte entre elas.",
-    "Na história, a jogadora é Arrisa, uma Blade que desperta num esgoto e recupera memórias ao ativar os ramos. Diferentemente dos Souls clássicos, a trama aparece na tela, sem exigir leitura de itens, e há missões secundárias sobre repovoar o planeta. Há três linhas de final, e é o final que mais se destaca, segundo ele. Algumas pessoas relatam problemas no PC com processadores AMD."
+    "Dou nota 7 em 10 a AI Limit, que joguei por cerca de 20 horas no PlayStation 5 e gostei bastante. Para mim, é uma mistura de soulslike com anime, bem gostosa de jogar. Não é um Souls de verdade, porque não é da FromSoftware, e também não chega ao nível de Lies of P, mas é para quem gosta do estilo passar um tempo lutando contra chefes.",
+    "Não platinei porque falta o New Game Plus, e talvez platine sem gravar. A desenvolvedora é a Sense Games, chinesa, e este é o primeiro jogo dela, que considero grande. Os assets e a movimentação são legais para um primeiro jogo, e o visual é um pouco mais dark, de acordo com o clima.",
+    "Há muito asset repetido: no esgoto, vi uma Kombi, mais à frente outra Kombi, e outra depois. Em geral, o jogo é bem polido, mas o frame rate cai em alguns momentos, como numa igreja com muita luz, mesmo no PlayStation 5 base, que usei do começo ao fim. Também ouvi falar de problemas com placas AMD no PC.",
+    "Em vez de barra de estamina, há uma barra de sincronização: com 100%, o dano escala, e quanto mais sincronização, mais o jogador pode potencializar poderes e feitiços. Os atributos incluem força, destreza (chamada de técnica) e vitalidade, que combinam com o tipo de arma escolhido: espadas, duas adagas, foice, perfuradeira e outras, cada uma com seu golpe de finalização.",
+    "Os elementos variam entre raio, veneno e uma espécie de necrose, que dá perfuração, tanto nas armas quanto nos inimigos. As armaduras mudam a aparência, com roupinhas que mostram demais, e também as resistências: uma tanca mais perfuração, outra mais eletricidade. Há quatro magias: um escudo, que foi a que mais usei, um dash de raio, um contra-ataque mágico e uma de perfuração, para a build de sangramento.",
+    "Não há aparar: ao defender, o jogador perde sincronização, e, se o inimigo tiver perfuração, ainda toma dano. A personagem é leve e dá dashes rápidos, e, mesmo assim, sinto a força do ataque.",
+    "O jogador é Arissa, uma Blade que desperta em um esgoto e encontra a guia, que conta bem pouco sobre quem ela é: uma guerreira que deve despertar os ramos de uma árvore, que funcionam como as bonfires. A cada ramo desperto, ela recupera um pedaço da memória. Ao contrário dos soulslikes clássicos, a história é contada na tela, sem precisar ler tanto.",
+    "O cenário é desolado, com poucos humanos, que ficaram sem comida e passaram a se alimentar de uma lama com magia. Há missões secundárias de gente tentando repovoar o planeta com vegetação, e o final é o que mais se destaca, com três vertentes, uma delas neutra, e finais diferentes. No mapa, o jogador viaja entre os ramos por teleporte.",
+    "O ponto que mais se destaca é o preço: o jogo custa entre R$ 100 e R$ 120, no PlayStation 5 e na Steam, e paguei R$ 89 na pré-venda. Recomendo demais, principalmente em promoção, para quem gosta de soulslike.",
+    "Para mim, o sistema de sincronização traz novidade, e o jogo não só replica o que já existe, mas tenta inovar um pouco. Não é um Lies of P, mas também não é feito nas coxas: tem história e um sistema de combate bacana.",
+    "AI Limit é da Sense Games, publicado pela CE-Asia, e foi lançado em 27 de março de 2025 para PlayStation 5 e PC. Segundo a Fextralife, o jogo se passa em um futuro pós-apocalíptico, depois do colapso da civilização, e leva cerca de 25 horas para um jogador médio de soulslike. Antes do lançamento, joguei a demo e também dei nota 7.",
+    "No fim das contas, recomendo AI Limit a quem gosta de soulslike e quer gastar pouco, e deixo a nota em 7."
   ]
 }

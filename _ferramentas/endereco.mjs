@@ -7,7 +7,8 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gravarRegistro, lerRegistro, mudarEndereco, slugDeTitulo } from './gerador/enderecos.mjs';
-import { ErroDeDados, lerJson, normalizarId } from './gerador/util.mjs';
+import { arquivoDaMateria, resolverId } from './gerador/pastas.mjs';
+import { ErroDeDados, lerJson } from './gerador/util.mjs';
 
 const site = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
@@ -17,7 +18,8 @@ if (!todos && !pos.length) { console.error('Uso: npm run endereco -- <ID> [novo-
 
 const registro = lerRegistro(site);
 const tituloDe = (id) => {
-  try { return lerJson(path.join(site, '_conteudo', 'materias', `${id}.json`), `_conteudo/materias/${id}.json`).titulo; }
+  const arq = arquivoDaMateria(site, id) ?? path.join(site, '_conteudo', 'materias', `${id}.json`); // materia de video ou conteudo da Wiki
+  try { return lerJson(arq, path.relative(site, arq).split(path.sep).join('/')).titulo; }
   catch (e) { if (e instanceof ErroDeDados) { console.error(e.message); process.exit(1); } throw e; }
 };
 
@@ -31,8 +33,8 @@ if (todos) {
     if (mudarEndereco(copia, id, titulo)) mudancas.push({ id, de: registro[id].slug, para: copia[id].slug, titulo });
   }
 } else {
-  const id = normalizarId(pos[0]);
-  if (!id || !registro[id]) { console.error(`Nao encontrei esse video no registro de enderecos (${pos[0]}).`); process.exit(1); }
+  const id = resolverId(site, pos[0]);
+  if (!id || !registro[id]) { console.error(`Nao encontrei esse conteudo no registro de enderecos (${pos[0]}).`); process.exit(1); }
   const novo = pos[1] ? slugDeTitulo(pos[1]) : null;
   const titulo = novo ?? tituloDe(id);
   if (!titulo) { console.error('A materia nao tem titulo.'); process.exit(1); }

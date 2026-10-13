@@ -2,16 +2,38 @@
   "formato": "horizontal",
   "categoria": "reviews",
   "publicado": "2025-03-05",
-  "titulo": "Streamer Life Simulator 2: vale a pena o simulador?",
-  "resumo": "Streamer Life Simulator 2, em acesso antecipado na Steam: humor, lives e pouca profundidade. O Brubão dá 7,5 entre os simuladores e vê potencial.",
+  "titulo": "Streamer Life Simulator 2 vale a pena? Minha nota é 7,5",
+  "resumo": "Joguei 6 horas de Streamer Life Simulator 2 em acesso antecipado e dou nota 7,5 entre os simuladores: barato, divertido e com potencial.",
   "tags": [
     "Streamer Life Simulator 2"
   ],
+  "veredito": {
+    "nota": 7.5,
+    "recomendacao": "compre",
+    "preco": "Cerca de R$ 28 na Steam (acesso antecipado)",
+    "horas": "cerca de 6",
+    "plataforma": "PC",
+    "paraQuem": "Quem gosta de simuladores e topa um acesso antecipado com bugs e conteúdo limitado, por pouco dinheiro."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/simulador-bombando-coloca-voce-na-vida-de-um-streamer/"
+    },
+    {
+      "nome": "Automaton",
+      "url": "https://automaton-media.com/articles/newsjp/streamer-life-simulator-20250127-326544/"
+    }
+  ],
   "corpo": [
-    "O veredito do Brubão sobre Streamer Life Simulator 2 é de nota 7,5, dentro da categoria de simuladores, que ele diz gostar muito. O jogo está em acesso antecipado na Steam, e ele pagou cerca de R$ 28. Jogou por volta de 6 horas e recomenda para quem curte o gênero, porque vê potencial se os desenvolvedores seguirem atualizando o jogo.",
-    "É um jogo de humor, sem história profunda e sem fim definido, como é comum em simuladores: quando o jogador cumpre metas e compra tudo, pode continuar jogando se quiser. A premissa é que você é um garçom que derruba todos os cafés, apanha do chefe, invade a cafeteria dele, rouba computadores e começa a fazer live com as peças roubadas, na intenção de virar streamer.",
-    "A jogabilidade depende do tipo de live. É possível apenas conversar, dançar ou jogar um clássico parecido com um Counter-Strike antigo, contra bots, em tom de brincadeira e meio bugado. Há ainda atividades como pegar carro ou moto para fazer entregas, mas tudo bem limitado por estar em acesso antecipado. Os gráficos são simples, de simulador.",
-    "Depois de desbloquear habilidades, dá para ganhar mais doações, trocar de casa e contratar outros streamers, que trabalham para você em troca de uma parte do que arrecadam. O Brubão chegou a contratar uma streamer e montar o escritório para ela, e precisou comprar cama e comida. Ele nota que dá para ligar a live e deixar o jogo rodando, porque não há muito o que fazer.",
-    "Para ele, é um dos simuladores mais completinhos que jogou, mas perde para Gas Station Simulator, mais complexo na gestão. A nota 7,5 considera o preço baixo e o potencial: com as avaliações da Steam, os desenvolvedores podem polir o jogo. Ele convida o público a contar a própria experiência."
+    "Dou nota 7,5 a Streamer Life Simulator 2, dentro da categoria dos simuladores, que gosto de jogar. Joguei cerca de seis horas em acesso antecipado na Steam, paguei cerca de R$ 28 e achei um jogo de zoeira, divertido e com potencial, que recomendo a quem gosta do gênero.",
+    "Por ser um simulador, o jogo é meio sem fim: o jogador bate as metas, compra tudo e continua jogando, se quiser. Me interessei depois de ouvir o pessoal do Flow Games falar do jogo, que ficou um pouco hypado.",
+    "A história começa com o jogador como garçom em um café, com pouco dinheiro e morando em um lugar bem ruim. Ele derruba tudo o que carregava, e o chefe o derruba na porrada. Furioso, o personagem invade a cafeteria do ex-chefe, rouba os equipamentos de computador e começa a fazer lives com as peças roubadas. De vez em quando, NPCs tocam a campainha, mas sem muita profundidade.",
+    "Os gráficos são bem de simulador. As lives podem ser de jogos, só de conversa (Just Chatting) ou com danças. No jogo dentro do jogo, há um Counter-Strike bem clássico, de uma versão antiga, anterior ao 1.6 pelo meu palpite: é contra bots, bem bugado, e quem apertar o mouse mais rápido mata o outro. Também dá para pegar carro ou moto e fazer entregas, mas tudo é limitado, porque o jogo está em acesso antecipado.",
+    "Passei seis horas jogando porque gosto de simuladores, mas lembro que daria para só ligar a live e fazer outras coisas enquanto as doações caem. Depois de desbloquear habilidades, como falar melhor, o jogador ganha mais doações, pode trocar de casa e contratar outros streamers, ficando com uma parte do que eles ganham. Cheguei a contratar uma streamer e montei o espaço dela; é preciso comprar cama e comida e gerir tudo para o negócio crescer.",
+    "Entre os simuladores que joguei, é um dos mais completinhos, talvez atrás de Gas Station Simulator, que é mais complexo no que há para fazer e gerir. A nota 7,5 vale dentro da categoria e não é comparável à de gêneros diferentes. Vejo potencial: se as avaliações da Steam forçarem os desenvolvedores a atualizar e polir o jogo, ele pode ficar bem mais gostoso de jogar.",
+    "Streamer Life Simulator 2 é da Cheesecake Dev e entrou em acesso antecipado na Steam em janeiro de 2025. Segundo o Flow Games, em menos de uma semana o jogo já tinha avaliações Muito Positivas, com elogios à proposta e às atividades, mas com um sistema de lives considerado um pouco repetitivo.",
+    "No fim das contas, recomendo o jogo a quem gosta de simuladores e topa um acesso antecipado com bugs e conteúdo limitado, pelo preço baixo."
   ]
 }

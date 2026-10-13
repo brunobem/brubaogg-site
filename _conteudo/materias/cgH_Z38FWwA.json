@@ -2,17 +2,46 @@
   "formato": "horizontal",
   "categoria": "reviews",
   "publicado": "2026-02-12",
-  "titulo": "Clair Obscur: Expedition 33, vale a pena jogar?",
-  "resumo": "RPG de turno reativo da Sandfall, Jogo do Ano no TGA 2025. O Brubão elogia gráficos e jogabilidade, mas dá 7 e acha a trama menos que o hype.",
+  "titulo": "Clair Obscur: Expedition 33: minha nota é 7",
+  "resumo": "Zerei Clair Obscur: Expedition 33 e dou nota 7: bonito e gostoso de jogar, mas, para mim, a história não é a obra de arte que dizem.",
   "tags": [
     "Clair Obscur: Expedition 33"
   ],
+  "veredito": {
+    "nota": 7,
+    "recomendacao": "espere-promocao",
+    "preco": "Incluído no Game Pass; sugiro esperar uma promoção no PS5",
+    "plataforma": "PS5 (também no Game Pass)",
+    "paraQuem": "Quem curte RPG de turno com ação, quer um jogo bonito e aceita uma história boa, mas menos marcante do que se diz."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/review-clair-obscur-expedition-33-obra-prima-incrivel/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/rpg/clair-obscur-expedition-33-review/"
+    },
+    {
+      "nome": "Fextralife",
+      "url": "https://fextralife.com/clair-obscur-expedition-33-wins-goty-2025-full-list-of-the-game-awards-winners/"
+    }
+  ],
   "corpo": [
-    "O veredito do Brubão sobre Clair Obscur: Expedition 33 é positivo, mas mais contido que o da comunidade: ele deu nota 7 em 10 e diz que o jogo vale muito a pena se estiver no Game Pass ou em promoção no PlayStation 5. Reconhece que é uma obra bem construída, mas se diz fora da maré de quem o trata como obra-prima, sobretudo pela história, que não o pegou tanto. O texto abaixo evita spoilers.",
-    "O jogo foi lançado em 24 de abril de 2025 para PlayStation 5, PC e Xbox Series X|S e é o primeiro título da Sandfall Interactive, estúdio francês de Montpellier fundado por Guillaume Broche, ex-Ubisoft. Venceu o prêmio de Jogo do Ano no The Game Awards 2025. Segundo fontes, o núcleo da equipe tem cerca de 30 desenvolvedores, o que reforça o feito. O Brubão destaca o visual na Unreal Engine 5, com iluminação e texturas que, para ele, deixam concorrentes gigantes para trás.",
-    "A direção de arte se inspira na Belle Époque francesa, e a captura facial dá peso emocional às cenas. A premissa é forte: na cidade de Lumière, uma pintora desenha todos os anos um número num monólito e, a cada novo número, todos que têm essa idade somem. Agora o número é 33, e a Expedição 33 parte para tentar pará-la, num grupo com Gustave, o engenheiro veterano, Maelle, a adolescente que ele criou, Lune, a maga, e Sciel.",
-    "A jogabilidade é um RPG de turno, ao estilo JRPG, com uma camada de ação: o jogador precisa esquivar ou aparar na hora certa, num sistema que o Brubão compara ao de Sekiro, e há eventos rápidos para ataques críticos. Os personagens usam pontos de ação, e o ataque básico é grátis e recupera pontos. Ele diz que não dá para jogar tomando café: os chefes são fortes, e errar o tempo pode custar a vida ou metade dela.",
-    "Cada personagem tem seu estilo. O braço de Gustave carrega sobrecarga, e Lune acumula marcas de elementos. Os Pictos são amuletos que se equipam em até três por personagem e liberam efeitos após algumas vitórias, enquanto as Luminas criam builds. As bandeiras das expedições anteriores funcionam como fogueiras de jogos Souls e guardam pistas. Ao subir de nível, o jogador ganha três pontos de atributo, que é preciso equilibrar.",
-    "O Brubão elogia a variação, a trilha e o visual, mas acha o plot twist previsível e acredita que o prêmio de Jogo do Ano também teve pouca concorrência de peso. Para ele, o jogo é uma reunião bem feita de referências já vistas, como em qualquer Final Fantasy. Ele sabe que a opinião é impopular e convida o público a discordar nos comentários e a contar qual final escolheu."
+    "Dou nota 7 em 10 a Clair Obscur: Expedition 33, que zerei no PlayStation 5. Admito que é uma opinião impopular: o jogo é muito bem construído, mas não é, para mim, a obra de arte que a comunidade diz, e a reviravolta da história não me pegou muito.",
+    "A desenvolvedora é a Sandfall Interactive, estúdio novo e francês, e este é o primeiro jogo dela. Pelo que sei, o presidente do estúdio era diretor da Ubisoft e saiu para fundar a Sandfall.",
+    "É um RPG de turno inspirado em JRPGs como Final Fantasy, com a diferença de misturar elementos de ação: o jogador precisa esquivar e aparar no momento certo, como em Sekiro. Não é um jogo para tomar café enquanto se joga um RPG de turno.",
+    "Os gráficos usam a Unreal Engine 5, e a Sandfall conseguiu, com iluminação e nível de detalhe nas texturas, competir com jogos gigantes. O level design se inspira na Belle Époque francesa, com um realismo surrealista e artístico, e a captura facial dos personagens nas lutas e nos diálogos dá peso emocional.",
+    "A história se passa em Lumière, cidade amaldiçoada por uma pintora que pinta um número menor a cada ano em um monolito, e quem tem aquela idade se desintegra, no evento chamado Gommage. O número agora é 33. A humanidade monta expedições para tentar chegar à pintora e acabar com a maldição, e a 33 é a do jogo. A sociedade não comemora aniversários: teme o próximo número.",
+    "O grupo inicial inclui Gustave, engenheiro e soldado veterano, que já começa o jogo com uma carga emocional pesada; Maelle, a irmã adotiva de 16 anos, a mais nova do grupo; Lune, a maga, que se isolou para estudar a Lumina, a magia do jogo; e Sciel, uma das mais veteranas. Com a pressão da maldição, todos viram uma família.",
+    "O jogador tem PA, que funcionam como estamina e são gastos em habilidades; o ataque básico é gratuito e recupera PA. Uma fila mostra quem ataca. Ao esquivar ou aparar no momento certo, o jogador evita o dano, e os chefes são muito fortes: se errar, perde metade da vida ou morre de uma vez. Há quick time events para o ataque crítico e disparos livres, com uma espécie de pistola.",
+    "O jogo tem atributos que combinam com as armas de cada personagem, pictos, que são amuletos equipados (até três por personagem) e que se ativam depois de quatro vitórias, e luminas, que dão bônus e permitem builds bem diferentes. Cada personagem joga de um jeito: a Lune usa marcas de magia, e quanto mais magias de fogo, por exemplo, mais benefícios. As bandeiras das expedições anteriores funcionam como bonfires e deixam pistas do que aconteceu.",
+    "Gosto de Final Fantasy e já joguei muito jogo de ação e de soulslike, então nada ali era estranho para mim. Gostei do conjunto, e por isso zerei. Mas a reviravolta do meio do jogo não foi uma surpresa: eu já tinha uma teoria, que contei a um amigo durante a live. Achei a sacada legal, mas não tão marcante assim.",
+    "Acho que o jogo ganhou o prêmio do The Game Awards também porque não havia concorrente de peso: Death Stranding 2 é uma continuação, e não havia outro jogo novo para disputar de igual para igual. Para mim, Clair Obscur é bem feito, com várias referências que já existem e uma história bem desenvolvida, sem ser um primor de que se falará pelos próximos cinco anos.",
+    "A nota 7 reconhece o gráfico, que dá tapa na cara de muito estúdio, a jogabilidade gostosinha, que exige atenção, a variação e a trilha, que ajuda a não cansar, e a história bacana. Se o jogador tem Game Pass ou pega uma promoção baratinha no PlayStation 5, vale muito a pena jogar.",
+    "Clair Obscur: Expedition 33 foi lançado em abril de 2025 pela Sandfall Interactive, com a Kepler Interactive como publisher, e estava disponível no Game Pass. No The Game Awards 2025, venceu Jogo do Ano e outras oito categorias, como Melhor RPG e Melhor Narrativa.",
+    "No fim das contas, vejo em Clair Obscur um jogo muito bem feito, mas sem a obra de arte que a comunidade enxerga, e dou nota 7."
   ]
 }

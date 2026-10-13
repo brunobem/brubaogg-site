@@ -2,16 +2,45 @@
   "formato": "horizontal",
   "categoria": "reviews",
   "publicado": "2025-12-10",
-  "titulo": "The First Berserker: Khazan é mesmo tão bom assim?",
-  "resumo": "Souls-like de visual anime da Neople, jogado por 60 horas no PS5. O Brubão acha o combate bom, a trama previsível e dá nota 6,5. Melhor esperar promoção.",
+  "titulo": "The First Berserker: Khazan: minha nota é 6,5",
+  "resumo": "Zerei Khazan em cerca de 60 horas e dou nota 6,5: soulslike bom, mas repetitivo e de história previsível. Prefiro AI Limit e sugiro esperar promoção.",
   "tags": [
     "The First Berserker: Khazan"
   ],
+  "veredito": {
+    "nota": 6.5,
+    "recomendacao": "espere-promocao",
+    "preco": "Esperar chegar a R$ 100 a R$ 140, ou menos",
+    "horas": "cerca de 60",
+    "plataforma": "PS5",
+    "paraQuem": "Quem gosta de soulslike, quer destruir chefes e farmar aura e não se importa com a história."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/review-the-first-berserker-khazan-soulslike-respeito/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/action/the-first-berserker-khazan-review/"
+    },
+    {
+      "nome": "Fextralife",
+      "url": "https://fextralife.com/the-first-berserker-khazan-review/"
+    }
+  ],
   "corpo": [
-    "O veredito do Brubão sobre The First Berserker: Khazan é de nota 6,5 em 10: é um jogo bom, mas longe de ser o melhor Souls-like que ele já viu, e ele recomenda esperar uma promoção, a algo entre R$ 100 e R$ 140 ou menos. Ele jogou a demo, gostou, comprou e zerou no PlayStation 5, em cerca de 60 horas. O jogo foi lançado em 27 de março de 2025 pela Nexon, desenvolvido pela Neople, no universo de Dungeon & Fighter.",
-    "A história é a do general Khazan, injustiçado e levado a uma execução. Um espírito de guerreiro, a união de vários guerreiros no espírito da espada, interrompe a morte dele e passa a ocupar seu corpo, com a missão de livrar o mundo do caos causado por um soberano do inferno. Segundo o Brubão, a trama é extremamente previsível: dá para saber quem trai, quem é a origem do mal e quais são as motivações, e as razões do rei são fracas.",
-    "Na jogabilidade, ele aponta o que já se espera do gênero: controle de vigor, ataques fortes e fracos, habilidades de arma, atributos e builds. O espírito da espada dá três estilos de luta: espadão, lança e uma combinação de machado e espada curta, que foi a que ele usou por ser mais rápida. Para o Brubão, a esquiva e a defesa perfeitas recuperam vigor, e ele prefere esquivar a aparar.",
-    "A novidade, segundo ele, está no fato de que, como o personagem é um berserker, o jogador ganha experiência mesmo ao perder para um inimigo, o que faz subir de nível. O jogo não é o mais difícil do gênero, mas alguns chefes enrolam, a depender do estilo de luta. Ele acha a jogabilidade boa, porém repetitiva, um Souls básico e bem feito do começo ao fim.",
-    "O que diferencia o jogo são os gráficos de anime, com muita animação e aura, mas sem polimento total: na demo, ele notou que Khazan parecia flutuar sobre a neve. Para quem quer distrair e derrotar chefes, é um bom jogo. Para quem quer história envolvente, não é. Ele prefere AI Limit, que tem identidade um pouco melhor, e acha que uma continuação ou DLC poderia trazer personalidade própria."
+    "Dou nota 6,5 em 10 a The First Berserker: Khazan, que zerei no PlayStation 5 em cerca de 60 horas. Depois de jogar a demo, gostei tanto que comprei o jogo. Para mim, é um jogo bom, mas mediano, longe de ser o melhor soulslike que já vi.",
+    "O jogador é Khazan, um grande general injustiçado, levado à execução. Nesse mundo há espíritos e leis sobrenaturais, e um deles, um espírito da espada formado por vários guerreiros, interrompe a execução para poder entrar no corpo dele, porque tem seus próprios objetivos: livrar o mundo do caos causado por um soberano do inferno. A partir daí, o jogador luta contra chefes em busca de um objetivo em comum com o espírito.",
+    "As habilidades vêm do espírito e, por ser uma junção de guerreiros, o jogador tem três estilos de combate: espadão, lança e machado com uma espada pequena, que foi o que joguei, por gostar de uma movimentação mais rápida. Prefiro esquiva a aparar e prefiro combates que preservem o vigor.",
+    "O jogo é muito parecido com os soulslikes: há barra de vigor, ataque forte e fraco, habilidades das armas e um ecossistema de builds, com estatísticas, equipamentos e elementos. O diferencial é que, como Berserker, o jogador ganha experiência ao morrer para um inimigo, e isso o faz subir de nível. Quem fica quatro ou cinco horas travado em um chefe acaba evoluindo por causa disso.",
+    "Não é o jogo mais difícil do gênero, mas alguns chefes, dependendo do estilo do jogador, podem enrolar bastante. Para mim, a jogabilidade é boa, mas repetitiva: é o soulslike básico, bem feito do começo ao fim, sem nada inovador.",
+    "A história é muito previsível: está na cara quem trai o protagonista, quem é a origem do mal e quais são as motivações dela, e a razão de o rei agir como age é fraca. É preciso desligar a cabeça e só jogar.",
+    "O que traz diferença são os gráficos de anime e a estrutura de farmar aura do Khazan. O polimento, porém, não é de 100%: uma coisa que eu já tinha percebido na demo é a forma como o personagem anda na neve, como se estivesse em cima do cenário, e não compondo o ambiente.",
+    "Para quem quer destruir chefes, ver cenas legais e farmar aura para se distrair, Khazan serve. Quem procura uma história que prenda não encontra aqui. Recomendo esperar uma promoção, com o jogo a R$ 100, R$ 120 ou R$ 140, ou até menos. E, se tivesse de escolher, preferiria AI Limit, que tem a história um pouco melhor contada, mais novidade e mais identidade, algo que Khazan não tem tanto.",
+    "Pelo desfecho, acredito que o jogo terá uma continuação e sugiro um DLC, ou algo que dê personalidade própria ao jogo, em vez de apoiar-se em uma estrutura que já fez sucesso.",
+    "The First Berserker: Khazan é da Neople, subsidiária da Nexon, e se passa no universo de Dungeon & Fighter. Foi lançado em 27 de março de 2025 para PlayStation 5, Xbox Series X|S e PC, depois de uma demo gratuita, disponível desde 16 de janeiro de 2025.",
+    "No fim das contas, vejo em Khazan um soulslike bem feito e repetitivo, de história fraca, e dou nota 6,5."
   ]
 }

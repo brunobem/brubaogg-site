@@ -1,0 +1,38 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-07-23",
+  "titulo": "Palworld 1.0 sai do acesso antecipado com 72 novos Pals",
+  "resumo": "Palworld chegou à versão 1.0 em 10 de julho de 2026, com 72 novos Pals e perto de 1 milhão de jogadores simultâneos, enquanto o processo da Nintendo segue.",
+  "tags": [
+    "Palworld"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Insider Gaming",
+      "url": "https://insider-gaming.com/palworld-1-0-adds-72-new-pals-world-improvements-story-overhaul-more-full-1-0-patch-notes/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/survival-crafting/palworld-pulled-in-almost-900-000-players-over-the-weekend-its-second-highest-peak-ever/"
+    },
+    {
+      "nome": "Games.gg",
+      "url": "https://games.gg/news/palworld-855000-players-second-highest-peak/"
+    },
+    {
+      "nome": "PC Guide",
+      "url": "https://www.pcguide.com/news/palworld-devs-confirm-price-isnt-changing-in-version-1-0-as-it-leaves-early-access-and-its-still-30-off-right-now/"
+    },
+    {
+      "nome": "The Sixth Axis",
+      "url": "https://www.thesixthaxis.com/2024/09/19/nintendo-the-pokemon-company-are-suing-palworld-maker/"
+    }
+  ],
+  "corpo": [
+    "Palworld saiu do acesso antecipado e chegou à versão 1.0 em 10 de julho de 2026, em atualização gratuita para quem já tinha o jogo. Segundo o Insider Gaming, a versão traz 72 novos Pals (47 criaturas inéditas e 25 variantes), duas grandes regiões novas, que juntas dobram a área do mapa, o fim da história principal e o PvP. O preço não subiu e continua em US$ 29,99.",
+    "O resultado foi uma volta em massa de jogadores à Steam: o pico passou de 855 mil simultâneos no fim de semana de 11 e 12 de julho e chegou perto de 1 milhão em 19 de julho, segundo números do SteamDB, o segundo maior da história do jogo (o recorde é de janeiro de 2024). Voltei ao meu mundo e notei muitas alterações.",
+    "Enquanto isso, a Nintendo e a The Pokémon Company processam a Pocketpair, desenvolvedora do jogo, desde setembro de 2024, no Tribunal Distrital de Tóquio, por violação de patentes. As fontes consultadas não mostram decisão. Acho que a Nintendo não vai conseguir nada com o processo e vejo a Pocketpair só ganhando dinheiro."
+  ]
+}

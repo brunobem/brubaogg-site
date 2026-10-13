@@ -13,8 +13,8 @@ const aqui = path.dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
 const so = (args.find((a) => a.startsWith('--so=')) ?? '').slice(5).split(',').filter(Boolean);
 const TUDO = args.includes('--tudo');
-const LENTOS = ['fuzz', 'fluxo', 'marcadores']; // so rodam quando pedidos com --so=fuzz
-const ordem = ['links', 'html', 'contrato', 'seo', 'publico', 'css', 'js', 'gerador', ...(so.some((s) => LENTOS.includes(s)) ? LENTOS : [])];
+const LENTOS = ['fuzz', 'fluxo', 'marcadores', 'virada']; // so rodam quando pedidos com --so=fuzz
+const ordem = ['links', 'html', 'ads', 'contrato', 'seo', 'materia', 'player', 'lancado', 'publico', 'css', 'js', 'gerador', ...(so.some((s) => LENTOS.includes(s)) ? LENTOS : [])];
 const ROTULO = { critico: 'CRITICO', alto: 'ALTO', medio: 'medio', baixo: 'baixo', info: 'info' };
 const PESO = { critico: 0, alto: 1, medio: 2, baixo: 3, info: 4 };
 

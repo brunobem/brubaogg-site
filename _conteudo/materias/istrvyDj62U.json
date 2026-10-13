@@ -1,26 +1,41 @@
 {
   "formato": "horizontal",
+  "categoria": "lancamentos",
+  "publicado": "2026-05-10",
   "titulo": "Lançamentos de maio de 2026: Forza Horizon 6 e mais",
-  "resumo": "Forza Horizon 6 no Japão, 007 First Light, Subnautica 2 em acesso antecipado e Yoshi no Switch 2 lideram os lançamentos de maio de 2026.",
+  "resumo": "Maio de 2026 teve Forza Horizon 6, 007 First Light, Subnautica 2 em acesso antecipado e indies que prometiam viciar. Datas conferidas.",
   "tags": [
-    "Gambonanza",
-    "Dead as Disco",
     "Forza Horizon 6",
     "007 First Light",
-    "Subnautica 2",
-    "Yoshi and the Mysterious Book",
-    "LEGO Batman: Legacy of the Dark Knight",
-    "Mixtape",
-    "Directive 8020",
-    "Deep Rock Galactic: Rogue Core"
+    "Subnautica 2"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/lancamentos-de-jogos-de-maio-de-2026-lista-completa/"
+    },
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/007-first-light-vendeu-mais-de-4-milhoes-de-copias/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://pcgamer.com/games/fps/deep-rock-galactic-rogue-core-launch-times-release-date/"
+    },
+    {
+      "nome": "Insider Gaming",
+      "url": "https://insider-gaming.com/dead-as-disco-early-access-release-date-revealed/"
+    }
   ],
   "corpo": [
-    "Maio de 2026 chega prometendo esvaziar a carteira, com uma lista de jogos triple A e indies. Veja os principais lançamentos do mês, em ordem de data.",
-    "Em 1º de maio chega Gambonanza, um roguelike tático que reinventa o xadrez em tabuleiros pequenos, com a vibe viciante de Balatro. O jogador monta a estratégia com mais de 150 gambitos, que funcionam como trapaças e modificadores de regras, melhora o tabuleiro e combina peças para derrotar chefes dentro de um limite de jogadas, em partidas de cerca de 30 minutos, segundo o vídeo. Há visual em pixel art retrô e minijogos inspirados em pachinko e caça-níqueis. Sai para PC, da Blukulélé. No dia 5, Dead as Disco é um beat 'em up rítmico em que o jogador controla Charlie Disco, um músico caído que quer se vingar da antiga banda, as Idols, e o combate se sincroniza com a música numa campanha de história não linear, com mais de 25 faixas licenciadas e originais, ferramentas para colocar as próprias músicas e personalização do personagem. O vídeo compara a pancadaria rítmica a Hi-Fi Rush e o estilo a Sifu. Sai em acesso antecipado no PC, da Brain Jar Games, com cerca de um ano de desenvolvimento até a versão final.",
-    "Em 7 de maio, Mixtape, da Annapurna Interactive, acompanha três jovens a caminho da formatura numa vibe de filmes adolescentes dos anos 1990, com memórias jogáveis ao som de mixtapes, de Smashing Pumpkins a Joy Division. A jogabilidade alterna andar de skate, sequências de stealth e voo. Chega no primeiro dia no Game Pass. No dia 12 sai Directive 8020, novo jogo da antologia The Dark Pictures, da Supermassive Games, que sai do sobrenatural e vai ao terror espacial, em Unreal Engine 5, com combate, furtividade em tempo real e controle total da câmera.",
-    "Em 14 de maio, Subnautica 2 entra em acesso antecipado, no PC e Xbox Series, feito em Unreal Engine 5, com novos biomas oceânicos, construção de base aprimorada e o tão sonhado modo cooperativo para até quatro jogadores. Em 19 de maio chega Forza Horizon 6, o momento que todos esperavam, em que a Playground Games atendeu os fãs e levou o festival ao Japão: uma Tóquio densa, neon pelas ruas e o monte Fuji ao fundo, nas montanhas de cerejeiras, para fazer muito drift.",
-    "No dia 20, Deep Rock Galactic: Rogue Core entra em acesso antecipado como spin-off de foco total em roguelite, em que se começa sem nada e se evolui o equipamento com sobrevivência, combate frenético e muito trabalho em equipe. A grande aposta do primeiro semestre para o Switch 2 chega em 21 de maio: Yoshi and the Mysterious Book, em que o jogador explora um livro mágico em branco para ajudar o professor Enigma, com gráficos de stop motion e livro infantil, e totalmente em português.",
-    "Em 27 de maio, a IO Interactive, famosa por Hitman, traz a ambiciosa volta de James Bond aos games com 007 First Light: furtividade e gadgets de Hitman com ação cinematográfica e narrativa ao estilo Uncharted, numa história de origem sombria sobre um jovem agente recém-recrutado pelo MI6. E, no fim do mês, LEGO Batman: Legacy of the Dark Knight, da TT Games, que promete o maior jogo do Batman já feito, refeito do zero num mundo aberto vertical, com combate inspirado na série Arkham e passagem por todas as eras do morcego, do clássico ao Pattinson. A Warner informa lançamento em 29 de maio.",
-    "As menções honrosas do mês vão para a versão de Indiana Jones para o Switch 2 e para Copa City. O vídeo pergunta quais jogos o público está mais ansioso para jogar."
+    "Maio de 2026 reuniu jogos de peso e indies para viciar, de Forza Horizon 6 a 007 First Light. Estes são os destaques do mês, em ordem de data, com as datas conferidas em 10 de outubro de 2026 nas listas do Flow Games.",
+    "No início do mês, Gambonanza mistura xadrez com a vibe de Balatro: um roguelike de tabuleiro em ritmo acelerado, em que o jogador monta um deck de gambitos que funcionam como trapaças e modificadores de xadrez, em partidas de cerca de 30 minutos para PC e celular. Em 5 de maio, Dead as Disco chegou em acesso antecipado no PC: um beat 'em up rítmico, que mistura a pancadaria de Hi-Fi Rush com o estilo de Sifu e adapta os combates às músicas que o jogador colocar.",
+    "Em 7 de maio chegou Mixtape, da Annapurna Interactive, com a pegada dos filmes adolescentes dos anos 90: três jovens a caminho da formatura, com memórias jogáveis de skate, stealth e voo, ao som de Smashing Pumpkins e Joy Division. Em 12 de maio, Directive 8020, da Supermassive Games, levou a antologia The Dark Pictures ao terror espacial, na Unreal Engine 5, com combate furtivo em tempo real e controle total da câmera.",
+    "Em 14 de maio, Subnautica 2 entrou em acesso antecipado no PC e no Xbox Series, por US$ 29,99. Na Unreal Engine 5, traz novos biomas oceânicos, construção de base aprimorada e o modo cooperativo para até quatro jogadores. Em 19 de maio saiu Forza Horizon 6, para PC e Xbox Series, em que a Playground Games levou o festival ao Japão, com uma Tóquio densa e iluminada de neon, o Monte Fuji ao fundo e montanhas de cerejeiras para o drift.",
+    "Em 20 de maio, Deep Rock Galactic: Rogue Core entrou em acesso antecipado no PC: um spin-off roguelite cooperativo em que o jogador começa sem nada e evolui o equipamento entre sobrevivência, combate frenético e trabalho em equipe. Em 21 de maio chegou Yoshi and the Mysterious Book, no Switch 2, em que Yoshi explora um livro mágico em branco para ajudar o professor N. Igma, com gráficos de stop motion e de livro infantil, e totalmente em português.",
+    "Em 22 de maio, LEGO Batman: Legacy of the Dark Knight, da TT Games, levou o herói a uma Gotham refeita do zero, em mundo aberto vertical, com combate inspirado na série Arkham e passagem por todas as eras do Batman, do clássico ao de Pattinson. Saiu para PC, PS5 e Xbox Series.",
+    "Em 27 de maio, a IO Interactive, de Hitman, trouxe a volta de James Bond com 007 First Light: furtividade e gadgets de Hitman com ação cinematográfica na linha de Uncharted, em uma história de origem sombria de um jovem agente recém-recrutado pelo MI6. Segundo o Flow Games, o jogo vendeu mais de 4 milhões de cópias em três meses.",
+    "Entre as menções honrosas do mês está a versão para Switch 2 de Indiana Jones and the Great Circle, lançada em 12 de maio."
   ]
 }

@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-06",
+  "titulo": "PS5 fica mais caro no Brasil a partir de 2 de abril",
+  "resumo": "A Sony subiu os preços do PS5, do PS5 Pro e do PlayStation Portal no Brasil em 2 de abril de 2026; o PS5 foi a R$ 5.099,90.",
+  "tags": [
+    "PlayStation 5"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Olhar Digital",
+      "url": "https://olhardigital.com.br/2026/03/27/games-e-consoles/playstation-5-fica-mais-caro-no-brasil-a-partir-de-abril/"
+    },
+    {
+      "nome": "Tecnoblog",
+      "url": "https://tecnoblog.net/noticias/sony-aumenta-precos-do-ps5-e-ps5-pro-em-varios-paises/"
+    },
+    {
+      "nome": "Canaltech",
+      "url": "https://canaltech.com.br/games/ps5-mais-caro-sony-quebra-promessa-e-aumenta-precos-de-consoles-no-brasil/"
+    },
+    {
+      "nome": "Band",
+      "url": "https://www.band.com.br/economia/noticias/preco-do-playstation-5-sobe-no-brasil-em-abril-veja-os-novos-valores-202603301702"
+    }
+  ],
+  "corpo": [
+    "A Sony aumentou os preços sugeridos de toda a linha PlayStation 5 no Brasil a partir de 2 de abril de 2026: o PS5 com leitor de disco passou de R$ 4.499,90 para R$ 5.099,90, a Edição Digital, de R$ 3.999,90 para R$ 4.599,90, o PS5 Pro, de R$ 6.999,90 para R$ 7.499,90, e o PlayStation Portal, de R$ 1.499,90 para R$ 1.899,90, o maior reajuste em porcentagem (26,67%).",
+    "A Sony citou pressões contínuas no cenário econômico global, e analistas apontam o custo de memória e armazenamento, puxado pela demanda de IA. É o terceiro aumento do PS5 desde o lançamento, em 2020. Os valores são sugeridos e podem variar por varejista.",
+    "Ao contrário da Nintendo, que baixou preços, a Sony aumentou os dela. Reconheço que o mercado tem problemas com processadores, mas acho o valor muito caro. Para mim, a Sony sabe que vai vender muito console por causa do GTA, que já está chegando, e talvez seja isso."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-07-11",
+  "titulo": "Sony vai fechar as lojas digitais do PS3 e do PS Vita",
+  "resumo": "A Sony anunciou o fechamento escalonado das lojas do PS3 e do PS Vita. Quem já comprou continua podendo baixar os jogos.",
+  "tags": [
+    "PlayStation 3"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Game Informer",
+      "url": "https://gameinformer.com/2026/07/01/the-playstation-stores-on-playstation-3-and-vita-are-being-shut-down"
+    },
+    {
+      "nome": "TheSixthAxis",
+      "url": "https://www.thesixthaxis.com/2026/07/01/sony-is-closing-the-ps3-and-vita-ps-store-again/"
+    }
+  ],
+  "corpo": [
+    "A Sony anunciou em 1º de julho de 2026 o fechamento escalonado das lojas digitais do PlayStation 3 e do PS Vita. México, Honduras e Nicarágua perdem a loja do PS3 a partir de agosto de 2026, e outros países da América Latina e do Oriente Médio, a partir do fim de 2026. Nos demais países, as lojas do PS3 e do Vita fecham em julho de 2027.",
+    "As fontes consultadas não citam o Brasil por nome, e eu digo que a loja do PS3 fecha por aqui ainda este ano e a do Vita em 2027. Depois do fechamento, não será possível comprar mais nada, mas quem já comprou um jogo continuará podendo baixá-lo; afirmo que a Sony garante esse acesso por tempo indeterminado.",
+    "A Sony cita o processamento de pagamentos: segundo a empresa, as lojas precisam seguir padrões atualizados, que o PS3 e o Vita não suportam mais. Ela já havia tentado fechar essas lojas em 2021 e recuou depois da reação dos jogadores.",
+    "O problema, aponto, são os jogos que nunca ganharam versão remasterizada ou remake no PS4 ou no PS5: quem nunca jogou essas obras da loja do PS3 perde a chance de comprá-las."
+  ]
+}

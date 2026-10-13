@@ -1,16 +1,51 @@
 {
   "formato": "horizontal",
-  "titulo": "INSIDE: vale a pena jogar o clássico da Playdead hoje?",
-  "resumo": "Review de INSIDE, jogo de 2016 da Playdead: história sem palavras, arte premiada e um final que o Brubão não conseguiu explicar. Vale o preço?",
+  "categoria": "reviews",
+  "publicado": "2026-10-01",
+  "titulo": "INSIDE vale a pena? Minha nota é 8",
+  "resumo": "Joguei INSIDE do início ao fim e dou nota 8: indie premiado, sem diálogo nem texto, curto e com um final que não consegui explicar.",
   "tags": [
     "INSIDE"
   ],
+  "veredito": {
+    "nota": 8,
+    "recomendacao": "espere-promocao",
+    "preco": "Cerca de R$ 7 em promoção na Steam (paguei); no celular passa de R$ 40; está no Game Pass",
+    "horas": "3 a 4",
+    "plataforma": "PC (também em consoles e celular)",
+    "paraQuem": "Quem curte puzzle-plataforma atmosférico e jogo curto e esquisito, sem diálogo."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/inside-review/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/best-shortform-game-2016-inside/"
+    },
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/veja-10-jogos-curtos-para-zerar-durante-as-ferias/"
+    }
+  ],
+  "shorts": [
+    {
+      "id": "CT68uW4KT9I",
+      "titulo": "INSIDE: jogo curto, final impactante e arte premiada"
+    }
+  ],
   "corpo": [
-    "O Brubão jogou INSIDE do início ao fim e admite que, mesmo agora, não consegue explicar o final. Ele viu os créditos subirem sem entender nada, e é justamente esse tipo de experiência fora da curva que o jogo entrega. A review responde se esse título premiado e já com quase dez anos ainda vale o investimento.",
-    "INSIDE é um puzzle-plataforma de terror atmosférico da Playdead, pequeno estúdio dinamarquês que também fez Limbo. Foi lançado em 2016, originalmente no Xbox e no PC, e hoje está em praticamente todas as plataformas, inclusive no celular. É um jogo em 2.5D: o jogador anda de lado, empurra caixas, foge de perseguidores e usa objetos do cenário. O que o separa de jogos parecidos é que não há uma linha de diálogo nem texto na tela. Tudo é entendido apenas pelo que se vê.",
-    "O visual é a principal ferramenta de narrativa. O mundo é quase monocromático e sombrio, e o protagonista, um garoto de blusa vermelha discreta, é praticamente a única mancha de cor. A jornada começa numa floresta fria, cinza e esverdeada, onde a luz forte vem das lanternas dos guardas que o caçam. Depois vem uma fazenda, o único trecho claro e aberto, uma espécie de respiro antes de a história pesar de novo. Segue uma cidade decadente, com pessoas zumbificadas andando em bloco, minas escuras cortadas por holofotes, áreas alagadas num azul profundo e um laboratório com tanques de vidro iluminados. Cada área muda a paleta e o ritmo visual junto com a história, e para o Brubão isso é uma das coisas mais bem calculadas do jogo. A Playdead também desenvolveu uma técnica própria de antisserrilhado temporal e liberou o código de graça para outros estúdios. O jogo levou prêmios de direção de arte e de áudio em diversas premiações no fim de 2016.",
-    "A jogabilidade se resume a pular, escalar, empurrar coisas e, no trecho do submarino, fazer alguns dashes. O tempero vem na fazenda, quando o jogador ganha um capacete que controla corpos zumbificados, como um controle remoto de pessoas. Ele é usado muitas vezes dali em diante para resolver quebra-cabeças, coordenando vários corpos para passar por portões e placas de pressão, e para se infiltrar em grupos controlados na cidade, sincronizando os passos para não ser visto por um drone de segurança. Mais adiante há áreas submersas que matam se a luz for apontada para o lugar errado e trechos com ondas de choque e testes de armas.",
-    "A narrativa é mantida em aberto. Ninguém diz quem é o garoto nem por que ele faz aquilo, e essa falta de resposta é o que segura a atenção até o fim. No meio do jogo há uma virada que o Brubão considera a mais forte: o garoto parece saber para onde vai, como se já tivesse feito o caminho antes, o que muda a leitura de tudo que vem depois. O jogo termina numa instalação de pesquisa com cientistas indiferentes e tanques cheios de gente, onde aparece uma massa gigante de corpos fundidos. O Brubão não conta mais para evitar spoilers e avisa que existe um final secreto, o que recompensa quem explora bem os cenários.",
-    "O ponto que decide se vale a pena é o preço. Ele varia bastante conforme a plataforma, e há promoções frequentes no PlayStation, no Xbox, no PC e no celular, onde muitas vezes custa mais de R$ 40. Na avaliação do Brubão, é caro para um jogo de 2016 e para a duração de 3 a 4 horas. Quem tem Game Pass pode jogar sem custo adicional, e na Steam ele vive em promoção: o Brubão pagou cerca de R$ 7. Ele começou sem nenhuma expectativa, gostou bastante e indica o jogo para quem quer passar um tempo curto jogando, inclusive em portáteis. A nota final dele é 8 de 10."
+    "Dou nota 8 em 10 a INSIDE, que joguei do início ao fim, e não consigo explicar o final: vi os créditos subindo e não entendi nada. Um inscrito indicou o jogo, e joguei sem expectativa, no computador. É um indie extremamente premiado, bem fora da casinha, e eu o indico.",
+    "É um puzzle-plataforma de terror atmosférico em 2.5D, da Playdead, estúdio dinamarquês que também fez Limbo. O jogador anda de lado, empurra caixas, foge de perseguidores e usa objetos. O que o separa de jogos parecidos é que não há uma linha de diálogo, texto nem HUD na tela: tudo se entende olhando o que acontece.",
+    "O visual é monocromático e sombrio, com cor só em pontos específicos; o personagem usa uma blusa vermelha discreta, praticamente a única coisa colorida. O jogo começa em uma floresta fria, passa por uma fazenda, o único momento claro e aberto, e segue por uma cidade decadente, minas escuras, áreas alagadas e um laboratório. Cada área muda de paleta junto com a história, o que acho muito bem calculado.",
+    "Por trás disso, a Playdead trocou de engine no meio do desenvolvimento e criou uma técnica própria de antialiasing, que liberou depois de graça para outros estúdios. Pelo que sei, o jogo levou prêmios de direção de arte e de áudio em vários eventos do fim daquele ano.",
+    "O jogador controla um garoto sem nome que foge de guardas com lanternas e cães de ataque na floresta. Na fazenda, ganha um capacete que permite controlar corpos zumbificados, como um controle remoto de gente, usado em portões e placas de pressão e, na cidade, para se infiltrar em uma multidão sincronizando passos e escapar de um drone. Mais à frente há áreas submersas, em que usa um submarino e faz alguns dashes.",
+    "Ninguém diz quem é o garoto nem por que ele faz aquilo, e é a falta de respostas que segura a tensão. No meio do jogo, percebi que o garoto já sabe para onde está indo, o que muda como se lê o resto. Perto do fim, há uma instalação de pesquisa com cientistas e algo bizarro. Há também um final secreto, então vale explorar todo o ambiente.",
+    "A jogabilidade se resume a pular, empurrar coisas, escalar e controlar zumbis com o capacete. Para mim, a experiência é uma obra de arte: conta uma história sem diálogo e faz o jogador refletir.",
+    "O preço decide se vale a pena. O jogo dura de três a quatro horas e varia muito de preço entre plataformas: no celular, passa de R$ 40, o que acho caro; está no Game Pass, e vale para quem assina; entra em promoção na Steam e, às vezes, na PlayStation Plus. Paguei cerca de R$ 7 em uma promoção na Steam.",
+    "INSIDE foi lançado em 2016 para Xbox One e PC pela Playdead, a mesma de Limbo, e hoje está em praticamente todas as plataformas. O PC Gamer o elegeu o melhor jogo curto de 2016.",
+    "No fim das contas, recomendo INSIDE como um jogo curtinho e marcante, e dou nota 8."
   ]
 }

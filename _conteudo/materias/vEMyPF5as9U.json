@@ -1,0 +1,30 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-07-18",
+  "titulo": "Guns of Eschaton: o último jogo de Viktor Antonov",
+  "resumo": "Guns of Eschaton, soulslike em primeira pessoa num velho oeste sombrio, foi o último projeto de Viktor Antonov, de Half-Life 2 e Dishonored.",
+  "tags": [
+    "Guns of Eschaton"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Game Informer",
+      "url": "https://gameinformer.com/2026/06/30/guns-of-eschaton-is-a-western-soulslike-fps-envisioned-by-the-late-artist-of-half-life-2"
+    },
+    {
+      "nome": "Game Developer",
+      "url": "https://www.gamedeveloper.com/press-release/first-of-its-kind-souls-like-fps-guns-of-eschaton-announced-set-in-viktor-antonov-s-apocalyptic-dying-west"
+    },
+    {
+      "nome": "Gematsu",
+      "url": "https://www.gematsu.com/2026/06/mystical-western-soulslike-first-person-shooter-guns-of-eschaton-announced-for-ps5-xbox-series-and-pc"
+    }
+  ],
+  "corpo": [
+    "Guns of Eschaton é um soulslike em primeira pessoa ambientado em um velho oeste sobrenatural, anunciado em 30 de junho de 2026 para PS5, Xbox Series e PC. É desenvolvido pela Eschatology Entertainment e publicado pela 4Divinity, e as fontes consultadas não trazem data de lançamento. O combate é deliberadamente lento, com defesas por parry, esquivas e munições especializadas, e o jogo aceita partidas solo e co-op online.",
+    "O visual foi concebido por Viktor Antonov, que morreu em 2025. Ele foi diretor de arte de Half-Life 2 e de Dishonored, e lembro que foi ele quem deu a City 17 o visual opressivo do regime e da Combine, definindo o estilo de FPS soviético que existe até hoje. Para mim, o trailer mostra elementos de todos os jogos de que Antonov participou.",
+    "O jogador controla um pistoleiro de vários braços em um século XIX distorcido, com horror oculto. Descrevo o jogo como um FPS soulslike de velho oeste, sombrio, com inimigos macabros."
+  ]
+}

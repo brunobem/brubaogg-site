@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { achado, aprovada, materias, raiz } from './lib.mjs';
+import { achado, aprovada, assuntosDoSite, materias, raiz } from './lib.mjs';
 
 const T = 'fluxo';
 const CATS = ['noticias', 'reviews', 'lancamentos', 'gta6-novidades'];
@@ -35,7 +35,8 @@ export default async function () {
   {
     const tmp = copiar();
     try {
-      const f = mat(tmp, base.id); escrever(f, { ...ler(f), categoria: 'reviews', publicado: '2020-01-01' });
+      const catDoRegistro = ler(path.join(tmp, '_conteudo/enderecos.json'))[base.id]?.categoria; // a categoria escrita tem de DISCORDAR da registrada, senao nao ha o que avisar
+      const f = mat(tmp, base.id); escrever(f, { ...ler(f), categoria: catDoRegistro === 'reviews' ? 'noticias' : 'reviews', publicado: '2020-01-01' });
       const r = rodar(tmp, 'gerar-site.mjs');
       if (r.status === 0 && !/AVISOS[\s\S]*categoria/.test(r.saida) && !/ignor/i.test(r.saida)) a.push(achado('medio', T, '[videos antigos] "categoria"/"publicado" que discordam do feed sao ignorados em silencio (nem aviso)'));
     } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
@@ -137,7 +138,7 @@ export default async function () {
   {
     const tmp = copiar();
     try {
-      const novo = Object.values(feed).flat().find((v) => !fs.existsSync(mat(tmp, v.id)));
+      const novo = Object.values(feed).flat().find((v) => !fs.existsSync(mat(tmp, v.id)) && !fs.existsSync(path.join(tmp, '_conteudo', 'wiki', `${v.id}.json`))); // video sem texto em NENHUMA das duas pastas (materias e Wiki)
       escrever(mat(tmp, novo.id), { formato: 'horizontal', status: 'rascunho', titulo: 'Titulo da Materia Nova, Com Acentuacao e Pontuacao!', resumo: 'Resumo da materia nova.', tags: [], corpo: ['Um paragrafo de verdade.'] });
       const r1 = rodar(tmp, 'aprovar-materia.mjs', [novo.id]);
       const reg = ler(path.join(tmp, '_conteudo/enderecos.json'))[novo.id];
@@ -150,6 +151,48 @@ export default async function () {
       if (rodar(tmp, 'verificar-links.mjs').status !== 0) a.push(achado('alto', T, '[endereco] o verificar acusou problema depois de aprovar e retirar uma materia'));
     } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
   }
-  a.push(achado('info', T, '10 grupos de cenarios do fluxo de conteudo rodados em copias'));
+  // 11) retirar --para: o Short que virou anexo de uma review leva para a review; o texto vai para _conteudo/retiradas (nao e apagado); destinos invalidos sao recusados
+  {
+    const tmp = copiar();
+    try {
+      const regDe = () => ler(path.join(tmp, '_conteudo/enderecos.json'));
+      const { membroDe } = assuntosDoSite(); // materias que viraram bloco de uma pagina de assunto nao tem pagina propria: ficam de fora da escolha
+      const [origem, destino, origem2] = ms.filter((m) => m.id !== base.id && !membroDe.has(m.id)).slice(0, 3).map((m) => m.id);
+      const texto = fs.readFileSync(mat(tmp, origem), 'utf8');
+      const recusados = [
+        ['destino inexistente', [origem, '--para', 'ZZZZZZZZZZZ']],
+        ['destino igual a propria materia', [origem, '--para', origem]],
+        ['--para sem valor', [origem, '--para']],
+      ].filter(([, args]) => { const r = rodar(tmp, 'retirar-materia.mjs', args); return r.status === 0 || !/destino|Uso:/.test(r.saida) || /\n\s+at /.test(r.saida); }).map(([nome]) => nome); // recusar = sair com erro E explicar (um travamento com pilha nao conta)
+      if (recusados.length) a.push(achado('alto', T, `[retirar --para] nao recusou com uma mensagem clara: ${recusados.join(', ')}`));
+      if (regDe()[origem].retirada) a.push(achado('alto', T, '[retirar --para] uma tentativa recusada ja retirou a materia'));
+      const r1 = rodar(tmp, 'retirar-materia.mjs', [origem, '--para', destino]);
+      const e = regDe()[origem], d = regDe()[destino];
+      if (r1.status !== 0 || !e.retirada || e.para !== destino) a.push(achado('alto', T, `[retirar --para] nao registrou a retirada com destino (${r1.saida.slice(0, 120)})`));
+      if (fs.existsSync(mat(tmp, origem))) a.push(achado('alto', T, '[retirar --para] o arquivo da materia continua em _conteudo/materias'));
+      const arquivada = path.join(tmp, '_conteudo', 'retiradas', `${origem}.json`);
+      if (!fs.existsSync(arquivada) || fs.readFileSync(arquivada, 'utf8') !== texto) a.push(achado('critico', T, '[retirar --para] o texto da materia retirada nao foi guardado em _conteudo/retiradas (perda de conteudo)'));
+      const g = rodar(tmp, 'gerar-site.mjs');
+      const stub = path.join(tmp, e.categoria, `${e.slug}.html`), html = fs.existsSync(stub) ? fs.readFileSync(stub, 'utf8') : '';
+      if (g.status !== 0) a.push(achado('alto', T, `[retirar --para] o gerador falhou depois da retirada: ${g.saida.slice(-160)}`));
+      else if (!html.includes(`<meta http-equiv="refresh" content="0; url=/${d.categoria}/${d.slug}.html">`)) a.push(achado('alto', T, `[retirar --para] ${e.categoria}/${e.slug}.html devia levar para ${d.categoria}/${d.slug}.html`));
+      if (!fs.existsSync(path.join(tmp, d.categoria, `${d.slug}.html`))) a.push(achado('alto', T, '[retirar --para] a pagina de destino deixou de existir'));
+      if (rodar(tmp, 'verificar-links.mjs').status !== 0) a.push(achado('alto', T, '[retirar --para] o verificar acusou problema depois da retirada'));
+      // destino que virou bloco de uma pagina de assunto: o endereco retirado leva para o bloco dele (com a ancora), nao para uma pagina que nao existe mais
+      const [idBloco, unidade] = [...membroDe][0] ?? [];
+      if (idBloco) {
+        const r2 = rodar(tmp, 'retirar-materia.mjs', [origem2, '--para', idBloco]), e2 = regDe()[origem2];
+        const g2 = rodar(tmp, 'gerar-site.mjs'), stub2 = path.join(tmp, e2.categoria, `${e2.slug}.html`);
+        if (r2.status !== 0 || g2.status !== 0) a.push(achado('alto', T, `[retirar --para] falhou com destino que e bloco de assunto: ${(r2.status !== 0 ? r2 : g2).saida.slice(-160)}`));
+        else if (!fs.existsSync(stub2) || !fs.readFileSync(stub2, 'utf8').includes(`<meta http-equiv="refresh" content="0; url=/${unidade.pagina}#v-${idBloco}">`)) a.push(achado('alto', T, `[retirar --para] o endereco retirado devia levar para /${unidade.pagina}#v-${idBloco} (o bloco do video de destino)`));
+        if (rodar(tmp, 'verificar-links.mjs').status !== 0) a.push(achado('alto', T, '[retirar --para] o verificar acusou problema com destino que e bloco de assunto'));
+      }
+      if (rodar(tmp, 'retirar-materia.mjs', [destino, '--para', origem]).status === 0) a.push(achado('alto', T, '[retirar --para] aceitou como destino uma materia ja retirada'));
+      // o arquivo volta para _conteudo/materias: o gerador avisa (nao republica sozinho)
+      fs.writeFileSync(mat(tmp, origem), texto); // o arquivo volta para _conteudo/materias
+      if (rodar(tmp, 'gerar-site.mjs').status === 0) a.push(achado('alto', T, '[retirar --para] o arquivo voltou para _conteudo/materias e o gerador nao reclamou da materia retirada'));
+    } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
+  }
+  a.push(achado('info', T, '11 grupos de cenarios do fluxo de conteudo rodados em copias'));
   return a;
 }

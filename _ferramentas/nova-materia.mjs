@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { categorias } from './gerador/config.mjs';
 import { TEXTO_DE_MODELO, lerJson, normalizarId } from './gerador/util.mjs';
 import { formatoDe } from './gerador/youtube.mjs';
 
@@ -19,7 +20,7 @@ if (!video) {
   // video antigo (fora dos 15 mais recentes da playlist): informe categoria e data de publicacao
   const categoria = arg('categoria'), publicado = arg('publicado'), titulo = arg('titulo');
   if (!categoria || !publicado || !titulo) {
-    console.error(`O video ${id} nao esta entre os 15 mais recentes das playlists. Informe:\n  npm run nova -- ${id} --categoria noticias --publicado 2026-09-30 --titulo "Titulo do video"\n(categorias: noticias, reviews, lancamentos, gta6-novidades)`);
+    console.error(`O video ${id} nao esta entre os 15 mais recentes das playlists. Informe:\n  npm run nova -- ${id} --categoria noticias --publicado 2026-09-30 --titulo "Titulo do video"\n(categorias: ${categorias.map((c) => c.pasta).join(", ")})`);
     process.exit(1);
   }
   video = { id, title: titulo };

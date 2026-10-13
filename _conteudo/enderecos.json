@@ -4,6 +4,21 @@
   "publicado": "2025-02-26T15:00:00Z",
   "slug": "astro-bot-vale-a-pena-pelo-preco-nota-6-5-do-brubao"
  },
+ "-Hb9dtDmN90": {
+  "categoria": "noticias",
+  "publicado": "2026-04-01T15:00:00Z",
+  "slug": "black-extraction-raiders-chega-ao-android-no-brasil"
+ },
+ "-IprdutP1Ro": {
+  "categoria": "noticias",
+  "publicado": "2026-06-08T15:00:00Z",
+  "slug": "phantom-blade-zero-e-adiado-para-29-de-outubro"
+ },
+ "-Sp1Bc--7U4": {
+  "categoria": "noticias",
+  "publicado": "2026-06-20T15:00:00Z",
+  "slug": "state-of-decay-3-mostra-gameplay-e-mira-2027"
+ },
  "-tOgB2biuSc": {
   "categoria": "noticias",
   "publicado": "2026-10-04T14:30:36Z",
@@ -12,23 +27,62 @@
    "eu-nao-gosto-nada-do-fim-da-midia-fisica"
   ]
  },
- "1yfTKljivZo": {
+ "0A8aoQdfnE0": {
   "categoria": "noticias",
+  "publicado": "2026-06-13T15:00:00Z",
+  "slug": "star-wars-zero-company-chegou-em-27-de-agosto"
+ },
+ "0dewabZ5FtE": {
+  "categoria": "noticias",
+  "publicado": "2026-06-12T15:00:00Z",
+  "slug": "1666-amsterdam-chegou-ao-acesso-antecipado-em-25-de-agosto"
+ },
+ "0e8u7h6UCtU": {
+  "categoria": "noticias",
+  "publicado": "2026-06-02T15:00:00Z",
+  "slug": "warzone-deixa-de-funcionar-no-ps4-e-no-xbox-one-em-2026"
+ },
+ "1WbMLF4am5U": {
+  "categoria": "reviews",
+  "publicado": "2024-12-11T15:00:00Z",
+  "slug": "astro-s-playroom-vale-a-pena-minha-nota-e-5"
+ },
+ "1xTm8gDnl7w": {
+  "categoria": "noticias",
+  "publicado": "2026-04-20T15:00:00Z",
+  "slug": "epic-ofereceu-broken-sword-reforged-de-graca-no-android"
+ },
+ "1yfTKljivZo": {
+  "categoria": "gta6-novidades",
   "publicado": "2026-09-26T14:30:27Z",
   "slug": "rockstar-endurece-regras-de-mods-e-veta-crossovers-em-gta-6",
   "antigos": [
-   "a-rockstar-odeia-criadores-de-mods"
+   "noticias/rockstar-endurece-regras-de-mods-e-veta-crossovers-em-gta-6",
+   "noticias/a-rockstar-odeia-criadores-de-mods"
   ]
  },
  "1zLVN4xwAdk": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-05-07T15:00:00Z",
-  "slug": "resident-evil-3-nemesis-o-labirinto-de-survival-horror"
+  "slug": "resident-evil-3-nemesis-o-labirinto-de-survival-horror",
+  "antigos": [
+   "reviews/resident-evil-3-nemesis-o-labirinto-de-survival-horror"
+  ]
  },
  "2-jMu5rFub8": {
   "categoria": "reviews",
   "publicado": "2025-01-29T15:00:00Z",
   "slug": "dishonored-death-of-the-outsider-vale-a-pena-em-2025"
+ },
+ "2FO3TSou01A": {
+  "categoria": "noticias",
+  "publicado": "2026-07-23T15:00:00Z",
+  "slug": "palworld-1-0-sai-do-acesso-antecipado-com-72-novos-pals"
+ },
+ "2Fciwhv1Iw0": {
+  "categoria": "noticias",
+  "publicado": "2026-05-16T15:00:00Z",
+  "slug": "lies-of-p-2-sai-da-prototipagem-e-entra-em-producao"
  },
  "2aSQPI59sic": {
   "categoria": "lancamentos",
@@ -39,11 +93,12 @@
   ]
  },
  "2xS0eFbU55o": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-06-18T23:00:37Z",
   "slug": "resident-evil-6-jake-e-sherry-e-o-ustanak-vale-a-pena",
   "antigos": [
-   "resident-evil-6-jake-e-sherry-contra-o-ustanak-vale-a-pena"
+   "reviews/resident-evil-6-jake-e-sherry-e-o-ustanak-vale-a-pena",
+   "reviews/resident-evil-6-jake-e-sherry-contra-o-ustanak-vale-a-pena"
   ]
  },
  "3EfvUSgNuPQ": {
@@ -54,6 +109,11 @@
    "call-of-duty-final-fantasy-e-mais-6-bombas-em-outubro"
   ]
  },
+ "3GujCeHrziI": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-07-01T15:00:00Z",
+  "slug": "gta-6-ultimate-edition-o-que-vem-na-versao-mais-cara"
+ },
  "3L9W3tiliNs": {
   "categoria": "noticias",
   "publicado": "2026-10-02T14:30:18Z",
@@ -62,15 +122,53 @@
    "the-witcher-3-remastered-tem-a-maior-nota-de-2026"
   ]
  },
+ "3cSkMcTgk3Y": {
+  "categoria": "noticias",
+  "publicado": "2026-05-01T15:00:00Z",
+  "slug": "filme-de-elden-ring-tem-elenco-e-data-3-de-marco-de-2028"
+ },
  "4BMIanA6ftY": {
   "categoria": "reviews",
   "publicado": "2026-01-15T15:00:00Z",
   "slug": "arc-raiders-vale-a-pena-pagar-a-entrada-agora"
  },
  "4JBSTZ2wydc": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-04-30T15:00:00Z",
-  "slug": "resident-evil-2-remake-a-campanha-de-claire-redfield"
+  "slug": "resident-evil-2-remake-a-campanha-de-claire-redfield",
+  "antigos": [
+   "reviews/resident-evil-2-remake-a-campanha-de-claire-redfield"
+  ]
+ },
+ "4UTaVkvCTvw": {
+  "categoria": "noticias",
+  "publicado": "2026-03-31T15:00:00Z",
+  "slug": "slime-rancher-chegou-ao-celular-em-26-de-maio"
+ },
+ "4ZNqsJrs3mU": {
+  "categoria": "noticias",
+  "publicado": "2026-06-11T15:00:00Z",
+  "slug": "tmnt-the-last-ronin-ganha-teaser-com-a-platinumgames"
+ },
+ "4ZNsH8dbwRY": {
+  "categoria": "noticias",
+  "publicado": "2026-09-16T15:00:00Z",
+  "slug": "ocarina-of-time-remake-custa-r-120-a-menos-que-gta-6"
+ },
+ "4ovN6I948HI": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-10-08T15:00:00Z",
+  "slug": "gta-6-game-informer-descreve-furacoes-e-tempestades"
+ },
+ "4xHkX5Fs39E": {
+  "categoria": "noticias",
+  "publicado": "2026-07-09T15:00:00Z",
+  "slug": "gta-6-fica-fora-do-topo-da-lista-da-famitsu"
+ },
+ "59kzxqG5f1E": {
+  "categoria": "noticias",
+  "publicado": "2026-07-19T15:00:00Z",
+  "slug": "minecraft-almofadas-para-sentar-dividem-a-comunidade"
  },
  "5w30a1BZuRw": {
   "categoria": "reviews",
@@ -80,6 +178,26 @@
    "vale-a-pena-jogar-storebound-antes-dele-chegar-no-console"
   ]
  },
+ "6UPhgpchDMI": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-09-24T15:00:00Z",
+  "slug": "gta-6-miami-beach-aprova-anuncios-em-cadeiras-de-praia"
+ },
+ "6sZrO69t4J0": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-05-14T15:00:00Z",
+  "slug": "gta-6-funcionarios-da-rockstar-na-india-relatam-crunch"
+ },
+ "6tDX2qyTKHM": {
+  "categoria": "reviews",
+  "publicado": "2024-12-25T15:00:00Z",
+  "slug": "kena-bridge-of-spirits-vale-a-pena-minha-nota-e-7"
+ },
+ "74_WIBNzmxo": {
+  "categoria": "noticias",
+  "publicado": "2026-03-23T15:00:00Z",
+  "slug": "parasite-z-terror-gratuito-no-estilo-resident-evil-classico"
+ },
  "7XZuurjrUOM": {
   "categoria": "noticias",
   "publicado": "2026-10-06T14:30:17Z",
@@ -87,6 +205,16 @@
   "antigos": [
    "quem-vai-ser-o-mimir-da-faye-em-god-of-war"
   ]
+ },
+ "7YCZjsL-3_c": {
+  "categoria": "noticias",
+  "publicado": "2026-06-14T15:00:00Z",
+  "slug": "stellar-blade-blood-rain-e-anunciado-com-a-heroina-evie"
+ },
+ "7syuziX0x6M": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-07-03T15:00:00Z",
+  "slug": "gta-6-sony-veste-o-ps5-de-vice-city-na-pre-venda"
  },
  "7zhb47qaXOM": {
   "categoria": "reviews",
@@ -104,20 +232,51 @@
    "o-terror-que-virou-comedia-com-os-amigos-shift-at-midnight"
   ]
  },
+ "8G8w1jrOjNk": {
+  "categoria": "noticias",
+  "publicado": "2026-04-25T15:00:00Z",
+  "slug": "the-division-resurgence-chegou-ao-mundo-todo-em-31-03"
+ },
+ "8RJQgj2fnGE": {
+  "categoria": "noticias",
+  "publicado": "2026-09-17T15:00:00Z",
+  "slug": "marvel-s-wolverine-estreia-com-78-no-metacritic"
+ },
  "8fnl6OufKH0": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-06-13T22:00:17Z",
-  "slug": "resident-evil-6-chris-redfield-o-soldado-que-perdeu-tudo"
+  "slug": "resident-evil-6-chris-redfield-o-soldado-que-perdeu-tudo",
+  "antigos": [
+   "reviews/resident-evil-6-chris-redfield-o-soldado-que-perdeu-tudo"
+  ]
  },
  "99UkI39phS8": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-04-09T15:00:00Z",
-  "slug": "resident-evil-0-a-historia-e-a-defesa-do-preludio"
+  "slug": "resident-evil-0-a-historia-e-a-defesa-do-preludio",
+  "antigos": [
+   "reviews/resident-evil-0-a-historia-e-a-defesa-do-preludio"
+  ]
  },
  "9D2B1TYVBeU": {
   "categoria": "reviews",
   "publicado": "2025-05-07T15:00:00Z",
   "slug": "assassin-s-creed-shadows-vale-a-pena-depois-de-zerar"
+ },
+ "9iC_q8YSfUc": {
+  "categoria": "noticias",
+  "publicado": "2026-06-28T15:00:00Z",
+  "slug": "god-of-war-laufey-estava-nos-planos-desde-2018-diz-atriz"
+ },
+ "9nqhFGn04Lc": {
+  "categoria": "noticias",
+  "publicado": "2026-03-27T15:00:00Z",
+  "slug": "arc-raiders-troca-vozes-de-ia-por-atores-de-verdade"
+ },
+ "9wqhZhhV6u0": {
+  "categoria": "noticias",
+  "publicado": "2026-06-25T15:00:00Z",
+  "slug": "fable-ganha-30-minutos-de-gameplay-focados-em-npcs"
  },
  "9xoZYLMSjXo": {
   "categoria": "reviews",
@@ -127,10 +286,25 @@
    "garten-of-banban-o-pior-jogo-que-ja-joguei"
   ]
  },
+ "BAbeKq7VSag": {
+  "categoria": "noticias",
+  "publicado": "2026-05-08T15:00:00Z",
+  "slug": "the-blood-of-dawnwalker-pre-venda-de-r-400-no-ps5"
+ },
+ "Bcd5qeSghAA": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-10-07T15:00:00Z",
+  "slug": "gta-6-tera-170-especies-de-animais-rdr2-tem-cerca-de-200"
+ },
  "BfLoeA7DEFE": {
   "categoria": "reviews",
   "publicado": "2025-01-22T15:00:00Z",
   "slug": "ghostrunner-2-perdeu-o-frenesi-do-primeiro"
+ },
+ "Brb3GrVw5hg": {
+  "categoria": "reviews",
+  "publicado": "2024-12-18T15:00:00Z",
+  "slug": "the-plucky-squire-o-escudeiro-valente-minha-nota-e-4"
  },
  "CT68uW4KT9I": {
   "categoria": "noticias",
@@ -138,7 +312,14 @@
   "slug": "inside-jogo-curto-final-impactante-e-arte-premiada",
   "antigos": [
    "inside-jogo-curtinho-com-o-final-mais-bizarro-que-ja-vi"
-  ]
+  ],
+  "retirada": "2026-10-12",
+  "para": "EpjLkNom1FY"
+ },
+ "CzgWsne7DoE": {
+  "categoria": "noticias",
+  "publicado": "2026-06-24T15:00:00Z",
+  "slug": "resident-evil-veronica-sera-em-terceira-pessoa"
  },
  "Df-7qTD67Rc": {
   "categoria": "reviews",
@@ -153,6 +334,21 @@
    "minecraft-ganhou-a-primeira-dimensao-nova-em-14-anos"
   ]
  },
+ "E1d6cBcOD4M": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-05-19T15:00:00Z",
+  "slug": "gta-6-vazamento-da-best-buy-citava-18-a-21-de-maio"
+ },
+ "EV6EQsxOB1g": {
+  "categoria": "noticias",
+  "publicado": "2026-07-11T15:00:00Z",
+  "slug": "sony-vai-fechar-as-lojas-digitais-do-ps3-e-do-ps-vita"
+ },
+ "EgR5w0kllBo": {
+  "categoria": "noticias",
+  "publicado": "2026-09-24T15:00:00Z",
+  "slug": "cs2-como-conseguir-a-galinha-de-estimacao-de-graca"
+ },
  "EpjLkNom1FY": {
   "categoria": "reviews",
   "publicado": "2026-10-01T16:00:19Z",
@@ -160,6 +356,36 @@
   "antigos": [
    "inside-o-jogo-curtinho-com-o-final-mais-bizarro-que-ja-vi"
   ]
+ },
+ "EsZoN3yRzUQ": {
+  "categoria": "noticias",
+  "publicado": "2026-05-22T15:00:00Z",
+  "slug": "caravan-sandwitch-chega-ao-celular-em-agosto"
+ },
+ "F4IG0wwMzTA": {
+  "categoria": "noticias",
+  "publicado": "2026-05-31T15:00:00Z",
+  "slug": "fable-ainda-dizia-que-enfrentaria-o-gta-6-em-2026"
+ },
+ "F7Upfis9jLc": {
+  "categoria": "noticias",
+  "publicado": "2026-07-20T15:00:00Z",
+  "slug": "black-flag-resynced-nota-84-bugs-e-microtransacoes"
+ },
+ "FBJCzu-vKJg": {
+  "categoria": "noticias",
+  "publicado": "2026-04-19T15:00:00Z",
+  "slug": "fallen-anuncia-aposentadoria-no-fim-de-2026"
+ },
+ "FKSlK_IOB8Y": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-10-09T15:00:00Z",
+  "slug": "gta-6-lucia-e-jason-estampam-a-revista-love"
+ },
+ "GDgS03-8i7Q": {
+  "categoria": "noticias",
+  "publicado": "2026-04-10T15:00:00Z",
+  "slug": "tft-set-17-space-gods-acaba-com-o-carrossel"
  },
  "GudFV-hOLvE": {
   "categoria": "reviews",
@@ -177,6 +403,11 @@
    "a-faye-vai-ser-mesmo-a-protagonista-de-god-of-war"
   ]
  },
+ "Hltb4jzDlSU": {
+  "categoria": "noticias",
+  "publicado": "2026-05-30T15:00:00Z",
+  "slug": "state-of-play-e-o-fim-dos-portes-da-sony-para-pc"
+ },
  "HqEM8jLL0Fk": {
   "categoria": "reviews",
   "publicado": "2026-09-03T16:00:18Z",
@@ -185,20 +416,71 @@
    "por-que-alan-wake-2-nao-e-pra-todo-mundo"
   ]
  },
+ "ILZim-JrF6Q": {
+  "categoria": "noticias",
+  "publicado": "2026-03-30T15:00:00Z",
+  "slug": "digimon-up-chegou-ao-celular-em-15-de-julho"
+ },
+ "Ik3ubX0A20E": {
+  "categoria": "noticias",
+  "publicado": "2026-04-15T15:00:00Z",
+  "slug": "the-playerbase-fas-da-playstation-entram-em-gran-turismo-7"
+ },
+ "J004xk4C2fw": {
+  "categoria": "noticias",
+  "publicado": "2026-07-06T15:00:00Z",
+  "slug": "sony-diz-que-vai-insistir-em-jogos-live-service"
+ },
+ "J96QIprW2qY": {
+  "categoria": "noticias",
+  "publicado": "2026-04-14T15:00:00Z",
+  "slug": "nvidia-ntc-textura-neural-reduz-o-uso-de-vram"
+ },
  "J9wH9Ic8xpk": {
   "categoria": "reviews",
   "publicado": "2025-03-05T15:00:00Z",
   "slug": "streamer-life-simulator-2-vale-a-pena-o-simulador"
  },
+ "JpLRHPA7OKw": {
+  "categoria": "noticias",
+  "publicado": "2026-05-04T15:00:00Z",
+  "slug": "phantom-blade-zero-no-gamescom-latam-demo-e-muito-dificil"
+ },
+ "KBUzgE8J-8k": {
+  "categoria": "noticias",
+  "publicado": "2026-03-28T15:00:00Z",
+  "slug": "sin-reloaded-da-nightdive-tem-data-em-24-de-setembro"
+ },
+ "KPhVelkpP1g": {
+  "categoria": "noticias",
+  "publicado": "2026-04-11T15:00:00Z",
+  "slug": "resident-evil-classicos-chegam-a-steam-com-drm-da-capcom"
+ },
+ "KeH-nk3BEAA": {
+  "categoria": "noticias",
+  "publicado": "2026-04-16T15:00:00Z",
+  "slug": "state-of-decay-3-o-trailer-de-2020-era-so-um-conceito"
+ },
  "KoqDHnF35r4": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-05-28T15:00:00Z",
-  "slug": "resident-evil-4-remake-vs-classico-o-que-mudou"
+  "slug": "resident-evil-4-remake-vs-classico-o-que-mudou",
+  "antigos": [
+   "reviews/resident-evil-4-remake-vs-classico-o-que-mudou"
+  ]
  },
  "L42UHHdsnC8": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-05-14T15:00:00Z",
-  "slug": "resident-evil-3-remake-e-melhor-que-o-original"
+  "slug": "resident-evil-3-remake-e-melhor-que-o-original",
+  "antigos": [
+   "reviews/resident-evil-3-remake-e-melhor-que-o-original"
+  ]
+ },
+ "L5v7o2vjzKw": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-10-07T15:00:00Z",
+  "slug": "gta-6-tera-app-de-carona-e-satira-do-instagram"
  },
  "LK5X_lz-kAw": {
   "categoria": "reviews",
@@ -214,27 +496,91 @@
   ]
  },
  "LxlEqXsAHtM": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-07-02T23:00:21Z",
   "slug": "resident-evil-7-a-volta-do-terror-em-primeira-pessoa",
   "antigos": [
-   "resident-evil-7-vale-a-pena-o-maior-acerto-da-capcom"
+   "reviews/resident-evil-7-a-volta-do-terror-em-primeira-pessoa",
+   "reviews/resident-evil-7-vale-a-pena-o-maior-acerto-da-capcom"
   ]
  },
  "M5CuYjPue_A": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-06-10T15:00:00Z",
-  "slug": "resident-evil-6-a-campanha-de-leon-e-helena-harper"
+  "slug": "resident-evil-6-a-campanha-de-leon-e-helena-harper",
+  "antigos": [
+   "reviews/resident-evil-6-a-campanha-de-leon-e-helena-harper"
+  ]
+ },
+ "MBRE4r5hwJI": {
+  "categoria": "noticias",
+  "publicado": "2026-04-03T15:00:00Z",
+  "slug": "nintendo-tera-jogos-digitais-mais-baratos-no-brasil"
+ },
+ "MKjBAnao-OI": {
+  "categoria": "noticias",
+  "publicado": "2026-03-22T15:00:00Z",
+  "slug": "south-of-midnight-chega-ao-ps5-e-ao-switch-2-em-31-de-marco"
+ },
+ "MWfcD0c02ww": {
+  "categoria": "noticias",
+  "publicado": "2026-05-24T15:00:00Z",
+  "slug": "amazon-cancela-o-mmorpg-de-o-senhor-dos-aneis"
+ },
+ "Mi7kZTXfUnE": {
+  "categoria": "noticias",
+  "publicado": "2026-05-11T15:00:00Z",
+  "slug": "sony-explica-a-verificacao-de-30-dias-dos-jogos-digitais"
+ },
+ "N9Y5HNQ2nfM": {
+  "categoria": "noticias",
+  "publicado": "2026-05-26T15:00:00Z",
+  "slug": "fortnite-volta-a-app-store-do-iphone-no-mundo-todo"
+ },
+ "O8OGWxMPrWI": {
+  "categoria": "noticias",
+  "publicado": "2026-04-17T15:00:00Z",
+  "slug": "samson-estreia-com-notas-baixas-no-metacritic"
+ },
+ "OXvPnIha740": {
+  "categoria": "noticias",
+  "publicado": "2026-07-22T15:00:00Z",
+  "slug": "tft-draven-ivern-e-lux-voltam-no-set-enchanted-wilds"
+ },
+ "Okw6Z4QZ-oM": {
+  "categoria": "noticias",
+  "publicado": "2026-06-04T15:00:00Z",
+  "slug": "fable-e-adiado-para-23-de-fevereiro-de-2027"
  },
  "OsSQ0zS0zac": {
   "categoria": "reviews",
   "publicado": "2025-02-05T15:00:00Z",
   "slug": "helldivers-2-vale-a-pena-jogar-mesmo-sem-campanha"
  },
+ "PMwJCVf4fQM": {
+  "categoria": "noticias",
+  "publicado": "2026-04-21T15:00:00Z",
+  "slug": "phasmophobia-by-alan-wake-o-evento-que-chegou-em-maio"
+ },
+ "Pg34yPwyPpM": {
+  "categoria": "noticias",
+  "publicado": "2026-03-26T15:00:00Z",
+  "slug": "jensen-huang-defende-o-dlss-5-nao-e-um-filtro"
+ },
  "R4RPwgnad-E": {
   "categoria": "reviews",
   "publicado": "2025-12-31T15:00:00Z",
   "slug": "star-wars-outlaws-so-vale-a-pena-para-fa-de-star-wars"
+ },
+ "RG6QdU7o4Xg": {
+  "categoria": "noticias",
+  "publicado": "2026-06-19T15:00:00Z",
+  "slug": "emulador-de-xbox-360-para-android-chega-via-github"
+ },
+ "RYdWvAWrhkI": {
+  "categoria": "noticias",
+  "publicado": "2026-04-02T15:00:00Z",
+  "slug": "game-pass-mais-barato-e-parceria-com-a-netflix-o-rumor"
  },
  "RaF6cnHlAFc": {
   "categoria": "noticias",
@@ -249,23 +595,92 @@
   "publicado": "2026-10-05T12:00:31Z",
   "slug": "jacare-flamingo-e-peixe-boi-os-animais-de-gta-6"
  },
+ "SYCSXWrK1ko": {
+  "categoria": "noticias",
+  "publicado": "2026-05-09T15:00:00Z",
+  "slug": "ragnarok-online-brasil-tem-fim-marcado-para-29-de-julho"
+ },
+ "Set8fTo0DLY": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-09-13T15:00:00Z",
+  "slug": "gta-6-lista-de-atividades-ja-supera-a-de-gta-5"
+ },
+ "SzcwFU-HRoA": {
+  "categoria": "noticias",
+  "publicado": "2026-04-24T15:00:00Z",
+  "slug": "resident-evil-de-cregger-agrada-em-exibicoes-teste"
+ },
+ "TFPNLu9wCGs": {
+  "categoria": "noticias",
+  "publicado": "2026-04-18T15:00:00Z",
+  "slug": "control-resonant-tera-dublagem-e-legendas-em-portugues"
+ },
+ "TGfJiJZEsGo": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-07-02T15:00:00Z",
+  "slug": "gta-6-custa-r-449-90-no-brasil-na-pre-venda"
+ },
+ "UBuZSUqWXGk": {
+  "categoria": "noticias",
+  "publicado": "2026-04-13T15:00:00Z",
+  "slug": "pragmata-tera-dublagem-em-portugues-brasileiro"
+ },
+ "UHS8ioXjG2c": {
+  "categoria": "noticias",
+  "publicado": "2026-05-18T15:00:00Z",
+  "slug": "the-duskbloods-mantem-2026-e-continua-sem-data"
+ },
  "ULddwDBbU8w": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-06-05T15:00:00Z",
-  "slug": "resident-evil-5-a-lore-o-progenitor-e-a-ia-da-sheva"
+  "slug": "resident-evil-5-a-lore-o-progenitor-e-a-ia-da-sheva",
+  "antigos": [
+   "reviews/resident-evil-5-a-lore-o-progenitor-e-a-ia-da-sheva"
+  ]
+ },
+ "USOGcdCaNqE": {
+  "categoria": "noticias",
+  "publicado": "2026-05-27T15:00:00Z",
+  "slug": "darksiders-warmastered-gratis-no-xbox-us-10-no-ps5"
  },
  "UXPaW49sUTY": {
   "categoria": "lancamentos",
   "publicado": "2026-09-26T12:00:24Z",
   "slug": "9-jogos-indie-que-chegam-em-outubro-de-2026"
  },
- "VxQk-NVCbBk": {
+ "UcxGIlCNxRo": {
   "categoria": "noticias",
+  "publicado": "2026-06-07T15:00:00Z",
+  "slug": "god-of-war-laufey-e-revelado-no-state-of-play-de-2-de-junho"
+ },
+ "UdY0qT8kSL8": {
+  "categoria": "noticias",
+  "publicado": "2026-05-17T15:00:00Z",
+  "slug": "assassin-s-creed-hexe-rumor-traz-ezio-como-mentor"
+ },
+ "V6R9uO1dSlI": {
+  "categoria": "noticias",
+  "publicado": "2026-06-21T15:00:00Z",
+  "slug": "senua-ninja-theory-revela-novo-jogo-para-2027"
+ },
+ "VY1vMKlvZwA": {
+  "categoria": "noticias",
+  "publicado": "2026-06-23T15:00:00Z",
+  "slug": "resident-evil-veronica-o-remake-e-a-ligacao-com-requiem"
+ },
+ "VxQk-NVCbBk": {
+  "categoria": "gta6-novidades",
   "publicado": "2026-10-02T12:00:39Z",
   "slug": "gta-6-tera-mais-de-170-animais-mas-e-o-fundo-do-mar",
   "antigos": [
-   "o-que-vai-ter-debaixo-do-mar-em-gta-6"
+   "noticias/gta-6-tera-mais-de-170-animais-mas-e-o-fundo-do-mar",
+   "noticias/o-que-vai-ter-debaixo-do-mar-em-gta-6"
   ]
+ },
+ "W06OcqbAw_8": {
+  "categoria": "noticias",
+  "publicado": "2026-09-18T15:00:00Z",
+  "slug": "sony-desiste-do-physint-de-kojima-e-a-xbox-assume"
  },
  "W2NVgF3xxHQ": {
   "categoria": "reviews",
@@ -278,12 +693,39 @@
   "slug": "storebound-terror-no-shopping-funciona-melhor-com-amigos",
   "antigos": [
    "zeramos-storebound-com-os-amigos-e-a-verdade-doi"
-  ]
+  ],
+  "retirada": "2026-10-12",
+  "para": "5w30a1BZuRw"
+ },
+ "WUbpvjMA4Ik": {
+  "categoria": "noticias",
+  "publicado": "2026-04-27T15:00:00Z",
+  "slug": "roblox-ganha-versao-nativa-para-o-ps5"
  },
  "WYxJNeIvixw": {
   "categoria": "reviews",
   "publicado": "2025-02-19T15:00:00Z",
   "slug": "ai-limit-a-demo-do-soulslike-de-anime-vale-a-pena"
+ },
+ "Wp-vMc-7Vu8": {
+  "categoria": "noticias",
+  "publicado": "2026-06-01T15:00:00Z",
+  "slug": "paralives-chega-ao-acesso-antecipado-e-desafia-o-the-sims"
+ },
+ "Y9boj7W3fmI": {
+  "categoria": "noticias",
+  "publicado": "2026-04-05T15:00:00Z",
+  "slug": "epic-games-demite-mais-de-1-000-funcionarios"
+ },
+ "YeivhUNq4MY": {
+  "categoria": "noticias",
+  "publicado": "2026-09-21T15:00:00Z",
+  "slug": "playstation-blackout-nao-teve-impacto-medido-diz-circana"
+ },
+ "Yp7sLc8Xw6M": {
+  "categoria": "noticias",
+  "publicado": "2026-06-06T15:00:00Z",
+  "slug": "control-resonant-chegou-em-24-de-setembro-com-dylan-faden"
  },
  "YwLPPMND27c": {
   "categoria": "reviews",
@@ -291,9 +733,37 @@
   "slug": "death-stranding-2-on-the-beach-vale-a-pena"
  },
  "Z9KhhT8QtaY": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-04-23T15:00:00Z",
-  "slug": "resident-evil-2-classico-a-historia-completa-de-leon"
+  "slug": "resident-evil-2-classico-a-historia-completa-de-leon",
+  "antigos": [
+   "reviews/resident-evil-2-classico-a-historia-completa-de-leon"
+  ]
+ },
+ "ZwmVBGQxPeU": {
+  "categoria": "noticias",
+  "publicado": "2026-05-13T15:00:00Z",
+  "slug": "subnautica-2-estreia-em-acesso-antecipado-com-co-op"
+ },
+ "_T_RO7hyF8c": {
+  "categoria": "noticias",
+  "publicado": "2026-06-16T15:00:00Z",
+  "slug": "final-fantasy-vii-revelation-e-anunciado-para-2027"
+ },
+ "_VR5s07Qdsg": {
+  "categoria": "noticias",
+  "publicado": "2026-05-02T15:00:00Z",
+  "slug": "playstation-vai-exigir-verificacao-de-idade-no-brasil"
+ },
+ "_uSiyGzIBFE": {
+  "categoria": "noticias",
+  "publicado": "2026-09-14T15:00:00Z",
+  "slug": "dlss-5-nao-oficial-em-mods-o-que-se-sabe-e-os-riscos"
+ },
+ "a5CgtpZg2i0": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-10-09T15:00:00Z",
+  "slug": "gta-6-25-minutos-de-gameplay-vazam-rockstar-nao-comenta"
  },
  "a5aaRHkUOHE": {
   "categoria": "noticias",
@@ -303,31 +773,103 @@
    "a-steam-provou-que-jogo-acessivel-vence-a-pirataria"
   ]
  },
+ "aO35prWLrv8": {
+  "categoria": "noticias",
+  "publicado": "2026-05-25T15:00:00Z",
+  "slug": "inzoi-no-ps5-lancamento-seria-so-no-1-semestre-de-2027"
+ },
+ "aZgE8rlVqXg": {
+  "categoria": "noticias",
+  "publicado": "2026-06-10T15:00:00Z",
+  "slug": "gen-atlas-novo-jogo-do-criador-de-shadow-of-the-colossus"
+ },
+ "aeMLmyKkrKs": {
+  "categoria": "noticias",
+  "publicado": "2026-04-30T15:00:00Z",
+  "slug": "samson-tera-atualizacoes-e-versao-para-consoles"
+ },
+ "bb5RUBDQWH0": {
+  "categoria": "noticias",
+  "publicado": "2026-07-08T15:00:00Z",
+  "slug": "memoria-ram-deve-ficar-mais-cara-por-causa-da-ia"
+ },
+ "bq9hSaIb-QM": {
+  "categoria": "noticias",
+  "publicado": "2026-06-26T15:00:00Z",
+  "slug": "god-of-war-laufey-fas-especulam-volta-de-deuses-mortos"
+ },
  "cgH_Z38FWwA": {
   "categoria": "reviews",
   "publicado": "2026-02-12T15:00:00Z",
   "slug": "clair-obscur-expedition-33-vale-a-pena-jogar"
  },
- "fC69eu4pLe4": {
+ "d83P2AVqKFQ": {
   "categoria": "noticias",
+  "publicado": "2026-04-23T15:00:00Z",
+  "slug": "blizzard-ajuda-nas-cinematicas-de-fable-diz-matt-booty"
+ },
+ "dX3pKEiG5Mw": {
+  "categoria": "noticias",
+  "publicado": "2026-05-07T15:00:00Z",
+  "slug": "resident-evil-requiem-ganha-o-modo-leon-must-die-forever"
+ },
+ "dqMHMZRPkCw": {
+  "categoria": "noticias",
+  "publicado": "2026-04-22T15:00:00Z",
+  "slug": "filme-de-call-of-duty-tem-data-30-de-junho-de-2028"
+ },
+ "eMtTTOhEBUg": {
+  "categoria": "noticias",
+  "publicado": "2026-06-15T15:00:00Z",
+  "slug": "the-wolf-among-us-2-e-para-2027-com-remaster-em-outubro"
+ },
+ "eYlKXoJ8YXw": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-07-05T15:00:00Z",
+  "slug": "gta-6-pre-venda-no-ps5-supera-o-xbox-diz-levantamento"
+ },
+ "fC69eu4pLe4": {
+  "categoria": "gta6-novidades",
   "publicado": "2026-09-27T14:30:22Z",
   "slug": "gta-6-colecionador-custa-cerca-de-r-2-mil-sem-o-jogo",
   "antigos": [
-   "a-rockstar-perdeu-a-nocao-com-esse-preco-do-gta-6"
+   "noticias/gta-6-colecionador-custa-cerca-de-r-2-mil-sem-o-jogo",
+   "noticias/a-rockstar-perdeu-a-nocao-com-esse-preco-do-gta-6"
   ]
  },
+ "fLZvU_e1uco": {
+  "categoria": "noticias",
+  "publicado": "2026-05-15T15:00:00Z",
+  "slug": "call-of-duty-modern-warfare-4-nao-sai-para-ps4"
+ },
  "fdyf_JuMt3Q": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-06-25T22:00:05Z",
   "slug": "resident-evil-6-a-campanha-da-ada-wong-e-carla-radames",
   "antigos": [
-   "resident-evil-6-a-ada-wong-clonada-faz-sentido"
+   "reviews/resident-evil-6-a-campanha-da-ada-wong-e-carla-radames",
+   "reviews/resident-evil-6-a-ada-wong-clonada-faz-sentido"
   ]
  },
  "frbt6iwJIY4": {
   "categoria": "reviews",
   "publicado": "2025-02-12T15:00:00Z",
   "slug": "khazan-vale-a-pena-jogar-a-demo-do-soulslike"
+ },
+ "g9tfR2yKA24": {
+  "categoria": "noticias",
+  "publicado": "2026-06-18T15:00:00Z",
+  "slug": "guild-wars-3-e-anunciado-para-pc-e-ps5-com-beta-em-2027"
+ },
+ "gK3u9VlLG4U": {
+  "categoria": "noticias",
+  "publicado": "2026-04-29T15:00:00Z",
+  "slug": "charlie-cox-jogou-clair-obscur-e-admite-que-nao-e-bom"
+ },
+ "hcl0UIWG-5o": {
+  "categoria": "noticias",
+  "publicado": "2026-09-10T15:00:00Z",
+  "slug": "black-flag-resynced-no-switch-2-o-que-o-vazamento-mostra"
  },
  "hj23XGC6j9w": {
   "categoria": "reviews",
@@ -337,10 +879,20 @@
    "o-bebe-de-amarelo-bom-ou-ruim"
   ]
  },
+ "hona2j5P-eg": {
+  "categoria": "noticias",
+  "publicado": "2026-04-12T15:00:00Z",
+  "slug": "the-last-of-us-online-estava-80-pronto-diz-ex-diretor"
+ },
  "iSu1T8_JJbY": {
   "categoria": "reviews",
   "publicado": "2025-01-01T15:00:00Z",
   "slug": "dead-island-2-15-horas-de-caos-em-coop-valeu"
+ },
+ "iVMCdpi_dE0": {
+  "categoria": "noticias",
+  "publicado": "2026-07-15T15:00:00Z",
+  "slug": "meccha-chameleon-indie-barato-passa-de-15-milhoes"
  },
  "istrvyDj62U": {
   "categoria": "lancamentos",
@@ -350,10 +902,25 @@
    "maio-vai-ser-insano-10-jogos-que-nao-pode-perder"
   ]
  },
+ "iux0_uqLOgk": {
+  "categoria": "noticias",
+  "publicado": "2026-05-04T15:00:00Z",
+  "slug": "game-pass-fica-mais-barato-no-brasil-ultimate-a-r-76-90"
+ },
  "j2npQOqgUNM": {
   "categoria": "reviews",
   "publicado": "2026-01-29T15:00:00Z",
   "slug": "cyberpunk-2077-em-2026-vale-a-pena-jogar-agora"
+ },
+ "jE5ihcstBKs": {
+  "categoria": "noticias",
+  "publicado": "2026-05-06T15:00:00Z",
+  "slug": "assassin-s-creed-black-flag-resynced-data-e-preco-no-brasil"
+ },
+ "jEN9FAI5vK0": {
+  "categoria": "noticias",
+  "publicado": "2026-06-09T15:00:00Z",
+  "slug": "control-resonant-ps-store-brasileira-corrige-o-preco"
  },
  "jfNCLlTbeOY": {
   "categoria": "reviews",
@@ -370,6 +937,16 @@
   "publicado": "2026-10-04T12:00:29Z",
   "slug": "gta-6-roubo-de-carros-ganha-app-de-celular-e-rastreadores"
  },
+ "kQk_CYxD2U0": {
+  "categoria": "noticias",
+  "publicado": "2026-07-14T15:00:00Z",
+  "slug": "onimusha-way-of-the-sword-e-antecipado-para-4-de-setembro"
+ },
+ "kStFmmXUGc0": {
+  "categoria": "noticias",
+  "publicado": "2026-04-26T15:00:00Z",
+  "slug": "bloodborne-vai-virar-animacao-para-maiores-da-sony"
+ },
  "kbJzIpS2NS0": {
   "categoria": "lancamentos",
   "publicado": "2026-08-31T19:15:57Z",
@@ -378,30 +955,116 @@
    "setembro-vai-ser-insano-os-9-melhores-jogos-do-mes"
   ]
  },
+ "kukSF2fjcJQ": {
+  "categoria": "noticias",
+  "publicado": "2026-04-28T15:00:00Z",
+  "slug": "call-of-duty-filme-ganha-teaser-no-cinemacon"
+ },
+ "l13qRc6Q5xQ": {
+  "categoria": "noticias",
+  "publicado": "2026-07-10T15:00:00Z",
+  "slug": "sony-vai-acabar-com-discos-de-jogos-novos-em-janeiro-de-2028"
+ },
+ "l7s-A-btkmw": {
+  "categoria": "noticias",
+  "publicado": "2026-09-11T15:00:00Z",
+  "slug": "rockstar-abre-a-beta-do-nopixel-v-servidor-oficial-de-rp"
+ },
  "ltCD61M9upU": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-05-21T15:00:00Z",
-  "slug": "resident-evil-4-a-historia-e-o-misterio-dos-las-plagas"
+  "slug": "resident-evil-4-a-historia-e-o-misterio-dos-las-plagas",
+  "antigos": [
+   "reviews/resident-evil-4-a-historia-e-o-misterio-dos-las-plagas"
+  ]
+ },
+ "ly5GormEu3M": {
+  "categoria": "noticias",
+  "publicado": "2026-06-29T15:00:00Z",
+  "slug": "od-de-kojima-tera-sistema-para-quem-tem-medo-de-continuar"
  },
  "mG90BLw_93k": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-04-16T15:00:00Z",
-  "slug": "resident-evil-1-remake-a-historia-completa-da-mansao"
+  "slug": "resident-evil-1-remake-a-historia-completa-da-mansao",
+  "antigos": [
+   "reviews/resident-evil-1-remake-a-historia-completa-da-mansao"
+  ]
  },
  "mPqm4qDIfKA": {
   "categoria": "reviews",
   "publicado": "2025-12-24T15:00:00Z",
   "slug": "split-fiction-10-horas-de-co-op-e-nota-9-do-brubao"
  },
+ "mRUPCBuRd04": {
+  "categoria": "noticias",
+  "publicado": "2026-04-07T15:00:00Z",
+  "slug": "playstation-6-pode-passar-de-us-1-000-dizem-rumores"
+ },
+ "mrJqvEaDQM4": {
+  "categoria": "noticias",
+  "publicado": "2026-03-18T15:00:00Z",
+  "slug": "crimson-desert-chegou-em-19-de-marco-e-vendeu-6-milhoes"
+ },
+ "mvmEqAGSNcY": {
+  "categoria": "noticias",
+  "publicado": "2026-03-17T15:00:00Z",
+  "slug": "fortnite-salve-o-mundo-vira-gratuito-em-16-de-abril"
+ },
+ "nNuvQ0G83ro": {
+  "categoria": "noticias",
+  "publicado": "2026-06-03T15:00:00Z",
+  "slug": "ceo-do-xbox-diz-que-o-corte-de-preco-do-game-pass-funcionou"
+ },
  "nerCxj5lqMY": {
   "categoria": "noticias",
   "publicado": "2026-09-22T15:00:00Z",
   "slug": "resident-evil-filme-de-zach-cregger-e-elogiado-pela-critica"
  },
+ "nmw4iMidUUk": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-10-08T15:00:00Z",
+  "slug": "gta-6-do-celular-de-gta-5-aos-apps-waink-e-rydeme"
+ },
  "o1pTYdlPfMs": {
   "categoria": "noticias",
   "publicado": "2026-09-23T15:00:00Z",
   "slug": "wow-forever-blizzard-recria-2004-sem-servidores-separados"
+ },
+ "o4O33F0-o7A": {
+  "categoria": "noticias",
+  "publicado": "2026-05-10T15:00:00Z",
+  "slug": "mindseye-corta-o-preco-e-ganha-a-missao-blacklisted"
+ },
+ "oG1tfPJFX9c": {
+  "categoria": "noticias",
+  "publicado": "2026-05-03T15:00:00Z",
+  "slug": "pragmata-o-efeito-diana-e-as-vendas-de-2-milhoes"
+ },
+ "oi2IZyjDfXE": {
+  "categoria": "noticias",
+  "publicado": "2026-03-19T15:00:00Z",
+  "slug": "riot-passa-a-exigir-verificacao-de-idade-no-brasil"
+ },
+ "pTUvyjlkkFw": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-07-12T15:00:00Z",
+  "slug": "gta-6-casal-assina-contrato-para-jogar-sem-ser-interrompido"
+ },
+ "pW_hLwquscM": {
+  "categoria": "noticias",
+  "publicado": "2026-10-09T15:00:00Z",
+  "slug": "171-o-gta-brasileiro-e-adiado-para-2027"
+ },
+ "pbtfi1NYLak": {
+  "categoria": "reviews",
+  "publicado": "2024-12-02T15:00:00Z",
+  "slug": "black-myth-wukong-vale-a-pena-minha-nota-e-9"
+ },
+ "phK3AB6T6G0": {
+  "categoria": "noticias",
+  "publicado": "2026-06-30T15:00:00Z",
+  "slug": "nicolas-cage-chega-ao-call-of-duty-como-operador-jogavel"
  },
  "pi-SHrsZgdE": {
   "categoria": "lancamentos",
@@ -419,10 +1082,70 @@
    "os-produtores-de-resident-evil-querem-silent-hill"
   ]
  },
+ "qmXh2OZKTbo": {
+  "categoria": "noticias",
+  "publicado": "2026-07-13T15:00:00Z",
+  "slug": "fim-do-disco-o-que-muda-no-preco-e-no-ps6-para-mim"
+ },
+ "rAf0v9un9vs": {
+  "categoria": "noticias",
+  "publicado": "2026-03-25T15:00:00Z",
+  "slug": "dlss-5-causa-caos-e-memes-minha-opiniao"
+ },
+ "rmLYisT0vhY": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-07-04T15:00:00Z",
+  "slug": "god-of-war-laufey-pode-fugir-do-gta-6-e-ir-para-2027"
+ },
+ "sWTudG7wVxU": {
+  "categoria": "noticias",
+  "publicado": "2026-07-17T15:00:00Z",
+  "slug": "dave-the-diver-chega-ao-celular-em-17-de-setembro"
+ },
+ "src4bJoxy6c": {
+  "categoria": "gta6-novidades",
+  "publicado": "2026-09-15T15:00:00Z",
+  "slug": "gta-6-sera-liberado-a-meia-noite-de-19-de-novembro-no-brasil"
+ },
+ "stQ5UXGM8yU": {
+  "categoria": "noticias",
+  "publicado": "2026-09-20T15:00:00Z",
+  "slug": "starcraft-vira-shooter-em-mundo-aberto-e-divide-fas"
+ },
+ "t4xjzDru66Y": {
+  "categoria": "noticias",
+  "publicado": "2026-06-22T15:00:00Z",
+  "slug": "kingdom-hearts-4-ganha-trailer-e-mira-o-fim-de-2027"
+ },
+ "t6-ggpSTvi4": {
+  "categoria": "noticias",
+  "publicado": "2026-07-16T15:00:00Z",
+  "slug": "cyberpunk-2077-chega-a-40-milhoes-de-copias-vendidas"
+ },
  "tnUICEXDNPc": {
   "categoria": "reviews",
   "publicado": "2026-03-12T15:00:00Z",
   "slug": "alan-wake-remastered-ainda-vale-jogar-em-2026"
+ },
+ "v4qTUh7OvXM": {
+  "categoria": "noticias",
+  "publicado": "2026-09-11T15:00:00Z",
+  "slug": "final-fantasy-vii-revelation-permite-pilotar-a-highwind"
+ },
+ "vANlTtdsn_4": {
+  "categoria": "noticias",
+  "publicado": "2026-09-09T15:00:00Z",
+  "slug": "game-pass-perdeu-cyberpunk-2077-e-mais-nove-jogos"
+ },
+ "vEMyPF5as9U": {
+  "categoria": "noticias",
+  "publicado": "2026-07-18T15:00:00Z",
+  "slug": "guns-of-eschaton-o-ultimo-jogo-de-viktor-antonov"
+ },
+ "vJwFNHdTyCk": {
+  "categoria": "noticias",
+  "publicado": "2026-05-05T15:00:00Z",
+  "slug": "toei-games-divisao-de-jogos-da-dona-de-dragon-ball"
  },
  "w6ad-QXB27Y": {
   "categoria": "reviews",
@@ -430,11 +1153,12 @@
   "slug": "stellar-blade-acao-de-ps5-que-merece-nota-8-do-brubao"
  },
  "wJEbXgBpNlk": {
-  "categoria": "noticias",
+  "categoria": "gta6-novidades",
   "publicado": "2026-10-01T14:30:38Z",
   "slug": "gta-6-tera-pets-o-que-se-sabe-sobre-os-170-animais-do-jogo",
   "antigos": [
-   "vai-dar-pra-ter-pet-em-gta-6"
+   "noticias/gta-6-tera-pets-o-que-se-sabe-sobre-os-170-animais-do-jogo",
+   "noticias/vai-dar-pra-ter-pet-em-gta-6"
   ]
  },
  "wM5Xf8sydks": {
@@ -445,12 +1169,18 @@
    "voltei-pro-black-flag-depois-de-13-anos-resynced-vale-a-pena"
   ]
  },
+ "we1T2TlxPK8": {
+  "categoria": "noticias",
+  "publicado": "2026-07-07T15:00:00Z",
+  "slug": "cyberpunk-edgerunners-2-estreia-em-20-de-outubro"
+ },
  "wzuyfZcf-9U": {
-  "categoria": "reviews",
+  "categoria": "series",
   "publicado": "2026-07-09T20:00:10Z",
   "slug": "resident-evil-village-ethan-e-a-opiniao-do-brubao",
   "antigos": [
-   "resident-evil-village-re8-tudo-que-voce-precisa-saber"
+   "reviews/resident-evil-village-ethan-e-a-opiniao-do-brubao",
+   "reviews/resident-evil-village-re8-tudo-que-voce-precisa-saber"
   ]
  },
  "xI4qEFLfiPA": {
@@ -461,10 +1191,25 @@
    "voce-zerou-gta-5-a-maioria-nao"
   ]
  },
+ "y-XP9EtbdM4": {
+  "categoria": "reviews",
+  "publicado": "2024-12-04T15:00:00Z",
+  "slug": "mafia-definitive-edition-vale-a-pena-minha-nota-e-5"
+ },
  "yXOlfQDgKRY": {
   "categoria": "reviews",
   "publicado": "2026-03-26T15:00:00Z",
   "slug": "a-i-l-a-vale-a-pena-o-terror-brasileiro-com-ia"
+ },
+ "z2ThsgxUWzc": {
+  "categoria": "noticias",
+  "publicado": "2026-04-06T15:00:00Z",
+  "slug": "ps5-fica-mais-caro-no-brasil-a-partir-de-2-de-abril"
+ },
+ "zH52WJYVO30": {
+  "categoria": "noticias",
+  "publicado": "2026-09-19T15:00:00Z",
+  "slug": "diablo-5-e-anunciado-para-a-primavera-de-2029"
  },
  "zL2mablKurQ": {
   "categoria": "lancamentos",

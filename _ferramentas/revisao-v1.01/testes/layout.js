@@ -144,10 +144,17 @@ function resumir(achados) {
 }
 
 /** texto ou link REAL (nao enfeite aria-hidden) que passa da lateral da tela: se um ancestral corta (overflow), o visitante perde o conteudo sem nem ter rolagem */
+// o elemento esta dentro de uma area que rola para o lado de proposito (ex.: a linha de secoes da home no celular)?
+function emRolagemLateral(el, win) {
+  for (let p = el.parentElement; p && p !== win.document.body; p = p.parentElement) {
+    if (/(auto|scroll)/.test(win.getComputedStyle(p).overflowX) && p.scrollWidth > p.clientWidth + 1) return true;
+  }
+  return false;
+}
 function conteudoCortado(win, w) {
   const d = win.document, achados = [];
   for (const el of d.querySelectorAll('body a, body p, body h1, body h2, body h3, body li, body b, body span, body small, body button, body label, body time')) {
-    if (el.closest('svg, [aria-hidden="true"], .sr-only') || win.getComputedStyle(el).position === 'fixed') continue;
+    if (el.closest('svg, [aria-hidden="true"], .sr-only') || win.getComputedStyle(el).position === 'fixed' || !visivel(el, win) || emRolagemLateral(el, win)) continue; // invisivel (ex.: gaveta do menu fechada, fora da tela) nao esta "cortada"
     const temTexto = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
     if (!temTexto && el.tagName !== 'A') continue;
     const r = el.getBoundingClientRect();

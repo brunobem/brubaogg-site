@@ -1,6 +1,6 @@
 // Sitemap, robots, paginas protegidas e coerencia entre o que e indexavel e o que o sitemap diz.
 import { posix } from 'node:path';
-import { achado, arquivosPublicados, DOMINIO, existe, existeExato, ler, limparHtml, paginasHtml } from './lib.mjs';
+import { achado, arquivosPublicados, conteudosDaWiki, DOMINIO, existe, existeExato, ler, limparHtml, paginasHtml } from './lib.mjs';
 
 const T = 'seo';
 
@@ -72,7 +72,9 @@ export default async function () {
   // ---- paginas indexaveis: dados estruturados, previa de compartilhamento, imagem grande ----
   const paginas = paginasHtml().map((rel) => ({ rel, bruto: ler(rel) })).filter(({ bruto }) => !/http-equiv=["']refresh["']/i.test(bruto));
   const indexaveis = paginas.filter(({ bruto }) => !/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(limparHtml(bruto)));
-  const ehMateria = (rel) => /^(noticias|reviews|lancamentos|gta6-novidades)\//.test(rel);
+  const ehMateria = (rel) => /^(noticias|reviews|lancamentos|gta6-novidades|series)\//.test(rel);
+  const registro = existe('_conteudo/enderecos.json') ? JSON.parse(ler('_conteudo/enderecos.json')) : {};
+  const soTexto = new Set(conteudosDaWiki().filter((w) => w.dados && w.dados.video == null && registro[w.id]).map((w) => `${registro[w.id].categoria}/${registro[w.id].slug}.html`)); // paginas da Wiki que nao tem video
   for (const { rel, bruto } of indexaveis) {
     if (!/<meta name="robots" content="max-image-preview:large">/.test(bruto)) a.push(achado('baixo', T, 'falta max-image-preview:large (o Google nao pode mostrar a imagem grande)', rel));
     if (!ehMateria(rel)) continue;
@@ -92,7 +94,10 @@ export default async function () {
       if (Number.isNaN(Date.parse(art.datePublished))) a.push(achado('alto', T, `Article.datePublished invalido: ${art.datePublished}`, rel));
       if (!(art.image ?? []).every((u) => /^https:\/\//.test(u))) a.push(achado('alto', T, 'Article.image precisa ser URL https', rel));
     }
-    if (!vid) a.push(achado('alto', T, 'sem VideoObject nos dados estruturados', rel)); else {
+    const player = /youtube-nocookie\.com\/embed\/[\w-]{11}/.test(bruto);
+    if (soTexto.has(rel)) { // conteudo da Wiki sem video: nao pode ter player nem VideoObject (o Google reclamaria de um video que nao existe)
+      if (vid || player) a.push(achado('alto', T, 'conteudo da Wiki sem video, mas a pagina tem player ou VideoObject', rel));
+    } else if (!vid) a.push(achado('alto', T, 'sem VideoObject nos dados estruturados', rel)); else {
       falta(vid, ['name', 'description', 'thumbnailUrl', 'uploadDate', 'embedUrl', 'contentUrl'], 'VideoObject');
       const idDoPlayer = (bruto.match(/youtube-nocookie\.com\/embed\/([\w-]{11})/) ?? [])[1];
       if (idDoPlayer && !String(vid.embedUrl).endsWith(idDoPlayer)) a.push(achado('alto', T, 'VideoObject.embedUrl aponta para outro video que o player da pagina', rel));

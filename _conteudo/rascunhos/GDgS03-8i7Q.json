@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-10",
+  "titulo": "TFT Set 17, Space Gods, acaba com o carrossel",
+  "resumo": "O Set 17 de Teamfight Tactics, Space Gods, entrou no ar em 15 de abril de 2026 e troca o carrossel pelo Reino dos Deuses.",
+  "tags": [
+    "Teamfight Tactics"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Inven Global",
+      "url": "https://www.invenglobal.com/articles/20370/teamfight-tactics-reveals-set-17-space-gods"
+    },
+    {
+      "nome": "Mobalytics",
+      "url": "https://mobalytics.gg/tft/guides/set-17-reveal-space-gods"
+    },
+    {
+      "nome": "Insider Gaming",
+      "url": "https://insider-gaming.com/tft-space-gods-set-17/"
+    },
+    {
+      "nome": "Esports.gg",
+      "url": "https://esports.gg/news/teamfight-tactics/tft-set-17-space-gods-now-live-tft-set-17-1-patch-notes-and-details/"
+    }
+  ],
+  "corpo": [
+    "O Set 17 de Teamfight Tactics, Space Gods, entrou no ar em 15 de abril de 2026 e acaba com o carrossel clássico. No lugar, entra o Reino dos Deuses (Realm of the Gods): em cada partida, dois deuses são sorteados, e, no meio dos estágios, o jogador volta ao reino para escolher uma oferenda de cada um, em vez de escolher campeões e itens em uma roda compartilhada.",
+    "Os deuses são Soraka (das Estrelas), Yasuo (do Abismo), Ahri (da Opulência), Thresh (dos Pactos), Kayle (da Ordem), Varus (do Amor), Evelynn (da Tentação), Ekko (do Tempo) e Aurelion Sol (das Maravilhas). Voltam campeões queridos pelos fãs, como Master Yi, Pyke e Maokai, e Fiora, Shen, Vex, Graves e Blitzcrank estreiam como campeões de custo cinco pela primeira vez. Um aumento de herói dá acesso a Zed, um campeão de custo cinco que se clona infinitamente.",
+    "Destaco o retorno de vários personagens que o TFT não via havia muito tempo e a mudança mecânica: sem o carrossel, o jogador passa a escolher oferendas de dois deuses sorteados, que dão benefícios durante a partida. Pelo que entendi, nos estágios 2, 3 e 4 a dinâmica funciona de forma diferente, e os jogadores escolhem a oferenda divina já no estágio 4-7."
+  ]
+}

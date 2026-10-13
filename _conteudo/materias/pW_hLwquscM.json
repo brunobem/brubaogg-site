@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-09",
+  "titulo": "171, o GTA brasileiro, é adiado para 2027",
+  "resumo": "A Betagames adiou o 171 para 2027 e confirmou a morte do cofundador Diogo Moraes. Lembro a longa trajetória do jogo.",
+  "tags": [
+    "171"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Arkade",
+      "url": "https://arkade.com.br/171-o-gta-brasileiro-e-adiado-para-2027-estudio-confirma-a-morte-do-fundador-diogo-moraes/"
+    },
+    {
+      "nome": "TechTudo",
+      "url": "https://www.techtudo.com.br/noticias/2026/10/171-gta-brasileiro-anuncia-morte-de-seu-criador-e-adiamento-para-2027-edjogos.ghtml"
+    },
+    {
+      "nome": "Critical Hits",
+      "url": "https://criticalhits.com.br/games/171-e-adiado-para-2027-e-ganha-novas-imagens/"
+    },
+    {
+      "nome": "Savestate",
+      "url": "https://savestate.com.br/morre-diogo-moraes-betagames-171/"
+    }
+  ],
+  "corpo": [
+    "A Betagames Group adiou o lançamento da versão completa de 171, o chamado GTA brasileiro, de 2026 para 2027, em comunicado divulgado entre 30 de setembro e 1º de outubro de 2026, conforme o veículo. Segundo a empresa, seria possível lançar em 2026, mas só retirando missões e entregando um modo história incompleto. A proximidade do lançamento de GTA 6 também pesou. O jogo segue em acesso antecipado na Steam e na Nuuvem, por R$ 59,99, sem data de lançamento definida.",
+    "No mesmo comunicado, a Betagames confirmou a morte de Diogo Moraes, um dos fundadores do estúdio, que atuava como designer e programador e participou do projeto desde o início. A causa não foi divulgada. A empresa classificou a perda como um dos momentos mais difíceis de sua história e disse que a equipe segue se dedicando a honrar a visão dele para o jogo; a morte, segundo ela, não foi o único motivo do adiamento.",
+    "Lembro que o 171 tem uma das histórias de desenvolvimento mais longas do cenário nacional: Patreon em 2015, campanhas no Catarse em 2019 e 2020 e um alfa em acesso antecipado na Steam em 2022, com vários adiamentos e muitas críticas. Para mim, a equipe foi se profissionalizando a cada comunicação, e o problema foram as promessas de data. Agora, é hora de deixar as críticas de lado e dar força à equipe e à família de Diogo."
+  ]
+}

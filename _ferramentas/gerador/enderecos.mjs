@@ -3,7 +3,8 @@
 // do YouTube (que so traz os 15 videos mais recentes) e do titulo do video (que pode mudar nos testes A/B).
 //   - nasce na aprovacao (npm run aprovar) ou, se faltar, na primeira geracao; o endereco vem do TITULO DA MATERIA e depois fica FIXO
 //   - fica fora do JSON da materia de proposito: se a outra sessao regravar o texto, o endereco ja publicado nao se perde
-//   - "antigos": enderecos que a materia ja teve; viram paginas de redirecionamento (o GitHub Pages nao redireciona sozinho)
+//   - "antigos": enderecos que a materia ja teve; viram paginas de redirecionamento (o GitHub Pages nao redireciona sozinho). Cada um e um slug da categoria atual ou,
+//     quando a materia mudou de categoria (npm run mover), um caminho completo "categoria-antiga/slug" (veja caminhoAntigo)
 //   - "retirada": data em que a materia foi tirada do ar de proposito (npm run retirar); o endereco passa a levar para a lista
 // { "<ID do video>": { "categoria": "noticias", "publicado": "2026-09-25T20:02:19Z", "slug": "...", "antigos": ["..."], "retirada": "2026-10-07" } }
 import fs from 'node:fs';
@@ -62,8 +63,11 @@ export function indiceDoDisco(site) {
   return mapa;
 }
 
+/** Caminho (sem .html) de um endereco antigo da materia: slug da categoria atual ou "categoria-antiga/slug" (materia que mudou de categoria). */
+export const caminhoAntigo = (e, velho) => (velho.includes('/') ? velho : `${e.categoria}/${velho}`);
+
 const ocupado = (registro, id, categoria, slug) =>
-  Object.entries(registro).some(([k, e]) => k !== id && e.categoria === categoria && (e.slug === slug || (e.antigos ?? []).includes(slug)));
+  Object.entries(registro).some(([k, e]) => k !== id && ((e.categoria === categoria && e.slug === slug) || [e.slug, ...(e.antigos ?? [])].some((s) => caminhoAntigo(e, s) === `${categoria}/${slug}`)));
 
 /** Cria o endereco de uma materia. `doDisco` (opcional) = indiceDoDisco: se a pagina ja esta no ar, mantem o endereco dela. */
 export function novoEndereco({ id, m, rel, registro, feed, doDisco = null }) {
@@ -102,5 +106,22 @@ export function mudarEndereco(registro, id, titulo) {
   if (slug === e.slug) return false;
   e.antigos = [...new Set([...(e.antigos ?? []), e.slug])].filter((s) => s !== slug);
   e.slug = slug;
+  return true;
+}
+
+/**
+ * Muda a CATEGORIA de uma materia ja registrada (ex.: de reviews para series). O endereco velho (e os que ele ja tinha) continua funcionando: vira pagina de
+ * redirecionamento para o novo. O slug se mantem, salvo se ja estiver ocupado na categoria nova. Devolve true se mudou.
+ */
+export function mudarCategoria(registro, id, categoria) {
+  const e = registro[id];
+  if (e.categoria === categoria) return false;
+  const velhos = [e.slug, ...(e.antigos ?? [])].map((s) => caminhoAntigo(e, s));
+  const base = e.slug;
+  let slug = base;
+  for (let n = 4; ocupado(registro, id, categoria, slug); n++) slug = `${base}-${id.slice(0, n).toLowerCase()}`;
+  e.categoria = categoria;
+  e.slug = slug;
+  e.antigos = [...new Set(velhos)].filter((p) => p !== `${categoria}/${slug}`);
   return true;
 }

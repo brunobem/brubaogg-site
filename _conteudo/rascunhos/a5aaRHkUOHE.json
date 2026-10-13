@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-09-30",
+  "titulo": "Pirataria: usuários pedem para comprar Control Resonant",
+  "resumo": "Usuários de um subreddit de pirataria pediram que o Control Resonant fosse comprado. Lembro a tese de Gabe Newell: pirataria é problema de serviço.",
+  "tags": [
+    "Control Resonant"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "MP1st",
+      "url": "https://mp1st.com/?p=315344"
+    },
+    {
+      "nome": "Dot Esports",
+      "url": "https://dotesports.com/general/news/control-resonant-pirates-buy-game-support-remedy"
+    },
+    {
+      "nome": "AV Club",
+      "url": "https://www.avclub.com/online-pirates-advocate-buying-control-resonant-remedy"
+    },
+    {
+      "nome": "MCV",
+      "url": "https://mcvuk.com/?p=103208"
+    }
+  ],
+  "corpo": [
+    "O Control Resonant vazou um dia antes do lançamento oficial, em 24 de setembro de 2026, mas a reação no subreddit r/PiratedGames foi incomum: vários usuários disseram que comprariam o jogo mesmo assim, para apoiar a Remedy. O comentário mais votado dizia que o estúdio depende desse lançamento, e usuários notaram que o jogo é publicado pela própria Remedy, que também é dona dos direitos da franquia. O MP1st ressalva que isso não significa que ninguém esteja pirateando o jogo.",
+    "Lembro uma frase de Gabe Newell, da Valve, de 2011: a pirataria é quase sempre um problema de serviço, e não de preço. Newell descreveu um pirata que oferece o produto no mundo todo, a qualquer hora, contra um fornecedor legal com bloqueio de região e atrasos. Concordo: na Steam, compra-se com dois cliques, o jogo atualiza sozinho e há preço em reais e promoções o tempo todo.",
+    "A pirataria, digo, dá trabalho, é arriscada e o jogo ainda pode vir quebrado. Para mim, o preço é muito importante, mas atrelado ao serviço, e quando os dois são bons quase ninguém pirateia; afirmo que a Steam já provou que, com preço baixo, a pirataria some. Segundo as reportagens, o Control Resonant também se saiu melhor que o antecessor na Steam no lançamento."
+  ]
+}

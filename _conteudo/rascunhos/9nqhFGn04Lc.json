@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-03-27",
+  "titulo": "ARC Raiders troca vozes de IA por atores de verdade",
+  "resumo": "A Embark confirmou em março de 2026 que troca falas de IA do ARC Raiders por atores. Aprovo o uso ponderado da IA.",
+  "tags": [
+    "ARC Raiders"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Push Square",
+      "url": "https://www.pushsquare.com/news/2026/03/arc-raiders-replacing-some-of-its-controversial-ai-voices-with-better-human-ones"
+    },
+    {
+      "nome": "GosuGamers",
+      "url": "https://www.gosugamers.net/entertainment/news/78134-arc-raiders-ai-voicelines-are-being-replaced-with-human-voice-actors"
+    },
+    {
+      "nome": "Prima Games",
+      "url": "https://primagames.com/news/arc-raiders-is-finally-replacing-its-awful-ai-voices-with-real-actors"
+    },
+    {
+      "nome": "KitGuru",
+      "url": "https://www.kitguru.net/page/27/!https:/www.kitguru.net/gaming/mustafa-mahmoud/some-of-arc-raiders-ai-voices-have-been-replaced-by-real-professional-actors/"
+    }
+  ],
+  "assunto": "dlss-5",
+  "corpo": [
+    "Em março de 2026, o CEO da Embark Studios, Patrick Söderlund, confirmou à GamesIndustry.biz que o estúdio estava trocando parte das falas de ARC Raiders geradas por IA por gravações de atores. Ele disse que algumas falas foram regravadas depois do lançamento e que o estúdio concluiu que as performances humanas eram simplesmente melhores. Segundo o Push Square, há menos falas de IA no jogo hoje do que no lançamento.",
+    "A Embark descreve a IA como ferramenta de desenvolvimento: ela gera rapidamente variações de falas para testar durante a produção, antes de serem trocadas por gravações de atores. O estúdio diz pagar atores pela aprovação do uso da voz em síntese de voz para falas menos essenciais, principalmente os sons do sistema de ping. Mais tarde, a Embark disse que a personagem Celeste está sendo refeita em torno da atriz Diana Gardner, na atualização de 8 de outubro.",
+    "Contraponho o caso à polêmica do DLSS 5: para mim, a Embark usa a IA de maneira certa, só no começo do desenvolvimento, para baratear o jogo, e depois, quando o projeto engrenou, traz atores reais e usa a IA de forma ponderada. Na minha opinião, esse é o caminho que as empresas devem seguir."
+  ]
+}

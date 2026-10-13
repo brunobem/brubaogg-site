@@ -14,6 +14,9 @@ Este arquivo guarda só o que o site e as ferramentas precisam, e que pode ser p
 - **Sempre** `"status": "rascunho"`. Quem revisa e aprova é o Bruno (`npm run aprovar -- ID`). Rascunho nunca vai ao ar.
 - Os endereços `index.html` e `gta6.html` são protegidos (ver README).
 
+## Conteúdo da Wiki (pasta separada, não é matéria)
+História, personagem, guia e curiosidade de um jogo **não** são matérias: moram em `_conteudo/wiki/<nome>.json`, podem ser **só texto (sem vídeo)** e têm campos próprios (`jogo`, `tipo`, `publicado`, `video` opcional). As mesmas regras valem: sempre `"status": "rascunho"` e quem aprova é o Bruno (na Wiki, aprovar é apagar a linha `status`). Crie com `npm run wiki -- <nome> --jogo <slug do jogo>` e siga o [`_conteudo/wiki/LEIA-ME.md`](wiki/LEIA-ME.md). **Review não é Wiki:** continua em `_conteudo/materias`.
+
 ## Comandos úteis
 - `npm run pendentes`: lista os rascunhos (inclusive de vídeos antigos) com tamanho e pendências, e os vídeos recentes sem texto. `npm run pendentes -- --rascunhos`: só a lista de rascunhos.
 - `npm run nova -- ID`: cria o modelo já como rascunho.
@@ -40,7 +43,7 @@ Este arquivo guarda só o que o site e as ferramentas precisam, e que pode ser p
 ## Regras que valem sempre
 - Não inventar fatos, datas, preços ou nomes; dúvida não resolvida: omitir ou marcar `[CONFERIR: ...]`.
 - Opinião do Brubão é atribuída a ele, nunca apresentada como fato.
-- A assinatura "Claudio IA" aparece sozinha na página; não escrever como se fosse o Brubão.
+- A assinatura que aparece na página é **"Por Bruno Bem"**, no fim, perto das fontes, com a data e o aviso "Texto com apoio de IA" (link para a página Sobre); no alto fica só a categoria e o **tempo de leitura** (palavras do resumo e do texto ÷ 200 por minuto, arredondado para cima, mínimo 1 minuto), que o site calcula sozinho. A opinião continua atribuída ao Brubão no texto (terceira pessoa), nunca como fato.
 
 ## Tags (como escolher)
 - Use o **nome oficial do jogo**, sempre com a **mesma grafia** em todas as matérias (ex.: `God of War Laufey`, não `GoW Laufey`).
@@ -60,6 +63,39 @@ Este arquivo guarda só o que o site e as ferramentas precisam, e que pode ser p
 
 ## Parágrafos
 - No celular, parágrafo com mais de ~90 palavras vira bloco difícil de ler. Divida os longos (principalmente nas listas de lançamentos: um parágrafo por jogo).
+
+## Ficha de veredito e fontes (opcionais)
+Dois campos que o site já sabe mostrar. Ficam no mesmo arquivo da matéria; se o campo não existe, a parte simplesmente não aparece.
+```json
+"veredito": {
+  "nota": 7.5,
+  "recomendacao": "espere-promocao",
+  "plataforma": "PS5",
+  "preco": "R$ 300",
+  "horas": "10 a 11 horas",
+  "paraQuem": "Quem gosta de plataforma e fan service."
+},
+"fontes": [
+  { "nome": "Nome do site", "url": "https://exemplo.com/materia" }
+]
+```
+- **`veredito`** (só em review): aparece no **fecho da página, ao lado das fontes** (depois do texto e antes da assinatura), como a caixa "Veredito do Brubão". `nota` é **obrigatória** e vai de 0 a 10 em passos de 0,5, **número, sem aspas e com ponto** (`7.5`; a página mostra "7,5/10"). `recomendacao` é uma destas: `compre`, `espere-promocao`, `so-com-amigos`, `pule`. `plataforma`, `preco`, `horas` e `paraQuem` são textos curtos; **só aparece o que estiver preenchido**. Com `nota`, a página também ganha os dados de "Review" para o Google. A nota **não** entra nos cartões, só dentro da matéria.
+- **`fontes`** (qualquer matéria): lista no fim do texto, com link que abre em nova aba. `nome` é o nome do site; `url` precisa começar com `https://`. Mais de 8 fontes gera um aviso (lê melhor com até 8). Entram também nos dados estruturados do Google (`citation`).
+- Os dois blocos ficam fora da busca do site (só o texto da matéria aparece nos resultados).
+- Nota com valor fora de 0 a 10 ou de 0,5 em 0,5, recomendação que não existe e `url` sem `https://` são **recusados** pelo gerador, com a mensagem dizendo qual campo está errado.
+- Todo vídeo ganha o botão **"Comentar no vídeo"**, que abre os comentários dele no YouTube; não precisa de campo.
+
+## Shorts anexados e assunto (opcionais)
+```json
+"shorts": [
+  { "id": "CT68uW4KT9I", "titulo": "INSIDE: jogo curto, final impactante e arte premiada" }
+],
+"assunto": "god-of-war-laufey"
+```
+- **`shorts`** (só em review): Shorts que acompanham o vídeo principal, **sem matéria própria**. A página mostra "Shorts desta review" com um player vertical pequeno por Short (a miniatura com play; o vídeo só carrega no clique) e a legenda. `id` é o **ID do Short** (os 11 caracteres do endereço, não o link inteiro); `titulo` é a legenda. Até 4 (mais que isso só gera aviso); sem repetir e sem ser o próprio vídeo da matéria. Se o Short já é uma notícia publicada, para transformá-lo em anexo: ponha o Short em `shorts` da review e **retire** a notícia apontando para a review, `npm run retirar -- ID_DA_NOTICIA --para ID_DA_REVIEW`. O endereço antigo da notícia passa a levar para a review (não dá 404) e o texto da notícia fica guardado em `_conteudo/retiradas/` (não é apagado). Foi o que se fez com INSIDE e Storebound.
+- **`assunto`**: o **mesmo texto** (minúsculas, sem acento, com hífens: `gta6-preco-e-pre-venda`) nas matérias de **vídeos diferentes sobre o mesmo fato**. Espaço, maiúscula, acento, sublinhado ou hífen no fim são recusados. Com **2 ou mais** matérias no mesmo assunto, o site junta tudo numa **página só**, com **um bloco por vídeo** (data, título, player, texto e fontes de cada um), do mais novo para o mais velho, mais uma lista "Neste assunto" no alto e "Atualizado em" com a data do vídeo mais novo. Cada vídeo **continua com o próprio arquivo** (o texto de cada matéria é escrito normalmente, como ângulo do vídeo) e o endereço antigo de cada um leva para o bloco dele. Uma matéria **sozinha** no assunto continua uma página normal; se isso for erro de digitação, o `npm run testar` avisa ("o assunto ... só tem 1 matéria"). Escreva o assunto **igual** em todas.
+- **`_conteudo/assuntos.json`**: o título e o resumo da página de cada assunto (a página não tem texto próprio de nenhum vídeo no alto). Exemplo: `{ "god-of-war-laufey": { "titulo": "God of War Laufey: revelação, pré-venda e Faye", "resumo": "Do State of Play de 2 de junho à pré-venda no Brasil..." } }`. Título até 60 caracteres (o jogo no começo) e resumo até 160. **Todo assunto com 2 ou mais matérias precisa de uma entrada**: sem ela o `gerar` para e diz qual falta. O campo `categoria` é opcional (sem ele vale a pasta da matéria mais antiga do assunto). O endereço da página é `<pasta>/<chave>.html`: **não renomeie a chave depois de publicada**. Os 17 títulos e resumos que existem hoje são uma **proposta** feita só com fatos que já estão nas matérias: o Bruno revisa.
+- Matéria que faz parte de um assunto **não pode ter `veredito` nem `shorts`** (a página do assunto mostra só texto, player e fontes de cada vídeo).
 
 ## Vídeos antigos (legado)
 O feed do YouTube só traz os **15 vídeos mais recentes** de cada playlist. Para uma matéria de um vídeo **mais antigo**, o próprio arquivo precisa dizer onde ela entra (depois de aprovada, o site guarda isso no registro de endereços e a matéria não depende mais do feed):

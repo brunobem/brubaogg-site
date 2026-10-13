@@ -72,7 +72,7 @@ export default async function () {
       else if (c.muda) fs.writeFileSync(f, JSON.stringify(c.muda(original), null, 2));
       if (c.outro) c.outro(tmp, original);
       if (c.arquivo) { const p = path.join(tmp, c.arquivo[0]); fs.writeFileSync(p, c.arquivo[1](fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : '{}')); }
-      if (c.apagarTudo) for (const x of fs.readdirSync(path.join(tmp, '_conteudo/materias'))) fs.rmSync(path.join(tmp, '_conteudo/materias', x));
+      if (c.apagarTudo) for (const pasta of ['_conteudo/materias', '_conteudo/wiki']) if (fs.existsSync(path.join(tmp, pasta))) for (const x of fs.readdirSync(path.join(tmp, pasta))) fs.rmSync(path.join(tmp, pasta, x)); // nenhuma materia, nem da Wiki
       let env = {};
       if (c.offline) {
         fs.writeFileSync(path.join(tmp, 'sem-rede.mjs'), "globalThis.fetch = () => Promise.reject(Object.assign(new Error('fetch failed'), { cause: { code: 'ENOTFOUND' } }));\n");
@@ -114,7 +114,9 @@ export default async function () {
         case 'ok-vazio':
           if (r.status !== 0) a.push(achado('alto', T, `${nome} com 0 materias o gerador falhou: ${r.saida.split('\n').find((l) => /Error/.test(l))?.slice(0, 140)}`));
           else {
-            const sobras = CATS.filter((cat) => fs.existsSync(path.join(tmp, cat)));
+            // pagina de redirecionamento (materia retirada ou endereco antigo) continua existindo de proposito: so conta pagina de materia de verdade
+            const paginaDeVerdade = (cat) => fs.existsSync(path.join(tmp, cat)) && fs.readdirSync(path.join(tmp, cat)).some((f) => f.endsWith('.html') && !/http-equiv="refresh"/.test(fs.readFileSync(path.join(tmp, cat, f), 'utf8')));
+            const sobras = CATS.filter(paginaDeVerdade);
             if (sobras.length) a.push(achado('medio', T, `${nome} sobraram pastas de materia: ${sobras.join(', ')}`));
             if (fs.existsSync(path.join(tmp, 'noticias.html'))) a.push(achado('medio', T, `${nome} sobrou noticias.html sem materias`));
           }

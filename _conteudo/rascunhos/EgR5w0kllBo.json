@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-09-24",
+  "titulo": "CS2: como conseguir a galinha de estimação de graça",
+  "resumo": "A Valve adicionou galinhas de estimação ao CS2 em 22 de setembro de 2026. Explico como chocar o ovo e criar a ave de graça.",
+  "tags": [
+    "Counter-Strike 2"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Dexerto",
+      "url": "https://www.dexerto.com/counter-strike-2/cs2-adds-pet-chickens-that-players-can-hatch-raise-and-collect-3411551/"
+    },
+    {
+      "nome": "80.lv",
+      "url": "https://80.lv/articles/you-can-now-hatch-raise-pet-chickens-in-counter-strike-2"
+    },
+    {
+      "nome": "Final Boss",
+      "url": "https://finalboss.io/counter-strike-2-how-to-get-hatch-and-feed-a-chicken-pet"
+    },
+    {
+      "nome": "TalkEsport",
+      "url": "https://www.talkesport.com/news/how-to-get-pet-chicken-cs2/"
+    }
+  ],
+  "corpo": [
+    "A Valve adicionou galinhas de estimação ao Counter-Strike 2 na atualização de 22 de setembro de 2026, sem citar o sistema nas notas do patch. O ovo vem nos drops semanais: segundo guias, só contas Prime recebem o drop, que aparece depois da primeira subida de nível de XP da semana, e escolher o ovo ocupa as duas recompensas do pacote. Surpreso de estar fazendo uma notícia sobre isso, resumo o passo a passo.",
+    "Primeiro, jogar partidas normais até liberar o drop semanal e escolher o ovo, se ele aparecer. Segundo, deixar o ovo no inventário: depois de cerca de sete dias, ele choca e vira um pintinho. Terceiro, dar um nome ao pintinho, que pode ir à cabine de fotos e ficar no ombro do personagem na tela de equipamentos. Quarto, alimentá-lo com ração e fazer carinho, o que o faz crescer e virar uma galinha adulta, que aparece com o jogador nos lobbies.",
+    "Aviso que, quando a galinha cresce totalmente, ela vai embora e fica só a foto no perfil. Os guias consultados dizem que a ração vem dos mesmos drops semanais, que a ave também vai embora para sempre se a ração acabar e que cada conta só pode ter um bicho de estimação por vez, sem troca. O jogo tem cerca de 35 variações de galinha, e o álbum Hatchbook guarda as fotos."
+  ]
+}

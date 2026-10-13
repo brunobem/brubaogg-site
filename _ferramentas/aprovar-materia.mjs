@@ -10,6 +10,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validarMateria } from './gerador/contrato.mjs';
 import { feedPorId, gravarRegistro, lerRegistro, novoEndereco } from './gerador/enderecos.mjs';
+import { arquivoDaMateria } from './gerador/pastas.mjs';
 import { ErroDeDados, lerJson, normalizarId } from './gerador/util.mjs';
 import { formatoDe } from './gerador/youtube.mjs';
 
@@ -23,6 +24,7 @@ if (!todos && !pedidos.length) { console.error('Informe o ID (ou o link do video
 const ids = [];
 if (todos) ids.push(...fs.readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, '')));
 for (const p of pedidos) {
+  if (path.basename(path.dirname(arquivoDaMateria(site, p) ?? '')) === 'wiki') { console.log(`${p} e conteudo da Wiki e nao passa por aprovar: para publicar, apague a linha "status" de _conteudo/wiki/${p}.json e rode npm run gerar`); continue; }
   const id = normalizarId(p);
   if (!id) { console.log(`ID invalido (use o ID de 11 caracteres ou o link do video): ${p}`); continue; }
   ids.push(id);
@@ -52,8 +54,9 @@ for (const id of ids) {
     console.log(`  formato confirmado no YouTube: ${formato}`);
   }
   const candidata = faltaFormato ? { ...m, formato: formato ?? 'horizontal' } : m;
-  const { problemas } = validarMateria(candidata, { id, rel, situacao: 'publicada' });
+  const { problemas, avisos } = validarMateria(candidata, { id, rel, situacao: 'publicada' });
   if (problemas.length) { console.log(`NAO aprovada: ${id}  ${m.titulo ?? ''}\n${problemas.map((p) => `    - ${p.replace(`${rel}: `, '')}`).join('\n')}`); recusadas++; continue; }
+  for (const av of avisos) console.log(`  aviso (nao impede) ${id}: ${av.replace(`${rel}: `, '')}`); // ex.: nome do canal escrito com til
 
   // endereco: ja registrado (republicacao) ou novo, a partir do titulo
   let e = registro[id];

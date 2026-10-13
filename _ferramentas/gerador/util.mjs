@@ -27,7 +27,10 @@ export function slugify(t) {
 export const dataLonga = (iso) => new Date(iso).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Sao_Paulo' });
 export const dataCurta = (iso) => new Date(iso).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'America/Sao_Paulo' });
 export const mesDe = (iso) => new Date(iso).toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' }).slice(0, 7); // AAAA-MM no horario de Brasilia
-export const miniatura = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+// Imagem de um conteudo sem video do YouTube (a Wiki pode ter so texto): dados.mjs registra aqui id -> caminho ("/assets/img/wiki-capa.svg" ou a imagem do conteudo).
+// Todo o resto do site pede a imagem por miniatura(id) e recebe a certa, sem saber de onde ela vem.
+export const imagensPropias = new Map();
+export const miniatura = (id) => imagensPropias.get(id) ?? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 export const hojeEmSaoPaulo = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' }); // AAAA-MM-DD
 
 /** Corta um texto no limite, em palavra inteira, com reticencias. Texto dentro do limite nao muda (so os espacos repetidos). */

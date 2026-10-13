@@ -1,15 +1,34 @@
 {
   "formato": "short",
-  "titulo": "Produtor de Resident Evil prepara projeto de Silent Hill",
-  "resumo": "Depois do recorde de bilheteria de Resident Evil, o produtor Roy Lee desenvolve um novo projeto de Silent Hill, ainda sem diretor ou elenco.",
+  "categoria": "noticias",
+  "publicado": "2026-09-25",
+  "titulo": "Produtor de Resident Evil prepara um novo Silent Hill",
+  "resumo": "Roy Lee, produtor do novo Resident Evil, desenvolve um projeto de Silent Hill, ainda sem diretor, elenco ou formato definido, segundo o WSJ.",
   "tags": [
-    "Resident Evil",
     "Silent Hill"
   ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/the-producer-of-zach-creggers-resident-evil-and-weapons-is-reportedly-working-on-a-new-silent-hill-film/"
+    },
+    {
+      "nome": "Hypebeast",
+      "url": "https://hypebeast.com/2026/9/silent-hill-film-reboot-in-development-roy-lee-resident-evil-producer"
+    },
+    {
+      "nome": "Dark Horizons",
+      "url": "https://www.darkhorizons.com/?p=194699"
+    },
+    {
+      "nome": "Dexerto",
+      "url": "https://www.dexerto.com/resident-evil/silent-hill-revival-in-the-works-from-resident-evil-producer-3412424/"
+    }
+  ],
   "corpo": [
-    "O novo filme de Resident Evil, dirigido por Zach Cregger e produzido por Roy Lee, bateu recordes na franquia. A estreia arrecadou cerca de US$ 60 milhões no fim de semana de abertura, a maior da série, e a produção foi bem recebida pela crítica, algo raro em adaptações de jogos.",
-    "Agora, Roy Lee desenvolve um projeto de Silent Hill. O trabalho está no começo: não há diretor nem elenco definidos, e não se sabe se será um filme ou uma série.",
-    "Para o Brubão, se Lee fizer com Silent Hill o que fez com Resident Evil, os fãs podem até ficar tristes com a fidelidade, mas o resultado deve ser um ótimo filme de terror. Ele pergunta se o público acha que Silent Hill fará o mesmo sucesso.",
-    "A opinião dele é que não gosta muito desse caminho: adaptações que fogem bastante da história do jogo e ainda assim fazem sucesso abrem um precedente para que mais produções façam o mesmo."
+    "Roy Lee, produtor do novo filme de Resident Evil, dirigido por Zach Cregger, está desenvolvendo um projeto de Silent Hill, segundo um perfil do produtor publicado pelo Wall Street Journal. O projeto está no começo: não há diretor nem elenco, e as reportagens divergem sobre se será um filme ou uma série. Lee disse pouco sobre os planos.",
+    "Segundo o perfil, Lee tem cerca de 20 adaptações de jogos em desenvolvimento ou produção, entre elas Silent Hill, God of War e Battlefield. Resident Evil teve abertura de US$ 108,3 milhões no mundo, com US$ 60 milhões nos Estados Unidos e no Canadá. O Silent Hill mais recente, Return to Silent Hill, de janeiro de 2026, arrecadou US$ 47,9 milhões com orçamento de US$ 23 milhões, e Lee não teve envolvimento.",
+    "Se Lee fizer com Silent Hill o que fez com Resident Evil, os fãs vão ficar tristes, mas será um ótimo filme de terror, digo. A minha opinião, porém, é que não gosto muito: adaptações que fogem bastante da história do jogo e ainda assim fazem sucesso abrem um pretexto para a produção de mais filmes assim."
   ]
 }

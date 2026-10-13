@@ -1,0 +1,30 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-07-19",
+  "titulo": "Minecraft: almofadas para sentar dividem a comunidade",
+  "resumo": "A Mojang testou almofadas para sentar e camas de palha no Minecraft. Relato que parte da comunidade reclama dos carrinhos de mina.",
+  "tags": [
+    "Minecraft"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Dexerto",
+      "url": "https://www.dexerto.com/minecraft/minecraft-finally-lets-players-properly-sit-down-after-17-years-3383944/"
+    },
+    {
+      "nome": "Kotaku",
+      "url": "https://kotaku.com/minecraft-adds-the-ability-to-sit-17-years-later-and-its-reinventing-everything-2000714330"
+    },
+    {
+      "nome": "Games.gg",
+      "url": "https://games.gg/news/minecraft-adds-cushions-straw-bed-preview/"
+    }
+  ],
+  "corpo": [
+    "A Mojang adicionou ao Minecraft, em versões de teste de julho de 2026 (snapshot do Java e preview do Bedrock), as almofadas, o primeiro item feito só para o jogador sentar, depois de cerca de 17 anos. Elas são feitas com três lajes de lã da mesma cor, existem em 16 cores, não têm colisão e quebram se o bloco de baixo for removido. A atualização também trouxe a cama de palha, feita com fardos de feno, que permite dormir sem trocar o ponto de renascimento.",
+    "Era um dos recursos mais pedidos pela comunidade, e as reportagens descrevem a recepção como entusiasmada. Relato uma divisão: digo que, para fazer a atualização, a Mojang mexeu no carrinho de mina, e parte dos jogadores pergunta para que os carrinhos servem agora, já que o truque do carrinho escondido em uma escada era o jeito de sentar. As reportagens consultadas não citam mudança nos carrinhos.",
+    "Resumo o clima: tem gente dizendo que a Mojang não entende nada do próprio jogo e tem gente dizendo que era exatamente isso que o jogo precisava. Segundo o Kotaku, os jogadores também já usaram as almofadas como elevador, colocando uma a cada seis blocos de altura, e a Mojang pode ajustar isso por se tratar de um recurso em teste."
+  ]
+}

@@ -26,8 +26,10 @@ export default async function () {
     { n: 'cabecalho repetido (dois pares de marcadores)', pg: 'cortes.html', muda: (t) => t.replace('<main', '<!--site:header--><!--/site:header-->\n<main'), cita: ['cortes.html', 'site:header'] },
     { n: 'marcador de icone com nome que nao existe', pg: 'cortes.html', muda: (t) => t.replace('<main', '<!--icone:naoexiste--><!--/icone--><main'), cita: ['cortes.html', 'naoexiste'] },
     { n: 'home sem os marcadores do feed', pg: 'index.html', muda: (t) => t.replace(/<!--feed:inicio-->[\s\S]*?<!--feed:fim-->/, ''), cita: ['index.html', 'feed'] },
+    { n: 'home sem os marcadores da contagem do GTA 6', pg: 'index.html', muda: (t) => t.replace(/<!--contagem:inicio-->[\s\S]*?<!--contagem:fim-->/, ''), cita: ['index.html', 'contagem'] },
+    { n: 'GTA 6 sem os marcadores da contagem regressiva', pg: 'gta6.html', muda: (t) => t.replace(/<!--contagem:inicio-->[\s\S]*?<!--contagem:fim-->/, ''), cita: ['gta6.html', 'contagem'] },
+    { n: 'Cortes sem os marcadores dos players', pg: 'cortes.html', muda: (t) => t.replace(/<!--players:inicio-->[\s\S]*?<!--players:fim-->/, ''), cita: ['cortes.html', 'players'] },
     { n: 'GTA 6 sem os marcadores das novidades', pg: 'gta6.html', muda: (t) => t.replace(/<!--gta6:inicio-->[\s\S]*?<!--gta6:fim-->/, ''), cita: ['gta6.html', 'gta6'] },
-    { n: 'aba de player sem a lista de chips', pg: 'cortes.html', muda: (t) => t.replace(/<ul class="chips">[\s\S]*?<\/ul>/, ''), cita: ['cortes.html', 'chips'], aviso: true },
     { n: 'pagina nova escrita a mao SEM marcadores', novo: ['sobre.html', '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Sobre</title></head><body><main><h1>Sobre</h1></main></body></html>'], cita: ['sobre.html', 'marcador'] },
   ];
   for (const c of cenarios) {

@@ -20,6 +20,8 @@
     "aprovar": "node _ferramentas/aprovar-materia.mjs",
     "endereco": "node _ferramentas/endereco.mjs",
     "retirar": "node _ferramentas/retirar-materia.mjs",
+    "mover": "node _ferramentas/mover-materia.mjs",
+    "wiki": "node _ferramentas/nova-wiki.mjs",
     "previa": "node _ferramentas/gerar-site.mjs --com-rascunhos",
     "indexar": "node _ferramentas/montar-site.mjs",
     "estresse": "node _ferramentas/revisao-v1.01/testes/estresse.mjs",

@@ -2,15 +2,33 @@
   "formato": "short",
   "categoria": "noticias",
   "publicado": "2026-09-23",
-  "titulo": "WoW Forever: Blizzard recria 2004 sem servidores separados",
-  "resumo": "World of Warcraft: Forever tem beta aberto e lançamento em 4 de novembro. O Brubão comenta a reinterpretação do WoW Classic e as reclamações de fila.",
+  "titulo": "WoW Forever abre beta e estreia em 4 de novembro",
+  "resumo": "WoW Forever, a releitura do WoW Classic da Blizzard, abriu o beta em 17 de setembro e chega em 4 de novembro de 2026 sem servidores separados.",
   "tags": [
-    "World of Warcraft: Forever"
+    "World of Warcraft"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "TechSpot",
+      "url": "https://www.techspot.com/news/113832-world-warcraft-forever-launches-november-4-new-race.html"
+    },
+    {
+      "nome": "T-Break",
+      "url": "https://tbreak.com/world-of-warcraft-forever-launches-november-4/"
+    },
+    {
+      "nome": "Everything Edinburgh",
+      "url": "https://everythingedinburgh.com/games/news/wow-forever-beta-launch-how-to-play/"
+    },
+    {
+      "nome": "ITWire",
+      "url": "https://itwire.com/your-it-news/entertainment/world-of-warcraft-forever-is-coming-in-november-here-s-what-it-actually-is"
+    }
   ],
   "corpo": [
-    "World of Warcraft: Forever está fazendo muita gente reviver 2004. A ideia da Blizzard é reinterpretar o WoW Classic de um jeito moderno. Segundo o vídeo, a maior mudança é que não existem mais os servidores separados de sempre: o projeto foi pensado para manter todo mundo junto e preservar o clima social do MMO original.",
-    "O beta começou em 17 de setembro, e o lançamento completo está marcado para 4 de novembro. Pelas fontes consultadas, o jogo foi anunciado na BlizzCon 2026 e traz novas regiões, mais de mil missões, masmorras e raides inéditas e a raça Skyborne, com o beta limitado a nível 30 e disponível por meio de pacotes e edições do jogo.",
-    "Por baixo do capô também há novidade. Datamineiros encontraram bônus de equipamento interessantes, até em um item de nível baixo, o que mostra que a Blizzard quer que cada fase do jogo valha a pena. Por outro lado, quem esperava especializações malucas, como o tanque Shaman da Temporada da Descoberta, vai ter que esperar mais um pouco. Muita gente também reclamou de instabilidade e de demora nas filas do beta.",
-    "O Brubão joga WoW há muito tempo e diz estar tentado a voltar, mas com receio de que a vida acabe de novo. Ele pergunta se o público também está dando uma chance."
+    "WoW Forever é a releitura moderna do WoW Classic feita pela Blizzard, com o clima de 2004 como referência. O beta abriu em 17 de setembro de 2026 e segue até cerca de 21 de outubro, e o lançamento está marcado para 4 de novembro de 2026, às 15h no horário do Pacífico (19h em Brasília), incluído em quem tem assinatura ativa de World of Warcraft. O acesso ao beta exigiu um dos pacotes pagos da Blizzard.",
+    "A maior mudança, que destaco, é que não existem mais os servidores separados de sempre. Em vez de escolher um servidor, o jogador escolhe um conjunto de regras (Normal, PvP ou Roleplaying, com Hardcore previsto para depois do lançamento), o que mantém todo mundo junto e preserva o clima social do MMO original. O jogo traz três zonas novas, mais de 1.000 missões, nove masmorras, duas raids e os elfos Skyborne como raça jogável.",
+    "Por baixo do capô, pelo que apurei, data miners já encontraram bônus de equipamento interessantes, até em um item de nível baixo, o que mostra a intenção da Blizzard de fazer cada fase valer a pena. Quem espera especializações malucas, como o tanque de Shaman da Season of Discovery, terá que esperar. Relato também reclamações de instabilidade e demora nas filas do beta. Joguei WoW por muito tempo e estou tentado a voltar, ainda que brinque que a minha vida vai acabar se eu voltar."
   ]
 }

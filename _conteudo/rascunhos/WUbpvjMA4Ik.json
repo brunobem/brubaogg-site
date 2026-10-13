@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-27",
+  "titulo": "Roblox ganha versão nativa para o PS5",
+  "resumo": "O Roblox ganhou em 14 de abril de 2026 uma versão nativa para PS5, com carregamento até 30% mais rápido e suporte a haptics do DualSense.",
+  "tags": [
+    "Roblox"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PlayStation Blog",
+      "url": "https://blog.playstation.com/2026/04/14/an-upgraded-version-of-roblox-launches-on-ps5-today/"
+    },
+    {
+      "nome": "Gematsu",
+      "url": "https://www.gematsu.com/2026/04/roblox-now-available-for-ps5"
+    },
+    {
+      "nome": "Gfinity",
+      "url": "https://www.gfinityesports.com/article/roblox-officially-gets-an-upgrade-on-ps5"
+    },
+    {
+      "nome": "The Spike",
+      "url": "https://www.thespike.gg/roblox/beginner-guides/roblox-ps5-version"
+    }
+  ],
+  "corpo": [
+    "O Roblox lançou em 14 de abril de 2026 uma versão nativa para o PS5, construída para o console. Antes, o jogo rodava no PS5 como uma versão de PS4. A PlayStation anunciou a novidade no blog oficial no mesmo dia. A nova versão carrega até 30% mais rápido, segundo relatos (o número é um máximo, e não um ganho típico), e tem menus mais fáceis de navegar.",
+    "Há suporte aos recursos do DualSense, como a vibração háptica, que varia de acordo com cada jogo, e os criadores ganham mais oportunidades de usar o controle para dar imersão. A versão tem limitações: não há chat por teclado e não há multijogador em tela dividida.",
+    "Esclareço que o Roblox já estava no PlayStation 4 e agora foi atualizado para o motor do PlayStation 5, ficando 30% mais rápido e usando os componentes do controle, com vibração que muda conforme o que o jogador faz. Digo que haverá mais recursos de criação para quem joga no PS5."
+  ]
+}

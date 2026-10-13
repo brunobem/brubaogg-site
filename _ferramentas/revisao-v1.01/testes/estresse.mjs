@@ -12,7 +12,7 @@ import { raiz } from './lib.mjs';
 
 const vazio = process.argv.includes('--vazio');
 const escala = Number((process.argv.find((a) => a.startsWith('--escala=')) ?? '').slice(9)) || 0; // --escala=3000: N materias SIMULADAS (texto das reais, titulos e datas variados)
-const destino = path.resolve(raiz, '..', '_estresse', vazio ? 'vazio' : escala ? `escala-${escala}` : 'site');
+const destino = path.resolve(raiz, '..', '..', '_estresse',vazio ? 'vazio' : escala ? `escala-${escala}` : 'site');
 fs.rmSync(destino, { recursive: true, force: true, maxRetries: 8, retryDelay: 400 }); // no Windows um antivirus ou servidor pode segurar a pasta por instantes
 fs.mkdirSync(path.dirname(destino), { recursive: true });
 const pular = (rel) => /(^|[\\/])(node_modules|_site|\.git)([\\/]|$)/.test(rel);

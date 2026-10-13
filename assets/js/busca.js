@@ -72,7 +72,7 @@
   }
   // so caminhos do proprio site (letras, numeros, - _ . /, sem comecar por barra) e imagens https
   const caminhoSeguro = (u) => typeof u === 'string' && /^[\w-][\w\-./]*$/.test(u) && u.indexOf('..') < 0; // nunca comeca com / (// e outro site)
-  const imagemSegura = (u) => typeof u === 'string' && /^https:\/\/[\w.\-]+\/[\w\-./]+$/.test(u);
+  const imagemSegura = (u) => typeof u === 'string' && (/^https:\/\/[\w.\-]+\/[\w\-./]+$/.test(u) || /^\/assets\/img\/[\w\-.]+$/.test(u)); // https ou uma imagem do proprio site (capa da Wiki); nunca //outro-site
 
   const api = { PASSO: PASSO, norm: norm, chave: chave, variantes: variantes, consultaValida: consultaValida, combinar: combinar, estadoDaUrl: estadoDaUrl, urlDoEstado: urlDoEstado, atalhosPara: atalhosPara, casaAtalho: casaAtalho, fmtData: fmtData, caminhoSeguro: caminhoSeguro, imagemSegura: imagemSegura };
   // o navegador de verdade importa modulos assim; os testes trocam esta funcao por uma de mentira

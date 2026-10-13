@@ -24,6 +24,51 @@
     "nome": "Resident Evil Village",
     "pai": "resident-evil"
   },
+  "resident-evil-veronica": {
+    "nome": "Resident Evil Veronica",
+    "pai": "resident-evil"
+  },
+  "resident-evil-requiem": {
+    "nome": "Resident Evil Requiem",
+    "pai": "resident-evil"
+  },
+  "resident-evil-0": {
+    "nome": "Resident Evil 0",
+    "pai": "resident-evil"
+  },
+  "resident-evil-1-remake": {
+    "nome": "Resident Evil 1 Remake",
+    "alias": ["Resident Evil Remake"],
+    "pai": "resident-evil"
+  },
+  "resident-evil-2": {
+    "nome": "Resident Evil 2",
+    "pai": "resident-evil"
+  },
+  "resident-evil-2-remake": {
+    "nome": "Resident Evil 2 Remake",
+    "pai": "resident-evil"
+  },
+  "resident-evil-3": {
+    "nome": "Resident Evil 3",
+    "pai": "resident-evil"
+  },
+  "resident-evil-3-remake": {
+    "nome": "Resident Evil 3 Remake",
+    "pai": "resident-evil"
+  },
+  "resident-evil-4": {
+    "nome": "Resident Evil 4",
+    "pai": "resident-evil"
+  },
+  "resident-evil-4-remake": {
+    "nome": "Resident Evil 4 Remake",
+    "pai": "resident-evil"
+  },
+  "resident-evil-5": {
+    "nome": "Resident Evil 5",
+    "pai": "resident-evil"
+  },
   "god-of-war": {
     "nome": "God of War"
   },

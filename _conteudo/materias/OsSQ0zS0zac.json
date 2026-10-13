@@ -2,16 +2,49 @@
   "formato": "horizontal",
   "categoria": "reviews",
   "publicado": "2025-02-05",
-  "titulo": "Helldivers 2: vale a pena jogar, mesmo sem campanha?",
-  "resumo": "Live service cooperativo da Sony, sem campanha, com fogo amigo e hordas. O Brubão dá 7,5: ótimo com amigos, mas falta conteúdo e sozinho sai caro.",
+  "titulo": "Helldivers 2 vale a pena? Minha nota é 7,5",
+  "resumo": "Tenho 40 a 45 horas de Helldivers 2 e dou nota 7,5: é muito divertido em coop com amigos, mas falta conteúdo e sozinho o preço pesa.",
   "tags": [
     "Helldivers 2"
   ],
+  "veredito": {
+    "nota": 7.5,
+    "recomendacao": "so-com-amigos",
+    "preco": "Entre R$ 150 e R$ 175 na promoção de fim de ano (preço que paguei)",
+    "horas": "40 a 45 e contando",
+    "plataforma": "PS5 (também no PC)",
+    "paraQuem": "Quem tem amigos para jogar em coop e não liga para história; sozinho, o jogo perde graça."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/review-helldivers-2-diverte-mas-voce-precisa-amigos/"
+    },
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/helldivers-2-tem-crossplay-entre-ps5-e-pc-saiba-aqui/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/helldivers-2-review/"
+    },
+    {
+      "nome": "Fextralife",
+      "url": "https://fextralife.com/the-game-awards-2024-all-winners/"
+    }
+  ],
   "corpo": [
-    "O veredito do Brubão sobre Helldivers 2 é de nota 7,5 em 10: um jogo muito divertido, sobretudo com amigos, mas que ele considera caro para quem joga sozinho e que poderia ter mais conteúdo. Ele jogou no PlayStation 5, pegou o jogo em promoção por cerca de R$ 150 a R$ 175 e já tinha 40 a 45 horas, no nível 18 ou 19. Segundo ele, o restante do jogo só é desbloqueado a partir do nível 25.",
-    "O jogo foi lançado em 8 de fevereiro de 2024 para PS5 e PC pela Arrowhead e pela Sony e é um live service: não tem campanha, com começo, meio e fim. Visualmente, o Brubão o considera bonito, de nova geração, com animações e física que impressionam, como o momento de entrar na cápsula antes da missão, e muita explosão, fumaça e tiro na tela. A história é só uma introdução, com tom de propaganda militar americana e a ideia de conquistar a liberdade pela democracia gerenciada.",
-    "O jogador forma equipes de quatro, com amigos ou desconhecidos, e invade planetas de inimigos alienígenas, como insetos gigantes. No PlayStation 5, atira com R2, mira com L2 e não pula, mas pode se abaixar ou deslizar. Os modos incluem uma missão de 40 minutos para lançar mísseis, outra de 20 minutos para exterminar todos os alienígenas e a defesa de base contra hordas, a favorita dele. A dificuldade sobe conforme o nível, e quanto mais difícil, mais recursos o jogador ganha.",
-    "Os recursos melhoram a nave e os chamados de reforço, como ataque orbital e sentinela. O Brubão diz que o jogo é intuitivo para quem já jogou Call of Duty, Battlefield ou Fortnite. E o fogo amigo faz toda a diferença: dá para matar o amigo com um tiro ou uma granada, o que rende xingamentos e risadas. Para ele, é isso que mostra o quanto o jogo é divertido jogado em conjunto.",
-    "O ponto negativo é a falta de conteúdo: segundo ele, já passou por todos os estilos de mapa e agora só falta subir de nível e jogar a dificuldade máxima. No lançamento, o jogo tinha poucos setores, e muita gente reclama da velocidade com que a desenvolvedora solta conteúdo novo. Ele sugere novos modos e até um PvP. Para quem joga sozinho, acha caro e diz que demora para pegar gosto."
+    "Dou nota 7,5 em 10 a Helldivers 2, onde já tenho 40 a 45 horas e ainda jogo. Não há campanha com começo, meio e fim: é um live service da Sony, que joguei no PlayStation 5 com amigos. A experiência é muito positiva, e a nota só não sobe mais porque, para mim, falta conteúdo.",
+    "O visual é de nova geração e muito bonito, com animações incríveis e pequenos detalhes. Quando o jogador entra no hellpod para ir à missão, a mesa de operações continua mostrando o mapa. No combate contra os insetos gigantes, as animações são bem-feitas e os objetos têm física, com bazuca, gritaria e fumaça pipocando na tela. Às vezes fica um pouco trucoso, mas acho tudo bem legal.",
+    "A história é só uma introdução, que usa o ar do exército americano para recrutar o jogador: uma família é invadida por insetos, e a liberdade é conquistada por meio da democracia gerenciada. Para mim, isso serve para dar gás no começo, mas depois o jogo tem pouquíssima história.",
+    "É um jogo de tiro em equipes de quatro jogadores, e o jogador pode chamar amigos ou receber desconhecidos que caem no mapa quando pede ajuda com um S.O.S. No PlayStation 5, o R2 atira e o L2 mira; não dá para pular, mas dá para abaixar ou deslizar com a bolinha. Quem já jogou Call of Duty, Battlefield ou até Fortnite pega o jogo rápido.",
+    "As missões variam. Em algumas, o jogador tem 40 minutos, como a de lançar mísseis; em mapas mais difíceis, tem 20 minutos para exterminar os alienígenas da área; e há as hordas, em que é preciso defender uma base de ondas de inimigos, que é a minha favorita.",
+    "O jogo é pautado por níveis: quanto mais o jogador sobe, mais dificuldades libera, e quanto mais difícil o mapa, mais recursos ganha para melhorar a nave e os chamados de reforço, como o ataque orbital e a sentinela.",
+    "Jogar com amigos faz toda a diferença, principalmente por causa do fogo amigo: dá para atirar no aliado e matá-lo. No meio da guerra, com fumaça e bicho vindo para cima, uma bala perdida vira xingamento, e essa bagunça mostra o quanto o jogo é bom em grupo.",
+    "Paguei entre R$ 150 e R$ 175 no PlayStation 5, na promoção de fim de ano. Acho que o custo vale a pena com uma galera em volta, mas é caro para quem for jogar sozinho, porque leva um tempo para gostar do jogo. Ele também existe no PC.",
+    "O ponto fraco é a falta de conteúdo. Com 40 a 45 horas, sinto que já joguei todos os estilos de mapa, e agora só resta subir de nível, desbloquear o resto e encarar o desafio mais difícil. Sugiro modelos diferentes, talvez até um PvP, e já vi muita gente reclamar da velocidade com que o jogo recebe conteúdo, mas acredito que a desenvolvedora vá entregar.",
+    "Helldivers 2 foi lançado em 8 de fevereiro de 2024 para PlayStation 5 e PC, com crossplay entre as duas plataformas. É um jogo de tiro cooperativo em terceira pessoa da Arrowhead Game Studios, publicado pela Sony Interactive Entertainment. No PlayStation 5, é preciso ter uma assinatura ativa da PlayStation Plus para jogar online. Em dezembro de 2024, o jogo venceu o The Game Awards na categoria Best Ongoing Game, de jogos com suporte contínuo.",
+    "No fim das contas, vejo em Helldivers 2 um jogo cooperativo muito divertido, que pede amigos para funcionar bem, e deixo a nota em 7,5."
   ]
 }

@@ -5,9 +5,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { GTA6, categorias } from './config.mjs';
-import { validarMateria } from './contrato.mjs';
-import { feedPorId, gravarRegistro, indiceDoDisco, lerRegistro, novoEndereco } from './enderecos.mjs';
-import { ErroDeDados, lerJson } from './util.mjs';
+import { validarAssuntos, validarMateria, validarWiki } from './contrato.mjs';
+import { caminhoAntigo, feedPorId, gravarRegistro, indiceDoDisco, lerRegistro, novoEndereco } from './enderecos.mjs';
+import { ErroDeDados, imagensPropias, lerJson, miniatura } from './util.mjs';
 
 // as datas de GTA6 (config.mjs) precisam de HORA e FUSO: "2026-11-19" sem fuso e lido como UTC e a contagem regressiva terminaria 3 horas antes
 function validarDatasDoGta6() {
@@ -17,6 +17,11 @@ function validarDatasDoGta6() {
     if (typeof v !== 'string' || !formato.test(v) || Number.isNaN(Date.parse(v))) {
       throw new ErroDeDados(`config.mjs, GTA6.${campo}: "${v}" nao e uma data valida com hora e fuso. Use o formato 2026-11-19T00:00:00-03:00 (o -03:00 e o horario de Brasilia).`);
     }
+  }
+  // textos do estado "lancado": sem eles a pagina do dia do lancamento ficaria com campo vazio
+  for (const campo of ['kicker', 'titulo', 'texto', 'botao']) {
+    const v = GTA6.lancado?.[campo];
+    if (typeof v !== 'string' || !v.trim()) throw new ErroDeDados(`config.mjs, GTA6.lancado.${campo}: falta o texto do estado "lancado" (o que aparece no lugar da contagem a partir de ${GTA6.alvo}).`);
   }
 }
 
@@ -28,6 +33,8 @@ export function carregarDados(ctx) {
   validarDatasDoGta6();
 
   ctx.playlists = lerJson(path.join(site, 'assets', 'data', 'playlists.json'), 'assets/data/playlists.json');
+  const fPlayers = path.join(site, 'assets', 'data', 'players.json');
+  ctx.players = fs.existsSync(fPlayers) ? lerJson(fPlayers, 'assets/data/players.json') : {}; // videos das playlists de Cortes e Lives (se faltar, a pagina fica so com os players)
   const ft = path.join(site, '_conteudo', 'tags.json');
   ctx.tagsCfg = fs.existsSync(ft) ? lerJson(ft, '_conteudo/tags.json') : {};
   ctx.feed = feedPorId(ctx.playlists);
@@ -53,6 +60,32 @@ export function carregarDados(ctx) {
       continue;
     }
     materias.set(id, { dados: m, situacao: m.status === 'rascunho' ? 'rascunho' : 'publicada', rel });
+  }
+  // 1b) conteudo da Wiki (_conteudo/wiki/*.json): pode ser so texto, sem video. Cada arquivo vira uma "materia" da categoria series (origem "wiki"); o nome do arquivo e o id.
+  //     As regras proprias dele estao em contrato.mjs (validarWiki); as de texto (resumo, corpo, titulo...) sao as de sempre e rodam no passo 2.
+  const pastaWiki = path.join(site, '_conteudo', 'wiki');
+  if (fs.existsSync(pastaWiki)) {
+    for (const arq of fs.readdirSync(pastaWiki).filter((x) => x.endsWith('.json')).sort()) {
+      const id = arq.slice(0, -5), rel = `_conteudo/wiki/${arq}`;
+      if (materias.has(id)) { ctx.problemas.push(`${rel}: o nome "${id}" ja existe em _conteudo/materias. Apague um dos dois arquivos.`); continue; }
+      let e;
+      try { e = lerJson(path.join(pastaWiki, arq), rel); }
+      catch (err) {
+        if (!(err instanceof ErroDeDados)) throw err;
+        const reg = ctx.enderecos[id];
+        if (reg && !reg.retirada) ctx.problemas.push(`${err.message} Esse conteudo ja esta publicado (${reg.categoria}/${reg.slug}.html) e a pagina nao pode sumir por um arquivo quebrado.`);
+        else ctx.avisos.push(`${err.message} Arquivo ignorado por enquanto.`);
+        continue;
+      }
+      if (e === null || typeof e !== 'object' || Array.isArray(e)) { ctx.problemas.push(`${rel}: o conteudo deve ser um objeto JSON { ... }.`); continue; }
+      if (e.status != null && e.status !== 'rascunho') { ctx.problemas.push(`${rel}: "status" tem o valor ${JSON.stringify(e.status)}. Use "rascunho" ou apague o campo (sem o campo = publicado).`); continue; }
+      const r = validarWiki(e, { id, rel, tagsCfg: ctx.tagsCfg });
+      ctx.problemas.push(...r.problemas);
+      ctx.avisos.push(...r.avisos);
+      // imagem do cartao e da previa: a do video (se o id do arquivo nao e o proprio video), a indicada em "imagem" ou a capa padrao da Wiki
+      if (r.m.video !== id) imagensPropias.set(id, r.m.video ? miniatura(r.m.video) : r.m.imagem ?? '/assets/img/wiki-capa.svg');
+      materias.set(id, { dados: r.m, situacao: e.status === 'rascunho' ? 'rascunho' : 'publicada', rel, origem: 'wiki' });
+    }
   }
   ctx.materias = materias;
   ctx.lerMateria = (id) => materias.get(id)?.dados ?? null;
@@ -87,6 +120,19 @@ export function carregarDados(ctx) {
       if (e instanceof ErroDeDados) ctx.problemas.push(e.message); else throw e;
     }
   }
+  // assuntos: materias do mesmo "assunto" (2 ou mais) viram UMA pagina, com um bloco por video; o titulo e o resumo dela vem de _conteudo/assuntos.json
+  const fa = path.join(site, '_conteudo', 'assuntos.json');
+  ctx.assuntos = fs.existsSync(fa) ? lerJson(fa, '_conteudo/assuntos.json') : {};
+  const gruposDeAssunto = new Map();
+  for (const [id, mm] of materias) {
+    if (!mm.endereco || typeof mm.dados.assunto !== 'string') continue;
+    (gruposDeAssunto.get(mm.dados.assunto) ?? gruposDeAssunto.set(mm.dados.assunto, []).get(mm.dados.assunto)).push({ id, rel: mm.rel, dados: mm.dados, categoria: mm.endereco.categoria, publicado: mm.endereco.publicado });
+  }
+  const ocupados = new Set(Object.values({ ...ctx.enderecos, ...temporarios }).flatMap((e) => [e.slug, ...(e.antigos ?? [])].map((s) => caminhoAntigo(e, s))));
+  const va = validarAssuntos(ctx.assuntos, gruposDeAssunto, ocupados);
+  ctx.problemas.push(...va.problemas); ctx.avisos.push(...va.avisos);
+  ctx.categoriaDoAssunto = va.categoriaDe; // chave -> pasta da pagina do assunto
+
   // dois enderecos iguais na mesma categoria (edicao manual do registro)
   const vistos = new Map();
   for (const [id, e] of Object.entries({ ...ctx.enderecos, ...temporarios })) {

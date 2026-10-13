@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-07",
+  "titulo": "PlayStation 6 pode passar de US$ 1.000, dizem rumores",
+  "resumo": "Rumores apontam que o PS6 e o Xbox Project Helix podem custar US$ 1.000 ou mais. Nenhum preço foi confirmado.",
+  "tags": [
+    "PlayStation 6"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "OpenCritic",
+      "url": "https://opencritic.com/news/33921/latest-playstation-6-price-leak-confirms-our-worst-fears"
+    },
+    {
+      "nome": "HotHardware",
+      "url": "https://hothardware.com/news/sony-says-it-wont-sell-the-ps6-at-a-big-loss-as-1000-price-fears-grow"
+    },
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/xbox-project-helix-could-cost-999-to-1200-report-suggests/"
+    },
+    {
+      "nome": "Olhar Digital",
+      "url": "https://olhardigital.com.br/2026/06/29/games-e-consoles/ps6-pode-custar-mais-caro/"
+    }
+  ],
+  "corpo": [
+    "Rumores e especulações sobre a próxima geração apontam preços perto ou acima de US$ 1.000. Para o PlayStation 6, o leaker Kepler_L2 estimou o custo dos componentes em cerca de US$ 760 em março de 2026 e em cerca de US$ 960 em junho; como a Sony costuma subsidiar o preço do console em US$ 100 a 200, o lançamento poderia chegar a US$ 999 ou mais. A Sony não confirmou nada e disse que não pretende vender hardware com grandes perdas.",
+    "Para o Xbox Project Helix, nome da próxima geração da Microsoft confirmado em março, o analista Moore's Law is Dead estima de US$ 999 a US$ 1.200. A CEO do Xbox, Asha Sharma, teria dito que os próximos consoles precisam de modelos mais acessíveis, porque o grande público não paga milhares de dólares.",
+    "Cito rumores de especialistas que costumam acertar, segundo os quais o console passaria de US$ 1.000, e explico que a conversão direta não vale no Brasil: o PS5, que nos Estados Unidos custa cerca de US$ 600, deveria sair bem mais barato aqui se fosse só a conversão do dólar, mas a carga tributária é alta. Para mim, o PS6 chegaria perto de R$ 10 mil no Brasil."
+  ]
+}

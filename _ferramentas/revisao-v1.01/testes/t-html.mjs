@@ -96,9 +96,28 @@ export default async function () {
       if (!redirecionador && !bruto.includes(`<!--site:${parte}-->`)) a.push(achado('medio', T, `sem o marcador site:${parte} (nao recebe as mudancas globais)`, rel));
     }
 
+    // cabecalho: a casinha (Inicio) e o PRIMEIRO item da faixa de secoes, leva para a home, tem nome acessivel e so marca "pagina atual" na propria home;
+    // rodape: a lista de Navegar fica numa caixa de duas colunas (.footer-links)
+    if (!redirecionador && bruto.includes('<!--site:header-->')) {
+      const cab = (bruto.match(/<!--site:header-->([\s\S]*?)<!--\/site:header-->/) ?? [])[1] ?? '', rod = (bruto.match(/<!--site:footer-->([\s\S]*?)<!--\/site:footer-->/) ?? [])[1] ?? '';
+      const itens = [...((cab.match(/<ul class="nav-site-links">([\s\S]*?)<\/ul>/) ?? [])[1] ?? '').matchAll(/<li>([\s\S]*?)<\/li>/g)].map((m) => m[1]);
+      const raizDaPagina = rel === '404.html' ? '/' : '../'.repeat(rel.split('/').length - 1), ehHome = rel === 'index.html'; // a 404 usa enderecos a partir da raiz ("/")
+      const casa = (itens[0] ?? '').match(/^<a class="nav-casa( ativo)?" href="([^"]*)" aria-label="([^"]*)"( aria-current="page")?><svg[\s\S]*<\/svg><\/a>$/);
+      if (!casa) a.push(achado('alto', T, 'o primeiro item da faixa de secoes devia ser a casinha (link para a home, so o icone)', rel));
+      else {
+        if (casa[2] !== `${raizDaPagina}index.html`) a.push(achado('alto', T, `a casinha leva para "${casa[2]}" (devia ser "${raizDaPagina}index.html")`, rel));
+        if (casa[3] !== 'Início') a.push(achado('alto', T, `a casinha tem o nome acessivel "${casa[3]}" (devia ser "Início")`, rel));
+        if (!!casa[1] !== ehHome || !!casa[4] !== ehHome) a.push(achado('medio', T, ehHome ? 'na home a casinha devia vir marcada como pagina atual' : 'a casinha so vem marcada como pagina atual na home', rel));
+      }
+      if (itens.length < 3) a.push(achado('alto', T, `a faixa de secoes tem ${itens.length} item(ns)`, rel));
+      const navegar = (rod.match(/<nav class="footer-col footer-navegar" aria-label="Navegar">([\s\S]*?)<\/nav>/) ?? [])[1] ?? '';
+      const nLinks = (navegar.match(/<div class="footer-links">([\s\S]*?)<\/div>/) ?? ['', ''])[1].match(/<a href=/g)?.length ?? 0;
+      if (nLinks < 6) a.push(achado('medio', T, 'a lista de Navegar do rodape devia estar numa caixa .footer-links (duas colunas) com os links', rel));
+    }
+
     // dados que se repetem (config.mjs): a data do GTA 6 nas paginas escritas a mao so pode aparecer dentro de <!--dado:...--> ou de data-modelo
     if (['index.html', 'gta6.html', 'cortes.html', 'lives.html'].includes(rel)) {
-      const semDados = bruto.replace(/<!--dado:[\w-]+-->[\s\S]*?<!--\/dado-->/g, '').replace(/\bdata-modelo="[^"]*"/g, '').replace(/\bcontent="[^"]*"/g, '').replace(/\bdata-alvo="[^"]*"/g, '').replace(/<!--(gta6|feed):inicio-->[\s\S]*?<!--(gta6|feed):fim-->/g, ''); // as regioes geradas (novidades, feed) tem texto de materias
+      const semDados = bruto.replace(/<!--dado:[\w-]+-->[\s\S]*?<!--\/dado-->/g, '').replace(/\bdata-modelo="[^"]*"/g, '').replace(/\bcontent="[^"]*"/g, '').replace(/\bdata-alvo="[^"]*"/g, '').replace(/\bdata-lancado-texto="[^"]*"/g, '').replace(/<!--(gta6|feed|contagem):inicio-->[\s\S]*?<!--(gta6|feed|contagem):fim-->/g, ''); // as regioes geradas (novidades, feed, contagem/lancado) vem do config.mjs ou tem texto de materias
       const longa = new Date(GTA6.alvo).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Sao_Paulo' });
       if (semDados.includes(longa)) a.push(achado('medio', T, `a data do GTA 6 (${longa}) esta escrita a mao fora de marcador; use <!--dado:gta6-data--> para ela vir do config.mjs`, rel));
     }
@@ -121,6 +140,15 @@ export default async function () {
     if (abertas.length) a.push(achado('medio', T, `tags sem fechamento no fim: ${[...new Set(abertas)].join(', ')}`, rel));
   }
 
+  // cartoes da Wiki (home e wiki.html): cada jogo precisa mostrar texto abaixo do titulo (os jogos da serie), nunca um cartao so com titulo
+  for (const rel of ['index.html', 'wiki.html']) {
+    const cartoes = [...limparHtml(ler(rel)).matchAll(/<a class="news-card wiki-card[^"]*"[^>]*>([\s\S]*?)<\/a>/g)];
+    if (!cartoes.length) a.push(achado('alto', T, 'nenhum cartao da Wiki encontrado (o teste procura <a class="news-card wiki-card">)', rel));
+    for (const [, corpo] of cartoes) {
+      const titulo = (corpo.match(/<b class="news-title">([^<]*)</) ?? [])[1] ?? '(sem titulo)';
+      if (!/<span class="news-excerpt">[^<\s][^<]*<\/span>/.test(corpo)) a.push(achado('alto', T, `cartao da Wiki "${titulo}" sem texto abaixo do titulo (os jogos da serie)`, rel));
+    }
+  }
   for (const [t, lista] of titulos) if (lista.length > 1) a.push(achado('baixo', T, `titulo repetido em ${lista.length} paginas: "${t.slice(0, 60)}"`, lista.slice(0, 3).join(', ')));
   for (const [d, lista] of descricoes) if (lista.length > 1) a.push(achado('baixo', T, `descricao repetida em ${lista.length} paginas: "${d.slice(0, 50)}..."`, lista.slice(0, 3).join(', ')));
   a.push(achado('info', T, `${paginas.length} paginas HTML analisadas`));

@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-03-25",
+  "titulo": "DLSS 5 causa caos e memes: minha opinião",
+  "resumo": "A Nvidia apresentou o DLSS 5 no GTC 2026, em março, e a reação foi de críticas e memes. Eu me digo um pouco contra.",
+  "tags": [
+    "DLSS 5"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Tom's Guide",
+      "url": "https://www.tomsguide.com/gaming/theyre-completely-wrong-nvidia-ceo-jensen-huang-responds-to-dlss-5-criticism"
+    },
+    {
+      "nome": "Tom's Hardware",
+      "url": "https://tomshardware.com/pc-components/gpus/jensen-huang-says-gamers-are-completely-wrong-about-dlss-5-nvidia-ceo-responds-to-dlss-5-backlash"
+    },
+    {
+      "nome": "TechRadar",
+      "url": "https://www.techradar.com/computing/gpu/nvidias-ceo-goes-full-principal-skinner-in-response-to-dlss-5-backlash-says-its-the-gamers-who-are-completely-wrong"
+    },
+    {
+      "nome": "DSOGaming",
+      "url": "https://www.dsogaming.com/news/nvidia-dlss-5-will-be-officially-released-on-september-4th/"
+    }
+  ],
+  "assunto": "dlss-5",
+  "corpo": [
+    "A Nvidia apresentou o DLSS 5 no GTC 2026, em março, como a fusão entre gráficos 3D e inteligência artificial. A reação foi rápida e barulhenta, com críticas, memes e o apelido sloptracing, uma provocação ao ray tracing; boa parte da polêmica foi sobre o novo visual de personagens como Grace e Leon, de Resident Evil Requiem. Os críticos alegaram que a tecnologia altera a intenção artística, e que reinterpretar a direção de arte não é papel de uma tecnologia de desempenho.",
+    "Há gente a favor e gente contra. Acho que a tecnologia pode baratear o desenvolvimento, principalmente para estúdios pequenos, que podem começar com ela e depois soltar patches. Mas noto que, muitas vezes, quem é a favor é quem quer ganhar dinheiro, e me digo um pouco contra, porque o jogo perde um pouco da alma. Para mim, os gráficos importam menos: o que importa é a gameplay.",
+    "O DLSS 5 só chegou oficialmente no início de setembro de 2026, e o NBA 2K27 é, até agora, o único jogo com suporte oficial."
+  ]
+}

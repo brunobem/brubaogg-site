@@ -9,18 +9,17 @@
 //   <!--icone:nome--><!--/icone-->             icone inline de assets/icones/nome.svg
 //   <!--dado:nome-->...<!--/dado-->            dado que se repete no site (ex.: gta6-data), preenchido de config.mjs
 //   <!--feed:inicio-->...<!--feed:fim-->       so na home;  <!--gta6:inicio-->...<!--gta6:fim-->  so em gta6.html
+//   <!--carrossel:inicio-->...<!--carrossel:fim-->  e  <!--cobertura:inicio-->...<!--cobertura:fim-->   so na home (carrossel do topo e cobertura em andamento; config.mjs)
 //   <meta name="description" data-modelo="... {gta6-data} ...">   descricao montada a partir de dados do config.mjs
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { DOMINIO, categorias } from './config.mjs';
-import { feedHtml, gta6Html } from './paginas.mjs';
+import { carrosselHtml, coberturaHtml, contagemHtml, feedHtml, gta6Html, playersHtml, wikiHtml } from './paginas.mjs';
 import { ErroDeDados, desescapar, esc, hojeEmSaoPaulo, lerJson } from './util.mjs';
 
 // pastas que nao sao paginas do site (nao entram na varredura de .html nem no sitemap)
 const NAO_VARRER = new Set(['_ferramentas', '_conteudo', '_marca', '_site', 'assets', 'node_modules', 'pagefind', '.git', '.github']);
-// paginas escritas a mao que mostram os chips das abas -> qual chip fica "ativo"
-const CHIPS_FIXAS = { 'index.html': null, 'gta6.html': 'gta6.html', 'cortes.html': 'cortes.html', 'lives.html': 'lives.html' };
 // marcadores de abertura/fechamento que precisam vir em PAR, uma vez so, nessa ordem
 const PARES = {
   header: ['<!--site:header-->', '<!--/site:header-->'],
@@ -28,7 +27,12 @@ const PARES = {
   social: ['<!--site:social-->', '<!--/site:social-->'],
   jsonld: ['<!--site:jsonld-->', '<!--/site:jsonld-->'],
   feed: ['<!--feed:inicio-->', '<!--feed:fim-->'],
+  carrossel: ['<!--carrossel:inicio-->', '<!--carrossel:fim-->'],
+  cobertura: ['<!--cobertura:inicio-->', '<!--cobertura:fim-->'],
   gta6: ['<!--gta6:inicio-->', '<!--gta6:fim-->'],
+  wiki: ['<!--wiki:inicio-->', '<!--wiki:fim-->'],
+  players: ['<!--players:inicio-->', '<!--players:fim-->'],
+  contagem: ['<!--contagem:inicio-->', '<!--contagem:fim-->'],
 };
 
 // previas: geram paginas que NAO devem ser publicadas (rascunhos, texto de exemplo, paginas so com o player)
@@ -45,7 +49,7 @@ const gravarSeMudou = (abs, conteudo) => {
 function orfaos(ctx) {
   const { site, saidas } = ctx;
   const lista = [];
-  for (const pasta of [...categorias.map((c) => c.pasta), 'tag', 'arquivo']) {
+  for (const pasta of [...categorias.map((c) => c.pasta), 'tag', 'arquivo', 'wiki']) {
     const abs = path.join(site, pasta);
     if (!fs.existsSync(abs)) continue;
     for (const f of fs.readdirSync(abs)) if (!saidas.has(`${pasta}/${f}`)) lista.push(`${pasta}/${f}`);
@@ -57,13 +61,15 @@ function orfaos(ctx) {
   if (fs.existsSync(listas)) for (const f of fs.readdirSync(listas)) if (!saidas.has(`assets/data/lista/${f}`)) lista.push(`assets/data/lista/${f}`);
   const colecoes = path.join(site, 'assets', 'data', 'colecao'); // "Ver mais" de listas que encolheram (tag que caiu para 30 ou menos, materia retirada...)
   if (fs.existsSync(colecoes)) for (const f of fs.readdirSync(colecoes, { recursive: true })) { const rel = `assets/data/colecao/${f.split(path.sep).join('/')}`; if (fs.statSync(path.join(site, rel)).isFile() && !saidas.has(rel)) lista.push(rel); }
+  const secoes = path.join(site, 'assets', 'data', 'secao'); // mini-busca de uma secao que deixou de existir
+  if (fs.existsSync(secoes)) for (const f of fs.readdirSync(secoes)) if (!saidas.has('assets/data/secao/' + f)) lista.push('assets/data/secao/' + f);
   return lista;
 }
 function apagarOrfaos(ctx, lista) {
   for (const rel of lista) fs.rmSync(path.join(ctx.site, rel), { recursive: true, force: true });
   const colecoes = path.join(ctx.site, 'assets', 'data', 'colecao'); // pastas de colecao que ficaram vazias
   if (fs.existsSync(colecoes)) for (const d of fs.readdirSync(colecoes)) { const abs = path.join(colecoes, d); if (fs.statSync(abs).isDirectory() && !fs.readdirSync(abs).length) fs.rmSync(abs, { recursive: true, force: true }); }
-  for (const pasta of [...categorias.map((c) => c.pasta), 'tag', 'arquivo']) {
+  for (const pasta of [...categorias.map((c) => c.pasta), 'tag', 'arquivo', 'wiki']) {
     const abs = path.join(ctx.site, pasta);
     if (fs.existsSync(abs) && !fs.readdirSync(abs).length) fs.rmSync(abs, { recursive: true, force: true });
   }
@@ -95,7 +101,7 @@ function conferirPar(html, [abre, fecha]) {
 
 // monta o HTML final de UMA pagina. Erros vao para `problemas` (nada e gravado se houver algum).
 function montarPagina(ctx, r, original, problemas) {
-  const { saidas, icone, headerHtml, footerHtml, chips, social, jsonLd, dado, modelo } = ctx;
+  const { saidas, icone, headerHtml, footerHtml, social, jsonLd, dado, modelo } = ctx;
   const erro = (msg) => problemas.push(`${r}: ${msg}`);
   if (/http-equiv="refresh"/.test(original)) return original; // redirecionamento: nao tem cabecalho
   const geradaPeloSite = saidas.has(r);
@@ -108,14 +114,14 @@ function montarPagina(ctx, r, original, problemas) {
   }
   for (const obrigatorio of ['header', 'footer']) if (!html.includes(PARES[obrigatorio][0])) erro(`falta o marcador ${PARES[obrigatorio][0]}${PARES[obrigatorio][1]}. Toda pagina precisa dele para receber o cabecalho/rodape do site (copie de outra pagina, ex.: termos.html).`);
   if (!geradaPeloSite && !html.includes(PARES.social[0])) erro(`falta o marcador ${PARES.social[0]}${PARES.social[1]} dentro do <head> (gera a previa de compartilhamento a partir do <title> e da meta description). Copie de outra pagina.`);
-  if (r === 'index.html' && !html.includes(PARES.feed[0])) erro(`a home precisa dos marcadores ${PARES.feed[0]} e ${PARES.feed[1]} (o feed de ultimas materias).`);
-  if (r === 'gta6.html' && !html.includes(PARES.gta6[0])) erro(`a pagina do GTA 6 precisa dos marcadores ${PARES.gta6[0]} e ${PARES.gta6[1]} (as novidades).`);
-
-  // 2) chips das abas (so as 4 paginas de aba escritas a mao)
-  if (!geradaPeloSite && r in CHIPS_FIXAS) {
-    if (!/<ul class="chips">/.test(html)) ctx.avisos.push(`${r}: sem <ul class="chips"> (as abas de categoria nao aparecem).`);
-    else html = html.replace(/<ul class="chips">[\s\S]*?<\/ul>/, () => `<ul class="chips">\n${chips(CHIPS_FIXAS[r])}\n        </ul>`);
+  if (r === 'index.html') {
+    for (const [nome, o] of [['feed', 'o feed de ultimas materias'], ['carrossel', 'o carrossel do topo'], ['cobertura', 'a cobertura em andamento']]) if (!html.includes(PARES[nome][0])) erro(`a home precisa dos marcadores ${PARES[nome][0]} e ${PARES[nome][1]} (${o}).`);
   }
+  if (['index.html', 'gta6.html'].includes(r) && !html.includes(PARES.contagem[0])) erro(`a pagina ${r} precisa dos marcadores ${PARES.contagem[0]} e ${PARES.contagem[1]} (a contagem regressiva do GTA 6 e, depois da data, o estado lancado: veja GTA6 em config.mjs).`);
+  if (r === 'gta6.html' && !html.includes(PARES.gta6[0])) erro(`a pagina do GTA 6 precisa dos marcadores ${PARES.gta6[0]} e ${PARES.gta6[1]} (as novidades).`);
+  if (['cortes.html', 'lives.html'].includes(r) && !html.includes(PARES.players[0])) erro(`a pagina ${r} precisa dos marcadores ${PARES.players[0]} e ${PARES.players[1]} (os players e a lista de videos de cada playlist: veja PLAYERS em config.mjs).`);
+  if (r === 'wiki.html' && !html.includes(PARES.wiki[0])) erro(`a pagina Wiki precisa dos marcadores ${PARES.wiki[0]} e ${PARES.wiki[1]} (os cartoes dos jogos).`);
+
 
   // 3) dados que se repetem (config.mjs): meta com data-modelo, <!--dado:...-->, data-alvo da contagem regressiva
   html = html.replace(/<meta\b[^>]*\bdata-modelo="([^"]*)"[^>]*>/g, (tag, mod) => tag.replace(/\bcontent="[^"]*"/, () => `content="${esc(modelo(desescapar(mod)))}"`));
@@ -127,15 +133,22 @@ function montarPagina(ctx, r, original, problemas) {
   html = html.replace(/(\bid="gta-count"[^>]*\bdata-alvo=")[^"]*(")/g, (todo, a, b) => `${a}${dado('gta6-alvo')}${b}`);
 
   // 4) cabecalho, rodape, icones, novidades do GTA 6, feed da home
+  const base = r === '404.html' ? '/' : '../'.repeat(r.split('/').length - 1);
   html = html
-    .replace(/<!--site:header-->[\s\S]*?<!--\/site:header-->/, () => `<!--site:header-->${headerHtml(r === '404.html' ? '/' : '../'.repeat(r.split('/').length - 1))}<!--/site:header-->`)
-    .replace(/<!--site:footer-->[\s\S]*?<!--\/site:footer-->/, () => `<!--site:footer-->${footerHtml(r === '404.html' ? '/' : '../'.repeat(r.split('/').length - 1))}<!--/site:footer-->`)
+    .replace(/<!--site:header-->[\s\S]*?<!--\/site:header-->/, () => `<!--site:header-->${headerHtml(base, r)}<!--/site:header-->`)
+    .replace(/<!--site:footer-->[\s\S]*?<!--\/site:footer-->/, () => `<!--site:footer-->${footerHtml(base, r)}<!--/site:footer-->`)
     .replace(/<!--icone:([\w-]+)-->(?:(?:(?!<!--)[\s\S])*?<!--\/icone-->)?/g, (todo, nome) => {
       try { return `<!--icone:${nome}-->${icone(nome)}<!--/icone-->`; }
       catch (e) { erro(`marcador <!--icone:${nome}-->: ${e.message}.`); return todo; }
     });
+  if (['index.html', 'gta6.html'].includes(r)) html = html.replace(/<!--contagem:inicio-->[\s\S]*?<!--contagem:fim-->/, () => `<!--contagem:inicio-->\n${contagemHtml(ctx, { faixa: r === 'index.html' })}\n      <!--contagem:fim-->`);
   if (r === 'gta6.html') html = html.replace(/<!--gta6:inicio-->[\s\S]*?<!--gta6:fim-->/, () => `<!--gta6:inicio-->\n${gta6Html(ctx)}\n      <!--gta6:fim-->`);
-  if (r === 'index.html') html = html.replace(/<!--feed:inicio-->[\s\S]*?<!--feed:fim-->/, () => `<!--feed:inicio-->\n${feedHtml(ctx)}\n      <!--feed:fim-->`);
+  if (['cortes.html', 'lives.html'].includes(r)) html = html.replace(/<!--players:inicio-->[\s\S]*?<!--players:fim-->/, () => `<!--players:inicio-->\n${playersHtml(ctx, r)}\n      <!--players:fim-->`);
+  if (r === 'wiki.html') html = html.replace(/<!--wiki:inicio-->[\s\S]*?<!--wiki:fim-->/, () => `<!--wiki:inicio-->\n${wikiHtml(ctx)}\n      <!--wiki:fim-->`);
+  if (r === 'index.html') {
+    html = html.replace(/<!--feed:inicio-->[\s\S]*?<!--feed:fim-->/, () => `<!--feed:inicio-->\n${feedHtml(ctx)}\n      <!--feed:fim-->`);
+    html = html.replace(/<!--carrossel:inicio-->[\s\S]*?<!--carrossel:fim-->/, () => `<!--carrossel:inicio-->\n${carrosselHtml(ctx)}\n      <!--carrossel:fim-->`);
+    html = html.replace(/<!--cobertura:inicio-->[\s\S]*?<!--cobertura:fim-->/, () => `<!--cobertura:inicio-->\n${coberturaHtml(ctx)}\n      <!--cobertura:fim-->`);  }
   html = html.replace(/<!--site:jsonld-->[\s\S]*?<!--\/site:jsonld-->/, () => `<!--site:jsonld-->\n${jsonLd()}\n<!--/site:jsonld-->`);
 
   // 5) previa de compartilhamento, a partir do <title> e da meta description da propria pagina (por ultimo: ja com os dados preenchidos)
@@ -146,11 +159,14 @@ function montarPagina(ctx, r, original, problemas) {
     if (!titulo || !descricao) erro('a pagina precisa de <title> e <meta name="description"> (a previa de compartilhamento nasce deles).');
     else html = html.replace(/<!--site:social-->[\s\S]*?<!--\/site:social-->/, () => `<!--site:social-->\n${social({ titulo: desescapar(titulo.trim()), descricao: desescapar(descricao), url })}\n<!--/site:social-->`);
   }
+  // 5b) o menu lateral/gaveta (bloco <!--site:menu--> logo depois de <body>) NAO existe mais: a faixa de secoes mora no cabecalho. Paginas feitas antes dele sair
+  //     ainda trazem o bloco; ele e apagado aqui (nao precisa mexer na mao).
+  html = html.replace(/<!--site:menu-->[\s\S]*?<!--\/site:menu-->\n?/, '');
   // 6) recursos que o navegador deve buscar ANTES de precisar: a fonte dos titulos (sem isso o texto de abertura pinta com a fonte errada e "pula" quando
   //    ela chega) e as conexoes com o YouTube (miniaturas nos cartoes, player nas materias). Bloco gerenciado: refeito a cada geracao, em toda pagina.
   html = html.replace(/<!--site:recursos-->[\s\S]*?<!--\/site:recursos-->\n?/, '');
   html = html.replace(/<link rel="stylesheet" href="((?:[^"]*\/)?)assets\/css\/style\.css">/, (link, base) => {
-    const linhas = [`<link rel="preload" href="${base}assets/fonts/lilita-one-latin.woff2" as="font" type="font/woff2" crossorigin>`];
+    const linhas = [`<link rel="preload" href="${base}assets/fonts/lilita-one-latin.woff2" as="font" type="font/woff2" crossorigin>`, `<link rel="preload" href="${base}assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>`];
     if (!/<meta name="robots" content="noindex">/.test(html)) linhas.unshift('<meta name="robots" content="max-image-preview:large">'); // o Google pode mostrar a imagem grande (Discover, resultados com miniatura)
     if (html.includes('https://i.ytimg.com/')) linhas.push('<link rel="preconnect" href="https://i.ytimg.com">');
     if (html.includes('youtube-nocookie.com/embed/')) linhas.push('<link rel="preconnect" href="https://www.youtube-nocookie.com">');

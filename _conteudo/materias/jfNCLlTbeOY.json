@@ -2,17 +2,44 @@
   "formato": "horizontal",
   "categoria": "reviews",
   "publicado": "2026-02-26",
-  "titulo": "Hytale: o rival de Minecraft chegou ou foi só hype?",
-  "resumo": "Hytale em early access: voxel plus, combate de RPG e o mundo de Orbis. O Brubão sentiu o frescor do primeiro Minecraft e vê bugs e faltas.",
+  "titulo": "Hytale vale a pena? Minha nota é 6",
+  "resumo": "Joguei Hytale em acesso antecipado e senti a mágica do primeiro Minecraft, mas com bugs e falta de coisas. Dou nota 6 e tenho boa expectativa.",
   "tags": [
     "Hytale"
   ],
+  "veredito": {
+    "nota": 6,
+    "preco": "Cerca de US$ 20 no site oficial (acesso antecipado)",
+    "plataforma": "PC",
+    "paraQuem": "Quem curte sandbox no estilo Minecraft e topa um acesso antecipado, em inglês e com bugs."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/hytale-que-horas-libera-o-acesso-antecipado/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/survival-crafting/hytales-developer-warned-us-the-adventure-sandbox-isnt-good-yet-but-it-already-feels-pretty-good-to-me/"
+    },
+    {
+      "nome": "Fextralife",
+      "url": "https://hytale.wiki.fextralife.com/Hytale_Wiki"
+    }
+  ],
   "corpo": [
-    "O Brubão gostou muito de Hytale e diz que a sensação foi a de abrir o Minecraft pela primeira vez e explorar tudo. O jogo está em early access, com bugs e itens que fazem falta, mas ele deixou outros jogos de lado para decorar casa e explorar biomas num servidor com amigos. O veredito dele é que o jogo é bom de verdade, e que vale dar tempo para ele crescer.",
-    "O caminho foi longo. A Hypixel nasceu fazendo minigames para servidores de Minecraft, e a ideia de Hytale surgiu em 2015. O trailer de 2018 causou barulho, a Riot Games comprou o estúdio em 2020, o escopo cresceu demais e o projeto foi cancelado em junho de 2025. Em novembro, Simon Collins-Laflamme recomprou os direitos, o desenvolvimento foi reiniciado com foco no PC e o early access saiu em 13 de janeiro de 2026.",
-    "O visual usa o que o Brubão chama de voxel plus: não são só quadradinhos, e sim modelos que misturam pixels com profundidade 3D, o que faz o mundo parecer uma pintura viva. Os personagens têm ossos digitais, com NPCs respirando e piscando, e cada bioma tem paleta própria, do deserto laranja ao frio azulado. O jogo é leve: ele rodou numa RTX 4070 Super a cerca de 500 FPS e não notou diferença entre qualidade média e alta.",
-    "O mundo é Orbis, dividido em zonas numeradas, e a história não vem só em cenas: aparece em diários, ruínas e estátuas quebradas. No centro está o conflito entre Gaia, entidade da vida, que está enfraquecida ou desaparecida, e uma força sombria de corrupção, o Vazio, que vaza pelas fendas do mundo. O jogador é um visitante entre raças como os Kweebecs, bonecos de madeira que viram árvores ancestrais, além de nômades e insectoides.",
-    "Na jogabilidade, ele mostra visão em primeira e terceira pessoa, espada, escudo, dash e barras de vida, estamina e mana. O jogo permite criar cama para salvar, tocha, baú e bancada de trabalho, que pode ser melhorada, e usa uma escala de materiais que vai do bronze ao ferro e a metais mais raros. Os NPCs fazem trocas, mas reagem se você arrumar confusão com eles.",
-    "O Brubão admite a vontade de ver em Hytale o Minecraft 2 que muita gente queria, e que isso deve ser contido. Ele sente falta, por exemplo, de produzir cimento em massa, e o jogo está em inglês. Mas vê pontos positivos: atualizações frequentes, novos combates e NPCs e uma comunidade que ajuda a moldar o rumo. Ele pergunta ao público se também joga e pensa em montar um servidor aberto."
+    "Dou nota 6 em 10 a Hytale, que joguei em acesso antecipado no PC, em parte no servidor de um amigo. Gostei muito: a sensação foi a de abrir o Minecraft pela primeira vez e sair explorando tudo. Como pontos a melhorar, aponto os bugs, típicos do acesso antecipado, e elementos que ainda faltam.",
+    "O Hytale nasceu na Hypixel, ligada a minigames para servidores de Minecraft, que decidiu criar o próprio jogo. O trailer de 2018 quebrou a internet, e a Riot Games comprou o estúdio em 2020. O projeto cresceu demais: queriam rodar em PlayStation, Xbox, celular e PC, e a base em Java, voltada ao PC, complicou. A saída foi recomprar os direitos e focar 100% no PC.",
+    "O jogo não tenta ser realista. Ele usa o que eu chamo de voxel plus: cada modelo mistura pixels com profundidade 3D, e o mundo parece uma pintura viva, não um amontoado de cubos. Os personagens têm ossos digitais e animação, como os Kweebecs respirando e piscando, e o personagem se move de forma diferente conforme segura a arma.",
+    "Cada bioma tem paleta própria, como os desertos laranja e as regiões boreais azuis. O jogo é leve e roda em quase qualquer computador, até com placa de vídeo integrada. Com uma RTX 4070 Super, cheguei a 500 FPS e não notei diferença clara entre a qualidade média e a alta.",
+    "A história gira em torno do conflito entre Gaia, a entidade da vida, e Varyn, uma força sombria de corrupção conhecida como vazio, no mundo de Orbis. Gaia desapareceu ou está enfraquecida, e a influência de Varyn vaza pelas fendas da realidade, desequilibrando os inimigos de cada bioma. O mapa é dividido em zonas numeradas, e a história vem de diários, ruínas e estátuas quebradas, uma espécie de arqueologia digital.",
+    "O ponto alto do lore são as raças. Os Kweebecs, bonecos de madeira fofinhos, viram árvores ancestrais quando envelhecem, para dar vida à próxima geração. Há também os Feran, nômades que vivem sob a opressão dos Scarak, uma raça insectoide. O jogador não é o protagonista, mas um visitante de um mundo que já tem suas sociedades.",
+    "A jogabilidade lembra o Minecraft. Em terceira pessoa, que indico para o combate, o jogador tem espada, dash e escudo, com barras de vida, estamina e mana; tomar um golpe no escudo gasta estamina. O inventário mostra a defesa e o crafting: fogueira, cama para salvar, tocha, baú e bancada, que pode ser melhorada para liberar outros itens.",
+    "Os materiais evoluem de bronze e ferro para tório, cobalto, adamantita e mithril, o mais forte. Os vilarejos têm NPCs com quem dá para conversar e trocar itens, e arrumar confusão com eles é arriscado. O mapa abre com o M e só gera blocos conforme a posição do jogador.",
+    "O jogo está em inglês e recebe muitas atualizações: recentemente incluíram novas formas de combate e mais NPCs. Acredito que, se a Hypixel continuar trazendo novidades, minigames e o que prometeu em 2018, o jogo não tem como ser ruim. Sinto falta de algumas coisas, como produzir cimento em massa, e sei que preciso segurar a vontade de ter um Minecraft 2.",
+    "Deixei vários jogos de lado para jogar Hytale, no servidor que montei com os amigos, decorando casas, vendo biomas e blocos diferentes e conversando com NPCs. Tenho expectativa alta para novos mundos, NPCs e modos de jogo, e penso em montar um servidor para os inscritos.",
+    "Hytale entrou em acesso antecipado em 13 de janeiro de 2026, só para PC e vendido no site oficial, não na Steam, por cerca de US$ 20. A Riot cancelou o projeto em junho de 2025, e os criadores originais recompraram os direitos em novembro. Segundo o PC Gamer, as pré-vendas garantiram dois anos de desenvolvimento.",
+    "No fim das contas, dei nota 6 ao Hytale, ainda em acesso antecipado, mas o jogo é muito gostoso e não pretendo desistir dele."
   ]
 }

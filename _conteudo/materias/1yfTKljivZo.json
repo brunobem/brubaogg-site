@@ -1,14 +1,26 @@
 {
   "formato": "short",
-  "titulo": "Rockstar endurece regras de mods e veta crossovers em GTA 6",
-  "resumo": "As novas regras de mods da Rockstar proíbem levar mapas, personagens e histórias de outros jogos para GTA 6, além de vozes e rostos reais.",
+  "categoria": "gta6-novidades",
+  "publicado": "2026-09-26",
+  "titulo": "GTA 6: Rockstar endurece regras de mods e veta crossovers",
+  "resumo": "A Rockstar atualizou em setembro de 2026 suas regras de mods: não vale misturar personagens, mapas e vozes de outros jogos nem usar rostos reais sem permissão.",
   "tags": [
     "GTA 6"
   ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Kotaku",
+      "url": "https://kotaku.com/rockstar-asks-fans-to-respect-their-games-as-it-updates-strict-modding-guidelines-2000736306"
+    },
+    {
+      "nome": "Beebom",
+      "url": "https://beebom.com/gta-6-modding-restrictions-could-get-strict-under-rockstars-new-mod-rules/"
+    }
+  ],
   "corpo": [
-    "Antes mesmo do lançamento de GTA 6, a Rockstar endureceu as regras para quem cria mods dos seus jogos. A política, datada de 10 de setembro de 2026, vale para o catálogo da empresa e deixa claro o que não pode: pegar mapa, personagem ou história de um jogo da Rockstar e levar para outro.",
-    "Na prática, isso veta crossovers como colocar CJ, de San Andreas, ou Tommy Vercetti, de Vice City, em GTA 6, ou levar mapas antigos para o jogo novo. Também é proibido reaproveitar ou modificar as vozes dos atores dos jogos da Rockstar e usar voz, rosto ou imagem de pessoas reais sem autorização por escrito.",
-    "As diretrizes também limitam a monetização, com proibição de vender moeda virtual por dinheiro real, caixas de recompensa, criptomoedas, NFTs e publicidade dentro de mods.",
-    "Para quem sonhava em ver personagens clássicos no mapa novo, o Brubão chama as regras de um balde de água fria. Ele considera normal a proibição de vozes e rostos reais, pergunta se o público vê a medida como a Rockstar fechando o cerco e diz que não tem nada a ver com isso."
+    "A Rockstar atualizou, em setembro de 2026, suas diretrizes de mods, que valem para todos os seus jogos, não só GTA 6. Pelas regras, os modders não podem ampliar nem alterar histórias, missões ou personagens oficiais, nem combinar mapas, locais, personagens e itens de jogos diferentes da Rockstar. Na prática, fica vetado colocar o CJ de San Andreas, o Tommy Vercetti ou mapas antigos dentro de GTA 6.",
+    "As diretrizes também pedem respeito à propriedade intelectual de terceiros, como marcas, músicas, fotos e logotipos, e a Rockstar pede que os fãs respeitem seus jogos. As regras valem para todos os jogos da empresa, e a aplicação delas em GTA 6 só será vista depois do lançamento.",
+    "Também é proibido reaproveitar as vozes dos atores dos jogos e usar a imagem ou a voz de pessoas reais sem autorização por escrito. As regras limitam ainda a monetização fora da plataforma oficial de criadores e proíbem caixas de recompensa pagas. Ainda não há PC anunciado para GTA 6. Para mim, as regras são um balde de água fria para quem sonha em viver personagens clássicos no mapa novo."
   ]
 }

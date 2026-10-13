@@ -1,7 +1,8 @@
 // Monta as paginas do site em memoria (nada e gravado aqui; quem grava e saida.mjs):
 // materias e listas de categoria, paginas de tag, GTA 6 (destaque), feed da home, 404, busca (pagina e listas por mes) e atalhos da busca.
-import { AUTOR, DOMINIO, categorias, lorem, paginasFixasNaBusca, resumosLorem } from './config.mjs';
-import { cortar, dataLonga, esc, limparTitulo, mesDe, miniatura, slugify } from './util.mjs';
+import { ADS_NAS_LISTAS, AUTOR, BUSCA_DA_SECAO, CARROSSEL, COBERTURA, DOMINIO, GTA6, LIVE, PALAVRAS_POR_MINUTO, PLAYERS, RECOMENDACOES, SOCIAIS, VIDEOS_POR_PLAYER, WIKI, abas, categorias, lorem, paginasFixasNaBusca, resumosLorem } from './config.mjs';
+import { caminhoAntigo } from './enderecos.mjs';
+import { cortar, dataCurta, dataLonga, esc, limparTitulo, mesDe, miniatura, slugify } from './util.mjs';
 
 // ---- "Ver mais" das listas ----
 // A pagina mostra os 30 primeiros (ja no HTML: rapido, indexavel, funciona sem JavaScript). O resto vai em arquivos de 90 itens
@@ -19,9 +20,110 @@ function colecao(ctx, id, lista, { gravar = true } = {}) {
       ${modeloDeIcones(ctx)}`;
 }
 // icones das categorias para os cartoes montados pelo JavaScript (o mesmo desenho do HTML gerado)
-function modeloDeIcones(ctx, rotulos = null) {
-  return `<template id="busca-icones">${categorias.filter((c) => !rotulos || rotulos.includes(c.rotulo)).map((c) => `<span data-cat="${esc(c.rotulo)}">${ctx.icone(c.icone)}</span>`).join('')}</template>`;
+function modeloDeIcones(ctx, rotulos = null, id = 'busca-icones') {
+  // os tipos de conteudo da Wiki ("Historia", "Personagem"...) usam o icone do livro
+  const tipos = Object.values(WIKI.tipos).filter((n) => !rotulos || rotulos.includes(n)).map((n) => `<span data-cat="${esc(n)}">${ctx.icone('book-open')}</span>`);
+  return `<template id="${id}">${[...categorias.filter((c) => !rotulos || rotulos.includes(c.rotulo)).map((c) => `<span data-cat="${esc(c.rotulo)}">${ctx.icone(c.icone)}</span>`), ...tipos].join('')}</template>`;
 }
+
+// ---- Mini-busca de cada secao (Noticias, Reviews, Lancamentos e Wiki): campo de busca e, em Reviews e na Wiki, um menu lateral ----
+// O HTML (campo e menu, com a contagem de cada item) sai pronto daqui, escondido ate o JavaScript chegar; a lista de sempre fica no HTML, visivel (Google e quem esta
+// sem JavaScript) e so some enquanto ha busca ou item de menu ativo. Os cartoes filtrados vem de assets/data/secao/<id>.json, baixado so quando a pessoa usa a busca
+// (assets/js/secao.js). Quais secoes tem menu, e de que: BUSCA_DA_SECAO em config.mjs.
+// "PS5 (também no PC)" -> ['PS5']; "Consoles e PC" -> ['Consoles', 'PC']: so a plataforma principal, a que vem antes do parentese
+const plataformasDe = (t) => (typeof t === 'string' ? t.replace(/\(.*$/, '').split(/\s+e\s+|,|\//).map((x) => x.trim()).filter(Boolean) : []);
+
+/** Itens de menu de uma materia: [[slug, nome], ...]. `extra.jogo` = [[slug, nome]] do jogo da Wiki (so a Wiki passa). */
+function valoresDoMenu(g, { m, extra }) {
+  if (g === 'pl') return plataformasDe(m.veredito?.plataforma).map((p) => [slugify(p), p]).filter(([s]) => s);
+  if (g === 'jogo') return extra?.jogo ?? [];
+  return [];
+}
+
+/**
+ * Calcula os dados da mini-busca de uma secao e grava assets/data/secao/<id>.json. `lista` = [{ m, cat, extra? }] do mais novo para o mais velho.
+ * `meta.hrefs` = { slug do item: pagina dele } (o menu da Wiki leva a pagina do jogo); `meta.ordem` = a ordem dos itens do menu (padrao: o que tem mais materias primeiro).
+ * Devolve null se a secao nao tem busca configurada ou tem menos de 2 materias.
+ */
+function dadosDaSecao(ctx, id, lista, meta = {}) {
+  const cfg = BUSCA_DA_SECAO[id];
+  if (!cfg || lista.length < 2) return null;
+  let menu = meta.menu ?? null; // a Wiki traz o menu pronto (dois niveis); Reviews calcula o de plataformas aqui
+  if (!menu && cfg.menu) {
+    const g = cfg.menu.filtro, cont = new Map();
+    for (const it of lista) for (const [v, nome] of new Map(valoresDoMenu(g, it))) { const c = cont.get(v) ?? { v, nome, n: 0 }; c.n++; cont.set(v, c); }
+    let opcoes = [...cont.values()];
+    if (meta.ordem) opcoes.sort((a, b) => meta.ordem.indexOf(a.v) - meta.ordem.indexOf(b.v));
+    else opcoes.sort((a, b) => b.n - a.n || a.nome.localeCompare(b.nome, 'pt-BR'));
+    if (g === 'pl') opcoes = opcoes.filter((o) => o.n >= BUSCA_DA_SECAO.minimo);
+    opcoes = opcoes.slice(0, BUSCA_DA_SECAO.maxItens).map((o) => ({ ...o, href: meta.hrefs?.[o.v] }));
+    if (opcoes.length >= 2) menu = { g, titulo: cfg.menu.titulo, todos: cfg.menu.todos, opcoes };
+  }
+  const itens = lista.map((it) => {
+    const { m, cat } = it;
+    let f = it.extra?.f ?? null; // a Wiki ja traz os valores prontos (franquia e jogo); Reviews calcula a plataforma
+    if (!f && menu) { const vs = [...new Set(valoresDoMenu(menu.g, it).map(([v]) => v))]; if (vs.length) f = { [menu.g]: vs }; }
+    if (f) f = Object.fromEntries(Object.entries(f).filter(([, vs]) => vs.length));
+    if (f && !Object.keys(f).length) f = null;
+    const b = [...(m.tags ?? []).map((t) => t.nome), typeof m.assunto === 'string' ? m.assunto.replace(/-/g, ' ') : ''].filter(Boolean).join(' ');
+    return { t: m.titulo, r: m.resumo ?? '', u: `${cat.pasta}/${m.slug}.html`, i: miniatura(m.id), c: m.rotulo ?? cat.rotulo, dt: m.publicado, ...(f ? { f } : {}), ...(b ? { b } : {}) };
+  });
+  ctx.escrever(`assets/data/secao/${id}.json`, JSON.stringify({ itens }));
+  return { id, cfg, menu, total: lista.length, rotulos: [...new Set(lista.map(({ m, cat }) => m.rotulo ?? cat.rotulo))] };
+}
+
+/**
+ * O HTML da mini-busca. `estatico` = a lista de sempre (HTML), que fica dentro da coluna de conteudo, visivel, e o JavaScript esconde enquanto ha busca ativa.
+ * O menu pode ter DOIS NIVEIS (Wiki): um item com `subs` abre, logo abaixo dele, a lista dos itens dele (`.secao-sub`); os jogos sem conteudo ficam `.vazio`.
+ */
+function htmlDaSecao(ctx, dados, estatico) {
+  const { id, cfg, menu } = dados;
+  const botao = (o) => `          <button type="button" class="secao-item" data-v="${esc(o.v)}"${o.href ? ` data-href="${esc(o.href)}"` : ''} aria-pressed="false"${o.subs ? ` aria-expanded="false" aria-controls="secao-sub-${esc(o.v)}"` : ''}>${esc(o.nome)} <small>${o.n}</small></button>`;
+  const subitem = (s) => `            <button type="button" class="secao-subitem${s.n ? '' : ' vazio'}" data-v="${esc(s.v)}"${s.href ? ` data-href="${esc(s.href)}"` : ''} aria-pressed="false">${esc(s.nome)} <small>${s.n}</small></button>`;
+  const opcao = (o) => (o.subs ? `${botao(o)}
+          <div class="secao-sub" id="secao-sub-${esc(o.v)}" data-pai="${esc(o.v)}" role="group" aria-label="${esc(o.nome)}" hidden>
+${o.subs.map(subitem).join('\n')}
+          </div>` : botao(o));
+  const itensDoMenu = menu ? `        <div class="secao-menu" role="group" aria-labelledby="secao-g-${menu.g}" data-grupo="${menu.g}" hidden>
+          <span class="secao-rot" id="secao-g-${menu.g}">${esc(menu.titulo)}</span>
+          <button type="button" class="secao-item" data-v="" aria-pressed="true">${esc(menu.todos)} <small>${dados.total}</small></button>
+${menu.opcoes.map(opcao).join('\n')}
+        </div>
+` : '';
+  const ordem = cfg.ordem ? `
+            <label class="secao-ordem">Ordenar por
+              <select name="o" aria-label="Ordenar ${esc(cfg.varios)}">
+                <option value="recentes">Mais recentes</option>
+                <option value="az">De A a Z</option>
+              </select>
+            </label>` : '';
+  return `      <section class="secao-busca" data-secao="${id}" data-src="assets/data/secao/${id}.json" data-um="${esc(cfg.um)}" data-varios="${esc(cfg.varios)}">
+        <form class="secao-form" role="search" aria-label="Buscar em ${esc(cfg.varios)}" novalidate hidden>
+          <div class="secao-linha">
+            <div class="secao-campo">
+              ${ctx.icone('search')}
+              <label class="sr-only" for="secao-q">${esc(cfg.campo.replace('…', ''))}</label>
+              <input id="secao-q" name="q" type="search" placeholder="${esc(cfg.campo)}" maxlength="100" autocomplete="off" enterkeyhint="search">
+            </div>${ordem}
+          </div>
+          <p class="busca-status" role="status" aria-live="polite"></p>
+        </form>
+${adsHtml(`${id}-apos-filtro`)}
+        <div class="secao-layout">
+${itensDoMenu}          <div class="secao-conteudo">
+            <p class="secao-ver" hidden></p>
+            <div class="news-grid secao-resultados"${adsNaLista(id)} hidden></div>
+            <div class="busca-mais secao-mais" hidden><button type="button" class="btn">Ver mais</button></div>
+            <div class="secao-estatico">
+${estatico}
+            </div>
+          </div>
+        </div>
+        ${modeloDeIcones(ctx, dados.rotulos, 'secao-icones')}
+      </section>
+      <script src="assets/js/secao.js" defer></script>${ADS_NAS_LISTAS[id] ? '\n      <script src="assets/js/ads.js" defer></script>' : ''}`;
+}
+
 // as novidades do hub do GTA 6: a categoria gta6-novidades + materias de outras categorias com a tag "GTA 6", do mais novo para o mais velho
 function listaDoHub(ctx) {
   const dados = ctx.itensPorCategoria['gta6-novidades'];
@@ -36,21 +138,81 @@ function listaDoHub(ctx) {
 
 // quem assina e publica (dados estruturados): o proprio canal. O nome "Claudio" + selo "IA" continuam na assinatura visivel da materia.
 const ORGANIZACAO = { '@type': 'Organization', name: 'BRUBAOGG', url: `${DOMINIO}/` };
+const AUTORA = { '@type': 'Person', name: AUTOR, url: `${DOMINIO}/sobre.html` }; // autor das materias nos dados estruturados (a editora continua sendo a organizacao BRUBAOGG)
+const absoluta = (u) => (u.startsWith('/') ? `${DOMINIO}${u}` : u); // imagem do proprio site (conteudo da Wiki sem video) em dados estruturados: endereco inteiro
 const EDITORA = { ...ORGANIZACAO, logo: { '@type': 'ImageObject', url: `${DOMINIO}/assets/img/logo.png` } };
 
-// "relacionadas": ate 3 da MESMA categoria, escolhidas por tags em comum e proximidade de data (a lista vem do mais novo para o mais velho, entao a distancia
-// no vetor e a distancia no tempo). Espalha os links internos pela lista, em vez de apontar sempre para as 3 mais novas (88% das materias ficariam sem link).
-function relacionadasDe(itens, pos, m) {
-  const i = pos.get(m), slugs = new Set(m.tags.map((x) => x.slug)), JANELA = 40;
-  return itens.slice(Math.max(0, i - JANELA), i + JANELA + 1).filter((x) => x !== m)
-    .map((x) => ({ x, nota: x.tags.filter((g) => slugs.has(g.slug)).length * 100 - Math.abs(pos.get(x) - i) }))
-    .sort((a, b) => b.nota - a.nota || pos.get(a.x) - pos.get(b.x))
-    .slice(0, 3).map(({ x }) => x).sort((a, b) => pos.get(a) - pos.get(b));
+// "relacionadas": ate 3 materias de QUALQUER categoria (a noticia de um jogo leva a review dele e vice-versa; o Short e a review do mesmo jogo se enxergam).
+// Escolhe entre as que dividem tags com a materia. Nota de cada candidata: tag em comum vale mais quanto MENOS materias tem a tag (uma tag so de 2 materias liga
+// muito mais que "GTA 6", que esta em 30); outra categoria soma um pouco (varia o que a pessoa encontra); a distancia no tempo tira um pouco (todas = fila geral, da
+// mais nova para a mais velha); e quem ja foi escolhida por outras paginas perde pontos, e quem ainda nao foi escolhida por nenhuma ganha: assim os links internos se
+// espalham pelo site em vez de apontarem sempre para as mesmas (o Google segue links; pagina sem nenhum link recebido fica orfa). Sobrando vaga (materia cujas tags sao
+// so dela), completa com as vizinhas da mesma categoria. O resultado e deterministico (as paginas sao tratadas da mais nova para a mais velha).
+const RELACIONADAS = 3, JANELA_DA_CATEGORIA = 40;
+const PESO_DA_TAG = 100, SOMA_OUTRA_CATEGORIA = 15, TIRA_POR_DISTANCIA = 1 / 3, DISTANCIA_MAXIMA = 60, TIRA_POR_LINK_RECEBIDO = 5, SOMA_SEM_LINK_RECEBIDO = 10;
+export function calcularRelacionadas({ todas, ordem, catDe, grupos, contagemTags }) {
+  const pesoDe = (slug) => PESO_DA_TAG / Math.log2(1 + (contagemTags.get(slug) ?? 1));
+  const recebidos = new Map(todas.map((m) => [m, 0]));
+  const lugar = new Map(), vizinhas = new Map(); // posicao de cada materia na sua categoria e a lista dessa categoria
+  for (const { itens } of grupos) itens.forEach((x, k) => { lugar.set(x, k); vizinhas.set(x, itens); });
+  const porTag = new Map(); // tag -> as materias que a tem: so elas podem ser escolhidas por tag (o site cresce: nao compara cada materia com todas as outras)
+  for (const x of todas) for (const g of x.tags) { if (!porTag.has(g.slug)) porTag.set(g.slug, []); porTag.get(g.slug).push(x); }
+  const resultado = new Map(), completaram = new Map(); // completaram: materia -> as escolhidas que entraram so para completar a vaga (sem tag em comum)
+  for (const m of todas) {
+    const slugs = new Set(m.tags.map((x) => x.slug)), previa = m.semTexto || m.ficticio; // so as paginas de teste (sem texto) apontam para paginas de teste
+    const serve = (x) => x !== m && (previa || !(x.semTexto || x.ficticio));
+    const candidatas = new Set();
+    for (const s of slugs) for (const x of porTag.get(s) ?? []) if (serve(x)) candidatas.add(x);
+    const escolhidas = [...candidatas].map((x) => {
+      const comuns = x.tags.filter((g) => slugs.has(g.slug));
+      if (!comuns.length) return null;
+      const nota = comuns.reduce((soma, g) => soma + pesoDe(g.slug), 0)
+        + (catDe.get(x) !== catDe.get(m) ? SOMA_OUTRA_CATEGORIA : 0)
+        - Math.min(Math.abs(ordem.get(x) - ordem.get(m)), DISTANCIA_MAXIMA) * TIRA_POR_DISTANCIA
+        - recebidos.get(x) * TIRA_POR_LINK_RECEBIDO + (recebidos.get(x) ? 0 : SOMA_SEM_LINK_RECEBIDO);
+      return { x, nota };
+    }).filter(Boolean).sort((a, b) => b.nota - a.nota || ordem.get(a.x) - ordem.get(b.x)).slice(0, RELACIONADAS).map(({ x }) => x);
+    const completar = [];
+    if (escolhidas.length < RELACIONADAS) {
+      const i = lugar.get(m);
+      completar.push(...vizinhas.get(m).slice(Math.max(0, i - JANELA_DA_CATEGORIA), i + JANELA_DA_CATEGORIA + 1).filter((x) => serve(x) && !escolhidas.includes(x))
+        .sort((a, b) => Math.abs(lugar.get(a) - i) - Math.abs(lugar.get(b) - i) || recebidos.get(a) - recebidos.get(b) || lugar.get(a) - lugar.get(b)).slice(0, RELACIONADAS - escolhidas.length));
+      escolhidas.push(...completar);
+    }
+    completaram.set(m, new Set(completar));
+    for (const x of escolhidas) recebidos.set(x, recebidos.get(x) + 1);
+    resultado.set(m, escolhidas);
+  }
+  // pagina que ninguem escolheu (so tem tag propria) assume o lugar de uma vizinha de preenchimento, ja escolhida por outras, numa pagina proxima da mesma categoria
+  for (const o of todas) {
+    if (recebidos.get(o)) continue;
+    const proximas = vizinhas.get(o).filter((h) => h !== o && ((h.semTexto || h.ficticio) || !(o.semTexto || o.ficticio)))
+      .sort((a, b) => Math.abs(lugar.get(a) - lugar.get(o)) - Math.abs(lugar.get(b) - lugar.get(o)) || lugar.get(a) - lugar.get(b));
+    for (const h of proximas) {
+      const lista = resultado.get(h), troca = lista.find((x) => completaram.get(h).has(x) && recebidos.get(x) > 1);
+      if (!troca || lista.includes(o)) continue;
+      lista[lista.indexOf(troca)] = o;
+      completaram.get(h).delete(troca); completaram.get(h).add(o);
+      recebidos.set(troca, recebidos.get(troca) - 1); recebidos.set(o, 1);
+      break;
+    }
+  }
+  for (const lista of resultado.values()) lista.sort((a, b) => ordem.get(a) - ordem.get(b));
+  return resultado;
+}
+// titulo da secao: "Mais sobre <jogo>" quando pelo menos 2 das escolhidas dividem uma tag com a materia (a mais especifica, a de menos materias); senao "Veja tambem"
+function tituloDasRelacionadas(m, outras, contagemTags) {
+  const nomes = new Map(m.tags.map((x) => [x.slug, x.nome])), conta = new Map();
+  for (const o of outras) for (const g of o.tags) if (nomes.has(g.slug)) conta.set(g.slug, (conta.get(g.slug) ?? 0) + 1);
+  const [slug, n] = [...conta].sort((a, b) => b[1] - a[1] || (contagemTags.get(a[0]) ?? 0) - (contagemTags.get(b[0]) ?? 0) || a[0].localeCompare(b[0]))[0] ?? [];
+  return n >= 2 ? `Mais sobre ${nomes.get(slug)}` : 'Veja também';
 }
 
 export function construirMaterias(ctx) {
-  const { flags, videosDe, temArquivo, lerMateria, icone, resolverTags, temPaginaTag, tagPage, pagina, chips, cartao, escrever } = ctx;
+  const { flags, videosDe, temArquivo, lerMateria, icone, resolverTags, temPaginaTag, tagPage, tagsCfg, pagina, cartao, escrever } = ctx;
   const { RASCUNHO, COM_RASCUNHOS, SO_COM_MATERIA } = flags;
+  // o jogo da Wiki a que uma materia pertence (a tag dela ou uma tag "filha"): a materia ganha o link "Wiki <jogo>" (o GTA 6, que tem pagina propria, fica de fora)
+  const wikiDe = (m) => WIKI.jogos.find((j) => !paginaPropria(ctx, j) && m.tags.some((x) => slugsDoJogo(ctx, j).has(x.slug))) ?? null;
 
   // pre-passagem: conta as materias de cada tag (inclui a franquia dos jogos com "pai")
   for (const lista of categorias.map((c) => videosDe(c))) {
@@ -62,11 +224,12 @@ export function construirMaterias(ctx) {
   }
 
   let total = 0, reais = 0, aguardando = 0;
+  const grupos = []; // [{ cat, itens }]: as materias de cada categoria (as paginas saem depois, quando todas as categorias ja existem: as relacionadas atravessam categorias)
   for (const cat of categorias) {
     const todos = videosDe(cat).sort((a, b) => b.published.localeCompare(a.published));
     // por padrao so entra video que tem materia aprovada; com --com-videos-sem-texto os demais viram pagina so com o player
     const videos = SO_COM_MATERIA && !RASCUNHO ? todos.filter(temArquivo) : todos;
-    aguardando += todos.length - videos.length;
+    aguardando += todos.filter((v) => !videos.includes(v) && !ctx.enderecos[v.id]?.retirada).length; // video retirado de proposito (ex.: Short anexado a uma review) nao "aguarda materia"
     if (!videos.length) continue;
     const usados = new Set();
     const itens = [];
@@ -88,9 +251,18 @@ export function construirMaterias(ctx) {
         corpo: real?.corpo ?? (semTexto ? [] : [lorem[i % 5], lorem[(i + 1) % 5], lorem[(i + 2) % 5], lorem[(i + 3) % 5]]),
         ficticio: !real && RASCUNHO,
         rascunho: real?.status === 'rascunho',
+        spoiler: real?.spoiler === true, // "spoiler": true no JSON da materia mostra o aviso "Contem spoilers" na pagina dela
+        assunto: real?.assunto, // alimenta a mini-busca da secao (texto do assunto)
+        veredito: real?.veredito, // a ficha de veredito da review (nota, recomendacao...): aparece no alto da pagina e a mini-busca usa recomendacao e plataforma
+        fontes: real?.fontes, // as fontes com link, no fim da pagina
+        shorts: real?.shorts, // Shorts anexados ("Shorts desta review"), players verticais pequenos depois dos botoes
         tags: resolverTags(real?.tags),
         semTexto,
         short: real?.formato === 'short', // vem do JSON da materia; video sem materia (so nos modos de teste) usa o player horizontal
+        // id do video do YouTube DESTA pagina. Conteudo da Wiki (_conteudo/wiki) so de texto fica sem video (null): sem player, sem botao do YouTube e sem VideoObject
+        video: real?.origem === 'wiki' ? (real.video ?? null) : v.id,
+        origem: real?.origem, jogo: real?.jogo, tipo: real?.origem === 'wiki' ? real.tipo : undefined,
+        rotulo: real?.origem === 'wiki' ? WIKI.tipos[real.tipo] : undefined, // nome do tipo no cartao ("Historia", "Personagem"); o resto usa o da categoria
       });
       if (real) reais++; else if (semTexto) aguardando++;
     });
@@ -100,87 +272,123 @@ export function construirMaterias(ctx) {
 
     // lista de todas as materias: alimenta as listas por mes e a pagina 1 da busca (texto fictício não entra, para não gerar resultados falsos)
     for (const m of itens) ctx.listaMaterias.push({ m, cat });
+    grupos.push({ cat, itens });
+  }
 
+  // materias do mesmo "assunto" (2 ou mais) viram UMA pagina, com um bloco por video: os varios itens saem e entra um so (a "unidade"); o resto do gerador a trata como materia comum
+  colapsarAssuntos(ctx, grupos);
+
+  // todas as materias do site, da mais nova para a mais velha (a posicao nessa fila e a "distancia no tempo" das relacionadas)
+  const catDe = new Map(grupos.flatMap(({ cat, itens }) => itens.map((m) => [m, cat])));
+  const todas = [...catDe.keys()].sort((a, b) => b.publicado.localeCompare(a.publicado));
+  const ordem = new Map(todas.map((m, k) => [m, k]));
+  const relacionadas = calcularRelacionadas({ todas, ordem, catDe, grupos, contagemTags: ctx.contagemTags });
+
+  for (const { cat, itens } of grupos) {
     // ---- pagina da materia ----
-    const pos = new Map(itens.map((x, k) => [x, k]));
     for (const m of itens) {
-      const outras = relacionadasDe(itens, pos, m);
-      const relacionadas = outras.length ? `
+      const outras = relacionadas.get(m);
+      const relacionadasHtml = outras.length ? `
       <section class="related"${m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore'}>
-        <h2 class="section-title">${esc(cat.relacionados ?? `Mais ${cat.nome.toLowerCase()}`)}</h2>
+        <h2 class="section-title">${esc(tituloDasRelacionadas(m, outras, ctx.contagemTags))}</h2>
         <div class="news-grid">
-${outras.map((o) => cartao(o, cat, '../')).join('\n')}
+${outras.map((o) => cartao(o, catDe.get(o), '../')).join('\n')}
         </div>
       </section>` : '';
+      if (m.blocos) { paginaDoAssunto(ctx, m, cat, relacionadasHtml); total++; continue; } // pagina de assunto: um bloco por video (colapsarAssuntos)
       // Short (vertical) com texto: player ao lado do texto. Video horizontal ou sem texto: player centralizado.
-      const dividido = m.short && (m.resumo || m.corpo.length);
+      const dividido = m.video && m.short && (m.resumo || m.corpo.length);
       const lead = m.resumo ? `<p class="art-lead"${m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-meta="resumo"'}>${esc(m.resumo)}</p>` : '';
-      const video = `<div class="art-video${m.short ? ' is-short' : ''}" id="video"><iframe src="https://www.youtube-nocookie.com/embed/${m.id}" title="${esc(m.titulo)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`;
+      const video = !m.video ? '' : `<div class="art-video${m.short ? ' is-short' : ''}" id="video">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${m.video}`, href: `https://www.youtube.com/watch?v=${m.video}`, titulo: m.titulo, imagem: miniatura(m.id) })}</div>`;
       const texto = m.corpo.length ? `<div class="art-body">\n${m.corpo.map((p) => `        <p>${esc(p)}</p>`).join('\n')}\n      </div>` : '';
+      const ignDaFicha = m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore';
       const miolo = dividido
         ? `<div class="art-split">\n        <div class="art-text">\n          ${lead}\n          ${texto}\n        </div>\n        ${video}\n      </div>`
         : `<div class="art-flow">\n        ${lead}\n        ${video}\n        ${texto}\n      </div>`;
+      // fecho da materia: o veredito (so review) ao lado das fontes, depois a assinatura (Bruno Bem, a data e o apoio de IA); depois dos botoes vem o resto
+      const ficha = vereditoHtml(ctx, m, ignDaFicha), fontes = fontesHtml(m, ignDaFicha), blocoShorts = shortsHtml(ctx, m, cat, ignDaFicha);
+      const fecho = [ficha, fontes].filter(Boolean);
+      const blocoFecho = fecho.length ? `<div class="materia-fim${fecho.length > 1 ? ' com-dois' : ''}">\n        ${fecho.join('\n        ')}\n      </div>` : '';
       // Pagefind (busca): so a materia real e indexada. A categoria e as tags viram filtros; a data, a ordenacao; a miniatura e o resumo, dados
       // para o cartao do resultado. O que e so navegacao (voltar, assinatura, relacionadas, botoes) fica de fora do texto indexado.
       const indexavel = !(m.ficticio || m.semTexto || m.rascunho);
       const pf = indexavel ? ` data-pagefind-body data-pagefind-filter="categoria:${esc(cat.rotulo)}" data-pagefind-meta="image:${miniatura(m.id)}"` : '';
       const ign = indexavel ? ' data-pagefind-ignore' : '';
       const tagsMostradas = [...m.tags].sort((a, b) => Number(temPaginaTag(b.slug)) - Number(temPaginaTag(a.slug))).slice(0, 8);
+      const url = `${DOMINIO}/${cat.pasta}/${m.slug}.html`;
+      const jogoDaWiki = wikiDe(m);
+      const linkDaWiki = jogoDaWiki ? `<li><a href="../${paginaDaWiki(ctx, jogoDaWiki)}">${icone('book-open')} Wiki ${esc(jogoDaWiki.nome)}</a></li>` : '';
       // as tags viram FILTROS da busca; o texto da lista fica fora do indice (senao o trecho do resultado mostraria "Resident Evil. Silent Hill.")
       const corpo = `    <main class="article${dividido ? ' has-split' : ''}"${pf}>
       ${(cat.lista || ctx.visiveis.has(cat.pasta)) ? `<a class="back"${ign} href="../${cat.lista ?? `${cat.pasta}.html`}">&larr; ${esc(cat.nomeCurto ?? cat.nome)}</a>` : `<a class="back"${ign} href="../index.html">&larr; Início</a>`}
-      <p class="art-meta"><span class="tag"${ign}>${icone(cat.icone)} ${esc(cat.rotulo)}</span> <time${indexavel ? ' data-pagefind-sort="data[datetime]" data-pagefind-meta="data[datetime]" data-pagefind-ignore' : ''} datetime="${m.publicado}">${dataLonga(m.publicado)}</time> <span class="byline"${ign}><span class="avatar" aria-hidden="true">C</span>Por <b>${AUTOR}</b> <small>IA</small></span></p>
+      <p class="art-meta"><span class="tag"${ign}>${icone(cat.icone)} ${esc(m.rotulo ?? cat.rotulo)}</span>${leituraHtml(ctx, contarPalavras(m.resumo, m.corpo), ign)}</p>
       <h1 class="art-title">${esc(m.titulo)}</h1>
-      ${tagsMostradas.length ? `<ul class="tag-list"${ign} aria-label="Tags">${tagsMostradas.map((x) => temPaginaTag(x.slug) ? `<li><a${indexavel ? ` data-pagefind-filter="tag:${esc(x.nome)}"` : ''} href="../${tagPage(x.slug)}">${icone('tag')} ${esc(x.nome)}</a></li>` : `<li><span${indexavel ? ` data-pagefind-filter="tag:${esc(x.nome)}"` : ''}>${icone('tag')} ${esc(x.nome)}</span></li>`).join('')}</ul>` : ''}
+      ${tagsMostradas.length ? `<ul class="tag-list"${ign} aria-label="Tags">${linkDaWiki}${tagsMostradas.map((x) => temPaginaTag(x.slug) ? `<li><a${indexavel ? ` data-pagefind-filter="tag:${esc(x.nome)}"` : ''} href="../${tagPage(x.slug)}">${icone('tag')} ${esc(x.nome)}</a></li>` : `<li><span${indexavel ? ` data-pagefind-filter="tag:${esc(x.nome)}"` : ''}>${icone('tag')} ${esc(x.nome)}</span></li>`).join('')}</ul>` : ''}
+      ${m.spoiler ? `<p class="aviso-spoiler"${ign} role="note">${icone('triangle-alert')} <span><b>Contém spoilers.</b> Esta matéria revela partes da história.</span></p>` : ''}
       ${dividido ? `<a class="ir-video"${ign} href="#video">&darr; Ir para o vídeo</a>` : ''}
-      ${miolo}
+      ${miolo}${blocoFecho ? `\n      ${blocoFecho}` : ''}
+      ${autoriaHtml({ publicado: m.publicado, indexavel, ign })}
       <div class="links"${ign}>
-        <a class="btn primary" href="https://www.youtube.com/watch?v=${m.id}" target="_blank" rel="noopener">Assistir no YouTube</a>
-        <a class="btn" href="https://youtube.com/@brubaogg" target="_blank" rel="noopener">Ver o canal</a>
-      </div>
-${relacionadas}
+        ${m.video ? `<a class="btn primary" href="https://www.youtube.com/watch?v=${m.video}" target="_blank" rel="noopener">Assistir no YouTube</a>
+        <a class="btn" href="https://www.youtube.com/watch?v=${m.video}#comments" target="_blank" rel="noopener">Comentar no vídeo</a>` : `<a class="btn primary" href="../${cat.aba ?? 'index.html'}">Voltar para ${esc(abas.find((a) => a.href === cat.aba)?.nome ?? 'o início')}</a>`}
+      </div>${blocoShorts ? `\n      ${blocoShorts}` : ''}
+${compartilharHtml(ctx, { titulo: m.titulo, url })}
+${conviteHtml(ctx, ign)}
+${relacionadasHtml}
     </main>`;
       // dados estruturados (so para materia de verdade): artigo + video + trilha. Aparecem no Google como resultado de artigo e de video.
-      const url = `${DOMINIO}/${cat.pasta}/${m.slug}.html`;
       const comLista = cat.lista || ctx.visiveis.has(cat.pasta);
       const estruturados = indexavel ? [{
         '@context': 'https://schema.org',
         '@graph': [
-          { '@type': 'Article', '@id': `${url}#artigo`, headline: cortar(m.titulo, 110), description: m.resumo, image: [miniatura(m.id)], datePublished: m.publicado, inLanguage: 'pt-BR', mainEntityOfPage: url, articleSection: cat.rotulo, ...(m.tags.length ? { keywords: m.tags.map((x) => x.nome).join(', ') } : {}), isAccessibleForFree: true, author: ORGANIZACAO, publisher: EDITORA, video: { '@id': `${url}#video` } },
-          { '@type': 'VideoObject', '@id': `${url}#video`, name: m.titulo, description: m.resumo || m.titulo, thumbnailUrl: [miniatura(m.id)], uploadDate: m.publicado, embedUrl: `https://www.youtube-nocookie.com/embed/${m.id}`, contentUrl: `https://www.youtube.com/watch?v=${m.id}`, inLanguage: 'pt-BR', publisher: EDITORA },
-          ctx.trilha([{ nome: 'Início', url: `${DOMINIO}/` }, ...(comLista ? [{ nome: cat.nomeCurto ?? cat.nome, url: `${DOMINIO}/${cat.lista ?? `${cat.pasta}.html`}` }] : []), { nome: m.titulo }]),
+          { '@type': 'Article', '@id': `${url}#artigo`, headline: cortar(m.titulo, 110), description: m.resumo, image: [absoluta(miniatura(m.id))], datePublished: m.publicado, inLanguage: 'pt-BR', mainEntityOfPage: url, articleSection: cat.rotulo, ...(m.tags.length ? { keywords: m.tags.map((x) => x.nome).join(', ') } : {}), isAccessibleForFree: true, author: AUTORA, publisher: EDITORA, ...(m.video ? { video: { '@id': `${url}#video` } } : {}), ...(m.fontes?.length ? { citation: m.fontes.map((f) => ({ '@type': 'CreativeWork', name: f.nome, url: f.url })) } : {}) },
+          ...(m.video ? [{ '@type': 'VideoObject', '@id': `${url}#video`, name: m.titulo, description: m.resumo || m.titulo, thumbnailUrl: [miniatura(m.id)], uploadDate: m.publicado, embedUrl: `https://www.youtube-nocookie.com/embed/${m.video}`, contentUrl: `https://www.youtube.com/watch?v=${m.video}`, inLanguage: 'pt-BR', publisher: EDITORA }] : []),
+          // review com nota: o Google pode mostrar as estrelas. O jogo avaliado e a primeira tag da materia (convencao: a tag do jogo vem primeiro)
+          ...(typeof m.veredito?.nota === 'number' && m.tags[0] ? [{ '@type': 'Review', '@id': `${url}#review`, name: m.titulo, datePublished: m.publicado, inLanguage: 'pt-BR', author: AUTORA, publisher: EDITORA, reviewRating: { '@type': 'Rating', ratingValue: m.veredito.nota, bestRating: 10, worstRating: 0 }, itemReviewed: { '@type': 'VideoGame', name: m.tags[0].nome }, mainEntityOfPage: url }] : []),
+          ctx.trilha([{ nome: 'Início', url: `${DOMINIO}/` }, ...(cat.aba ? [{ nome: abas.find((a) => a.href === cat.aba)?.nome ?? cat.aba, url: `${DOMINIO}/${cat.aba}` }] : []), ...(comLista ? [{ nome: cat.nomeCurto ?? cat.nome, url: `${DOMINIO}/${cat.lista ?? `${cat.pasta}.html`}` }] : []), { nome: m.titulo }]),
         ],
       }] : [];
       escrever(`${cat.pasta}/${m.slug}.html`, pagina({
-        base: '../', titulo: `${m.titulo} | BRUBAOGG`, descricao: m.resumo || `Assista: ${m.titulo}. Vídeo do canal BRUBAOGG.`, og: miniatura(m.id), corpo, caminho: `${cat.pasta}/${m.slug}.html`,
+        base: '../', titulo: `${m.titulo} | BRUBAOGG`, descricao: m.resumo || (m.video ? `Assista: ${m.titulo}. Vídeo do canal BRUBAOGG.` : m.titulo), og: miniatura(m.id), corpo, caminho: `${cat.pasta}/${m.slug}.html`,
         noindex: m.ficticio || m.semTexto || m.rascunho, // exemplo, so video ou rascunho: fora do Google
-        tipo: indexavel ? 'article' : 'website', publicado: m.publicado, estruturados,
+        tipo: indexavel ? 'article' : 'website', publicado: m.publicado, estruturados, scripts: m.video || m.shorts?.length ? ['compartilhar.js', 'fachada.js'] : ['compartilhar.js'],
       }));
       total++;
     }
 
     // ---- lista da categoria (so quando a aba esta visivel) ----
     if (!cat.lista && ctx.visiveis.has(cat.pasta)) {
+      const aba = abas.find((a) => a.href === cat.aba); // categoria que mora numa aba de outra pagina (Series na Wiki): caminho de volta
+      // sem playlist (Series) nao ha "ver no YouTube": o botao principal leva de volta para a aba dela
+      const principal = cat.playlist
+        ? `<a class="btn primary" href="https://www.youtube.com/playlist?list=${cat.playlist}" target="_blank" rel="noopener">Ver playlist completa no YouTube</a>`
+        : aba ? `<a class="btn primary" href="${aba.href}">Voltar para ${esc(aba.nome)}</a>` : '';
+      // mini-busca da secao (so Noticias, Reviews e Lancamentos): campo (e, em Reviews, o menu de plataformas) acima da lista; a lista de sempre fica dentro da busca, visivel
+      // a lista tem as materias da categoria e as das categorias que dizem `tambemEm` dela (config.mjs: tudo de GTA 6 tambem e noticia); cada cartao leva o rotulo da categoria de origem
+      const pares = todas.filter((x) => catDe.get(x) === cat || catDe.get(x).tambemEm === cat.pasta).map((m) => ({ m, cat: catDe.get(m) }));
+      const gradeEMais = `      <section class="news-grid" data-lista="cat-${cat.pasta}"${adsNaLista(cat.pasta)}>
+${pares.slice(0, PASSO_DA_LISTA).map(({ m, cat: origem }, i) => cartao(m, origem, '', i === 0)).join('\n')}
+      </section>
+${colecao(ctx, `cat-${cat.pasta}`, pares)}`;
+      const dadosBusca = dadosDaSecao(ctx, cat.pasta, pares);
       const lista = `    <main>
       <section class="cat-hero">
-        <h1>${icone(cat.icone)} ${esc(cat.nome)}</h1>
+        ${aba ? `<a class="back" href="${aba.href}">&larr; ${esc(aba.nome)}</a>\n        ` : ''}<h1>${icone(cat.icone)} ${esc(cat.nome)}</h1>
         <p class="lead">${esc(cat.desc)}</p>
-        <ul class="chips">
-${chips(`${cat.pasta}.html`)}
-        </ul>
       </section>
-
-      <section class="news-grid" data-lista="cat-${cat.pasta}">
-${itens.slice(0, PASSO_DA_LISTA).map((m, i) => cartao(m, cat, '', i === 0)).join('\n')}
-      </section>
-${colecao(ctx, `cat-${cat.pasta}`, itens.map((m) => ({ m, cat })))}
+${dadosBusca ? htmlDaSecao(ctx, dadosBusca, gradeEMais) : `\n${gradeEMais}`}
       <div class="links">
-        <a class="btn primary" href="https://www.youtube.com/playlist?list=${cat.playlist}" target="_blank" rel="noopener">Ver playlist completa no YouTube</a>
+        ${principal}
         <a class="btn" href="https://discord.gg/tQkkXMqAnU" target="_blank" rel="noopener">Entrar no Discord</a>
       </div>
     </main>`;
+      const tituloDaLista = cat.titulo ?? cat.nome; // <title> da lista (padrao: o nome da categoria); o h1 da pagina continua sendo o nome
       escrever(`${cat.pasta}.html`, pagina({
-        base: '', titulo: `${cat.nome} | BRUBAOGG`, descricao: cat.meta ?? cat.desc, og: null, corpo: lista, caminho: `${cat.pasta}.html`,
+        base: '', titulo: `${tituloDaLista} | BRUBAOGG`, descricao: cat.meta ?? cat.desc, og: null, corpo: lista, caminho: `${cat.pasta}.html`,
+        estruturados: dadosDeColecao(ctx, {
+          caminho: `${cat.pasta}.html`, nome: tituloDaLista, descricao: cat.meta ?? cat.desc,
+          migalhas: [{ nome: 'Início', url: `${DOMINIO}/` }, ...(aba ? [{ nome: aba.nome, url: `${DOMINIO}/${aba.href}` }] : []), { nome: cat.nome }],
+        }),
       }));
     }
   }
@@ -192,21 +400,32 @@ export function construirRedirecionamentos(ctx) {
   const { escrever, redirecionamento } = ctx;
   const itens = new Map(Object.values(ctx.itensPorCategoria).flatMap(({ cat, itens: lista }) => lista.map((m) => [`${cat.pasta}/${m.slug}.html`, m])));
   const geradas = new Set(itens.keys());
-  for (const e of Object.values(ctx.enderecos)) {
+  // onde a materia `id` esta no ar: { url, item } (url com ancora quando ela e um bloco de pagina de assunto), ou null se a pagina dela nao sera gerada nem for bloco
+  const paginaDe = (id) => {
+    const r = ctx.enderecos[id];
+    if (!r || r.retirada) return null;
+    const noAssunto = ctx.assuntoDe?.get(id);
+    if (noAssunto) return { url: `${noAssunto.cat.pasta}/${noAssunto.unidade.slug}.html#v-${id}`, item: noAssunto.unidade };
+    const url = `${r.categoria}/${r.slug}.html`;
+    return geradas.has(url) ? { url, item: itens.get(url) } : null;
+  };
+  for (const [id, e] of Object.entries(ctx.enderecos)) {
     const cat = categorias.find((c) => c.pasta === e.categoria);
     if (!cat) continue;
-    let destino, de;
+    const levar = (de, alvo) => { for (const velho of de) escrever(`${caminhoAntigo(e, velho)}.html`, redirecionamento({ para: alvo.url, titulo: alvo.item.titulo, descricao: alvo.item.resumo, imagem: miniatura(alvo.item.id) })); };
     if (e.retirada) {
-      destino = ctx.visiveis.has(cat.pasta) || cat.lista ? (cat.lista ?? `${cat.pasta}.html`) : 'index.html';
-      de = [e.slug, ...(e.antigos ?? [])];
-    } else {
-      destino = `${cat.pasta}/${e.slug}.html`;
-      if (!geradas.has(destino)) continue; // a pagina nao sera gerada (o aviso de removidas cobre esse caso)
-      de = e.antigos ?? [];
+      const de = [e.slug, ...(e.antigos ?? [])];
+      // retirada "para" outra materia (ex.: o Short que virou anexo de uma review): leva para ela, se estiver no ar; senao, para a lista da categoria
+      const alvo = e.para ? paginaDe(e.para) : null;
+      if (alvo) { levar(de, alvo); continue; }
+      const lista = ctx.visiveis.has(cat.pasta) || cat.lista ? (cat.lista ?? `${cat.pasta}.html`) : 'index.html';
+      for (const velho of de) escrever(`${caminhoAntigo(e, velho)}.html`, redirecionamento({ para: lista, titulo: `${cat.nome} | BRUBAOGG` }));
+      continue;
     }
-    const alvo = itens.get(destino);
-    const dados = alvo ? { titulo: alvo.titulo, descricao: alvo.resumo, imagem: miniatura(alvo.id) } : { titulo: `${cat.nome} | BRUBAOGG` };
-    for (const velho of de) escrever(`${cat.pasta}/${velho}.html`, redirecionamento({ para: destino, ...dados }));
+    const alvo = paginaDe(id);
+    if (!alvo) continue; // a pagina nao sera gerada (o aviso de removidas cobre esse caso)
+    // a materia que virou bloco de uma pagina de assunto perde a pagina propria: o endereco dela tambem passa a ser um redirecionamento (para o bloco)
+    levar(ctx.assuntoDe?.has(id) ? [e.slug, ...(e.antigos ?? [])] : (e.antigos ?? []), alvo);
   }
 }
 
@@ -220,7 +439,7 @@ export function gta6Html(ctx) {
   if (!todos.length) return '';
   const { m: d, cat } = todos[0];
   const href = `${cat.pasta}/${d.slug}.html`;
-  const player = `<div class="art-video${d.short ? ' is-short' : ''}"><iframe src="https://www.youtube-nocookie.com/embed/${d.id}" title="${esc(d.titulo)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`;
+  const player = `<div class="art-video${d.short ? ' is-short' : ''}">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${d.id}`, href: `https://www.youtube.com/watch?v=${d.id}`, titulo: d.titulo, imagem: miniatura(d.id) })}</div>`;
   const texto = `<p class="art-meta"><span class="tag">${icone(cat.icone)} ${esc(cat.rotulo)}</span> <time datetime="${d.publicado}">${dataLonga(d.publicado)}</time></p>
           <h3 class="gd-title"><a href="${href}">${esc(d.titulo)}</a></h3>
           ${d.resumo ? `<p class="art-lead">${esc(d.resumo)}</p>` : ''}
@@ -238,33 +457,484 @@ export function gta6Html(ctx) {
         ${player}
       </article>`;
   const outros = todos.slice(1);
-  return `      <section class="gta-news" aria-labelledby="gta-novidades">
+  // espacos de ADS: depois da contagem (antes desta secao), depois do destaque e depois do botao da playlist
+  return `${adsHtml('gta6-apos-contagem')}
+      <section class="gta-news" aria-labelledby="gta-novidades">
         <h2 class="section-title" id="gta-novidades">${icone(catGta.icone)} Últimas novidades de GTA 6</h2>
         ${destaque}
+${adsHtml('gta6-apos-destaque')}
 ${outros.length ? `        <h3 class="gd-mais">Mais novidades</h3>
         <div class="news-grid" data-lista="hub-gta6">
 ${outros.slice(0, PASSO_DA_LISTA).map(({ m, cat: c }) => cartao(m, c, '')).join('\n')}
         </div>
 ${colecao(ctx, 'hub-gta6', outros, { gravar: false })}` : ''}
         <p class="gd-todas"><a class="btn" href="https://www.youtube.com/playlist?list=${catGta.playlist}" target="_blank" rel="noopener">Ver a playlist completa no YouTube</a></p>
+${adsHtml('gta6-apos-playlist')}
       </section>`;
 }
 
-// feed da home: ultimos videos por categoria (abre a materia quando existe, senao o YouTube)
+// bloco da home: 1 cartao grande (o mais novo) + os pequenos ao lado. lado = onde fica o grande: 'esquerda' (padrao) ou 'direita'. So o visual muda:
+// no HTML o grande vem sempre primeiro (leitor de tela e Google leem na mesma ordem). `cartoes` = HTML dos cartoes, o primeiro ja como 'grande'.
+function blocoHtml(cartoes, lado = 'esquerda') {
+  const [grande, ...pequenos] = cartoes;
+  return `        <div class="bloco-grade${lado === 'direita' ? ' bloco-invertido' : ''}">
+${grande}${pequenos.length ? `
+          <div class="bloco-lista">
+${pequenos.join('\n')}
+          </div>` : ''}
+        </div>`;
+}
+
+// carrossel do topo da home: as ultimas publicacoes do site (config.mjs, CARROSSEL). Todos os slides ja vem no HTML (rola para o lado sozinho, com ou sem
+// JavaScript); assets/js/carrossel.js so acrescenta setas, bolinhas e a troca automatica na linha de controles (que fica reservada: sem salto de layout).
+// Logo abaixo vai o convite para o canal (botao de inscricao direta no YouTube: ?sub_confirmation=1, a URL vem de SOCIAIS em config.mjs).
+export function carrosselHtml(ctx) {
+  const { icone } = ctx;
+  const itens = CARROSSEL.categorias
+    .flatMap((pasta) => { const d = ctx.itensPorCategoria[pasta]; return d ? d.itens.filter((m) => !m.semTexto).map((m) => ({ m, cat: d.cat })) : []; })
+    .sort((a, b) => b.m.publicado.localeCompare(a.m.publicado))
+    .slice(0, CARROSSEL.qtd);
+  if (!itens.length) return '';
+  const slides = itens.map(({ m, cat }, i) => `          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${itens.length}">
+            <a class="car-link" href="${cat.pasta}/${m.slug}.html">
+              <span class="car-thumb"><img src="${miniatura(m.id)}" alt="" width="480" height="360" fetchpriority="${i === 0 ? 'high' : 'low'}"></span>
+              <span class="car-texto">
+                <span class="tag">${icone(cat.icone)} ${esc(cat.rotulo)}</span>
+                <b class="car-titulo">${esc(m.titulo)}</b>
+                ${m.resumo ? `<span class="car-resumo">${esc(m.resumo)}</span>` : ''}
+                <small class="car-data">${dataCurta(m.publicado)}</small>
+                <span class="car-cta">Ler a matéria &rarr;</span>
+              </span>
+            </a>
+          </div>`).join('\n');
+  return `      <section class="carrossel" aria-roledescription="carrossel" aria-label="Últimas publicações" data-segundos="${CARROSSEL.segundos}">
+        <div class="car-pista">
+${slides}
+        </div>
+        <div class="car-controles"></div>
+      </section>
+${conviteHtml(ctx)}`;
+}
+
+// contagem regressiva do GTA 6: a faixa da home (faixa: true) e o bloco grande de gta6.html. Marcadores <!--contagem:inicio-->...<!--contagem:fim--> nas duas paginas.
+// ANTES de GTA6.alvo (comparado com ctx.agora, o instante da geracao) sai a contagem, com os textos do estado "lancado" so em atributos data-lancado-* (nao aparecem; o contador.js
+// os monta na hora H). DEPOIS, o estado lancado ja sai pronto no HTML, sem numeros: o mesmo desenho que o contador.js monta (conferido pelo teste "js").
+export function contagemHtml(ctx, { faixa = false } = {}) {
+  const L = GTA6.lancado, classe = `gta${faixa ? ' gta-faixa' : ''}`;
+  const textoLancado = ctx.modelo(L.texto), tituloLancado = `GTA <span>VI</span> ${esc(L.titulo)}`;
+  const botao = faixa ? `\n        <a class="btn primary gta-botao" href="gta6.html">${esc(L.botao)}</a>` : '';
+  if (ctx.agora >= new Date(GTA6.alvo)) {
+    return `      <section class="${classe} gta-lancado" aria-labelledby="gta-title" data-estado="lancado">
+        <p class="gta-kicker">${esc(L.kicker)}</p>
+        <h2 id="gta-title" class="gta-title">${tituloLancado}</h2>
+        <p class="gta-date">${esc(textoLancado)}</p>${botao}
+      </section>`;
+  }
+  const atributos = `data-lancado-kicker="${esc(L.kicker)}" data-lancado-titulo="${esc(L.titulo)}" data-lancado-texto="${esc(textoLancado)}"${faixa ? ` data-lancado-botao="${esc(L.botao)}" data-lancado-href="gta6.html"` : ''}`;
+  return `      <section class="${classe}" aria-labelledby="gta-title" ${atributos}>
+        <p class="gta-kicker">Contagem regressiva</p>
+        <h2 id="gta-title" class="gta-title">GTA <span>VI</span> chega em</h2>
+        <div class="count" id="gta-count" data-alvo="${GTA6.alvo}" role="timer" aria-live="off">
+          <div class="unit"><b id="cd-d">--</b><span>dias</span></div>
+          <div class="unit"><b id="cd-h">--</b><span>horas</span></div>
+          <div class="unit"><b id="cd-m">--</b><span>min</span></div>
+          <div class="unit"><b id="cd-s">--</b><span>seg</span></div>
+        </div>
+        <p class="gta-date">Lançamento: <!--dado:gta6-data-->${ctx.dado('gta6-data')}<!--/dado--> · <!--dado:gta6-plataformas-curto-->${ctx.dado('gta6-plataformas-curto')}<!--/dado--></p>
+      </section>`;
+}
+
+// ---- Ficha de veredito (reviews) e fontes (todas as materias): campos "veredito" e "fontes" do JSON, validados em contrato.mjs ----
+// O veredito sai no alto da pagina (logo depois do resumo): nota em destaque, a recomendacao e so o que estiver preenchido (plataforma, preco, horas, para quem e).
+// As fontes saem no fim do texto, com link (nova aba). As duas partes ficam fora do indice da busca (data-pagefind-ignore): so o texto da materia entra nos resultados.
+const notaBr = (n) => String(n).replace('.', ',');
+function vereditoHtml({ icone }, m, ign) {
+  const v = m.veredito;
+  if (!v || typeof v.nota !== 'number') return '';
+  const recomendacao = v.recomendacao ? RECOMENDACOES[v.recomendacao] : '';
+  const dados = [['Plataforma', v.plataforma], ['Preço', v.preco], ['Horas de jogo', v.horas], ['Para quem é', v.paraQuem]].filter(([, t]) => t);
+  return `<section class="veredito" aria-labelledby="veredito-titulo"${ign}>
+          <h2 class="veredito-titulo" id="veredito-titulo">Veredito do Brubão</h2>
+          <p class="veredito-nota"><span class="sr-only">Nota </span><b>${notaBr(v.nota)}</b><span>/10</span></p>${recomendacao ? `
+          <p class="veredito-rec">${icone('star')} ${esc(recomendacao)}</p>` : ''}${dados.length ? `
+          <dl class="veredito-dados">
+${dados.map(([k, t]) => `            <div${k === 'Para quem é' ? ' class="veredito-largo"' : ''}><dt>${k}</dt><dd>${esc(t)}</dd></div>`).join('\n')}
+          </dl>` : ''}
+        </section>`;
+}
+// ---- Tempo de leitura (no alto, ao lado da categoria) e assinatura (no fim, perto das fontes) ----
+const contarPalavras = (...textos) => textos.flat(Infinity).filter((t) => typeof t === 'string').join(' ').split(/\s+/).filter(Boolean).length;
+function leituraHtml({ icone }, palavras, ign) {
+  if (!palavras) return ''; // pagina so com o video (previa): nao ha texto para ler
+  return ` <span class="leitura"${ign}>${icone('clock')} ${Math.max(1, Math.ceil(palavras / PALAVRAS_POR_MINUTO))} min de leitura</span>`;
+}
+// "Por Bruno Bem · Publicado em <data> · Texto com apoio de IA": a data fica aqui (nao mais no alto) e a ordenacao da busca le este <time>; o link do apoio de IA leva a Sobre
+function autoriaHtml({ publicado, indexavel, ign, rotulo = 'Publicado em' }) {
+  return `<p class="autoria"${ign}><span class="avatar" aria-hidden="true">${AUTOR[0]}</span><span>Por <b>${AUTOR}</b> &middot; ${rotulo} <time${indexavel ? ' data-pagefind-sort="data[datetime]" data-pagefind-meta="data[datetime]" data-pagefind-ignore' : ''} datetime="${publicado}">${dataLonga(publicado)}</time></span><a class="autoria-ia" href="../sobre.html">Texto com apoio de IA</a></p>`;
+}
+
+// sufixo e nivel: na pagina de assunto cada bloco tem as proprias fontes (ids unicos, titulo h3)
+function fontesHtml(m, ign, { sufixo = '', nivel = 2 } = {}) {
+  const fontes = Array.isArray(m.fontes) ? m.fontes : [];
+  if (!fontes.length) return '';
+  return `<section class="fontes" aria-labelledby="fontes-titulo${sufixo}"${ign}>
+        <h${nivel} class="fontes-titulo" id="fontes-titulo${sufixo}">Fontes</h${nivel}>
+        <ul class="fontes-lista">
+${fontes.map((f) => `          <li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.nome)}<span class="sr-only"> (abre em nova aba)</span></a></li>`).join('\n')}
+        </ul>
+      </section>`;
+}
+
+// ---- Shorts anexados (campo "shorts" do JSON, validado em contrato.mjs) ----
+// Shorts que acompanham a materia (hoje, a review), cada um num player vertical pequeno com fachada (o iframe so nasce no clique); fora do indice da busca.
+function shortsHtml(ctx, m, cat, ign) {
+  const shorts = Array.isArray(m.shorts) ? m.shorts : [];
+  if (!shorts.length) return '';
+  return `<section class="shorts" aria-labelledby="shorts-titulo"${ign}>
+        <h2 class="shorts-titulo" id="shorts-titulo">${cat.pasta === 'reviews' ? 'Shorts desta review' : 'Shorts desta matéria'}</h2>
+        <ul class="shorts-lista">
+${shorts.map((s) => `          <li class="short-item"><div class="art-video is-short">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${s.id}`, href: `https://www.youtube.com/shorts/${s.id}`, titulo: s.titulo, imagem: miniatura(s.id), lazy: true })}</div><p class="short-legenda">${esc(s.titulo)}</p></li>`).join('\n')}
+        </ul>
+      </section>`;
+}
+// ---- Assunto: materias de videos diferentes sobre o mesmo fato viram UMA pagina, com um bloco por video ----
+// O campo "assunto" do JSON de cada materia junta as materias (2 ou mais); _conteudo/assuntos.json traz o titulo e o resumo da pagina (contrato.mjs, validarAssuntos). Cada video
+// continua com o proprio JSON e o proprio endereco no registro, mas a pagina dele deixa de existir: o endereco leva (redirecionamento) ao bloco do video na pagina do assunto.
+// O gerador troca os varios itens por UM item, a "unidade" (titulo e resumo do assunto, data = a do video mais novo, tags de todos, miniatura do mais novo, `blocos` = os videos):
+// feed, listas, tags, busca, relacionadas e sitemap tratam a unidade como uma materia comum. Uma materia sozinha no assunto continua uma pagina normal.
+function colapsarAssuntos(ctx, grupos) {
+  ctx.assuntoDe = new Map(); // id de cada video que entrou numa pagina de assunto -> { unidade, cat } (os redirecionamentos dos enderecos antigos usam)
+  const porAssunto = new Map();
+  for (const { itens } of grupos) for (const m of itens) if (typeof m.assunto === 'string' && !(m.ficticio || m.semTexto || m.rascunho)) (porAssunto.get(m.assunto) ?? porAssunto.set(m.assunto, []).get(m.assunto)).push(m);
+  const grupoDe = (m) => grupos.find(({ itens }) => itens.includes(m));
+  let unidades = 0;
+  for (const [chave, lista] of porAssunto) {
+    const ficha = ctx.assuntos?.[chave];
+    if (lista.length < 2 || !ficha) continue; // (assunto com 2 ou mais materias sem ficha ja foi barrado pelo contrato)
+    const membros = [...lista].sort((a, b) => b.publicado.localeCompare(a.publicado) || b.id.localeCompare(a.id)); // do mais novo para o mais velho
+    const nova = membros[0], antiga = membros[membros.length - 1];
+    const pasta = ctx.categoriaDoAssunto?.(chave);
+    const destino = grupos.find(({ cat }) => cat.pasta === pasta) ?? grupoDe(antiga);
+    const tags = new Map();
+    for (const m of membros) for (const t of m.tags) if (!tags.has(t.slug)) tags.set(t.slug, t);
+    const unidade = {
+      id: nova.id, titulo: ficha.titulo, slug: chave, publicado: nova.publicado, primeiroPublicado: antiga.publicado, resumo: ficha.resumo, corpo: nova.corpo,
+      tags: [...tags.values()], short: nova.short, video: nova.video, spoiler: membros.some((m) => m.spoiler), assunto: chave, blocos: membros, ficticio: false, semTexto: false, rascunho: false,
+    };
+    const saem = new Set(membros);
+    for (const m of membros) { const g = grupoDe(m); g.itens.splice(g.itens.indexOf(m), 1); ctx.publicadas.set(m.id, unidade); ctx.assuntoDe.set(m.id, { unidade, cat: destino.cat }); }
+    for (let i = ctx.listaMaterias.length - 1; i >= 0; i--) if (saem.has(ctx.listaMaterias[i].m)) ctx.listaMaterias.splice(i, 1);
+    ctx.listaMaterias.push({ m: unidade, cat: destino.cat });
+    const posicao = destino.itens.findIndex((x) => x.publicado < unidade.publicado);
+    destino.itens.splice(posicao < 0 ? destino.itens.length : posicao, 0, unidade); // a lista da categoria continua do mais novo para o mais velho
+    unidades++;
+  }
+  if (unidades) { // a contagem de materias por tag agora e a de itens (uma pagina de assunto conta uma vez): decide quais tags ganham pagina e o peso nas relacionadas
+    ctx.contagemTags.clear();
+    for (const { itens } of grupos) for (const m of itens) if (!(m.ficticio || m.semTexto)) for (const t of m.tags) ctx.contagemTags.set(t.slug, (ctx.contagemTags.get(t.slug) ?? 0) + 1);
+  }
+  ctx.paginasDeAssunto = unidades;
+}
+
+// a pagina de um assunto: titulo e resumo do assunto, a lista dos videos (ancoras) e um bloco por video (do mais novo para o mais velho) com data, titulo, player com fachada, texto, fontes e botoes
+function paginaDoAssunto(ctx, m, cat, relacionadasHtml) {
+  const { icone, temPaginaTag, tagPage, pagina, escrever } = ctx;
+  const ign = ' data-pagefind-ignore';
+  const blocos = m.blocos;
+  const url = `${DOMINIO}/${cat.pasta}/${m.slug}.html`;
+  const comLado = blocos.some((b) => b.video && b.short && (b.resumo || b.corpo.length));
+  const tagsMostradas = [...m.tags].sort((a, b) => Number(temPaginaTag(b.slug)) - Number(temPaginaTag(a.slug))).slice(0, 8);
+  const bloco = (b, k) => {
+    const dividido = b.video && b.short && (b.resumo || b.corpo.length);
+    const href = `https://www.youtube.com/watch?v=${b.video}`;
+    const video = b.video ? `<div class="art-video${b.short ? ' is-short' : ''}" id="video-${b.id}">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${b.video}`, href, titulo: b.titulo, imagem: miniatura(b.id), lazy: k > 0 })}</div>` : '';
+    const lead = b.resumo ? `<p class="art-lead">${esc(b.resumo)}</p>` : '';
+    const texto = b.corpo.length ? `<div class="art-body">\n${b.corpo.map((p) => `            <p>${esc(p)}</p>`).join('\n')}\n          </div>` : '';
+    const miolo = dividido
+      ? `<div class="art-split">\n          <div class="art-text">\n            ${lead}\n            ${texto}\n          </div>\n          ${video}\n        </div>`
+      : `<div class="art-flow">\n          ${lead}\n          ${video}\n          ${texto}\n        </div>`;
+    const fontes = fontesHtml(b, ign, { sufixo: `-${b.id}`, nivel: 3 });
+    return `      <section class="bloco" id="v-${b.id}" aria-labelledby="t-${b.id}">
+        <p class="bloco-data"${ign}><time datetime="${b.publicado}">${dataLonga(b.publicado)}</time></p>
+        <h2 class="bloco-titulo" id="t-${b.id}">${esc(b.titulo)}</h2>${b.spoiler ? `\n        <p class="aviso-spoiler"${ign} role="note">${icone('triangle-alert')} <span><b>Contém spoilers.</b> Esta matéria revela partes da história.</span></p>` : ''}${dividido ? `\n        <a class="ir-video"${ign} href="#video-${b.id}">&darr; Ir para o vídeo</a>` : ''}
+        ${miolo}${fontes ? `\n        ${fontes}` : ''}${b.video ? `
+        <div class="links"${ign}>
+          <a class="btn primary" href="${href}" target="_blank" rel="noopener">Assistir no YouTube</a>
+          <a class="btn" href="${href}#comments" target="_blank" rel="noopener">Comentar no vídeo</a>
+        </div>` : ''}
+      </section>`;
+  };
+  const indice = `<nav class="assunto" aria-labelledby="assunto-titulo"${ign}>
+        <h2 class="assunto-titulo" id="assunto-titulo">Neste assunto</h2>
+        <ol class="assunto-lista">
+${blocos.map((b) => `          <li><a href="#v-${b.id}"><time datetime="${b.publicado}">${dataCurta(b.publicado)}</time> <span>${esc(b.titulo)}</span></a></li>`).join('\n')}
+        </ol>
+      </nav>`;
+  const corpo = `    <main class="article${comLado ? ' has-split' : ''} assunto-pagina" data-pagefind-body data-pagefind-filter="categoria:${esc(cat.rotulo)}" data-pagefind-meta="image:${miniatura(m.id)}">
+      ${(cat.lista || ctx.visiveis.has(cat.pasta)) ? `<a class="back"${ign} href="../${cat.lista ?? `${cat.pasta}.html`}">&larr; ${esc(cat.nomeCurto ?? cat.nome)}</a>` : `<a class="back"${ign} href="../index.html">&larr; Início</a>`}
+      <p class="art-meta"><span class="tag"${ign}>${icone(cat.icone)} ${esc(cat.rotulo)}</span>${leituraHtml(ctx, contarPalavras(blocos.map((b) => [b.resumo, b.corpo])), ign)}</p>
+      <h1 class="art-title">${esc(m.titulo)}</h1>
+      ${tagsMostradas.length ? `<ul class="tag-list"${ign} aria-label="Tags">${tagsMostradas.map((x) => temPaginaTag(x.slug) ? `<li><a data-pagefind-filter="tag:${esc(x.nome)}" href="../${tagPage(x.slug)}">${icone('tag')} ${esc(x.nome)}</a></li>` : `<li><span data-pagefind-filter="tag:${esc(x.nome)}">${icone('tag')} ${esc(x.nome)}</span></li>`).join('')}</ul>` : ''}
+      <p class="art-lead" data-pagefind-meta="resumo">${esc(m.resumo)}</p>
+      ${indice}
+${blocos.map(bloco).join('\n')}
+      ${autoriaHtml({ publicado: m.publicado, indexavel: true, ign, rotulo: 'Atualizado em' })}
+${compartilharHtml(ctx, { titulo: m.titulo, url })}
+${conviteHtml(ctx, ign)}
+${relacionadasHtml}
+    </main>`;
+  // dados estruturados: o assunto (Article com as partes), cada video como Article proprio e VideoObject; as fontes de todos os blocos entram uma vez so
+  const idBloco = (b) => `${url}#v-${b.id}`, idVideo = (b) => `${url}#video-${b.id}`;
+  const citados = new Map();
+  for (const b of blocos) for (const f of b.fontes ?? []) if (!citados.has(f.url)) citados.set(f.url, { '@type': 'CreativeWork', name: f.nome, url: f.url });
+  const comVideo = blocos.filter((b) => b.video);
+  const comLista = cat.lista || ctx.visiveis.has(cat.pasta);
+  const estruturados = [{
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'Article', '@id': `${url}#artigo`, headline: cortar(m.titulo, 110), description: m.resumo, image: [absoluta(miniatura(m.id))], datePublished: m.primeiroPublicado, dateModified: m.publicado, inLanguage: 'pt-BR', mainEntityOfPage: url, articleSection: cat.rotulo, ...(m.tags.length ? { keywords: m.tags.map((x) => x.nome).join(', ') } : {}), isAccessibleForFree: true, author: AUTORA, publisher: EDITORA, ...(comVideo.length ? { video: { '@id': idVideo(comVideo[0]) } } : {}), hasPart: blocos.map((b) => ({ '@id': idBloco(b) })), ...(citados.size ? { citation: [...citados.values()] } : {}) },
+      ...blocos.map((b) => ({ '@type': 'Article', '@id': idBloco(b), headline: cortar(b.titulo, 110), description: b.resumo, datePublished: b.publicado, inLanguage: 'pt-BR', url: idBloco(b), isPartOf: { '@id': `${url}#artigo` }, author: AUTORA, publisher: EDITORA, ...(b.video ? { video: { '@id': idVideo(b) } } : {}) })),
+      ...comVideo.map((b) => ({ '@type': 'VideoObject', '@id': idVideo(b), name: b.titulo, description: b.resumo || b.titulo, thumbnailUrl: [miniatura(b.id)], uploadDate: b.publicado, embedUrl: `https://www.youtube-nocookie.com/embed/${b.video}`, contentUrl: `https://www.youtube.com/watch?v=${b.video}`, inLanguage: 'pt-BR', publisher: EDITORA })),
+      ctx.trilha([{ nome: 'Início', url: `${DOMINIO}/` }, ...(cat.aba ? [{ nome: abas.find((a) => a.href === cat.aba)?.nome ?? cat.aba, url: `${DOMINIO}/${cat.aba}` }] : []), ...(comLista ? [{ nome: cat.nomeCurto ?? cat.nome, url: `${DOMINIO}/${cat.lista ?? `${cat.pasta}.html`}` }] : []), { nome: m.titulo }]),
+    ],
+  }];
+  escrever(`${cat.pasta}/${m.slug}.html`, pagina({
+    base: '../', titulo: `${m.titulo} | BRUBAOGG`, descricao: m.resumo, og: miniatura(m.id), corpo, caminho: `${cat.pasta}/${m.slug}.html`,
+    tipo: 'article', publicado: m.primeiroPublicado, estruturados, scripts: ['compartilhar.js', 'fachada.js'],
+  }));
+}
+
+// FACHADA do player: no lugar do iframe do YouTube (que, so de existir na pagina, ja carrega o player inteiro e dezenas de pedidos ao Google) entra um link com a miniatura e o
+// botao de play. SEM JavaScript e um link para o video (ou a playlist) no YouTube, em nova aba. COM assets/js/fachada.js o clique troca a fachada pelo player (youtube-nocookie,
+// ja tocando) ali mesmo. `embed` e o endereco do player; `href`, o do video; `imagem` pode faltar (playlist sem dados: sobra o fundo escuro com o play); `lazy` so abaixo da dobra.
+function fachadaHtml({ icone }, { embed, href, titulo, imagem = '', lazy = false }) {
+  const foto = imagem ? `<img src="${imagem}" alt="" ${lazy ? 'loading="lazy"' : 'fetchpriority="high"'} width="480" height="360">` : '';
+  return `<a class="fachada" href="${href}" target="_blank" rel="noopener" data-embed="${embed}" data-titulo="${esc(titulo)}" aria-label="Assistir: ${esc(titulo)}">${foto}<span class="fachada-play">${icone('play')}</span></a>`;
+}
+
+// botoes de compartilhar no fim da materia, SEM script de terceiros. WhatsApp e Telegram sao links comuns (abrem o app ou o site deles, com o titulo e o endereco da
+// pagina). "Copiar link" e "Mais opcoes" (a folha de compartilhamento do celular) nascem escondidos: assets/js/compartilhar.js os mostra se o navegador sabe fazer.
+// O endereco compartilhado e o do canonical da pagina e o titulo e o do h1: quem compartilha e o proprio JavaScript; o HTML so traz os dois links.
+function compartilharHtml({ icone }, { titulo, url }) {
+  const enc = (s) => esc(encodeURIComponent(s));
+  return `      <section class="compartilhar" aria-labelledby="compartilhar-titulo" data-pagefind-ignore>
+        <h2 class="compartilhar-titulo" id="compartilhar-titulo">Compartilhar</h2>
+        <div class="compartilhar-botoes">
+          <a class="btn" href="https://wa.me/?text=${enc(`${titulo} ${url}`)}" target="_blank" rel="noopener">${icone('message-circle')} WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
+          <a class="btn" href="https://t.me/share/url?url=${enc(url)}&amp;text=${enc(titulo)}" target="_blank" rel="noopener">${icone('send')} Telegram<span class="sr-only"> (abre em nova aba)</span></a>
+          <button class="btn" type="button" data-copiar hidden>${icone('link')} Copiar link</button>
+          <button class="btn" type="button" data-compartilhar hidden>${icone('share-2')} Mais opções</button>
+        </div>
+        <p class="compartilhar-aviso" role="status"></p>
+      </section>`;
+}
+
+// convite para o canal (abaixo do carrossel da home e no fim de cada materia): o botao abre a inscricao direta no YouTube (?sub_confirmation=1)
+function conviteHtml({ icone }, atributos = '') {
+  return `      <div class="convite"${atributos}>
+        <span class="convite-ico">${icone('youtube')}</span>
+        <p class="convite-texto"><b>Siga o canal BRUBAOGG</b><span>Notícias, reviews, lançamentos e cortes de games em vídeo.</span></p>
+        <a class="btn primary" href="${(SOCIAIS.find((s) => s.nome === 'YouTube') ?? SOCIAIS[0]).url}?sub_confirmation=1" target="_blank" rel="noopener">Inscreva-se no canal<span class="sr-only"> (abre o YouTube em nova aba)</span></a>
+      </div>`;
+}
+
+// abertura da home: a cobertura em andamento (config.mjs, COBERTURA). Um titulo (o h1 da home) com uma linha de texto e, embaixo, as ultimas novidades do jogo
+// no formato dos blocos da home (1 grande + pequenos). Quando a cobertura acaba (ativa: false) este bloco some e a home abre direto no feed.
+export function coberturaHtml(ctx) {
+  const { icone, cartao, modelo } = ctx;
+  if (!COBERTURA.ativa) return '';
+  const dados = ctx.itensPorCategoria[COBERTURA.categoria];
+  const novidades = dados ? listaDoHub(ctx).slice(0, COBERTURA.qtd) : [];
+  const cards = novidades.map(({ m, cat }, i) => cartao(m, cat, '', i === 0 ? 'grande' : false));
+  return `      <section class="cobertura" aria-labelledby="cobertura-titulo">
+        <div class="feed-head">
+          <div>
+            <p class="cobertura-kicker">${icone(dados?.cat.icone ?? 'newspaper')} ${esc(COBERTURA.rotulo)}</p>
+            <h1 id="cobertura-titulo" class="cobertura-title">${esc(COBERTURA.titulo)}</h1>
+          </div>${novidades.length ? `
+          <a class="feed-all" href="${COBERTURA.pagina}">Tudo sobre ${esc(COBERTURA.jogo)} &rarr;</a>` : ''}
+        </div>
+        <p class="cobertura-texto">${esc(modelo(COBERTURA.texto))}</p>${novidades.length ? `
+${blocoHtml(cards, COBERTURA.lado)}` : ''}
+      </section>`;
+}
+
+// bloco da live: SAIU DA HOME em 2026-10-11 (ninguem chama esta funcao). Fica guardado, com assets/js/live.js, LIVE em config.mjs e as regras .live do style.css,
+// como base para o aviso de live que o dono vai repensar (algo como um pop-up, sem mexer na home). Se nao for reaproveitado, pode apagar os quatro.
+export function liveHtml() {
+  const janelas = esc(JSON.stringify(LIVE.horarios));
+  return `      <section class="live" id="live" aria-labelledby="live-titulo" data-canal="${esc(LIVE.canalId)}" data-janelas="${janelas}" hidden>
+        <p class="live-kicker"><span class="live-dot" aria-hidden="true"></span> <span class="live-estado">Ao vivo agora</span></p>
+        <h2 id="live-titulo" class="section-title">${esc(LIVE.titulo)}</h2>
+        <p class="live-texto">${esc(LIVE.texto)}</p>
+        <div class="live-palco">
+          <button class="live-play" type="button">
+            <img src="assets/img/logo-96.png" alt="" width="64" height="64">
+            <span class="live-badge">AO VIVO</span>
+            <span class="live-botao">&#9654; Assistir à live</span>
+          </button>
+        </div>
+        <p class="live-fora"><a href="https://www.youtube.com/channel/${esc(LIVE.canalId)}/live" target="_blank" rel="noopener">Se o player não abrir, assista no YouTube &rarr;</a></p>
+        <p class="live-proxima" hidden>${esc(LIVE.proxima)}: <b></b></p>
+      </section>`;
+}
+
+// ---- Paginas de player (Cortes e Lives): cada playlist de PLAYERS (config.mjs) com o player, o texto e a lista dos ultimos videos dela ----
+// Marcadores <!--players:inicio-->...<!--players:fim--> em cortes.html e lives.html. A lista vem de assets/data/players.json; sem dados, a playlist fica so com o player.
+// Cada video abre no YouTube (nova aba), dentro da playlist; o titulo na pagina e o que o Google le (antes a pagina era so um player, sem texto).
+export function playersHtml(ctx, pagina) {
+  const blocos = (PLAYERS[pagina] ?? []).map(({ playlist, titulo, texto }) => {
+    const videos = (ctx.players[playlist] ?? []).slice(0, VIDEOS_POR_PLAYER);
+    const lista = videos.length ? `
+          <h3 class="pl-recentes">Últimos vídeos</h3>
+          <ul class="pl-videos">
+${videos.map((v) => `            <li><a href="https://www.youtube.com/watch?v=${v.id}&amp;list=${playlist}" target="_blank" rel="noopener"><span class="pl-thumb"><img src="${miniatura(v.id)}" alt="" loading="lazy" width="160" height="90"></span><span class="pl-texto"><b>${esc(v.title)}</b><small>${dataCurta(v.published)}</small></span><span class="sr-only"> (abre o YouTube em nova aba)</span></a></li>`).join('\n')}
+          </ul>` : '';
+    return `        <article class="pl">
+          <h2>${esc(titulo)}</h2>
+          <p>${esc(texto)}</p>
+          <div class="video">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/videoseries?list=${playlist}`, href: `https://www.youtube.com/playlist?list=${playlist}`, titulo, imagem: videos[0] ? miniatura(videos[0].id) : '', lazy: true })}</div>${lista}
+          <a class="btn" href="https://www.youtube.com/playlist?list=${playlist}" target="_blank" rel="noopener">Ver playlist completa no YouTube</a>
+        </article>`;
+  });
+  // um espaco de ADS entre as playlists (o de antes da primeira e o do fim da pagina ficam no .html, fora desta regiao)
+  return `      <section class="pls">\n${blocos.join(`\n${adsHtml(`${pagina.replace(/\.html$/, '')}-entre-playlists`)}\n`)}\n      </section>`;
+}
+
+// Wiki: um cartao por jogo de config.mjs (WIKI). Imagem = miniatura do conteudo mais recente do jogo; subtitulos = as tags "filhas" da franquia (em
+// _conteudo/tags.json, ex.: Resident Evil 6, 7, Village); o numero conta as materias da tag. O cartao leva para a pagina do jogo na Wiki (wiki/<tag>.html, gerada
+// por construirWiki) ou, se a tag tem pagina propria no tags.json (GTA 6: gta6.html), para ela.
+// Os JOGOS de uma franquia da Wiki, NA ORDEM DO MENU: `serie` em config.mjs (slug de tag do tags.json, ou { tag, nome } para um jogo que ainda nao tem materia nem tag, como GTA 1);
+// sem `serie`, as tags "filhas" (`pai` no tags.json) por nome. Cada um: { slug, nome, itens } (itens = as materias da tag; vazio enquanto nao ha nenhuma).
+export function jogosDaSerie(ctx, j) {
+  const { tagsCfg, porTag } = ctx;
+  const lista = j.serie ?? [...porTag.values()].filter((t) => tagsCfg[t.slug]?.pai === j.tag).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR', { numeric: true })).map((t) => t.slug);
+  return lista.map((e) => {
+    const slug = typeof e === 'string' ? e : e.tag;
+    return { slug, nome: (typeof e === 'object' && e.nome) || tagsCfg[slug]?.nome || porTag.get(slug)?.nome || slug, itens: porTag.get(slug)?.itens ?? [] };
+  });
+}
+/** A franquia de um jogo da Wiki: a tag dela (se existir) + os jogos da serie. `todos` = cada materia uma vez, da mais nova para a mais velha. */
+export function familiaDoJogo(ctx, j) {
+  const serie = jogosDaSerie(ctx, j);
+  const vistos = new Set(), todos = [];
+  for (const grupo of [ctx.porTag.get(j.tag)?.itens ?? [], ...serie.map((s) => s.itens)]) for (const x of grupo) if (!vistos.has(x.m.id)) { vistos.add(x.m.id); todos.push(x); }
+  todos.sort((a, b) => b.m.publicado.localeCompare(a.m.publicado));
+  return { serie, todos };
+}
+const NOTICIAS = new Set(['noticias', 'gta6-novidades']); // categorias que contam como "Noticias" no menu da Wiki
+// todas as tags que pertencem a um jogo da Wiki: a da franquia, as da serie (config) e as "filhas" do tags.json
+const slugsDoJogo = (ctx, j) => new Set([j.tag, ...(j.serie ?? []).map((e) => (typeof e === 'string' ? e : e.tag)), ...Object.keys(ctx.tagsCfg).filter((s) => ctx.tagsCfg[s]?.pai === j.tag)]);
+const paginaPropria = (ctx, j) => j.pagina ?? ctx.tagsCfg[j.tag]?.pagina ?? null;
+export const paginaDaWiki = (ctx, j) => paginaPropria(ctx, j) ?? `wiki/${j.tag}.html`;
+function jogosDaWiki(ctx) {
+  const jogos = [];
+  for (const j of WIKI.jogos) {
+    const { serie, todos } = familiaDoJogo(ctx, j);
+    if (!todos.length) { ctx.avisos.push(`wiki: "${j.nome}" (tag ${j.tag}) nao tem nenhuma materia e ficou fora da Wiki.`); continue; }
+    // capa: o video indicado em config (`video`) ou o mais novo que seja horizontal e so fale do proprio jogo (um Short, ou uma materia que cita outro jogo, passaria a
+    // imagem errada: ja houve capa de Silent Hill no cartao do Resident Evil); sem nenhum assim, o mais novo
+    const familia = new Set([j.tag, ...serie.map((s) => s.slug)]);
+    const capa = (j.video && todos.find(({ m }) => m.id === j.video)) ?? todos.find(({ m }) => !m.short && m.tags.every((t) => familia.has(t.slug))) ?? todos[0];
+    // subtitulo = os jogos da serie, na ordem do menu (mesmo os que ainda nao tem conteudo: mostra o tamanho da franquia)
+    const subtitulo = serie.length ? `${serie.slice(0, 3).map((s) => s.nome).join(' · ')}${serie.length > 3 ? ` e mais ${serie.length - 3}` : ''}` : '';
+    jogos.push({ j, href: paginaDaWiki(ctx, j), capa, subtitulo, n: todos.length });
+  }
+  return jogos;
+}
+function cartaoWiki(ctx, g, grande) {
+  const texto = g.j.texto ? ctx.modelo(g.j.texto) : ''; // o texto aceita os dados de config (ex.: {gta6-dia-mes})
+  const resumo = g.subtitulo || (grande ? '' : texto);  // o cartao pequeno usa o texto como resumo quando o jogo nao tem subtitulos
+  return `          <a class="news-card wiki-card${grande ? ' grande' : ''}" href="${g.href}">
+            <span class="thumb"><img src="${miniatura(g.capa.m.id)}" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag">${ctx.icone('book-open')} Wiki</span>
+              <b class="news-title">${esc(g.j.nome)}</b>
+              ${resumo ? `<span class="news-excerpt">${esc(resumo)}</span>` : ''}
+              ${grande && texto ? `<span class="news-mais">${esc(texto)}</span>` : ''}
+              <small class="news-date">${g.n} ${g.n === 1 ? 'conteúdo' : 'conteúdos'}</small>
+            </span>
+          </a>`;
+}
+// a pagina wiki.html: grade com todos os jogos
+export function wikiHtml(ctx) {
+  const cards = jogosDaWiki(ctx).map((g) => cartaoWiki(ctx, g, false));
+  const jogos = cards.length ? `        <div class="news-grid">\n${cards.join('\n')}\n        </div>` : '        <p class="lead">Os primeiros jogos chegam em breve.</p>';
+  const estatico = `${jogos}${seriesDaWikiHtml(ctx)}`;
+  // com mini-busca: o campo e o menu de jogos vem primeiro e o conteudo de sempre fica na coluna ao lado, visivel (o JavaScript o esconde enquanto houver busca ativa)
+  const corpo = ctx.buscaDaWiki ? htmlDaSecao(ctx, ctx.buscaDaWiki, estatico) : estatico;
+  // fecho da pagina: o aviso "Em construcao" (os jogos entram aos poucos) e um espaco de ADS no fim
+  return `${corpo}\n      ${emConstrucaoHtml(ctx, 'Novos jogos entram aqui aos poucos.')}\n${adsHtml('wiki-fim')}`;
+}
+// as Series moram dentro da Wiki: abaixo dos jogos, as historias mais novas (1 cartao grande + pequenos, como as secoes da home) e o caminho para a lista completa
+// (series.html). Sem nenhuma materia da categoria, a secao nao aparece.
+function seriesDaWikiHtml(ctx) {
+  const dados = ctx.itensPorCategoria.series;
+  const itens = (dados?.itens ?? []).filter((m) => !m.semTexto && !m.ficticio).slice(0, WIKI.seriesQtd);
+  if (!itens.length) return '';
+  const { cat } = dados;
+  const cards = itens.map((m, i) => ctx.cartao(m, cat, '', i === 0 ? 'grande' : false));
+  return `
+
+${adsHtml('wiki-antes-das-series')}
+        <section class="feed-sec">
+          <div class="feed-head">
+            <h2 class="section-title">${ctx.icone(cat.icone)} ${esc(cat.nome)}</h2>
+            <a class="feed-all" href="${cat.pasta}.html">Ver todas &rarr;</a>
+          </div>
+          <p class="wiki-aviso">${esc(cat.desc)}</p>
+${blocoHtml(cards, 'esquerda')}
+        </section>`;
+}
+// a secao Wiki da home, no mesmo formato dos outros blocos: o primeiro jogo no cartao grande, os demais nos pequenos e, depois deles, o espaco "Em construcao"
+// (ocupa o que sobra da coluna: com so um jogo, ele e a coluna inteira).
+function wikiBlocoHtml(ctx, lado) {
+  const jogos = jogosDaWiki(ctx);
+  if (!jogos.length) return '';
+  const [primeiro, ...outros] = jogos;
+  const vazio = `          ${emConstrucaoHtml(ctx, 'Mais jogos entram aqui em breve.')}`;
+  const cards = [cartaoWiki(ctx, primeiro, true), ...outros.map((g) => cartaoWiki(ctx, g, false)), vazio];
+  return `      <section class="feed-sec">
+        <div class="feed-head">
+          <h2 class="section-title">${ctx.icone('book-open')} Wiki</h2>
+          <a class="feed-all" href="wiki.html">Ver a Wiki &rarr;</a>
+        </div>
+${blocoHtml(cards, lado)}
+      </section>`;
+}
+
+// espaco reservado para anuncio (por enquanto so a palavra ADS, para saber onde cada um fica). `lugar` identifica o espaco (data-ads). Tem altura fixa no CSS
+// (.ads): quando o anuncio de verdade entrar, a pagina nao pula. Escondido do leitor de tela enquanto for so um marcador.
+const adsHtml = (lugar) => `      <div class="ads" data-ads="${lugar}" aria-hidden="true">ADS</div>`;
+// nas listas de cartoes (Noticias, Reviews, Lancamentos) os ADS entram ENTRE as linhas de cartoes, e quem os coloca e assets/js/ads.js (mede quantos cartoes cabem por linha):
+// a lista leva os atributos data-ads-primeiro (depois de quantas linhas entra o primeiro) e data-ads-cada (de quantas em quantas linhas os seguintes). Valores em config.mjs.
+const adsNaLista = (secao) => (ADS_NAS_LISTAS[secao] ? ` data-ads-primeiro="${ADS_NAS_LISTAS[secao].primeiro}" data-ads-cada="${ADS_NAS_LISTAS[secao].cada}"` : '');
+// "Em construcao": o mesmo espaco da Wiki da home, agora tambem no fim da pagina da Wiki (`texto` ja escapado)
+const emConstrucaoHtml = (ctx, texto) => `<div class="bloco-vazio">${ctx.icone('construction')}<b>Em construção</b><span>${texto}</span></div>`;
+
+// feed da home: ultimos videos por categoria (abre a materia quando existe, senao o YouTube); um espaco de ADS depois de cada secao
 export function feedHtml(ctx) {
   const { icone, cartao, videosDe } = ctx;
+  // a cobertura abre a home (coberturaHtml, grande a esquerda); cada secao daqui e 1 cartao grande + 4 pequenos, e o grande alterna de lado (lado) para dar ritmo
+  // a pagina: cobertura esquerda, noticias direita, reviews esquerda, lancamentos direita, wiki esquerda (no fim). Para parar de alternar, ponha 'esquerda' em todas.
+  const QTD = 5;
   const secoes = [
-    { cat: categorias[0], titulo: 'Últimas notícias', qtd: 7, destaque: true },
-    { cat: categorias[1], titulo: 'Últimos reviews', qtd: 3 },
-    { cat: categorias[2], titulo: 'Lançamentos', qtd: 3 },
+    { cat: categorias[0], titulo: 'Últimas notícias', lado: 'direita', ads: 'apos-noticias' },
+    { cat: categorias[1], titulo: 'Últimos reviews', lado: 'esquerda', ads: 'apos-reviews' },
+    { cat: categorias[2], titulo: 'Lançamentos', lado: 'direita', ads: 'apos-lancamentos' },
   ];
-  return secoes.map(({ cat, titulo, qtd, destaque }) => {
-    const recentes = videosDe(cat).sort((a, b) => b.published.localeCompare(a.published)).filter((v) => ctx.publicadas.has(v.id)).slice(0, qtd);
+  const wiki = wikiBlocoHtml(ctx, 'esquerda'); // a Wiki fecha o feed, depois dos lancamentos
+  // categorias que dizem `tambemEm` (config.mjs: tudo de GTA 6 tambem e noticia) entram no bloco da categoria de destino, com o rotulo da origem; o que a cobertura do topo da home
+  // ja mostra nao se repete aqui (cada materia aparece uma vez so na home, no bloco em que o leitor a encontra primeiro)
+  const catDoItem = new Map(Object.values(ctx.itensPorCategoria).flatMap(({ cat, itens }) => itens.map((m) => [m.id, cat])));
+  for (const [id, { cat }] of ctx.assuntoDe ?? []) catDoItem.set(id, cat); // os videos de uma pagina de assunto: a categoria da pagina
+  const naCobertura = new Set(COBERTURA.ativa && ctx.itensPorCategoria[COBERTURA.categoria] ? listaDoHub(ctx).slice(0, COBERTURA.qtd).map(({ m }) => ctx.publicadas.get(m.id) ?? m) : []); // itens (nao ids): uma pagina de assunto cobre varios videos
+  return secoes.map(({ cat, titulo, lado, ads }) => {
+    const candidatas = [...videosDe(cat), ...categorias.filter((c) => c.tambemEm === cat.pasta).flatMap((c) => videosDe(c).filter((v) => !naCobertura.has(ctx.publicadas.get(v.id))))];
+    const vistos = new Set(); // varios videos do mesmo assunto sao um cartao so (o do video mais novo)
+    const recentes = candidatas.sort((a, b) => b.published.localeCompare(a.published)).filter((v) => ctx.publicadas.has(v.id)).filter((v) => { const it = ctx.publicadas.get(v.id); if (vistos.has(it)) return false; vistos.add(it); return true; }).slice(0, QTD);
     if (!recentes.length) return '';
-    const cards = recentes.map((v, i) => {
-      const m = ctx.publicadas.get(v.id);
-      return cartao(m, cat, '', destaque && i === 0);
-    }).join('\n');
+    const cards = recentes.map((v, i) => cartao(ctx.publicadas.get(v.id), catDoItem.get(v.id) ?? cat, '', i === 0 ? 'grande' : false));
     const interna = ctx.visiveis.has(cat.pasta);
     const todas = interna ? `${cat.pasta}.html` : `https://www.youtube.com/playlist?list=${cat.playlist}`;
     return `      <section class="feed-sec">
@@ -272,11 +942,10 @@ export function feedHtml(ctx) {
           <h2 class="section-title">${icone(cat.icone)} ${titulo}</h2>
           <a class="feed-all" href="${todas}"${interna ? '' : ' target="_blank" rel="noopener"'}>Ver todas${interna ? '' : ' no YouTube'} &rarr;</a>
         </div>
-        <div class="news-grid">
-${cards}
-        </div>
-      </section>`;
-  }).join('\n');
+${blocoHtml(cards, lado)}
+      </section>
+${adsHtml(ads)}`;
+  }).concat(wiki ? [`${wiki}\n${adsHtml('apos-wiki')}`] : []).filter(Boolean).join('\n');
 }
 
 // ---- paginas de tag (so materias com texto) e a lista de todas as tags ----
@@ -292,6 +961,14 @@ export function construirTags(ctx) {
     }
   }
   ctx.temTags = [...ctx.porTag.values()].some((x) => temPaginaTag(x.slug));
+  // na pagina de um jogo da Wiki, o caminho para as historias dele (categoria que mora na Wiki, hoje "series"); so aparece se o jogo tem alguma
+  const historias = (tg) => {
+    const jogo = WIKI.jogos.find((j) => j.tag === tg.slug && !paginaPropria(ctx, j));
+    if (!jogo) return '';
+    const cat = categorias.find((c) => c.aba === 'wiki.html');
+    const n = cat ? tg.itens.filter((x) => x.cat === cat).length : 0;
+    return ` &middot; <a href="../${paginaDaWiki(ctx, jogo)}">Wiki ${esc(jogo.nome)}</a>${n ? ` &middot; <a href="../${cat.lista ?? `${cat.pasta}.html`}">${n} ${n === 1 ? 'história' : 'histórias'} da série</a>` : ''}`;
+  };
   for (const tg of ctx.porTag.values()) {
     tg.itens.sort((a, b) => b.m.publicado.localeCompare(a.m.publicado));
     if (!temPaginaTag(tg.slug)) continue;      // tag com 1 materia: continua na busca, mas nao ganha pagina (seria muito curta)
@@ -302,11 +979,12 @@ export function construirTags(ctx) {
     escrever(`tag/${tg.slug}.html`, pagina({
       base: '../', titulo: `${tg.nome}: notícias, reviews e vídeos | BRUBAOGG`, descricao: desc, og: null,
       caminho: `tag/${tg.slug}.html`, noindex: !indexavel,
+      estruturados: dadosDeColecao(ctx, { caminho: `tag/${tg.slug}.html`, nome: `${tg.nome}: notícias, reviews e vídeos`, descricao: desc, migalhas: [{ nome: 'Início', url: `${DOMINIO}/` }, { nome: 'Tags', url: `${DOMINIO}/tags.html` }, { nome: tg.nome }] }),
       corpo: `    <main>
       <section class="cat-hero">
         <h1>${icone('tag')} ${esc(tg.nome)}</h1>
         <p class="lead">${esc(desc)}</p>
-        <p class="tag-count">${n} ${n === 1 ? 'matéria' : 'matérias'} &middot; <a href="../tags.html">todas as tags</a></p>
+        <p class="tag-count">${n} ${n === 1 ? 'matéria' : 'matérias'}${historias(tg)} &middot; <a href="../tags.html">todas as tags</a></p>
       </section>
       <section class="news-grid" data-lista="tag-${tg.slug}">
 ${tg.itens.slice(0, PASSO_DA_LISTA).map(({ m, cat }, i) => cartao(m, cat, '../', i === 0 && n > 1)).join('\n')}
@@ -330,6 +1008,123 @@ ${lista.map((tg) => `        <li><a href="${tagPage(tg.slug)}">${esc(tg.nome)} <
       </ul>
     </main>`,
     }));
+  }
+}
+
+// dados estruturados de uma pagina de lista ou indice: CollectionPage + trilha de navegacao (as "migalhas" que o Google mostra no resultado)
+// `migalhas` = [{ nome, url }] (url absoluta; a ultima, a propria pagina, pode ficar sem url); `sobre` (opcional) = o assunto (ex.: VideoGameSeries)
+export function dadosDeColecao(ctx, { caminho, nome, descricao, migalhas, sobre }) {
+  const url = `${DOMINIO}/${caminho}`;
+  return [{
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'CollectionPage', '@id': `${url}#pagina`, name: nome, description: descricao, url, inLanguage: 'pt-BR', isPartOf: { '@type': 'WebSite', name: 'BRUBAOGG', url: `${DOMINIO}/` }, publisher: EDITORA, ...(sobre ? { about: sobre } : {}) },
+      ctx.trilha(migalhas),
+    ],
+  }];
+}
+
+// ---- paginas da Wiki: wiki/<jogo>.html, uma por jogo de WIKI.jogos (o GTA 6 tem a propria, gta6.html) ----
+// E a pagina que responde a "wiki <jogo>" no Google: o nome do jogo e a palavra wiki no titulo, texto proprio, o indice jogo a jogo da serie (historia, review e
+// noticias de cada um) e, separados, as historias, os reviews e as noticias da franquia inteira. Ligada a partir de wiki.html, da pagina da tag e de cada materia do jogo.
+const ROTULO_NA_WIKI = { series: 'História', reviews: 'Review', noticias: 'Notícia', lancamentos: 'Lançamento', 'gta6-novidades': 'Notícia' };
+const QTD_BLOCO_DA_WIKI = 5; // cartoes por bloco: 1 grande + 4 pequenos, como na home
+export function construirWiki(ctx) {
+  const { icone, cartao, pagina, escrever, temPaginaTag, tagPage, indice } = ctx;
+  // mini-busca da wiki.html: o MENU LATERAL em dois niveis. Nivel 1 = as franquias de WIKI.jogos (Resident Evil, GTA...); ao abrir uma, o nivel 2 = os jogos dela (`serie`, na
+  // ordem de config.mjs) e, no fim, "Noticias". Cada jogo mostra o que NAO e noticia (hoje a historia; depois reviews, personagens...); "Noticias" junta as noticias da
+  // franquia inteira; um jogo ainda sem conteudo aparece mesmo assim, vazio. Cada materia entra uma vez, com `f.jogo` (franquias) e `f.sub` (jogos, ou "noticias") para o filtro.
+  const eNoticia = (x) => NOTICIAS.has(x.cat.pasta);
+  const daWiki = new Map(), menu = [];
+  for (const j of WIKI.jogos) {
+    const { serie, todos } = familiaDoJogo(ctx, j);
+    if (!todos.length) continue;
+    const subs = serie.map((s) => ({ v: s.slug, nome: s.nome, n: new Set(s.itens.filter((x) => !eNoticia(x)).map((x) => x.m.id)).size, ...(s.itens.length && temPaginaTag(s.slug) ? { href: tagPage(s.slug) } : {}) }));
+    subs.push({ v: 'noticias', nome: 'Notícias', n: todos.filter(eNoticia).length });
+    menu.push({ v: j.tag, nome: j.nome, n: todos.length, href: paginaDaWiki(ctx, j), subs });
+    for (const x of todos) {
+      const e = daWiki.get(x.m.id) ?? { m: x.m, cat: x.cat, extra: { f: { jogo: [], sub: [] } } };
+      if (!e.extra.f.jogo.includes(j.tag)) e.extra.f.jogo.push(j.tag);
+      for (const v of eNoticia(x) ? ['noticias'] : serie.filter((s) => s.itens.some((y) => y.m.id === x.m.id)).map((s) => s.slug)) if (!e.extra.f.sub.includes(v)) e.extra.f.sub.push(v);
+      daWiki.set(x.m.id, e);
+    }
+  }
+  ctx.buscaDaWiki = dadosDaSecao(ctx, 'wiki', [...daWiki.values()].filter((e) => !e.m.semTexto && !e.m.ficticio).sort((a, b) => b.m.publicado.localeCompare(a.m.publicado)), { menu: { g: 'jogo', titulo: BUSCA_DA_SECAO.wiki.menu.titulo, todos: BUSCA_DA_SECAO.wiki.menu.todos, opcoes: menu } });
+  for (const j of WIKI.jogos) {
+    if (paginaPropria(ctx, j)) continue; // a pagina propria da franquia (GTA: gta6.html) cumpre esse papel
+    const { serie: jogosDaSerieDoJogo, todos } = familiaDoJogo(ctx, j);
+    if (!todos.length) continue;
+    todos.sort((a, b) => b.m.publicado.localeCompare(a.m.publicado));
+    const da = (pasta) => todos.filter((x) => (pasta === 'noticias' ? NOTICIAS.has(x.cat.pasta) : x.cat.pasta === pasta)); // "noticias" = as duas categorias de noticia (noticias e gta6-novidades), como no menu
+    const caminho = paginaDaWiki(ctx, j);
+    const url = `${DOMINIO}/${caminho}`;
+    const titulo = `${j.nome}: wiki com histórias, reviews e notícias`;
+    const desc = j.descricao ?? `A wiki de ${j.nome} no BRUBAOGG: a história de cada jogo, os reviews e as notícias do canal, num lugar só.`;
+
+    // indice jogo a jogo: o que o canal tem de cada um (o titulo da materia perde o nome do jogo quando comeca com ele: "Resident Evil 4 Remake: a historia..." -> "A historia...")
+    const semNome = (t, nome) => { const r = t.replace(new RegExp(`^${nome.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[:\\-–—]\\s*`, 'i'), ''); return r === t ? t : r.charAt(0).toUpperCase() + r.slice(1); };
+    const linhas = jogosDaSerieDoJogo.filter((g) => g.itens.length).map((g) => {
+      const item = ({ m, cat }, rotulo = ROTULO_NA_WIKI[cat.pasta] ?? cat.rotulo) => `            <li><span class="wiki-rot">${rotulo}</span> <a href="../${cat.pasta}/${m.slug}.html">${esc(semNome(m.titulo, g.nome))}</a></li>`;
+      const proprios = g.itens.filter((x) => x.cat.pasta === 'series' || x.cat.pasta === 'reviews');
+      const outros = g.itens.filter((x) => x.cat.pasta !== 'series' && x.cat.pasta !== 'reviews');
+      const itens = [...proprios.map((x) => item(x)), ...(outros.length === 1 ? [item(outros[0])] : outros.length > 1 ? [`            <li><span class="wiki-rot">Notícias</span> <a href="../${tagPage(g.slug)}">${outros.length} matérias</a></li>`] : [])];
+      return `        <li class="wiki-jogo">
+          <h3 class="wiki-jogo-nome">${temPaginaTag(g.slug) ? `<a href="../${tagPage(g.slug)}">${esc(g.nome)}</a>` : esc(g.nome)}</h3>
+          <ul class="wiki-jogo-itens">
+${itens.join('\n')}
+          </ul>
+        </li>`;
+    });
+    const secaoJogos = linhas.length ? `
+      <section class="feed-sec" id="jogos">
+        <div class="feed-head">
+          <h2 class="section-title">${icone('book-open')} Jogos de ${esc(j.nome)}</h2>
+        </div>
+        <p class="wiki-aviso">Cada jogo da série com a história, o review e as notícias dele.</p>
+        <ul class="wiki-lista">
+${linhas.join('\n')}
+        </ul>
+      </section>` : '';
+
+    // blocos por tipo de conteudo: 1 cartao grande + pequenos, alternando o lado como na home
+    const BLOCOS = [
+      { pasta: 'series', titulo: `Histórias de ${j.nome}`, id: 'historias', lado: 'esquerda', todas: 'series.html' },
+      { pasta: 'reviews', titulo: `Reviews de ${j.nome}`, id: 'reviews', lado: 'direita' },
+      { pasta: 'noticias', titulo: `Notícias de ${j.nome}`, id: 'noticias', lado: 'esquerda' },
+      { pasta: 'lancamentos', titulo: `Lançamentos de ${j.nome}`, id: 'lancamentos', lado: 'direita' },
+    ];
+    const secoes = BLOCOS.map((b) => {
+      const itens = da(b.pasta).slice(0, QTD_BLOCO_DA_WIKI);
+      if (!itens.length) return '';
+      const cards = itens.map(({ m, cat }, i) => cartao(m, cat, '../', i === 0 ? 'grande' : false));
+      const cat = itens[0].cat;
+      return `
+      <section class="feed-sec" id="${b.id}">
+        <div class="feed-head">
+          <h2 class="section-title">${icone(cat.icone)} ${esc(b.titulo)}</h2>${b.todas ? `\n          <a class="feed-all" href="../${b.todas}">Ver todas &rarr;</a>` : ''}
+        </div>
+${blocoHtml(cards, b.lado)}
+      </section>`;
+    }).join('');
+
+    const nTipo = (pasta, um, varios) => { const n = da(pasta).length; return n ? ` &middot; ${n} ${n === 1 ? um : varios}` : ''; };
+    const corpo = `    <main>
+      <section class="cat-hero">
+        <a class="back" href="../wiki.html">&larr; Wiki</a>
+        <h1>${icone('book-open')} ${esc(j.nome)}</h1>
+        <p class="lead">${esc(desc)}</p>
+        <p class="tag-count">${todos.length} ${todos.length === 1 ? 'conteúdo' : 'conteúdos'}${nTipo('series', 'história', 'histórias')}${nTipo('reviews', 'review', 'reviews')}${nTipo('noticias', 'notícia', 'notícias')}${temPaginaTag(j.tag) ? ` &middot; <a href="../${tagPage(j.tag)}">todas as matérias de ${esc(j.nome)}</a>` : ''}</p>
+      </section>
+${secaoJogos}${secoes}
+    </main>`;
+    escrever(caminho, pagina({
+      base: '../', titulo: `${titulo} | BRUBAOGG`, descricao: desc, og: miniatura(todos[0].m.id), corpo, caminho,
+      estruturados: dadosDeColecao(ctx, {
+        caminho, nome: titulo, descricao: desc, sobre: { '@type': 'VideoGameSeries', name: j.nome },
+        migalhas: [{ nome: 'Início', url: `${DOMINIO}/` }, { nome: 'Wiki', url: `${DOMINIO}/wiki.html` }, { nome: j.nome }],
+      }),
+    }));
+    indice.push({ t: `${j.nome} (Wiki)`, u: caminho, c: 'Wiki' });
   }
 }
 
@@ -459,7 +1254,8 @@ ${todas.length ? '' : '      <p class="busca-aviso">Ainda não há matérias pub
   }));
 
   // atalhos da busca: tags e paginas fixas (as materias ficam com o Pagefind)
-  const existe = (u) => !['lancamentos', 'reviews', 'noticias'].includes(u.replace('.html', '')) || ctx.visiveis.has(u.replace('.html', ''));
+  const comListaGerada = categorias.filter((c) => !c.lista).map((c) => c.pasta); // a pagina fixa de uma categoria so existe depois da primeira materia dela
+  const existe = (u) => !comListaGerada.includes(u.replace('.html', '')) || ctx.visiveis.has(u.replace('.html', ''));
   const paginasFixas = paginasFixasNaBusca.filter(([u]) => existe(u)).map(([u, t, d]) => ({ t, u, c: 'Página', d }));
   escrever('assets/data/atalhos.json', JSON.stringify([...indice, ...paginasFixas]));
 }

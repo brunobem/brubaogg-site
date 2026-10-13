@@ -15,7 +15,7 @@ Coloque aqui os ícones em **SVG**. Cada arquivo vira um ícone embutido no HTML
 - Sem cores fixas (`#fff`, `#000`...): elas ignoram o tema do site.
 
 ## Ícones que já estão aqui
-- Interface: [Lucide](https://lucide.dev) (licença ISC): `rocket`, `star`, `scissors`, `newspaper`, `radio`, `search`, `external-link`, `frown`, `search-x`, `tag`.
+- Interface: [Lucide](https://lucide.dev) (licença ISC): `rocket`, `star`, `scissors`, `newspaper`, `radio`, `search`, `external-link`, `frown`, `search-x`, `tag`, `calendar-days`, `clock`, `house`, `menu`, `x`, `book-open`, `triangle-alert`, `message-circle`, `send`, `link`, `share-2` (estes quatro são os botões de compartilhar da matéria), `play` (o botão da fachada do player).
 - Redes: [Simple Icons](https://simpleicons.org) (licença CC0): `youtube`, `tiktok`, `instagram`, `twitch`, `discord`.
 
 Para trocar um deles, substitua o arquivo mantendo o mesmo nome.

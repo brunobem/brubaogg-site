@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-05-18",
+  "titulo": "The Duskbloods mantém 2026 e continua sem data",
+  "resumo": "A Kadokawa manteve The Duskbloods, da FromSoftware, para 2026 no Switch 2. O teste de rede foi de 21 a 24 de agosto, e ainda não há data.",
+  "tags": [
+    "The Duskbloods"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Vice",
+      "url": "https://www.vice.com/en/article/the-duskbloods-2026-release-date-financial-report/"
+    },
+    {
+      "nome": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/The_Duskbloods"
+    },
+    {
+      "nome": "Nintendo Life",
+      "url": "https://www.nintendolife.com/games/nintendo-switch-2/duskbloods"
+    },
+    {
+      "nome": "Siliconera",
+      "url": "https://www.siliconera.com/the-duskbloods-closed-network-test-confirmed/"
+    }
+  ],
+  "corpo": [
+    "A Kadokawa, dona da FromSoftware, confirmou em seu relatório financeiro que The Duskbloods será lançado em 2026 no Switch 2, sem adiamento para 2027, e o listou entre os títulos mais aguardados. Até 10 de outubro de 2026, as fontes consultadas não trazem data de lançamento.",
+    "O jogo é da FromSoftware, dirigido por Hidetaka Miyazaki, e exclusivo do Switch 2; a Nintendo e a FromSoftware dividem a publicação por região. É um jogo de ação multiplayer, com PvP e PvE para até oito jogadores e mais de uma dúzia de personagens chamados Bloodsworn, e um teste de rede foi realizado de 21 a 24 de agosto de 2026. Eu o descrevo como um souls-like.",
+    "Observo que muitas janelas de lançamento estão sendo afetadas pelo GTA 6, em novembro, e que muita gente especulava que o Duskbloods pudesse fugir do GTA, já que nada tinha sido visto do jogo. As empresas estão fechando o caixa e reportando aos acionistas, e mesmo nesse relatório o jogo continuou confirmado para 2026."
+  ]
+}

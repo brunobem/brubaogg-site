@@ -19,6 +19,7 @@
 <link rel="icon" type="image/png" href="assets/img/logo-96.png">
 <!--site:recursos-->
 <link rel="preload" href="assets/fonts/lilita-one-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://i.ytimg.com">
 <!--/site:recursos-->
 <link rel="stylesheet" href="assets/css/style.css">
@@ -26,7 +27,7 @@
 <body>
   <div class="wrap">
     <!--site:header--><header class="topbar">
-      <a class="brand" href="index.html"><img src="assets/img/logo-96.png" alt="Logo BRUBAOGG" width="44" height="44"> BRUBAOGG</a>
+      <a class="brand" href="index.html" aria-label="BRUBAOGG, página inicial"><img src="assets/img/logo-96.png" alt="" width="44" height="44"> BRUBAOGG</a>
       <form class="search" role="search" action="busca.html" method="get" data-base="">
         <svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 1 0 4.900 14.300l5.400 5.400 1.400-1.400-5.400-5.400A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/></svg>
         <input type="search" name="q" placeholder="Buscar matérias..." aria-label="Buscar no site" maxlength="200" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
@@ -35,7 +36,44 @@
         <span class="sr-only" id="search-status" role="status" aria-live="polite"></span>
       </form>
       <div class="social-bar"><a href="https://youtube.com/@brubaogg" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.tiktok.com/@brubaogameplay" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.instagram.com/brubaogg" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a><a href="https://www.twitch.tv/brubaogg" target="_blank" rel="noopener" aria-label="Twitch" title="Twitch"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg></a><a href="https://discord.gg/tQkkXMqAnU" target="_blank" rel="noopener" aria-label="Discord" title="Discord"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></a></div>
-    </header><!--/site:header-->
+    </header>
+    <nav class="nav-site" aria-label="Seções do site">
+      <button class="nav-menu" type="button" aria-haspopup="dialog" aria-controls="menu-painel" aria-expanded="false" hidden><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16" /> <path d="M4 12h16" /> <path d="M4 19h16" /></svg> Menu</button>
+      <ul class="nav-site-links">
+        <li><a class="nav-casa" href="index.html" aria-label="Início"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg></a></li>
+        <li><a href="gta6.html">GTA 6</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="lancamentos.html">Lançamentos</a></li>
+        <li><a href="wiki.html">Wiki</a></li>
+        <li><a href="cortes.html">Cortes</a></li>
+        <li><a href="lives.html">Lives</a></li>
+      </ul>
+    </nav>
+    <dialog class="menu-painel" id="menu-painel" aria-label="Menu do site">
+      <div class="menu-caixa">
+        <div class="menu-topo">
+          <a class="menu-marca" href="index.html" aria-label="BRUBAOGG, página inicial"><img src="assets/img/logo-96.png" alt="" width="56" height="56"></a>
+          <button class="menu-fechar" type="button" aria-label="Fechar menu" autofocus><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></svg></button>
+        </div>
+        <ul class="menu-lista">
+          <li><a href="gta6.html">GTA 6</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="lancamentos.html">Lançamentos</a></li>
+          <li><a href="wiki.html">Wiki</a></li>
+          <li><a href="cortes.html">Cortes</a></li>
+          <li><a href="lives.html">Lives</a></li>
+        </ul>
+        <ul class="menu-lista menu-extras">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="tags.html">Tags</a></li>
+          <li><a href="arquivo.html">Arquivo</a></li>
+          <li><a href="sobre.html">Sobre e contato</a></li>
+        </ul>
+      </div>
+    </dialog>
+    <script src="assets/js/nav.js" defer></script><!--/site:header-->
 
     <script>if (/[?&](q|cat|n)=/.test(location.search)) document.documentElement.classList.add('com-busca');</script>
     <main>
@@ -43,79 +81,107 @@
         <h1><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /></svg> Busca</h1>
         <p class="lead" id="busca-titulo">Matérias mais recentes</p>
       </section>
-      <div class="busca-filtros" id="busca-filtros" role="group" aria-label="Filtrar por categoria" data-categorias="Notícia|Review|Lançamento|GTA 6" hidden></div>
+      <div class="busca-filtros" id="busca-filtros" role="group" aria-label="Filtrar por categoria" data-categorias="Notícia|Review|Lançamento|GTA 6|Série" hidden></div>
       <p class="busca-atalhos" id="busca-atalhos" hidden></p>
       <p class="busca-status" id="busca-status" role="status" aria-live="polite"></p>
       <section class="news-grid" id="busca-lista" aria-label="Resultados">
-          <a class="news-card" href="noticias/god-of-war-laufey-quem-fara-o-papel-de-mimir-para-a-faye.html">
+          <a class="news-card" href="gta6-novidades/gta-6-25-minutos-de-gameplay-vazam-rockstar-nao-comenta.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/a5CgtpZg2i0/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: 25 minutos de gameplay vazam; Rockstar não comenta</b>
+              <span class="news-excerpt">O leaker CyberLeek divulgou em 8 de outubro de 2026 cerca de 25 minutos de supostas cenas de GTA 6. A Rockstar não comentou, e nada foi verificado.</span>
+
+              <small class="news-date">09 de out. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta-6-lucia-e-jason-estampam-a-revista-love.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/FKSlK_IOB8Y/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: Lucia e Jason estampam a revista LOVE</b>
+              <span class="news-excerpt">A revista LOVE trouxe imagens inéditas de Lucia e Jason em GTA 6 e uma entrevista com roteiristas da Rockstar, que os descreveram como vulneráveis e durões.</span>
+
+              <small class="news-date">09 de out. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/171-o-gta-brasileiro-e-adiado-para-2027.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/pW_hLwquscM/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">171, o GTA brasileiro, é adiado para 2027</b>
+              <span class="news-excerpt">A Betagames adiou o 171 para 2027 e confirmou a morte do cofundador Diogo Moraes. Lembro a longa trajetória do jogo.</span>
+
+              <small class="news-date">09 de out. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta-6-game-informer-descreve-furacoes-e-tempestades.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/4ovN6I948HI/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: Game Informer descreve furacões e tempestades</b>
+              <span class="news-excerpt">GTA 6 terá tempestades tropicais e furacões, com vento forte, chuva pesada e relâmpagos. A Rockstar não disse se o clima afetará missões.</span>
+
+              <small class="news-date">08 de out. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta6-celular.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/nmw4iMidUUk/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: o celular e os apps WAiNK, RydeMe e Snapmatic</b>
+              <span class="news-excerpt">Os apps do celular de GTA 6: o WAiNK para o roubo de carros, o RydeMe de carona e o Snapmatic, sátira do Instagram, do celular de GTA 5 até hoje.</span>
+
+              <small class="news-date">08 de out. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta6-animais.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/Bcd5qeSghAA/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: os 170 animais e o que ainda não se sabe</b>
+              <span class="news-excerpt">Mais de 170 espécies, de jacaré a peixe-boi, mas sem pets nem fundo do mar mostrados. A comparação com as cerca de 200 de Red Dead 2.</span>
+
+              <small class="news-date">07 de out. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/god-of-war-laufey.html">
             <span class="thumb"><img src="https://i.ytimg.com/vi/7XZuurjrUOM/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">God of War Laufey: quem fará o papel de Mimir para a Faye?</b>
-              <span class="news-excerpt">Em God of War Laufey, Faye terá Phranque e Rue como companheiros falantes. O Brubão se pergunta se eles herdam o papel de Mimir.</span>
+              <b class="news-title">God of War Laufey: revelação, pré-venda e Faye</b>
+              <span class="news-excerpt">Do State of Play de 2 de junho à pré-venda no Brasil: Faye, Phranque e Rue, teorias de fãs e o que disse a atriz que dá voz à protagonista.</span>
+
               <small class="news-date">06 de out. de 2026</small>
             </span>
           </a>
-          <a class="news-card" href="gta6-novidades/gta-6-rockstar-confirma-atividades-de-sinuca-a-jet-ski.html">
+          <a class="news-card" href="gta6-novidades/gta6-atividades-secundarias.html">
             <span class="thumb"><img src="https://i.ytimg.com/vi/xI4qEFLfiPA/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
-              <b class="news-title">GTA 6: Rockstar confirma atividades de sinuca a jet ski</b>
-              <span class="news-excerpt">A Rockstar confirmou as atividades secundárias de GTA 6, de sinuca e minigolf a jet ski e mergulho. Para o Brubão, elas vão dar vida ao mapa.</span>
+              <b class="news-title">GTA 6: atividades secundárias, de sinuca a jet ski</b>
+              <span class="news-excerpt">O que a Rockstar já confirmou além da história: sinuca, academia, paraquedismo, caiaque, minigolfe, mergulho, corridas, zoológico e jet ski.</span>
+
               <small class="news-date">06 de out. de 2026</small>
             </span>
           </a>
-          <a class="news-card" href="noticias/faye-em-god-of-war-laufey-ela-tera-espaco-para-brilhar.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/Hjj_6fVgvKw/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">Faye em God of War Laufey: ela terá espaço para brilhar?</b>
-              <span class="news-excerpt">Faye é a protagonista de God of War Laufey, mas o Brubão teme que Phranque, Rue e outros personagens dividam demais o holofote.</span>
-              <small class="news-date">05 de out. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="gta6-novidades/jacare-flamingo-e-peixe-boi-os-animais-de-gta-6.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/RlcOEz__i8A/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
-              <b class="news-title">Jacaré, flamingo e peixe-boi: os animais de GTA 6</b>
-              <span class="news-excerpt">GTA 6 terá espécies nativas de Leonida que nunca apareceram em jogos da Rockstar, como jacaré, flamingo e peixe-boi, no mapa inspirado na Flórida.</span>
-              <small class="news-date">05 de out. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="noticias/o-fim-da-midia-fisica-sony-gta-6-e-o-futuro-dos-discos.html">
+          <a class="news-card" href="noticias/fim-da-midia-fisica.html">
             <span class="thumb"><img src="https://i.ytimg.com/vi/-tOgB2biuSc/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">O fim da mídia física: Sony, GTA 6 e o futuro dos discos</b>
-              <span class="news-excerpt">Sony deixará de fabricar discos de jogos novos em 2028 e o GTA 6 virá só com código na caixa. O Brubão defende a mídia física.</span>
+              <b class="news-title">Fim dos discos: Sony, preço, PS6 e as críticas</b>
+              <span class="news-excerpt">A Sony vai parar de lançar discos de jogos novos em janeiro de 2028. O que muda no preço e no PS6, o Blackout e as críticas, na visão do Brubão.</span>
+
               <small class="news-date">04 de out. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="gta6-novidades/gta-6-roubo-de-carros-ganha-app-de-celular-e-rastreadores.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/jqUHFimgonE/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
-              <b class="news-title">GTA 6: roubo de carros ganha app de celular e rastreadores</b>
-              <span class="news-excerpt">Em GTA 6, carros caros terão rastreador e segurança avançada, e um app no celular mostra pontos fracos e o valor do veículo roubado.</span>
-              <small class="news-date">04 de out. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="noticias/inside-jogo-curto-final-impactante-e-arte-premiada.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/CT68uW4KT9I/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">INSIDE: jogo curto, final impactante e arte premiada</b>
-              <span class="news-excerpt">O Brubão zerou INSIDE, jogo de 2016 premiado pela direção de arte, sem diálogos e com um final que vira a cabeça do jogador.</span>
-              <small class="news-date">03 de out. de 2026</small>
             </span>
           </a>
           <a class="news-card" href="noticias/minecraft-ganha-the-sift-primeira-dimensao-nova-em-14-anos.html">
             <span class="thumb"><img src="https://i.ytimg.com/vi/DlieVifpdAM/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">Minecraft ganha The Sift, primeira dimensão nova em 14 anos</b>
-              <span class="news-excerpt">A Mojang revelou The Sift, a primeira dimensão do Minecraft desde o The End, em 2011, com visual colorido e inimigos novos.</span>
+              <b class="news-title">Minecraft ganha The Sift, a primeira dimensão em 14 anos</b>
+              <span class="news-excerpt">A Mojang revelou The Sift, a quarta dimensão do Minecraft e a primeira desde o End, em 2011. Ela chega ao jogo em 2027.</span>
+
               <small class="news-date">03 de out. de 2026</small>
             </span>
           </a>
@@ -123,17 +189,9 @@
             <span class="thumb"><img src="https://i.ytimg.com/vi/3L9W3tiliNs/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">The Witcher 3 Remastered: maior nota de 2026 no Metacritic</b>
-              <span class="news-excerpt">Com 94 no Metacritic, The Witcher 3 Remastered tem a maior média de 2026, mas a nota vem de poucas análises e pode mudar.</span>
-              <small class="news-date">02 de out. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="noticias/gta-6-tera-mais-de-170-animais-mas-e-o-fundo-do-mar.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/VxQk-NVCbBk/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">GTA 6 terá mais de 170 animais, mas e o fundo do mar?</b>
-              <span class="news-excerpt">Rockstar confirma mais de 170 espécies de animais em GTA 6. O Brubão quer saber o que haverá para explorar debaixo d'água.</span>
+              <b class="news-title">The Witcher 3 Remastered estreia com 94 no Metacritic</b>
+              <span class="news-excerpt">O remaster de The Witcher 3, lançado em 29 de setembro de 2026, tem 94 no Metacritic, a maior nota do ano, com poucas análises ainda.</span>
+
               <small class="news-date">02 de out. de 2026</small>
             </span>
           </a>
@@ -141,17 +199,9 @@
             <span class="thumb"><img src="https://i.ytimg.com/vi/EpjLkNom1FY/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg> Review</span>
-              <b class="news-title">INSIDE: vale a pena jogar o clássico da Playdead hoje?</b>
-              <span class="news-excerpt">Review de INSIDE, jogo de 2016 da Playdead: história sem palavras, arte premiada e um final que o Brubão não conseguiu explicar. Vale o preço?</span>
-              <small class="news-date">01 de out. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="noticias/gta-6-tera-pets-o-que-se-sabe-sobre-os-170-animais-do-jogo.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/wJEbXgBpNlk/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">GTA 6 terá pets? O que se sabe sobre os 170 animais do jogo</b>
-              <span class="news-excerpt">GTA 6 terá mais de 170 espécies de animais, mas a Rockstar ainda não disse se será possível ter um pet de verdade.</span>
+              <b class="news-title">INSIDE vale a pena? Minha nota é 8</b>
+              <span class="news-excerpt">Joguei INSIDE do início ao fim e dou nota 8: indie premiado, sem diálogo nem texto, curto e com um final que não consegui explicar.</span>
+
               <small class="news-date">01 de out. de 2026</small>
             </span>
           </a>
@@ -159,17 +209,9 @@
             <span class="thumb"><img src="https://i.ytimg.com/vi/a5aaRHkUOHE/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">Pirataria é problema de serviço, não só de preço</b>
-              <span class="news-excerpt">Fóruns de pirataria decidiram comprar Control Resonant. O Brubão defende que preço e serviço bons fazem a pirataria perder espaço.</span>
-              <small class="news-date">30 de set. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="noticias/god-of-war-laufey-pre-venda-abre-veja-edicoes-e-precos.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/RaF6cnHlAFc/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">God of War Laufey: pré-venda abre; veja edições e preços</b>
-              <span class="news-excerpt">A pré-venda de God of War Laufey já está aberta. Veja o que vem na edição padrão e na Digital Deluxe e quanto cada uma custa.</span>
+              <b class="news-title">Pirataria: usuários pedem para comprar Control Resonant</b>
+              <span class="news-excerpt">Usuários de um subreddit de pirataria pediram que o Control Resonant fosse comprado. Lembro a tese de Gabe Newell: pirataria é problema de serviço.</span>
+
               <small class="news-date">30 de set. de 2026</small>
             </span>
           </a>
@@ -178,34 +220,28 @@
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" /> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" /> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" /></svg> Lançamento</span>
               <b class="news-title">Lançamentos de outubro de 2026: Modern Warfare 4 e mais</b>
-              <span class="news-excerpt">Gears of War: E-Day, Final Fantasy Resonance, Call of Duty: Modern Warfare 4 e Phantom Blade Zero lideram os lançamentos de outubro de 2026.</span>
+              <span class="news-excerpt">Outubro de 2026 tem Modern Warfare 4, Phantom Blade Zero, Gears of War: E-Day, Final Fantasy Resonance e mais, com datas conferidas.</span>
+
               <small class="news-date">28 de set. de 2026</small>
             </span>
           </a>
-          <a class="news-card" href="noticias/gta-6-colecionador-custa-cerca-de-r-2-mil-sem-o-jogo.html">
+          <a class="news-card" href="gta6-novidades/gta6-preco-e-pre-venda.html">
             <span class="thumb"><img src="https://i.ytimg.com/vi/fC69eu4pLe4/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">GTA 6: colecionador custa cerca de R$ 2 mil, sem o jogo</b>
-              <span class="news-excerpt">A Rockstar vende a edição de colecionador de GTA 6 por US$ 400, sem o jogo. A caixa traz óculos, boné, bolsa, pôster e um jacaré.</span>
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: preço, pré-venda e edições no Brasil</b>
+              <span class="news-excerpt">Da pré-venda a R$ 449,90 à Ultimate Edition e à coleção de US$ 400: preços, edições, o vazamento da Best Buy e a disputa entre PS5 e Xbox.</span>
+
               <small class="news-date">27 de set. de 2026</small>
             </span>
           </a>
-          <a class="news-card" href="noticias/storebound-terror-no-shopping-funciona-melhor-com-amigos.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/WIKBqiaE4m4/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">Storebound: terror no shopping funciona melhor com amigos</b>
-              <span class="news-excerpt">O Brubão zerou Storebound com amigos e diz que o terror cooperativo em um shopping abandonado deve ser jogado em grupo.</span>
-              <small class="news-date">26 de set. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="noticias/rockstar-endurece-regras-de-mods-e-veta-crossovers-em-gta-6.html">
+          <a class="news-card" href="gta6-novidades/rockstar-endurece-regras-de-mods-e-veta-crossovers-em-gta-6.html">
             <span class="thumb"><img src="https://i.ytimg.com/vi/1yfTKljivZo/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">Rockstar endurece regras de mods e veta crossovers em GTA 6</b>
-              <span class="news-excerpt">As novas regras de mods da Rockstar proíbem levar mapas, personagens e histórias de outros jogos para GTA 6, além de vozes e rostos reais.</span>
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: Rockstar endurece regras de mods e veta crossovers</b>
+              <span class="news-excerpt">A Rockstar atualizou em setembro de 2026 suas regras de mods: não vale misturar personagens, mapas e vozes de outros jogos nem usar rostos reais sem permissão.</span>
+
               <small class="news-date">26 de set. de 2026</small>
             </span>
           </a>
@@ -213,8 +249,9 @@
             <span class="thumb"><img src="https://i.ytimg.com/vi/UXPaW49sUTY/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" /> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" /> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" /></svg> Lançamento</span>
-              <b class="news-title">9 jogos indie que chegam em outubro de 2026</b>
-              <span class="news-excerpt">Echo Weaver, Paperhead, The Witch's Bakery, Over the Hill e mais: os 9 indies em que o canal BRUBÃOGG aposta para outubro de 2026.</span>
+              <b class="news-title">Jogos indie de outubro de 2026: minhas 9 apostas</b>
+              <span class="news-excerpt">Echo Weaver, Invokyr, Paperhead e mais seis indies em que aposto para outubro de 2026, com datas conferidas.</span>
+
               <small class="news-date">26 de set. de 2026</small>
             </span>
           </a>
@@ -222,8 +259,9 @@
             <span class="thumb"><img src="https://i.ytimg.com/vi/q1T0PqdDRC4/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">Produtor de Resident Evil prepara projeto de Silent Hill</b>
-              <span class="news-excerpt">Depois do recorde de bilheteria de Resident Evil, o produtor Roy Lee desenvolve um novo projeto de Silent Hill, ainda sem diretor ou elenco.</span>
+              <b class="news-title">Produtor de Resident Evil prepara um novo Silent Hill</b>
+              <span class="news-excerpt">Roy Lee, produtor do novo Resident Evil, desenvolve um projeto de Silent Hill, ainda sem diretor, elenco ou formato definido, segundo o WSJ.</span>
+
               <small class="news-date">25 de set. de 2026</small>
             </span>
           </a>
@@ -231,8 +269,29 @@
             <span class="thumb"><img src="https://i.ytimg.com/vi/5w30a1BZuRw/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg> Review</span>
-              <b class="news-title">Storebound: vale a pena jogar o terror cooperativo?</b>
-              <span class="news-excerpt">Review de Storebound, terror cooperativo para até três jogadores. O Brubão diz que só vale a pena com amigos e comenta preço e consoles.</span>
+              <b class="news-title">Storebound vale a pena? Minha nota é 7</b>
+              <span class="news-excerpt">Zerei Storebound com dois amigos e dou nota 7: terror cooperativo para três, com mais correria e risada que susto. Sozinho, perde a graça.</span>
+
+              <small class="news-date">24 de set. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta-6-miami-beach-aprova-anuncios-em-cadeiras-de-praia.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/6UPhgpchDMI/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: Miami Beach aprova anúncios em cadeiras de praia</b>
+              <span class="news-excerpt">Miami Beach aprovou, por 4 votos a 3, anúncios de GTA 6 em cadeiras e guarda-sóis de praia, de 15 de outubro a 31 de dezembro de 2026.</span>
+
+              <small class="news-date">24 de set. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/cs2-como-conseguir-a-galinha-de-estimacao-de-graca.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/EgR5w0kllBo/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">CS2: como conseguir a galinha de estimação de graça</b>
+              <span class="news-excerpt">A Valve adicionou galinhas de estimação ao CS2 em 22 de setembro de 2026. Explico como chocar o ovo e criar a ave de graça.</span>
+
               <small class="news-date">24 de set. de 2026</small>
             </span>
           </a>
@@ -240,18 +299,30 @@
             <span class="thumb"><img src="https://i.ytimg.com/vi/o1pTYdlPfMs/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">WoW Forever: Blizzard recria 2004 sem servidores separados</b>
-              <span class="news-excerpt">World of Warcraft: Forever tem beta aberto e lançamento em 4 de novembro. O Brubão comenta a reinterpretação do WoW Classic e as reclamações de fila.</span>
+              <b class="news-title">WoW Forever abre beta e estreia em 4 de novembro</b>
+              <span class="news-excerpt">WoW Forever, a releitura do WoW Classic da Blizzard, abriu o beta em 17 de setembro e chega em 4 de novembro de 2026 sem servidores separados.</span>
+
               <small class="news-date">23 de set. de 2026</small>
             </span>
           </a>
-          <a class="news-card" href="noticias/resident-evil-filme-de-zach-cregger-e-elogiado-pela-critica.html">
+          <a class="news-card" href="noticias/resident-evil-filme.html">
             <span class="thumb"><img src="https://i.ytimg.com/vi/nerCxj5lqMY/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
-              <b class="news-title">Resident Evil: filme de Zach Cregger é elogiado pela crítica</b>
-              <span class="news-excerpt">O novo filme de Resident Evil, de Zach Cregger, estreou com elogios: 91 no Polygon e 8 no GameSpot, com história original sem Leon e Claire.</span>
+              <b class="news-title">Resident Evil de Zach Cregger: exibições e crítica</b>
+              <span class="news-excerpt">As reações nas exibições-teste de abril de 2026 e a recepção da crítica na estreia: 80 no Metacritic e 97% no Rotten Tomatoes.</span>
+
               <small class="news-date">22 de set. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/starcraft-vira-shooter-em-mundo-aberto-e-divide-fas.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/stQ5UXGM8yU/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">StarCraft vira shooter em mundo aberto e divide fãs</b>
+              <span class="news-excerpt">A Blizzard anunciou na BlizzCon 2026 um novo StarCraft, um shooter de mundo aberto previsto para 2030 e dirigido por um ex-Far Cry.</span>
+
+              <small class="news-date">20 de set. de 2026</small>
             </span>
           </a>
           <a class="news-card" href="reviews/shift-at-midnight-o-terror-que-vira-comedia-com-amigos.html">
@@ -260,6 +331,7 @@
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg> Review</span>
               <b class="news-title">Shift at Midnight: o terror que vira comédia com amigos</b>
               <span class="news-excerpt">Review de Shift at Midnight: em dupla ou trio vira comédia de acusar clientes, mas o ciclo cansa sozinho. O Brubão dá nota 8 de 10.</span>
+
               <small class="news-date">19 de set. de 2026</small>
             </span>
           </a>
@@ -267,9 +339,30 @@
             <span class="thumb"><img src="https://i.ytimg.com/vi/9xoZYLMSjXo/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg> Review</span>
-              <b class="news-title">Garten of Banban: por que o Brubão deu nota 2 à série</b>
-              <span class="news-excerpt">O Brubão jogou os capítulos 0 a 3 de Garten of Banban e deu nota 2 de 10, com críticas a visual, controles e dublagem.</span>
+              <b class="news-title">Garten of Banban: minha nota é 2</b>
+              <span class="news-excerpt">Joguei os capítulos 0 a 3 de Garten of Banban e dou nota 2: gráficos fracos, jogabilidade ruim e dublagem amadora. Para mim, o pior jogo que já joguei.</span>
+
               <small class="news-date">19 de set. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/diablo-5-e-anunciado-para-a-primavera-de-2029.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/zH52WJYVO30/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Diablo 5 é anunciado para a primavera de 2029</b>
+              <span class="news-excerpt">A Blizzard anunciou Diablo 5 na BlizzCon 2026, para a primavera de 2029, com um teaser em que o mal já venceu e o Santuário caiu.</span>
+
+              <small class="news-date">19 de set. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/sony-desiste-do-physint-de-kojima-e-a-xbox-assume.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/W06OcqbAw_8/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Sony desiste do Physint, de Kojima, e a Xbox assume</b>
+              <span class="news-excerpt">A PlayStation encerrou a parceria do Physint com Kojima, e a Xbox passou a publicar o jogo. O motivo, segundo a Bloomberg, seria dinheiro.</span>
+
+              <small class="news-date">18 de set. de 2026</small>
             </span>
           </a>
           <a class="news-card" href="reviews/assassin-s-creed-black-flag-resynced-vale-a-pena-o-remake.html">
@@ -278,49 +371,24 @@
               <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg> Review</span>
               <b class="news-title">Assassin's Creed Black Flag Resynced: vale a pena o remake?</b>
               <span class="news-excerpt">Review do remake de Black Flag: fiel ao original de 2013 e mais bonito, mas o Brubão acha caro e indica o original a quem tem pouca grana.</span>
+
               <small class="news-date">17 de set. de 2026</small>
             </span>
           </a>
-          <a class="news-card" href="reviews/the-baby-in-yellow-200-milhoes-de-downloads-mas-e-bom.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/hj23XGC6j9w/hqdefault.jpg" alt="" loading="lazy"></span>
+          <a class="news-card" href="noticias/marvel-s-wolverine-estreia-com-78-no-metacritic.html">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/8RJQgj2fnGE/hqdefault.jpg" alt="" loading="lazy"></span>
             <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg> Review</span>
-              <b class="news-title">The Baby in Yellow: 200 milhões de downloads, mas é bom?</b>
-              <span class="news-excerpt">Review de The Baby in Yellow, jogo de terror com mais de 200 milhões de downloads. O Brubão vê ideias soltas, mas acha barato e esquisito.</span>
-              <small class="news-date">10 de set. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="reviews/alan-wake-2-nao-e-para-todo-mundo-vale-a-pena.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/HqEM8jLL0Fk/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg> Review</span>
-              <b class="news-title">Alan Wake 2 não é para todo mundo: vale a pena?</b>
-              <span class="news-excerpt">Review de Alan Wake 2: visual absurdo e história ousada, mas ritmo lento. O Brubão dá nota 6 e diz para quem o jogo vale a pena.</span>
-              <small class="news-date">03 de set. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="lancamentos/lancamentos-de-setembro-de-2026-wolverine-e-dawnwalker.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/kbJzIpS2NS0/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" /> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" /> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" /></svg> Lançamento</span>
-              <b class="news-title">Lançamentos de setembro de 2026: Wolverine e Dawnwalker</b>
-              <span class="news-excerpt">Marvel's Wolverine, The Blood of Dawnwalker, Silent Hill: Townfall, Onimusha e Control Resonant estão entre os destaques de setembro de 2026.</span>
-              <small class="news-date">31 de ago. de 2026</small>
-            </span>
-          </a>
-          <a class="news-card" href="reviews/control-vale-jogar-o-original-antes-de-control-resonant.html">
-            <span class="thumb"><img src="https://i.ytimg.com/vi/GudFV-hOLvE/hqdefault.jpg" alt="" loading="lazy"></span>
-            <span class="news-body">
-              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg> Review</span>
-              <b class="news-title">Control: vale jogar o original antes de Control Resonant?</b>
-              <span class="news-excerpt">Review de Control, da Remedy: Jesse tem poderes fortes e o jogo surpreende. O Brubão dá nota 7,5, sobe para 9 quando é de graça.</span>
-              <small class="news-date">27 de ago. de 2026</small>
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Marvel's Wolverine estreia com 78 no Metacritic</b>
+              <span class="news-excerpt">O exclusivo do PS5 da Insomniac estreou com 78 no Metacritic, abaixo dos jogos anteriores do estúdio. Eu disse que não vou comprar.</span>
+
+              <small class="news-date">17 de set. de 2026</small>
             </span>
           </a>
       </section>
-      <div class="busca-mais"><button type="button" class="btn" id="busca-mais" data-total="74" hidden>Ver mais</button></div>
+      <div class="busca-mais"><button type="button" class="btn" id="busca-mais" data-total="175" hidden>Ver mais</button></div>
       <noscript><p class="busca-aviso">A busca por texto precisa do JavaScript ligado. Sem ele, estas são as matérias mais recentes; para ver outras, abra <a href="noticias.html">Notícias</a>, <a href="reviews.html">Reviews</a>, <a href="lancamentos.html">Lançamentos</a> ou <a href="tags.html">as tags</a>.</p></noscript>
-      <template id="busca-icones"><span data-cat="Notícia"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg></span><span data-cat="Review"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span><span data-cat="Lançamento"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" /> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" /> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" /></svg></span><span data-cat="GTA 6"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg></span></template>
+      <template id="busca-icones"><span data-cat="Notícia"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg></span><span data-cat="Review"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span><span data-cat="Lançamento"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" /> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" /> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" /></svg></span><span data-cat="GTA 6"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg></span><span data-cat="Série"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 7v14" /> <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></svg></span></template>
     </main>
   </div>
   <!--site:footer--><footer class="site-footer">
@@ -337,22 +405,21 @@
           <p>Notícias, reviews, lançamentos e cortes de games.</p>
           <div class="social-bar"><a href="https://youtube.com/@brubaogg" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.tiktok.com/@brubaogameplay" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.instagram.com/brubaogg" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a><a href="https://www.twitch.tv/brubaogg" target="_blank" rel="noopener" aria-label="Twitch" title="Twitch"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg></a><a href="https://discord.gg/tQkkXMqAnU" target="_blank" rel="noopener" aria-label="Discord" title="Discord"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></a></div>
         </div>
-        <nav class="footer-col" aria-label="Navegar">
+        <nav class="footer-col footer-navegar" aria-label="Navegar">
           <p class="footer-titulo">Navegar</p>
+          <div class="footer-links">
         <a href="index.html">Início</a>
         <a href="gta6.html">GTA 6</a>
-        <a href="lancamentos.html">Lançamentos</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="cortes.html">Cortes</a>
         <a href="noticias.html">Notícias</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="lancamentos.html">Lançamentos</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="cortes.html">Cortes</a>
         <a href="lives.html">Lives</a>
         <a href="tags.html">Tags</a>
         <a href="arquivo.html">Arquivo</a>
-        </nav>
-        <nav class="footer-col" aria-label="Ferramentas">
-          <p class="footer-titulo">Ferramentas</p>
-          <a href="mcp-tiktok.html">MCP TikTok</a>
-          <a href="mcp-youtube.html">MCP YouTube</a>
+        <a href="sobre.html">Sobre e contato</a>
+          </div>
         </nav>
         <nav class="footer-col" aria-label="Legal">
           <p class="footer-titulo">Legal</p>

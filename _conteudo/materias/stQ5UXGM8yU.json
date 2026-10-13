@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-09-20",
+  "titulo": "StarCraft vira shooter em mundo aberto e divide fãs",
+  "resumo": "A Blizzard anunciou na BlizzCon 2026 um novo StarCraft, um shooter de mundo aberto previsto para 2030 e dirigido por um ex-Far Cry.",
+  "tags": [
+    "StarCraft"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Stevivor",
+      "url": "https://stevivor.com/news/blizzard-reveals-new-starcraft-as-an-open-world-shooter-arriving-in-2030/"
+    },
+    {
+      "nome": "Hypebeast",
+      "url": "https://hypebeast.com/2026/9/blizzard-open-world-starcraft-sci-fi-shooter-2030-release-info-teaser-revealed"
+    },
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/blizzard-reveals-open-world-starcraft-shooter-from-ex-far-cry-boss/"
+    },
+    {
+      "nome": "Games.gg",
+      "url": "https://games.gg/news/starcraft-open-world-shooter-blizzcon-2026/"
+    }
+  ],
+  "corpo": [
+    "A Blizzard anunciou na BlizzCon 2026 um novo StarCraft que abandona a estratégia em tempo real e vira um shooter de mundo aberto, com história, previsto para 2030. O jogo se passa no Setor Koprulu cerca de 70 anos depois de StarCraft II: Legacy of the Void. O trailer é cinematográfico e não mostra jogabilidade, e a Blizzard diz que mostrará mais nos próximos anos.",
+    "Quem dirige o projeto é Dan Hay, ex-diretor de Far Cry 5 na Ubisoft. Digo que a Blizzard garante um jogo completo, sem live service, com lançamento no primeiro semestre de 2030; as fontes consultadas citam apenas 2030 e não confirmam o modelo de monetização. Descrevo o trailer como um marine terran treinando para enfrentar os zergs direto no combate, sem estratégia macro à vista.",
+    "Para quem cresceu jogando StarCraft competitivo, montando build orders e controlando exércitos, vejo a mudança como sair do gênero que definiu a franquia por mais de 20 anos. Pelo que vi, o anúncio já causa debate forte entre quem defende manter a essência estratégica e quem está aberto à reinvenção."
+  ]
+}
