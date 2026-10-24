@@ -1,3 +1,4 @@
+// ATENCAO: com ADS_ATIVOS = false (gerador/config.mjs) os espacos de ADS estao escondidos; as conferencias de ADS deste arquivo so valem com ADS_ATIVOS = true (e npm run gerar).
 // Mini-busca de cada secao (Noticias, Reviews, Lancamentos e Wiki) em navegador de verdade, pelos aparelhos da lista do Chrome DevTools. Roda no navegador, em qualquer
 // pagina do site local (nao e parte do "npm run testar"; o que nao precisa de navegador esta em t-js.mjs). Cada pagina abre num iframe do tamanho da tela (mesma origem).
 // Noticias e Lancamentos so tem o campo de busca; Reviews tem o menu lateral de plataformas e o "Ordenar por" ao lado do campo; a Wiki tem o menu lateral de jogos.

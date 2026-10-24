@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gravarRegistro, lerRegistro } from './gerador/enderecos.mjs';
-import { arquivoDaMateria, resolverId } from './gerador/pastas.mjs';
+import { listarConteudos, resolverId } from './gerador/pastas.mjs';
 import { hojeEmSaoPaulo } from './gerador/util.mjs';
 
 const site = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -31,11 +31,19 @@ if (argDestino) {
 e.retirada = hojeEmSaoPaulo();
 if (destino) e.para = destino;
 gravarRegistro(site, registro);
-const arq = arquivoDaMateria(site, id); // _conteudo/materias ou _conteudo/wiki
-if (arq) {
+const c = listarConteudos(site).itens.find((x) => x.id === id); // _conteudo/materias/<tipo>/<ID>/<ID>.json
+if (c) {
   const pasta = path.join(site, '_conteudo', 'retiradas');
   fs.mkdirSync(pasta, { recursive: true });
-  fs.renameSync(arq, path.join(pasta, path.basename(arq)));
+  fs.renameSync(c.arquivo, path.join(pasta, `${id}.json`));
+  // o que mais morava na pasta da materia (miniatura, fotos do texto) tambem sai do site: vai para retiradas/<ID>/ (nada e apagado) e a pasta vazia some
+  const restos = fs.readdirSync(c.pasta);
+  if (restos.length) {
+    const guardadas = path.join(pasta, id);
+    fs.mkdirSync(guardadas, { recursive: true });
+    for (const r of restos) fs.renameSync(path.join(c.pasta, r), path.join(guardadas, r));
+  }
+  fs.rmdirSync(c.pasta);
 }
 const d = destino ? registro[destino] : null;
 console.log(`Retirada: ${e.categoria}/${e.slug}.html (agora leva para ${d ? `${d.categoria}/${d.slug}.html` : 'a lista da categoria'}). O texto ficou em _conteudo/retiradas/. Rode: npm run gerar`);

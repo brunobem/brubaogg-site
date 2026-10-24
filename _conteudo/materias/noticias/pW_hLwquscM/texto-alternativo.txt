@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Ilustração do jogo brasileiro 171: homem de camiseta branca com o punho erguido numa rua, com policiais, carros e a logo do jogo. Texto na arte: "F NO CHAT!".
+Thumb.png: Ilustração do jogo brasileiro 171: homem de camiseta branca com o punho erguido numa rua, com policiais, carros e a logo do jogo. Texto na arte: "F NO CHAT!".
+img-1_arkade.com.br.webp: Arte do jogo 171: homem de moletom preto, óculos azuis e gorro com as cores do reggae, com um fuzil no ombro, ao lado de um carro amarelo, com fumaça e fogo ao fundo e a logo do jogo.
+img-2_techtudo.com.br.jpg: Cena escura do jogo 171 com o rosto de um homem em primeiro plano e a logo do jogo.

@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Ilustração de uma cena de caos em Miami: carro azul com uma mulher de braços erguidos, homem com submetralhadora, jipe vermelho com pessoas e um ursinho de pelúcia e um paraquedista, entre prédios e palmeiras, com a logo de GTA 6. Texto na arte: "CAOS?".
+Thumb.png: Ilustração de uma cena de caos em Miami: carro azul com uma mulher de braços erguidos, homem com submetralhadora, jipe vermelho com pessoas e um ursinho de pelúcia e um paraquedista, entre prédios e palmeiras, com a logo de GTA 6. Texto na arte: "CAOS?".

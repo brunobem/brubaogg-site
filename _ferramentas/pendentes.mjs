@@ -6,30 +6,24 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { categorias } from './gerador/config.mjs';
 import { dataDePublicacao, validarMateria, validarWiki } from './gerador/contrato.mjs';
+import { listarConteudos } from './gerador/pastas.mjs';
 import { ErroDeDados, lerJson } from './gerador/util.mjs';
 
 const site = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const dir = path.join(site, '_conteudo', 'materias');
 const soRascunhos = process.argv.includes('--rascunhos');
 const playlists = lerJson(path.join(site, 'assets', 'data', 'playlists.json'), 'assets/data/playlists.json');
 const noFeed = new Map();
 for (const c of categorias) for (const v of playlists[c.playlist] ?? []) noFeed.set(v.id, { cat: c.pasta, data: v.published });
 
-// le todos os arquivos de materia
+// le todos os arquivos de materia (_conteudo/materias/<tipo>/<ID>/<ID>.json); o conteudo da Wiki (tipo wiki) conta como "com texto" para os videos do feed e nao passa por aprovar
+// (rascunho = "status": "rascunho" no proprio arquivo)
 const arquivos = [];
-for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
-  const id = f.slice(0, -5), rel = `_conteudo/materias/${f}`;
-  try { arquivos.push({ id, rel, m: lerJson(path.join(dir, f), rel) }); }
-  catch (e) { if (e instanceof ErroDeDados) arquivos.push({ id, rel, erro: e.message }); else throw e; }
-}
-// conteudo da Wiki (_conteudo/wiki): conta como "com texto" para os videos do feed e nao passa por aprovar (rascunho = "status": "rascunho" no proprio arquivo)
-const dirWiki = path.join(site, '_conteudo', 'wiki');
-if (fs.existsSync(dirWiki)) {
-  for (const f of fs.readdirSync(dirWiki).filter((x) => x.endsWith('.json')).sort()) {
-    const id = f.slice(0, -5), rel = `_conteudo/wiki/${f}`;
-    try { arquivos.push({ id, rel, wiki: true, m: lerJson(path.join(dirWiki, f), rel) }); }
-    catch (e) { if (e instanceof ErroDeDados) arquivos.push({ id, rel, wiki: true, erro: e.message }); else throw e; }
-  }
+const { itens: conteudos, foraDoLugar } = listarConteudos(site);
+for (const rel of foraDoLugar) console.log(`ATENCAO: ${rel} esta fora do lugar (o certo: _conteudo/materias/<tipo>/<ID>/<ID>.json); o gerador para por causa dele.`);
+for (const c of conteudos) {
+  const wiki = c.tipo === 'wiki', extra = wiki ? { wiki: true } : {};
+  try { arquivos.push({ id: c.id, rel: c.rel, ...extra, m: lerJson(c.arquivo, c.rel) }); }
+  catch (e) { if (e instanceof ErroDeDados) arquivos.push({ id: c.id, rel: c.rel, ...extra, erro: e.message }); else throw e; }
 }
 const estado = (a) => (a.erro ? 'json invalido' : a.m.status == null ? 'publicada' : a.m.status === 'rascunho' ? 'rascunho' : 'json invalido');
 
@@ -57,7 +51,7 @@ const rascunhosWiki = arquivos.filter((a) => a.wiki && estado(a) === 'rascunho')
 if (rascunhosWiki.length) {
   const fTags = path.join(site, '_conteudo', 'tags.json');
   const tagsCfg = fs.existsSync(fTags) ? lerJson(fTags, '_conteudo/tags.json') : {};
-  console.log(`\nRASCUNHOS da Wiki (_conteudo/wiki): ${rascunhosWiki.length}`);
+  console.log(`\nRASCUNHOS da Wiki (_conteudo/materias/wiki): ${rascunhosWiki.length}`);
   for (const a of rascunhosWiki) {
     const w = validarWiki(a.m, { id: a.id, rel: a.rel, tagsCfg });
     const problemas = [...w.problemas, ...validarMateria(w.m, { id: a.id, rel: a.rel, situacao: 'publicada' }).problemas].map((p) => p.replace(`${a.rel}: `, ''));

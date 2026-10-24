@@ -4,10 +4,12 @@
 // e conferida pelos varredores de navegador (ads-aparelhos.js).
 import { achado, existe, ler, paginasHtml } from './lib.mjs';
 import { rodarScript } from './dom-falso.mjs';
-import { ADS_NAS_LISTAS } from '../../gerador/config.mjs';
+import { ADS_ATIVOS, ADS_NAS_LISTAS } from '../../gerador/config.mjs';
 
 const T = 'ads';
-const marcador = (id) => `<div class="ads" data-ads="${id}" aria-hidden="true">ADS</div>`;
+// ADS_ATIVOS = false (config.mjs): o marcador existe em todo lugar de sempre, mas sai com o atributo hidden (escondido, o codigo fica); as listas nao levam data-ads-* nem o ads.js
+const OCULTO = ADS_ATIVOS ? '' : ' hidden';
+const marcador = (id) => `<div class="ads" data-ads="${id}" aria-hidden="true"${OCULTO}>ADS</div>`;
 
 // [id, o que vem logo ANTES do marcador (termina nele), o que vem logo DEPOIS (comeca nele)]. O HTML e comparado sem comentarios e sem espaco entre as tags.
 const FILTRO = [/<form [^>]*class="secao-form"[^>]*>(?:(?!<\/form>)[\s\S])*<\/form>$/, /^<div class="secao-layout">/];
@@ -95,8 +97,8 @@ export default async function () {
     const h = compactar(bruto);
     const esperado = FIXOS[pagina] ?? [];
     const todos = [...bruto.matchAll(/<div class="ads"[^>]*>/g)];
-    const ids = [...h.matchAll(/<div class="ads" data-ads="([^"]*)" aria-hidden="true">ADS<\/div>/g)].map((m) => m[1]);
-    if (todos.length !== ids.length) ach('alto', `marcador de ADS fora do formato (precisa ser exatamente ${marcador('ID')})`, pagina);
+    const ids = [...h.matchAll(/<div class="ads" data-ads="([^"]*)" aria-hidden="true"( hidden)?>ADS<\/div>/g)].filter((m) => (m[2] ?? '') === OCULTO).map((m) => m[1]);
+    if (todos.length !== ids.length) ach('alto', `marcador de ADS fora do formato ou no estado errado (com ADS_ATIVOS = ${ADS_ATIVOS} precisa ser exatamente ${marcador('ID')}: rode npm run gerar)`, pagina);
     if (!esperado.length) { if (todos.length) ach('alto', `marcador de ADS numa pagina que nao pediu (${ids.join(', ')}): so entram nas paginas do inventario FIXOS de t-ads.mjs`, pagina); }
     else {
       if (JSON.stringify(ids) !== JSON.stringify(esperado.map((x) => x[0]))) ach('alto', `marcadores de ADS: devia haver ${esperado.map((x) => x[0]).join(', ')} (nesta ordem) e ha ${ids.join(', ') || 'nenhum'}`, pagina);
@@ -110,14 +112,14 @@ export default async function () {
       }
     }
     // dois marcadores colados = banner duplo
-    if (/data-ads="[^"]*" aria-hidden="true">ADS<\/div><div class="ads"/.test(h)) ach('alto', 'dois marcadores de ADS colados um no outro', pagina);
+    if (/data-ads="[^"]*" aria-hidden="true"( hidden)?>ADS<\/div><div class="ads"/.test(h)) ach('alto', 'dois marcadores de ADS colados um no outro', pagina);
     // so o ads.js cria marcador dentro da lista (data-auto): no HTML escrito ele nao pode estar
     if (/data-auto\b/.test(bruto)) ach('alto', 'data-auto no HTML escrito: os marcadores de dentro das listas nascem so pelo assets/js/ads.js', pagina);
 
     // atributos das listas e o script
     const listas = [...bruto.matchAll(/<(?:div|section)[^>]*\bdata-ads-cada="[^"]*"[^>]*>/g)].map((m) => m[0]);
     const secaoDaPagina = pagina.replace(/\.html$/, '');
-    const cfg = ADS_NAS_LISTAS[secaoDaPagina];
+    const cfg = ADS_ATIVOS ? ADS_NAS_LISTAS[secaoDaPagina] : undefined;
     const temScript = /<script src="assets\/js\/ads\.js" defer><\/script>/.test(bruto);
     if (cfg) {
       if (listas.length !== 2) ach('alto', `devia haver 2 listas com data-ads-cada (a do resultado da busca e a lista de sempre) e ha ${listas.length}`, pagina);
@@ -126,8 +128,8 @@ export default async function () {
       if (!new RegExp(`<section class="news-grid" data-lista="cat-${secaoDaPagina}"[^>]*data-ads-cada`).test(bruto)) ach('alto', 'a lista de sempre (data-lista) nao tem data-ads-cada', pagina);
       if (!temScript) ach('alto', 'falta <script src="assets/js/ads.js" defer>: sem ele os banners de dentro da lista nao entram', pagina);
     } else {
-      if (listas.length) ach('alto', 'data-ads-cada numa pagina que nao esta em ADS_NAS_LISTAS (config.mjs)', pagina);
-      if (temScript) ach('medio', 'carrega ads.js mas a pagina nao tem lista com data-ads-cada', pagina);
+      if (listas.length) ach('alto', ADS_ATIVOS ? 'data-ads-cada numa pagina que nao esta em ADS_NAS_LISTAS (config.mjs)' : 'ADS_ATIVOS = false: a lista nao pode levar data-ads-cada', pagina);
+      if (temScript) ach('medio', ADS_ATIVOS ? 'carrega ads.js mas a pagina nao tem lista com data-ads-cada' : 'ADS_ATIVOS = false: a pagina nao pode carregar ads.js', pagina);
     }
   }
   for (const p of Object.keys(FIXOS)) if (!paginas.includes(p)) ach('alto', `pagina do inventario FIXOS nao existe: ${p}`);
@@ -145,6 +147,7 @@ export default async function () {
 
   // ---------- 2. CSS: o marcador tem altura fixa (a pagina nao pula quando o anuncio entrar) e nao quebra a grade ----------
   const css = ler('assets/css/style.css');
+  if (!/\.ads\[hidden\]\s*\{[^}]*display:\s*none/.test(css)) ach('alto', 'falta .ads[hidden] { display: none }: sem isso o display: grid de .ads vence o atributo hidden e o ADS escondido apareceria', 'style.css');
   if (!/(?:^|\n)\.ads\s*\{[^}]*\bheight:\s*\d+px/.test(css)) ach('alto', '.ads sem altura fixa em px: quando o anuncio de verdade entrar a pagina pularia', 'style.css');
   if (!/\.news-grid\s*>\s*\.ads[^{]*\{[^}]*grid-column:\s*1\s*\/\s*-1/.test(css)) ach('alto', 'banner dentro da lista (.news-grid > .ads) precisa ocupar a linha toda (grid-column: 1 / -1)', 'style.css');
   if (!/\.ads\b[^{]*\{[^}]*font-family:\s*var\(--font-display\)/.test(css)) ach('baixo', 'a palavra ADS do marcador devia usar a fonte dos titulos', 'style.css');

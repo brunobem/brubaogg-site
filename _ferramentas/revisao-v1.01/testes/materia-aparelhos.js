@@ -126,7 +126,7 @@ window.varrerMaterias = async function (paginas, aparelhos, cssExtra) {
         if (!lia) prob.push('assinatura sem o link "Texto com apoio de IA"');
         else { var lir = rect(lia); if (lir.b - lir.t < 43.5) prob.push('link "Texto com apoio de IA" com ' + Math.round(lir.b - lir.t) + ' px de altura (minimo 44)'); if (!dentro(lir)) prob.push('o link do apoio de IA passa da janela'); if (txA && cruza(rect(txA), lir)) prob.push('o texto da assinatura e o link do apoio de IA se sobrepoem'); }
         if (avt && txA && cruza(rect(avt), rect(txA))) prob.push('o avatar se sobrepoe ao texto da assinatura');
-        var fimF = d.querySelector('.fontes'); if (fimF && !d.querySelector('.assunto-pagina') && aur.t < rect(fimF).b - 0.5) prob.push('a assinatura fica por cima das fontes');
+        var fimF = d.querySelector('.fontes'); if (fimF && aur.t < rect(fimF).b - 0.5) prob.push('a assinatura fica por cima das fontes');
       }
 
       // fontes: lista com links que abrem em nova aba, cada um com 44 px ou mais de altura, depois do texto e antes dos botoes
@@ -194,60 +194,6 @@ window.varrerMaterias = async function (paginas, aparelhos, cssExtra) {
         var lk = d.querySelector('.links'); if (lk && rect(shs).t < rect(lk).b - 0.5) prob.push('os Shorts ficam por cima dos botoes de cima');
       }
 
-      // pagina de assunto (varios videos sobre o mesmo fato): um bloco por video, na ordem da lista "Neste assunto"; cada bloco dentro da janela, com o player (fachada) cobrindo a caixa,
-      // play de 44 px ou mais no centro, miniatura carregada, botoes de 44 px sem sobrepor; a lista com alvos de 44 px, texto inteiro e ancoras que levam ao bloco certo
-      var pa = d.querySelector('.assunto-pagina');
-      if (pa) {
-        var blocosA = Array.prototype.slice.call(pa.querySelectorAll('section.bloco')), idxA = Array.prototype.slice.call(pa.querySelectorAll('.assunto-lista a'));
-        if (blocosA.length < 2) prob.push('pagina de assunto com ' + blocosA.length + ' bloco(s) (o minimo e 2)');
-        if (idxA.length !== blocosA.length) prob.push('a lista "Neste assunto" tem ' + idxA.length + ' itens e a pagina ' + blocosA.length + ' blocos');
-        var navA = pa.querySelector('nav.assunto');
-        if (navA) {
-          if (!dentro(rect(navA))) prob.push('a lista "Neste assunto" passa da janela');
-          if (!navA.hasAttribute('data-pagefind-ignore')) prob.push('a lista "Neste assunto" entra no indice da busca');
-          var datasA = Array.prototype.slice.call(navA.querySelectorAll('time')).map(function (t) { return t.getAttribute('datetime'); });
-          for (var dd2 = 1; dd2 < datasA.length; dd2++) if (datasA[dd2] > datasA[dd2 - 1]) { prob.push('a lista "Neste assunto" fora da ordem (do mais novo para o mais velho)'); break; }
-          for (var l1 = 0; l1 < idxA.length; l1++) for (var l2 = l1 + 1; l2 < idxA.length; l2++) if (cruza(rect(idxA[l1]), rect(idxA[l2]))) prob.push('itens da lista "Neste assunto" se sobrepoem');
-        } else prob.push('a pagina de assunto nao tem a lista "Neste assunto"');
-        idxA.forEach(function (a1, k) {
-          var r1 = rect(a1), alvoA = d.getElementById((a1.getAttribute('href') || '').slice(1));
-          if (!dentro(r1)) prob.push('item da lista "Neste assunto" fora da janela');
-          if (r1.b - r1.t < 43.5) prob.push('item da lista "Neste assunto" com ' + Math.round(r1.b - r1.t) + ' px de altura (minimo 44)');
-          if (a1.scrollWidth > a1.clientWidth + 1) prob.push('texto de item da lista "Neste assunto" cortado');
-          if (!alvoA || alvoA !== blocosA[k]) prob.push('o item ' + (k + 1) + ' da lista "Neste assunto" nao leva ao bloco ' + (k + 1));
-        });
-        var anteriorA = null;
-        blocosA.forEach(function (b, k) {
-          var br = rect(b), nb = 'bloco ' + (k + 1);
-          if (!dentro(br)) prob.push(nb + ' passa da janela');
-          if (anteriorA && br.t < anteriorA.b - 0.5) prob.push('blocos se sobrepoem');
-          anteriorA = br;
-          var tit = b.querySelector('.bloco-titulo'), fa = b.querySelector('.fachada'), cx = b.querySelector('.art-video'), split = b.querySelector('.art-split'), lkA = b.querySelector('.links');
-          if (tit && (rect(tit).r > br.r + 0.5 || rect(tit).l < br.l - 0.5)) prob.push('titulo do ' + nb + ' passa da caixa do bloco');
-          if (!fa || !cx) { prob.push(nb + ' sem o player (fachada)'); return; }
-          var cr = rect(cx), far = rect(fa), pl = fa.querySelector('.fachada-play') ? rect(fa.querySelector('.fachada-play')) : null, img = fa.querySelector('img');
-          if (Math.abs(far.l - cr.l) > 3 || Math.abs(far.r - cr.r) > 3 || Math.abs(far.t - cr.t) > 3 || Math.abs(far.b - cr.b) > 3) prob.push('a fachada do ' + nb + ' nao cobre a caixa do player');
-          var curtoA = cx.classList.contains('is-short'), razaoA = (far.r - far.l) / (far.b - far.t);
-          if (curtoA ? Math.abs(razaoA - 9 / 16) > 0.05 : Math.abs(razaoA - 16 / 9) > 0.1) prob.push('proporcao do player do ' + nb + ' ' + razaoA.toFixed(2) + ' (esperado ' + (curtoA ? '0,56' : '1,78') + ')');
-          if (!pl) prob.push('fachada do ' + nb + ' sem o botao de play');
-          else {
-            if (pl.r - pl.l < 43.5 || pl.b - pl.t < 43.5) prob.push('play do ' + nb + ' com ' + Math.round(pl.r - pl.l) + 'x' + Math.round(pl.b - pl.t) + ' px (minimo 44)');
-            if (Math.abs((pl.l + pl.r) / 2 - (far.l + far.r) / 2) > 1.5 || Math.abs((pl.t + pl.b) / 2 - (far.t + far.b) / 2) > 1.5) prob.push('o play do ' + nb + ' nao esta no centro da fachada');
-          }
-          if (img && (!img.complete || img.naturalWidth === 0)) prob.push('a miniatura do ' + nb + ' nao carregou');
-          if (split) {
-            var txt = split.querySelector('.art-text'), tr = txt ? rect(txt) : null;
-            if (tr && !win.matchMedia('(max-width: 860px)').matches && cr.l < tr.r - 0.5) prob.push('no ' + nb + ' o player devia ficar ao lado do texto (tela larga)');
-            if (tr && win.matchMedia('(max-width: 860px)').matches && cr.t < tr.b - 0.5) prob.push('no ' + nb + ' o player devia ficar abaixo do texto (tela estreita)');
-          }
-          if (lkA) {
-            var bts = Array.prototype.slice.call(lkA.querySelectorAll('.btn')).filter(function (x) { return x.getClientRects().length > 0; });
-            bts.forEach(function (x) { var rb = rect(x); if (!dentro(rb)) prob.push('botao do ' + nb + ' fora da janela'); if (rb.b - rb.t < 43.5) prob.push('botao "' + x.textContent.trim() + '" do ' + nb + ' com ' + Math.round(rb.b - rb.t) + ' px (minimo 44)'); });
-            for (var q1 = 0; q1 < bts.length; q1++) for (var q2 = q1 + 1; q2 < bts.length; q2++) if (cruza(rect(bts[q1]), rect(bts[q2]))) prob.push('botoes do ' + nb + ' se sobrepoem');
-          } else prob.push(nb + ' sem os botoes do video');
-          Array.prototype.slice.call(b.querySelectorAll('.fontes-lista a')).forEach(function (a2) { var r2 = rect(a2); if (r2.b - r2.t < 43.5) prob.push('fonte do ' + nb + ' com ' + Math.round(r2.b - r2.t) + ' px de altura (minimo 44)'); if (!dentro(r2)) prob.push('fonte do ' + nb + ' fora da janela'); });
-        });
-      }
 
       // compartilhar
       var bloco = d.querySelector('.compartilhar'), links = d.querySelector('.links'), conv = d.querySelector('.convite'), rel = d.querySelector('.related');

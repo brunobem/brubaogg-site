@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Jason, de GTA 6, de boné virado para trás, dentro de um carro, com Lucia de perfil ao fundo, e a logo do jogo. Texto na arte: "ARTHUR???".
+Thumb.png: Jason, de GTA 6, de boné virado para trás, dentro de um carro, com Lucia de perfil ao fundo, e a logo do jogo. Texto na arte: "ARTHUR???".

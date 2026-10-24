@@ -1,4 +1,4 @@
-// Carrega e VALIDA os dados de entrada: playlists.json, tags.json, _conteudo/materias/*.json e o registro de enderecos.
+// Carrega e VALIDA os dados de entrada: playlists.json, tags.json, _conteudo/materias/<tipo>/<ID>/<ID>.json e o registro de enderecos.
 // Regra: erro de estrutura (tipo errado, campo faltando, status desconhecido) para o gerador com uma lista clara de
 // "arquivo: o que esta errado e o que fazer"; limite editorial (titulo longo, muitas tags) vira AVISO no fim.
 // A materia NAO depende do feed do YouTube: categoria, data e endereco vem do registro (enderecos.mjs).
@@ -7,7 +7,9 @@ import path from 'node:path';
 import { GTA6, categorias } from './config.mjs';
 import { validarAssuntos, validarMateria, validarWiki } from './contrato.mjs';
 import { caminhoAntigo, feedPorId, gravarRegistro, indiceDoDisco, lerRegistro, novoEndereco } from './enderecos.mjs';
-import { ErroDeDados, imagensPropias, lerJson, miniatura } from './util.mjs';
+import { fonteDaImagem, prepararImagens } from './imagens.mjs';
+import { listarConteudos, tipoDaCategoria } from './pastas.mjs';
+import { ErroDeDados, cartoesPropios, duracoesDosVideos, imagensPropias, lerJson, miniatura, miniaturasGrandes } from './util.mjs';
 
 // as datas de GTA6 (config.mjs) precisam de HORA e FUSO: "2026-11-19" sem fuso e lido como UTC e a contagem regressiva terminaria 3 horas antes
 function validarDatasDoGta6() {
@@ -37,16 +39,35 @@ export function carregarDados(ctx) {
   ctx.players = fs.existsSync(fPlayers) ? lerJson(fPlayers, 'assets/data/players.json') : {}; // videos das playlists de Cortes e Lives (se faltar, a pagina fica so com os players)
   const ft = path.join(site, '_conteudo', 'tags.json');
   ctx.tagsCfg = fs.existsSync(ft) ? lerJson(ft, '_conteudo/tags.json') : {};
+  // quais videos tem miniatura grande (BL-05; gerado por `npm run miniaturas`): faltando o arquivo, tudo fica com a miniatura pequena
+  const fg = path.join(site, '_conteudo', 'miniaturas-grandes.json');
+  miniaturasGrandes.clear();
+  if (fs.existsSync(fg)) for (const [id, tem] of Object.entries(lerJson(fg, '_conteudo/miniaturas-grandes.json').videos ?? {})) miniaturasGrandes.set(id, tem === true);
+  // duracao dos videos para o `duration` do VideoObject (BL-08; gerado por `npm run duracoes`): faltando o arquivo ou o video, o campo some
+  const fd = path.join(site, '_conteudo', 'duracoes-videos.json');
+  duracoesDosVideos.clear();
+  if (fs.existsSync(fd)) for (const [id, seg] of Object.entries(lerJson(fd, '_conteudo/duracoes-videos.json').videos ?? {})) duracoesDosVideos.set(id, seg);
   ctx.feed = feedPorId(ctx.playlists);
   ctx.enderecos = lerRegistro(site);
   const temporarios = {}; // enderecos so da previa (rascunhos); nunca vao para o registro
 
-  // 1) le todos os arquivos de materia; status so pode faltar (aprovada) ou ser "rascunho"
+  // 1) le todos os arquivos de materia (_conteudo/materias/<tipo>/<ID>/<ID>.json, pastas.mjs); status so pode faltar (aprovada) ou ser "rascunho"
   const materias = new Map(); // id do video -> { dados, situacao: 'publicada'|'rascunho', rel }
-  for (const arq of fs.readdirSync(dados).filter((x) => x.endsWith('.json')).sort()) {
-    const id = arq.slice(0, -5), rel = `_conteudo/materias/${arq}`;
+  const { itens: conteudos, foraDoLugar } = listarConteudos(site);
+  for (const rel of foraDoLugar) ctx.problemas.push(`${rel}: arquivo fora do lugar. O certo e _conteudo/materias/<tipo>/<ID>/<ID>.json (tipo: noticias, reviews, lancamentos ou wiki; a pasta e o JSON tem o mesmo nome).`);
+  const idsVistos = new Map();
+  for (const c of conteudos) { if (idsVistos.has(c.id)) ctx.problemas.push(`${c.rel}: o nome "${c.id}" tambem existe em ${idsVistos.get(c.id)}. Cada materia tem uma pasta so; apague uma das duas.`); idsVistos.set(c.id, c.rel); }
+  // imagens da pasta de cada materia (thumb.jpg e img-1_<site da fonte>.jpg...): redimensiona o que mudou e guarda em ctx.imagens (imagens.mjs)
+  const imagens = prepararImagens(site, conteudos);
+  ctx.problemas.push(...imagens.problemas);
+  ctx.avisos.push(...imagens.avisos);
+  ctx.imagens = imagens.porId;
+  cartoesPropios.clear();
+  for (const [id, reg] of imagens.porId) if (reg.cartao?.ls.length) { const p = fonteDaImagem(id, reg.cartao, '/', 640), g = fonteDaImagem(id, reg.cartao, '/', 1200); cartoesPropios.set(id, { src: p.src, srcset: p.srcset, w: p.w, h: p.h, grande: g.src, alt: reg.cartao.alt || "" }); }
+  for (const c of conteudos.filter((x) => x.tipo !== 'wiki')) {
+    const { id, rel } = c;
     let m;
-    try { m = lerJson(path.join(dados, arq), rel); }
+    try { m = lerJson(c.arquivo, rel); }
     catch (e) {
       if (!(e instanceof ErroDeDados)) throw e;
       const reg = ctx.enderecos[id];
@@ -59,17 +80,19 @@ export function carregarDados(ctx) {
       ctx.problemas.push(`${rel}: "status" tem o valor ${JSON.stringify(m.status)}. Use "rascunho" ou apague o campo (sem o campo = aprovada). Qualquer outro valor publicaria o texto por engano.`);
       continue;
     }
+    // a pasta de tipo tem de combinar com a categoria da materia (o registro de enderecos manda; sem registro, o campo "categoria" do arquivo)
+    const categoriaDaMateria = ctx.enderecos[id]?.categoria ?? m.categoria;
+    if (categoriaDaMateria && tipoDaCategoria(categoriaDaMateria) !== c.tipo) { ctx.problemas.push(`${rel}: a materia e da categoria "${categoriaDaMateria}" e deveria estar em _conteudo/materias/${tipoDaCategoria(categoriaDaMateria)}/${id}/, mas esta em ${c.tipo}/. Mova a pasta.`); continue; }
     materias.set(id, { dados: m, situacao: m.status === 'rascunho' ? 'rascunho' : 'publicada', rel });
   }
-  // 1b) conteudo da Wiki (_conteudo/wiki/*.json): pode ser so texto, sem video. Cada arquivo vira uma "materia" da categoria series (origem "wiki"); o nome do arquivo e o id.
+  // 1b) conteudo da Wiki (_conteudo/materias/wiki/<nome>/<nome>.json): pode ser so texto, sem video. Cada arquivo vira uma "materia" da categoria series (origem "wiki"); o nome do arquivo e o id.
   //     As regras proprias dele estao em contrato.mjs (validarWiki); as de texto (resumo, corpo, titulo...) sao as de sempre e rodam no passo 2.
-  const pastaWiki = path.join(site, '_conteudo', 'wiki');
-  if (fs.existsSync(pastaWiki)) {
-    for (const arq of fs.readdirSync(pastaWiki).filter((x) => x.endsWith('.json')).sort()) {
-      const id = arq.slice(0, -5), rel = `_conteudo/wiki/${arq}`;
-      if (materias.has(id)) { ctx.problemas.push(`${rel}: o nome "${id}" ja existe em _conteudo/materias. Apague um dos dois arquivos.`); continue; }
+  {
+    for (const c of conteudos.filter((x) => x.tipo === 'wiki')) {
+      const { id, rel } = c;
+      if (materias.has(id)) { ctx.problemas.push(`${rel}: o nome "${id}" ja existe em outra pasta de _conteudo/materias. Apague uma das duas.`); continue; }
       let e;
-      try { e = lerJson(path.join(pastaWiki, arq), rel); }
+      try { e = lerJson(c.arquivo, rel); }
       catch (err) {
         if (!(err instanceof ErroDeDados)) throw err;
         const reg = ctx.enderecos[id];
@@ -120,7 +143,7 @@ export function carregarDados(ctx) {
       if (e instanceof ErroDeDados) ctx.problemas.push(e.message); else throw e;
     }
   }
-  // assuntos: materias do mesmo "assunto" (2 ou mais) viram UMA pagina, com um bloco por video; o titulo e o resumo dela vem de _conteudo/assuntos.json
+  // assuntos: materias do mesmo "assunto" (2 ou mais) continuam cada uma com a propria pagina; _conteudo/assuntos.json e opcional (so o redirecionamento do endereco do assunto o usa)
   const fa = path.join(site, '_conteudo', 'assuntos.json');
   ctx.assuntos = fs.existsSync(fa) ? lerJson(fa, '_conteudo/assuntos.json') : {};
   const gruposDeAssunto = new Map();

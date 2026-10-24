@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-19",
+  "titulo": "Resident Evil Requiem quase foi um jogo online",
+  "resumo": "O diretor Koshi Nakanishi contou que Requiem começou como um Resident Evil online, mas uma pesquisa interna foi desfavorável. Acho que foi decisão medida.",
+  "tags": [
+    "Resident Evil Requiem"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/resident-evil-requiem-quase-foi-um-jogo-multiplayer/"
+    },
+    {
+      "nome": "Bloody Disgusting",
+      "url": "https://bloody-disgusting.com/video-games/3886066/early-resident-evil-requiem-concept-was-an-online-game/"
+    },
+    {
+      "nome": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Resident_Evil_Requiem"
+    }
+  ],
+  "corpo": [
+    "Resident Evil Requiem quase foi um jogo online. Quem contou foi Koshi Nakanishi, diretor do jogo, no livro Biohazard 30th Special Mook, da Nikkei, em notícia de 9 de outubro de 2026 repercutida pelo Flow Games. Nakanishi contou que a ideia inicial era fazer Requiem como uma experiência online. Uma pesquisa interna deu resultado desfavorável, e a equipe resolveu priorizar o horror e deixar o online de lado.",
+    "Nakanishi chamou o processo de tentativa e erro contínuo, e a notícia não detalha o que a pesquisa media nem por que o resultado foi desfavorável. Um rumor do leaker Dusk Golem diz que o projeto começou em 2017 como multiplayer de mundo aberto, mas a Capcom não confirmou isso. Requiem saiu em fevereiro de 2026 só com campanha single player, com a história de Grace e Leon, e foi muito bem recebido.",
+    "Acho estranho tentarem fazer um Resident Evil online, já que a série sempre foi single player. Vejo um movimento das empresas atrás de jogos online e live service, para vender skins e monetizar, saindo da experiência de história. Já está provado que um ótimo single player vende e dá lucro, mas o potencial do online é exponencialmente maior.",
+    "Para mim, a fala do diretor é um jeito bem político de explicar a decisão. Empresa mede risco: na minha leitura, a Capcom fez a conta, viu que o online não daria o retorno esperado e voltou ao que sempre funcionou. Que o online ia fracassar é leitura minha, e a notícia não afirma isso."
+  ]
+}

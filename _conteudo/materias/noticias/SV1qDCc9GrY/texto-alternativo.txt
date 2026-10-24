@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Ilustração de duas mulheres de casaco de pele e roupas coloridas, uma de cabelo cacheado mostrando a língua e outra de tranças fazendo sinais com os dedos, com a logo de GTA 6.
+thumb.png: Ilustração de duas mulheres de casaco de pele e roupas coloridas, uma de cabelo cacheado e outra de tranças fazendo sinais com os dedos, com a logo de GTA 6. Texto na arte: "GANGSTER".

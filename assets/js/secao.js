@@ -82,7 +82,7 @@
   }
   // so caminhos do proprio site (letras, numeros, - _ . /, sem comecar por barra) e imagens https
   const caminhoSeguro = (u) => typeof u === 'string' && /^[\w-][\w\-./]*$/.test(u) && u.indexOf('..') < 0;
-  const imagemSegura = (u) => typeof u === 'string' && (/^https:\/\/[\w.\-]+\/[\w\-./]+$/.test(u) || /^\/assets\/img\/[\w\-.]+$/.test(u)); // https ou uma imagem do proprio site (capa da Wiki); nunca //outro-site
+  const imagemSegura = (u) => typeof u === 'string' && (/^https:\/\/[\w.\-]+\/[\w\-./]+$/.test(u) || /^\/assets\/img\/(?:m\/[a-z0-9_-]+\/)?[\w\-.]+$/.test(u)); // https ou uma imagem do proprio site (capa da Wiki, imagem propria de uma materia em /assets/img/m/<id>/); nunca //outro-site
 
   const api = { PASSO: PASSO, norm: norm, chave: chave, lerEstado: lerEstado, escreverEstado: escreverEstado, textoValido: textoValido, ativo: ativo, filtrar: filtrar, ordenar: ordenar, fmtData: fmtData, caminhoSeguro: caminhoSeguro, imagemSegura: imagemSegura };
   window.BrubaoSecao = api;

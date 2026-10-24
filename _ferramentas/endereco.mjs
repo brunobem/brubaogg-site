@@ -7,7 +7,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gravarRegistro, lerRegistro, mudarEndereco, slugDeTitulo } from './gerador/enderecos.mjs';
-import { arquivoDaMateria, resolverId } from './gerador/pastas.mjs';
+import { arquivoDaMateria, arquivoParaNova, resolverId } from './gerador/pastas.mjs';
 import { ErroDeDados, lerJson } from './gerador/util.mjs';
 
 const site = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -18,7 +18,7 @@ if (!todos && !pos.length) { console.error('Uso: npm run endereco -- <ID> [novo-
 
 const registro = lerRegistro(site);
 const tituloDe = (id) => {
-  const arq = arquivoDaMateria(site, id) ?? path.join(site, '_conteudo', 'materias', `${id}.json`); // materia de video ou conteudo da Wiki
+  const arq = arquivoDaMateria(site, id) ?? arquivoParaNova(site, registro[id]?.categoria ?? 'noticias', id); // materia de video ou conteudo da Wiki
   try { return lerJson(arq, path.relative(site, arq).split(path.sep).join('/')).titulo; }
   catch (e) { if (e instanceof ErroDeDados) { console.error(e.message); process.exit(1); } throw e; }
 };

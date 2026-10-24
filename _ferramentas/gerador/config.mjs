@@ -5,8 +5,16 @@ export const DOMINIO = 'https://brubaogg.com.br';
 
 // autor das materias: assinatura "Por <autor>" no fim da pagina (perto das fontes), com a data, e o autor (Person) dos dados estruturados. O apoio de IA e dito ao lado ("Texto com apoio de IA").
 export const AUTOR = 'Bruno Bem';
+// foto do autor, no circulo ao lado de "Por <autor>" (96 x 96 px, quadrada, em assets/img/). Troque o arquivo para trocar a foto; "" (vazio) volta ao circulo com a inicial do nome.
+export const AUTOR_FOTO = 'assets/img/autor-bruno-bem.webp';
 // tempo de leitura mostrado no alto da materia (ao lado da categoria): palavras do resumo e do texto / palavras por minuto, arredondado para cima (minimo 1 minuto)
 export const PALAVRAS_POR_MINUTO = 200;
+
+// ---- Espacos de anuncio (ADS) ----
+// CHAVE GERAL: false = os espacos ficam ESCONDIDOS (todo marcador sai com o atributo "hidden", a lista de cartoes nao leva data-ads-* e a pagina nao carrega ads.js: nada aparece,
+// nada ocupa lugar e nada roda), mas o codigo, o CSS, o assets/js/ads.js e os testes continuam todos aqui. true = tudo volta a aparecer. Depois de mudar, rode: npm run gerar
+// (o gerador liga ou desliga os marcadores em TODAS as paginas, inclusive nas escritas a mao). Quando o anuncio de verdade entrar, ele vai dentro do marcador.
+export const ADS_ATIVOS = false;
 
 // ---- Espacos de anuncio (ADS) nas listas de cartoes ----
 // Por enquanto so o marcador "ADS" (o anuncio de verdade entra na v1.03). Nas listas das secoes o marcador entra ENTRE as linhas de cartoes: assets/js/ads.js mede quantos
@@ -22,8 +30,8 @@ export const RECOMENDACOES = { compre: 'Compre', 'espere-promocao': 'Espere uma 
 export const LIMITE_DE_FONTES = 8; // acima disso so avisa (o leitor nao le uma lista enorme de fontes)
 // "shorts" (lista de { id, titulo }) anexa Shorts a uma materia, em "Shorts desta review" (players verticais pequenos, com fachada). Acima do limite so avisa.
 export const LIMITE_DE_SHORTS = 4;
-// "assunto" (texto em minusculas, sem acento, com hifens; ex.: "god-of-war-laufey") liga materias do mesmo assunto: cada uma ganha a lista "Neste assunto" (em ordem de data)
-// e deixa de repetir nas relacionadas as que ja estao nessa lista. So aparece com 2 ou mais materias no mesmo assunto.
+// "assunto" (texto em minusculas, sem acento, com hifens; ex.: "god-of-war-laufey") liga materias do mesmo assunto: cada uma continua com a propria pagina e ganha o bloco "Mais sobre este assunto"
+// (as outras, da mais nova para a mais velha); o "Veja tambem" nao repete as que ja estao nele. So aparece com 2 ou mais materias no mesmo assunto.
 
 // ---- categorias com materias ----
 export const categorias = [
@@ -96,7 +104,7 @@ export const COBERTURA = {
 // A home mostra a primeira no cartao grande e as demais nos pequenos.
 export const WIKI = {
   seriesQtd: 5,                       // quantas historias (categoria "series") a Wiki mostra abaixo dos jogos: 1 cartao grande + (seriesQtd - 1) pequenos
-  // Tipos de conteudo da Wiki (campo "tipo" em _conteudo/wiki/<arquivo>.json): o nome aparece no cartao e na pagina do jogo. Para um tipo novo (ex.: "arma"), uma linha aqui.
+  // Tipos de conteudo da Wiki (campo "tipo" em _conteudo/materias/wiki/<arquivo>/<arquivo>.json): o nome aparece no cartao e na pagina do jogo. Para um tipo novo (ex.: "arma"), uma linha aqui.
   tipos: { historia: 'História', personagem: 'Personagem', guia: 'Guia', curiosidade: 'Curiosidade' },
   jogos: [
     {
@@ -136,17 +144,6 @@ export const CARROSSEL = {
   qtd: 3,
   categorias: ['gta6-novidades', 'lancamentos', 'reviews', 'noticias'],
   segundos: 8,                        // troca sozinho a cada tantos segundos (0 = so troca na mao; quem pede menos movimento no aparelho tambem nao ve a troca)
-};
-
-// ---- Live: SEM USO desde 2026-10-11 (o bloco saiu da home; fica guardado como base para o aviso de live que sera repensado). ----
-// Bloco que aparecia nos horarios da live. O site e estatico e nao sabe se a live comecou: ele usa estas janelas (horario de Brasilia).
-// horarios: lista de { dias: [0..6] (0 = domingo), inicio: 'HH:MM', fim: 'HH:MM' }. Vazio = o bloco nunca aparece (so na previa: abra a home com ?live=1 no fim do endereco).
-export const LIVE = {
-  canalId: 'UCNkrVdPGTsmQNXuGwV_Xo0Q', // canal do YouTube (embed live_stream)
-  titulo: 'Acompanhe o Brubão GG ao vivo',
-  texto: 'A live está no ar. Entre, comente e jogue junto com a gente.',
-  proxima: 'Próxima live',
-  horarios: [],
 };
 
 // ---- Paginas de player (cortes.html e lives.html): cada uma mostra as playlists abaixo, cada playlist com o player, o texto e a lista dos ultimos videos dela. ----

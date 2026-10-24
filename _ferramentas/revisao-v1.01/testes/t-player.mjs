@@ -49,7 +49,7 @@ export default async function () {
         const primeiro = (dados?.[p.playlist] ?? [])[0];
         if (primeiro && fachada[6] !== `https://i.ytimg.com/vi/${primeiro.id}/hqdefault.jpg`) a.push(achado('medio', T, `a miniatura da fachada de "${p.titulo}" devia ser a do primeiro video da playlist (${primeiro.id})`, pagina));
       }
-      if (!art.includes(`<a class="btn" href="https://www.youtube.com/playlist?list=${p.playlist}" target="_blank" rel="noopener">`)) a.push(achado('alto', T, `o botao "Ver playlist completa" de "${p.titulo}" nao leva para a playlist`, pagina));
+      if (!art.includes(`<a class="btn" href="https://www.youtube.com/playlist?list=${p.playlist}" target="_blank" rel="noopener" aria-label="Ver playlist completa no YouTube: `)) a.push(achado('alto', T, `o botao "Ver playlist completa" de "${p.titulo}" nao leva para a playlist`, pagina));
       // a lista dos ultimos videos
       const esperados = (dados?.[p.playlist] ?? []).slice(0, VIDEOS_POR_PLAYER);
       const itens = [...art.matchAll(/<li><a href="([^"]+)" target="_blank" rel="noopener"><span class="pl-thumb"><img src="([^"]+)" alt="" loading="lazy" width="160" height="90"><\/span><span class="pl-texto"><b>([\s\S]*?)<\/b><small>([^<]*)<\/small><\/span><span class="sr-only"> \(abre o YouTube em nova aba\)<\/span><\/a><\/li>/g)];

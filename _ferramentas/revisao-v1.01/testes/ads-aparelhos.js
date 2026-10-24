@@ -1,3 +1,4 @@
+// ATENCAO: com ADS_ATIVOS = false (gerador/config.mjs) os espacos de ADS estao escondidos; as conferencias de ADS deste arquivo so valem com ADS_ATIVOS = true (e npm run gerar).
 // Varredura dos ESPACOS DE ADS pelos aparelhos da lista do Chrome DevTools (em pe e deitado). Roda no navegador, em qualquer pagina do site local (nao faz parte do
 // "npm run testar"). Cada pagina abre num iframe do tamanho da tela (mesma origem) e confere:
 //  - cada marcador fixo (GTA 6, Wiki, Cortes, Lives e o "depois do filtro" de cada lista): existe, aparece, cabe na janela, tem altura de 80 a 110 px (a pagina nao pula quando o

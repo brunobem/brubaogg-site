@@ -30,7 +30,8 @@ function paginaDe(tmp, id) {
 export default async function () {
   const a = [];
   const base = materias().find((m) => aprovada(m) && m.dados.formato === 'horizontal' && !(m.dados.corpo ?? []).some((p) => p.length > 5000));
-  const id = base.id, arq = `_conteudo/materias/${id}.json`, original = base.dados;
+  const id = base.id, arq = base.arq, original = base.dados; // arq = _conteudo/materias/<tipo>/<ID>/<ID>.json
+  const gravarSim = (tmp, nome, texto) => { const f = path.join(tmp, '_conteudo/materias/noticias', nome, `${nome}.json`); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, texto); };
 
   // cada cenario: muda o JSON da materia base (ou outra coisa) e confere o resultado
   const cenarios = [
@@ -53,9 +54,9 @@ export default async function () {
     { n: 'status "Rascunho" (R maiusculo)', muda: (d) => ({ ...d, status: 'Rascunho' }), quer: 'nao-publica', msg: 'publicaria um rascunho escrito com maiuscula', sev: 'alto' },
     { n: 'status "draft"', muda: (d) => ({ ...d, status: 'draft' }), quer: 'nao-publica-ou-erro', msg: 'publica com status desconhecido em vez de recusar', sev: 'alto' },
     { n: 'status true', muda: (d) => ({ ...d, status: true }), quer: 'nao-publica-ou-erro', msg: 'publica com status desconhecido em vez de recusar', sev: 'alto' },
-    { n: 'duas materias com o mesmo titulo', outro: (tmp, d) => { fs.writeFileSync(path.join(tmp, '_conteudo/materias/SIMdup00001.json'), JSON.stringify({ ...d, categoria: 'noticias', publicado: '2026-10-01' })); }, quer: 'duas-paginas', msg: 'duas materias com o mesmo titulo se sobrescrevem' },
-    { n: 'legado com "publicado" invalido', outro: (tmp, d) => { fs.writeFileSync(path.join(tmp, '_conteudo/materias/SIMdate0001.json'), JSON.stringify({ ...d, categoria: 'noticias', publicado: '2026-13-45' })); }, quer: 'falha-clara', cita: 'SIMdate0001' },
-    { n: 'legado com categoria inexistente', outro: (tmp, d) => { fs.writeFileSync(path.join(tmp, '_conteudo/materias/SIMcat00001.json'), JSON.stringify({ ...d, categoria: 'jogos', publicado: '2026-10-01' })); }, quer: 'falha-clara', cita: 'SIMcat00001' },
+    { n: 'duas materias com o mesmo titulo', outro: (tmp, d) => { gravarSim(tmp, 'SIMdup00001', JSON.stringify({ ...d, categoria: 'noticias', publicado: '2026-10-01' })); }, quer: 'duas-paginas', msg: 'duas materias com o mesmo titulo se sobrescrevem' },
+    { n: 'legado com "publicado" invalido', outro: (tmp, d) => { gravarSim(tmp, 'SIMdate0001', JSON.stringify({ ...d, categoria: 'noticias', publicado: '2026-13-45' })); }, quer: 'falha-clara', cita: 'SIMdate0001' },
+    { n: 'legado com categoria inexistente', outro: (tmp, d) => { gravarSim(tmp, 'SIMcat00001', JSON.stringify({ ...d, categoria: 'jogos', publicado: '2026-10-01' })); }, quer: 'falha-clara', cita: 'SIMcat00001' },
     { n: 'campo desconhecido no JSON', muda: (d) => ({ ...d, algo: { qualquer: 'coisa' } }), quer: 'ok' },
     { n: 'tags.json com pai circular', arquivo: ['_conteudo/tags.json', (t) => JSON.stringify({ ...JSON.parse(t), a: { nome: 'A', pai: 'b' }, b: { nome: 'B', pai: 'a' } })], quer: 'ok' },
     { n: 'tags.json invalido', arquivo: ['_conteudo/tags.json', () => '{ "a": '], quer: 'falha-clara', cita: 'tags.json' },
@@ -72,12 +73,12 @@ export default async function () {
       else if (c.muda) fs.writeFileSync(f, JSON.stringify(c.muda(original), null, 2));
       if (c.outro) c.outro(tmp, original);
       if (c.arquivo) { const p = path.join(tmp, c.arquivo[0]); fs.writeFileSync(p, c.arquivo[1](fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : '{}')); }
-      if (c.apagarTudo) for (const pasta of ['_conteudo/materias', '_conteudo/wiki']) if (fs.existsSync(path.join(tmp, pasta))) for (const x of fs.readdirSync(path.join(tmp, pasta))) fs.rmSync(path.join(tmp, pasta, x)); // nenhuma materia, nem da Wiki
+      if (c.apagarTudo) for (const pasta of ['_conteudo/materias', '_conteudo/wiki']) if (fs.existsSync(path.join(tmp, pasta))) for (const x of fs.readdirSync(path.join(tmp, pasta))) fs.rmSync(path.join(tmp, pasta, x), { recursive: true, force: true }); // nenhuma materia, nem da Wiki
       let env = {};
       if (c.offline) {
         fs.writeFileSync(path.join(tmp, 'sem-rede.mjs'), "globalThis.fetch = () => Promise.reject(Object.assign(new Error('fetch failed'), { cause: { code: 'ENOTFOUND' } }));\n");
         env = { NODE_OPTIONS: `--import ${path.join(tmp, 'sem-rede.mjs').replace(/\\/g, '/').replace(/^([A-Za-z]):/, 'file:///$1:')}` };
-        fs.writeFileSync(path.join(tmp, '_conteudo/materias/SIMnovo00001.json'), JSON.stringify({ ...original, formato: 'short', categoria: 'noticias', publicado: '2026-10-01', titulo: 'Video novo gerado sem internet' }));
+        gravarSim(tmp, 'SIMnovo00001', JSON.stringify({ ...original, formato: 'short', categoria: 'noticias', publicado: '2026-10-01', titulo: 'Video novo gerado sem internet' }));
       }
       const r = gerar(tmp, env);
       const sev = c.sev ?? 'medio';

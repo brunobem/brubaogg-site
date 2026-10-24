@@ -1,3 +1,4 @@
+// ATENCAO: com ADS_ATIVOS = false (gerador/config.mjs) os espacos de ADS estao escondidos; as conferencias de ADS deste arquivo so valem com ADS_ATIVOS = true (e npm run gerar).
 // Varredura da HOME pelos aparelhos da lista do Chrome DevTools (modo dispositivo), cada um em pe e deitado. Roda no navegador, na propria home (nao e parte do
 // "npm run testar"). Cada aparelho abre a home num iframe do tamanho da tela (mesma origem) e confere:
 //  - carrossel: sem rolagem vertical por dentro, nenhum item do texto cortado, imagem nao espremida, borda e sombra dentro da janela e, em janelas com 560 px de

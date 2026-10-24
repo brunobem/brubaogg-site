@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Personagens redondos e coloridos escalando uma montanha ao pôr do sol, com a logo de Peak. Texto na arte: "BORA ESCALAR".
+Thumb.png: Personagens redondos e coloridos escalando uma montanha ao pôr do sol, com a logo de Peak. Texto na arte: "BORA ESCALAR".

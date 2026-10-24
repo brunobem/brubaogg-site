@@ -4,7 +4,8 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { achado, aprovada, assuntosDoSite, materias, raiz } from './lib.mjs';
+import { achado, aprovada, materias, raiz } from './lib.mjs';
+import { arquivoDaMateria } from '../../gerador/pastas.mjs';
 
 const T = 'fluxo';
 const CATS = ['noticias', 'reviews', 'lancamentos', 'gta6-novidades'];
@@ -18,9 +19,9 @@ const rodar = (tmp, script, args = []) => {
   const r = spawnSync(process.execPath, [`_ferramentas/${script}`, ...args], { cwd: tmp, encoding: 'utf8', timeout: 90000 });
   return { status: r.status, saida: `${r.stdout ?? ''}${r.stderr ?? ''}`.trim() };
 };
-const mat = (tmp, id) => path.join(tmp, '_conteudo', 'materias', `${id}.json`);
+const mat = (tmp, id) => arquivoDaMateria(tmp, id) ?? path.join(tmp, '_conteudo', 'materias', 'noticias', id, `${id}.json`); // onde a materia mora (_conteudo/materias/<tipo>/<ID>/<ID>.json); a que ainda nao existe e criada em noticias
 const ler = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
-const escrever = (f, o) => fs.writeFileSync(f, typeof o === 'string' ? o : JSON.stringify(o, null, 2));
+const escrever = (f, o) => { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, typeof o === 'string' ? o : JSON.stringify(o, null, 2)); };
 const paginasDaMateria = (tmp, id) => { for (const c of CATS) { const d = path.join(tmp, c); if (!fs.existsSync(d)) continue; for (const f of fs.readdirSync(d)) { const h = fs.readFileSync(path.join(d, f), 'utf8'); if (h.includes(`embed/${id}`) && !h.includes('http-equiv="refresh"')) return `${c}/${f}`; } } return null; };
 const paginas = (tmp) => CATS.flatMap((c) => (fs.existsSync(path.join(tmp, c)) ? fs.readdirSync(path.join(tmp, c)).map((f) => `${c}/${f}`) : []));
 
@@ -138,7 +139,7 @@ export default async function () {
   {
     const tmp = copiar();
     try {
-      const novo = Object.values(feed).flat().find((v) => !fs.existsSync(mat(tmp, v.id)) && !fs.existsSync(path.join(tmp, '_conteudo', 'wiki', `${v.id}.json`))); // video sem texto em NENHUMA das duas pastas (materias e Wiki)
+      const novo = Object.values(feed).flat().find((v) => !arquivoDaMateria(tmp, v.id)); // video sem texto em NENHUMA das duas pastas (materias e Wiki)
       escrever(mat(tmp, novo.id), { formato: 'horizontal', status: 'rascunho', titulo: 'Titulo da Materia Nova, Com Acentuacao e Pontuacao!', resumo: 'Resumo da materia nova.', tags: [], corpo: ['Um paragrafo de verdade.'] });
       const r1 = rodar(tmp, 'aprovar-materia.mjs', [novo.id]);
       const reg = ler(path.join(tmp, '_conteudo/enderecos.json'))[novo.id];
@@ -156,9 +157,8 @@ export default async function () {
     const tmp = copiar();
     try {
       const regDe = () => ler(path.join(tmp, '_conteudo/enderecos.json'));
-      const { membroDe } = assuntosDoSite(); // materias que viraram bloco de uma pagina de assunto nao tem pagina propria: ficam de fora da escolha
-      const [origem, destino, origem2] = ms.filter((m) => m.id !== base.id && !membroDe.has(m.id)).slice(0, 3).map((m) => m.id);
-      const texto = fs.readFileSync(mat(tmp, origem), 'utf8');
+      const [origem, destino, origem2] = ms.filter((m) => m.id !== base.id).slice(0, 3).map((m) => m.id);
+      const arqOrigem = mat(tmp, origem), texto = fs.readFileSync(arqOrigem, 'utf8'); // onde a materia mora antes de ser retirada
       const recusados = [
         ['destino inexistente', [origem, '--para', 'ZZZZZZZZZZZ']],
         ['destino igual a propria materia', [origem, '--para', origem]],
@@ -169,7 +169,7 @@ export default async function () {
       const r1 = rodar(tmp, 'retirar-materia.mjs', [origem, '--para', destino]);
       const e = regDe()[origem], d = regDe()[destino];
       if (r1.status !== 0 || !e.retirada || e.para !== destino) a.push(achado('alto', T, `[retirar --para] nao registrou a retirada com destino (${r1.saida.slice(0, 120)})`));
-      if (fs.existsSync(mat(tmp, origem))) a.push(achado('alto', T, '[retirar --para] o arquivo da materia continua em _conteudo/materias'));
+      if (fs.existsSync(arqOrigem)) a.push(achado('alto', T, '[retirar --para] o arquivo da materia continua em _conteudo/materias'));
       const arquivada = path.join(tmp, '_conteudo', 'retiradas', `${origem}.json`);
       if (!fs.existsSync(arquivada) || fs.readFileSync(arquivada, 'utf8') !== texto) a.push(achado('critico', T, '[retirar --para] o texto da materia retirada nao foi guardado em _conteudo/retiradas (perda de conteudo)'));
       const g = rodar(tmp, 'gerar-site.mjs');
@@ -178,18 +178,9 @@ export default async function () {
       else if (!html.includes(`<meta http-equiv="refresh" content="0; url=/${d.categoria}/${d.slug}.html">`)) a.push(achado('alto', T, `[retirar --para] ${e.categoria}/${e.slug}.html devia levar para ${d.categoria}/${d.slug}.html`));
       if (!fs.existsSync(path.join(tmp, d.categoria, `${d.slug}.html`))) a.push(achado('alto', T, '[retirar --para] a pagina de destino deixou de existir'));
       if (rodar(tmp, 'verificar-links.mjs').status !== 0) a.push(achado('alto', T, '[retirar --para] o verificar acusou problema depois da retirada'));
-      // destino que virou bloco de uma pagina de assunto: o endereco retirado leva para o bloco dele (com a ancora), nao para uma pagina que nao existe mais
-      const [idBloco, unidade] = [...membroDe][0] ?? [];
-      if (idBloco) {
-        const r2 = rodar(tmp, 'retirar-materia.mjs', [origem2, '--para', idBloco]), e2 = regDe()[origem2];
-        const g2 = rodar(tmp, 'gerar-site.mjs'), stub2 = path.join(tmp, e2.categoria, `${e2.slug}.html`);
-        if (r2.status !== 0 || g2.status !== 0) a.push(achado('alto', T, `[retirar --para] falhou com destino que e bloco de assunto: ${(r2.status !== 0 ? r2 : g2).saida.slice(-160)}`));
-        else if (!fs.existsSync(stub2) || !fs.readFileSync(stub2, 'utf8').includes(`<meta http-equiv="refresh" content="0; url=/${unidade.pagina}#v-${idBloco}">`)) a.push(achado('alto', T, `[retirar --para] o endereco retirado devia levar para /${unidade.pagina}#v-${idBloco} (o bloco do video de destino)`));
-        if (rodar(tmp, 'verificar-links.mjs').status !== 0) a.push(achado('alto', T, '[retirar --para] o verificar acusou problema com destino que e bloco de assunto'));
-      }
       if (rodar(tmp, 'retirar-materia.mjs', [destino, '--para', origem]).status === 0) a.push(achado('alto', T, '[retirar --para] aceitou como destino uma materia ja retirada'));
       // o arquivo volta para _conteudo/materias: o gerador avisa (nao republica sozinho)
-      fs.writeFileSync(mat(tmp, origem), texto); // o arquivo volta para _conteudo/materias
+      escrever(arqOrigem, texto); // o arquivo volta para a pasta dele em _conteudo/materias
       if (rodar(tmp, 'gerar-site.mjs').status === 0) a.push(achado('alto', T, '[retirar --para] o arquivo voltou para _conteudo/materias e o gerador nao reclamou da materia retirada'));
     } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
   }

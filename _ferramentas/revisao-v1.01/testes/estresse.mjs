@@ -9,6 +9,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { raiz } from './lib.mjs';
+import { listarConteudos, tipoDaCategoria } from '../../gerador/pastas.mjs';
 
 const vazio = process.argv.includes('--vazio');
 const escala = Number((process.argv.find((a) => a.startsWith('--escala=')) ?? '').slice(9)) || 0; // --escala=3000: N materias SIMULADAS (texto das reais, titulos e datas variados)
@@ -20,12 +21,14 @@ fs.cpSync(raiz, destino, { recursive: true, filter: (origem) => !pular(path.rela
 fs.symlinkSync(path.join(raiz, 'node_modules'), path.join(destino, 'node_modules'), 'junction'); // o indexador (Pagefind) vem de la
 
 const dir = path.join(destino, '_conteudo', 'materias');
+// uma materia sintetica mora na pasta do tipo dela, como as de verdade: _conteudo/materias/<tipo>/<ID>/<ID>.json
+const gravar = (id, m, texto) => { const f = path.join(dir, tipoDaCategoria(m.categoria ?? 'noticias'), id, `${id}.json`); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, texto); };
 const palavras = 'jogo mundo aberto trailer estudio lancamento historia combate cooperativo atualizacao gratuita confirmado novidades mapa personagem'.split(' ');
 const frase = (n, i = 0) => Array.from({ length: n }, (_, k) => palavras[(i + k * 7) % palavras.length]).join(' ');
 const paragrafo = (palavrasPorParagrafo, i) => `${frase(palavrasPorParagrafo, i)}.`.replace(/^./, (c) => c.toUpperCase());
 
 if (escala) {
-  const reais = fs.readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))).filter((m) => Array.isArray(m.corpo) && m.corpo.length);
+  const reais = listarConteudos(destino).itens.filter((c) => c.tipo !== 'wiki').map((c) => JSON.parse(fs.readFileSync(c.arquivo, 'utf8'))).filter((m) => Array.isArray(m.corpo) && m.corpo.length);
   const cats = ['noticias', 'noticias', 'noticias', 'noticias', 'noticias', 'noticias', 'reviews', 'reviews', 'lancamentos', 'gta6-novidades', 'gta6-novidades'];
   const pool = ['GTA 6', 'God of War', 'Resident Evil', 'Silent Hill', 'The Witcher 3', 'Final Fantasy', 'Call of Duty', 'Elden Ring', 'Zelda', 'Pokemon', 'Hollow Knight', 'Cyberpunk 2077', 'Baldurs Gate 3', 'Starfield', 'Fallout'];
   const adj = 'Sombra Ferro Neon Carmesim Eterno Perdido Silencioso Selvagem Gelado Ultimo Quebrado Oculto Dourado Rising Fallen Burning'.split(' '), sub = 'Reino Fronteira Legado Protocolo Odisseia Cacadores Cronicas Ecos Fenda Cidadela Vanguarda Mares Pacto Dominio Ermo Espiral'.split(' ');
@@ -35,11 +38,11 @@ if (escala) {
     const nome = `${adj[rnd(adj.length)]} ${sub[rnd(sub.length)]} ${i}`;
     const dia = new Date(Date.UTC(2026, 9, 5) - Math.floor((i / escala) * 730) * 86400000);
     const m = { titulo: `${nome}: ${base.titulo.replace(/^[^:]*:\s*/, '').slice(0, 40)}`.slice(0, 60), resumo: base.resumo, corpo: base.corpo, tags: [nome.replace(/ \d+$/, ''), pool[rnd(pool.length)], pool[rnd(pool.length)]], formato: rnd(3) ? 'horizontal' : 'short', categoria: cat, publicado: dia.toISOString().slice(0, 10) };
-    fs.writeFileSync(path.join(dir, `SYN${String(i).padStart(8, '0')}.json`), `${JSON.stringify(m)}
+    gravar(`SYN${String(i).padStart(8, '0')}`, m, `${JSON.stringify(m)}
 `);
   }
 } else if (vazio) {
-  for (const f of fs.readdirSync(dir)) fs.rmSync(path.join(dir, f));
+  for (const f of fs.readdirSync(dir)) fs.rmSync(path.join(dir, f), { recursive: true, force: true });
   fs.writeFileSync(path.join(destino, '_conteudo', 'enderecos.json'), '{}\n');
   fs.rmSync(path.join(destino, '_conteudo', 'lastmod.json'), { force: true });
 } else {
@@ -57,7 +60,7 @@ if (escala) {
     ESTRESSO_11: { titulo: 'Mesmo titulo', resumo: 'Primeira de duas com o mesmo titulo.', corpo: [paragrafo(30, 10)], tags: ['Jogo Teste'], formato: 'horizontal', categoria: 'noticias', publicado: '2025-01-15' },
     ESTRESSO_12: { titulo: 'Mesmo titulo', resumo: 'Segunda de duas com o mesmo titulo.', corpo: [paragrafo(30, 11)], tags: ['Jogo Teste'], formato: 'horizontal', categoria: 'noticias', publicado: '2024-06-01' },
   };
-  for (const [id, m] of Object.entries(casos)) fs.writeFileSync(path.join(dir, `${id}.json`), `${JSON.stringify(m, null, 1)}\n`);
+  for (const [id, m] of Object.entries(casos)) gravar(id, m, `${JSON.stringify(m, null, 1)}\n`);
 }
 
 const rodar = (args, rotulo) => {

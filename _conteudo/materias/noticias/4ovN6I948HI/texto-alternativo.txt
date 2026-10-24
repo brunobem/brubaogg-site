@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Tornado se formando sobre o mar ao fundo de uma ponte e de ilhas com vegetação, com a logo de GTA 6. Texto na arte: "FURACÃO".
+Thumb.png: Tornado se formando sobre o mar ao fundo de uma ponte e de ilhas com vegetação, com a logo de GTA 6. Texto na arte: "FURACÃO".

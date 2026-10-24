@@ -101,14 +101,16 @@ export default async function () {
     if (!redirecionador && bruto.includes('<!--site:header-->')) {
       const cab = (bruto.match(/<!--site:header-->([\s\S]*?)<!--\/site:header-->/) ?? [])[1] ?? '', rod = (bruto.match(/<!--site:footer-->([\s\S]*?)<!--\/site:footer-->/) ?? [])[1] ?? '';
       const itens = [...((cab.match(/<ul class="nav-site-links">([\s\S]*?)<\/ul>/) ?? [])[1] ?? '').matchAll(/<li>([\s\S]*?)<\/li>/g)].map((m) => m[1]);
-      const raizDaPagina = rel === '404.html' ? '/' : '../'.repeat(rel.split('/').length - 1), ehHome = rel === 'index.html'; // a 404 usa enderecos a partir da raiz ("/")
+      const ehHome = rel === 'index.html'; // BL-03: a home e linkada como "/" em todas as paginas (o arquivo continua index.html)
       const casa = (itens[0] ?? '').match(/^<a class="nav-casa( ativo)?" href="([^"]*)" aria-label="([^"]*)"( aria-current="page")?><svg[\s\S]*<\/svg><\/a>$/);
       if (!casa) a.push(achado('alto', T, 'o primeiro item da faixa de secoes devia ser a casinha (link para a home, so o icone)', rel));
       else {
-        if (casa[2] !== `${raizDaPagina}index.html`) a.push(achado('alto', T, `a casinha leva para "${casa[2]}" (devia ser "${raizDaPagina}index.html")`, rel));
+        if (casa[2] !== '/') a.push(achado('alto', T, `a casinha leva para "${casa[2]}" (devia ser "/")`, rel));
         if (casa[3] !== 'Início') a.push(achado('alto', T, `a casinha tem o nome acessivel "${casa[3]}" (devia ser "Início")`, rel));
         if (!!casa[1] !== ehHome || !!casa[4] !== ehHome) a.push(achado('medio', T, ehHome ? 'na home a casinha devia vir marcada como pagina atual' : 'a casinha so vem marcada como pagina atual na home', rel));
       }
+      const paraIndex = (bruto.match(/href="(?:\/|(?:\.\.\/)*)index\.html"/g) ?? []).length; // BL-03: nenhum link interno deve usar /index.html
+      if (paraIndex) a.push(achado('medio', T, `${paraIndex} link(s) interno(s) para index.html (a home e linkada como "/")`, rel));
       if (itens.length < 3) a.push(achado('alto', T, `a faixa de secoes tem ${itens.length} item(ns)`, rel));
       const navegar = (rod.match(/<nav class="footer-col footer-navegar" aria-label="Navegar">([\s\S]*?)<\/nav>/) ?? [])[1] ?? '';
       const nLinks = (navegar.match(/<div class="footer-links">([\s\S]*?)<\/div>/) ?? ['', ''])[1].match(/<a href=/g)?.length ?? 0;
@@ -117,7 +119,7 @@ export default async function () {
 
     // dados que se repetem (config.mjs): a data do GTA 6 nas paginas escritas a mao so pode aparecer dentro de <!--dado:...--> ou de data-modelo
     if (['index.html', 'gta6.html', 'cortes.html', 'lives.html'].includes(rel)) {
-      const semDados = bruto.replace(/<!--dado:[\w-]+-->[\s\S]*?<!--\/dado-->/g, '').replace(/\bdata-modelo="[^"]*"/g, '').replace(/\bcontent="[^"]*"/g, '').replace(/\bdata-alvo="[^"]*"/g, '').replace(/\bdata-lancado-texto="[^"]*"/g, '').replace(/<!--(gta6|feed|contagem):inicio-->[\s\S]*?<!--(gta6|feed|contagem):fim-->/g, ''); // as regioes geradas (novidades, feed, contagem/lancado) vem do config.mjs ou tem texto de materias
+      const semDados = bruto.replace(/<!--dado:[\w-]+-->[\s\S]*?<!--\/dado-->/g, '').replace(/\bdata-modelo="[^"]*"/g, '').replace(/\bcontent="[^"]*"/g, '').replace(/\bdata-alvo="[^"]*"/g, '').replace(/\bdata-lancado-texto="[^"]*"/g, '').replace(/<!--(gta6|feed|contagem):inicio-->[\s\S]*?<!--(gta6|feed|contagem):fim-->/g, '').replace(/<!--site:jsonld-->[\s\S]*?<!--\/site:jsonld-->/g, ''); // o bloco jsonld e gerado a cada geracao, da meta description (que ja vem do config.mjs) // as regioes geradas (novidades, feed, contagem/lancado) vem do config.mjs ou tem texto de materias
       const longa = new Date(GTA6.alvo).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Sao_Paulo' });
       if (semDados.includes(longa)) a.push(achado('medio', T, `a data do GTA 6 (${longa}) esta escrita a mao fora de marcador; use <!--dado:gta6-data--> para ela vir do config.mjs`, rel));
     }

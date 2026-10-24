@@ -1,4 +1,4 @@
-// Cria o arquivo modelo de uma materia: _conteudo/materias/<ID>.json
+// Cria o arquivo modelo de uma materia: _conteudo/materias/<tipo>/<ID>/<ID>.json (tipo: noticias, reviews ou lancamentos; GTA 6 e noticia)
 // Uso: npm run nova -- <ID ou link do video>      (os IDs saem de: npm run pendentes)
 // Ja grava o "formato" (short ou horizontal), consultando o YouTube na hora; sem resposta clara, nao cria o arquivo.
 import fs from 'node:fs';
@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { categorias } from './gerador/config.mjs';
 import { TEXTO_DE_MODELO, lerJson, normalizarId } from './gerador/util.mjs';
+import { arquivoParaNova, arquivoDaMateria, tipoDaCategoria } from './gerador/pastas.mjs';
 import { formatoDe } from './gerador/youtube.mjs';
 
 const site = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -27,8 +28,12 @@ if (!video) {
   extra = { categoria, publicado };
 }
 
-const arq = path.join(site, '_conteudo', 'materias', `${id}.json`);
-if (fs.existsSync(arq)) { console.error(`Ja existe: ${arq}`); process.exit(1); }
+// a pasta de tipo vem da categoria: a do feed (playlist em que o video esta) ou a que foi informada em --categoria
+const categoriaDoVideo = extra.categoria ?? categorias.find((c) => (playlists[c.playlist] ?? []).some((v) => v.id === id))?.pasta;
+if (!categoriaDoVideo) { console.error(`Nao consegui descobrir a categoria do video ${id}. Informe: --categoria noticias (ou reviews, lancamentos...)`); process.exit(1); }
+const existente = arquivoDaMateria(site, id);
+if (existente) { console.error(`Ja existe: ${existente}`); process.exit(1); }
+const arq = arquivoParaNova(site, categoriaDoVideo, id);
 
 const f = await formatoDe(id);
 if (f.erro) { console.error(`Nao criei o arquivo: nao consegui confirmar o formato do video ${id} (${f.erro}). Tente de novo com internet.`); process.exit(1); }
@@ -41,4 +46,4 @@ fs.writeFileSync(arq, JSON.stringify({
   titulo: video.title.replace(/(\s+#\w+)+\s*$/u, '').trim(),
   ...TEXTO_DE_MODELO,
 }, null, 2) + '\n', 'utf8');
-console.log(`Criado: _conteudo/materias/${id}.json (formato: ${f.formato})\nPreencha o texto, revise e aprove com: npm run aprovar -- ID (depois npm run gerar)`);
+console.log(`Criado: _conteudo/materias/${tipoDaCategoria(categoriaDoVideo)}/${id}/${id}.json (formato: ${f.formato})\nPreencha o texto, revise e aprove com: npm run aprovar -- ID (depois npm run gerar)`);

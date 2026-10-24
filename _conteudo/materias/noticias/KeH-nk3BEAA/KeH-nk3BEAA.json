@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-16",
+  "titulo": "State of Decay 3: o trailer de 2020 era só um conceito",
+  "resumo": "O chefe da Undead Labs disse que o trailer de 2020 de State of Decay 3 era um conceito, e que o jogo existia só em um documento do Word.",
+  "tags": [
+    "State of Decay 3"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/the-game-was-in-a-word-document-state-of-decay-3s-2020-announce-trailer-was-just-a-concept-studio-head-says"
+    },
+    {
+      "nome": "Hitmarker",
+      "url": "https://hitmarker.net/news/state-of-decay-3-dev-says-2020-reveal-trailer-was-just-a-concept-and-the-game-only-existed-in-a-word-document-1687305"
+    },
+    {
+      "nome": "TweakTown",
+      "url": "https://www.tweaktown.com/news/110917/state-of-decay-3s-2020-reveal-trailer-was-just-a-concept-and-zombie-deer-wont-be-on-the-menu-in-the-final-game/index.html"
+    },
+    {
+      "nome": "T-Break",
+      "url": "https://tbreak.com/state-decay-3-trailer-concept-alpha-may/"
+    }
+  ],
+  "corpo": [
+    "O chefe da Undead Labs, Philip Holt, disse em entrevista ao podcast Sunny Games que, quando o primeiro trailer de State of Decay 3 foi revelado, em julho de 2020, não havia de fato um jogo: ele estava em um documento do Word, e a equipe principal tinha quatro ou cinco pessoas. O trailer foi feito pela Blur Studio, todo em CGI pré-renderizado, e mostrava ideias que a equipe achava que poderiam ser legais de explorar, e não imagens de uma versão jogável.",
+    "Entre as ideias que não vão entrar está a dos cervos zumbis: perguntado, Holt respondeu que não haverá cervos zumbis. A Undead Labs planejava um alfa fechado para maio de 2026, e o jogo ganhou depois o primeiro trailer de gameplay, no Xbox Games Showcase de 7 de junho, com janela em 2027. Dizer que o jogo não estava em produção é exagero: ele estava num estágio muito inicial.",
+    "Eu disse que o jogo estava em produção havia muito tempo e que um executivo reconheceu que muito do que se viu no trailer era feito de elementos que nem tinham sido desenvolvidos, só para aumentar o hype. Pergunto se isso é justo, porque muita gente que não acompanha as notícias só vê o trailer, acha legal e compra, e o jogo não tem nada daquilo."
+  ]
+}

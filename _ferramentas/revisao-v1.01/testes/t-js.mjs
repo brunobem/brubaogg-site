@@ -70,7 +70,7 @@ export default async function () {
     for (const e of lista) {
       if (!(e.t && e.u && e.c && e.dt)) a.push(achado('alto', T, `item sem titulo, endereco, categoria ou data: ${JSON.stringify(e).slice(0, 80)}`, rel));
       if (!existe(e.u)) a.push(achado('alto', T, `a lista aponta para uma pagina que nao existe: ${e.u}`, rel));
-      if (!/^(?:https:\/\/|\/assets\/img\/[\w\-.]+$)/.test(e.i ?? '')) a.push(achado('medio', T, `miniatura sem https (ou fora de /assets/img/): ${e.i}`, rel));
+      if (!/^(?:https:\/\/|\/assets\/img\/[\w\-./]+$)/.test(e.i ?? '') || (e.i ?? '').includes('..')) a.push(achado('medio', T, `miniatura sem https (ou fora de /assets/img/): ${e.i}`, rel));
       if (!manifesto.categorias.includes(e.c)) a.push(achado('alto', T, `categoria "${e.c}" fora do manifesto`, rel));
       if (new Date(e.dt).toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' }).slice(0, 7) !== mes.m) a.push(achado('alto', T, `item de ${e.dt} no arquivo de ${mes.m}`, rel));
       todas.push(e);
@@ -132,7 +132,7 @@ export default async function () {
     if ((h.match(/data-pagefind-body/g) ?? []).length !== 1) a.push(achado('alto', T, 'a materia precisa de exatamente 1 data-pagefind-body (senao ela nao entra no indice da busca)', r));
     if (!/data-pagefind-filter="categoria:[^"]+"/.test(h)) a.push(achado('alto', T, 'sem filtro de categoria para o Pagefind', r));
     if (!/data-pagefind-sort="data\[datetime\]"/.test(h)) a.push(achado('medio', T, 'sem data para ordenar no Pagefind', r));
-    if (!/data-pagefind-meta="image:(?:https:\/\/|\/assets\/img\/[\w\-.]+")/.test(h)) a.push(achado('medio', T, 'sem miniatura nos dados do Pagefind', r));
+    if (!/data-pagefind-meta="image:(?:https:\/\/|\/assets\/img\/[\w\-./]+")/.test(h)) a.push(achado('medio', T, 'sem miniatura nos dados do Pagefind', r));
   }
   for (const r of paginas.filter((p) => !noSite.includes(p))) if (/data-pagefind-body/.test(html.get(r))) a.push(achado('medio', T, 'pagina que nao e materia esta marcada para o indice da busca', r));
 
@@ -160,6 +160,11 @@ export default async function () {
   confere('atalhos "gta6"', api.atalhosPara(sa, 'gta6').map((x) => x.t), ['GTA 6']);
   confere('atalhos "evil" (comeco de palavra)', api.atalhosPara(sa, 'evil').map((x) => x.t), ['Resident Evil', 'Resident Evil 7']);
   confere('atalhos "vil" (meio de palavra nao casa)', api.atalhosPara(sa, 'vil').map((x) => x.t), []);
+  // BL-20 (UX-12): com os dados REAIS, digitar o nome de um jogo que tem Wiki mostra a pagina da Wiki entre os 3 atalhos da caixa de sugestoes (MAX_ATALHOS em busca.js)
+  for (const w of atalhos.filter((e) => e.c === 'Wiki')) {
+    const nome = w.t.replace(/ \(Wiki\)$/, '').toLowerCase(), topo = api.atalhosPara(atalhos, nome).slice(0, 3).map((x) => x.u);
+    if (!topo.includes(w.u)) a.push(achado('medio', T, `digitar "${nome}" nao mostra a Wiki entre os 3 atalhos (${topo.join(', ')}): as paginas de Wiki devem vir primeiro em atalhos.json`, 'assets/data/atalhos.json'));
+  }
   confere('atalhos exato primeiro', api.atalhosPara(sa, 'resident evil 7').map((x) => x.t), ['Resident Evil 7']);
   confere('combinar', api.combinar([{ id: 'a', score: 10 }, { id: 'b', score: 5 }, { id: 'c', score: 1 }], [{ id: 'c' }, { id: 'b' }, { id: 'a' }], 10).map((x) => x.id), ['b', 'a', 'c']);
   confere('caminhoSeguro', ['noticias/x.html', 'javascript:alert(1)', '//evil.com/x', '../x', 'a b', '/x.html'].map(api.caminhoSeguro), [true, false, false, false, false, false]);
@@ -236,7 +241,7 @@ export default async function () {
       vistos.add(it.u);
       if (!existe(it.u)) a.push(achado('alto', T, 'item aponta para pagina que nao existe: ' + it.u, src));
       if (!/^[\w-][\w\-./]*$/.test(it.u) || it.u.includes('..')) a.push(achado('alto', T, 'endereco fora do padrao seguro: ' + it.u, src));
-      if (!/^(?:https:\/\/[\w.\-]+\/[\w\-./]+|\/assets\/img\/[\w\-.]+)$/.test(it.i ?? '')) a.push(achado('medio', T, 'miniatura fora do padrao seguro em ' + it.u, src));
+      if (!/^(?:https:\/\/[\w.\-]+\/[\w\-./]+|\/assets\/img\/[\w\-./]+)$/.test(it.i ?? '') || (it.i ?? '').includes('..')) a.push(achado('medio', T, 'miniatura fora do padrao seguro em ' + it.u, src));
       if (!it.t || !it.c || !it.dt || Number.isNaN(Date.parse(it.dt))) a.push(achado('alto', T, 'item sem titulo, categoria ou data valida: ' + it.u, src));
       for (const [g, vs] of Object.entries(it.f ?? {})) for (const v of vs) if (!/^[a-z0-9][a-z0-9-]{0,59}$/.test(v)) a.push(achado('alto', T, 'valor de menu fora do padrao (' + g + '="' + v + '") em ' + it.u, src));
     }
@@ -244,6 +249,8 @@ export default async function () {
     if (menu) {
       const g = menu.g;
       if (menu.topo.length < 3) a.push(achado('medio', T, 'menu "' + g + '" com menos de 2 itens alem de "Todos" (nao serve de menu)', rel));
+      // BL-20 (UX-34): toda review aparece em pelo menos um item de plataforma (a que nao tem plataforma vai para "Outras"), senao Todas nao fecha com a soma dos itens
+      if (g === 'pl') { const valores = new Set(menu.topo.map((x) => x.v)); for (const it of itens) if (!(it.f?.pl ?? []).some((v) => valores.has(v))) a.push(achado('alto', T, 'review sem nenhum item de plataforma no menu (devia estar em "Outras"): ' + it.u, rel)); }
       menu.topo.forEach((it0, k) => {
         itensDeMenuConferidos++;
         if (k === 0) {

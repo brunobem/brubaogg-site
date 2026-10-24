@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_playstation.com.webp: Astro Bot fantasiado de Kratos, de God of War, com a marca vermelha no rosto e um machado de gelo azul na mão, num cenário escuro de inspiração nórdica.
+img-2_playstation.com.webp: Astro Bot, um pequeno robô branco e azul, fazendo continência diante de uma grande árvore de olhos azuis brilhantes, num campo florido.

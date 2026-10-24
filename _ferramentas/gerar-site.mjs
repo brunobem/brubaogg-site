@@ -1,10 +1,10 @@
-// Gera as paginas de materias do site a partir de assets/data/playlists.json e de _conteudo/materias/*.json (e o conteudo da Wiki, que pode ser so texto, de _conteudo/wiki/*.json).
+// Gera as paginas de materias do site a partir de assets/data/playlists.json e de _conteudo/materias/<tipo>/<ID>/<ID>.json (e o conteudo da Wiki, que pode ser so texto, de _conteudo/materias/wiki/<nome>/<nome>.json).
 //
 //  - Listas:   noticias.html, reviews.html, lancamentos.html
 //  - Materias: noticias/<slug>.html, reviews/<slug>.html, lancamentos/<slug>.html, gta6-novidades/<slug>.html
 //  - Extras:   tags (tag/*.html, tags.html), busca.html, 404.html, assets/data/atalhos.json, assets/data/lista/*.json (listas por mes), sitemap.xml, robots.txt
 //
-// Titulo, data e video vem do YouTube (playlists.json). O TEXTO da materia vem de _conteudo/materias/<idDoVideo>.json
+// Titulo, data e video vem do YouTube (playlists.json). O TEXTO da materia vem de _conteudo/materias/<tipo>/<idDoVideo>/<idDoVideo>.json
 // (formato e regras: _conteudo/GUIA-EDITORIAL.md). Por padrao SO entram no site os videos com materia APROVADA
 // (arquivo sem "status", ou com "status": "rascunho" que ainda nao foi aprovado = fora do site).
 //

@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Faye, de God of War Laufey, deitada de olhos fechados sobre um piso de pedra, cercada por borboletas roxas e pétalas, com a logo do jogo. Texto na arte: "ELA É QUEM MANDA?".
+Thumb.png: Faye, de God of War Laufey, deitada de olhos fechados sobre um piso de pedra, cercada por borboletas roxas e pétalas, com a logo do jogo. Texto na arte: "ELA É QUEM MANDA?".

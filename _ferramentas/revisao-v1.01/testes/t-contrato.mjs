@@ -3,6 +3,7 @@
 // Aqui ficam so as conferencias extras (texto, repeticoes, coerencia entre os arquivos).
 import { achado, aprovada, CATEGORIAS, conteudosDaWiki, existe, existeExato, ler, materias } from './lib.mjs';
 import { LIMITE_DE_FONTES, LIMITE_DE_SHORTS } from '../../gerador/config.mjs';
+import { classificarArquivo } from '../../gerador/imagens.mjs';
 import { validarAssuntos, validarMateria, validarWiki } from '../../gerador/contrato.mjs';
 import { slugBase } from '../../gerador/util.mjs';
 
@@ -109,6 +110,9 @@ export default async function () {
     ['assunto com acento', { assunto: 'preço-do-jogo' }, 'problema', '"assunto" deve ser um texto'],
     ['assunto vazio', { assunto: '' }, 'problema', '"assunto" deve ser um texto'],
     ['assunto que nao e texto', { assunto: 5 }, 'problema', '"assunto" deve ser um texto'],
+    ['plataforma na materia (review sem veredito)', { plataforma: 'PS5' }, 'ok'],
+    ['plataforma vazia', { plataforma: ' ' }, 'problema', '"plataforma" deve ser um texto'],
+    ['plataforma que nao e texto', { plataforma: 5 }, 'problema', '"plataforma" deve ser um texto'],
   ];
   for (const [nome, extra, espera, trecho] of regras) {
     const r = validarMateria({ ...base, ...extra }, { id: 'AAAAAAAAAAA', rel: 'x.json', situacao: 'publicada' });
@@ -124,7 +128,7 @@ export default async function () {
   const casosAssunto = [
     ['assunto valido', ficha, dupla(), [], 'ok'],
     ['sem arquivo e sem assunto com 2 materias', {}, new Map(), [], 'ok'],
-    ['assunto com 2 materias sem entrada no arquivo', {}, dupla(), [], 'problema', 'falta a entrada em _conteudo/assuntos.json'],
+    ['assunto com 2 materias sem entrada no arquivo (o arquivo e opcional)', {}, dupla(), [], 'ok'],
     ['entrada sem titulo', { 'assunto-x': { resumo: 'R.' } }, dupla(), [], 'problema', 'falta "titulo"'],
     ['entrada com titulo vazio', { 'assunto-x': { titulo: ' ', resumo: 'R.' } }, dupla(), [], 'problema', 'falta "titulo"'],
     ['entrada sem resumo', { 'assunto-x': { titulo: 'T' } }, dupla(), [], 'problema', 'falta "resumo"'],
@@ -135,9 +139,9 @@ export default async function () {
     ['titulo acima de 60 so avisa', { 'assunto-x': { titulo: 'T'.repeat(61), resumo: 'R.' } }, dupla(), [], 'aviso', 'titulo com 61 caracteres'],
     ['resumo acima de 160 so avisa', { 'assunto-x': { titulo: 'T', resumo: 'R'.repeat(161) } }, dupla(), [], 'aviso', 'resumo com 161 caracteres'],
     ['campo desconhecido so avisa', { 'assunto-x': { titulo: 'T', resumo: 'R.', cor: 'azul' } }, dupla(), [], 'aviso', 'campo desconhecido "cor"'],
-    ['entrada de assunto com 1 materia so avisa', { ...ficha, 'outro': { titulo: 'T', resumo: 'R.' } }, new Map([...dupla(), ['outro', [membro('CCCCCCCCCCC')]]]), [], 'aviso', 'so vira pagina com 2 ou mais'],
-    ['membro com veredito', ficha, new Map([['assunto-x', [membro('AAAAAAAAAAA', { veredito: { nota: 7 } }), membro('BBBBBBBBBBB')]]]), [], 'problema', 'tem "veredito" ou "shorts"'],
-    ['membro com shorts', ficha, new Map([['assunto-x', [membro('AAAAAAAAAAA'), membro('BBBBBBBBBBB', { shorts: [{ id: 'DDDDDDDDDDD', titulo: 'S' }] })]]]), [], 'problema', 'tem "veredito" ou "shorts"'],
+    ['entrada de assunto com 1 materia so avisa', { ...ficha, 'outro': { titulo: 'T', resumo: 'R.' } }, new Map([...dupla(), ['outro', [membro('CCCCCCCCCCC')]]]), [], 'aviso', 'so vira redirecionamento com 2 ou mais'],
+    ['membro com veredito (cada materia tem pagina propria: pode)', ficha, new Map([['assunto-x', [membro('AAAAAAAAAAA', { veredito: { nota: 7 } }), membro('BBBBBBBBBBB')]]]), [], 'ok'],
+    ['membro com shorts (cada materia tem pagina propria: pode)', ficha, new Map([['assunto-x', [membro('AAAAAAAAAAA'), membro('BBBBBBBBBBB', { shorts: [{ id: 'DDDDDDDDDDD', titulo: 'S' }] })]]]), [], 'ok'],
     ['endereco do assunto ja e de uma materia', ficha, dupla(), ['noticias/assunto-x'], 'problema', 'endereco que ja pertence a uma materia'],
     ['mesmo endereco em outra categoria nao colide', ficha, dupla(), ['reviews/assunto-x'], 'ok'],
   ];
@@ -205,6 +209,15 @@ export default async function () {
     // grafias diferentes da mesma tag que o tags.json nao unifica
     for (const [s, set] of grafias) if (set.size > 1 && !dono.has(s)) a.push(achado('medio', T, `grafias diferentes da mesma tag: ${[...set].join(' | ')} (unificar em tags.json ou no texto)`));
   }
+  // nomes de arquivo das imagens da pasta de cada materia (thumb.<ext> e img-N_<site da fonte>.<ext>): o que vale e o que o gerador recusa
+  const classes = [
+    ['thumb.jpg', 'thumb'], ['thumb.PNG', 'thumb'], ['thumb.webp', 'thumb'], ['img-1_arkade.com.br.jpg', 'foto'], ['img-12_www.techtudo.com.br.webp', 'foto'], ['IMG-2_Exemplo.COM.png', 'foto'],
+    ['img-1.jpg', 'invalido'], ['img-1_.jpg', 'invalido'], ['img-a_x.com.jpg', 'invalido'], ['foto.jpg', 'invalido'], ['thumb.gif', 'invalido'], ['img-1_semponto.jpg', 'invalido'], ['img-0_x.com.jpg', 'invalido'], ['img-21_x.com.jpg', 'invalido'],
+    ['anotacoes.txt', 'outro'], ['rascunho.docx', 'outro'],
+  ];
+  for (const [nome, esperado] of classes) { const k = classificarArquivo(nome).tipo; if (k !== esperado) a.push(achado('alto', T, `classificarArquivo("${nome}") deu "${k}" e devia dar "${esperado}"`, '_ferramentas/gerador/imagens.mjs')); }
+  const fonteDoNome = classificarArquivo('IMG-2_Exemplo.COM.png');
+  if (fonteDoNome.fonte !== 'exemplo.com' || fonteDoNome.n !== 2) a.push(achado('alto', T, 'a fonte e a posicao devem sair do nome do arquivo (minusculas): img-2_exemplo.com => posicao 2, fonte exemplo.com', '_ferramentas/gerador/imagens.mjs'));
   a.push(achado('info', T, `${ms.length} arquivos de conteudo (${soMaterias.length} materias + ${daWiki.length} da Wiki; ${ms.filter(aprovada).length} aprovados, ${ms.filter((m) => m.dados && !aprovada(m)).length} rascunhos)`));
   return a;
 }

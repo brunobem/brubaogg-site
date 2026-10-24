@@ -1,7 +1,7 @@
 // Modelos de HTML reutilizados pelo gerador: cabecalho (com a faixa de secoes), rodape, pagina completa, cartao.
 // Dependem do estado do site (abas visiveis, se ha tags), por isso recebem o contexto.
 import { DOMINIO, GTA6, SOCIAIS, abas, categorias } from './config.mjs';
-import { cortar, dataCurta, dataLonga, esc, miniatura } from './util.mjs';
+import { SIZES_CARTAO, SIZES_CARTAO_DESTAQUE, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, esc, imagemDoCartao } from './util.mjs';
 
 export function criarModelos(ctx) {
   const { icone } = ctx;
@@ -53,6 +53,7 @@ ${JSON.stringify(obj, null, 2)}
       '<meta property="og:locale" content="pt_BR">',
       `<meta property="og:image" content="${esc(imagem)}">`,
       ...(/i\.ytimg\.com\/vi\/[^/]+\/hqdefault\.jpg$/.test(imagem) ? ['<meta property="og:image:width" content="480">', '<meta property="og:image:height" content="360">'] : []),
+      ...(/i\.ytimg\.com\/vi\/[^/]+\/maxresdefault\.jpg$/.test(imagem) ? ['<meta property="og:image:width" content="1280">', '<meta property="og:image:height" content="720">'] : []),
       ...(imagem.endsWith('/assets/img/compartilhar.jpg') ? ['<meta property="og:image:width" content="1200">', '<meta property="og:image:height" content="630">'] : []),
       '<meta name="twitter:card" content="summary_large_image">',
     ].join('\n');
@@ -80,11 +81,13 @@ ${JSON.stringify(obj, null, 2)}
   // categoria so aparece depois da primeira materia). A secao da pagina atual fica marcada (class "ativo"; aria-current na propria pagina). As maiusculas e a barra
   // amarela do mouse estao no style.css (secao 5). Quando as secoes NAO cabem numa linha (celular, texto aumentado), assets/js/nav.js mostra o botao "Menu", que abre o
   // painel <dialog> com todas as secoes e mais Inicio, Tags, Arquivo e Sobre e contato; ele mede o conteudo, nao o aparelho. Sem JavaScript fica so a faixa, que rola.
+  // A home e linkada como "/" (o canonical dela ja e "/"): o arquivo continua sendo index.html, so o link interno muda (BL-03).
+  const paraHome = (base, href) => (href === 'index.html' ? '/' : `${base}${href}`);
   function headerHtml(base, rel = '') {
     const dentroDe = (pasta) => !!pasta && rel.startsWith(`${pasta}/`);
     // a categoria pode morar na aba de outra pagina (`aba` em config.mjs: as Series ficam na Wiki): a lista e as materias dela marcam essa aba
     const secaoDe = (a) => rel === a.href || dentroDe(a.pasta) || dentroDe(a.dentro) || categorias.some((c) => ((c.lista ?? `${c.pasta}.html`) === a.href && dentroDe(c.pasta)) || (c.aba === a.href && (rel === (c.lista ?? `${c.pasta}.html`) || dentroDe(c.pasta))));
-    const link = (href, nome, ativo) => `<a href="${base}${href}"${ativo ? ` class="ativo"${rel === href ? ' aria-current="page"' : ''}` : ''}>${nome}</a>`;
+    const link = (href, nome, ativo) => `<a href="${paraHome(base, href)}"${ativo ? ` class="ativo"${rel === href ? ' aria-current="page"' : ''}` : ''}>${nome}</a>`;
     const secoes = abasVisiveis().map((a) => ({ href: a.href, nome: a.nome, ativo: secaoDe(a) }));
     const extras = [
       { href: 'index.html', nome: 'Início', ativo: rel === 'index.html' },
@@ -94,21 +97,21 @@ ${JSON.stringify(obj, null, 2)}
     ];
     const lis = (itens, recuo) => itens.map((it) => `${recuo}<li>${link(it.href, it.nome, it.ativo)}</li>`).join('\n');
     return `<header class="topbar">
-      <a class="brand" href="${base}index.html" aria-label="BRUBAOGG, página inicial"><img src="${base}assets/img/logo-96.png" alt="" width="44" height="44"> BRUBAOGG</a>
+      <a class="brand" href="/" aria-label="BRUBAOGG, página inicial"><img src="${base}assets/img/logo-96.png" alt="" width="44" height="44"> BRUBAOGG</a>
       ${formBusca(base)}
       ${redesHtml()}
     </header>
     <nav class="nav-site" aria-label="Seções do site">
       <button class="nav-menu" type="button" aria-haspopup="dialog" aria-controls="menu-painel" aria-expanded="false" hidden>${icone('menu')} Menu</button>
       <ul class="nav-site-links">
-        <li><a class="nav-casa${rel === 'index.html' ? ' ativo' : ''}" href="${base}index.html" aria-label="Início"${rel === 'index.html' ? ' aria-current="page"' : ''}>${icone('house')}</a></li>
+        <li><a class="nav-casa${rel === 'index.html' ? ' ativo' : ''}" href="/" aria-label="Início"${rel === 'index.html' ? ' aria-current="page"' : ''}>${icone('house')}</a></li>
 ${lis(secoes, '        ')}
       </ul>
     </nav>
     <dialog class="menu-painel" id="menu-painel" aria-label="Menu do site">
       <div class="menu-caixa">
         <div class="menu-topo">
-          <a class="menu-marca" href="${base}index.html" aria-label="BRUBAOGG, página inicial"><img src="${base}assets/img/logo-96.png" alt="" width="56" height="56"></a>
+          <a class="menu-marca" href="/" aria-label="BRUBAOGG, página inicial"><img src="${base}assets/img/logo-96.png" alt="" width="56" height="56"></a>
           <button class="menu-fechar" type="button" aria-label="Fechar menu" autofocus>${icone('x')}</button>
         </div>
         <ul class="menu-lista">
@@ -126,7 +129,7 @@ ${lis(extras, '          ')}
   // continuam no ar, no mesmo endereco (estao cadastradas no TikTok e no Google Cloud), mas nenhuma pagina do site leva a elas nem a busca as mostra.
   function footerHtml(base) {
     const navegar = [{ href: 'index.html', nome: 'Início' }, ...abas.filter((a) => !a.pasta || ctx.visiveis.has(a.pasta)), ...(ctx.temTags ? [{ href: 'tags.html', nome: 'Tags' }] : []), ...(ctx.temArquivo ? [{ href: 'arquivo.html', nome: 'Arquivo' }] : []), { href: 'sobre.html', nome: 'Sobre e contato' }]
-      .map((a) => `<a href="${base}${a.href}">${a.nome}</a>`).join('\n        ');
+      .map((a) => `<a href="${paraHome(base, a.href)}">${a.nome}</a>`).join('\n        ');
     return `<footer class="site-footer">
     <div class="footer-scene" aria-hidden="true">
       <img class="fp fp-grupo fp-grupo-esq" src="${base}assets/img/rodape/palmeiras-grupo.webp" alt="" loading="lazy">
@@ -137,7 +140,7 @@ ${lis(extras, '          ')}
     <div class="footer-body">
       <div class="wrap footer-grid">
         <div class="footer-col footer-brand">
-          <a class="brand" href="${base}index.html"><img src="${base}assets/img/logo-96.png" alt="Logo BRUBAOGG" width="44" height="44"> BRUBAOGG</a>
+          <a class="brand" href="/"><img src="${base}assets/img/logo-96.png" alt="Logo BRUBAOGG" width="44" height="44"> BRUBAOGG</a>
           <p>Notícias, reviews, lançamentos e cortes de games.</p>
           ${redesHtml()}
         </div>
@@ -203,13 +206,13 @@ ${corpo}
     return saida;
   }
 
-  // destaque: false (cartao normal), true (cartao em destaque das listas, imagem ao lado do texto) ou 'grande' (cartao grande dos blocos da home, imagem em cima;
+  // destaque: false (cartao normal), 'pequeno' (cartao pequeno ao lado do grande nos blocos da home: igual ao normal, so a imagem pede menos pixels), true (cartao em destaque das listas, imagem ao lado do texto) ou 'grande' (cartao grande dos blocos da home, imagem em cima;
   // leva tambem o primeiro paragrafo da materia, que o CSS so mostra quando o cartao e largo)
   function cartao(m, cat, base, destaque = false) {
     const href = `${base}${cat.pasta}/${m.slug}.html`;
     const mais = destaque === 'grande' && m.corpo?.length ? frasesInteiras(m.corpo[0], 440) : '';
-    return `          <a class="news-card${destaque === 'grande' ? ' grande' : destaque ? ' featured' : ''}" href="${href}">
-            <span class="thumb"><img src="${miniatura(m.id)}" alt="" loading="lazy"></span>
+    return `          <a class="news-card${destaque === 'grande' ? ' grande' : destaque === true ? ' featured' : ''}" href="${href}">
+            <span class="thumb">${(() => { const im = imagemDoCartao(m.id, destaque === 'grande' ? SIZES_CARTAO_GRANDE : destaque === 'pequeno' ? SIZES_CARTAO_PEQUENO : destaque === true ? SIZES_CARTAO_DESTAQUE : SIZES_CARTAO); return `<img ${im.atributos} alt="${esc(im.alt)}"`; })()} loading="lazy"></span>
             <span class="news-body">
               <span class="tag">${icone(cat.icone)} ${esc(m.rotulo ?? cat.rotulo)}</span>
               <b class="news-title">${esc(m.titulo)}</b>

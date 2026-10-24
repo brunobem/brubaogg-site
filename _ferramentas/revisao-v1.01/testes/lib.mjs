@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { listarConteudos } from '../../gerador/pastas.mjs';
 export const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 export const DOMINIO = 'https://brubaogg.com.br';
 export const CATEGORIAS = ['noticias', 'reviews', 'lancamentos', 'gta6-novidades', 'series'];
@@ -68,22 +69,22 @@ export function tags(html) { // [{ nome, attrs, fecha, auto, idx }]
 export const textoVisivel = (html) => limparHtml(html).replace(/<svg[\s\S]*?<\/svg>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 export const decodificar = (s) => s.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 
-function lerPasta(dir) { // [{ id, arq, dados|null, erro }]
-  if (!existe(dir)) return [];
-  return fs.readdirSync(path.join(raiz, dir)).filter((f) => f.endsWith('.json')).map((f) => {
-    const id = f.slice(0, -5);
-    try { return { id, arq: `${dir}/${f}`, dados: JSON.parse(ler(`${dir}/${f}`).replace(/^﻿/, '')) }; }
-    catch (e) { return { id, arq: `${dir}/${f}`, dados: null, erro: e.message }; }
+// as materias moram em _conteudo/materias/<tipo>/<ID>/<ID>.json (gerador/pastas.mjs): noticias, reviews, lancamentos e wiki
+function lerLista(itens) { // [{ id, arq, dados|null, erro }]
+  return itens.map((c) => {
+    try { return { id: c.id, arq: c.rel, dados: JSON.parse(ler(c.rel).replace(/^\uFEFF/, '')) }; }
+    catch (e) { return { id: c.id, arq: c.rel, dados: null, erro: e.message }; }
   });
 }
-export const materias = () => lerPasta('_conteudo/materias'); // as materias de video (o nome do arquivo e o ID do video)
-export const conteudosDaWiki = () => lerPasta('_conteudo/wiki'); // a Wiki: pode ser so texto (o nome do arquivo e livre)
+export const materias = () => lerLista(listarConteudos(raiz).itens.filter((c) => c.tipo !== 'wiki')); // as materias de video (o nome da pasta e o ID do video)
+export const conteudosDaWiki = () => lerLista(listarConteudos(raiz).itens.filter((c) => c.tipo === 'wiki')); // a Wiki: pode ser so texto (o nome da pasta e livre)
 export const aprovada = (m) => m.dados && m.dados.status !== 'rascunho';
 
 /**
- * Como o site junta as materias de um "assunto" (2 ou mais) numa pagina so, calculado aqui de forma independente do gerador: a partir dos JSONs aprovados, do registro de
- * enderecos e de _conteudo/assuntos.json. Devolve { unidades: [{ chave, categoria, pagina, membros: [{ id, e, dados }] (do mais novo para o mais velho), ficha }],
- * membroDe: Map id -> unidade, esperadosPorCategoria: { pasta: n } (itens por categoria DEPOIS de juntar; categorias que dizem tambemEm nao entram) }.
+ * Os assuntos do site (materias com o mesmo campo "assunto", 2 ou mais), calculados aqui de forma independente do gerador: a partir dos JSONs aprovados, do registro de enderecos e de
+ * _conteudo/assuntos.json (opcional). Cada materia tem a PROPRIA pagina; o que o assunto ganha e o redirecionamento do endereco dele (categoria/chave.html) para a materia mais nova e o bloco
+ * "Mais sobre este assunto" em cada materia. Devolve { unidades: [{ chave, categoria, pagina (o redirecionamento), membros: [{ id, e, dados }] (do mais novo para o mais velho), ficha }],
+ * membroDe: Map id -> unidade, esperadosPorCategoria: { pasta: n } (materias por categoria; cada uma conta 1: nada se junta) }.
  */
 export function assuntosDoSite() {
   const registro = existe('_conteudo/enderecos.json') ? JSON.parse(ler('_conteudo/enderecos.json')) : {};
@@ -106,7 +107,6 @@ export function assuntosDoSite() {
   }
   const esperadosPorCategoria = {};
   const soma = (cat) => { esperadosPorCategoria[cat] = (esperadosPorCategoria[cat] ?? 0) + 1; };
-  for (const [id, e] of Object.entries(registro)) if (!e.retirada && !membroDe.has(id)) soma(e.categoria);
-  for (const u of unidades) soma(u.categoria);
+  for (const e of Object.values(registro)) if (!e.retirada) soma(e.categoria);
   return { unidades, membroDe, esperadosPorCategoria };
 }

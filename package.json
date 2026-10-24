@@ -8,8 +8,10 @@
     "node": ">=18"
   },
   "scripts": {
-    "atualizar": "node _ferramentas/atualizar-videos.mjs && node _ferramentas/gerar-site.mjs",
+    "atualizar": "node _ferramentas/atualizar-videos.mjs && node _ferramentas/miniaturas-grandes.mjs && node _ferramentas/duracoes-videos.mjs && node _ferramentas/gerar-site.mjs",
     "videos": "node _ferramentas/atualizar-videos.mjs",
+    "miniaturas": "node _ferramentas/miniaturas-grandes.mjs",
+    "duracoes": "node _ferramentas/duracoes-videos.mjs",
     "gerar": "node _ferramentas/gerar-site.mjs",
     "rascunho": "node _ferramentas/gerar-site.mjs --rascunho",
     "pendentes": "node _ferramentas/pendentes.mjs",

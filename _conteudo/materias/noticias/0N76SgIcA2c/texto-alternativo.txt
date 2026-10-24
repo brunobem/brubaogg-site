@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Caveira de roqueiro com espetos, fazendo o gesto de rock com a mão em meio a chamas, ao lado da logo de GTA 6. Texto na arte: "RADIOS".
+Thumb.png: Caveira de roqueiro com espetos, fazendo o gesto de rock com a mão em meio a chamas, ao lado da logo de GTA 6. Texto na arte: "RADIOS".

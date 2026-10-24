@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-19",
+  "titulo": "Wolverine teve 35% das vendas em disco no PS5",
+  "resumo": "Segundo a Ampere, 35% das vendas de Marvel's Wolverine no PS5 em setembro foram em disco. Para mim, o fim da mídia física prejudica quem tem pouco dinheiro.",
+  "tags": [
+    "Marvel's Wolverine",
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/fim-dos-discos-wolverine-teve-35-vendas-midia-fisica/"
+    },
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/35-of-sonys-wolverine-launch-sales-were-the-disc-version-data-suggests/"
+    },
+    {
+      "nome": "Push Square",
+      "url": "https://www.pushsquare.com/news/2026/10/europe-shows-up-for-physical-games-51percent-of-wolverines-ps5-sales-for-disc-version"
+    }
+  ],
+  "assunto": "fim-da-midia-fisica",
+  "corpo": [
+    "Marvel's Wolverine teve cerca de 35% das vendas em mídia física no PS5 em setembro de 2026, segundo estimativa da Ampere Analytics divulgada pelo The Game Business e repercutida pelo Flow Games em 9 de outubro. O jogo vendeu cerca de 2,16 milhões de cópias no mês. São dados de analistas, e não números da Sony.",
+    "Outros jogos tiveram participação parecida: Onimusha: Way of the Sword, 30%; The Blood of Dawnwalker, 36%; e Silent Hill: Townfall, 45%. A Sony disse que cerca de 82% das vendas no PlayStation são digitais, mas as fontes são diferentes, então a comparação não é direta. O Push Square aponta que, na Europa, a fatia física do Wolverine chegou a 51%.",
+    "A Sony anunciou que, a partir de janeiro de 2028, os jogos novos do PlayStation sairão só em formato digital. Não sei se o Wolverine é a métrica ideal, porque o jogo não foi tão bem recebido quanto outros da Insomniac, como o Homem-Aranha, e essa comparação é opinião minha. Ainda assim, 35% não chega à metade, o que parece corroborar a ideia de que o público prefere digital.",
+    "Para mim, o maior problema do fim do disco é o mercado de usados, que é enorme. No varejo, o jogo fica mais barato com o tempo: dá para comprar, zerar e revender, recuperando parte do que gastou, e quem compra o usado paga menos. No digital, o jogo fica preso na conta e não volta para ninguém. Sei que o disco custa mais para a empresa, mas nunca foi sobre ser melhor para ela, e sim para o consumidor."
+  ]
+}

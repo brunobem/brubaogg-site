@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Homem de boné e regata suja de graxa, com a mão na aba do boné, numa oficina com carros clássicos ao fundo, em cena de GTA 6, com a logo do jogo. Texto na arte: "MUITO NPC".
+Thumb.png: Homem de boné e regata suja de graxa, com a mão na aba do boné, numa oficina com carros clássicos ao fundo, em cena de GTA 6, com a logo do jogo. Texto na arte: "MUITO NPC".

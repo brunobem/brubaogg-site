@@ -1,4 +1,4 @@
-// O CONTRATO de uma materia (_conteudo/materias/<ID>.json), em um so lugar. Usado pelo gerador, pelo aprovar, pelo pendentes e pelos testes.
+// O CONTRATO de uma materia (_conteudo/materias/<tipo>/<ID>/<ID>.json), em um so lugar. Usado pelo gerador, pelo aprovar, pelo pendentes e pelos testes.
 // Devolve { problemas, avisos }: problema = nao pode publicar; aviso = so informa (limite editorial).
 import { LIMITE_DE_FONTES, LIMITE_DE_SHORTS, RECOMENDACOES, WIKI, categorias } from './config.mjs';
 import { usaTextoDeModelo } from './util.mjs';
@@ -81,6 +81,8 @@ export function validarMateria(m, { id, rel, situacao }) {
       if (m.shorts.length > LIMITE_DE_SHORTS) A(`${m.shorts.length} Shorts anexados (ate ${LIMITE_DE_SHORTS} le melhor)`);
     }
   }
+  // plataforma (opcional, so serve a review que ainda NAO tem ficha de veredito: com veredito, vale veredito.plataforma): alimenta o menu de plataformas de Reviews
+  if (m.plataforma != null && !texto(m.plataforma)) P('"plataforma" deve ser um texto nao vazio (ex.: "PS5" ou "PC"), ou apague o campo.');
   // assunto: texto simples em hifens, para materias do mesmo assunto casarem (um erro de digitacao cria um assunto sozinho, que nao aparece)
   if (m.assunto != null && (typeof m.assunto !== 'string' || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(m.assunto))) P(`"assunto" deve ser um texto em minusculas, sem acento e com hifens (ex.: "god-of-war-laufey"): veio ${JSON.stringify(m.assunto)}.`);
   // campos de video antigo (fora dos 15 mais recentes do feed): precisam ser reais
@@ -102,7 +104,8 @@ export function validarMateria(m, { id, rel, situacao }) {
 }
 
 // ---- Assuntos: _conteudo/assuntos.json ----
-// Materias de videos diferentes sobre o mesmo fato (campo "assunto" do JSON da materia) viram UMA pagina, com um bloco por video. O titulo e o resumo dessa pagina vem deste arquivo:
+// Materias de videos diferentes sobre o mesmo fato (campo "assunto" do JSON da materia) continuam cada uma com a propria pagina e se ligam pelo bloco "Mais sobre este assunto". O endereco do assunto
+// (categoria/chave.html) e um redirecionamento para a materia mais nova; este arquivo e OPCIONAL e so da a pasta ("categoria") e o titulo e o resumo da previa de compartilhamento desse redirecionamento:
 // { "god-of-war-laufey": { "titulo": "...", "resumo": "...", "categoria": "noticias" } }   ("categoria" e opcional: sem ela vale a da materia mais antiga do assunto)
 const CHAVE_DE_ASSUNTO = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 /**
@@ -130,21 +133,18 @@ export function validarAssuntos(assuntos, grupos, enderecos = new Set()) {
     if (a.categoria != null && !categorias.some((c) => c.pasta === a.categoria)) P(`"${chave}": "categoria" desconhecida: ${JSON.stringify(a.categoria)} (use ${categorias.map((c) => c.pasta).join(', ')}).`);
     for (const k of Object.keys(a)) if (!['titulo', 'resumo', 'categoria'].includes(k)) A(`"${chave}": campo desconhecido "${k}" (nao aparece na pagina)`);
     const n = (grupos.get(chave) ?? []).length;
-    if (n < 2) A(`"${chave}" tem ${n} materia(s) com esse assunto: so vira pagina com 2 ou mais (a entrada fica sem efeito por enquanto)`);
+    if (n < 2) A(`"${chave}" tem ${n} materia(s) com esse assunto: so vira redirecionamento com 2 ou mais (a entrada fica sem efeito por enquanto)`);
   }
   for (const [chave, membros] of grupos) {
     if (membros.length < 2) continue;
     if (!CHAVE_DE_ASSUNTO.test(chave)) continue; // o erro ja foi dado na propria materia
-    const a = assuntos[chave];
-    if (!a || typeof a !== 'object') P(`o assunto "${chave}" tem ${membros.length} materias (${membros.map((m) => m.id).join(', ')}) mas falta a entrada em _conteudo/assuntos.json, com o titulo e o resumo da pagina.`);
-    for (const m of membros) if (m.dados.veredito != null || m.dados.shorts != null) P(`${m.rel}: a materia faz parte do assunto "${chave}" e tem "veredito" ou "shorts"; a pagina do assunto so mostra o texto, o player e as fontes de cada video (tire o assunto ou esses campos).`);
     const cat = categoriaDe(chave);
     if (cat && enderecos.has(`${cat}/${chave}`)) P(`o assunto "${chave}" viraria ${cat}/${chave}.html, endereco que ja pertence a uma materia (ou foi dela). Troque a chave do assunto nas ${membros.length} materias e em assuntos.json.`);
   }
   return { problemas, avisos, categoriaDe };
 }
 
-// ---- Conteudo da Wiki: _conteudo/wiki/<nome>.json ----
+// ---- Conteudo da Wiki: _conteudo/materias/wiki/<nome>/<nome>.json ----
 // Diferente da materia: nao precisa de video (pode ser so texto), nao depende do feed do YouTube e e sempre de um jogo da Wiki. Aqui ficam as regras PROPRIAS dele e a conversao para
 // o formato de materia que o resto do gerador ja entende (categoria series, formato horizontal); as regras de texto (resumo, corpo, titulo...) sao as de validarMateria.
 const CAMPOS_DA_WIKI = new Set(['jogo', 'tipo', 'titulo', 'resumo', 'corpo', 'publicado', 'video', 'imagem', 'tags', 'spoiler', 'fontes', 'shorts', 'assunto', 'status', 'formato', 'categoria']);

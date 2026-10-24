@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+card.png: Logo da Crunchyroll sobre um fundo laranja e bege. Texto na arte: "PS5 CRUNCHYROLL".
+thumb.png: Logo da Crunchyroll sobre um fundo laranja e bege. Texto na arte: "PS5 CRUNCHYROLL".

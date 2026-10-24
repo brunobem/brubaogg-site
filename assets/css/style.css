@@ -194,6 +194,11 @@ input, button, select, textarea { font-family: inherit; }
   transform: translateY(-2px);
 }
 .social-bar .ico { width: 18px; height: 18px; }
+/* Alvo de toque de 44px (UX-08): o icone nao muda de tamanho; a area clicavel cresce por fora (::before) e o espaco entre os icones segue o tamanho do icone para as areas nao se sobreporem */
+@media (max-width: 480px), (pointer: coarse) {
+  .social-bar a { position: relative; }
+  .social-bar a::before { content: ""; position: absolute; inset: calc((44px - 100%) / -2); }
+}
 @media (max-width: 820px) {
   .topbar { flex-wrap: wrap; }
   .brand { order: 1; }
@@ -203,7 +208,7 @@ input, button, select, textarea { font-family: inherit; }
   .topbar { gap: var(--space-1); }
   .brand { font-size: 1.1rem; }
   .brand img { width: 38px; height: 38px; }
-  .social-bar { gap: 4px; }
+  .social-bar { gap: 12px; }
   .social-bar a { width: 32px; height: 32px; }
   .social-bar .ico { width: 15px; height: 15px; }
 }
@@ -211,10 +216,11 @@ input, button, select, textarea { font-family: inherit; }
   .topbar { gap: 8px; }
   .brand { font-size: 1rem; gap: 8px; }
   .brand img { width: 34px; height: 34px; }
-  .social-bar { gap: 4px; }
+  .social-bar { gap: 12px; }
   .social-bar a { width: 30px; height: 30px; border-width: 1.5px; }
   .social-bar .ico { width: 14px; height: 14px; }
 }
+@media (max-width: 380px) { .social-bar { gap: 8px; } } /* a 360 px, com 12px as redes caem para a 2a linha e o cabecalho cresce 37px; aqui as areas de toque de 44px se encostam (6px) */
 
 /* Faixa de secoes (todas as paginas), logo abaixo da marca, da busca e das redes: uma linha em cima (separa do topo) e outra embaixo, e a barra amarela sob o link
    quando o mouse passa ou quando e a secao da pagina (class "ativo"). A faixa rola para o lado quando as secoes nao cabem. O nav.js mede o conteudo: se nao cabem,
@@ -467,6 +473,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .feed-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); flex-wrap: wrap; }
 .feed-head .section-title { margin: var(--space-3) 0 var(--space-1); min-width: 0; }
 .feed-all { font-family: var(--font-display); font-size: .95rem; color: var(--accent); }
+@media (max-width: 700px), (pointer: coarse) { .feed-all { display: inline-flex; align-items: center; min-height: 44px; } } /* alvo de toque de 44px (UX-26) */
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes float { 50% { transform: translateY(-10px) rotate(-2deg); } }
 @keyframes tick { to { transform: translateX(-100%); } }
@@ -575,6 +582,8 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 }
 /* dentro de uma lista de cartoes (grade) ou da lista de playlists o espaco de ADS ocupa a linha inteira; quem separa e o gap da grade */
 .news-grid > .ads, .pls > .ads { grid-column: 1 / -1; margin: 0; }
+/* ADS escondido (ADS_ATIVOS = false em config.mjs): o atributo hidden precisa vencer o display: grid de .ads */
+.ads[hidden] { display: none; }
 
 /* Home: cobertura em andamento (titulo, uma linha de texto e o bloco de cartoes) */
 .cobertura { padding: 0; }
@@ -624,25 +633,6 @@ body:has(.menu-painel[open]) { overflow: hidden; }
   .bloco-invertido .news-card.grande { order: 0; }
   .bloco-lista .news-card { flex: none; }
 }
-
-/* Home: bloco da live (assets/js/live.js decide quando aparece) */
-.live { margin: 8px 0 32px; padding: var(--space-3); border-radius: var(--radius); border: 2px solid var(--accent-2); background: var(--surface); box-shadow: 6px 6px 0 var(--accent-2); }
-.live [hidden], .live[hidden] { display: none; }
-.live-kicker { display: flex; align-items: center; gap: var(--space-1); margin: 0; font-family: var(--font-display); letter-spacing: 4px; text-transform: uppercase; font-size: .85rem; color: var(--accent-soft); }
-.live-dot { width: 10px; height: 10px; border-radius: 50%; background: #ff4d4d; animation: pulso 1.6s ease-out infinite; }
-@keyframes pulso { 0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, .7); } 70%, 100% { box-shadow: 0 0 0 10px rgba(255, 77, 77, 0); } }
-.live .section-title { margin: var(--space-1) 0; }
-.live-texto { margin: 0 0 16px; color: var(--text-soft); }
-.live-palco { position: relative; max-width: 880px; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 14px; border: 2px solid var(--border); background: var(--bg); }
-.live-palco iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.live-play { position: absolute; inset: 0; width: 100%; display: grid; place-content: center; justify-items: center; gap: var(--space-2); padding: 0; border: 0; cursor: pointer; color: var(--text); font-family: var(--font-display); background: radial-gradient(circle at 50% 35%, rgba(var(--accent-2-rgb), .55), var(--bg) 72%); }
-.live-play img { width: 64px; height: 64px; border-radius: 50%; }
-.live-badge { position: absolute; top: 12px; left: 12px; padding: 4px 12px; border-radius: 999px; font-size: .8rem; letter-spacing: 2px; color: #fff; background: #d92b2b; }
-.live-botao { padding: 12px 24px; border-radius: 12px; font-size: 1.05rem; color: var(--on-accent); background: var(--accent); box-shadow: 4px 4px 0 var(--accent-2); }
-.live-play:hover .live-botao { box-shadow: 6px 6px 0 var(--accent-2); }
-.live-fora { margin: var(--space-2) 0 0; font-size: .9rem; }
-.live-proxima { margin: var(--space-1) 0 0; font-family: var(--font-display); font-size: 1.05rem; }
-.live-proxima b { font-weight: 400; color: var(--accent); }
 
 /* ===== 8. Contagem regressiva do GTA 6 ===== */
 .gta {
@@ -771,6 +761,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .wiki-jogo-nome { margin: 0 0 8px; font-size: 1.15rem; }
 .wiki-jogo-nome a { color: var(--text); }
 .wiki-jogo-nome a:hover { color: var(--accent); text-decoration: none; }
+@media (max-width: 700px), (pointer: coarse) { .wiki-jogo-nome a, .wiki-jogo-itens a { display: inline-flex; align-items: center; min-height: 44px; } } /* alvo de toque de 44px (UX-08): links da Wiki de cada jogo */
 .wiki-jogo-itens { display: grid; gap: var(--space-1); margin: 0; padding: 0; list-style: none; font-size: .95rem; line-height: 1.4; }
 .wiki-jogo-itens li { display: flex; gap: var(--space-1); }
 .wiki-rot { flex: none; width: 4.8rem; color: var(--accent); font-family: var(--font-display); font-size: .85rem; letter-spacing: .5px; text-transform: uppercase; }
@@ -845,10 +836,24 @@ body:has(.menu-painel[open]) { overflow: hidden; }
   .secao-rot { flex-basis: 100%; }
   .secao-sub:not([hidden]) { display: flex; flex-wrap: wrap; flex-basis: 100%; margin: 0; padding-left: 0; border-left: 0; }
 }
+/* O campo e o menu nascem hidden e o secao.js os mostra depois que a pagina ja foi pintada; sem reserva a Wiki pulava (CLS 0,108 a 390 px, UX-25). Com JavaScript ligado o lugar deles
+   fica reservado: `visibility: hidden` no lugar de `display: none` mantem o tamanho real dos dois, e o layout com menu ja nasce em grade. Sem JavaScript (scripting: none) continuam fora
+   da pagina. As declaracoes repetem as de .secao-layout.com-menu e .secao-menu acima. */
+@media (scripting: enabled) {
+  .secao-form[hidden] { display: block; visibility: hidden; }
+  .secao-menu[hidden] { display: grid; gap: 8px; align-content: start; visibility: hidden; }
+  .secao-layout:has(> .secao-menu[hidden]) { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: var(--space-4); align-items: start; margin-top: var(--space-3); }
+}
+@media (scripting: enabled) and (max-width: 700px) {
+  .secao-menu[hidden] { display: flex; flex-wrap: wrap; align-items: center; }
+  .secao-layout:has(> .secao-menu[hidden]) { grid-template-columns: minmax(0, 1fr); gap: var(--space-2); margin-top: var(--space-2); }
+}
 
 /* ===== 10. Pagina da materia: texto, player, Short ao lado do texto, assinatura ===== */
 .back { display: inline-block; margin: 8px 0 0; font-size: .95rem; color: var(--muted); }
-.article { max-width: 760px; margin: 0 auto; }
+@media (max-width: 700px), (pointer: coarse) { .back { display: inline-flex; align-items: center; min-height: 44px; margin-top: 0; } } /* alvo de toque de 44px (UX-26) */
+/* a pagina da materia tem a MESMA largura em toda materia (1000 px = 125 x 8): texto, video, imagens e fecho ocupam a largura toda e ficam alinhados; na noticia (Short) o texto divide a linha com o video vertical (.art-split) */
+.article { max-width: 1000px; margin: 0 auto; }
 .art-meta { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; margin: var(--space-2) 0 var(--space-1); color: var(--muted); font-size: .9rem; }
 .art-title { margin: 0 0 var(--space-2); font-size: clamp(1.8rem, 5.5vw, 2.8rem); line-height: 1.1; text-transform: none; }
 .art-lead { margin: 0 0 var(--space-3); font-size: 1.15rem; color: var(--muted); }
@@ -875,6 +880,10 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .fachada:hover .fachada-play { transform: scale(1.08); }
 .fachada-play .ico { width: 32px; height: 32px; margin-left: 4px; fill: currentColor; }
 .art-body p { margin: 0 0 var(--space-3); font-size: 1.05rem; line-height: 1.8; color: var(--text-soft-2); }
+/* imagem entre os paragrafos (img-N_<site da fonte>.jpg na pasta da materia), com a fonte na legenda */
+.art-foto { margin: 0 0 var(--space-3); }
+.art-foto img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 2px solid var(--border); }
+.art-foto figcaption { margin: var(--space-1) 0 0; font-size: .85rem; line-height: 1.5; color: var(--muted); }
 /* ficha de veredito da review (logo depois do resumo): a nota em destaque, a recomendacao e so os dados que o JSON traz */
 .veredito { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-1) var(--space-3); align-items: center; margin: var(--space-3) 0; padding: var(--space-3); border: 2px solid var(--accent); border-radius: var(--radius); background: var(--surface); box-shadow: 5px 5px 0 var(--accent-2); }
 .veredito-titulo { grid-column: 1 / -1; margin: 0; font-size: 1.15rem; letter-spacing: .5px; color: var(--muted); }
@@ -896,7 +905,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .fontes-titulo { margin: 0 0 var(--space-1); font-size: 1.15rem; letter-spacing: .5px; }
 .fontes-lista { display: grid; margin: 0; padding: 0; list-style: none; }
 .fontes-lista li + li { border-top: 1px solid var(--border); }
-.fontes-lista a { display: block; padding: 12px 0; overflow-wrap: anywhere; }
+.fontes-lista a { display: block; width: fit-content; max-width: 100%; padding: 12px 0; overflow-wrap: anywhere; } /* a area clicavel tem a largura do nome da fonte, nao da coluna */
 /* Shorts anexados à matéria ("Shorts desta review"): players verticais pequenos (fachada), vários por linha */
 .shorts { margin: var(--space-4) 0 0; }
 .shorts-titulo { margin: 0 0 var(--space-1); font-size: 1.15rem; letter-spacing: .5px; }
@@ -905,20 +914,6 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .short-item .fachada-play { width: 56px; height: 56px; }
 .short-item .fachada-play .ico { width: 24px; height: 24px; margin-left: 2px; }
 .short-legenda { margin: 0; font-size: .92rem; line-height: 1.35; overflow-wrap: anywhere; }
-/* Pagina de assunto (varios videos sobre o mesmo fato): a lista "Neste assunto" (ancoras) e um bloco por video, do mais novo para o mais velho */
-.assunto { margin: var(--space-3) 0 var(--space-4); }
-.assunto-titulo { margin: 0 0 var(--space-1); font-size: 1.15rem; letter-spacing: .5px; }
-.assunto-lista { display: grid; margin: 0; padding: 0; list-style: none; }
-.assunto-lista li + li { border-top: 1px solid var(--border); }
-.assunto-lista a { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px var(--space-2); padding: 12px 0; overflow-wrap: anywhere; }
-.assunto-lista a:hover { text-decoration: none; }
-.assunto-lista a:hover span { color: var(--accent); text-decoration: underline; }
-.assunto-lista time { flex: none; min-width: 112px; color: var(--muted); font-size: .85rem; }
-.assunto-lista span { flex: 1 1 220px; min-width: 0; line-height: 1.4; }
-.bloco { margin: var(--space-6) 0 0; padding-top: var(--space-4); border-top: 2px solid var(--border); scroll-margin-top: var(--space-2); }
-.bloco-data { margin: 0 0 var(--space-1); color: var(--muted); font-size: .9rem; }
-.bloco-titulo { margin: 0 0 var(--space-2); font-size: clamp(1.4rem, 4vw, 1.9rem); line-height: 1.2; text-transform: none; }
-.bloco .links { margin: var(--space-3) 0 0; }
 .related { margin-top: 40px; }
 .related .news-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 /* fim da materia: compartilhar (WhatsApp e Telegram sao links; "Copiar link" e "Mais opcoes" o compartilhar.js mostra) e o convite para o canal */
@@ -943,16 +938,17 @@ body:has(.menu-painel[open]) { overflow: hidden; }
   color: var(--on-accent);
   background: var(--accent);
   box-shadow: 0 0 0 2px var(--accent-2);
+  overflow: hidden;
 }
+.autoria .avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .autoria-ia { padding: 12px 0; font-size: .9rem; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
 .autoria-ia:hover { color: var(--accent); }
-/* fecho da materia: o veredito (review) ao lado das fontes; sozinho, qualquer um dos dois ocupa a largura toda */
+/* fecho da materia: o veredito (review) ao lado das fontes (fontes numa coluna estreita de 176 px, o veredito leva o resto); sozinho, qualquer um dos dois ocupa a largura toda */
 .materia-fim { display: grid; gap: var(--space-4); margin: var(--space-4) 0 0; }
 .materia-fim > * { margin: 0; min-width: 0; }
 @media (min-width: 761px) {
-  .materia-fim.com-dois { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  .materia-fim.com-dois { grid-template-columns: minmax(0, 1fr) 176px; align-items: start; } /* as fontes ficam estreitas (22 x 8 px) e o veredito leva o resto da linha */
 }
-.article.has-split { max-width: 1000px; }
 .art-split { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; align-items: start; margin-bottom: var(--space-3); }
 .art-split .art-text { min-width: 0; }
 .art-split .art-lead { margin-top: 0; }
@@ -1052,7 +1048,8 @@ body:has(.menu-painel[open]) { overflow: hidden; }
   margin-left: auto;
   margin-right: auto;
 }
-.doc h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); margin: 0 0 var(--space-1); letter-spacing: -.5px; }
+/* o titulo da versao em ingles e um h2 (cada pagina tem um so h1) com a mesma aparencia do h1 */
+.doc h1, .doc h2.doc-titulo { font-size: clamp(1.8rem, 5vw, 2.4rem); margin: 0 0 var(--space-1); line-height: 1.05; letter-spacing: -.5px; text-transform: uppercase; color: inherit; }
 .doc .updated { color: var(--muted); font-size: .9rem; margin: 0 0 8px; }
 .doc h2 { margin: var(--space-4) 0 var(--space-1); font-size: 1.1rem; color: var(--text); }
 .doc p { margin: 0 0 8px; color: var(--text-soft); }
@@ -1078,6 +1075,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .tag-list a:hover { text-decoration: none; color: var(--accent); border-color: var(--accent); }
 .tag-list .ico { width: .95em; height: .95em; color: var(--accent); }
 .tag-count { margin: var(--space-1) 0 0; color: var(--muted); font-size: .9rem; }
+@media (max-width: 700px), (pointer: coarse) { .tag-count a { display: inline-flex; align-items: center; min-height: 44px; } } /* alvo de toque de 44px (UX-08): a linha do link passa de 17px para 44px */
 .tag-cloud { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-1); padding: 0; margin: var(--space-3) 0 var(--space-5); }
 .tag-cloud a {
   display: inline-flex;
@@ -1094,7 +1092,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .tag-cloud a:hover { text-decoration: none; border-color: var(--accent); }
 .tag-cloud span { padding: 0 8px; border-radius: 999px; font-size: .8rem; color: var(--on-accent); background: var(--accent); }
 @media (max-width: 820px) {
-  .tag-list a { padding: 8px 16px; }
+  .tag-list a { padding: 8px 16px; min-height: 44px; } /* alvo de toque de 44px (UX-08) */
 }
 
 /* ===== 15. Rodape: cena e palmeiras ===== */
@@ -1112,7 +1110,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 }
 .footer-brand p { margin: var(--space-1) 0 var(--space-2); max-width: 280px; }
 .footer-brand .social-bar { margin-left: 0; }
-nav.footer-col a { display: block; padding: 4px 0; color: var(--muted); }
+nav.footer-col a { display: block; width: fit-content; padding: 4px 0; color: var(--muted); } /* uma linha por link, mas a area clicavel tem a largura do texto (nao da coluna) */
 nav.footer-col a:hover { color: var(--text); }
 .footer-links { columns: 2; column-gap: var(--space-3); } /* a lista de Navegar e longa: corre em duas colunas */
 .footer-links a { break-inside: avoid; }
@@ -1138,6 +1136,7 @@ nav.footer-col a:hover { color: var(--text); }
 
 /* ===== 16. Acessibilidade: foco do teclado, movimento reduzido e texto so para leitor de tela ===== */
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+main:focus-visible { outline: none; }
 .search-results a:focus-visible { outline-offset: -3px; }
 .search-results a.sr-all:focus-visible { outline-color: var(--on-accent); }
 .sr-only {

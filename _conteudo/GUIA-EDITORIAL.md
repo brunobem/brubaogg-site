@@ -9,13 +9,13 @@ O método editorial completo (fluxo de pesquisa, regras de fonte, tamanhos por t
 Este arquivo guarda só o que o site e as ferramentas precisam, e que pode ser público.
 
 ## Escopo (o que pode e o que não pode)
-- **Pode:** criar e editar arquivos em `_conteudo/materias/<ID_DO_VIDEO>.json`.
+- **Pode:** criar e editar arquivos em `_conteudo/materias/<tipo>/<ID_DO_VIDEO>/<ID_DO_VIDEO>.json`. Cada matéria tem a **própria pasta** (com o nome do ID) dentro da pasta do **tipo**: `noticias` (inclui as de GTA 6), `reviews`, `lancamentos` ou `wiki`. O `npm run nova` já cria no lugar certo e o `gerar` avisa se um arquivo estiver fora do lugar ou numa pasta de tipo que não combina com a categoria. As imagens da matéria (miniatura, fotos do texto) vão na mesma pasta, ao lado do JSON.
 - **Não pode:** mexer em código, HTML, CSS, `assets/` ou `_ferramentas/`; rodar `npm run gerar`; fazer commit ou push.
 - **Sempre** `"status": "rascunho"`. Quem revisa e aprova é o Bruno (`npm run aprovar -- ID`). Rascunho nunca vai ao ar.
 - Os endereços `index.html` e `gta6.html` são protegidos (ver README).
 
 ## Conteúdo da Wiki (pasta separada, não é matéria)
-História, personagem, guia e curiosidade de um jogo **não** são matérias: moram em `_conteudo/wiki/<nome>.json`, podem ser **só texto (sem vídeo)** e têm campos próprios (`jogo`, `tipo`, `publicado`, `video` opcional). As mesmas regras valem: sempre `"status": "rascunho"` e quem aprova é o Bruno (na Wiki, aprovar é apagar a linha `status`). Crie com `npm run wiki -- <nome> --jogo <slug do jogo>` e siga o [`_conteudo/wiki/LEIA-ME.md`](wiki/LEIA-ME.md). **Review não é Wiki:** continua em `_conteudo/materias`.
+História, personagem, guia e curiosidade de um jogo **não** são matérias: moram em `_conteudo/materias/wiki/<nome>/<nome>.json`, podem ser **só texto (sem vídeo)** e têm campos próprios (`jogo`, `tipo`, `publicado`, `video` opcional). As mesmas regras valem: sempre `"status": "rascunho"` e quem aprova é o Bruno (na Wiki, aprovar é apagar a linha `status`). Crie com `npm run wiki -- <nome> --jogo <slug do jogo>` e siga o [`_conteudo/materias/wiki/LEIA-ME.md`](wiki/LEIA-ME.md). **Review não é Wiki:** continua em `_conteudo/materias`.
 
 ## Comandos úteis
 - `npm run pendentes`: lista os rascunhos (inclusive de vídeos antigos) com tamanho e pendências, e os vídeos recentes sem texto. `npm run pendentes -- --rascunhos`: só a lista de rascunhos.
@@ -42,8 +42,10 @@ História, personagem, guia e curiosidade de um jogo **não** são matérias: mo
 
 ## Regras que valem sempre
 - Não inventar fatos, datas, preços ou nomes; dúvida não resolvida: omitir ou marcar `[CONFERIR: ...]`.
-- Opinião do Brubão é atribuída a ele, nunca apresentada como fato.
-- A assinatura que aparece na página é **"Por Bruno Bem"**, no fim, perto das fontes, com a data e o aviso "Texto com apoio de IA" (link para a página Sobre); no alto fica só a categoria e o **tempo de leitura** (palavras do resumo e do texto ÷ 200 por minuto, arredondado para cima, mínimo 1 minuto), que o site calcula sozinho. A opinião continua atribuída ao Brubão no texto (terceira pessoa), nunca como fato.
+- **Texto sempre em primeira pessoa** ("eu", "para mim", "na minha opinião", "dei nota 7", "nós"), como se fosse o próprio Bruno falando. **Nunca** em terceira pessoa sobre ele: nada de "o Brubão acha", "segundo o Brubão", "para o Brubão", "a nota do Brubão", "ele gostou", "o autor". Vale para título, resumo, corpo e campos do veredito (ex.: `preco`: "preço que paguei"). Opinião é sempre apresentada como opinião ("para mim", "acho que"), nunca como fato. Fatos de terceiros (a Sony anunciou, o diretor disse) seguem normais.
+- **Marca:** a marca/site é **BRUBAOGG**, sempre sem acento (nunca "Brubão GG" nem "BRUBÃOGG"). "Brubão" com til é só o apelido e, em primeira pessoa, quase nunca aparece.
+- Sem pergunta nem convite ao público no fim do texto, e sem referência à estrutura do vídeo ("neste vídeo", "comentário fixado").
+- A assinatura que aparece na página é **"Por Bruno Bem"**, no fim, perto das fontes, com a data e o aviso "Texto com apoio de IA" (link para a página Sobre); no alto fica só a categoria e o **tempo de leitura** (palavras do resumo e do texto ÷ 200 por minuto, arredondado para cima, mínimo 1 minuto), que o site calcula sozinho. O texto continua em primeira pessoa, e a opinião nunca aparece como fato.
 
 ## Tags (como escolher)
 - Use o **nome oficial do jogo**, sempre com a **mesma grafia** em todas as matérias (ex.: `God of War Laufey`, não `GoW Laufey`).
@@ -85,6 +87,44 @@ Dois campos que o site já sabe mostrar. Ficam no mesmo arquivo da matéria; se 
 - Nota com valor fora de 0 a 10 ou de 0,5 em 0,5, recomendação que não existe e `url` sem `https://` são **recusados** pelo gerador, com a mensagem dizendo qual campo está errado.
 - Todo vídeo ganha o botão **"Comentar no vídeo"**, que abre os comentários dele no YouTube; não precisa de campo.
 
+## Imagens da matéria (opcionais: se o arquivo existe, aparece; se não existe, não aparece)
+Cada matéria tem a **própria pasta** (`_conteudo/materias/<tipo>/<ID>/`, ao lado do `<ID>.json`). As imagens vão **nessa pasta**, com nome padronizado:
+
+| Arquivo | O que faz |
+|---|---|
+| `thumb.jpg` (ou `.png`, `.webp`) | **Capa do player**: entra no lugar da miniatura do YouTube (que é de qualidade menor). Num Short, é a imagem **vertical (9:16)**. Só uma por pasta. |
+| `card.jpg` (ou `.png`, `.webp`) | **Imagem horizontal (16:9, a mesma arte)** dos **cartões das listas, do carrossel da home, dos blocos da home e da prévia de compartilhamento** (WhatsApp, Google). Sem `card`: matéria horizontal (review, lançamento) usa a `thumb`; **Short sem `card` continua com a miniatura do YouTube** (a `thumb` vertical seria cortada no cartão). Só um por pasta. |
+| `img-1_arkade.com.br.jpg` | Imagem do texto. **Onde ela aparece depende do tipo da matéria** (tabela abaixo). Numere de 1 a 20. |
+
+**Onde cada imagem aparece (pelo tipo, que é a pasta em `_conteudo/materias/`):**
+
+| Tipo | Regra | `img-1` | `img-2` | `img-3` |
+|---|---|---|---|---|
+| **Notícia** (`noticias`, inclui GTA 6) | uma imagem por parágrafo | depois do 1º parágrafo | depois do 2º | depois do 3º |
+| **Review** (`reviews`) | **uma imagem a cada dois parágrafos** | depois do 2º parágrafo | depois do 4º | depois do 6º |
+| **Lançamento** (`lancamentos`) | uma imagem por parágrafo (cada parágrafo é um jogo) | depois do 1º jogo | depois do 2º | depois do 3º |
+
+- A imagem que cairia **depois do último parágrafo** (número alto demais para o texto) aparece depois do último. Não precisa preencher todas as posições: a que não existe como arquivo simplesmente não aparece.
+- **Exemplos de nome:** review: `img-1_ign.com.br.jpg`, `img-2_techtudo.com.br.jpg`; lançamento: `img-1_arkade.com.br.jpg` (o jogo do 1º parágrafo), `img-2_savestate.com.br.jpg` (o do 2º). Notícia: `img-1_arkade.com.br.jpg`, `img-2_techtudo.com.br.jpg`.
+- A regra mora em `PARAGRAFOS_POR_IMAGEM` (`_ferramentas/gerador/imagens.mjs`); tipo que não está lá usa 1.
+
+- O nome é **`img-<posição>_<site da fonte>.<jpg, png ou webp>`**. O site da fonte é o domínio (`arkade.com.br`, `techtudo.globo.com`), em qualquer caixa: o site lê tudo em minúsculas.
+- **A fonte sai do nome do arquivo.** Embaixo da imagem aparece "Imagem: arkade.com.br". Se esse site for o de uma das `fontes` da matéria, a legenda vira link para o texto dela; se não for, aparece só o nome.
+- **Toda imagem precisa de fonte.** `img-1.jpg` (sem o site), `foto.jpg` ou qualquer nome fora do padrão **faz o `npm run gerar` parar** e dizer qual arquivo renomear. Arquivo que não é imagem (`.txt`, `.docx`) é ignorado.
+- O tamanho do original **não importa**: o gerador publica versões menores em `assets/img/m/<id em minúsculas>/` (WebP em qualidade 92, em larguras 480/800/1000/1200 para as imagens do texto, 480/640/960/1280 para a thumb e 480/640/800/1200 para o card, **nunca maiores que o original**) e o navegador escolhe a que cabe na tela. Tirou o arquivo da pasta? As versões publicadas somem no próximo `npm run gerar`.
+- Precisa de **Python 3 com Pillow** (`python -m pip install pillow`). Um cache em `_conteudo/imagens.json` (pelo conteúdo do arquivo) evita refazer o que não mudou. Os arquivos gerados em `assets/img/m/` **são publicados**: entram no commit junto com o resto.
+- **Texto alternativo (obrigatório para toda imagem da pasta):** cada pasta com imagem tem um arquivo **`texto-alternativo.txt`**, ao lado do JSON, com **uma linha por imagem**: `nome-do-arquivo: descrição`. Linhas que começam com `#` são comentário. Exemplo:
+
+  ```
+  Card.png: Link, de Zelda: Link's Awakening, numa floresta com uma fada ao lado. Texto na arte: "PORT PC".
+  Thumb.png: Mesma arte, na versão vertical. Texto na arte: "PORT PC".
+  img-1_arkade.com.br.webp: Arte do jogo 171 com um homem armado ao lado de um carro amarelo.
+  ```
+
+  - **Como escrever:** em português, uma ou duas frases, dizendo o que se vê e **o texto que está escrito na imagem** (entre aspas). Não comece com "imagem de" nem "foto de". Se a `thumb` e o `card` têm textos diferentes, cada linha traz o texto da sua imagem.
+  - **Quando criar:** junto com a imagem. Imagem nova na pasta = linha nova no `texto-alternativo.txt`; trocou a arte = confira a descrição.
+  - O gerador lê esse arquivo e põe a descrição no **`alt`** da imagem em todo lugar onde ela aparece: capa do player (`thumb`), cartões, carrossel e prévias (`card`) e imagens do texto. Imagem **sem linha** no arquivo sai com `alt` vazio e o `npm run gerar` **avisa** qual falta (não para). Linha de um arquivo que não existe na pasta também gera aviso.
+
 ## Shorts anexados e assunto (opcionais)
 ```json
 "shorts": [
@@ -93,9 +133,9 @@ Dois campos que o site já sabe mostrar. Ficam no mesmo arquivo da matéria; se 
 "assunto": "god-of-war-laufey"
 ```
 - **`shorts`** (só em review): Shorts que acompanham o vídeo principal, **sem matéria própria**. A página mostra "Shorts desta review" com um player vertical pequeno por Short (a miniatura com play; o vídeo só carrega no clique) e a legenda. `id` é o **ID do Short** (os 11 caracteres do endereço, não o link inteiro); `titulo` é a legenda. Até 4 (mais que isso só gera aviso); sem repetir e sem ser o próprio vídeo da matéria. Se o Short já é uma notícia publicada, para transformá-lo em anexo: ponha o Short em `shorts` da review e **retire** a notícia apontando para a review, `npm run retirar -- ID_DA_NOTICIA --para ID_DA_REVIEW`. O endereço antigo da notícia passa a levar para a review (não dá 404) e o texto da notícia fica guardado em `_conteudo/retiradas/` (não é apagado). Foi o que se fez com INSIDE e Storebound.
-- **`assunto`**: o **mesmo texto** (minúsculas, sem acento, com hífens: `gta6-preco-e-pre-venda`) nas matérias de **vídeos diferentes sobre o mesmo fato**. Espaço, maiúscula, acento, sublinhado ou hífen no fim são recusados. Com **2 ou mais** matérias no mesmo assunto, o site junta tudo numa **página só**, com **um bloco por vídeo** (data, título, player, texto e fontes de cada um), do mais novo para o mais velho, mais uma lista "Neste assunto" no alto e "Atualizado em" com a data do vídeo mais novo. Cada vídeo **continua com o próprio arquivo** (o texto de cada matéria é escrito normalmente, como ângulo do vídeo) e o endereço antigo de cada um leva para o bloco dele. Uma matéria **sozinha** no assunto continua uma página normal; se isso for erro de digitação, o `npm run testar` avisa ("o assunto ... só tem 1 matéria"). Escreva o assunto **igual** em todas.
-- **`_conteudo/assuntos.json`**: o título e o resumo da página de cada assunto (a página não tem texto próprio de nenhum vídeo no alto). Exemplo: `{ "god-of-war-laufey": { "titulo": "God of War Laufey: revelação, pré-venda e Faye", "resumo": "Do State of Play de 2 de junho à pré-venda no Brasil..." } }`. Título até 60 caracteres (o jogo no começo) e resumo até 160. **Todo assunto com 2 ou mais matérias precisa de uma entrada**: sem ela o `gerar` para e diz qual falta. O campo `categoria` é opcional (sem ele vale a pasta da matéria mais antiga do assunto). O endereço da página é `<pasta>/<chave>.html`: **não renomeie a chave depois de publicada**. Os 17 títulos e resumos que existem hoje são uma **proposta** feita só com fatos que já estão nas matérias: o Bruno revisa.
-- Matéria que faz parte de um assunto **não pode ter `veredito` nem `shorts`** (a página do assunto mostra só texto, player e fontes de cada vídeo).
+- **`assunto`**: o **mesmo texto** (minúsculas, sem acento, com hífens: `gta6-preco-e-pre-venda`) nas matérias de **vídeos diferentes sobre o mesmo fato**. Espaço, maiúscula, acento, sublinhado ou hífen no fim são recusados. **Cada matéria continua com a própria página e o próprio endereço**, escrita normalmente como o ângulo do vídeo dela. Com **2 ou mais** matérias no mesmo assunto, o fim de cada uma ganha o bloco **"Mais sobre este assunto"**, que leva às outras (miniatura, título, data e resumo), da mais nova para a mais velha. O endereço do próprio assunto (`<pasta>/<chave>.html`) redireciona para a matéria mais nova. Uma matéria **sozinha** no assunto não tem o bloco; se isso for erro de digitação, o `npm run testar` avisa ("o assunto ... só tem 1 matéria"). Escreva o assunto **igual** em todas.
+- **`_conteudo/assuntos.json`** (**opcional**): só serve para o redirecionamento do endereço do assunto: o `titulo` e o `resumo` da prévia de compartilhamento dele e a `categoria` (pasta do endereço; sem ela vale a da matéria mais antiga). Exemplo: `{ "god-of-war-laufey": { "titulo": "God of War Laufey: revelação, pré-venda e Faye", "resumo": "Do State of Play de 2 de junho à pré-venda no Brasil..." } }`. Se a entrada existir, precisa de `titulo` (até 60 caracteres) e `resumo` (até 160). Assunto novo **não precisa** de entrada. O endereço é `<pasta>/<chave>.html`: **não renomeie a chave depois de publicada**.
+- Matéria de assunto **pode** ter `veredito` e `shorts`: cada uma tem página própria.
 
 ## Vídeos antigos (legado)
 O feed do YouTube só traz os **15 vídeos mais recentes** de cada playlist. Para uma matéria de um vídeo **mais antigo**, o próprio arquivo precisa dizer onde ela entra (depois de aprovada, o site guarda isso no registro de endereços e a matéria não depende mais do feed):

@@ -23,9 +23,30 @@
     return nav.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
   }
   function centralizar() {
+    lista.style.paddingRight = ''; // desfaz o espaco extra de alinharBorda (a faixa pode ter mudado de largura)
     if (!atual || lista.scrollWidth <= lista.clientWidth) return;
     var dentro = atual.getBoundingClientRect().left - lista.getBoundingClientRect().left + lista.scrollLeft; // posicao do link dentro da faixa, rolada ou nao
     lista.scrollLeft = dentro - (lista.clientWidth - atual.offsetWidth) / 2;
+    alinharBorda();
+  }
+  // Nenhum item pela metade na borda esquerda da faixa, ao lado do botao "Menu" (um item cortado parece coberto pelo botao: "REVIEWS" aparecia como "EWS"). O item que ficou
+  // cortado vem inteiro; se isso empurrar a secao atual para o degrade da direita, o item cortado sai de vez. Na borda direita o corte continua (o degrade avisa que ha mais).
+  function alinharBorda() {
+    var borda = lista.getBoundingClientRect().left, itens = lista.children;
+    for (var i = 0; i < itens.length; i++) {
+      var r = itens[i].getBoundingClientRect();
+      if (r.left >= borda - 1 || r.right <= borda + 1) continue; // inteiro na faixa, ou ja fora dela
+      var antes = lista.scrollLeft, caixa = lista.getBoundingClientRect();
+      lista.scrollLeft = antes - (borda - r.left); // mostra o item inteiro
+      var a = atual.getBoundingClientRect();
+      if (a.right > caixa.right - 34) { // a secao atual nao cabe mais: esconde o item cortado em vez de mostra-lo
+        var passo = r.right - borda;
+        lista.scrollLeft = antes + passo;
+        var faltou = antes + passo - lista.scrollLeft; // a faixa ja estava no fim e nao rolou o bastante: acrescenta o espaco que falta depois do ultimo item
+        if (faltou > 1) { lista.style.paddingRight = ((parseFloat(window.getComputedStyle(lista).paddingRight) || 0) + faltou) + 'px'; lista.scrollLeft = antes + passo; }
+      }
+      return;
+    }
   }
   function medir() {
     var rola = larguraDasSecoes() > larguraDisponivel() + 1;

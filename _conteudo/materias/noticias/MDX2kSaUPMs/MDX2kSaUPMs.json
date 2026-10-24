@@ -1,0 +1,32 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-23",
+  "titulo": "Xbox pergunta se Fallout e Minecraft devem ser exclusivos",
+  "resumo": "Uma enquete do Xbox Insider imagina Fallout, Minecraft e outras franquias como exclusivas de Xbox e PC. É só pesquisa, sem decisão. Estou dividido.",
+  "tags": [
+    "Xbox",
+    "Minecraft"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/xbox-enquete-fallout-minecraft-mais-ser-exclusivos/"
+    },
+    {
+      "nome": "GamesRadar",
+      "url": "https://www.gamesradar.com/games/minecraft/minecraft-updates-on-playstation-and-nintendo-would-end-but-xbox-is-reportedly-asking-fans-how-they-feel-about-greater-console-exclusivity-for-current-and-upcoming-games-like-fallout-5/"
+    },
+    {
+      "nome": "Pure Xbox",
+      "url": "https://www.purexbox.com/news/2026/10/xbox-asks-fans-how-theyd-feel-about-a-really-bold-approach-to-exclusive-games"
+    }
+  ],
+  "corpo": [
+    "O Xbox enviou uma enquete a membros selecionados do programa Xbox Insider com cenários hipotéticos sobre exclusividade, segundo o Windows Central, e o jornalista Jez Corden confirmou que ela é real. As perguntas começam com imagine um cenário. Num deles, toda a franquia Fallout ficaria exclusiva de Xbox e PC dali em diante, com os jogos antigos continuando onde estão. No mais amplo, todos os jogos de franquias do Xbox seriam exclusivos, menos Call of Duty.",
+    "As franquias citadas incluem Fallout, The Elder Scrolls, Doom, Diablo, Physint, o jogo de Hideo Kojima que o Xbox passou a publicar, e Minecraft. No cenário do Minecraft, o jogo deixaria de ser vendido no PlayStation e no Switch, e quem já o tem nessas plataformas deixaria de receber atualizações, sem mudança no PC. Call of Duty fica de fora por causa de acordos da compra da Activision. A Microsoft não comentou, e a enquete não indica decisão.",
+    "Para mim, é pesquisa de mercado clássica: a empresa joga um cenário extremo para ver até onde o público aceita. Ela se encaixa na estratégia de Asha Sharma, que assumiu o Xbox em 2026 e voltou a falar em exclusivos, com Gears of War: E-Day só em Xbox e PC. E mexer no Minecraft, que passa de 425 milhões de cópias vendidas, é mexer em vespeiro.",
+    "Exclusivo é uma prática antiga: Sony, Xbox e Nintendo sempre tiveram, e a gente escolhia o console também pelos jogos. Para o consumidor é ruim, porque o ideal é poder jogar tudo. Mas o Xbox já tentou abrir tudo e começou a virar só uma publisher. Como jogador, não quero isso; olhando a marca, faz sentido."
+  ]
+}

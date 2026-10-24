@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Vitrola da Sony sobre um fundo azul-escuro, com um disco marcado por um grande X vermelho. Texto na arte: "NO CD".
+Thumb.png: Vitrola da Sony sobre um fundo azul-escuro, com um disco marcado por um grande X vermelho. Texto na arte: "NO CD".

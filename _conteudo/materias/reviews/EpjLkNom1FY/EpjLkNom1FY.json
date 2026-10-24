@@ -1,0 +1,51 @@
+{
+  "formato": "horizontal",
+  "categoria": "reviews",
+  "publicado": "2026-10-01",
+  "titulo": "INSIDE vale a pena? Minha nota é 8",
+  "resumo": "Joguei INSIDE do início ao fim e dou nota 8: indie premiado, sem diálogo nem texto, curto e com um final que não consegui explicar.",
+  "tags": [
+    "INSIDE"
+  ],
+  "veredito": {
+    "nota": 8,
+    "recomendacao": "espere-promocao",
+    "preco": "Cerca de R$ 7 em promoção na Steam (paguei); no celular passa de R$ 40; está no Game Pass",
+    "horas": "3 a 4",
+    "plataforma": "PC (também em consoles e celular)",
+    "paraQuem": "Quem curte puzzle-plataforma atmosférico e jogo curto e esquisito, sem diálogo."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/inside-review/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/best-shortform-game-2016-inside/"
+    },
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/veja-10-jogos-curtos-para-zerar-durante-as-ferias/"
+    }
+  ],
+  "shorts": [
+    {
+      "id": "CT68uW4KT9I",
+      "titulo": "INSIDE: jogo curto, final impactante e arte premiada"
+    }
+  ],
+  "corpo": [
+    "Dou nota 8 em 10 a INSIDE, que joguei do início ao fim, e não consigo explicar o final: vi os créditos subindo e não entendi nada. Um inscrito indicou o jogo, e joguei sem expectativa, no computador. É um indie extremamente premiado, bem fora da casinha, e eu o indico.",
+    "É um puzzle-plataforma de terror atmosférico em 2.5D, da Playdead, estúdio dinamarquês que também fez Limbo. O jogador anda de lado, empurra caixas, foge de perseguidores e usa objetos. O que o separa de jogos parecidos é que não há uma linha de diálogo, texto nem HUD na tela: tudo se entende olhando o que acontece.",
+    "O visual é monocromático e sombrio, com cor só em pontos específicos; o personagem usa uma blusa vermelha discreta, praticamente a única coisa colorida. O jogo começa em uma floresta fria, passa por uma fazenda, o único momento claro e aberto, e segue por uma cidade decadente, minas escuras, áreas alagadas e um laboratório. Cada área muda de paleta junto com a história, o que acho muito bem calculado.",
+    "Por trás disso, a Playdead trocou de engine no meio do desenvolvimento e criou uma técnica própria de antialiasing, que liberou depois de graça para outros estúdios. Pelo que sei, o jogo levou prêmios de direção de arte e de áudio em vários eventos do fim daquele ano.",
+    "O jogador controla um garoto sem nome que foge de guardas com lanternas e cães de ataque na floresta. Na fazenda, ganha um capacete que permite controlar corpos zumbificados, como um controle remoto de gente, usado em portões e placas de pressão e, na cidade, para se infiltrar em uma multidão sincronizando passos e escapar de um drone. Mais à frente há áreas submersas, em que usa um submarino e faz alguns dashes.",
+    "Ninguém diz quem é o garoto nem por que ele faz aquilo, e é a falta de respostas que segura a tensão. No meio do jogo, percebi que o garoto já sabe para onde está indo, o que muda como se lê o resto. Perto do fim, há uma instalação de pesquisa com cientistas e algo bizarro. Há também um final secreto, então vale explorar todo o ambiente.",
+    "A jogabilidade se resume a pular, empurrar coisas, escalar e controlar zumbis com o capacete. Para mim, a experiência é uma obra de arte: conta uma história sem diálogo e faz o jogador refletir.",
+    "O preço decide se vale a pena. O jogo dura de três a quatro horas e varia muito de preço entre plataformas: no celular, passa de R$ 40, o que acho caro; está no Game Pass, e vale para quem assina; entra em promoção na Steam e, às vezes, na PlayStation Plus. Paguei cerca de R$ 7 em uma promoção na Steam.",
+    "INSIDE foi lançado em 2016 para Xbox One e PC pela Playdead, a mesma de Limbo, e hoje está em praticamente todas as plataformas. O PC Gamer o elegeu o melhor jogo curto de 2016.",
+    "No fim das contas, recomendo INSIDE como um jogo curtinho e marcante, e dou nota 8."
+  ]
+}

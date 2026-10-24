@@ -1,0 +1,45 @@
+{
+  "formato": "horizontal",
+  "categoria": "reviews",
+  "publicado": "2026-10-08",
+  "titulo": "Garten of Banban: minha nota é 2",
+  "resumo": "Joguei os capítulos 0 a 3 de Garten of Banban e dou nota 2: gráficos fracos, jogabilidade ruim e dublagem amadora. Para mim, o pior jogo que já joguei.",
+  "tags": [
+    "Garten of Banban"
+  ],
+  "veredito": {
+    "plataforma": "PC",
+    "nota": 2,
+    "recomendacao": "pule",
+    "preco": "Os primeiros capítulos são gratuitos; os seguintes ficam mais caros",
+    "paraQuem": "Só para quem quer testar de graça os primeiros capítulos ou é fã de terror de mascote."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Giant Bomb",
+      "url": "https://giantbomb.com/wiki/Games/Garten_of_Banban_II"
+    },
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/os-lancamentos-de-jogos-desta-semana-25-a-31-08/"
+    },
+    {
+      "nome": "Wasdland",
+      "url": "https://www.wasdland.com/game/garten-of-banban-0-3300410/"
+    }
+  ],
+  "corpo": [
+    "Dou nota 2 em 10 a Garten of Banban, cujos capítulos zero, um, dois e três joguei, e o chamo de o pior jogo que já joguei. Não entendo como o jogo tem 70% de aprovação na Steam. Dei tempo à série, sabendo que pequenos estúdios lançam episódios para se pagar e evoluem, mas todos continuaram ruins.",
+    "É uma série de terror de mascote, da mesma categoria de Poppy Playtime, e foi a comparação que me levou a jogar, por indicação de inscritos. O jogador entra em uma creche abandonada atrás do filho e descobre que os bonecos fofinhos são experimentos de laboratório fugindo do controle.",
+    "A primeira coisa ruim é o visual. O capítulo 1 roda na Unreal Engine 4, em um mapa pequeno e cru, com texturas que parecem de um jogo mal feito de Roblox. O capítulo 2 troca para a Unreal Engine 5, mas ainda é corredor estreito e salas vazias, em cores sólidas, mais parecido com prédio abandonado genérico do que com uma creche. O capítulo 3 varia mais, com um sonho de praia, mas a consistência entre as salas é fraca.",
+    "Em jogos indie, espero uma direção criativa, mesmo que com cores sólidas e cenário vazio. Aqui sinto que cada área foi feita isolada, sem uma visão do conjunto nem a ideia de começo, meio e fim, como se fossem tocando e vendo o que acontecia no caminho.",
+    "A história tinha material. Nos fundos da creche há um laboratório, e os mascotes são criaturas feitas com material fictício, parte delas com o DNA de gente que morreu no processo; por isso falam, têm memórias e, às vezes, nome humano. O jogo não entrega isso direto: as pontas ficam espalhadas, e o jogador só junta se procurar fora do jogo.",
+    "O capítulo zero tem a reviravolta mais bem pensada da franquia, uma ideia de terror psicológico genuinamente boa, mas, para mim, ela é a exceção, não a regra. Em história, jogabilidade, gráfico e level design, acho Poppy Playtime muito melhor.",
+    "A jogabilidade é o maior problema. Os controles são ruins do primeiro ao último capítulo que joguei: mirar com o drone, virar a câmera e correr de perseguidor nunca melhoram, só mudam de roupa. No capítulo um, quase tudo passa pelo drone, que só aperta botões à distância; no dois, o drone é customizável, mas o jogador continua apontando, apertando botão e fugindo do bicho grande.",
+    "No capítulo três, o jogador troca de personagem em sequências de sonho, a mecânica mais interessante dos quatro, reconheço. O capítulo zero, o mais recente e feito no motor mais novo, não tem nem drone: é uma rodada de esconde-esconde e uma fuga final, sem refinamento.",
+    "A dublagem é amadora e inconsistente: um personagem soa de um jeito numa cena e de outro em outra, com berros do nada, e o jogo não é regionalizado para o Brasil. O ponto positivo é que os primeiros capítulos são de graça, na Steam, no Xbox e no PlayStation, e os seguintes ficam mais caros. Quem quiser conferir se é tão ruim pode testar sem gastar.",
+    "A série da Euphoric Brothers começou com um jogo gratuito na Steam no começo de 2023 e segue em capítulos numerados: o segundo saiu em março de 2023 e o terceiro em maio de 2023. O capítulo zero, um prequel gratuito, saiu em 21 de fevereiro de 2025. As avaliações na Steam ficam entre 67% e 73% positivas nesses capítulos.",
+    "No fim das contas, dei nota 2, que considero bondosa, e não pretendo voltar ao jogo, a não ser que a galera peça muito."
+  ]
+}

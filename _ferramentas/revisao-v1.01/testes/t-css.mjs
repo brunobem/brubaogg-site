@@ -79,7 +79,7 @@ function tipografia(css) {
 // MICRO lista esses controles; fora dela, valor que nao e multiplo de 8 vira aviso. Ajuste otico de pixel (.sr-only, seta do carrossel) fica de fora.
 const PROPS_DE_ESPACO = /^(margin|padding)(-(top|right|bottom|left|inline|block)(-(start|end))?)?$|^(gap|row-gap|column-gap)$/;
 const MICRO = new Set(['.btn', '.tag', '.tag-list a', '.brand', '.social-bar', '.nav-site-links a', '.nav-menu', '.menu-lista a', '.search input', '.search-results', '.search-results a', '.search-results a.sr-all', '.sr-txt',
-  '.busca-chip', '.busca-atalho', '.ticker', '.discord p', '.car-cta', '.cobertura-title', '.live-badge', '.live-botao', '.gta-title', '.gta-faixa .gta-title', '.gta-faixa .unit', '.news-excerpt mark', '.arquivo-lista', '.arquivo-nav', '.arquivo-nav a',
+  '.busca-chip', '.busca-atalho', '.ticker', '.discord p', '.car-cta', '.cobertura-title', '.gta-title', '.gta-faixa .gta-title', '.gta-faixa .unit', '.news-excerpt mark', '.arquivo-lista', '.arquivo-nav', '.arquivo-nav a',
   '.secao-campo input', '.secao-ordem select', '.secao-rot', '.secao-item, .secao-subitem', '.secao-subitem', '.secao-sub:not([hidden])', '.aviso-spoiler', '.pl h2', '.pl-texto', '.veredito-nota', '.veredito-rec', '.fontes-lista a', '.assunto-lista a', '.nav-site-links a.nav-casa', '.autoria-ia', '.doc li', 'nav.footer-col a']);
 const SEM_GRADE = new Set(['.sr-only', '.car-seta::before', '.car-proximo::before', '.fachada-play .ico', '.short-item .fachada-play .ico']);
 

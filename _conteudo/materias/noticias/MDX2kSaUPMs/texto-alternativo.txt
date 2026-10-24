@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Logo do Xbox em verde-limão sobre um fundo preto. Texto na arte: "EXCLUSIVOS".
+Thumb.png: Logo do Xbox em verde-limão sobre um fundo preto. Texto na arte: "EXCLUSIVOS".

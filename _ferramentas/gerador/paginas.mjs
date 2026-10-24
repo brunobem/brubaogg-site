@@ -1,8 +1,9 @@
 // Monta as paginas do site em memoria (nada e gravado aqui; quem grava e saida.mjs):
 // materias e listas de categoria, paginas de tag, GTA 6 (destaque), feed da home, 404, busca (pagina e listas por mes) e atalhos da busca.
-import { ADS_NAS_LISTAS, AUTOR, BUSCA_DA_SECAO, CARROSSEL, COBERTURA, DOMINIO, GTA6, LIVE, PALAVRAS_POR_MINUTO, PLAYERS, RECOMENDACOES, SOCIAIS, VIDEOS_POR_PLAYER, WIKI, abas, categorias, lorem, paginasFixasNaBusca, resumosLorem } from './config.mjs';
+import { ADS_ATIVOS, ADS_NAS_LISTAS, AUTOR, AUTOR_FOTO, BUSCA_DA_SECAO, CARROSSEL, COBERTURA, DOMINIO, GTA6, PALAVRAS_POR_MINUTO, PLAYERS, RECOMENDACOES, SOCIAIS, VIDEOS_POR_PLAYER, WIKI, abas, categorias, lorem, paginasFixasNaBusca, resumosLorem } from './config.mjs';
 import { caminhoAntigo } from './enderecos.mjs';
-import { cortar, dataCurta, dataLonga, esc, limparTitulo, mesDe, miniatura, slugify } from './util.mjs';
+import { fonteDaImagem } from './imagens.mjs';
+import { SIZES_CARROSSEL, SIZES_CARTAO, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, duracaoIso, esc, imagemDoCartao, limparTitulo, mesDe, miniatura, miniaturaGrande, slugify } from './util.mjs';
 
 // ---- "Ver mais" das listas ----
 // A pagina mostra os 30 primeiros (ja no HTML: rapido, indexavel, funciona sem JavaScript). O resto vai em arquivos de 90 itens
@@ -33,9 +34,13 @@ function modeloDeIcones(ctx, rotulos = null, id = 'busca-icones') {
 // "PS5 (também no PC)" -> ['PS5']; "Consoles e PC" -> ['Consoles', 'PC']: so a plataforma principal, a que vem antes do parentese
 const plataformasDe = (t) => (typeof t === 'string' ? t.replace(/\(.*$/, '').split(/\s+e\s+|,|\//).map((x) => x.trim()).filter(Boolean) : []);
 
+// Review sem plataforma que apareca no menu (ficha sem `plataforma`, sem ficha, ou so uma plataforma que ficou de fora do menu por ter poucas materias) vai para o item "Outras":
+// assim Todas = soma dos itens, e o item some sozinho quando todas as reviews tiverem plataforma (BL-20, UX-34).
+const SEM_PLATAFORMA = 'outras';
+
 /** Itens de menu de uma materia: [[slug, nome], ...]. `extra.jogo` = [[slug, nome]] do jogo da Wiki (so a Wiki passa). */
 function valoresDoMenu(g, { m, extra }) {
-  if (g === 'pl') return plataformasDe(m.veredito?.plataforma).map((p) => [slugify(p), p]).filter(([s]) => s);
+  if (g === 'pl') return plataformasDe(m.veredito?.plataforma ?? m.plataforma).map((p) => [slugify(p), p]).filter(([s]) => s);
   if (g === 'jogo') return extra?.jogo ?? [];
   return [];
 }
@@ -57,12 +62,22 @@ function dadosDaSecao(ctx, id, lista, meta = {}) {
     else opcoes.sort((a, b) => b.n - a.n || a.nome.localeCompare(b.nome, 'pt-BR'));
     if (g === 'pl') opcoes = opcoes.filter((o) => o.n >= BUSCA_DA_SECAO.minimo);
     opcoes = opcoes.slice(0, BUSCA_DA_SECAO.maxItens).map((o) => ({ ...o, href: meta.hrefs?.[o.v] }));
+    if (g === 'pl') {
+      const visiveis = new Set(opcoes.map((o) => o.v));
+      const n = lista.filter((it) => !valoresDoMenu(g, it).some(([v]) => visiveis.has(v))).length;
+      if (n) opcoes.push({ v: SEM_PLATAFORMA, nome: 'Outras', n });
+    }
     if (opcoes.length >= 2) menu = { g, titulo: cfg.menu.titulo, todos: cfg.menu.todos, opcoes };
   }
   const itens = lista.map((it) => {
     const { m, cat } = it;
     let f = it.extra?.f ?? null; // a Wiki ja traz os valores prontos (franquia e jogo); Reviews calcula a plataforma
-    if (!f && menu) { const vs = [...new Set(valoresDoMenu(menu.g, it).map(([v]) => v))]; if (vs.length) f = { [menu.g]: vs }; }
+    if (!f && menu) {
+      let vs = [...new Set(valoresDoMenu(menu.g, it).map(([v]) => v))];
+      const visiveis = new Set(menu.opcoes.map((o) => o.v));
+      if (menu.g === 'pl' && visiveis.has(SEM_PLATAFORMA) && !vs.some((v) => visiveis.has(v))) vs = [SEM_PLATAFORMA];
+      if (vs.length) f = { [menu.g]: vs };
+    }
     if (f) f = Object.fromEntries(Object.entries(f).filter(([, vs]) => vs.length));
     if (f && !Object.keys(f).length) f = null;
     const b = [...(m.tags ?? []).map((t) => t.nome), typeof m.assunto === 'string' ? m.assunto.replace(/-/g, ' ') : ''].filter(Boolean).join(' ');
@@ -121,7 +136,7 @@ ${estatico}
         </div>
         ${modeloDeIcones(ctx, dados.rotulos, 'secao-icones')}
       </section>
-      <script src="assets/js/secao.js" defer></script>${ADS_NAS_LISTAS[id] ? '\n      <script src="assets/js/ads.js" defer></script>' : ''}`;
+      <script src="assets/js/secao.js" defer></script>${ADS_ATIVOS && ADS_NAS_LISTAS[id] ?'\n      <script src="assets/js/ads.js" defer></script>' : ''}`;
 }
 
 // as novidades do hub do GTA 6: a categoria gta6-novidades + materias de outras categorias com a tag "GTA 6", do mais novo para o mais velho
@@ -138,7 +153,7 @@ function listaDoHub(ctx) {
 
 // quem assina e publica (dados estruturados): o proprio canal. O nome "Claudio" + selo "IA" continuam na assinatura visivel da materia.
 const ORGANIZACAO = { '@type': 'Organization', name: 'BRUBAOGG', url: `${DOMINIO}/` };
-const AUTORA = { '@type': 'Person', name: AUTOR, url: `${DOMINIO}/sobre.html` }; // autor das materias nos dados estruturados (a editora continua sendo a organizacao BRUBAOGG)
+const AUTORA = { '@type': 'Person', name: AUTOR, url: `${DOMINIO}/sobre.html`, sameAs: SOCIAIS.filter((s) => s.nome !== 'Discord').map((s) => s.url) }; // autor das materias nos dados estruturados (a editora continua sendo a organizacao BRUBAOGG)
 const absoluta = (u) => (u.startsWith('/') ? `${DOMINIO}${u}` : u); // imagem do proprio site (conteudo da Wiki sem video) em dados estruturados: endereco inteiro
 const EDITORA = { ...ORGANIZACAO, logo: { '@type': 'ImageObject', url: `${DOMINIO}/assets/img/logo.png` } };
 
@@ -150,7 +165,7 @@ const EDITORA = { ...ORGANIZACAO, logo: { '@type': 'ImageObject', url: `${DOMINI
 // so dela), completa com as vizinhas da mesma categoria. O resultado e deterministico (as paginas sao tratadas da mais nova para a mais velha).
 const RELACIONADAS = 3, JANELA_DA_CATEGORIA = 40;
 const PESO_DA_TAG = 100, SOMA_OUTRA_CATEGORIA = 15, TIRA_POR_DISTANCIA = 1 / 3, DISTANCIA_MAXIMA = 60, TIRA_POR_LINK_RECEBIDO = 5, SOMA_SEM_LINK_RECEBIDO = 10;
-export function calcularRelacionadas({ todas, ordem, catDe, grupos, contagemTags }) {
+export function calcularRelacionadas({ todas, ordem, catDe, grupos, contagemTags, irmasDe = new Map() }) {
   const pesoDe = (slug) => PESO_DA_TAG / Math.log2(1 + (contagemTags.get(slug) ?? 1));
   const recebidos = new Map(todas.map((m) => [m, 0]));
   const lugar = new Map(), vizinhas = new Map(); // posicao de cada materia na sua categoria e a lista dessa categoria
@@ -160,7 +175,8 @@ export function calcularRelacionadas({ todas, ordem, catDe, grupos, contagemTags
   const resultado = new Map(), completaram = new Map(); // completaram: materia -> as escolhidas que entraram so para completar a vaga (sem tag em comum)
   for (const m of todas) {
     const slugs = new Set(m.tags.map((x) => x.slug)), previa = m.semTexto || m.ficticio; // so as paginas de teste (sem texto) apontam para paginas de teste
-    const serve = (x) => x !== m && (previa || !(x.semTexto || x.ficticio));
+    const irmas = new Set((irmasDe.get(m) ?? []).map((i) => i.m)); // as do mesmo assunto ja aparecem em "Mais sobre este assunto": nao entram em "Veja tambem"
+    const serve = (x) => x !== m && !irmas.has(x) && (previa || !(x.semTexto || x.ficticio));
     const candidatas = new Set();
     for (const s of slugs) for (const x of porTag.get(s) ?? []) if (serve(x)) candidatas.add(x);
     const escolhidas = [...candidatas].map((x) => {
@@ -190,7 +206,7 @@ export function calcularRelacionadas({ todas, ordem, catDe, grupos, contagemTags
       .sort((a, b) => Math.abs(lugar.get(a) - lugar.get(o)) - Math.abs(lugar.get(b) - lugar.get(o)) || lugar.get(a) - lugar.get(b));
     for (const h of proximas) {
       const lista = resultado.get(h), troca = lista.find((x) => completaram.get(h).has(x) && recebidos.get(x) > 1);
-      if (!troca || lista.includes(o)) continue;
+      if (!troca || lista.includes(o) || (irmasDe.get(h) ?? []).some((i) => i.m === o)) continue;
       lista[lista.indexOf(troca)] = o;
       completaram.get(h).delete(troca); completaram.get(h).add(o);
       recebidos.set(troca, recebidos.get(troca) - 1); recebidos.set(o, 1);
@@ -253,13 +269,14 @@ export function construirMaterias(ctx) {
         rascunho: real?.status === 'rascunho',
         spoiler: real?.spoiler === true, // "spoiler": true no JSON da materia mostra o aviso "Contem spoilers" na pagina dela
         assunto: real?.assunto, // alimenta a mini-busca da secao (texto do assunto)
+        plataforma: real?.plataforma, // so para a review sem ficha de veredito: o menu de plataformas usa veredito.plataforma ou, na falta dele, este campo
         veredito: real?.veredito, // a ficha de veredito da review (nota, recomendacao...): aparece no alto da pagina e a mini-busca usa recomendacao e plataforma
         fontes: real?.fontes, // as fontes com link, no fim da pagina
         shorts: real?.shorts, // Shorts anexados ("Shorts desta review"), players verticais pequenos depois dos botoes
         tags: resolverTags(real?.tags),
         semTexto,
         short: real?.formato === 'short', // vem do JSON da materia; video sem materia (so nos modos de teste) usa o player horizontal
-        // id do video do YouTube DESTA pagina. Conteudo da Wiki (_conteudo/wiki) so de texto fica sem video (null): sem player, sem botao do YouTube e sem VideoObject
+        // id do video do YouTube DESTA pagina. Conteudo da Wiki (_conteudo/materias/wiki) so de texto fica sem video (null): sem player, sem botao do YouTube e sem VideoObject
         video: real?.origem === 'wiki' ? (real.video ?? null) : v.id,
         origem: real?.origem, jogo: real?.jogo, tipo: real?.origem === 'wiki' ? real.tipo : undefined,
         rotulo: real?.origem === 'wiki' ? WIKI.tipos[real.tipo] : undefined, // nome do tipo no cartao ("Historia", "Personagem"); o resto usa o da categoria
@@ -275,19 +292,27 @@ export function construirMaterias(ctx) {
     grupos.push({ cat, itens });
   }
 
-  // materias do mesmo "assunto" (2 ou mais) viram UMA pagina, com um bloco por video: os varios itens saem e entra um so (a "unidade"); o resto do gerador a trata como materia comum
-  colapsarAssuntos(ctx, grupos);
+  // materias do mesmo "assunto" (2 ou mais): cada uma continua com a propria pagina; so se ligam pelo bloco "Mais sobre este assunto" (agruparAssuntos)
+  agruparAssuntos(ctx, grupos);
 
   // todas as materias do site, da mais nova para a mais velha (a posicao nessa fila e a "distancia no tempo" das relacionadas)
   const catDe = new Map(grupos.flatMap(({ cat, itens }) => itens.map((m) => [m, cat])));
   const todas = [...catDe.keys()].sort((a, b) => b.publicado.localeCompare(a.publicado));
   const ordem = new Map(todas.map((m, k) => [m, k]));
-  const relacionadas = calcularRelacionadas({ todas, ordem, catDe, grupos, contagemTags: ctx.contagemTags });
+  const relacionadas = calcularRelacionadas({ todas, ordem, catDe, grupos, contagemTags: ctx.contagemTags, irmasDe: ctx.irmasDe });
 
   for (const { cat, itens } of grupos) {
     // ---- pagina da materia ----
     for (const m of itens) {
-      const outras = relacionadas.get(m);
+      const irmas = ctx.irmasDe.get(m) ?? [], irmasSet = new Set(irmas.map((x) => x.m));
+      const outras = relacionadas.get(m).filter((o) => !irmasSet.has(o)); // o que ja esta em "Mais sobre este assunto" nao se repete em "Veja tambem"
+      const irmasHtml = irmas.length ? `
+      <section class="related" data-irmas${m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore'}>
+        <h2 class="section-title">Mais sobre este assunto</h2>
+        <div class="news-grid">
+${irmas.map(({ m: o, cat: c }) => cartao(o, c, '../')).join('\n')}
+        </div>
+      </section>` : '';
       const relacionadasHtml = outras.length ? `
       <section class="related"${m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore'}>
         <h2 class="section-title">${esc(tituloDasRelacionadas(m, outras, ctx.contagemTags))}</h2>
@@ -295,12 +320,11 @@ export function construirMaterias(ctx) {
 ${outras.map((o) => cartao(o, catDe.get(o), '../')).join('\n')}
         </div>
       </section>` : '';
-      if (m.blocos) { paginaDoAssunto(ctx, m, cat, relacionadasHtml); total++; continue; } // pagina de assunto: um bloco por video (colapsarAssuntos)
       // Short (vertical) com texto: player ao lado do texto. Video horizontal ou sem texto: player centralizado.
       const dividido = m.video && m.short && (m.resumo || m.corpo.length);
       const lead = m.resumo ? `<p class="art-lead"${m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-meta="resumo"'}>${esc(m.resumo)}</p>` : '';
-      const video = !m.video ? '' : `<div class="art-video${m.short ? ' is-short' : ''}" id="video">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${m.video}`, href: `https://www.youtube.com/watch?v=${m.video}`, titulo: m.titulo, imagem: miniatura(m.id) })}</div>`;
-      const texto = m.corpo.length ? `<div class="art-body">\n${m.corpo.map((p) => `        <p>${esc(p)}</p>`).join('\n')}\n      </div>` : '';
+      const video = !m.video ? '' : `<div class="art-video${m.short ? ' is-short' : ''}" id="video">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${m.video}`, href: `https://www.youtube.com/watch?v=${m.video}`, titulo: m.titulo, imagem: capaDoPlayer(ctx, m) })}</div>`;
+      const texto = m.corpo.length ? `<div class="art-body">\n${corpoComImagens(ctx, m)}\n      </div>` : '';
       const ignDaFicha = m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore';
       const miolo = dividido
         ? `<div class="art-split">\n        <div class="art-text">\n          ${lead}\n          ${texto}\n        </div>\n        ${video}\n      </div>`
@@ -320,7 +344,7 @@ ${outras.map((o) => cartao(o, catDe.get(o), '../')).join('\n')}
       const linkDaWiki = jogoDaWiki ? `<li><a href="../${paginaDaWiki(ctx, jogoDaWiki)}">${icone('book-open')} Wiki ${esc(jogoDaWiki.nome)}</a></li>` : '';
       // as tags viram FILTROS da busca; o texto da lista fica fora do indice (senao o trecho do resultado mostraria "Resident Evil. Silent Hill.")
       const corpo = `    <main class="article${dividido ? ' has-split' : ''}"${pf}>
-      ${(cat.lista || ctx.visiveis.has(cat.pasta)) ? `<a class="back"${ign} href="../${cat.lista ?? `${cat.pasta}.html`}">&larr; ${esc(cat.nomeCurto ?? cat.nome)}</a>` : `<a class="back"${ign} href="../index.html">&larr; Início</a>`}
+      ${(cat.lista || ctx.visiveis.has(cat.pasta)) ? `<a class="back"${ign} href="../${cat.lista ?? `${cat.pasta}.html`}">&larr; ${esc(cat.nomeCurto ?? cat.nome)}</a>` : `<a class="back"${ign} href="/">&larr; Início</a>`}
       <p class="art-meta"><span class="tag"${ign}>${icone(cat.icone)} ${esc(m.rotulo ?? cat.rotulo)}</span>${leituraHtml(ctx, contarPalavras(m.resumo, m.corpo), ign)}</p>
       <h1 class="art-title">${esc(m.titulo)}</h1>
       ${tagsMostradas.length ? `<ul class="tag-list"${ign} aria-label="Tags">${linkDaWiki}${tagsMostradas.map((x) => temPaginaTag(x.slug) ? `<li><a${indexavel ? ` data-pagefind-filter="tag:${esc(x.nome)}"` : ''} href="../${tagPage(x.slug)}">${icone('tag')} ${esc(x.nome)}</a></li>` : `<li><span${indexavel ? ` data-pagefind-filter="tag:${esc(x.nome)}"` : ''}>${icone('tag')} ${esc(x.nome)}</span></li>`).join('')}</ul>` : ''}
@@ -330,8 +354,9 @@ ${outras.map((o) => cartao(o, catDe.get(o), '../')).join('\n')}
       ${autoriaHtml({ publicado: m.publicado, indexavel, ign })}
       <div class="links"${ign}>
         ${m.video ? `<a class="btn primary" href="https://www.youtube.com/watch?v=${m.video}" target="_blank" rel="noopener">Assistir no YouTube</a>
-        <a class="btn" href="https://www.youtube.com/watch?v=${m.video}#comments" target="_blank" rel="noopener">Comentar no vídeo</a>` : `<a class="btn primary" href="../${cat.aba ?? 'index.html'}">Voltar para ${esc(abas.find((a) => a.href === cat.aba)?.nome ?? 'o início')}</a>`}
+        <a class="btn" href="https://www.youtube.com/watch?v=${m.video}#comments" target="_blank" rel="noopener">Comentar no vídeo</a>` : `<a class="btn primary" href="${cat.aba ? `../${cat.aba}` : '/'}">Voltar para ${esc(abas.find((a) => a.href === cat.aba)?.nome ?? 'o início')}</a>`}
       </div>${blocoShorts ? `\n      ${blocoShorts}` : ''}
+${irmasHtml}
 ${compartilharHtml(ctx, { titulo: m.titulo, url })}
 ${conviteHtml(ctx, ign)}
 ${relacionadasHtml}
@@ -341,15 +366,15 @@ ${relacionadasHtml}
       const estruturados = indexavel ? [{
         '@context': 'https://schema.org',
         '@graph': [
-          { '@type': 'Article', '@id': `${url}#artigo`, headline: cortar(m.titulo, 110), description: m.resumo, image: [absoluta(miniatura(m.id))], datePublished: m.publicado, inLanguage: 'pt-BR', mainEntityOfPage: url, articleSection: cat.rotulo, ...(m.tags.length ? { keywords: m.tags.map((x) => x.nome).join(', ') } : {}), isAccessibleForFree: true, author: AUTORA, publisher: EDITORA, ...(m.video ? { video: { '@id': `${url}#video` } } : {}), ...(m.fontes?.length ? { citation: m.fontes.map((f) => ({ '@type': 'CreativeWork', name: f.nome, url: f.url })) } : {}) },
-          ...(m.video ? [{ '@type': 'VideoObject', '@id': `${url}#video`, name: m.titulo, description: m.resumo || m.titulo, thumbnailUrl: [miniatura(m.id)], uploadDate: m.publicado, embedUrl: `https://www.youtube-nocookie.com/embed/${m.video}`, contentUrl: `https://www.youtube.com/watch?v=${m.video}`, inLanguage: 'pt-BR', publisher: EDITORA }] : []),
+          { '@type': 'Article', '@id': `${url}#artigo`, headline: cortar(m.titulo, 110), description: m.resumo, image: [absoluta(miniaturaGrande(m.id))], datePublished: m.publicado, dateModified: m.publicado, inLanguage: 'pt-BR', mainEntityOfPage: url, articleSection: cat.rotulo, ...(m.tags.length ? { keywords: m.tags.map((x) => x.nome).join(', ') } : {}), isAccessibleForFree: true, author: AUTORA, publisher: EDITORA, ...(m.video ? { video: { '@id': `${url}#video` } } : {}), ...(m.fontes?.length ? { citation: m.fontes.map((f) => ({ '@type': 'CreativeWork', name: f.nome, url: f.url })) } : {}) },
+          ...(m.video ? [{ '@type': 'VideoObject', '@id': `${url}#video`, name: m.titulo, description: m.resumo || m.titulo, thumbnailUrl: [miniatura(m.id)], uploadDate: m.publicado, ...(duracaoIso(m.video) ? { duration: duracaoIso(m.video) } : {}), embedUrl: `https://www.youtube-nocookie.com/embed/${m.video}`, contentUrl: `https://www.youtube.com/watch?v=${m.video}`, inLanguage: 'pt-BR', publisher: EDITORA }] : []),
           // review com nota: o Google pode mostrar as estrelas. O jogo avaliado e a primeira tag da materia (convencao: a tag do jogo vem primeiro)
           ...(typeof m.veredito?.nota === 'number' && m.tags[0] ? [{ '@type': 'Review', '@id': `${url}#review`, name: m.titulo, datePublished: m.publicado, inLanguage: 'pt-BR', author: AUTORA, publisher: EDITORA, reviewRating: { '@type': 'Rating', ratingValue: m.veredito.nota, bestRating: 10, worstRating: 0 }, itemReviewed: { '@type': 'VideoGame', name: m.tags[0].nome }, mainEntityOfPage: url }] : []),
           ctx.trilha([{ nome: 'Início', url: `${DOMINIO}/` }, ...(cat.aba ? [{ nome: abas.find((a) => a.href === cat.aba)?.nome ?? cat.aba, url: `${DOMINIO}/${cat.aba}` }] : []), ...(comLista ? [{ nome: cat.nomeCurto ?? cat.nome, url: `${DOMINIO}/${cat.lista ?? `${cat.pasta}.html`}` }] : []), { nome: m.titulo }]),
         ],
       }] : [];
       escrever(`${cat.pasta}/${m.slug}.html`, pagina({
-        base: '../', titulo: `${m.titulo} | BRUBAOGG`, descricao: m.resumo || (m.video ? `Assista: ${m.titulo}. Vídeo do canal BRUBAOGG.` : m.titulo), og: miniatura(m.id), corpo, caminho: `${cat.pasta}/${m.slug}.html`,
+        base: '../', titulo: `${m.titulo} | BRUBAOGG`, descricao: m.resumo || (m.video ? `Assista: ${m.titulo}. Vídeo do canal BRUBAOGG.` : m.titulo), og: miniaturaGrande(m.id), corpo, caminho: `${cat.pasta}/${m.slug}.html`,
         noindex: m.ficticio || m.semTexto || m.rascunho, // exemplo, so video ou rascunho: fora do Google
         tipo: indexavel ? 'article' : 'website', publicado: m.publicado, estruturados, scripts: m.video || m.shorts?.length ? ['compartilhar.js', 'fachada.js'] : ['compartilhar.js'],
       }));
@@ -400,12 +425,10 @@ export function construirRedirecionamentos(ctx) {
   const { escrever, redirecionamento } = ctx;
   const itens = new Map(Object.values(ctx.itensPorCategoria).flatMap(({ cat, itens: lista }) => lista.map((m) => [`${cat.pasta}/${m.slug}.html`, m])));
   const geradas = new Set(itens.keys());
-  // onde a materia `id` esta no ar: { url, item } (url com ancora quando ela e um bloco de pagina de assunto), ou null se a pagina dela nao sera gerada nem for bloco
+  // onde a materia `id` esta no ar: { url, item }, ou null se a pagina dela nao sera gerada
   const paginaDe = (id) => {
     const r = ctx.enderecos[id];
     if (!r || r.retirada) return null;
-    const noAssunto = ctx.assuntoDe?.get(id);
-    if (noAssunto) return { url: `${noAssunto.cat.pasta}/${noAssunto.unidade.slug}.html#v-${id}`, item: noAssunto.unidade };
     const url = `${r.categoria}/${r.slug}.html`;
     return geradas.has(url) ? { url, item: itens.get(url) } : null;
   };
@@ -424,8 +447,12 @@ export function construirRedirecionamentos(ctx) {
     }
     const alvo = paginaDe(id);
     if (!alvo) continue; // a pagina nao sera gerada (o aviso de removidas cobre esse caso)
-    // a materia que virou bloco de uma pagina de assunto perde a pagina propria: o endereco dela tambem passa a ser um redirecionamento (para o bloco)
-    levar(ctx.assuntoDe?.has(id) ? [e.slug, ...(e.antigos ?? [])] : (e.antigos ?? []), alvo);
+    levar(e.antigos ?? [], alvo);
+  }
+  // o endereco do proprio assunto (pagina agregada ate a v1.02) leva a materia mais nova dele; a previa de compartilhamento usa o titulo e o resumo de assuntos.json, se houver
+  for (const { chave, pasta, nova } of ctx.assuntosAgrupados ?? []) {
+    const ficha = ctx.assuntos?.[chave];
+    escrever(`${pasta}/${chave}.html`, redirecionamento({ para: `${nova.cat.pasta}/${nova.m.slug}.html`, titulo: ficha?.titulo ?? nova.m.titulo, descricao: ficha?.resumo ?? nova.m.resumo, imagem: miniatura(nova.m.id) }));
   }
 }
 
@@ -497,7 +524,7 @@ export function carrosselHtml(ctx) {
   if (!itens.length) return '';
   const slides = itens.map(({ m, cat }, i) => `          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${itens.length}">
             <a class="car-link" href="${cat.pasta}/${m.slug}.html">
-              <span class="car-thumb"><img src="${miniatura(m.id)}" alt="" width="480" height="360" fetchpriority="${i === 0 ? 'high' : 'low'}"></span>
+              <span class="car-thumb">${(() => { const im = imagemDoCartao(m.id, SIZES_CARROSSEL); return `<img ${im.atributos} alt="${esc(im.alt)}" width="${im.w}" height="${im.h}" fetchpriority="${i === 0 ? 'high' : 'low'}">`; })()}</span>
               <span class="car-texto">
                 <span class="tag">${icone(cat.icone)} ${esc(cat.rotulo)}</span>
                 <b class="car-titulo">${esc(m.titulo)}</b>
@@ -569,15 +596,17 @@ function leituraHtml({ icone }, palavras, ign) {
   return ` <span class="leitura"${ign}>${icone('clock')} ${Math.max(1, Math.ceil(palavras / PALAVRAS_POR_MINUTO))} min de leitura</span>`;
 }
 // "Por Bruno Bem · Publicado em <data> · Texto com apoio de IA": a data fica aqui (nao mais no alto) e a ordenacao da busca le este <time>; o link do apoio de IA leva a Sobre
+// o circulo do autor: a foto (AUTOR_FOTO em config.mjs; decorativa, o nome vem escrito ao lado) ou, sem foto, a inicial do nome
+export const avatarHtml = () => `<span class="avatar" aria-hidden="true">${AUTOR_FOTO ? `<img src="../${AUTOR_FOTO}" alt="" width="32" height="32">` : AUTOR[0]}</span>`;
 function autoriaHtml({ publicado, indexavel, ign, rotulo = 'Publicado em' }) {
-  return `<p class="autoria"${ign}><span class="avatar" aria-hidden="true">${AUTOR[0]}</span><span>Por <b>${AUTOR}</b> &middot; ${rotulo} <time${indexavel ? ' data-pagefind-sort="data[datetime]" data-pagefind-meta="data[datetime]" data-pagefind-ignore' : ''} datetime="${publicado}">${dataLonga(publicado)}</time></span><a class="autoria-ia" href="../sobre.html">Texto com apoio de IA</a></p>`;
+  return `<p class="autoria"${ign}>${avatarHtml()}<span>Por <b>${AUTOR}</b> &middot; ${rotulo} <time${indexavel ? ' data-pagefind-sort="data[datetime]" data-pagefind-meta="data[datetime]" data-pagefind-ignore' : ''} datetime="${publicado}">${dataLonga(publicado)}</time></span><a class="autoria-ia" href="../sobre.html">Texto com apoio de IA</a></p>`;
 }
 
 // sufixo e nivel: na pagina de assunto cada bloco tem as proprias fontes (ids unicos, titulo h3)
 function fontesHtml(m, ign, { sufixo = '', nivel = 2 } = {}) {
   const fontes = Array.isArray(m.fontes) ? m.fontes : [];
   if (!fontes.length) return '';
-  return `<section class="fontes" aria-labelledby="fontes-titulo${sufixo}"${ign}>
+  return `<section class="fontes" ${sufixo ? `aria-label="Fontes: ${esc(m.titulo)}"` : `aria-labelledby="fontes-titulo${sufixo}"`}${ign}>
         <h${nivel} class="fontes-titulo" id="fontes-titulo${sufixo}">Fontes</h${nivel}>
         <ul class="fontes-lista">
 ${fontes.map((f) => `          <li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.nome)}<span class="sr-only"> (abre em nova aba)</span></a></li>`).join('\n')}
@@ -597,118 +626,64 @@ ${shorts.map((s) => `          <li class="short-item"><div class="art-video is-s
         </ul>
       </section>`;
 }
-// ---- Assunto: materias de videos diferentes sobre o mesmo fato viram UMA pagina, com um bloco por video ----
-// O campo "assunto" do JSON de cada materia junta as materias (2 ou mais); _conteudo/assuntos.json traz o titulo e o resumo da pagina (contrato.mjs, validarAssuntos). Cada video
-// continua com o proprio JSON e o proprio endereco no registro, mas a pagina dele deixa de existir: o endereco leva (redirecionamento) ao bloco do video na pagina do assunto.
-// O gerador troca os varios itens por UM item, a "unidade" (titulo e resumo do assunto, data = a do video mais novo, tags de todos, miniatura do mais novo, `blocos` = os videos):
-// feed, listas, tags, busca, relacionadas e sitemap tratam a unidade como uma materia comum. Uma materia sozinha no assunto continua uma pagina normal.
-function colapsarAssuntos(ctx, grupos) {
-  ctx.assuntoDe = new Map(); // id de cada video que entrou numa pagina de assunto -> { unidade, cat } (os redirecionamentos dos enderecos antigos usam)
+// ---- Assunto: materias de videos diferentes sobre o mesmo fato (campo "assunto" do JSON da materia) ----
+// Cada materia tem a PROPRIA pagina e o proprio endereco; o assunto so as liga. No fim de cada uma, o bloco "Mais sobre este assunto" lista as outras do mesmo assunto (2 ou mais), cada
+// uma com link para a pagina dela. O endereco do assunto em si (categoria/chave.html), que ate a v1.02 era uma pagina agregada com um bloco por video, virou um redirecionamento para a
+// materia mais nova do assunto (construirRedirecionamentos). _conteudo/assuntos.json passou a ser opcional: so a "categoria" (pasta do redirecionamento) e o titulo e o resumo da previa
+// de compartilhamento desse redirecionamento saem dele.
+function agruparAssuntos(ctx, grupos) {
+  ctx.irmasDe = new Map(); // materia -> { m, cat } das outras do mesmo assunto, da mais nova para a mais velha
+  ctx.assuntosAgrupados = []; // [{ chave, pasta, nova }] para o redirecionamento do endereco do assunto
   const porAssunto = new Map();
-  for (const { itens } of grupos) for (const m of itens) if (typeof m.assunto === 'string' && !(m.ficticio || m.semTexto || m.rascunho)) (porAssunto.get(m.assunto) ?? porAssunto.set(m.assunto, []).get(m.assunto)).push(m);
-  const grupoDe = (m) => grupos.find(({ itens }) => itens.includes(m));
-  let unidades = 0;
+  for (const { cat, itens } of grupos) for (const m of itens) if (typeof m.assunto === 'string' && !(m.ficticio || m.semTexto || m.rascunho)) (porAssunto.get(m.assunto) ?? porAssunto.set(m.assunto, []).get(m.assunto)).push({ m, cat });
   for (const [chave, lista] of porAssunto) {
-    const ficha = ctx.assuntos?.[chave];
-    if (lista.length < 2 || !ficha) continue; // (assunto com 2 ou mais materias sem ficha ja foi barrado pelo contrato)
-    const membros = [...lista].sort((a, b) => b.publicado.localeCompare(a.publicado) || b.id.localeCompare(a.id)); // do mais novo para o mais velho
-    const nova = membros[0], antiga = membros[membros.length - 1];
-    const pasta = ctx.categoriaDoAssunto?.(chave);
-    const destino = grupos.find(({ cat }) => cat.pasta === pasta) ?? grupoDe(antiga);
-    const tags = new Map();
-    for (const m of membros) for (const t of m.tags) if (!tags.has(t.slug)) tags.set(t.slug, t);
-    const unidade = {
-      id: nova.id, titulo: ficha.titulo, slug: chave, publicado: nova.publicado, primeiroPublicado: antiga.publicado, resumo: ficha.resumo, corpo: nova.corpo,
-      tags: [...tags.values()], short: nova.short, video: nova.video, spoiler: membros.some((m) => m.spoiler), assunto: chave, blocos: membros, ficticio: false, semTexto: false, rascunho: false,
-    };
-    const saem = new Set(membros);
-    for (const m of membros) { const g = grupoDe(m); g.itens.splice(g.itens.indexOf(m), 1); ctx.publicadas.set(m.id, unidade); ctx.assuntoDe.set(m.id, { unidade, cat: destino.cat }); }
-    for (let i = ctx.listaMaterias.length - 1; i >= 0; i--) if (saem.has(ctx.listaMaterias[i].m)) ctx.listaMaterias.splice(i, 1);
-    ctx.listaMaterias.push({ m: unidade, cat: destino.cat });
-    const posicao = destino.itens.findIndex((x) => x.publicado < unidade.publicado);
-    destino.itens.splice(posicao < 0 ? destino.itens.length : posicao, 0, unidade); // a lista da categoria continua do mais novo para o mais velho
-    unidades++;
+    if (lista.length < 2) continue;
+    const membros = [...lista].sort((a, b) => b.m.publicado.localeCompare(a.m.publicado) || b.m.id.localeCompare(a.m.id));
+    for (const { m } of membros) ctx.irmasDe.set(m, membros.filter((x) => x.m !== m));
+    ctx.assuntosAgrupados.push({ chave, pasta: ctx.categoriaDoAssunto?.(chave) ?? membros[membros.length - 1].cat.pasta, nova: membros[0] });
   }
-  if (unidades) { // a contagem de materias por tag agora e a de itens (uma pagina de assunto conta uma vez): decide quais tags ganham pagina e o peso nas relacionadas
-    ctx.contagemTags.clear();
-    for (const { itens } of grupos) for (const m of itens) if (!(m.ficticio || m.semTexto)) for (const t of m.tags) ctx.contagemTags.set(t.slug, (ctx.contagemTags.get(t.slug) ?? 0) + 1);
-  }
-  ctx.paginasDeAssunto = unidades;
+  ctx.paginasDeAssunto = 0;
 }
 
-// a pagina de um assunto: titulo e resumo do assunto, a lista dos videos (ancoras) e um bloco por video (do mais novo para o mais velho) com data, titulo, player com fachada, texto, fontes e botoes
-function paginaDoAssunto(ctx, m, cat, relacionadasHtml) {
-  const { icone, temPaginaTag, tagPage, pagina, escrever } = ctx;
-  const ign = ' data-pagefind-ignore';
-  const blocos = m.blocos;
-  const url = `${DOMINIO}/${cat.pasta}/${m.slug}.html`;
-  const comLado = blocos.some((b) => b.video && b.short && (b.resumo || b.corpo.length));
-  const tagsMostradas = [...m.tags].sort((a, b) => Number(temPaginaTag(b.slug)) - Number(temPaginaTag(a.slug))).slice(0, 8);
-  const bloco = (b, k) => {
-    const dividido = b.video && b.short && (b.resumo || b.corpo.length);
-    const href = `https://www.youtube.com/watch?v=${b.video}`;
-    const video = b.video ? `<div class="art-video${b.short ? ' is-short' : ''}" id="video-${b.id}">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${b.video}`, href, titulo: b.titulo, imagem: miniatura(b.id), lazy: k > 0 })}</div>` : '';
-    const lead = b.resumo ? `<p class="art-lead">${esc(b.resumo)}</p>` : '';
-    const texto = b.corpo.length ? `<div class="art-body">\n${b.corpo.map((p) => `            <p>${esc(p)}</p>`).join('\n')}\n          </div>` : '';
-    const miolo = dividido
-      ? `<div class="art-split">\n          <div class="art-text">\n            ${lead}\n            ${texto}\n          </div>\n          ${video}\n        </div>`
-      : `<div class="art-flow">\n          ${lead}\n          ${video}\n          ${texto}\n        </div>`;
-    const fontes = fontesHtml(b, ign, { sufixo: `-${b.id}`, nivel: 3 });
-    return `      <section class="bloco" id="v-${b.id}" aria-labelledby="t-${b.id}">
-        <p class="bloco-data"${ign}><time datetime="${b.publicado}">${dataLonga(b.publicado)}</time></p>
-        <h2 class="bloco-titulo" id="t-${b.id}">${esc(b.titulo)}</h2>${b.spoiler ? `\n        <p class="aviso-spoiler"${ign} role="note">${icone('triangle-alert')} <span><b>Contém spoilers.</b> Esta matéria revela partes da história.</span></p>` : ''}${dividido ? `\n        <a class="ir-video"${ign} href="#video-${b.id}">&darr; Ir para o vídeo</a>` : ''}
-        ${miolo}${fontes ? `\n        ${fontes}` : ''}${b.video ? `
-        <div class="links"${ign}>
-          <a class="btn primary" href="${href}" target="_blank" rel="noopener">Assistir no YouTube</a>
-          <a class="btn" href="${href}#comments" target="_blank" rel="noopener">Comentar no vídeo</a>
-        </div>` : ''}
-      </section>`;
-  };
-  const indice = `<nav class="assunto" aria-labelledby="assunto-titulo"${ign}>
-        <h2 class="assunto-titulo" id="assunto-titulo">Neste assunto</h2>
-        <ol class="assunto-lista">
-${blocos.map((b) => `          <li><a href="#v-${b.id}"><time datetime="${b.publicado}">${dataCurta(b.publicado)}</time> <span>${esc(b.titulo)}</span></a></li>`).join('\n')}
-        </ol>
-      </nav>`;
-  const corpo = `    <main class="article${comLado ? ' has-split' : ''} assunto-pagina" data-pagefind-body data-pagefind-filter="categoria:${esc(cat.rotulo)}" data-pagefind-meta="image:${miniatura(m.id)}">
-      ${(cat.lista || ctx.visiveis.has(cat.pasta)) ? `<a class="back"${ign} href="../${cat.lista ?? `${cat.pasta}.html`}">&larr; ${esc(cat.nomeCurto ?? cat.nome)}</a>` : `<a class="back"${ign} href="../index.html">&larr; Início</a>`}
-      <p class="art-meta"><span class="tag"${ign}>${icone(cat.icone)} ${esc(cat.rotulo)}</span>${leituraHtml(ctx, contarPalavras(blocos.map((b) => [b.resumo, b.corpo])), ign)}</p>
-      <h1 class="art-title">${esc(m.titulo)}</h1>
-      ${tagsMostradas.length ? `<ul class="tag-list"${ign} aria-label="Tags">${tagsMostradas.map((x) => temPaginaTag(x.slug) ? `<li><a data-pagefind-filter="tag:${esc(x.nome)}" href="../${tagPage(x.slug)}">${icone('tag')} ${esc(x.nome)}</a></li>` : `<li><span data-pagefind-filter="tag:${esc(x.nome)}">${icone('tag')} ${esc(x.nome)}</span></li>`).join('')}</ul>` : ''}
-      <p class="art-lead" data-pagefind-meta="resumo">${esc(m.resumo)}</p>
-      ${indice}
-${blocos.map(bloco).join('\n')}
-      ${autoriaHtml({ publicado: m.publicado, indexavel: true, ign, rotulo: 'Atualizado em' })}
-${compartilharHtml(ctx, { titulo: m.titulo, url })}
-${conviteHtml(ctx, ign)}
-${relacionadasHtml}
-    </main>`;
-  // dados estruturados: o assunto (Article com as partes), cada video como Article proprio e VideoObject; as fontes de todos os blocos entram uma vez so
-  const idBloco = (b) => `${url}#v-${b.id}`, idVideo = (b) => `${url}#video-${b.id}`;
-  const citados = new Map();
-  for (const b of blocos) for (const f of b.fontes ?? []) if (!citados.has(f.url)) citados.set(f.url, { '@type': 'CreativeWork', name: f.nome, url: f.url });
-  const comVideo = blocos.filter((b) => b.video);
-  const comLista = cat.lista || ctx.visiveis.has(cat.pasta);
-  const estruturados = [{
-    '@context': 'https://schema.org',
-    '@graph': [
-      { '@type': 'Article', '@id': `${url}#artigo`, headline: cortar(m.titulo, 110), description: m.resumo, image: [absoluta(miniatura(m.id))], datePublished: m.primeiroPublicado, dateModified: m.publicado, inLanguage: 'pt-BR', mainEntityOfPage: url, articleSection: cat.rotulo, ...(m.tags.length ? { keywords: m.tags.map((x) => x.nome).join(', ') } : {}), isAccessibleForFree: true, author: AUTORA, publisher: EDITORA, ...(comVideo.length ? { video: { '@id': idVideo(comVideo[0]) } } : {}), hasPart: blocos.map((b) => ({ '@id': idBloco(b) })), ...(citados.size ? { citation: [...citados.values()] } : {}) },
-      ...blocos.map((b) => ({ '@type': 'Article', '@id': idBloco(b), headline: cortar(b.titulo, 110), description: b.resumo, datePublished: b.publicado, inLanguage: 'pt-BR', url: idBloco(b), isPartOf: { '@id': `${url}#artigo` }, author: AUTORA, publisher: EDITORA, ...(b.video ? { video: { '@id': idVideo(b) } } : {}) })),
-      ...comVideo.map((b) => ({ '@type': 'VideoObject', '@id': idVideo(b), name: b.titulo, description: b.resumo || b.titulo, thumbnailUrl: [miniatura(b.id)], uploadDate: b.publicado, embedUrl: `https://www.youtube-nocookie.com/embed/${b.video}`, contentUrl: `https://www.youtube.com/watch?v=${b.video}`, inLanguage: 'pt-BR', publisher: EDITORA })),
-      ctx.trilha([{ nome: 'Início', url: `${DOMINIO}/` }, ...(cat.aba ? [{ nome: abas.find((a) => a.href === cat.aba)?.nome ?? cat.aba, url: `${DOMINIO}/${cat.aba}` }] : []), ...(comLista ? [{ nome: cat.nomeCurto ?? cat.nome, url: `${DOMINIO}/${cat.lista ?? `${cat.pasta}.html`}` }] : []), { nome: m.titulo }]),
-    ],
-  }];
-  escrever(`${cat.pasta}/${m.slug}.html`, pagina({
-    base: '../', titulo: `${m.titulo} | BRUBAOGG`, descricao: m.resumo, og: miniatura(m.id), corpo, caminho: `${cat.pasta}/${m.slug}.html`,
-    tipo: 'article', publicado: m.primeiroPublicado, estruturados, scripts: ['compartilhar.js', 'fachada.js'],
-  }));
+// ---- imagens da pasta da materia (imagens.mjs) ----
+// A capa do player e a thumb da pasta da materia (thumb.jpg), se existir; senao, a miniatura do YouTube (de qualidade menor).
+function capaDoPlayer(ctx, m) {
+  const t = ctx.imagens?.get(m.id)?.thumb;
+  if (!t) return miniatura(m.id);
+  const f = fonteDaImagem(m.id, t, '../', m.short ? 480 : 960);
+  return { src: f.src, srcset: f.srcset, sizes: m.short ? '(max-width: 380px) 100vw, 340px' : '(max-width: 1000px) 100vw, 1000px', w: f.w, h: f.h, alt: t.alt || '' };
+}
+// Os paragrafos do texto, com a imagem N (img-N_<site da fonte>.jpg) logo depois do paragrafo N x (paragrafos por imagem do tipo: 1 na noticia e no lancamento, 2 na review; imagens.mjs);
+// imagem que cairia depois do ultimo paragrafo vai depois dele. Sem arquivo, nao aparece nada.
+function corpoComImagens(ctx, m) {
+  const reg = ctx.imagens?.get(m.id), aCada = reg?.aCada ?? 1;
+  const fotos = [...(reg?.fotos ?? [])].sort((a, b) => a[0] - b[0]);
+  const ign = m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore';
+  const linhas = [];
+  m.corpo.forEach((p, i) => {
+    linhas.push(`        <p>${esc(p)}</p>`);
+    for (const [n, f] of fotos) if (n * aCada === i + 1 || (i === m.corpo.length - 1 && n * aCada > i + 1)) linhas.push(figuraDaMateria(m, f, ign));
+  });
+  return linhas.join('\n');
+}
+// a imagem com a fonte na legenda: o site vem do nome do arquivo; se for o site de uma das fontes da materia, a legenda leva ao texto dela
+function figuraDaMateria(m, f, ign) {
+  const x = fonteDaImagem(m.id, f, '../', 800);
+  const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, '').toLowerCase(); } catch { return ''; } };
+  const daFonte = (m.fontes ?? []).find((s) => host(s.url) === f.fonte || host(s.url).endsWith(`.${f.fonte}`));
+  const credito = daFonte ? `<a href="${esc(daFonte.url)}" target="_blank" rel="noopener">${esc(f.fonte)}</a>` : esc(f.fonte);
+  return `        <figure class="art-foto">
+          <img src="${x.src}" srcset="${x.srcset}" sizes="${m.short ? '(max-width: 860px) 100vw, 620px' : '(max-width: 1000px) 100vw, 1000px'}" alt="${esc(f.alt ?? '')}" loading="lazy" width="${x.w}" height="${x.h}">
+          <figcaption${ign}>Imagem: ${credito}</figcaption>
+        </figure>`;
 }
 
 // FACHADA do player: no lugar do iframe do YouTube (que, so de existir na pagina, ja carrega o player inteiro e dezenas de pedidos ao Google) entra um link com a miniatura e o
 // botao de play. SEM JavaScript e um link para o video (ou a playlist) no YouTube, em nova aba. COM assets/js/fachada.js o clique troca a fachada pelo player (youtube-nocookie,
 // ja tocando) ali mesmo. `embed` e o endereco do player; `href`, o do video; `imagem` pode faltar (playlist sem dados: sobra o fundo escuro com o play); `lazy` so abaixo da dobra.
 function fachadaHtml({ icone }, { embed, href, titulo, imagem = '', lazy = false }) {
-  const foto = imagem ? `<img src="${imagem}" alt="" ${lazy ? 'loading="lazy"' : 'fetchpriority="high"'} width="480" height="360">` : '';
+  const foto = !imagem ? '' : typeof imagem === 'string' ? `<img src="${imagem}" alt="" ${lazy ? 'loading="lazy"' : 'fetchpriority="high"'} width="480" height="360">`
+    : `<img src="${imagem.src}" srcset="${imagem.srcset}" sizes="${imagem.sizes}" alt="${esc(imagem.alt ?? '')}" ${lazy ? 'loading="lazy"' : 'fetchpriority="high"'} width="${imagem.w}" height="${imagem.h}">`; // imagem propria (thumb.jpg da pasta da materia): varias larguras, sem aumentar a original
   return `<a class="fachada" href="${href}" target="_blank" rel="noopener" data-embed="${embed}" data-titulo="${esc(titulo)}" aria-label="Assistir: ${esc(titulo)}">${foto}<span class="fachada-play">${icone('play')}</span></a>`;
 }
 
@@ -745,7 +720,7 @@ export function coberturaHtml(ctx) {
   if (!COBERTURA.ativa) return '';
   const dados = ctx.itensPorCategoria[COBERTURA.categoria];
   const novidades = dados ? listaDoHub(ctx).slice(0, COBERTURA.qtd) : [];
-  const cards = novidades.map(({ m, cat }, i) => cartao(m, cat, '', i === 0 ? 'grande' : false));
+  const cards = novidades.map(({ m, cat }, i) => cartao(m, cat, '', i === 0 ? 'grande' : 'pequeno'));
   return `      <section class="cobertura" aria-labelledby="cobertura-titulo">
         <div class="feed-head">
           <div>
@@ -756,26 +731,6 @@ export function coberturaHtml(ctx) {
         </div>
         <p class="cobertura-texto">${esc(modelo(COBERTURA.texto))}</p>${novidades.length ? `
 ${blocoHtml(cards, COBERTURA.lado)}` : ''}
-      </section>`;
-}
-
-// bloco da live: SAIU DA HOME em 2026-10-11 (ninguem chama esta funcao). Fica guardado, com assets/js/live.js, LIVE em config.mjs e as regras .live do style.css,
-// como base para o aviso de live que o dono vai repensar (algo como um pop-up, sem mexer na home). Se nao for reaproveitado, pode apagar os quatro.
-export function liveHtml() {
-  const janelas = esc(JSON.stringify(LIVE.horarios));
-  return `      <section class="live" id="live" aria-labelledby="live-titulo" data-canal="${esc(LIVE.canalId)}" data-janelas="${janelas}" hidden>
-        <p class="live-kicker"><span class="live-dot" aria-hidden="true"></span> <span class="live-estado">Ao vivo agora</span></p>
-        <h2 id="live-titulo" class="section-title">${esc(LIVE.titulo)}</h2>
-        <p class="live-texto">${esc(LIVE.texto)}</p>
-        <div class="live-palco">
-          <button class="live-play" type="button">
-            <img src="assets/img/logo-96.png" alt="" width="64" height="64">
-            <span class="live-badge">AO VIVO</span>
-            <span class="live-botao">&#9654; Assistir à live</span>
-          </button>
-        </div>
-        <p class="live-fora"><a href="https://www.youtube.com/channel/${esc(LIVE.canalId)}/live" target="_blank" rel="noopener">Se o player não abrir, assista no YouTube &rarr;</a></p>
-        <p class="live-proxima" hidden>${esc(LIVE.proxima)}: <b></b></p>
       </section>`;
 }
 
@@ -794,7 +749,7 @@ ${videos.map((v) => `            <li><a href="https://www.youtube.com/watch?v=${
           <h2>${esc(titulo)}</h2>
           <p>${esc(texto)}</p>
           <div class="video">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/videoseries?list=${playlist}`, href: `https://www.youtube.com/playlist?list=${playlist}`, titulo, imagem: videos[0] ? miniatura(videos[0].id) : '', lazy: true })}</div>${lista}
-          <a class="btn" href="https://www.youtube.com/playlist?list=${playlist}" target="_blank" rel="noopener">Ver playlist completa no YouTube</a>
+          <a class="btn" href="https://www.youtube.com/playlist?list=${playlist}" target="_blank" rel="noopener" aria-label="Ver playlist completa no YouTube: ${esc(titulo)}">Ver playlist completa no YouTube</a>
         </article>`;
   });
   // um espaco de ADS entre as playlists (o de antes da primeira e o do fim da pagina ficam no .html, fora desta regiao)
@@ -846,7 +801,7 @@ function cartaoWiki(ctx, g, grande) {
   const texto = g.j.texto ? ctx.modelo(g.j.texto) : ''; // o texto aceita os dados de config (ex.: {gta6-dia-mes})
   const resumo = g.subtitulo || (grande ? '' : texto);  // o cartao pequeno usa o texto como resumo quando o jogo nao tem subtitulos
   return `          <a class="news-card wiki-card${grande ? ' grande' : ''}" href="${g.href}">
-            <span class="thumb"><img src="${miniatura(g.capa.m.id)}" alt="" loading="lazy"></span>
+            <span class="thumb">${(() => { const im = imagemDoCartao(g.capa.m.id, grande ? SIZES_CARTAO_GRANDE : SIZES_CARTAO_PEQUENO); return `<img ${im.atributos} alt="${esc(im.alt)}" loading="lazy">`; })()}</span>
             <span class="news-body">
               <span class="tag">${ctx.icone('book-open')} Wiki</span>
               <b class="news-title">${esc(g.j.nome)}</b>
@@ -873,14 +828,14 @@ function seriesDaWikiHtml(ctx) {
   const itens = (dados?.itens ?? []).filter((m) => !m.semTexto && !m.ficticio).slice(0, WIKI.seriesQtd);
   if (!itens.length) return '';
   const { cat } = dados;
-  const cards = itens.map((m, i) => ctx.cartao(m, cat, '', i === 0 ? 'grande' : false));
+  const cards = itens.map((m, i) => ctx.cartao(m, cat, '', i === 0 ? 'grande' : 'pequeno'));
   return `
 
 ${adsHtml('wiki-antes-das-series')}
         <section class="feed-sec">
           <div class="feed-head">
             <h2 class="section-title">${ctx.icone(cat.icone)} ${esc(cat.nome)}</h2>
-            <a class="feed-all" href="${cat.pasta}.html">Ver todas &rarr;</a>
+            <a class="feed-all" href="${cat.pasta}.html" aria-label="Ver todas: ${esc(cat.nome)}">Ver todas &rarr;</a>
           </div>
           <p class="wiki-aviso">${esc(cat.desc)}</p>
 ${blocoHtml(cards, 'esquerda')}
@@ -908,7 +863,7 @@ ${blocoHtml(cards, lado)}
 const adsHtml = (lugar) => `      <div class="ads" data-ads="${lugar}" aria-hidden="true">ADS</div>`;
 // nas listas de cartoes (Noticias, Reviews, Lancamentos) os ADS entram ENTRE as linhas de cartoes, e quem os coloca e assets/js/ads.js (mede quantos cartoes cabem por linha):
 // a lista leva os atributos data-ads-primeiro (depois de quantas linhas entra o primeiro) e data-ads-cada (de quantas em quantas linhas os seguintes). Valores em config.mjs.
-const adsNaLista = (secao) => (ADS_NAS_LISTAS[secao] ? ` data-ads-primeiro="${ADS_NAS_LISTAS[secao].primeiro}" data-ads-cada="${ADS_NAS_LISTAS[secao].cada}"` : '');
+const adsNaLista = (secao) => (ADS_ATIVOS && ADS_NAS_LISTAS[secao] ? ` data-ads-primeiro="${ADS_NAS_LISTAS[secao].primeiro}" data-ads-cada="${ADS_NAS_LISTAS[secao].cada}"` : '');
 // "Em construcao": o mesmo espaco da Wiki da home, agora tambem no fim da pagina da Wiki (`texto` ja escapado)
 const emConstrucaoHtml = (ctx, texto) => `<div class="bloco-vazio">${ctx.icone('construction')}<b>Em construção</b><span>${texto}</span></div>`;
 
@@ -927,20 +882,19 @@ export function feedHtml(ctx) {
   // categorias que dizem `tambemEm` (config.mjs: tudo de GTA 6 tambem e noticia) entram no bloco da categoria de destino, com o rotulo da origem; o que a cobertura do topo da home
   // ja mostra nao se repete aqui (cada materia aparece uma vez so na home, no bloco em que o leitor a encontra primeiro)
   const catDoItem = new Map(Object.values(ctx.itensPorCategoria).flatMap(({ cat, itens }) => itens.map((m) => [m.id, cat])));
-  for (const [id, { cat }] of ctx.assuntoDe ?? []) catDoItem.set(id, cat); // os videos de uma pagina de assunto: a categoria da pagina
   const naCobertura = new Set(COBERTURA.ativa && ctx.itensPorCategoria[COBERTURA.categoria] ? listaDoHub(ctx).slice(0, COBERTURA.qtd).map(({ m }) => ctx.publicadas.get(m.id) ?? m) : []); // itens (nao ids): uma pagina de assunto cobre varios videos
   return secoes.map(({ cat, titulo, lado, ads }) => {
     const candidatas = [...videosDe(cat), ...categorias.filter((c) => c.tambemEm === cat.pasta).flatMap((c) => videosDe(c).filter((v) => !naCobertura.has(ctx.publicadas.get(v.id))))];
     const vistos = new Set(); // varios videos do mesmo assunto sao um cartao so (o do video mais novo)
     const recentes = candidatas.sort((a, b) => b.published.localeCompare(a.published)).filter((v) => ctx.publicadas.has(v.id)).filter((v) => { const it = ctx.publicadas.get(v.id); if (vistos.has(it)) return false; vistos.add(it); return true; }).slice(0, QTD);
     if (!recentes.length) return '';
-    const cards = recentes.map((v, i) => cartao(ctx.publicadas.get(v.id), catDoItem.get(v.id) ?? cat, '', i === 0 ? 'grande' : false));
+    const cards = recentes.map((v, i) => cartao(ctx.publicadas.get(v.id), catDoItem.get(v.id) ?? cat, '', i === 0 ? 'grande' : 'pequeno'));
     const interna = ctx.visiveis.has(cat.pasta);
     const todas = interna ? `${cat.pasta}.html` : `https://www.youtube.com/playlist?list=${cat.playlist}`;
     return `      <section class="feed-sec">
         <div class="feed-head">
           <h2 class="section-title">${icone(cat.icone)} ${titulo}</h2>
-          <a class="feed-all" href="${todas}"${interna ? '' : ' target="_blank" rel="noopener"'}>Ver todas${interna ? '' : ' no YouTube'} &rarr;</a>
+          <a class="feed-all" href="${todas}" aria-label="Ver todas${interna ? '' : ' no YouTube'}: ${esc(titulo)}"${interna ? '' : ' target="_blank" rel="noopener"'}>Ver todas${interna ? '' : ' no YouTube'} &rarr;</a>
         </div>
 ${blocoHtml(cards, lado)}
       </section>
@@ -998,6 +952,7 @@ ${colecao(ctx, `tag-${tg.slug}`, tg.itens)}
     const lista = [...ctx.porTag.values()].filter((x) => temPaginaTag(x.slug)).sort((a, b) => b.itens.length - a.itens.length || a.nome.localeCompare(b.nome, 'pt-BR'));
     escrever('tags.html', pagina({
       base: '', titulo: 'Tags | BRUBAOGG', descricao: 'Todos os jogos e assuntos com matérias no BRUBAOGG.', og: null, caminho: 'tags.html',
+      estruturados: dadosDeColecao(ctx, { caminho: 'tags.html', nome: 'Tags', descricao: 'Todos os jogos e assuntos com matérias no BRUBAOGG.', migalhas: [{ nome: 'Início', url: `${DOMINIO}/` }, { nome: 'Tags' }] }),
       corpo: `    <main>
       <section class="cat-hero">
         <h1>${icone('tag')} Tags</h1>
@@ -1096,12 +1051,12 @@ ${linhas.join('\n')}
     const secoes = BLOCOS.map((b) => {
       const itens = da(b.pasta).slice(0, QTD_BLOCO_DA_WIKI);
       if (!itens.length) return '';
-      const cards = itens.map(({ m, cat }, i) => cartao(m, cat, '../', i === 0 ? 'grande' : false));
+      const cards = itens.map(({ m, cat }, i) => cartao(m, cat, '../', i === 0 ? 'grande' : 'pequeno'));
       const cat = itens[0].cat;
       return `
       <section class="feed-sec" id="${b.id}">
         <div class="feed-head">
-          <h2 class="section-title">${icone(cat.icone)} ${esc(b.titulo)}</h2>${b.todas ? `\n          <a class="feed-all" href="../${b.todas}">Ver todas &rarr;</a>` : ''}
+          <h2 class="section-title">${icone(cat.icone)} ${esc(b.titulo)}</h2>${b.todas ? `\n          <a class="feed-all" href="../${b.todas}" aria-label="Ver todas: ${esc(b.titulo)}">Ver todas &rarr;</a>` : ''}
         </div>
 ${blocoHtml(cards, b.lado)}
       </section>`;
@@ -1204,7 +1159,7 @@ export function construirFixas(ctx) {
         <p class="lead">Esse endereço não existe (ou mudou de lugar). Use a busca acima ou volte para a página inicial.</p>
       </section>
       <div class="links">
-        <a class="btn primary" href="/index.html">Ir para a página inicial</a>
+        <a class="btn primary" href="/">Ir para a página inicial</a>
         ${ctx.visiveis.has('noticias') ? '<a class="btn" href="/noticias.html">Ver as notícias</a>' : '<a class="btn" href="https://youtube.com/@brubaogg" target="_blank" rel="noopener">Ver o canal no YouTube</a>'}
       </div>
     </main>`,
@@ -1248,7 +1203,7 @@ export function construirFixas(ctx) {
 ${todas.slice(0, PASSO_DA_LISTA).map(({ m, cat }) => cartao(m, cat, '')).join('\n')}
       </section>
 ${todas.length ? '' : '      <p class="busca-aviso">Ainda não há matérias publicadas. Volte em breve!</p>\n'}      <div class="busca-mais"><button type="button" class="btn" id="busca-mais" data-total="${todas.length}" hidden>Ver mais</button></div>
-      <noscript><p class="busca-aviso">A busca por texto precisa do JavaScript ligado. Sem ele, estas são as matérias mais recentes; para ver outras, abra ${semJs || 'o <a href="index.html">início</a>'}.</p></noscript>
+      <noscript><p class="busca-aviso">A busca por texto precisa do JavaScript ligado. Sem ele, estas são as matérias mais recentes; para ver outras, abra ${semJs || 'o <a href="/">início</a>'}.</p></noscript>
       ${modeloDeIcones(ctx, rotulos)}
     </main>`,
   }));
@@ -1257,5 +1212,7 @@ ${todas.length ? '' : '      <p class="busca-aviso">Ainda não há matérias pub
   const comListaGerada = categorias.filter((c) => !c.lista).map((c) => c.pasta); // a pagina fixa de uma categoria so existe depois da primeira materia dela
   const existe = (u) => !comListaGerada.includes(u.replace('.html', '')) || ctx.visiveis.has(u.replace('.html', ''));
   const paginasFixas = paginasFixasNaBusca.filter(([u]) => existe(u)).map(([u, t, d]) => ({ t, u, c: 'Página', d }));
-  escrever('assets/data/atalhos.json', JSON.stringify([...indice, ...paginasFixas]));
+  // as paginas de Wiki vao PRIMEIRO: a busca mostra so 3 atalhos e, entre os que empatam (mesmo numero de palavras no nome), vale a ordem deste arquivo; com as tags na frente,
+  // "resident evil" enchia as 3 vagas com tags (Resident Evil, Veronica, 6) e a Wiki ficava de fora (BL-20, UX-12). O atalho de nome igual ao digitado continua em 1o lugar.
+  escrever('assets/data/atalhos.json', JSON.stringify([...indice.filter((a) => a.c === 'Wiki'), ...indice.filter((a) => a.c !== 'Wiki'), ...paginasFixas]));
 }

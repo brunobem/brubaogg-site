@@ -5,7 +5,7 @@
 // Marcadores das paginas escritas a mao (o gerador reescreve o que esta ENTRE eles; o resto da pagina e seu):
 //   <!--site:header--><!--/site:header-->      cabecalho (todas as paginas)            <!--site:footer--><!--/site:footer-->  rodape (todas)
 //   <!--site:social--><!--/site:social-->      <head>: previa de compartilhamento, a partir do <title> e da meta description da pagina
-//   <!--site:jsonld--><!--/site:jsonld-->      <head> da home: dados estruturados, a partir da lista de redes (opcional)
+//   <!--site:jsonld--><!--/site:jsonld-->      <head>: dados estruturados (opcional). Home: WebSite + Organization, a partir da lista de redes; Sobre, Termos, Privacidade, Cortes, Lives e GTA 6: a pagina + a trilha, a partir do <title> e da meta description
 //   <!--icone:nome--><!--/icone-->             icone inline de assets/icones/nome.svg
 //   <!--dado:nome-->...<!--/dado-->            dado que se repete no site (ex.: gta6-data), preenchido de config.mjs
 //   <!--feed:inicio-->...<!--feed:fim-->       so na home;  <!--gta6:inicio-->...<!--gta6:fim-->  so em gta6.html
@@ -14,7 +14,7 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
-import { DOMINIO, categorias } from './config.mjs';
+import { ADS_ATIVOS, DOMINIO, SOCIAIS, categorias } from './config.mjs';
 import { carrosselHtml, coberturaHtml, contagemHtml, feedHtml, gta6Html, playersHtml, wikiHtml } from './paginas.mjs';
 import { ErroDeDados, desescapar, esc, hojeEmSaoPaulo, lerJson } from './util.mjs';
 
@@ -99,6 +99,22 @@ function conferirPar(html, [abre, fecha]) {
   return null;
 }
 
+// Dados estruturados das paginas escritas a mao que levam o marcador <!--site:jsonld--> (a home tem os proprios: WebSite + Organization). BL-08: Sobre, Termos, Privacidade, Cortes, Lives e GTA 6.
+// O tipo vem desta lista (as que nao estao nela, como Termos e Privacidade, sao WebPage); nome e descricao vem do <title> e da meta description da propria pagina.
+const TIPO_DA_PAGINA = { 'sobre.html': 'AboutPage', 'cortes.html': 'CollectionPage', 'lives.html': 'CollectionPage', 'gta6.html': 'CollectionPage' };
+function jsonLdDaPagina(ctx, r, html) {
+  const titulo = desescapar((html.match(/<title>([\s\S]*?)<\/title>/) ?? [])[1] ?? '').replace(/\s*\|\s*BRUBAOGG\s*$/, '').trim();
+  const descricao = desescapar((html.match(/<meta\s+name="description"[^>]*\bcontent="([^"]*)"/) ?? html.match(/<meta[^>]*\bcontent="([^"]*)"[^>]*\bname="description"/) ?? [])[1] ?? '');
+  const url = `${DOMINIO}/${r}`, tipo = TIPO_DA_PAGINA[r] ?? 'WebPage';
+  const canal = { '@type': 'Organization', name: 'BRUBAOGG', url: `${DOMINIO}/` };
+  const pagina = {
+    '@type': tipo, '@id': `${url}#pagina`, name: titulo, description: descricao, url, inLanguage: 'pt-BR',
+    isPartOf: { '@type': 'WebSite', name: 'BRUBAOGG', url: `${DOMINIO}/` }, publisher: canal,
+    ...(tipo === 'AboutPage' ? { about: { ...canal, sameAs: SOCIAIS.map((s) => s.url) } } : {}),
+  };
+  return ctx.dadosEstruturados({ '@context': 'https://schema.org', '@graph': [pagina, ctx.trilha([{ nome: 'Início', url: `${DOMINIO}/` }, { nome: titulo }])] });
+}
+
 // monta o HTML final de UMA pagina. Erros vao para `problemas` (nada e gravado se houver algum).
 function montarPagina(ctx, r, original, problemas) {
   const { saidas, icone, headerHtml, footerHtml, social, jsonLd, dado, modelo } = ctx;
@@ -149,7 +165,7 @@ function montarPagina(ctx, r, original, problemas) {
     html = html.replace(/<!--feed:inicio-->[\s\S]*?<!--feed:fim-->/, () => `<!--feed:inicio-->\n${feedHtml(ctx)}\n      <!--feed:fim-->`);
     html = html.replace(/<!--carrossel:inicio-->[\s\S]*?<!--carrossel:fim-->/, () => `<!--carrossel:inicio-->\n${carrosselHtml(ctx)}\n      <!--carrossel:fim-->`);
     html = html.replace(/<!--cobertura:inicio-->[\s\S]*?<!--cobertura:fim-->/, () => `<!--cobertura:inicio-->\n${coberturaHtml(ctx)}\n      <!--cobertura:fim-->`);  }
-  html = html.replace(/<!--site:jsonld-->[\s\S]*?<!--\/site:jsonld-->/, () => `<!--site:jsonld-->\n${jsonLd()}\n<!--/site:jsonld-->`);
+  html = html.replace(/<!--site:jsonld-->[\s\S]*?<!--\/site:jsonld-->/, () => `<!--site:jsonld-->\n${r === 'index.html' ? jsonLd() : jsonLdDaPagina(ctx, r, html)}\n<!--/site:jsonld-->`);
 
   // 5) previa de compartilhamento, a partir do <title> e da meta description da propria pagina (por ultimo: ja com os dados preenchidos)
   if (!geradaPeloSite && html.includes(PARES.social[0])) {
@@ -172,6 +188,8 @@ function montarPagina(ctx, r, original, problemas) {
     if (html.includes('youtube-nocookie.com/embed/')) linhas.push('<link rel="preconnect" href="https://www.youtube-nocookie.com">');
     return `<!--site:recursos-->\n${linhas.join('\n')}\n<!--/site:recursos-->\n${link}`;
   });
+  // 7) espacos de ADS: ligados ou escondidos por ADS_ATIVOS (config.mjs), em toda pagina (os marcadores escritos a mao tambem). Escondido = atributo hidden; o codigo fica.
+  html = html.replace(/(<div class="ads" data-ads="[^"]*"(?: aria-hidden="true")?)( hidden)?>/g, (todo, inicio) => `${inicio}${ADS_ATIVOS ? '' : ' hidden'}>`);
   return html.replace(/[ \t]+(\r?)$/gm, '$1'); // sem espaco sobrando no fim das linhas
 }
 

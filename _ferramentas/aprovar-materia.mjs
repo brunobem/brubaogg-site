@@ -10,21 +10,21 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validarMateria } from './gerador/contrato.mjs';
 import { feedPorId, gravarRegistro, lerRegistro, novoEndereco } from './gerador/enderecos.mjs';
-import { arquivoDaMateria } from './gerador/pastas.mjs';
+import { listarConteudos, tipoDaMateria } from './gerador/pastas.mjs';
 import { ErroDeDados, lerJson, normalizarId } from './gerador/util.mjs';
 import { formatoDe } from './gerador/youtube.mjs';
 
 const site = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const dir = path.join(site, '_conteudo', 'materias');
+const conteudos = listarConteudos(site).itens; // _conteudo/materias/<tipo>/<ID>/<ID>.json
 const args = process.argv.slice(2);
 const todos = args.includes('--todos'), confirmar = args.includes('--confirmar');
 const pedidos = args.filter((a) => !a.startsWith('--'));
 if (!todos && !pedidos.length) { console.error('Informe o ID (ou o link do video), ou --todos. Veja os rascunhos com: npm run pendentes'); process.exit(1); }
 
 const ids = [];
-if (todos) ids.push(...fs.readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, '')));
+if (todos) ids.push(...conteudos.filter((c) => c.tipo !== 'wiki').map((c) => c.id));
 for (const p of pedidos) {
-  if (path.basename(path.dirname(arquivoDaMateria(site, p) ?? '')) === 'wiki') { console.log(`${p} e conteudo da Wiki e nao passa por aprovar: para publicar, apague a linha "status" de _conteudo/wiki/${p}.json e rode npm run gerar`); continue; }
+  if (tipoDaMateria(site, p) === 'wiki') { console.log(`${p} e conteudo da Wiki e nao passa por aprovar: para publicar, apague a linha "status" de _conteudo/materias/wiki/${p}/${p}.json e rode npm run gerar`); continue; }
   const id = normalizarId(p);
   if (!id) { console.log(`ID invalido (use o ID de 11 caracteres ou o link do video): ${p}`); continue; }
   ids.push(id);
@@ -35,8 +35,9 @@ const feed = feedPorId(lerJson(path.join(site, 'assets', 'data', 'playlists.json
 
 let aprovadas = 0, prontas = 0, recusadas = 0;
 for (const id of ids) {
-  const f = path.join(dir, `${id}.json`), rel = `_conteudo/materias/${id}.json`;
-  if (!fs.existsSync(f)) { console.log(`nao existe: ${id}`); continue; }
+  const c = conteudos.find((x) => x.id === id);
+  if (!c) { console.log(`nao existe: ${id}`); continue; }
+  const f = c.arquivo, rel = c.rel;
   const textoOriginal = fs.readFileSync(f, 'utf8');
   let m;
   try { m = lerJson(f, rel); }

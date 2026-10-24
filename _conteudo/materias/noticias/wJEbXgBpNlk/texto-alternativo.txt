@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Homem de boné, óculos azuis e camisa havaiana, cercado de animais: um jacaré, um flamingo, uma iguana no ombro, uma raposa e uma pantera preta, com a logo de GTA 6. Texto na arte: "BIXO SOLTO?".
+Thumb.png: Homem de boné, óculos azuis e camisa havaiana, cercado de animais: um jacaré, um flamingo, uma iguana no ombro, uma raposa e uma pantera preta, com a logo de GTA 6. Texto na arte: "BIXO SOLTO?".

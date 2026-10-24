@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-11",
+  "titulo": "Resident Evil clássicos chegam à Steam, com DRM da Capcom",
+  "resumo": "Resident Evil 1, 2 e 3 originais chegaram à Steam em abril de 2026, com a proteção Enigma da Capcom e sem pacote.",
+  "tags": [
+    "Resident Evil"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/gogs-optimised-ports-of-the-original-pc-resident-evil-trilogy-are-now-on-steam-too"
+    },
+    {
+      "nome": "Shacknews",
+      "url": "https://www.shacknews.com/article/148560/resident-evil-1-2-3-steam-release"
+    },
+    {
+      "nome": "Overclock3D",
+      "url": "https://overclock3d.net/news/software/the-resident-evil-classic-trilogy-has-arrived-on-steam/"
+    },
+    {
+      "nome": "SteamDeckHQ",
+      "url": "https://steamdeckhq.com/news/the-original-resident-evil-titles-release-on-steam/"
+    }
+  ],
+  "corpo": [
+    "Os três primeiros Resident Evil voltaram à Steam em abril de 2026, com a Resident Evil Classic Collection, que traz as versões de PC originais de Resident Evil, Resident Evil 2 e Resident Evil 3: Nemesis, depois de uma passagem pela GOG. Segundo a Shacknews, o lançamento coincidiu com os 30 anos da franquia. As versões são baseadas nos relançamentos otimizados da GOG, com resolução 4K e suporte a controles, e não nas versões de PlayStation 1.",
+    "Na Steam, os jogos são vendidos separadamente, sem pacote, e tiveram 50% de desconto até 15 de abril. A principal crítica é o DRM Enigma Protector da Capcom, que não existe nas versões da GOG, livres de DRM, e que pode pesar um pouco no desempenho e, segundo usuários, causar problemas no Steam Deck.",
+    "Lembro que os clássicos não estavam mais disponíveis na Steam e que as versões originais só estavam na GOG, e que sempre houve formas diferentes de jogá-los. Noto a inclusão do sistema antipirataria, que deixa o jogo mais pesado, mas acho que um jogo de PlayStation 1 não deve pesar tanto."
+  ]
+}
