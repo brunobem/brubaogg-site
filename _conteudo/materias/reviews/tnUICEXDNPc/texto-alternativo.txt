@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Homem de jaqueta iluminando com uma lanterna uma construção de madeira escura.
+img-2_steam.com.jpg: Homem apontando uma espingarda com lanterna para uma construção de madeira à noite, com uma montanha ao fundo.
+img-3_steam.com.jpg: Homem de jaqueta clara atirando numa clareira, com objetos voando em sua direção e efeito de movimento.

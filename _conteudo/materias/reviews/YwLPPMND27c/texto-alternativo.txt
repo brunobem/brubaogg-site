@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Criaturas sombrias e alongadas, algumas com asas, de pé sobre uma água rasa sob um céu nublado.
+img-2_steam.com.jpg: Mulher loira de vestido branco com a mão estendida, diante de uma massa de fumaça escura.
+img-3_steam.com.jpg: Homem de cabelo castanho segurando um bebê de roupa clara ao ar livre.

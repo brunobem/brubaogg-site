@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_playstation.com.webp: Figura com cabeça de cervo vista de perto, na penumbra e em tons de verde.
+img-2_playstation.com.webp: Mulher de costas numa floresta escura, diante de uma loja com a placa "GENERAL STORE".
+img-3_playstation.com.webp: Pessoa com jaqueta "FB" iluminando com uma lanterna uma floresta escura, com símbolos triangulares ao redor.

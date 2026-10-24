@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_playstation.com.webp: Astro, o robozinho, boiando numa boia em águas azuis, com um grande edifício de ventilador azul numa ilha de gelo ao fundo.
+img-2_playstation.com.webp: Astro diante de um canteiro de grama com pequenos robôs verdes e vermelhos, num cenário de plantas e pedra.
+img-3_playstation.com.webp: Quatro robôs brancos de olhos luminosos em volta de uma bandeja, ao lado de um grande console branco, numa sala com a placa "AD 2000".

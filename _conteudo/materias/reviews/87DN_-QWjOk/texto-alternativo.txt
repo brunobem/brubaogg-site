@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Interior escuro de uma loja de conveniência, com prateleiras de produtos, uma placa de saída acesa e o medidor de "VOLUME" no canto.
+img-2_steam.com.jpg: Tela de um banco de dados com a ficha de uma enfermeira careca de óculos chamada Bonnie McCree, na data de hoje, 1993.
+img-3_steam.com.jpg: Rua à noite com um poste de luz e árvores, com a cabeça de uma pessoa de touca camuflada em primeiro plano.

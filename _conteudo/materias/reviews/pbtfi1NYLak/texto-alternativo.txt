@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Guerreiro de roupa escura e pelo no ombro lutando numa floresta, com um inimigo cercado de chamas ao fundo.
+img-2_steam.com.jpg: Grande lobo branco de pelos eriçados diante de um templo, com um guerreiro caído cercado de chamas.
+img-3_steam.com.jpg: Guerreiro de armadura com um cajado, de costas, num campo de neve com chamas no chão e um inimigo ao fundo.

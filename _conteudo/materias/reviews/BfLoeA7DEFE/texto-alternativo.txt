@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Rua de neon numa cidade futurista, com o jogador de braço mecânico diante de um inimigo musculoso e brilhante.
+img-2_steam.com.jpg: Moto futurista prateada e preta exibida numa oficina com luzes azuis.
+img-3_steam.com.jpg: Visão em primeira pessoa pilotando uma moto por uma estrada entre prédios em ruínas, com o velocímetro marcando 226.

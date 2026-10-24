@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Personagem encapuzado agachado no topo de uma torre alta, olhando um vale com montanhas, pagodes e uma vila japonesa ao pôr do sol; o botão "Observe" aparece na tela.
+img-2_steam.com.jpg: Samurai de armadura escura e dourada, de costas, duelando de katana com dois inimigos num pátio coberto de neve, diante de um castelo japonês.
+img-3_steam.com.jpg: Jovem de cabelo curto e olhar sério em primeiro plano, com uma lâmina escondida no braço de outra personagem apontando para ela, numa noite com fogo ao fundo.

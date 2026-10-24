@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Homem de chapéu e sobretudo, de costas, diante de um carro antigo numa rua, com homens em volta.
+img-2_steam.com.jpg: Dois homens de terno e chapéu numa rua movimentada de uma cidade dos anos 1930, com carros antigos ao fundo.
+img-3_steam.com.jpg: Táxi amarelo antigo numa rua molhada, com um homem de sobretudo atravessando e prédios ao fundo.

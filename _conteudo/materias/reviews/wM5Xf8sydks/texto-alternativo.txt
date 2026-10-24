@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Homem sem camisa nadando entre destroços de um navio afundado, com corais roxos e águas-vivas.
+img-2_steam.com.jpg: Assassino de capuz sobre uma árvore num penhasco, olhando uma baía com um navio e um cais de madeira.
+img-3_steam.com.jpg: Dois piratas no convés de um navio, um deles ao leme, com uma ilha tropical ao fundo.

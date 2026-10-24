@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Personagem de jaqueta laranja e mochila atirando num terreno de areia, com um veículo blindado ao lado e um drone no céu.
+img-2_steam.com.jpg: Vista de cima de uma rua de cidade abandonada coberta de areia, com uma arma em primeiro plano e prédios antigos ao redor.
+img-3_steam.com.jpg: Jogador agachado atrás de carros enferrujados, com uma grande máquina de pernas de aranha e luz vermelha pairando acima.

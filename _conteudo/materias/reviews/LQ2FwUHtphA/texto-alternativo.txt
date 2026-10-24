@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Astronauta de capacete branco e traje com detalhes vermelhos apontando uma arma dentro de uma nave.
+img-2_steam.com.jpg: Androide de rosto metálico e pálido empunhando uma lâmina de energia azul.
+img-3_steam.com.jpg: Menina de cabelo loiro longo e olhos claros ao lado de um astronauta de armadura.

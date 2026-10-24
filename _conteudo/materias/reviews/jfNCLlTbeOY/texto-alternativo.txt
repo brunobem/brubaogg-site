@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_hytale.com.jpg: Personagem de blocos voando com uma hélice sobre uma vila medieval, com um castelo ao fundo.
+img-2_hytale.com.jpg: Paisagem de blocos com um lago, árvores amareladas e flores roxas.
+img-3_hytale.com.png: Criaturas de blocos, entre elas uma de pelos claros e um monstro de madeira, numa caverna com cristais azuis.

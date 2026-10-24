@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Guerreiro de armadura clara cercado por energia vermelha, em batalha na neve.
+img-2_steam.com.jpg: Dois guerreiros duelando em meio a um redemoinho de lâminas e energia vermelha.
+img-3_steam.com.jpg: Caverna escura com um feixe de luz azulada e cristais ao fundo.

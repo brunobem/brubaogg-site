@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Parquinho colorido de creche com escorregador e árvores secas, e uma alavanca vermelha em primeiro plano diante de um poço azul.
+img-2_steam.com.jpg: Mural na parede com cinco monstros coloridos (verde, roxo, vermelho, rosa e laranja) e uma alavanca vermelha na frente.
+img-3_steam.com.jpg: Sala de aula com mesas e cadeiras coloridas, quadro branco e um monstro vermelho desenhado na parede.

@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Escrivaninha com dois monitores e um teclado rosa num quarto, com um sapo de meme na tela.
+img-2_steam.com.jpg: Tela de transmissão ao vivo com uma personagem de cabelo vermelho, o chat ao lado e os botões de controle da live.
+img-3_steam.com.jpg: Quarto com grandes janelas para um lago e pinheiros, com um celular mostrando a personagem de cabelo vermelho posando.

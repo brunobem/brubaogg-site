@@ -880,6 +880,8 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .fachada:hover .fachada-play { transform: scale(1.08); }
 .fachada-play .ico { width: 32px; height: 32px; margin-left: 4px; fill: currentColor; }
 .art-body p { margin: 0 0 var(--space-3); font-size: 1.05rem; line-height: 1.8; color: var(--text-soft-2); }
+/* REVIEW: texto justificado, para a borda direita do texto acompanhar a das imagens (as duas tem a mesma largura de 1000 px); a hifenizacao automatica (pt-BR) evita buracos grandes entre as palavras */
+.art-reviews .art-body p { text-align: justify; text-justify: inter-word; hyphens: auto; }
 /* imagem entre os paragrafos (img-N_<site da fonte>.jpg na pasta da materia), com a fonte na legenda */
 .art-foto { margin: 0 0 var(--space-3); }
 .art-foto img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 2px solid var(--border); }

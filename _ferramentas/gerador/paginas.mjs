@@ -343,7 +343,7 @@ ${outras.map((o) => cartao(o, catDe.get(o), '../')).join('\n')}
       const jogoDaWiki = wikiDe(m);
       const linkDaWiki = jogoDaWiki ? `<li><a href="../${paginaDaWiki(ctx, jogoDaWiki)}">${icone('book-open')} Wiki ${esc(jogoDaWiki.nome)}</a></li>` : '';
       // as tags viram FILTROS da busca; o texto da lista fica fora do indice (senao o trecho do resultado mostraria "Resident Evil. Silent Hill.")
-      const corpo = `    <main class="article${dividido ? ' has-split' : ''}"${pf}>${indexavel && urlDe(`${cat.pasta}/${m.slug}.html`) !== `${cat.pasta}/${m.slug}.html` ? `<span hidden data-pagefind-meta="end:${urlDe(`${cat.pasta}/${m.slug}.html`)}"></span>` : ''}
+      const corpo = `    <main class="article art-${cat.pasta}${dividido ? ' has-split' : ''}"${pf}>${indexavel && urlDe(`${cat.pasta}/${m.slug}.html`) !== `${cat.pasta}/${m.slug}.html` ? `<span hidden data-pagefind-meta="end:${urlDe(`${cat.pasta}/${m.slug}.html`)}"></span>` : ''}
       ${(cat.lista || ctx.visiveis.has(cat.pasta)) ? `<a class="back"${ign} href="../${cat.lista ?? `${cat.pasta}.html`}">&larr; ${esc(cat.nomeCurto ?? cat.nome)}</a>` : `<a class="back"${ign} href="/">&larr; Início</a>`}
       <p class="art-meta"><span class="tag"${ign}>${icone(cat.icone)} ${esc(m.rotulo ?? cat.rotulo)}</span>${leituraHtml(ctx, contarPalavras(m.resumo, m.corpo), ign)}</p>
       <h1 class="art-title">${esc(m.titulo)}</h1>

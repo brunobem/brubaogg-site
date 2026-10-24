@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Cinco exploradores de roupa escura caminhando por um fundo de mar azul com algas e uma criatura gigante ao fundo.
+img-2_steam.com.jpg: Close de um homem de barba e cabelo ruivo, com o rosto sujo de sangue, sob uma luz vermelha.
+img-3_steam.com.jpg: Mulher de cabelo ruivo trançado, de lado, com uniforme verde e dourado sobre um fundo preto.

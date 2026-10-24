@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Visão em primeira pessoa de duas mãos de luva, uma azul e uma vermelha, numa sala escura de fábrica de brinquedos, com a placa "MAKE-A-FRIEND" ao fundo.
+img-2_steam.com.jpg: Visão em primeira pessoa com uma mão azul e uma verde, diante de uma criatura azul felpuda de boca rosa e de uma TV antiga.
+img-3_steam.com.jpg: Visão em primeira pessoa descendo por um túnel de tubos vermelhos, com uma mão azul e uma mão mecânica vermelha.
