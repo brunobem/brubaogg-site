@@ -53,6 +53,9 @@ export const SIZES_CARROSSEL = '(max-width: 700px) calc(100vw - 32px), 700px';
 export function imagemDoCartao(id, sizes) {
   const c = cartoesPropios.get(id);
   if (imagensPropias.has(id) || !c) return { atributos: `src="${miniatura(id)}"`, w: 480, h: 360, alt: "" };
+  // cartao PEQUENO (a lista ao lado do grande, nos blocos da home e da Wiki): a caixa da imagem e quase quadrada ou vertical (128 a 150 px de largura), entao entra a THUMB
+  // (vertical nos Shorts) em vez do card horizontal, que ali seria cortado nas laterais
+  if (sizes === SIZES_CARTAO_PEQUENO && c.p) return { atributos: `src="${c.p.src}" srcset="${c.p.srcset}" sizes="${sizes}"`, w: c.p.w, h: c.p.h, alt: c.p.alt };
   return { atributos: `src="${c.src}" srcset="${c.srcset}" sizes="${sizes}"`, w: c.w, h: c.h, alt: c.alt ?? "" };
 }
 // Imagem GRANDE (maxresdefault, 1280x720) so para a previa de compartilhamento (og:image) e Article.image das materias (BL-05). Os cartoes e as fachadas continuam com a

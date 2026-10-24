@@ -68,7 +68,7 @@ export function carregarDados(ctx) {
   ctx.avisos.push(...imagens.avisos);
   ctx.imagens = imagens.porId;
   cartoesPropios.clear();
-  for (const [id, reg] of imagens.porId) if (reg.cartao?.ls.length) { const p = fonteDaImagem(id, reg.cartao, '/', 640), g = fonteDaImagem(id, reg.cartao, '/', 1200); cartoesPropios.set(id, { src: p.src, srcset: p.srcset, w: p.w, h: p.h, grande: g.src, alt: reg.cartao.alt || "" }); }
+  for (const [id, reg] of imagens.porId) if (reg.cartao?.ls.length) { const p = fonteDaImagem(id, reg.cartao, '/', 640), g = fonteDaImagem(id, reg.cartao, '/', 1200); cartoesPropios.set(id, { src: p.src, srcset: p.srcset, w: p.w, h: p.h, grande: g.src, alt: reg.cartao.alt || "", p: reg.thumb?.ls.length ? { ...fonteDaImagem(id, reg.thumb, "/", 480), alt: reg.thumb.alt || "" } : null }); }
   for (const c of conteudos.filter((x) => x.tipo !== 'wiki')) {
     const { id, rel } = c;
     let m;
