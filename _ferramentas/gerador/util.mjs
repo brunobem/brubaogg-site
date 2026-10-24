@@ -33,6 +33,14 @@ export const imagensPropias = new Map();
 // Imagem horizontal PROPRIA do cartao (card.jpg da pasta da materia, ou a thumb de uma materia horizontal; imagens.mjs): dados.mjs registra aqui id -> { src (640 px), srcset, w, h, grande }.
 // Onde existe, o cartao, o carrossel, as listas e a previa de compartilhamento usam ela em vez da miniatura do YouTube.
 export const cartoesPropios = new Map();
+// ENDERECO PUBLICO DE UMA PAGINA: nenhuma pagina tem .html no endereco, EXCETO as de _conteudo/paginas-com-html.json (termos, privacidade e MCP, cadastradas em
+// servicos externos, e a 404). O GitHub Pages abre /pasta/nome no arquivo pasta/nome.html, entao o arquivo continua o mesmo: so o endereco que aparece nos links,
+// no canonical, no sitemap e na busca perde o .html. A home (index.html) e o "/".
+export const paginasComHtml = new Set();
+export const urlDe = (rel) => {
+  const i = rel.indexOf('#'), caminho = i < 0 ? rel : rel.slice(0, i), ancora = i < 0 ? '' : rel.slice(i);
+  return caminho.endsWith('.html') && caminho !== 'index.html' && !paginasComHtml.has(caminho) ? caminho.slice(0, -5) + ancora : rel;
+};
 export const miniatura = (id) => imagensPropias.get(id) ?? cartoesPropios.get(id)?.src ?? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 // larguras aproximadas em que a imagem aparece na tela (o navegador usa isto para escolher a versao do srcset): cartao de lista, cartao grande da home e slide do carrossel
 // (medido no navegador: celular de 390 px = cartao e carrossel com 355 px; computador de 1440 px = carrossel 686, cartao grande 653, destaque da lista 602, cartao de lista 262 a 330, cartao pequeno dos blocos 128 a 150)

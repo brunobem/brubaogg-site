@@ -12,7 +12,11 @@ export const CATEGORIAS = ['noticias', 'reviews', 'lancamentos', 'gta6-novidades
 
 export const achado = (sev, teste, msg, onde = '') => ({ sev, teste, msg, onde });
 export const ler = (rel) => fs.readFileSync(path.join(raiz, rel), 'utf8');
-export const existe = (rel) => fs.existsSync(path.join(raiz, rel));
+// Endereco sem .html (as paginas novas nascem assim; o GitHub Pages abre o arquivo .html dele): arquivoDe devolve o arquivo; urlPublica, o endereco que a pagina deve usar.
+export const arquivoDe = (p) => (p === '' || p.endsWith('/') || path.posix.extname(p) ? p : `${p}.html`);
+const antigas = new Set(fs.existsSync(path.join(raiz, '_conteudo', 'paginas-com-html.json')) ? JSON.parse(fs.readFileSync(path.join(raiz, '_conteudo', 'paginas-com-html.json'), 'utf8')) : []);
+export const urlPublica = (rel) => (rel.endsWith('.html') && rel !== 'index.html' && !antigas.has(rel) ? rel.slice(0, -5) : rel);
+export const existe = (rel) => fs.existsSync(path.join(raiz, rel)) || fs.existsSync(path.join(raiz, arquivoDe(rel)));
 
 // ---- o que o GitHub Pages publica: definicao unica em _ferramentas/publicado.mjs (a mesma usada para montar o site) ----
 export { EXCLUIDOS, ehPublicado } from '../../publicado.mjs';
@@ -37,6 +41,10 @@ function listagem(dirAbs) {
 }
 /** 'ok' | 'caixa' (existe so com outra caixa) | 'nao' */
 export function existeExato(rel) {
+  const r = existeExato0(rel);
+  return r === 'nao' ? existeExato0(arquivoDe(rel)) : r;
+}
+function existeExato0(rel) {
   let atual = raiz;
   for (const seg of rel.split('/').filter(Boolean)) {
     const lista = listagem(atual);

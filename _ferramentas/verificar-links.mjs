@@ -53,7 +53,8 @@ for (const pg of paginas) {
     if (/^(https?:|mailto:|#|data:)/.test(alvo)) continue;
     const limpo = alvo.split('#')[0].split('?')[0];
     if (!limpo) continue;
-    const arq = limpo.startsWith('/') ? path.join(raiz, limpo) : path.resolve(path.dirname(pg), limpo);
+    const arq0 = limpo.startsWith('/') ? path.join(raiz, limpo) : path.resolve(path.dirname(pg), limpo);
+    const arq = !path.extname(arq0) && !limpo.endsWith('/') ? `${arq0}.html` : arq0; // endereco sem .html: o GitHub Pages abre o arquivo .html dele
     const achou = existeExato(arq);
     if (achou === 'nao') { console.log(`QUEBRADO  ${path.relative(raiz, pg)} -> ${alvo}`); quebrados++; }
     else if (achou === 'caixa') { console.log(`CAIXA DIFERENTE (da 404 no GitHub)  ${path.relative(raiz, pg)} -> ${alvo}`); quebrados++; }

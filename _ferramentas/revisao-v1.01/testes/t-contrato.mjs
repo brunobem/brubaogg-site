@@ -1,7 +1,7 @@
 // Contrato dos arquivos de materia, do registro de enderecos e do tags.json.
 // As regras obrigatorias vem do MESMO modulo que o gerador usa (_ferramentas/gerador/contrato.mjs): nao ha uma segunda copia para divergir.
 // Aqui ficam so as conferencias extras (texto, repeticoes, coerencia entre os arquivos).
-import { achado, aprovada, CATEGORIAS, conteudosDaWiki, existe, existeExato, ler, materias } from './lib.mjs';
+import { achado, aprovada, urlPublica, CATEGORIAS, conteudosDaWiki, existe, existeExato, ler, materias } from './lib.mjs';
 import { LIMITE_DE_FONTES, LIMITE_DE_SHORTS } from '../../gerador/config.mjs';
 import { classificarArquivo } from '../../gerador/imagens.mjs';
 import { validarAssuntos, validarMateria, validarWiki } from '../../gerador/contrato.mjs';
@@ -179,7 +179,7 @@ export default async function () {
       if (e.retirada) {
         const stub = `${e.categoria}/${e.slug}.html`;
         if (existeExato(stub) !== 'ok') a.push(achado('alto', T, `materia retirada sem a pagina de redirecionamento ${stub} (rode npm run gerar)`, id));
-        else if (alvo && !alvo.retirada && !ler(stub).includes(`<meta http-equiv="refresh" content="0; url=/${alvo.categoria}/${alvo.slug}.html">`)) a.push(achado('alto', T, `${stub} devia levar para ${alvo.categoria}/${alvo.slug}.html (retirada "para") e leva para outro lugar`, id));
+        else if (alvo && !alvo.retirada && !ler(stub).includes(`<meta http-equiv="refresh" content="0; url=/${urlPublica(`${alvo.categoria}/${alvo.slug}.html`)}">`)) a.push(achado('alto', T, `${stub} devia levar para ${alvo.categoria}/${alvo.slug}.html (retirada "para") e leva para outro lugar`, id));
       }
       const caminho = (velho) => (velho.includes('/') ? velho : `${e.categoria}/${velho}`); // slug da categoria atual ou "categoria-antiga/slug" (materia que mudou de categoria)
       for (const velho of e.antigos ?? []) if (existeExato(`${caminho(velho)}.html`) !== 'ok') a.push(achado('alto', T, `endereco antigo sem a pagina de redirecionamento: ${caminho(velho)}.html`, id));

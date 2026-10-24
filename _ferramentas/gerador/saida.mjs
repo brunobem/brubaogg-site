@@ -13,10 +13,10 @@
 //   <meta name="description" data-modelo="... {gta6-data} ...">   descricao montada a partir de dados do config.mjs
 import crypto from 'node:crypto';
 import fs from 'node:fs';
-import path from 'node:path';
+import path, { posix } from 'node:path';
 import { ADS_ATIVOS, DOMINIO, SOCIAIS, categorias } from './config.mjs';
 import { carrosselHtml, coberturaHtml, contagemHtml, feedHtml, gta6Html, playersHtml, wikiHtml } from './paginas.mjs';
-import { ErroDeDados, desescapar, esc, hojeEmSaoPaulo, lerJson } from './util.mjs';
+import { ErroDeDados, desescapar, esc, hojeEmSaoPaulo, lerJson, urlDe } from './util.mjs';
 
 // pastas que nao sao paginas do site (nao entram na varredura de .html nem no sitemap)
 const NAO_VARRER = new Set(['_ferramentas', '_conteudo', '_marca', '_site', 'assets', 'node_modules', 'pagefind', '.git', '.github']);
@@ -105,7 +105,7 @@ const TIPO_DA_PAGINA = { 'sobre.html': 'AboutPage', 'cortes.html': 'CollectionPa
 function jsonLdDaPagina(ctx, r, html) {
   const titulo = desescapar((html.match(/<title>([\s\S]*?)<\/title>/) ?? [])[1] ?? '').replace(/\s*\|\s*BRUBAOGG\s*$/, '').trim();
   const descricao = desescapar((html.match(/<meta\s+name="description"[^>]*\bcontent="([^"]*)"/) ?? html.match(/<meta[^>]*\bcontent="([^"]*)"[^>]*\bname="description"/) ?? [])[1] ?? '');
-  const url = `${DOMINIO}/${r}`, tipo = TIPO_DA_PAGINA[r] ?? 'WebPage';
+  const url = `${DOMINIO}/${urlDe(r)}`, tipo = TIPO_DA_PAGINA[r] ?? 'WebPage';
   const canal = { '@type': 'Organization', name: 'BRUBAOGG', url: `${DOMINIO}/` };
   const pagina = {
     '@type': tipo, '@id': `${url}#pagina`, name: titulo, description: descricao, url, inLanguage: 'pt-BR',
@@ -190,7 +190,22 @@ function montarPagina(ctx, r, original, problemas) {
   });
   // 7) espacos de ADS: ligados ou escondidos por ADS_ATIVOS (config.mjs), em toda pagina (os marcadores escritos a mao tambem). Escondido = atributo hidden; o codigo fica.
   html = html.replace(/(<div class="ads" data-ads="[^"]*"(?: aria-hidden="true")?)( hidden)?>/g, (todo, inicio) => `${inicio}${ADS_ATIVOS ? '' : ' hidden'}>`);
+  html = semHtmlNosEnderecos(r, html);
   return html.replace(/[ \t]+(\r?)$/gm, '$1'); // sem espaco sobrando no fim das linhas
+}
+
+// Ultimo passo de toda pagina (gerada ou escrita a mao): tira o .html dos enderecos internos (links relativos em href="..." e enderecos completos do proprio dominio, como o
+// canonical e o og:url). Fica de fora so quem esta em _conteudo/paginas-com-html.json (urlDe, util.mjs). Idempotente: rodar de novo nao muda mais nada.
+function semHtmlNosEnderecos(r, html) {
+  const dominio = DOMINIO.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  html = html.replace(new RegExp(`${dominio}/([^"'\\s<>#?)]+?)\\.html(?=[#?"'\\s<>)]|$)`, 'g'), (todo, p) => (urlDe(`${p}.html`) === `${p}.html` ? todo : `${DOMINIO}/${p}`));
+  return html.replace(/(\bhref=")([^"]+)(")/g, (todo, a, v, c) => {
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(v)) return todo;
+    const m = v.match(/^([^#?]*)([#?].*)?$/), p = m[1];
+    if (!p.endsWith('.html')) return todo;
+    const alvo = p.startsWith('/') ? p.slice(1) : posix.normalize(posix.join(posix.dirname(r), p));
+    return urlDe(alvo) === alvo ? todo : `${a}${p.slice(0, -5)}${m[2] ?? ''}${c}`;
+  });
 }
 
 // ---- lastmod: a data da ULTIMA MUDANCA de cada pagina, guardada em _conteudo/lastmod.json ----
@@ -225,7 +240,7 @@ function sitemapERobots(ctx, lastmod) {
     }
   })(site, '');
   urls.sort((a, b) => (a.r === 'index.html' ? -1 : b.r === 'index.html' ? 1 : a.r.localeCompare(b.r)));
-  const loc = (r) => (r === 'index.html' ? `${DOMINIO}/` : `${DOMINIO}/${r}`);
+  const loc = (r) => (r === 'index.html' ? `${DOMINIO}/` : `${DOMINIO}/${urlDe(r)}`);
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

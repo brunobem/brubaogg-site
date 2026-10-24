@@ -1,7 +1,7 @@
 // Modelos de HTML reutilizados pelo gerador: cabecalho (com a faixa de secoes), rodape, pagina completa, cartao.
 // Dependem do estado do site (abas visiveis, se ha tags), por isso recebem o contexto.
 import { DOMINIO, GTA6, SOCIAIS, abas, categorias } from './config.mjs';
-import { SIZES_CARTAO, SIZES_CARTAO_DESTAQUE, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, esc, imagemDoCartao } from './util.mjs';
+import { SIZES_CARTAO, SIZES_CARTAO_DESTAQUE, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, esc, imagemDoCartao, urlDe } from './util.mjs';
 
 export function criarModelos(ctx) {
   const { icone } = ctx;
@@ -164,7 +164,7 @@ ${lis(extras, '          ')}
   // scripts: JavaScript so desta pagina (alem do busca.js, que todas carregam), por nome de arquivo em assets/js (ex.: ['compartilhar.js'])
   function pagina({ base, titulo, descricao, og, corpo, caminho, noindex = false, tipo = 'website', publicado, estruturados = [], scripts = [] }) {
     // protecao contra texto absurdo: o <title> e a descricao do Google nunca passam desses limites (texto normal nao muda)
-    const previa = social({ titulo, descricao, og, url: caminho ? `${DOMINIO}/${caminho}` : undefined, tipo, publicado });
+    const previa = social({ titulo, descricao, og, url: caminho ? `${DOMINIO}/${urlDe(caminho)}` : undefined, tipo, publicado });
     titulo = cortar(prepararTitulo(titulo), 70); // <title>: ate 70 letras (o Google mostra uns 60); a previa de compartilhamento aceita 100
     descricao = cortar(descricao, 160);
     return `<!DOCTYPE html>
@@ -175,7 +175,7 @@ ${lis(extras, '          ')}
 <title>${esc(titulo)}</title>
 <meta name="description" content="${esc(descricao)}">
 <meta name="theme-color" content="#302D33">
-${previa}${noindex ? '\n<meta name="robots" content="noindex">' : ''}${caminho ? `\n<link rel="canonical" href="${DOMINIO}/${caminho}">` : ''}${estruturados.map((o) => `\n${dadosEstruturados(o)}`).join('')}
+${previa}${noindex ? '\n<meta name="robots" content="noindex">' : ''}${caminho ? `\n<link rel="canonical" href="${DOMINIO}/${urlDe(caminho)}">` : ''}${estruturados.map((o) => `\n${dadosEstruturados(o)}`).join('')}
 <link rel="icon" type="image/png" href="${base}assets/img/logo-96.png">
 <link rel="stylesheet" href="${base}assets/css/style.css">
 </head>
@@ -209,7 +209,7 @@ ${corpo}
   // destaque: false (cartao normal), 'pequeno' (cartao pequeno ao lado do grande nos blocos da home: igual ao normal, so a imagem pede menos pixels), true (cartao em destaque das listas, imagem ao lado do texto) ou 'grande' (cartao grande dos blocos da home, imagem em cima;
   // leva tambem o primeiro paragrafo da materia, que o CSS so mostra quando o cartao e largo)
   function cartao(m, cat, base, destaque = false) {
-    const href = `${base}${cat.pasta}/${m.slug}.html`;
+    const href = `${base}${urlDe(`${cat.pasta}/${m.slug}.html`)}`;
     const mais = destaque === 'grande' && m.corpo?.length ? frasesInteiras(m.corpo[0], 440) : '';
     return `          <a class="news-card${destaque === 'grande' ? ' grande' : destaque === true ? ' featured' : ''}" href="${href}">
             <span class="thumb">${(() => { const im = imagemDoCartao(m.id, destaque === 'grande' ? SIZES_CARTAO_GRANDE : destaque === 'pequeno' ? SIZES_CARTAO_PEQUENO : destaque === true ? SIZES_CARTAO_DESTAQUE : SIZES_CARTAO); return `<img ${im.atributos} alt="${esc(im.alt)}"`; })()} loading="lazy"></span>
@@ -226,7 +226,7 @@ ${corpo}
   // pagina que leva para outro endereco (o GitHub Pages nao tem redirecionamento no servidor). O Google trata o refresh imediato como
   // redirecionamento e passa a valer o endereco do canonical.
   function redirecionamento({ para, titulo, descricao = '', imagem = '' }) {
-    const destino = `/${para}`, semAncora = destino.split('#')[0]; // a ancora (#v-ID: o bloco do video numa pagina de assunto) vale no refresh; o canonical e a pagina inteira
+    const destino = `/${urlDe(para)}`, semAncora = destino.split('#')[0]; // a ancora (#v-ID: o bloco do video numa pagina de assunto) vale no refresh; o canonical e a pagina inteira
     // os servicos de compartilhamento (Discord, WhatsApp...) nao seguem o refresh: por isso a pagina traz a previa da materia de destino
     const previa = [['og:title', cortar(titulo, 100)], ['og:description', cortar(descricao, 160)], ['og:image', imagem.startsWith('/') ? `${DOMINIO}${imagem}` : imagem]].filter(([, v]) => v)
       .map(([k, v]) => `<meta property="${k}" content="${esc(v)}">`).join('\n');

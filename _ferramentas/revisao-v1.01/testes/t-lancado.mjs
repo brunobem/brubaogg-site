@@ -34,7 +34,7 @@ export default async function () {
       if (!temContagem) a.push(achado('alto', T, 'sem a contagem regressiva (id="gta-count") antes da data', rel));
       const attr = (nome) => entidades((abre.match(new RegExp(`data-lancado-${nome}="([^"]*)"`)) ?? [])[1] ?? '');
       for (const [nome, esperado] of [['kicker', L.kicker], ['titulo', L.titulo], ['texto', texto]]) if (attr(nome) !== esperado) a.push(achado('alto', T, `data-lancado-${nome}="${attr(nome)}" e o de config.mjs e "${esperado}"`, rel));
-      if (faixa) { if (attr('botao') !== L.botao || attr('href') !== 'gta6.html') a.push(achado('alto', T, 'a home precisa de data-lancado-botao (o texto de config.mjs) e data-lancado-href="gta6.html"', rel)); }
+      if (faixa) { if (attr('botao') !== L.botao || attr('href') !== 'gta6') a.push(achado('alto', T, 'a home precisa de data-lancado-botao (o texto de config.mjs) e data-lancado-href="gta6.html"', rel)); }
       else if (/data-lancado-botao|data-lancado-href/.test(abre)) a.push(achado('medio', T, 'a pagina do GTA 6 nao tem botao no estado lancado (ja esta nela)', rel));
       // nada do lancado visivel: o texto visivel da secao e so o da contagem
       const visivel = limparHtml(secao).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');

@@ -10,7 +10,9 @@ function resolver(origemRel, alvo) {
   const limpo = decodificar(alvo).split('#')[0].split('?')[0];
   if (!limpo) return null;
   const base = limpo.startsWith('/') ? limpo.slice(1) : path.posix.normalize(path.posix.join(path.posix.dirname(origemRel), limpo));
-  return base.replace(/\/$/, '') + (limpo.endsWith('/') ? '/index.html' : '');
+  const semBarra = base.replace(/\/$/, '');
+  if (limpo.endsWith('/')) return `${semBarra}/index.html`;
+  return semBarra && !path.posix.extname(semBarra) ? `${semBarra}.html` : semBarra; // endereco sem .html: o GitHub Pages abre o arquivo .html dele
 }
 
 export default async function () {

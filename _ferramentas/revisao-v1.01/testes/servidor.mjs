@@ -20,6 +20,7 @@ http.createServer((req, res) => {
   }
   const url = decodeURIComponent(req.url.split('?')[0]);
   let arq = path.join(pasta, url.endsWith('/') ? `${url}index.html` : url);
+  if (!path.extname(arq) && !url.endsWith('/') && fs.existsSync(`${arq}.html`)) arq = `${arq}.html`; // como o GitHub Pages: /noticias/nome abre noticias/nome.html
   if (!arq.startsWith(pasta) || !fs.existsSync(arq) || fs.statSync(arq).isDirectory()) {
     const nf = path.join(pasta, '404.html');
     res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' }); res.end(fs.existsSync(nf) ? fs.readFileSync(nf) : 'nao encontrado'); return;

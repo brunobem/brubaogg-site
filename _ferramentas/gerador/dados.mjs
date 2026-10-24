@@ -9,7 +9,7 @@ import { validarAssuntos, validarMateria, validarWiki } from './contrato.mjs';
 import { caminhoAntigo, feedPorId, gravarRegistro, indiceDoDisco, lerRegistro, novoEndereco } from './enderecos.mjs';
 import { fonteDaImagem, prepararImagens } from './imagens.mjs';
 import { listarConteudos, tipoDaCategoria } from './pastas.mjs';
-import { ErroDeDados, cartoesPropios, duracoesDosVideos, imagensPropias, lerJson, miniatura, miniaturasGrandes } from './util.mjs';
+import { ErroDeDados, cartoesPropios, paginasComHtml, duracoesDosVideos, imagensPropias, lerJson, miniatura, miniaturasGrandes } from './util.mjs';
 
 // as datas de GTA6 (config.mjs) precisam de HORA e FUSO: "2026-11-19" sem fuso e lido como UTC e a contagem regressiva terminaria 3 horas antes
 function validarDatasDoGta6() {
@@ -47,6 +47,11 @@ export function carregarDados(ctx) {
   const fd = path.join(site, '_conteudo', 'duracoes-videos.json');
   duracoesDosVideos.clear();
   if (fs.existsSync(fd)) for (const [id, seg] of Object.entries(lerJson(fd, '_conteudo/duracoes-videos.json').videos ?? {})) duracoesDosVideos.set(id, seg);
+  // paginas que ja existiam com .html (congeladas): so elas mantem o .html no endereco; toda pagina nova nasce sem (util.mjs, urlDe)
+  const faa = path.join(site, '_conteudo', 'paginas-com-html.json');
+  paginasComHtml.clear();
+  if (fs.existsSync(faa)) for (const r of lerJson(faa, '_conteudo/paginas-com-html.json')) paginasComHtml.add(r);
+  else ctx.problemas.push('_conteudo/paginas-com-html.json: arquivo faltando. Sem ele as paginas de termos, privacidade e MCP perderiam o .html e o endereco delas (cadastrado em servicos externos) mudaria. Restaure o arquivo (ele esta no Git).');
   ctx.feed = feedPorId(ctx.playlists);
   ctx.enderecos = lerRegistro(site);
   const temporarios = {}; // enderecos so da previa (rascunhos); nunca vao para o registro

@@ -63,6 +63,11 @@ Também estão cadastradas em serviços externos (TikTok e Google Cloud), então
 `npm run verificar` falha se uma das duas páginas protegidas (home e GTA 6) estiver faltando.
 Para mudar o **texto** ou o visual dessas páginas pode mexer à vontade; só o **nome do arquivo/endereço** é intocável.
 
+### Nenhuma página tem `.html` no endereço (decisão de 25/10/2026)
+- Todo endereço do site é **sem `.html`**: `https://brubaogg.com.br/noticias/titulo-da-materia`, `/gta6`, `/sobre`, `/tag/xbox`. O arquivo continua sendo `noticias/titulo-da-materia.html` (o GitHub Pages abre `/noticias/titulo-da-materia` nesse arquivo; o endereço antigo com `.html` também continua abrindo), então **nada muda na pasta**: só o endereço que aparece nos links, no `canonical`, no sitemap e na busca. O Bruno conferiu em 25/10/2026 que o Google só tinha indexado a home (sem cliques), por isso a troca valeu para todas.
+- **Exceção:** as páginas de termos, privacidade e MCP (`termos`, `privacidade`, `termos-tiktok`, `privacidade-tiktok`, `termos-youtube`, `privacidade-youtube`, `mcp-tiktok`, `mcp-youtube`) e a 404 **mantêm o `.html`**, porque o endereço delas está cadastrado no TikTok e no Google Cloud. A lista é **`_conteudo/paginas-com-html.json`**: não apague nem edite. Se o arquivo sumir, o gerador para e avisa.
+- Quem decide é uma função só, `urlDe` (`_ferramentas/gerador/util.mjs`), e um último passo do gerador (`semHtmlNosEnderecos`, `saida.mjs`) tira o `.html` dos links internos de toda página, inclusive as escritas à mão. Os testes (`npm run testar`) conferem o `canonical` de cada página contra essa regra.
+
 ## Rotina
 
 Requer Node 18+. Os comandos rodam na raiz do projeto.

@@ -1,6 +1,6 @@
 // Sitemap, robots, paginas protegidas e coerencia entre o que e indexavel e o que o sitemap diz.
 import { posix } from 'node:path';
-import { achado, arquivosPublicados, conteudosDaWiki, DOMINIO, existe, existeExato, ler, limparHtml, paginasHtml } from './lib.mjs';
+import { achado, arquivoDe, arquivosPublicados, conteudosDaWiki, DOMINIO, existe, existeExato, ler, limparHtml, paginasHtml } from './lib.mjs';
 
 const T = 'seo';
 
@@ -21,7 +21,7 @@ export default async function () {
     if (!loc.startsWith(DOMINIO)) a.push(achado('alto', T, `URL fora do dominio no sitemap: ${loc}`));
     if (vistos.has(loc)) a.push(achado('medio', T, `URL repetida no sitemap: ${loc}`));
     vistos.add(loc);
-    const rel = loc === `${DOMINIO}/` ? 'index.html' : loc.slice(DOMINIO.length + 1);
+    const rel = loc === `${DOMINIO}/` ? 'index.html' : arquivoDe(loc.slice(DOMINIO.length + 1));
     doSitemap.add(rel);
     if (existeExato(rel) !== 'ok') a.push(achado('alto', T, `URL do sitemap sem arquivo correspondente (ou com outra caixa): ${loc}`));
     else if (/content=["']noindex/i.test(ler(rel))) a.push(achado('alto', T, 'pagina com noindex dentro do sitemap', rel));
@@ -48,7 +48,7 @@ export default async function () {
   else {
     const store = JSON.parse(ler('_conteudo/lastmod.json'));
     for (const { loc, mod } of locs) {
-      const rel = loc === `${DOMINIO}/` ? 'index.html' : loc.slice(DOMINIO.length + 1);
+      const rel = loc === `${DOMINIO}/` ? 'index.html' : arquivoDe(loc.slice(DOMINIO.length + 1));
       if (store[rel]?.d !== mod) a.push(achado('medio', T, `lastmod do sitemap (${mod}) diferente do lastmod.json (${store[rel]?.d ?? 'sem registro'})`, rel));
     }
   }
@@ -114,7 +114,7 @@ export default async function () {
       const h = m[1];
       if (/^(https?:|\/\/|mailto:|tel:|javascript:)/i.test(h)) continue;
       const alvo = h.startsWith('/') ? h.slice(1) : posix.normalize(posix.join(posix.dirname(rel), h));
-      const final = alvo === '' || alvo.endsWith('/') ? `${alvo}index.html` : alvo;
+      const final = alvo === '' || alvo.endsWith('/') ? `${alvo}index.html` : arquivoDe(alvo);
       if (nome.has(final) && final !== rel) out.add(final);
     }
     return out;
@@ -134,7 +134,7 @@ export default async function () {
   const noArquivo = new Set(); for (const [rel, ds] of saidas) if (rel.startsWith('arquivo/')) for (const d of ds) noArquivo.add(d);
   const foraDoArquivo = materiasIndexaveis.filter((rel) => !noArquivo.has(rel));
   if (materiasIndexaveis.length && foraDoArquivo.length) a.push(achado('alto', T, `${foraDoArquivo.length} materia(s) indexavel(is) fora do arquivo por mes: ${foraDoArquivo.slice(0, 2).join(', ')}`));
-  const rodapeLinkaArquivo = indexaveis.filter(({ rel, bruto }) => rel !== 'arquivo.html' && materiasIndexaveis.length && !/href="(?:\.\.\/)*arquivo\.html"/.test(bruto)).length;
+  const rodapeLinkaArquivo = indexaveis.filter(({ rel, bruto }) => rel !== 'arquivo.html' && materiasIndexaveis.length && !/href="(?:\.\.\/)*arquivo(?:\.html)?"/.test(bruto)).length;
   if (rodapeLinkaArquivo) a.push(achado('medio', T, `${rodapeLinkaArquivo} pagina(s) indexavel(is) sem link para arquivo.html no rodape`));
 
   a.push(achado('info', T, `${locs.length} URLs no sitemap; ${indexaveis.length} paginas indexaveis, a mais funda a ${maior} cliques da home; ${materiasIndexaveis.length} materias`));

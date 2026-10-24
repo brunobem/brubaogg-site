@@ -2,7 +2,7 @@
 // O que depende de navegador de verdade (teclado, foco, leitor de tela, Pagefind de verdade) fica em js.html.
 import vm from 'node:vm';
 import zlib from 'node:zlib';
-import { achado, arquivosPublicados, assuntosDoSite, existe, ler, limparHtml, tags } from './lib.mjs';
+import { achado, arquivoDe, arquivosPublicados, assuntosDoSite, existe, ler, limparHtml, tags } from './lib.mjs';
 import { documentoVazio, montarPagina, rodarScript } from './dom-falso.mjs';
 import { WIKI, categorias } from '../../gerador/config.mjs';
 
@@ -76,7 +76,7 @@ export default async function () {
       todas.push(e);
     }
   }
-  const enderecos = new Set(todas.map((e) => e.u));
+  const enderecos = new Set(todas.map((e) => arquivoDe(e.u)));
   if (enderecos.size !== todas.length) a.push(achado('alto', T, `${todas.length - enderecos.size} materia(s) repetida(s) nas listas por mes`));
   if (!todas.every((e, i) => i === 0 || todas[i - 1].dt >= e.dt)) a.push(achado('alto', T, 'as listas por mes nao estao do mais novo para o mais velho (o "Ver mais" mostraria fora de ordem)'));
   const noSite = publicados.filter((r) => /^(noticias|reviews|lancamentos|gta6-novidades|series)\//.test(r) && r.endsWith('.html') && !redirecionamento(html.get(r)) && !/content="noindex"/.test(html.get(r)));
@@ -132,7 +132,7 @@ export default async function () {
     if ((h.match(/data-pagefind-body/g) ?? []).length !== 1) a.push(achado('alto', T, 'a materia precisa de exatamente 1 data-pagefind-body (senao ela nao entra no indice da busca)', r));
     if (!/data-pagefind-filter="categoria:[^"]+"/.test(h)) a.push(achado('alto', T, 'sem filtro de categoria para o Pagefind', r));
     if (!/data-pagefind-sort="data\[datetime\]"/.test(h)) a.push(achado('medio', T, 'sem data para ordenar no Pagefind', r));
-    if (!/data-pagefind-meta="image:(?:https:\/\/|\/assets\/img\/[\w\-./]+")/.test(h)) a.push(achado('medio', T, 'sem miniatura nos dados do Pagefind', r));
+    if (!/data-pagefind-meta="image:(?:https:\/\/|\/assets\/img\/[\w\-./]+[",])/.test(h)) a.push(achado('medio', T, 'sem miniatura nos dados do Pagefind', r));
   }
   for (const r of paginas.filter((p) => !noSite.includes(p))) if (/data-pagefind-body/.test(html.get(r))) a.push(achado('medio', T, 'pagina que nao e materia esta marcada para o indice da busca', r));
 

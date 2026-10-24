@@ -2,7 +2,7 @@
 // Estatico: le as paginas geradas. Comportamento: roda assets/js/compartilhar.js no navegador de mentira (dom-falso.mjs).
 import fs from 'node:fs';
 import path from 'node:path';
-import { achado, arquivosPublicados, assuntosDoSite, conteudosDaWiki, decodificar, existe, ler, limparHtml, materias, paginasHtml, raiz, DOMINIO } from './lib.mjs';
+import { achado, arquivoDe, urlPublica, arquivosPublicados, assuntosDoSite, conteudosDaWiki, decodificar, existe, ler, limparHtml, materias, paginasHtml, raiz, DOMINIO } from './lib.mjs';
 import { AUTOR, AUTOR_FOTO, PALAVRAS_POR_MINUTO, RECOMENDACOES, categorias } from '../../gerador/config.mjs';
 import { esperar, montarPagina, rodarScript } from './dom-falso.mjs';
 
@@ -31,8 +31,8 @@ export default async function () {
     const canonical = (h.match(/<link rel="canonical" href="([^"]+)"/) ?? [])[1];
     const titulo = decodificar((h.match(/<h1 class="art-title">([^<]*)<\/h1>/) ?? [])[1] ?? '');
     const relacionadas = (h.match(/<section class="related"(?! data-irmas)[\s\S]*?<\/section>/) ?? [''])[0]; // so o "Veja tambem": o bloco do assunto (data-irmas) e conferido em 1d
-    const alvos = [...relacionadas.matchAll(/<a class="news-card[^"]*" href="\.\.\/([^"]+)"/g)].map((m) => m[1]);
-    const irmas = [...((h.match(/<section class="related" data-irmas[\s\S]*?<\/section>/) ?? [''])[0]).matchAll(/<a class="news-card[^"]*" href="\.\.\/([^"]+)"/g)].map((m) => m[1]); // links do bloco "Mais sobre este assunto"
+    const alvos = [...relacionadas.matchAll(/<a class="news-card[^"]*" href="\.\.\/([^"]+)"/g)].map((m) => arquivoDe(m[1]));
+    const irmas = [...((h.match(/<section class="related" data-irmas[\s\S]*?<\/section>/) ?? [''])[0]).matchAll(/<a class="news-card[^"]*" href="\.\.\/([^"]+)"/g)].map((m) => arquivoDe(m[1])); // links do bloco "Mais sobre este assunto"
     dados.set(rel, { rel, h, canonical, titulo, publicado: (h.match(/<p class="autoria"[^>]*>[\s\S]*?<time[^>]*datetime="([^"]+)"/) ?? [])[1], tags: nomesDasTags(h), alvos, irmas, titSecao: decodificar((relacionadas.match(/class="section-title">([^<]*)</) ?? [])[1] ?? '') });
 
     const blocos = h.match(/<section class="compartilhar"[\s\S]*?<\/section>/g) ?? [];
@@ -177,7 +177,7 @@ export default async function () {
   for (const u of unidades) {
     const novo = u.membros[0];
     // o endereco do assunto: um redirecionamento para a materia mais nova (nao e mais uma pagina)
-    const stubA = u.pagina, alvoA = `/${paginaDe(novo)}`;
+    const stubA = u.pagina, alvoA = `/${urlPublica(paginaDe(novo))}`;
     if (!existe(stubA)) a.push(achado('alto', T, `o endereco do assunto "${u.chave}" (${stubA}) devia existir como redirecionamento`, stubA));
     else {
       const sa = ler(stubA);
@@ -193,10 +193,10 @@ export default async function () {
       const b = blocos[0], irmas = u.membros.filter((x) => x.id !== m.id);
       if (!/<h2 class="section-title">Mais sobre este assunto<\/h2>/.test(b)) a.push(achado('alto', T, 'o bloco das outras materias do assunto precisa do titulo "Mais sobre este assunto"', rel));
       const links = [...b.matchAll(/<a class="news-card[^"]*" href="\.\.\/([^"]+)"/g)].map((x) => x[1]);
-      if (JSON.stringify(links) !== JSON.stringify(irmas.map(paginaDe))) a.push(achado('alto', T, `"Mais sobre este assunto" leva a [${links.join(', ')}] e devia levar, da mais nova para a mais velha, as outras ${irmas.length} do assunto`, rel));
+      if (JSON.stringify(links) !== JSON.stringify(irmas.map((x) => urlPublica(paginaDe(x))))) a.push(achado('alto', T, `"Mais sobre este assunto" leva a [${links.join(', ')}] e devia levar, da mais nova para a mais velha, as outras ${irmas.length} do assunto`, rel));
       if (!/data-pagefind-ignore/.test(b.split('>')[0])) a.push(achado('medio', T, 'o bloco "Mais sobre este assunto" entra no indice da busca (falta data-pagefind-ignore)', rel));
       const vt = h.match(/<section class="related"(?! data-irmas)[\s\S]*?<\/section>/); // "Veja tambem" nao repete o que ja esta no bloco do assunto
-      if (vt && irmas.some((x) => vt[0].includes(`href="../${paginaDe(x)}"`))) a.push(achado('medio', T, '"Veja tambem" repete uma materia que ja esta em "Mais sobre este assunto"', rel));
+      if (vt && irmas.some((x) => vt[0].includes(`href="../${urlPublica(paginaDe(x))}"`))) a.push(achado('medio', T, '"Veja tambem" repete uma materia que ja esta em "Mais sobre este assunto"', rel));
       const [iB, iL, iC] = [h.indexOf('data-irmas'), h.indexOf('<div class="links"'), h.indexOf('<section class="compartilhar"')];
       if (!(iB > iL && iB < iC)) a.push(achado('medio', T, 'o bloco "Mais sobre este assunto" deve vir depois dos botoes e antes de compartilhar', rel));
       nBlocos++;
@@ -240,7 +240,7 @@ export default async function () {
     const assinaturas = h.match(/<p class="autoria"[^>]*>[\s\S]*?<\/p>/g) ?? [];
     if (assinaturas.length !== 1) { a.push(achado('alto', T, `${assinaturas.length} assinatura(s) no fim da materia (deve ter 1)`, rel)); continue; }
     const data = u ? u.membros[0].e.publicado : registro[idDaPagina.get(rel)]?.publicado;
-    const esperada = `<p class="autoria" data-pagefind-ignore><span class="avatar" aria-hidden="true">${AUTOR_FOTO ? `<img src="../${AUTOR_FOTO}" alt="" width="32" height="32">` : AUTOR[0]}</span><span>Por <b>${AUTOR}</b> &middot; ${u ? 'Atualizado em' : 'Publicado em'} <time data-pagefind-sort="data[datetime]" data-pagefind-meta="data[datetime]" data-pagefind-ignore datetime="${data}">${dataLonga(data)}</time></span><a class="autoria-ia" href="../sobre.html">Texto com apoio de IA</a></p>`;
+    const esperada = `<p class="autoria" data-pagefind-ignore><span class="avatar" aria-hidden="true">${AUTOR_FOTO ? `<img src="../${AUTOR_FOTO}" alt="" width="32" height="32">` : AUTOR[0]}</span><span>Por <b>${AUTOR}</b> &middot; ${u ? 'Atualizado em' : 'Publicado em'} <time data-pagefind-sort="data[datetime]" data-pagefind-meta="data[datetime]" data-pagefind-ignore datetime="${data}">${dataLonga(data)}</time></span><a class="autoria-ia" href="../sobre">Texto com apoio de IA</a></p>`;
     if (assinaturas[0] !== esperada) a.push(achado('alto', T, 'a assinatura do fim da materia esta fora do formato (Por Bruno Bem, a data da materia e o apoio de IA com link para Sobre)', rel));
     const iA = h.indexOf('<p class="autoria"');
     const depois = u ? h.lastIndexOf('<section class="bloco"') : Math.max(h.indexOf('class="art-body"'), h.indexOf('class="fontes"')), antes = u ? h.indexOf('<section class="compartilhar"') : h.indexOf('<div class="links"');
@@ -350,10 +350,10 @@ export default async function () {
   for (const origem of categorias.filter((c) => c.tambemEm)) {
     const destino = origem.tambemEm, paginasDaOrigem = paginas.filter((p) => p.rel.startsWith(`${origem.pasta}/`)).map((p) => p.rel);
     const lista = existe(`${destino}.html`) ? ler(`${destino}.html`) : '';
-    const secao = existe(`assets/data/secao/${destino}.json`) ? JSON.parse(ler(`assets/data/secao/${destino}.json`)).itens.map((i) => i.u) : [];
+    const secao = existe(`assets/data/secao/${destino}.json`) ? JSON.parse(ler(`assets/data/secao/${destino}.json`)).itens.map((i) => arquivoDe(i.u)) : [];
     const blocos = existe(`assets/data/colecao/cat-${destino}`) ? paginasEmBlocos(`assets/data/colecao/cat-${destino}`) : [];
     const naPagina = [...lista.matchAll(/<a class="news-card[^"]*" href="([^"]+)"/g)].map((m) => m[1]);
-    const naLista = new Set([...naPagina, ...blocos]);
+    const naLista = new Set([...naPagina, ...blocos].map(arquivoDe));
     for (const rel of paginasDaOrigem) {
       dupla++;
       if (!naLista.has(rel)) a.push(achado('alto', T, `${rel} e de ${origem.pasta} mas nao esta na lista de ${destino}.html (tudo de ${origem.pasta} tambem e ${destino})`, `${destino}.html`));
@@ -366,7 +366,7 @@ export default async function () {
     // home: o bloco do destino mostra o que e da origem, mas sem repetir o que a cobertura do topo ja mostra
     const home = existe('index.html') ? ler('index.html') : '';
     const cobertura = (home.match(/<section class="cobertura"[\s\S]*?<\/section>/) ?? [''])[0];
-    const blocoDestino = [...home.matchAll(/<section class="feed-sec">[\s\S]*?<\/section>/g)].map((m) => m[0]).find((s) => new RegExp(`href="${destino}\\.html"`).test(s)) ?? '';
+    const blocoDestino = [...home.matchAll(/<section class="feed-sec">[\s\S]*?<\/section>/g)].map((m) => m[0]).find((s) => new RegExp(`href="${destino}(?:\\.html)?"`).test(s)) ?? '';
     const alvos = (s) => [...s.matchAll(/<a class="news-card[^"]*" href="([^"]+)"/g)].map((m) => m[1]);
     const repetidas = alvos(blocoDestino).filter((u) => alvos(cobertura).includes(u) && u.startsWith(`${origem.pasta}/`));
     if (repetidas.length) a.push(achado('medio', T, `a home mostra ${repetidas.length} materia(s) de ${origem.pasta} na cobertura e de novo no bloco de ${destino}: ${repetidas[0]}`, 'index.html'));

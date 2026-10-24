@@ -1,5 +1,5 @@
 // Estrutura de cada pagina publicada: idioma, titulo, descricao, canonical, h1, ids, imagens, links externos, tags balanceadas.
-import { achado, DOMINIO, ler, limparHtml, paginasHtml, tags, atributos, decodificar, textoVisivel } from './lib.mjs';
+import { achado, DOMINIO, urlPublica, ler, limparHtml, paginasHtml, tags, atributos, decodificar, textoVisivel } from './lib.mjs';
 import { GTA6 } from '../../gerador/config.mjs';
 
 const T = 'html';
@@ -44,7 +44,7 @@ export default async function () {
     if (!noindex && !redirecionador) {
       if (!can) a.push(achado('medio', T, 'pagina indexavel sem <link rel="canonical">', rel));
       else {
-        const esperado = [`${DOMINIO}/${rel}`, ...(rel === 'index.html' ? [`${DOMINIO}/`] : [])];
+        const esperado = [`${DOMINIO}/${urlPublica(rel)}`,...(rel === 'index.html' ? [`${DOMINIO}/`] : [])];
         if (!esperado.includes(can)) a.push(achado('medio', T, `canonical diferente do endereco da pagina: ${can}`, rel));
       }
     }

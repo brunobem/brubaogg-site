@@ -11,10 +11,12 @@ import { fileURLToPath } from 'node:url';
 import { validarMateria } from './gerador/contrato.mjs';
 import { feedPorId, gravarRegistro, lerRegistro, novoEndereco } from './gerador/enderecos.mjs';
 import { listarConteudos, tipoDaMateria } from './gerador/pastas.mjs';
-import { ErroDeDados, lerJson, normalizarId } from './gerador/util.mjs';
+import { ErroDeDados, lerJson, normalizarId, paginasComHtml, urlDe } from './gerador/util.mjs';
 import { formatoDe } from './gerador/youtube.mjs';
 
 const site = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+for (const r of lerJson(path.join(site, '_conteudo', 'paginas-com-html.json'), '_conteudo/paginas-com-html.json')) paginasComHtml.add(r); // so as paginas que ja existiam mantem o .html
+const enderecoPublico = (e) => `/${urlDe(`${e.categoria}/${e.slug}.html`)}`;
 const conteudos = listarConteudos(site).itens; // _conteudo/materias/<tipo>/<ID>/<ID>.json
 const args = process.argv.slice(2);
 const todos = args.includes('--todos'), confirmar = args.includes('--confirmar');
@@ -65,7 +67,7 @@ for (const id of ids) {
     try { ({ endereco: e } = novoEndereco({ id, m: candidata, rel, registro, feed })); }
     catch (err) { if (err instanceof ErroDeDados) { console.log(`NAO aprovada: ${err.message}`); recusadas++; continue; } throw err; }
   }
-  if (!aplicar) { prontas++; console.log(`pronta: ${id}  ${m.titulo}\n    -> /${e.categoria}/${e.slug}.html${faltaFormato ? '   (o formato sera confirmado no YouTube ao aprovar)' : ''}`); continue; }
+  if (!aplicar) { prontas++; console.log(`pronta: ${id}  ${m.titulo}\n    -> ${enderecoPublico(e)}${faltaFormato ? '   (o formato sera confirmado no YouTube ao aprovar)' : ''}`); continue; }
 
   // grava sem apagar o que a outra sessao possa ter mudado nesse meio tempo
   if (fs.readFileSync(f, 'utf8') !== textoOriginal) { console.log(`NAO aprovada (o arquivo mudou enquanto eu aprovava; rode de novo): ${id}`); recusadas++; continue; }
@@ -75,7 +77,7 @@ for (const id of ids) {
   fs.writeFileSync(tmp, `${JSON.stringify(novo, null, 2)}\n`, 'utf8');
   fs.renameSync(tmp, f);
   registro[id] = { categoria: e.categoria, publicado: e.publicado, slug: e.slug, ...(e.antigos?.length ? { antigos: e.antigos } : {}) };
-  console.log(`aprovada: ${id}  ${novo.titulo}\n    -> /${e.categoria}/${e.slug}.html`);
+  console.log(`aprovada: ${id}  ${novo.titulo}\n    -> ${enderecoPublico(e)}`);
   aprovadas++;
 }
 if (aprovadas) gravarRegistro(site, registro);

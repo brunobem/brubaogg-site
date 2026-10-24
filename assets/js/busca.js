@@ -130,7 +130,7 @@
   // dados de um resultado do Pagefind no formato dos arquivos de lista
   function itemDoPagefind(d) {
     const meta = d.meta || {}, filtros = d.filters || {};
-    return { t: meta.title || '', u: String(d.url || '').replace(/^\//, ''), c: (filtros.categoria && filtros.categoria[0]) || '', i: meta.image || '', dt: meta.data || '', r: meta.resumo || '', ex: d.excerpt || '' };
+    return { t: meta.title || '', u: String(meta.end || d.url || '').replace(/^\//, ''), /* meta "end" = o endereco publico (sem .html nas paginas novas); o Pagefind so sabe o nome do arquivo */ c: (filtros.categoria && filtros.categoria[0]) || '', i: meta.image || '', dt: meta.data || '', r: meta.resumo || '', ex: d.excerpt || '' };
   }
   api.itemDoPagefind = itemDoPagefind;
 

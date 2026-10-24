@@ -3,7 +3,7 @@
 import { ADS_ATIVOS, ADS_NAS_LISTAS, AUTOR, AUTOR_FOTO, BUSCA_DA_SECAO, CARROSSEL, COBERTURA, DOMINIO, GTA6, PALAVRAS_POR_MINUTO, PLAYERS, RECOMENDACOES, SOCIAIS, VIDEOS_POR_PLAYER, WIKI, abas, categorias, lorem, paginasFixasNaBusca, resumosLorem } from './config.mjs';
 import { caminhoAntigo } from './enderecos.mjs';
 import { fonteDaImagem } from './imagens.mjs';
-import { SIZES_CARROSSEL, SIZES_CARTAO, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, duracaoIso, esc, imagemDoCartao, limparTitulo, mesDe, miniatura, miniaturaGrande, slugify } from './util.mjs';
+import { SIZES_CARROSSEL, SIZES_CARTAO, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, duracaoIso, esc, imagemDoCartao, limparTitulo, mesDe, miniatura, miniaturaGrande, slugify, urlDe } from './util.mjs';
 
 // ---- "Ver mais" das listas ----
 // A pagina mostra os 30 primeiros (ja no HTML: rapido, indexavel, funciona sem JavaScript). O resto vai em arquivos de 90 itens
@@ -11,7 +11,7 @@ import { SIZES_CARROSSEL, SIZES_CARTAO, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUEN
 export const PASSO_DA_LISTA = 30;
 const BLOCO_DA_COLECAO = 90;
 // uma entrada de lista no formato dos arquivos de dados (a mesma das listas por mes)
-export const itemDaLista = (m, cat) => ({ t: m.titulo, r: m.ficticio || m.semTexto ? '' : m.resumo, u: `${cat.pasta}/${m.slug}.html`, c: cat.rotulo, i: miniatura(m.id), dt: m.publicado });
+export const itemDaLista = (m, cat) => ({ t: m.titulo, r: m.ficticio || m.semTexto ? '' : m.resumo, u: urlDe(`${cat.pasta}/${m.slug}.html`), c: cat.rotulo, i: miniatura(m.id), dt: m.publicado });
 /** lista: [{ m, cat }] do mais novo para o mais velho. Devolve o HTML do botao + modelo de icones (vazio se a lista cabe na pagina 1). */
 function colecao(ctx, id, lista, { gravar = true } = {}) {
   const resto = lista.slice(PASSO_DA_LISTA);
@@ -81,7 +81,7 @@ function dadosDaSecao(ctx, id, lista, meta = {}) {
     if (f) f = Object.fromEntries(Object.entries(f).filter(([, vs]) => vs.length));
     if (f && !Object.keys(f).length) f = null;
     const b = [...(m.tags ?? []).map((t) => t.nome), typeof m.assunto === 'string' ? m.assunto.replace(/-/g, ' ') : ''].filter(Boolean).join(' ');
-    return { t: m.titulo, r: m.resumo ?? '', u: `${cat.pasta}/${m.slug}.html`, i: miniatura(m.id), c: m.rotulo ?? cat.rotulo, dt: m.publicado, ...(f ? { f } : {}), ...(b ? { b } : {}) };
+    return { t: m.titulo, r: m.resumo ?? '', u: urlDe(`${cat.pasta}/${m.slug}.html`), i: miniatura(m.id), c: m.rotulo ?? cat.rotulo, dt: m.publicado, ...(f ? { f } : {}), ...(b ? { b } : {}) };
   });
   ctx.escrever(`assets/data/secao/${id}.json`, JSON.stringify({ itens }));
   return { id, cfg, menu, total: lista.length, rotulos: [...new Set(lista.map(({ m, cat }) => m.rotulo ?? cat.rotulo))] };
@@ -339,11 +339,11 @@ ${outras.map((o) => cartao(o, catDe.get(o), '../')).join('\n')}
       const pf = indexavel ? ` data-pagefind-body data-pagefind-filter="categoria:${esc(cat.rotulo)}" data-pagefind-meta="image:${miniatura(m.id)}"` : '';
       const ign = indexavel ? ' data-pagefind-ignore' : '';
       const tagsMostradas = [...m.tags].sort((a, b) => Number(temPaginaTag(b.slug)) - Number(temPaginaTag(a.slug))).slice(0, 8);
-      const url = `${DOMINIO}/${cat.pasta}/${m.slug}.html`;
+      const url = `${DOMINIO}/${urlDe(`${cat.pasta}/${m.slug}.html`)}`;
       const jogoDaWiki = wikiDe(m);
       const linkDaWiki = jogoDaWiki ? `<li><a href="../${paginaDaWiki(ctx, jogoDaWiki)}">${icone('book-open')} Wiki ${esc(jogoDaWiki.nome)}</a></li>` : '';
       // as tags viram FILTROS da busca; o texto da lista fica fora do indice (senao o trecho do resultado mostraria "Resident Evil. Silent Hill.")
-      const corpo = `    <main class="article${dividido ? ' has-split' : ''}"${pf}>
+      const corpo = `    <main class="article${dividido ? ' has-split' : ''}"${pf}>${indexavel && urlDe(`${cat.pasta}/${m.slug}.html`) !== `${cat.pasta}/${m.slug}.html` ? `<span hidden data-pagefind-meta="end:${urlDe(`${cat.pasta}/${m.slug}.html`)}"></span>` : ''}
       ${(cat.lista || ctx.visiveis.has(cat.pasta)) ? `<a class="back"${ign} href="../${cat.lista ?? `${cat.pasta}.html`}">&larr; ${esc(cat.nomeCurto ?? cat.nome)}</a>` : `<a class="back"${ign} href="/">&larr; Início</a>`}
       <p class="art-meta"><span class="tag"${ign}>${icone(cat.icone)} ${esc(m.rotulo ?? cat.rotulo)}</span>${leituraHtml(ctx, contarPalavras(m.resumo, m.corpo), ign)}</p>
       <h1 class="art-title">${esc(m.titulo)}</h1>
@@ -465,7 +465,7 @@ export function gta6Html(ctx) {
   const todos = listaDoHub(ctx);
   if (!todos.length) return '';
   const { m: d, cat } = todos[0];
-  const href = `${cat.pasta}/${d.slug}.html`;
+  const href = urlDe(`${cat.pasta}/${d.slug}.html`);
   const player = `<div class="art-video${d.short ? ' is-short' : ''}">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${d.id}`, href: `https://www.youtube.com/watch?v=${d.id}`, titulo: d.titulo, imagem: miniatura(d.id) })}</div>`;
   const texto = `<p class="art-meta"><span class="tag">${icone(cat.icone)} ${esc(cat.rotulo)}</span> <time datetime="${d.publicado}">${dataLonga(d.publicado)}</time></p>
           <h3 class="gd-title"><a href="${href}">${esc(d.titulo)}</a></h3>
@@ -523,7 +523,7 @@ export function carrosselHtml(ctx) {
     .slice(0, CARROSSEL.qtd);
   if (!itens.length) return '';
   const slides = itens.map(({ m, cat }, i) => `          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${itens.length}">
-            <a class="car-link" href="${cat.pasta}/${m.slug}.html">
+            <a class="car-link" href="${urlDe(`${cat.pasta}/${m.slug}.html`)}">
               <span class="car-thumb">${(() => { const im = imagemDoCartao(m.id, SIZES_CARROSSEL); return `<img ${im.atributos} alt="${esc(im.alt)}" width="${im.w}" height="${im.h}" fetchpriority="${i === 0 ? 'high' : 'low'}">`; })()}</span>
               <span class="car-texto">
                 <span class="tag">${icone(cat.icone)} ${esc(cat.rotulo)}</span>
@@ -781,7 +781,8 @@ const NOTICIAS = new Set(['noticias', 'gta6-novidades']); // categorias que cont
 // todas as tags que pertencem a um jogo da Wiki: a da franquia, as da serie (config) e as "filhas" do tags.json
 const slugsDoJogo = (ctx, j) => new Set([j.tag, ...(j.serie ?? []).map((e) => (typeof e === 'string' ? e : e.tag)), ...Object.keys(ctx.tagsCfg).filter((s) => ctx.tagsCfg[s]?.pai === j.tag)]);
 const paginaPropria = (ctx, j) => j.pagina ?? ctx.tagsCfg[j.tag]?.pagina ?? null;
-export const paginaDaWiki = (ctx, j) => paginaPropria(ctx, j) ?? `wiki/${j.tag}.html`;
+export const arquivoDaWiki = (ctx, j) => paginaPropria(ctx, j) ?? `wiki/${j.tag}.html`;
+export const paginaDaWiki = (ctx, j) => urlDe(arquivoDaWiki(ctx, j));
 function jogosDaWiki(ctx) {
   const jogos = [];
   for (const j of WIKI.jogos) {
@@ -969,7 +970,7 @@ ${lista.map((tg) => `        <li><a href="${tagPage(tg.slug)}">${esc(tg.nome)} <
 // dados estruturados de uma pagina de lista ou indice: CollectionPage + trilha de navegacao (as "migalhas" que o Google mostra no resultado)
 // `migalhas` = [{ nome, url }] (url absoluta; a ultima, a propria pagina, pode ficar sem url); `sobre` (opcional) = o assunto (ex.: VideoGameSeries)
 export function dadosDeColecao(ctx, { caminho, nome, descricao, migalhas, sobre }) {
-  const url = `${DOMINIO}/${caminho}`;
+  const url = `${DOMINIO}/${urlDe(caminho)}`;
   return [{
     '@context': 'https://schema.org',
     '@graph': [
@@ -1011,15 +1012,15 @@ export function construirWiki(ctx) {
     if (!todos.length) continue;
     todos.sort((a, b) => b.m.publicado.localeCompare(a.m.publicado));
     const da = (pasta) => todos.filter((x) => (pasta === 'noticias' ? NOTICIAS.has(x.cat.pasta) : x.cat.pasta === pasta)); // "noticias" = as duas categorias de noticia (noticias e gta6-novidades), como no menu
-    const caminho = paginaDaWiki(ctx, j);
-    const url = `${DOMINIO}/${caminho}`;
+    const caminho = arquivoDaWiki(ctx, j);
+    const url = `${DOMINIO}/${urlDe(caminho)}`;
     const titulo = `${j.nome}: wiki com histórias, reviews e notícias`;
     const desc = j.descricao ?? `A wiki de ${j.nome} no BRUBAOGG: a história de cada jogo, os reviews e as notícias do canal, num lugar só.`;
 
     // indice jogo a jogo: o que o canal tem de cada um (o titulo da materia perde o nome do jogo quando comeca com ele: "Resident Evil 4 Remake: a historia..." -> "A historia...")
     const semNome = (t, nome) => { const r = t.replace(new RegExp(`^${nome.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[:\\-–—]\\s*`, 'i'), ''); return r === t ? t : r.charAt(0).toUpperCase() + r.slice(1); };
     const linhas = jogosDaSerieDoJogo.filter((g) => g.itens.length).map((g) => {
-      const item = ({ m, cat }, rotulo = ROTULO_NA_WIKI[cat.pasta] ?? cat.rotulo) => `            <li><span class="wiki-rot">${rotulo}</span> <a href="../${cat.pasta}/${m.slug}.html">${esc(semNome(m.titulo, g.nome))}</a></li>`;
+      const item = ({ m, cat }, rotulo = ROTULO_NA_WIKI[cat.pasta] ?? cat.rotulo) => `            <li><span class="wiki-rot">${rotulo}</span> <a href="../${urlDe(`${cat.pasta}/${m.slug}.html`)}">${esc(semNome(m.titulo, g.nome))}</a></li>`;
       const proprios = g.itens.filter((x) => x.cat.pasta === 'series' || x.cat.pasta === 'reviews');
       const outros = g.itens.filter((x) => x.cat.pasta !== 'series' && x.cat.pasta !== 'reviews');
       const itens = [...proprios.map((x) => item(x)), ...(outros.length === 1 ? [item(outros[0])] : outros.length > 1 ? [`            <li><span class="wiki-rot">Notícias</span> <a href="../${tagPage(g.slug)}">${outros.length} matérias</a></li>`] : [])];
@@ -1079,7 +1080,7 @@ ${secaoJogos}${secoes}
         migalhas: [{ nome: 'Início', url: `${DOMINIO}/` }, { nome: 'Wiki', url: `${DOMINIO}/wiki.html` }, { nome: j.nome }],
       }),
     }));
-    indice.push({ t: `${j.nome} (Wiki)`, u: caminho, c: 'Wiki' });
+    indice.push({ t: `${j.nome} (Wiki)`, u: urlDe(caminho), c: 'Wiki' });
   }
 }
 
@@ -1112,7 +1113,7 @@ export function construirArquivo(ctx) {
       </section>
 ${anos.map((ano) => `      <h2 class="section-title">${ano}</h2>
       <ul class="tag-cloud">
-${meses.filter((k) => k.startsWith(ano)).map((k) => `        <li><a href="arquivo/${k}.html">${soMes(k)} <span>${porMes.get(k).length}</span></a></li>`).join('\n')}
+${meses.filter((k) => k.startsWith(ano)).map((k) => `        <li><a href="${urlDe(`arquivo/${k}.html`)}">${soMes(k)} <span>${porMes.get(k).length}</span></a></li>`).join('\n')}
       </ul>`).join('\n')}
     </main>`,
   }));
@@ -1133,11 +1134,11 @@ ${meses.filter((k) => k.startsWith(ano)).map((k) => `        <li><a href="arquiv
       </section>
 ${grupos.map(({ cat, itens }) => `      <h2 class="section-title">${icone(cat.icone)} ${esc(cat.nome)} <small>(${itens.length})</small></h2>
       <ul class="arquivo-lista">
-${itens.map(({ m }) => `        <li><time datetime="${m.publicado}">${dia(m.publicado)}</time> <a href="../${cat.pasta}/${m.slug}.html">${esc(m.titulo)}</a></li>`).join('\n')}
+${itens.map(({ m }) => `        <li><time datetime="${m.publicado}">${dia(m.publicado)}</time> <a href="../${urlDe(`${cat.pasta}/${m.slug}.html`)}">${esc(m.titulo)}</a></li>`).join('\n')}
       </ul>`).join('\n')}
       <nav class="arquivo-nav" aria-label="Outros meses">
-        ${mais_velho ? `<a rel="prev" href="${mais_velho}.html">&larr; ${esc(nomeDoMes(mais_velho))}</a>` : '<span></span>'}
-        ${mais_novo ? `<a rel="next" href="${mais_novo}.html">${esc(nomeDoMes(mais_novo))} &rarr;</a>` : '<span></span>'}
+        ${mais_velho ? `<a rel="prev" href="${urlDe(`arquivo/${mais_velho}.html`).slice(8)}">&larr; ${esc(nomeDoMes(mais_velho))}</a>` : '<span></span>'}
+        ${mais_novo ? `<a rel="next" href="${urlDe(`arquivo/${mais_novo}.html`).slice(8)}">${esc(nomeDoMes(mais_novo))} &rarr;</a>` : '<span></span>'}
       </nav>
     </main>`,
     }));
@@ -1214,5 +1215,5 @@ ${todas.length ? '' : '      <p class="busca-aviso">Ainda não há matérias pub
   const paginasFixas = paginasFixasNaBusca.filter(([u]) => existe(u)).map(([u, t, d]) => ({ t, u, c: 'Página', d }));
   // as paginas de Wiki vao PRIMEIRO: a busca mostra so 3 atalhos e, entre os que empatam (mesmo numero de palavras no nome), vale a ordem deste arquivo; com as tags na frente,
   // "resident evil" enchia as 3 vagas com tags (Resident Evil, Veronica, 6) e a Wiki ficava de fora (BL-20, UX-12). O atalho de nome igual ao digitado continua em 1o lugar.
-  escrever('assets/data/atalhos.json', JSON.stringify([...indice.filter((a) => a.c === 'Wiki'), ...indice.filter((a) => a.c !== 'Wiki'), ...paginasFixas]));
+  escrever('assets/data/atalhos.json', JSON.stringify([...indice.filter((a) => a.c === 'Wiki'), ...indice.filter((a) => a.c !== 'Wiki'), ...paginasFixas].map((a) => ({ ...a, u: urlDe(a.u) }))));
 }
