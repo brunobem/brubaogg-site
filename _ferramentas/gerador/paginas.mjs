@@ -871,9 +871,9 @@ const emConstrucaoHtml = (ctx, texto) => `<div class="bloco-vazio">${ctx.icone('
 // feed da home: ultimos videos por categoria (abre a materia quando existe, senao o YouTube); um espaco de ADS depois de cada secao
 export function feedHtml(ctx) {
   const { icone, cartao, videosDe } = ctx;
-  // a cobertura abre a home (coberturaHtml, grande a esquerda); cada secao daqui e 1 cartao grande + 4 pequenos, e o grande alterna de lado (lado) para dar ritmo
+  // a cobertura abre a home (coberturaHtml, grande a esquerda); cada secao daqui e 1 cartao grande + 3 pequenos, e o grande alterna de lado (lado) para dar ritmo
   // a pagina: cobertura esquerda, noticias direita, reviews esquerda, lancamentos direita, wiki esquerda (no fim). Para parar de alternar, ponha 'esquerda' em todas.
-  const QTD = 5;
+  const QTD = 4; // 1 grande + 3 pequenos
   const secoes = [
     { cat: categorias[0], titulo: 'Últimas notícias', lado: 'direita', ads: 'apos-noticias' },
     { cat: categorias[1], titulo: 'Últimos reviews', lado: 'esquerda', ads: 'apos-reviews' },

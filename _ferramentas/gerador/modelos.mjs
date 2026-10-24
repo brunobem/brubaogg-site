@@ -195,29 +195,16 @@ ${corpo}
   // abas que aparecem: so as de categoria que tem materia publicada (as de player sempre aparecem)
   const abasVisiveis = () => abas.filter((a) => !a.pasta || ctx.visiveis.has(a.pasta));
 
-  // o inicio de um texto em frases INTEIRAS, com ate `max` letras (nunca corta no meio de uma frase; se nem a primeira cabe, devolve vazio)
-  function frasesInteiras(texto, max) {
-    let saida = '';
-    for (const frase of texto.split(/(?<=[.!?])\s+/)) {
-      const tentativa = saida ? `${saida} ${frase}` : frase;
-      if (tentativa.length > max) break;
-      saida = tentativa;
-    }
-    return saida;
-  }
-
-  // destaque: false (cartao normal), 'pequeno' (cartao pequeno ao lado do grande nos blocos da home: igual ao normal, so a imagem pede menos pixels), true (cartao em destaque das listas, imagem ao lado do texto) ou 'grande' (cartao grande dos blocos da home, imagem em cima;
-  // leva tambem o primeiro paragrafo da materia, que o CSS so mostra quando o cartao e largo)
+  // destaque: false (cartao normal), 'pequeno' (cartao pequeno ao lado do grande nos blocos da home: igual ao normal, so a imagem pede menos pixels), true (cartao em destaque das listas, imagem ao lado do texto) ou 'grande' (cartao grande dos blocos da home: 1 grande + 3 pequenos; so titulo, resumo e data, sem o paragrafo da materia, para o bloco ficar baixo)
   function cartao(m, cat, base, destaque = false) {
     const href = `${base}${urlDe(`${cat.pasta}/${m.slug}.html`)}`;
-    const mais = destaque === 'grande' && m.corpo?.length ? frasesInteiras(m.corpo[0], 440) : '';
+    const im = imagemDoCartao(m.id, destaque === 'grande' ? SIZES_CARTAO_GRANDE : destaque === 'pequeno' ? SIZES_CARTAO_PEQUENO : destaque === true ? SIZES_CARTAO_DESTAQUE : SIZES_CARTAO);
     return `          <a class="news-card${destaque === 'grande' ? ' grande' : destaque === true ? ' featured' : ''}" href="${href}">
-            <span class="thumb">${(() => { const im = imagemDoCartao(m.id, destaque === 'grande' ? SIZES_CARTAO_GRANDE : destaque === 'pequeno' ? SIZES_CARTAO_PEQUENO : destaque === true ? SIZES_CARTAO_DESTAQUE : SIZES_CARTAO); return `<img ${im.atributos} alt="${esc(im.alt)}"`; })()} loading="lazy"></span>
+            <span class="thumb${im.vertical ? ' vert' : ''}"><img ${im.atributos} alt="${esc(im.alt)}" loading="lazy"></span>
             <span class="news-body">
               <span class="tag">${icone(cat.icone)} ${esc(m.rotulo ?? cat.rotulo)}</span>
               <b class="news-title">${esc(m.titulo)}</b>
               ${m.resumo ? `<span class="news-excerpt">${esc(m.resumo)}</span>` : ''}
-              ${mais ? `<span class="news-mais">${esc(mais)}</span>` : ''}
               <small class="news-date">${dataCurta(m.publicado)}</small>
             </span>
           </a>`;

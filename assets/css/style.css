@@ -492,7 +492,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 
 /* Home: carrossel do topo (as ultimas publicacoes). Os slides rolam para o lado com encaixe (scroll-snap), com ou sem JavaScript; o carrossel.js acrescenta
    a linha de controles (reservada no HTML, sem salto de layout). A borda e a sombra ficam na pista: se ficassem no slide, a rolagem cortaria a sombra. */
-.carrossel { margin: 0 0 var(--space-3); }
+.carrossel { margin: 0 0 var(--space-3); container-type: inline-size; } /* container: a largura da imagem do slide e calculada em cqw (abaixo), para ela ficar SEMPRE em 16:9 e a imagem horizontal nunca ser cortada */
 .car-pista {
   display: flex;
   overflow-x: auto;
@@ -506,7 +506,9 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 }
 .car-pista::-webkit-scrollbar { display: none; }
 .car-slide { display: flex; flex: none; width: 100%; scroll-snap-align: start; }
-.car-link { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); flex: 1; min-width: 0; height: clamp(300px, calc(100svh - 260px), 420px); color: var(--text); }
+/* A imagem ocupa uma caixa 16:9 exata: a coluna dela tem largura --col (no maximo 62% do carrossel, o resto e do texto) e a altura do slide e --col x 9/16. Assim a imagem
+   horizontal aparece INTEIRA; quando falta largura, e o slide que diminui (e o texto da direita encolhe junto), nunca a imagem que e cortada. --h = altura maxima do slide. */
+.car-link { --h: clamp(300px, calc(100svh - 260px), 420px); --col: min(calc(var(--h) * 16 / 9), 62cqw); display: grid; grid-template-columns: var(--col) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); flex: 1; min-width: 0; height: calc(var(--col) * 9 / 16); color: var(--text); }
 .car-link:hover { text-decoration: none; }
 .car-link:focus-visible { outline-offset: -5px; }
 .car-thumb { display: block; overflow: hidden; background: var(--black); }
@@ -519,8 +521,9 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .car-cta { margin-top: 4px; padding: 8px 16px; border-radius: 12px; color: var(--on-accent); font-family: var(--font-display); letter-spacing: .5px; background: var(--accent); box-shadow: 3px 3px 0 var(--accent-2); transition: box-shadow .15s; }
 .car-link:hover .car-cta { box-shadow: 5px 5px 0 var(--accent-2); }
 @container (max-height: 360px) { .car-resumo { -webkit-line-clamp: 2; } }
-@container (max-height: 335px) { .car-data { display: none; } }
-@container (max-height: 300px) { .car-resumo { display: none; } }
+/* limites medidos na area util do texto (sem o padding): com o slide 16:9 mais baixo, titulo + 2 linhas de resumo + data + botao cabem em ~250 px */
+@container (max-height: 280px) { .car-data { display: none; } }
+@container (max-height: 245px) { .car-resumo { display: none; } }
 @container (max-height: 200px) { .car-cta { display: none; } }
 .car-controles { display: flex; align-items: center; justify-content: center; gap: var(--space-1); min-height: 40px; margin-top: var(--space-2); }
 .car-seta {
@@ -545,7 +548,8 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .car-ponto:hover::before { background: var(--accent-2); }
 .car-ponto[aria-current="true"]::before { background: var(--accent); transform: scale(1.25); }
 @media (max-width: 700px) {
-  .car-link { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 42%) minmax(0, 1fr); height: clamp(340px, calc(100svh - 280px), 520px); }
+  .car-link { --h: clamp(400px, calc(100svh - 280px), 520px); grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); height: var(--h); }
+  .car-thumb { aspect-ratio: 16 / 9; } /* empilhado: a imagem ocupa a largura toda em 16:9 e o texto fica com o resto da altura */
   .car-texto { gap: var(--space-1); padding: var(--space-2); }
   .car-resumo { -webkit-line-clamp: 2; }
   @container (max-height: 285px) { .car-data { display: none; } }
@@ -554,11 +558,12 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 }
 /* telas muito estreitas: o cabecalho ocupa mais altura (as redes e a busca quebram de linha), entao o slide cede mais espaco para o carrossel caber na janela */
 @media (max-width: 359px) {
-  .car-link { height: clamp(280px, calc(100svh - 320px), 520px); }
+  .car-link { --h: clamp(340px, calc(100svh - 320px), 520px); }
 }
 /* celular deitado: sem espaco para empilhar, o slide volta a ter a imagem ao lado do texto */
 @media (max-width: 700px) and (orientation: landscape) {
-  .car-link { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); height: clamp(210px, calc(100svh - 200px), 320px); }
+  .car-link { --h: clamp(210px, calc(100svh - 200px), 320px); --col: min(calc(var(--h) * 16 / 9), 60cqw); grid-template-columns: var(--col) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); height: calc(var(--col) * 9 / 16); }
+  .car-thumb { aspect-ratio: auto; }
   .car-texto { padding: var(--space-1) var(--space-2); }
 }
 
@@ -605,7 +610,10 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .secao-busca ~ .bloco-vazio, .secao-busca + script ~ .bloco-vazio { margin: var(--space-4) 0 0; }
 .bloco-lista { display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
 .bloco-lista .news-card { flex: 1; flex-direction: row; min-height: min-content; box-shadow: 4px 4px 0 var(--accent-2); }
-.bloco-lista .news-card .thumb { flex: none; width: 150px; aspect-ratio: auto; }
+.bloco-lista .news-card .thumb { position: relative; flex: none; width: 150px; min-height: 150px; aspect-ratio: auto; }
+.bloco-lista .news-card .thumb img { position: absolute; inset: 0; } /* a imagem nao define a altura do cartao: quem define e o texto (e os 3 cartoes dividem a altura do grande) */
+/* imagem VERTICAL (a thumb de um Short): caixa estreita e alta (100 x 150 a 190 px, perto de 9:16), entao a arte aparece quase inteira em vez de cortada nas laterais */
+.bloco-lista .news-card .thumb.vert { width: 100px; }
 .bloco-lista .news-body { justify-content: center; gap: var(--space-1); min-width: 0; padding: var(--space-1) var(--space-2); }
 .bloco-lista .news-title { font-size: 1rem; }
 .bloco-lista .tag { display: none; }
@@ -615,7 +623,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .bloco-grade .news-card { container-type: inline-size; }
 .bloco-grade .news-excerpt, .bloco-grade .news-mais { display: none; }
 .bloco-grade .wiki-card .news-excerpt { display: block; } /* o cartao de franquia da Wiki sempre diz o que ha dentro (os jogos), mesmo pequeno: sem isso ele e so um nome */
-@container (max-width: 520px) { .bloco-lista .news-card .thumb { width: 128px; } }
+@container (max-width: 520px) { .bloco-lista .news-card .thumb:not(.vert) { width: 128px; } }
 @container (min-width: 400px) { .bloco-lista .news-excerpt, .news-card.grande .news-excerpt { display: block; } }
 @container (min-width: 520px) { .news-card.grande .news-mais { display: block; } }
 .bloco-lista .news-excerpt { font-size: .88rem; line-height: 1.45; }

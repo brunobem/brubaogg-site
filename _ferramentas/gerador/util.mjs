@@ -55,7 +55,8 @@ export function imagemDoCartao(id, sizes) {
   if (imagensPropias.has(id) || !c) return { atributos: `src="${miniatura(id)}"`, w: 480, h: 360, alt: "" };
   // cartao PEQUENO (a lista ao lado do grande, nos blocos da home e da Wiki): a caixa da imagem e quase quadrada ou vertical (128 a 150 px de largura), entao entra a THUMB
   // (vertical nos Shorts) em vez do card horizontal, que ali seria cortado nas laterais
-  if (sizes === SIZES_CARTAO_PEQUENO && c.p) return { atributos: `src="${c.p.src}" srcset="${c.p.srcset}" sizes="${sizes}"`, w: c.p.w, h: c.p.h, alt: c.p.alt };
+  if (sizes === SIZES_CARTAO_PEQUENO && c.p) return { atributos: `src="${c.p.src}" srcset="${c.p.srcset}" sizes="${sizes}"`, w: c.p.w, h: c.p.h, alt: c.p.alt, vertical: c.p.h > c.p.w };
+  if (!c.src) return { atributos: `src="${miniatura(id)}"`, w: 480, h: 360, alt: "" }; // so existe a vertical: a caixa grande fica com a miniatura do YouTube
   return { atributos: `src="${c.src}" srcset="${c.srcset}" sizes="${sizes}"`, w: c.w, h: c.h, alt: c.alt ?? "" };
 }
 // Imagem GRANDE (maxresdefault, 1280x720) so para a previa de compartilhamento (og:image) e Article.image das materias (BL-05). Os cartoes e as fachadas continuam com a
@@ -70,7 +71,7 @@ export const duracaoIso = (idDoVideo) => {
   return `PT${h ? `${h}H` : ''}${m ? `${m}M` : ''}${s ? `${s}S` : ''}`;
 };
 export const miniaturaGrande = (id) => {
-  if (!imagensPropias.has(id) && cartoesPropios.has(id)) return cartoesPropios.get(id).grande; // imagem propria: a maior versao (1200 px)
+  if (!imagensPropias.has(id) && cartoesPropios.get(id)?.grande) return cartoesPropios.get(id).grande; // imagem propria: a maior versao (1200 px)
   const url = miniatura(id);
   const m = url.match(/^(https:\/\/i\.ytimg\.com\/vi\/([\w-]{11}))\/hqdefault\.jpg$/);
   return m && miniaturasGrandes.get(m[2]) === true ? `${m[1]}/maxresdefault.jpg` : url;

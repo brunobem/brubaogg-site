@@ -139,9 +139,6 @@ export function prepararImagens(site, conteudos) {
       (novoCache[c.id] ??= {})[it.chave] = info;
     }
     for (const nome of alts.keys()) if (!usados.has(nome)) avisos.push(`${path.relative(site, c.pasta).split(path.sep).join("/")}/${ARQUIVO_DE_ALT}: a linha "${nome}" nao tem imagem com esse nome na pasta.`);
-    // imagem dos cartoes: o card.jpg; sem ele, a thumb de uma materia horizontal; num Short a thumb e vertical e nao serve (o cartao e 16:9): fica a miniatura do YouTube
-    if (registro.card) registro.cartao = registro.card;
-    else if (registro.thumb) { let formato; try { formato = JSON.parse(fs.readFileSync(c.arquivo, 'utf8')).formato; } catch { formato = undefined; } if (formato !== 'short') registro.cartao = registro.thumb; }
     porId.set(c.id, registro);
   }
   if (jobs.length) {
@@ -152,6 +149,15 @@ export function prepararImagens(site, conteudos) {
       if (r.erro) problemas.push(`${onde}: nao consegui abrir a imagem (${r.erro}).`);
       else Object.assign(info, { w: r.w, a: r.a, ls: r.ls });
     });
+  }
+  // Qual imagem vai em qual caixa e decidido pela ORIENTACAO de cada arquivo, nao pelo nome (thumb/card):
+  //   cartao  = a HORIZONTAL (cartoes grandes, listas, carrossel, previa de compartilhamento): o card se for horizontal; senao a thumb se for horizontal; senao nenhuma
+  //             (fica a miniatura do YouTube). Noticia/Short: card horizontal + thumb vertical. Review (video longo): thumb horizontal + card vertical.
+  //   pequeno = a VERTICAL (cartoes pequenos ao lado do grande, caixa estreita): a thumb se for vertical; senao o card se for vertical; senao nada (usa a horizontal).
+  const horizontal = (i) => i && i.ls.length && i.w >= i.a, vertical = (i) => i && i.ls.length && i.a > i.w;
+  for (const r of porId.values()) {
+    r.cartao = [r.card, r.thumb].find(horizontal) ?? null;
+    r.pequeno = [r.thumb, r.card].find(vertical) ?? null;
   }
   // so guarda o cache (e limpa) quando tudo deu certo: o que falhou continua sendo refeito na proxima vez
   if (!problemas.length) {

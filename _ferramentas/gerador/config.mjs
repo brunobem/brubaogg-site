@@ -90,7 +90,7 @@ export const COBERTURA = {
   rotulo: 'Em cobertura',
   titulo: 'Cobertura do GTA 6',
   texto: 'Tudo o que se sabe sobre o GTA VI até o lançamento, em {gta6-dia-mes}: o que a Rockstar confirma, o que é vazamento e o que o Brubão acha de cada detalhe.',
-  qtd: 5,                             // 1 cartao grande + (qtd - 1) pequenos
+  qtd: 4,                             // 1 cartao grande + (qtd - 1) pequenos (3)
   lado: 'esquerda',                   // onde fica o cartao grande: 'esquerda' ou 'direita' (as secoes da home alternam o lado; veja feedHtml em paginas.mjs)
 };
 
