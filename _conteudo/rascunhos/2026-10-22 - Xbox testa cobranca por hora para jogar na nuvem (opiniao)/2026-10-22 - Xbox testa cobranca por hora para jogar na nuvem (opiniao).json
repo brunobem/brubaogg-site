@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "status": "rascunho",
+  "categoria": "noticias",
+  "publicado": "2026-10-22",
+  "titulo": "Xbox testa cobrança por hora na nuvem",
+  "resumo": "O Xbox testa pacotes de 10, 25 e 50 horas de nuvem sem Game Pass, com Insiders. Para mim, pagar para jogar o que já é seu faz pouco sentido.",
+  "tags": [
+    "Xbox Cloud Gaming"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/xbox-testa-cobranca-por-hora-para-jogar-na-nuvem/"
+    },
+    {
+      "nome": "Pure Xbox",
+      "url": "https://www.purexbox.com/news/2026/10/three-price-tiers-revealed-as-xbox-rolls-out-cloud-playtime-to-insiders"
+    },
+    {
+      "nome": "Windows Central",
+      "url": "https://windowscentral.com/gaming/xbox/microsoft-reveals-its-new-hourly-xbox-cloud-gaming-playtime-pass-prices"
+    }
+  ],
+  "assunto": "game-pass-reformulacao",
+  "corpo": [
+    "A Microsoft começou a testar com Xbox Insiders, em 21 de outubro de 2026, pacotes de horas para jogar na nuvem sem Game Pass. São 10 horas por US$ 3,99, 25 por US$ 7,99 e 50 por US$ 11,99, em preço introdutório. Os pacotes tiram os anúncios, diminuem a fila e liberam streaming em alta qualidade, e as horas não vencem. A cobrança chega a todos em novembro de 2026, e os valores são em dólar.",
+    "No Brasil, os pacotes apareceram com preço em real dentro de jogos compatíveis, numa conta sem Game Pass: R$ 6,90 por 10 horas, R$ 14,90 por 25 e R$ 21,90 por 50, também introdutórios. Não está confirmado oficialmente se os Insiders brasileiros já têm o teste completo.",
+    "O detalhe que muda tudo é que as horas não dão acesso ao catálogo do Game Pass. Servem para jogar na nuvem jogos que já são do jogador, com suporte a nuvem, ou jogos gratuitos. E, a partir de novembro, até o Game Pass terá limite mensal de nuvem: 15 horas no Ultimate, 10 no Premium e 5 no Essential, e passou disso, compra os mesmos pacotes.",
+    "O limite vale primeiro para assinaturas novas, a Microsoft promete avisar com pelo menos 60 dias quem já assina, e estima que a mudança afeta cerca de 4% dos assinantes. Jogo instalado no console ou no PC não gasta essas horas.",
+    "O Xbox Cloud Gaming roda o jogo num servidor da Microsoft e entrega como um vídeo interativo. Dá para jogar no celular, na TV, no PC, no navegador e em portáteis, sem console, com internet boa e estável e controle. O teste não é grátis para o jogador: é a Microsoft testando o modelo de cobrança com os Insiders. Um teste gratuito separado existe desde 23 de julho de 2026, com anúncio de cerca de 30 segundos e sessões de uma hora.",
+    "Para mim, a notícia é meio absurda e não faz muito sentido: pagar para jogar um jogo que já é seu. Também acho estranho cobrar num período de teste, que costuma ser gratuito. É um serviço pouco conhecido, e por isso quis explicar como funciona."
+  ]
+}

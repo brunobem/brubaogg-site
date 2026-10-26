@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Soldados erguendo uma bandeira num campo de batalha com insetos alienígenas, com a logo de Helldivers 2. Texto na arte: "TRAPACEIROS".
+Thumb.png: Soldados erguendo uma bandeira num campo de batalha com insetos alienígenas, com a logo de Helldivers 2. Texto na arte: "TRAPACEIROS".
+img-1_steam.com.jpg: Soldados de Helldivers 2 no alto de uma pilha de destroços, diante de grandes robôs inimigos, num cenário vermelho.

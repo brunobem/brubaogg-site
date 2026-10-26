@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-26",
+  "titulo": "Helldivers 2 troca anti-cheat e quebra mods",
+  "resumo": "A atualização 7.2 trocou o GameGuard pelo Easy Anti-Cheat e deixou o Custom Galactic War fora do ar. Para mim, os modders pagam pelos trapaceiros.",
+  "tags": [
+    "Helldivers 2"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/third-person-shooter/helldivers-2-studio-warns-mods-may-break-as-it-switches-to-new-anti-cheat-and-the-negative-reviews-are-dropping-on-steam-like-hellbombs/"
+    },
+    {
+      "nome": "GamingOnLinux",
+      "url": "https://www.gamingonlinux.com/2026/10/helldivers-2-switches-over-from-gameguard-to-easy-anti-cheat/"
+    },
+    {
+      "nome": "GamingBolt",
+      "url": "https://gamingbolt.com/?p=655281"
+    }
+  ],
+  "corpo": [
+    "A atualização 7.2.0, Devoid of Liberty, lançada em 20 de outubro de 2026, trocou o GameGuard pelo Easy Anti-Cheat no Helldivers 2. A Arrowhead disse que o sistema antigo não era tão eficaz quanto poderia e citou um aumento recente de mods de trapaça. Antes, os cheats serviam principalmente para gerar moeda premium, as Super Credits, e itens, e agora já aparecem aimbot e wallhack.",
+    "Os mods foram atingidos. O jogo não tem suporte oficial a mods, e agora ele nem abre se detectar um mod que mexa em scripts. O mais afetado foi o Custom Galactic War, que criava batalhas com várias facções e mapas customizados e, segundo a equipe do mod, está fora do ar sem previsão. Mods só cosméticos, sem script, devem funcionar ou precisar de atualização dos criadores.",
+    "A Arrowhead disse saber que mods fazem parte do DNA dos jogos de PC e que precisa melhorar a proteção contra modificações que dão vantagem injusta. O estúdio avisa que usar mod é por conta e risco de quem usa. No Steam, as avaliações recentes caíram para Mistas, com 57% positivas em 21 de outubro, mas as críticas também citam bugs antigos, grind e a propaganda do novo warbond, e não só o anti-cheat.",
+    "O Helldivers 2 é cooperativo, sem PvP, mas cheat atrapalha do mesmo jeito: estraga partidas em grupo e mexe com a moeda premium, que é o modelo de negócio do jogo. Para mim, é sempre assim: quando um jogo online fica famoso, aparece alguém trapaceando e a empresa vive nessa luta, mexendo no jogo e criando anti-cheat. É frustrante ver a comunidade de mods pagando pelos trapaceiros."
+  ]
+}

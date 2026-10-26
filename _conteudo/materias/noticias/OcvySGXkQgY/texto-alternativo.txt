@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Lucia e Jason, de GTA 6, encostados num carro diante de palmeiras e prédios, com a logo do jogo. Texto na arte: "PLAYTEST".
+Thumb.png: Lucia e Jason, de GTA 6, encostados num carro diante de palmeiras e prédios, com a logo do jogo. Texto na arte: "PLAYTEST".
+img-1_playstation.com.jpg: Arte de GTA 6 em quadros, com personagens, um helicóptero, uma lancha, um carro amarelo, um jacaré, uma moto e a logo do jogo no centro.

@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Capas de vários jogos espalhadas na diagonal sobre um fundo cinza, com a logo do Xbox Game Pass. Texto na arte: "MUDANÇAS".
+Thumb.png: Capas de vários jogos espalhadas na diagonal sobre um fundo cinza, com a logo do Xbox Game Pass. Texto na arte: "MUDANÇAS".
+img-1_adrenaline.com.webp: Logo do Xbox Game Pass num círculo verde, entre uma personagem à esquerda e um personagem de cartoon à direita.

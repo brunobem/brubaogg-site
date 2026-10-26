@@ -1,0 +1,28 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-26",
+  "titulo": "Gerente do Xbox desativa conta no X após falar de IA",
+  "resumo": "Um gerente do Xbox desativou a conta no X em menos de 24 horas após falar de IA. Uso IA como ferramenta, mas acho que ele falou demais.",
+  "tags": [
+    "Xbox"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/software/ai/xbox-biz-guy-deletes-his-x-account-less-than-24-hours-after-saying-game-devs-who-dont-embrace-ai-should-not-be-in-the-business-of-being-a-business/"
+    },
+    {
+      "nome": "Notebookcheck",
+      "url": "https://notebookcheck.net/I-might-get-fired-Xbox-manager-opens-up-about-AI-use-then-his-X-account-disappears.1429064.0.html"
+    }
+  ],
+  "corpo": [
+    "Um gerente sênior de estratégia de negócios do Xbox desativou a conta no X menos de 24 horas depois de uma thread sobre inteligência artificial, iniciada em 18 de outubro de 2026. Uma fonte do Xbox disse ao PC Gamer que a decisão veio do volume de respostas que ele recebia. Não houve comunicado do Xbox: eram falas numa conta pessoal, e não dá para tratá-las como posição da empresa.",
+    "Na thread, ele escreveu que o desenvolvedor de jogos que se recusa a acreditar que a IA tem lugar no seu futuro não deveria estar no negócio de ser um negócio. Disse que fez um jogo com IA, ruim mas melhorável, em dois dias, embora tenha trabalhado nele cerca de três horas, e que qualquer um pode fazer um jogo. Afirmou ainda que estúdios sem IA planejam um futuro falso e que o Xbox usa IA, como todas as empresas em 2026.",
+    "A discussão não é só dele. O Xbox lançou o Xbox Labs, que inclui pesquisa em IA, Tim Sweeney, da Epic, disse que está realocando desenvolvedores para maximizar a aceleração com IA, e a Epic Games Store admitiu ter feito o novo launcher com vibe coding, que é pedir a uma IA para escrever o código com pouco ou nenhum conhecimento de programação.",
+    "Eu uso IA no meu trabalho o tempo todo, como apoio em qualquer conteúdo que faço: para mim, é ferramenta, não muleta. O problema é quem, principalmente no lado de negócios, se perde no personagem e acha que estamos numa nova revolução industrial em que a IA faz tudo sozinha. As ferramentas ficaram mais potentes, sim, mas precisam de quem saiba usar, e ainda estamos numa transição.",
+    "Para mim, ele falou demais. Quem não consegue ler o movimento ao redor para se posicionar no momento certo não deveria estar decidindo os rumos do desenvolvimento de jogos nem das empresas. Entendo por que ele saiu de cena."
+  ]
+}

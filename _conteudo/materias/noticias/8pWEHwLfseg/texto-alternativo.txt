@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Lucia e Jason, de GTA 6, lado a lado diante de uma loja numa rua, com a logo do jogo. Texto na arte: "LIBERDADE".
+Thumb.png: Lucia e Jason, de GTA 6, lado a lado diante de uma loja numa rua, com a logo do jogo. Texto na arte: "LIBERDADE".
+img-1_adrenaline.com.webp: Lucia e Jason, de GTA 6, vistos de baixo e armados, sob uma luz de neon azul e uma lâmpada branca no teto.

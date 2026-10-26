@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "status": "rascunho",
+  "categoria": "noticias",
+  "publicado": "2026-10-20",
+  "titulo": "Projeto roda Game Pass no Linux e no Steam Deck",
+  "resumo": "O Xodus Nexus, projeto de código aberto e não oficial, instala e abre jogos do PC Game Pass no Linux e no SteamOS. É inicial, por conta e risco.",
+  "tags": [
+    "Game Pass",
+    "Steam Deck"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/software/microsoft-wont-like-this-open-source-project-to-get-game-pass-working-on-steamos-and-linux-but-i-think-its-pretty-neat/"
+    },
+    {
+      "nome": "KitGuru",
+      "url": "https://www.kitguru.net/gaming/joao-silva/open-source-xodus-nexus-runs-pc-game-pass-titles-locally-on-linux/"
+    },
+    {
+      "nome": "GamingOnLinux",
+      "url": "https://gamingonlinux.com/2026/08/xbox-pc-and-game-pass-coming-to-linux-with-the-xodus-project"
+    }
+  ],
+  "corpo": [
+    "O Xodus Nexus é um projeto experimental, de código aberto e não oficial, que permite navegar, instalar e abrir jogos do PC Game Pass e da Microsoft Store no Linux e no SteamOS, o sistema do Steam Deck. Tem interface parecida com a loja do Xbox, salva na nuvem nos jogos compatíveis e permite adicionar os jogos à Steam como atalho. A notícia é do PC Gamer, de 20 de outubro de 2026.",
+    "A base é o Xodus, ligado a desenvolvedores do Heroic Games Launcher, que fez engenharia reversa do GDK, a estrutura da Microsoft em que esses jogos são feitos e que o Proton não tratava. Segundo o GitHub, conseguiram lidar com a autorização do Xbox, a checagem de licença e o download e a descriptografia dos pacotes. Entre os jogos citados como compatíveis estão Forza Horizon 6 e Gears of War: E-Day.",
+    "Não é pirataria: exige conta Microsoft válida e assinatura ativa do Game Pass ou a licença do jogo. Também não é emulação, e sim uma camada de compatibilidade, e o jogo roda no próprio PC. Mas é software inicial: a compatibilidade depende de cada jogo, a navegação por controle e a integração com o Modo Jogo da Steam ainda estão em desenvolvimento, e jogos antigos em UWP, como o Forza Horizon 3, não estão previstos.",
+    "A Microsoft não comentou e, como não endossa o projeto, nada impede que ela quebre a compatibilidade. O uso é por conta e risco de quem instalar. Não trago passo a passo de instalação.",
+    "Para mim, é mais um projeto em que a galera usa engenharia reversa para levar aplicativos a sistemas diferentes e quebrar barreiras. O Game Pass não é só do Windows, e estão tentando levá-lo a várias plataformas, inclusive o macOS. Já dava para jogar Game Pass no Steam Deck por streaming, mas instalado e rodando no aparelho é novidade. Como o próprio autor do PC Gamer, eu não trataria isso como resolvido ainda."
+  ]
+}

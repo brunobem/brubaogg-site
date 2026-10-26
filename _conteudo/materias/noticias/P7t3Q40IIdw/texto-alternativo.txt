@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Rosto de um robô com máscara de gás e olhos azuis brilhantes, com a logo de ARC Raiders: Frozen Trail. Texto na arte: "FROZEN TRAIL".
+Thumb.png: Rosto de um robô com máscara de gás e olhos azuis brilhantes, com a logo de ARC Raiders: Frozen Trail. Texto na arte: "FROZEN TRAIL".

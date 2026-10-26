@@ -1,0 +1,29 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-26",
+  "titulo": "Game Pass deve passar por uma grande reformulação",
+  "resumo": "Segundo a Fortune, a Microsoft planeja um Game Pass à la carte, com assinatura base mais barata. Não é oficial. Para mim, vale a cautela.",
+  "tags": [
+    "Game Pass"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Omelete",
+      "url": "https://www.omelete.com.br/games/xbox-game-pass-vai-sofrer-grande-reformulacao"
+    },
+    {
+      "nome": "TBreak",
+      "url": "https://tbreak.com/xbox-game-pass-a-la-carte-overhaul/"
+    }
+  ],
+  "assunto": "game-pass-reformulacao",
+  "corpo": [
+    "A CEO do Xbox, Asha Sharma, ganhou um perfil na revista Fortune em 20 de outubro de 2026, e a reportagem diz que a Microsoft planeja reformular o Game Pass. Quem afirma isso são pessoas familiarizadas com a estratégia, não a própria Sharma. Ela disse apenas que o Xbox está aqui para ser a empresa de entretenimento número 1.",
+    "O plano seria uma assinatura base mais barata, com recursos escolhidos à la carte. Coisas como nuvem, multiplayer online e jogos exclusivos de console virariam complementos pagos, numa estrutura por níveis. Algumas coberturas falam na possibilidade de lançamentos no primeiro dia também virarem complemento, mas isso não está confirmado.",
+    "Isso está longe de ser confirmado: não há data, preços nem lista do que muda, e a Microsoft não anunciou nada. As parcerias também podem mudar, segundo a Omelete. Hoje o Game Pass traz benefícios de EA, Ubisoft e de jogos da Riot, como o League of Legends, e o que acontece com isso é só possibilidade. A Fortune cita a Blizzard como prioridade da Sharma e o World of Warcraft: Forever, mas não diz em quais plataformas ele sai.",
+    "O contexto é de pressão. Segundo a Fortune, o negócio do Xbox vale cerca de US$ 21 bilhões, com margem de lucro em torno de 3%, e as demissões chegam a 1.868 de um plano de 3.200. No Brasil, o Game Pass custa hoje R$ 76,90 no Ultimate, R$ 59,90 no Premium e R$ 43,90 no Essential por mês.",
+    "Para mim, a dúvida é se são notícias para se preocupar ou em que dá para confiar. É uma reportagem séria, de uma revista grande, mas baseada em fontes anônimas: dá para levar a sério, mas não como certeza. Parece que vêm muitas mudanças, principalmente nas parcerias, e quem joga LoL, ou queria Warcraft no Xbox, talvez seja impactado. O ponto agora é esperar um anúncio oficial."
+  ]
+}
