@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-26",
+  "titulo": "PS5 ganha firmware 14.20 antes do GTA 6",
+  "resumo": "A Sony lançou a 14.20 dias após a 14.10, que já teve falha mostrada por um hacker. Para mim, vira uma corrida entre Sony e hackers antes do GTA 6.",
+  "tags": [
+    "PlayStation",
+    "GTA 6"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/playstation-5-ganha-nova-firmware-antes-gta-6-chegar/"
+    },
+    {
+      "nome": "Push Square",
+      "url": "https://www.pushsquare.com/news/2026/10/ps5-firmware-update-26-07-14-20-00-available-to-download-now"
+    },
+    {
+      "nome": "Notebookcheck",
+      "url": "https://notebookcheck.net/Firmware-14-20-may-stop-PS5-console-jailbreak-but-an-exploit-has-already-surfaced.1430271.0.html"
+    }
+  ],
+  "assunto": "jailbreak-de-consoles",
+  "corpo": [
+    "A Sony lançou em 21 de outubro de 2026 a firmware 14.20 do PS5 (26.07-14.20.00, cerca de 1,2 GB), poucos dias depois da 14.10. A nota oficial diz apenas que ela melhora mensagens e usabilidade em algumas telas, sem falar em segurança nem em desempenho.",
+    "Dois dias antes, em 19 de outubro, o hacker Gezine postou um vídeo no X, Hello 14.10, mostrando um menu de debug escondido liberado num PS5 já na 14.10. Ele não liberou arquivos ao público, e a falha não dá acesso ao hypervisor, então não permite rodar cópias de jogos novos.",
+    "Há indícios de que a 14.20 corrigiu uma falha chamada A53, mas uma cobertura diz que isso não tem necessariamente relação com a de Gezine. Cerca de oito horas depois da 14.20, já havia relatos de exploit nela, de acesso limitado, de nível userland e menos grave que um de kernel.",
+    "O histórico recente é de corrida. Em setembro, o Relapse, jailbreak para firmwares até a 13.60, permitiu rodar cópias de jogos no PS5 e no PS5 Pro, e a Sony respondeu exigindo a 14.10 para entrar na PSN. A Sony nunca ligou a 14.20 ao jailbreak: essa leitura é da comunidade e da imprensa.",
+    "O GTA 6 entra porque sai em 19 de novembro de 2026, e dados da loja apontam que ele exigirá no mínimo a firmware 14.10 no PS5. Isso não é oficial: Sony e Rockstar não confirmaram, e não há prova de que seja medida antipirataria.",
+    "Para mim, a Sony está correndo para fechar as brechas antes do maior lançamento do ano, e isso vira uma corrida entre os hackers que fazem o jailbreak e a Sony. Quero acompanhar a frequência dessas atualizações para ver quem ganha no final. Aqui não ensino nem incentivo pirataria, nem deixar de atualizar o console."
+  ]
+}

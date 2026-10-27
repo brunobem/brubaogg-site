@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Personagens de Mario Kart correndo em karts numa pista colorida, com a logo da Nintendo. Texto na arte: "JAILBREAK".
+Thumb.png: Personagens de Mario Kart correndo em karts numa pista colorida, com a logo da Nintendo. Texto na arte: "JAILBREAK".
+img-1_br.ign.com.jpg: Console Nintendo Switch 2 com Joy-Cons laranjas, com a logo na tela, sobre um fundo degradê rosa e roxo.

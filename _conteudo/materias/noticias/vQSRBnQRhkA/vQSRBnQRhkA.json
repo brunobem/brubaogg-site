@@ -1,0 +1,29 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-27",
+  "titulo": "O Switch 2 ganha seu primeiro jailbreak",
+  "resumo": "O ns2jb roda homebrew no Switch 2, mas é limitado, tethered e não roda cópias de jogos. Para mim, é interessante ver isso tão cedo.",
+  "tags": [
+    "Nintendo"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/nintendo-switch-2-ganha-seu-primeiro-jailbreak/"
+    },
+    {
+      "nome": "GBAtemp",
+      "url": "https://gbatemp.net/news/switch-2-jailbreak-ns2jb-demonstrated-software-only-exploit-tethered.685698"
+    }
+  ],
+  "assunto": "jailbreak-de-consoles",
+  "corpo": [
+    "Em 22 de outubro de 2026, o desenvolvedor Sammy Hajhamid, conhecido como pepsipu, estudante do Caltech, anunciou o primeiro jailbreak do Nintendo Switch 2, o ns2jb, com a frase i jailbroke the nintendo switch 2. É um desbloqueio só por software, que funciona até o firmware 23.0.1, cerca de 16 meses após o lançamento do console.",
+    "Ele permite rodar homebrew, que são programas caseiros, fazer engenharia reversa, modificar partes de jogos, fazer backup de saves e acessar a maioria dos periféricos. Na demonstração, ele colocou Hatsune Miku e Cinnamoroll no Mario Kart World, uma modificação que levou cerca de um dia. A porta de entrada foi um jogo de Switch 1, o SmileBASIC 4, que roda no Switch 2 pela retrocompatibilidade.",
+    "É bem limitado. Ele não permite fazer nem rodar cópias de jogos, não acessa o kernel e não instala firmware customizado. É tethered: ao desligar ou reiniciar, perde-se tudo e é preciso refazer o processo. Exige o SmileBASIC 4 pago, uma versão específica do sistema e um processo técnico, que não é para usuário comum. A Nintendo removeu o SmileBASIC 4 da eShop, mas não comentou o jailbreak publicamente.",
+    "Sobre o uso de IA: o desenvolvedor usou agentes de IA, como o Codex, que é um agente da OpenAI para engenharia de software e não uma linguagem de programação, para procurar e explorar a falha. A montagem de teste, com aparelhos JetKVM repassando o HDMI e mandando comandos por USB, serviu para a IA controlar e ver o console, e não é um recurso do jailbreak. A comunidade ficou dividida, com críticas ao uso de IA e medo de pirataria e de banimento online.",
+    "Para mim, depois do jailbreak do PS5, a galera não quer deixar passar uma, e agora sobrou para a Nintendo. Acho bem interessante ver isso acontecer tão cedo na vida do console. Pirataria entra aqui só como preocupação da comunidade e risco futuro, não como fato, e não ensino nem incentivo nada disso."
+  ]
+}

@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Soldado de armadura N7 e uma mulher de capa roxa lado a lado, com a logo da BioWare e da EA. Texto na arte: "F - FECHOU".
+Thumb.png: Soldado de armadura N7 e uma mulher de capa roxa lado a lado, com a logo da BioWare, "A division of EA". Texto na arte: "XODUS NEXUS".
+img-1_eurogamer.pt.webp: Duas imagens lado a lado: um soldado de armadura N7 diante de chamas e uma personagem de pele clara, com adornos dourados e olhar sério.

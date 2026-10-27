@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Dois homens num bar, um de boné e regata, com cervejas, em cena de GTA 6, com a logo do jogo. Texto na arte: "PISSWASSER".
+Thumb.png: Dois homens num bar, um de boné e regata, com cervejas, em cena de GTA 6, com a logo do jogo. Texto na arte: "PISSWASSER".
+img-1_pt.ign.com.webp: Grupo de pessoas sujas de lama, sorrindo, diante de um veículo off-road; um deles, de chapéu de cowboy, segura uma lata de cerveja.

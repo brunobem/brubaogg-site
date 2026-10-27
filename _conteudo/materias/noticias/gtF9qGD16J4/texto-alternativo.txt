@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Tela inicial do PS5 com os símbolos coloridos e brilhantes de triângulo, círculo, X e quadrado, e uma fileira de ícones embaixo. Texto na arte: "NOVO UPDATE".
+Thumb.png: Tela inicial do PS5 com os símbolos coloridos e brilhantes de triângulo, círculo, X e quadrado, e uma fileira de ícones embaixo. Texto na arte: "NOVO UPDATE".
+img-1_estadao.com.br.jpg: Console PS5 branco em pé, ao lado de um controle, sobre um fundo azul com raios de luz coloridos.

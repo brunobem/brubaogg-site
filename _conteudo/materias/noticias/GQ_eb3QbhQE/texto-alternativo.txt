@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Homem sorridente de gorro diante de notas de dólar, com a logo de Resident Evil. Texto na arte: "AGORA DIGITAL".
+Thumb.png: Homem sorridente de gorro diante de notas de dólar, com a logo de Resident Evil. Texto na arte: "AGORA DIGITAL".
+img-1_ovicio.com.br.webp: Homem de óculos e camisa azul à esquerda e personagens de Resident Evil armados à direita, em tom amarelado.

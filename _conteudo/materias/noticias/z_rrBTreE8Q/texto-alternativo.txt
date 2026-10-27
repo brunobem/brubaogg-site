@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Personagens de jogos da Capcom em estilo de desenho, entre eles um leão, com a logo da Capcom. Texto na arte: "VAZOU DADOS".
+Thumb.png: Personagens de jogos da Capcom em estilo de desenho, entre eles um leão, com a logo da Capcom. Texto na arte: "VAZOU DADOS".
+img-1_meups.com.br.jpg: Três quadros lado a lado: uma paisagem com uma criatura alada, uma mulher de cabelo loiro e uma menina de cabelos loiros e olhos claros, com a logo da Capcom.

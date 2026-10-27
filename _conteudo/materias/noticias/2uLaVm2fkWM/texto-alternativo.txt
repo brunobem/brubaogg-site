@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Logo do Xbox, grande e verde, ao lado do pinguim do Linux, sobre um fundo escuro com códigos, com os rótulos "XBOX" e "LINUX". Texto na arte: "XODUS NEXUS".
+Thumb.png: Logo do Xbox, grande e verde, ao lado do pinguim do Linux, sobre um fundo escuro com códigos, com os rótulos "XBOX" e "LINUX". Texto na arte: "XODUS NEXUS".
+img-1_culpadolag.com.br.webp: Pessoa jogando num Steam Deck, com um símbolo azul brilhante na tela, sobre uma mesa de madeira.

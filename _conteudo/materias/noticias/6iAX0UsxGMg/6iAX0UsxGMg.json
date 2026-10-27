@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-26",
+  "titulo": "A BioWare fechou as portas depois de mais de 30 anos",
+  "resumo": "A BioWare anunciou o próprio fechamento em 21 de outubro de 2026, e o próximo Mass Effect acabou junto. É um estúdio lendário: máximo respeito.",
+  "tags": [
+    "BioWare"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/bioware-de-mass-effect-e-dragon-age-fecha-as-portas/"
+    },
+    {
+      "nome": "TechSpot",
+      "url": "https://www.techspot.com/news/114292-ea-closes-legendary-rpg-studio-bioware-following-55.html"
+    },
+    {
+      "nome": "AltChar",
+      "url": "https://www.altchar.com/game-news/ea-are-shutting-down-bioware-and-cancelling-the-next-mass-effect-aQBOH0L0hc18"
+    }
+  ],
+  "assunto": "fechamento-da-bioware",
+  "corpo": [
+    "No dia 21 de outubro de 2026, a própria BioWare anunciou o fechamento no X: depois de mais de três décadas de aventuras compartilhadas, o estúdio está fechando, e o comunicado diz que não é fácil escrever essas palavras. O desenvolvimento inicial do próximo Mass Effect foi encerrado junto. Quis tratar isso mais como um anúncio de despedida do que como notícia comum, porque é muito triste.",
+    "A decisão faz parte de um corte de cerca de 400 vagas na EA, perto de 3% da empresa, segundo a Bloomberg. Na BioWare, ficaram umas 40 ou 50 pessoas: as fontes divergem, com cerca de 50 pela Bloomberg e cerca de 40 pelo cofundador Trent Oster. A EA falou em análise aprofundada do negócio, e a cobertura liga o corte de custos à compra da empresa por investidores liderados pelo fundo saudita PIF, o que é leitura da imprensa.",
+    "No comunicado, a BioWare diz que o foco agora é a equipe incrivelmente talentosa que colocou o coração nesses jogos e em se apoiar na transição, e deixa uma frase para os fãs: eles foram a parte mais significativa da história do estúdio. Sobre Dragon Age, não há informação oficial sobre o futuro da franquia, e os jogos já lançados continuam existindo.",
+    "A BioWare foi fundada em 1995 em Edmonton, no Canadá, por Ray Muzyka, Greg Zeschuk e Augustine Yip, que eram médicos, e começou com seis pessoas. Fez Baldur's Gate, em 1998, Knights of the Old Republic, em 2003, Mass Effect, em 2007, e Dragon Age, a partir de 2009. O último jogo lançado foi Dragon Age: The Veilguard, em 2024.",
+    "O prefeito de Edmonton, Andrew Knack, disse que a indústria de games é o que é hoje por causa da BioWare e que ela nunca poderá ser substituída. Para mim, é um estúdio lendário. Máximo respeito a todo mundo que passou por lá."
+  ]
+}
