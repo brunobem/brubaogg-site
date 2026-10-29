@@ -1,0 +1,10 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Zumbi de barba, olhos esbranquiçados e boca aberta, avançando com a mão estendida numa rua em ruínas, com a logo de Dying Light. Texto na arte: "MELHOR JOGO DE ZUMBI??". Versão vertical.
+Thumb.png: Zumbi de barba, olhos esbranquiçados e boca aberta, avançando com a mão estendida sobre o capô de um carro numa rua em ruínas, com outros zumbis ao fundo e a logo de Dying Light. Texto na arte: "VALE A PENA AINDA JOGAR?". Versão horizontal.
+img-1_steam.com.jpg: Visão em primeira pessoa no alto de um andaime, com dois personagens se chutando, um de máscara e colete de couro e um zumbi, diante de uma cidade ao pôr do sol; uma machadinha aparece em primeiro plano.
+img-2_steam.com.jpg: Visão em primeira pessoa com um bastão de madeira, enfrentando um homem de máscara de gás armado com facas numa rua, com outro sobrevivente de facão ao lado e um cartaz de esportes ao fundo.
+img-3_steam.com.jpg: Criatura enorme e musculosa, de pele escura e olhos brilhantes, avançando à noite sob um viaduto, com uma pistola em primeiro plano e um sobrevivente de bastão ao fundo.
+img-4_steam.com.jpg: Dois sobreviventes escondidos num quarto bagunçado, escorando uma janela barricada com tábuas, enquanto zumbis tentam entrar pela janela e por outra janela mais alta.
