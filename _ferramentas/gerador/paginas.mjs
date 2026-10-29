@@ -517,10 +517,13 @@ ${pequenos.join('\n')}
 // Logo abaixo vai o convite para o canal (botao de inscricao direta no YouTube: ?sub_confirmation=1, a URL vem de SOCIAIS em config.mjs).
 export function carrosselHtml(ctx) {
   const { icone } = ctx;
-  const itens = CARROSSEL.categorias
+  // os mais novos de cada grupo (noticia, review, lancamento), intercalados: 1a noticia, 1a review, 1o lancamento, 2a noticia...
+  const porGrupo = CARROSSEL.grupos.map((g) => g.categorias
     .flatMap((pasta) => { const d = ctx.itensPorCategoria[pasta]; return d ? d.itens.filter((m) => !m.semTexto).map((m) => ({ m, cat: d.cat })) : []; })
     .sort((a, b) => b.m.publicado.localeCompare(a.m.publicado))
-    .slice(0, CARROSSEL.qtd);
+    .slice(0, g.qtd));
+  const itens = [];
+  for (let i = 0; i < Math.max(0, ...porGrupo.map((l) => l.length)); i++) for (const lista of porGrupo) if (lista[i]) itens.push(lista[i]);
   if (!itens.length) return '';
   const slides = itens.map(({ m, cat }, i) => `          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${itens.length}">
             <a class="car-link" href="${urlDe(`${cat.pasta}/${m.slug}.html`)}">

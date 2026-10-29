@@ -140,9 +140,14 @@ export const BUSCA_DA_SECAO = {
 
 // ---- Carrossel do topo da home: as ultimas publicacoes do site, de qualquer uma das categorias abaixo (cortes e lives sao so paginas de player: nao entram). ----
 // `categorias` sao as pastas de `categorias` (acima). Quando houver wiki, acrescente a pasta dela aqui.
+// O banner mostra os ULTIMOS de cada tipo, intercalados (noticia, review, lancamento, noticia, review, lancamento): `qtd` de cada `grupo`. A noticia inclui as do GTA 6
+// (gta6-novidades). Cada grupo e uma lista de pastas de `categorias`; a ordem dos grupos e a ordem em que aparecem.
 export const CARROSSEL = {
-  qtd: 3,
-  categorias: ['gta6-novidades', 'lancamentos', 'reviews', 'noticias'],
+  grupos: [
+    { nome: 'noticias', categorias: ['gta6-novidades', 'noticias'], qtd: 2 },
+    { nome: 'reviews', categorias: ['reviews'], qtd: 2 },
+    { nome: 'lancamentos', categorias: ['lancamentos'], qtd: 2 },
+  ],
   segundos: 8,                        // troca sozinho a cada tantos segundos (0 = so troca na mao; quem pede menos movimento no aparelho tambem nao ve a troca)
 };
 

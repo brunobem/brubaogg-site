@@ -115,6 +115,7 @@ h1 {
   color: var(--text);
 }
 .lead strong { color: var(--accent); font-weight: 700; }
+.lead.lead-cheio { max-width: none; } /* GTA 6: o texto de abertura acompanha a largura da contagem logo abaixo */
 h1 .ico { width: .85em; height: .85em; margin-right: .08em; vertical-align: -0.06em; color: var(--accent); }
 /* titulos de qualquer nivel em Lilita One (so tem o peso 400: nada de negrito falso); campos e botoes herdam a fonte do texto ao redor */
 h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 400; }
@@ -1006,7 +1007,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .gta-faq strong { color: var(--accent); font-weight: 600; }
 .gta-faq .gta-fontes { margin-top: var(--space-3); font-size: .85rem; color: var(--muted); }
 .gta-faq .gta-fontes a { text-decoration: underline; }
-.gta-faq { max-width: 880px; }
+.gta-faq { max-width: none; } /* as perguntas frequentes acompanham a largura da contagem e do resto da pagina */
 
 /* ===== 12. Paginas de playlist (cortes e lives) ===== */
 .pls { display: grid; gap: var(--space-3); margin: var(--space-2) 0 var(--space-1); }
