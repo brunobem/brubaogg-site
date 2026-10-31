@@ -895,6 +895,22 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .art-foto { margin: 0 0 var(--space-3); }
 .art-foto img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 2px solid var(--border); }
 .art-foto figcaption { margin: var(--space-1) 0 0; font-size: .85rem; line-height: 1.5; color: var(--muted); }
+/* LANCAMENTO COM IMAGENS (um jogo por bloco): texto de um lado e imagem do outro, alternando (o 2o bloco inverte). A introducao, sem imagem, fica centralizada. No celular
+   empilha: imagem em cima, texto embaixo. */
+.art-jogos > p { max-width: 760px; margin-left: auto; margin-right: auto; text-align: center; }
+.jogo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-4); align-items: center; margin: 0 0 var(--space-4); }
+.jogo .art-foto { margin: 0; }
+.jogo-inv .art-foto { order: -1; }
+.jogo-texto { min-width: 0; }
+.jogo-texto p { margin: 0 0 var(--space-2); }
+.art-body .jogo-texto .jogo-link { margin: 0; }
+.jogo-link a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-2); border-radius: 12px; border: 2px solid var(--accent); color: var(--accent); font-family: var(--font-display); letter-spacing: .5px; }
+.jogo-link a:hover { text-decoration: none; background: var(--accent); color: var(--on-accent); }
+@media (max-width: 760px) {
+  .jogo { grid-template-columns: minmax(0, 1fr); gap: var(--space-2); margin-bottom: var(--space-4); }
+  .jogo .art-foto, .jogo-inv .art-foto { order: -1; }
+  .art-jogos > p { text-align: left; }
+}
 /* ficha de veredito da review (logo depois do resumo): a nota em destaque, a recomendacao e so os dados que o JSON traz */
 .veredito { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-1) var(--space-3); align-items: center; margin: var(--space-3) 0; padding: var(--space-3); border: 2px solid var(--accent); border-radius: var(--radius); background: var(--surface); box-shadow: 5px 5px 0 var(--accent-2); }
 .veredito-titulo { grid-column: 1 / -1; margin: 0; font-size: 1.15rem; letter-spacing: .5px; color: var(--muted); }

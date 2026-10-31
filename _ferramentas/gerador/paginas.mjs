@@ -324,7 +324,8 @@ ${outras.map((o) => cartao(o, catDe.get(o), '../')).join('\n')}
       const dividido = m.video && m.short && (m.resumo || m.corpo.length);
       const lead = m.resumo ? `<p class="art-lead"${m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-meta="resumo"'}>${esc(m.resumo)}</p>` : '';
       const video = !m.video ? '' : `<div class="art-video${m.short ? ' is-short' : ''}" id="video">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${m.video}`, href: `https://www.youtube.com/watch?v=${m.video}`, titulo: m.titulo, imagem: capaDoPlayer(ctx, m) })}</div>`;
-      const texto = m.corpo.length ? `<div class="art-body">\n${corpoComImagens(ctx, m)}\n      </div>` : '';
+      const corpoHtml = m.corpo.length ? corpoComImagens(ctx, m, cat.pasta) : '';
+      const texto = m.corpo.length ? `<div class="art-body${corpoHtml.includes('class="jogo') ? ' art-jogos' : ''}">\n${corpoHtml}\n      </div>` : '';
       const ignDaFicha = m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore';
       const miolo = dividido
         ? `<div class="art-split">\n        <div class="art-text">\n          ${lead}\n          ${texto}\n        </div>\n        ${video}\n      </div>`
@@ -658,10 +659,11 @@ function capaDoPlayer(ctx, m) {
 }
 // Os paragrafos do texto, com a imagem N (img-N_<site da fonte>.jpg) logo depois do paragrafo N x (paragrafos por imagem do tipo: 1 na noticia e no lancamento, 2 na review; imagens.mjs);
 // imagem que cairia depois do ultimo paragrafo vai depois dele. Sem arquivo, nao aparece nada.
-function corpoComImagens(ctx, m) {
+function corpoComImagens(ctx, m, pasta) {
   const reg = ctx.imagens?.get(m.id), aCada = reg?.aCada ?? 1;
   const fotos = [...(reg?.fotos ?? [])].sort((a, b) => a[0] - b[0]);
   const ign = m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore';
+  if (emJogos(pasta, fotos)) return corpoEmJogos(m, fotos, ign);
   const linhas = [];
   m.corpo.forEach((p, i) => {
     linhas.push(`        <p>${esc(p)}</p>`);
@@ -669,14 +671,44 @@ function corpoComImagens(ctx, m) {
   });
   return linhas.join('\n');
 }
+// LANCAMENTO COM IMAGENS (ex.: os indies do mes, um jogo por paragrafo): cada paragrafo que tem a imagem N vira um BLOCO DE JOGO, texto de um lado e a imagem do outro, alternando
+// (1o: texto a esquerda e imagem a direita; 2o: imagem a esquerda e texto a direita...). O paragrafo SEM imagem (a introducao do mes) fica centralizado, sem bloco. No fim do texto do
+// jogo, "Steam: https://..." sai do paragrafo e vira um link proprio, em linha separada. No celular o bloco empilha (imagem em cima, texto embaixo). O CSS esta em style.css (.jogo).
+const emJogos = (pasta, fotos) => pasta === 'lancamentos' && fotos.length > 0;
+const LINK_DA_STEAM = /\s*Steam:\s*(https:\/\/\S+?)\s*$/;
+function separarLinkDaSteam(p) {
+  const m = p.match(LINK_DA_STEAM);
+  return m ? { texto: p.slice(0, m.index).trim(), link: m[1] } : { texto: p, link: null };
+}
+// um item de `corpo` pode ter mais de um paragrafo: uma linha em branco (\n\n) dentro do texto separa os paragrafos (o jogo com mais texto, ou o fechamento em 2 trechos)
+const paragrafosHtml = (texto, recuo) => texto.split(/\n\s*\n/).map((x) => `${recuo}<p>${esc(x.trim())}</p>`).join('\n');
+function corpoEmJogos(m, fotos, ign) {
+  const foto = new Map(fotos); // posicao N da imagem -> imagem; o paragrafo N (1, 2, 3...) leva a imagem N
+  const linhas = [];
+  let jogos = 0;
+  m.corpo.forEach((p, i) => {
+    const { texto, link } = separarLinkDaSteam(p);
+    const f = foto.get(i + 1);
+    const linkHtml = link ? `<p class="jogo-link"${ign}><a href="${esc(link)}" target="_blank" rel="noopener">Ver na Steam &rarr;</a></p>` : '';
+    if (!f) { linhas.push(`${paragrafosHtml(texto, '        ')}${linkHtml ? `\n        ${linkHtml}` : ''}`); return; }
+    linhas.push(`        <div class="jogo${jogos++ % 2 ? ' jogo-inv' : ''}">
+          <div class="jogo-texto">
+${paragrafosHtml(texto, '            ')}${linkHtml ? `\n            ${linkHtml}` : ''}
+          </div>
+${figuraDaMateria(m, f, ign, '(max-width: 760px) 100vw, 500px')}
+        </div>`);
+  });
+  for (const [n, f] of fotos) if (n > m.corpo.length) linhas.push(figuraDaMateria(m, f, ign)); // imagem de uma posicao que nao tem paragrafo: vai solta, no fim
+  return linhas.join('\n');
+}
 // a imagem com a fonte na legenda: o site vem do nome do arquivo; se for o site de uma das fontes da materia, a legenda leva ao texto dela
-function figuraDaMateria(m, f, ign) {
+function figuraDaMateria(m, f, ign, sizes) {
   const x = fonteDaImagem(m.id, f, '../', 800);
   const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, '').toLowerCase(); } catch { return ''; } };
   const daFonte = (m.fontes ?? []).find((s) => host(s.url) === f.fonte || host(s.url).endsWith(`.${f.fonte}`));
   const credito = daFonte ? `<a href="${esc(daFonte.url)}" target="_blank" rel="noopener">${esc(f.fonte)}</a>` : esc(f.fonte);
   return `        <figure class="art-foto">
-          <img src="${x.src}" srcset="${x.srcset}" sizes="${m.short ? '(max-width: 860px) 100vw, 620px' : '(max-width: 1000px) 100vw, 1000px'}" alt="${esc(f.alt ?? '')}" loading="lazy" width="${x.w}" height="${x.h}">
+          <img src="${x.src}" srcset="${x.srcset}" sizes="${sizes ?? (m.short ? '(max-width: 860px) 100vw, 620px' : '(max-width: 1000px) 100vw, 1000px')}" alt="${esc(f.alt ?? '')}" loading="lazy" width="${x.w}" height="${x.h}">
           <figcaption${ign}>Imagem: ${credito}</figcaption>
         </figure>`;
 }

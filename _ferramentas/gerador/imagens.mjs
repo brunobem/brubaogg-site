@@ -41,7 +41,7 @@ export function classificarArquivo(nome) {
   const f = nome.match(FOTO);
   if (f) {
     const n = Number(f[1]), fonte = f[2].toLowerCase();
-    if (n < 1 || n > 20) return { tipo: 'invalido', motivo: `a posicao ${f[1]} nao vale (use de 1 a 20: a ordem da imagem no texto)` };
+    if (n < 1 || n > 30) return { tipo: 'invalido', motivo: `a posicao ${f[1]} nao vale (use de 1 a 30: a ordem da imagem no texto)` };
     if (!SITE.test(fonte)) return { tipo: 'invalido', motivo: `"${f[2]}" no nome nao parece o site da fonte (use o dominio, como arkade.com.br)` };
     return { tipo: 'foto', n, fonte };
   }

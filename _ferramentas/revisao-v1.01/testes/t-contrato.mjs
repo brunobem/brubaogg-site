@@ -45,9 +45,14 @@ export default async function () {
     const tudo = [d.titulo, d.resumo, ...(Array.isArray(d.corpo) ? d.corpo : [])].filter((x) => typeof x === 'string').join('\n');
     if (/<\/?[a-z][^>]*>/i.test(tudo)) a.push(achado('medio', T, 'texto contem marcacao HTML (aparece como texto cru na pagina)', onde));
     if (/\*\*|^#{1,6}\s|\]\(/m.test(tudo)) a.push(achado('baixo', T, 'texto contem marcas de markdown (o corpo deve ser texto puro)', onde));
-    if (/https?:\/\//i.test((Array.isArray(d.corpo) ? d.corpo : []).join(' '))) a.push(achado('baixo', T, 'corpo contem URL (o guia pede texto puro, sem links)', onde));
-    const longos = (Array.isArray(d.corpo) ? d.corpo : []).filter((p) => typeof p === 'string' && palavras(p) > 120).length;
-    if (longos) a.push(achado('baixo', T, `${longos} paragrafo(s) com mais de 120 palavras (dificil de ler no celular)`, onde));
+    // Lancamento: o fim de cada jogo pode trazer "Steam: https://..." (o site tira o link do texto e faz o botao "Ver na Steam"); o texto de um jogo pode ir ate ~200 palavras
+    // (texto e imagem lado a lado) e usar mais de um paragrafo, separados por linha em branco. Fora de lancamento: sem link e ate 120 palavras por paragrafo.
+    const ehLancamento = d.categoria === 'lancamentos' || /[\\/]lancamentos[\\/]/.test(m.arq ?? '');
+    const semLinkDaSteam = (p) => (ehLancamento ? p.replace(/\s*Steam:\s*https:\/\/\S+\s*$/, '') : p);
+    if (/https?:\/\//i.test((Array.isArray(d.corpo) ? d.corpo : []).map((p) => (typeof p === 'string' ? semLinkDaSteam(p) : '')).join(' '))) a.push(achado('baixo', T, 'corpo contem URL (o guia pede texto puro, sem links)', onde));
+    const limite = ehLancamento ? 200 : 120;
+    const longos = (Array.isArray(d.corpo) ? d.corpo : []).filter((p) => typeof p === 'string' && p.split(/\n\s*\n/).some((x) => palavras(x) > limite)).length;
+    if (longos) a.push(achado('baixo', T, `${longos} paragrafo(s) com mais de ${limite} palavras (dificil de ler no celular)`, onde));
 
     if (pub) {
       const tn = slugBase(d.titulo || m.id);
@@ -212,7 +217,7 @@ export default async function () {
   // nomes de arquivo das imagens da pasta de cada materia (thumb.<ext> e img-N_<site da fonte>.<ext>): o que vale e o que o gerador recusa
   const classes = [
     ['thumb.jpg', 'thumb'], ['thumb.PNG', 'thumb'], ['thumb.webp', 'thumb'], ['img-1_arkade.com.br.jpg', 'foto'], ['img-12_www.techtudo.com.br.webp', 'foto'], ['IMG-2_Exemplo.COM.png', 'foto'],
-    ['img-1.jpg', 'invalido'], ['img-1_.jpg', 'invalido'], ['img-a_x.com.jpg', 'invalido'], ['foto.jpg', 'invalido'], ['thumb.gif', 'invalido'], ['img-1_semponto.jpg', 'invalido'], ['img-0_x.com.jpg', 'invalido'], ['img-21_x.com.jpg', 'invalido'],
+    ['img-1.jpg', 'invalido'], ['img-1_.jpg', 'invalido'], ['img-a_x.com.jpg', 'invalido'], ['foto.jpg', 'invalido'], ['thumb.gif', 'invalido'], ['img-1_semponto.jpg', 'invalido'], ['img-0_x.com.jpg', 'invalido'], ['img-31_x.com.jpg', 'invalido'],
     ['anotacoes.txt', 'outro'], ['rascunho.docx', 'outro'],
   ];
   for (const [nome, esperado] of classes) { const k = classificarArquivo(nome).tipo; if (k !== esperado) a.push(achado('alto', T, `classificarArquivo("${nome}") deu "${k}" e devia dar "${esperado}"`, '_ferramentas/gerador/imagens.mjs')); }

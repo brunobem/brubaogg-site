@@ -1,0 +1,36 @@
+MODELO DE IMAGENS DESTA MATÉRIA (o site ignora este arquivo; pode apagar depois)
+
+Coloque as imagens NESTA pasta, ao lado do legenda_indie_novembro_corrigida.json, com estes nomes:
+
+  thumb.png         capa do player (vídeo horizontal: 16:9). Só uma.
+  card.png          capa dos cartões, home e compartilhamento (16:9). Só uma.
+
+Imagens do texto: uma por parágrafo, e cada parágrafo é um jogo, na ordem de data.
+O parágrafo 1 (GRAVHOUNDS) também tem a introdução do mês.
+Aqui o domínio da fonte é steam.com (como nas outras matérias); troque a extensão se a imagem for png ou webp.
+  img-1_steam.com.jpg      GRAVHOUNDS
+  img-2_steam.com.jpg      Death at Fleming Manor
+  img-3_steam.com.jpg      Cozy Game Restoration
+  img-4_steam.com.jpg      Lost Host
+  img-5_steam.com.jpg      Horses of Hoofprint Bay
+  img-6_steam.com.jpg      Condado da Fortuna (County of Fortune)
+  img-7_steam.com.jpg      Airframe Ultra
+  img-8_steam.com.jpg      DREADMOOR
+  img-9_steam.com.jpg      Project Tomorrow
+  img-10_steam.com.jpg      Neo Junk City
+  img-11_steam.com.jpg      Slotbound
+  img-12_steam.com.jpg      Stormforge
+  img-13_steam.com.jpg      Main Sequence
+  img-14_steam.com.jpg      Dice Hoarder
+  img-15_steam.com.jpg      Trees Hate You
+  img-16_steam.com.jpg      Lord of Undead
+  img-17_steam.com.jpg      Grand Theft Timeline
+  img-18_steam.com.jpg      Me and You
+  img-19_steam.com.jpg      Arctic Drive
+  img-20_steam.com.jpg      Reshine
+  img-21_steam.com.jpg      Football Story
+
+ATENÇÃO: o site hoje só aceita imagens de 1 a 20 (_ferramentas/gerador/imagens.mjs). A img-21 (Football Story)
+vai ser recusada pelo `npm run gerar` até o desenvolvedor do site aumentar o limite para 21.
+
+Quando o vídeo for ao ar: troque o nome desta pasta pelo ID do vídeo e me avise.

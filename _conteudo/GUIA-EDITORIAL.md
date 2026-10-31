@@ -44,7 +44,7 @@ História, personagem, guia e curiosidade de um jogo **não** são matérias: mo
 - Não inventar fatos, datas, preços ou nomes; dúvida não resolvida: omitir ou marcar `[CONFERIR: ...]`.
 - **Texto sempre em primeira pessoa** ("eu", "para mim", "na minha opinião", "dei nota 7", "nós"), como se fosse o próprio Bruno falando. **Nunca** em terceira pessoa sobre ele: nada de "o Brubão acha", "segundo o Brubão", "para o Brubão", "a nota do Brubão", "ele gostou", "o autor". Vale para título, resumo, corpo e campos do veredito (ex.: `preco`: "preço que paguei"). Opinião é sempre apresentada como opinião ("para mim", "acho que"), nunca como fato. Fatos de terceiros (a Sony anunciou, o diretor disse) seguem normais.
 - **Marca:** a marca/site é **BRUBAOGG**, sempre sem acento (nunca "Brubão GG" nem "BRUBÃOGG"). "Brubão" com til é só o apelido e, em primeira pessoa, quase nunca aparece.
-- Sem pergunta nem convite ao público no fim do texto, e sem referência à estrutura do vídeo ("neste vídeo", "comentário fixado").
+- Sem pergunta nem convite ao público no fim do texto, e sem referência à estrutura do vídeo ("neste vídeo", "comentário fixado"). **Exceção: lançamento com imagens** (veja "Lançamento com imagens", abaixo), que **termina com um fechamento** que pode perguntar o que o público achou.
 - A assinatura que aparece na página é **"Por Bruno Bem"**, no fim, perto das fontes, com a data e o aviso "Texto com apoio de IA" (link para a página Sobre); no alto fica só a categoria e o **tempo de leitura** (palavras do resumo e do texto ÷ 200 por minuto, arredondado para cima, mínimo 1 minuto), que o site calcula sozinho. O texto continua em primeira pessoa, e a opinião nunca aparece como fato.
 
 ## Tags (como escolher)
@@ -64,7 +64,7 @@ História, personagem, guia e curiosidade de um jogo **não** são matérias: mo
 - **Não sobrescreva** o arquivo de uma matéria que já foi aprovada: regravar como `rascunho` tira a página do ar. O gerador avisa quando uma página publicada deixaria de existir.
 
 ## Parágrafos
-- No celular, parágrafo com mais de ~90 palavras vira bloco difícil de ler. Divida os longos (principalmente nas listas de lançamentos: um parágrafo por jogo).
+- No celular, parágrafo com mais de ~90 palavras vira bloco difícil de ler. Divida os longos (principalmente nas listas de lançamentos: um parágrafo por jogo). **Exceção:** no lançamento com imagens, o texto de cada jogo pode ter até ~200 palavras (fica ao lado da imagem; veja a regra de estrutura abaixo).
 
 ## Ficha de veredito e fontes (opcionais)
 Dois campos que o site já sabe mostrar. Ficam no mesmo arquivo da matéria; se o campo não existe, a parte simplesmente não aparece.
@@ -94,7 +94,7 @@ Cada matéria tem a **própria pasta** (`_conteudo/materias/<tipo>/<ID>/`, ao la
 |---|---|
 | `thumb.jpg` (ou `.png`, `.webp`) | **Capa do player**: entra no lugar da miniatura do YouTube (que é de qualidade menor). Num Short, é a imagem **vertical (9:16)**. Só uma por pasta. |
 | `card.jpg` (ou `.png`, `.webp`) | **Imagem horizontal (16:9, a mesma arte)** dos **cartões das listas, do carrossel da home, dos blocos da home e da prévia de compartilhamento** (WhatsApp, Google). Sem `card`: matéria horizontal (review, lançamento) usa a `thumb`; **Short sem `card` continua com a miniatura do YouTube** (a `thumb` vertical seria cortada no cartão). Só um por pasta. |
-| `img-1_arkade.com.br.jpg` | Imagem do texto. **Onde ela aparece depende do tipo da matéria** (tabela abaixo). Numere de 1 a 20. |
+| `img-1_arkade.com.br.jpg` | Imagem do texto. **Onde ela aparece depende do tipo da matéria** (tabela abaixo). Numere de 1 a 30. |
 
 **Onde cada imagem aparece (pelo tipo, que é a pasta em `_conteudo/materias/`):**
 
@@ -106,6 +106,14 @@ Cada matéria tem a **própria pasta** (`_conteudo/materias/<tipo>/<ID>/`, ao la
 
 - A imagem que cairia **depois do último parágrafo** (número alto demais para o texto) aparece depois do último. Não precisa preencher todas as posições: a que não existe como arquivo simplesmente não aparece.
 - **Exemplos de nome:** review: `img-1_ign.com.br.jpg`, `img-2_techtudo.com.br.jpg`; lançamento: `img-1_arkade.com.br.jpg` (o jogo do 1º parágrafo), `img-2_savestate.com.br.jpg` (o do 2º). Notícia: `img-1_arkade.com.br.jpg`, `img-2_techtudo.com.br.jpg`.
+- **Lançamento com imagens (os indies do mês, um jogo por bloco) — REGRA DE ESTRUTURA:**
+  1. **Introdução** (item 1 do `corpo`, **sem imagem**): 2 a 4 frases, **até ~90 palavras**, com o contexto do mês (quantos jogos, a ordem, o que eu considero indie, o que entrou ou saiu da lista). **Não fala de nenhum jogo em particular.** Fica **centralizada** na página.
+  2. **Um item do `corpo` por jogo, em ordem de data**, cada um com a sua imagem. O número da imagem é o **número do item**: item 1 = introdução (sem imagem), item 2 = 1º jogo = `img-2`, item 3 = `img-3`... (o limite é 30 imagens). O site monta um **bloco** por jogo, com o **texto de um lado e a imagem do outro, alternando**: 1º jogo com o texto à esquerda e a imagem à direita, o 2º com a imagem à esquerda e o texto à direita, e assim por diante. No celular o bloco empilha, com a imagem em cima.
+  3. **Tamanho do texto de cada jogo:** o ideal são **60 a 120 palavras** (data, plataforma, o que o jogo propõe, preço ou idioma quando importar). Pode chegar a **~200 palavras** quando o jogo merece (o aviso só aparece acima disso). Para ter **mais de um parágrafo** no mesmo jogo, ponha uma **linha em branco** (no JSON, escreva `\n\n`) dentro do mesmo item do `corpo`; o texto continua do lado da imagem.
+  4. **Link da Steam:** no **fim** do item do jogo, escreva `Steam: https://store.steampowered.com/app/NÚMERO/`. O site tira o link do texto e o põe numa linha própria, como o botão **"Ver na Steam →"**. Só vale com `https://` e só em **lançamentos**.
+  5. **Fechamento** (último item do `corpo`, **sem imagem**): 1 a 3 frases, **centralizado**, **conclusivo**. Aqui **pode e deve haver pergunta ao público** ("Qual desses você vai jogar primeiro?", "Faltou algum jogo na lista?"). Evite "neste vídeo". Se o fechamento tiver 2 trechos, separe com linha em branco.
+  6. **Tamanho total:** não há teto rígido. A lista de 21 jogos tem ~1.400 palavras. O que precisa continuar leve é **cada parágrafo** (a introdução e o fechamento curtos; cada jogo no tamanho do item 3).
+  7. Item **sem imagem** no meio da lista (por exemplo, um aviso) fica centralizado, como a introdução e o fechamento.
 - A regra mora em `PARAGRAFOS_POR_IMAGEM` (`_ferramentas/gerador/imagens.mjs`); tipo que não está lá usa 1.
 
 - O nome é **`img-<posição>_<site da fonte>.<jpg, png ou webp>`**. O site da fonte é o domínio (`arkade.com.br`, `techtudo.globo.com`), em qualquer caixa: o site lê tudo em minúsculas.
