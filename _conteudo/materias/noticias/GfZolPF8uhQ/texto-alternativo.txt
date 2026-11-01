@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Pirata sorridente de lenço na cabeça sobre um fundo de areia, com a logo de Assassin's Creed Black Flag Resynced. Texto na arte: "NEW GAME+".
+Thumb.png: Pirata sorridente de lenço na cabeça sobre um fundo de areia, com a logo de Assassin's Creed Black Flag Resynced. Texto na arte: "NEW GAME+".
+img-1_steam.com.jpg: Combate numa rua de um forte em chamas, com um personagem de lâmina diante de soldados e o objetivo "Capture the fort" na tela.
+img-2_steam.com.jpg: Assassino de capuz sobre um penhasco, olhando uma baía tropical com um navio e um cais de madeira.

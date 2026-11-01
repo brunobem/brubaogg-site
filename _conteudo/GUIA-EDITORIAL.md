@@ -66,6 +66,20 @@ História, personagem, guia e curiosidade de um jogo **não** são matérias: mo
 ## Parágrafos
 - No celular, parágrafo com mais de ~90 palavras vira bloco difícil de ler. Divida os longos (principalmente nas listas de lançamentos: um parágrafo por jogo). **Exceção:** no lançamento com imagens, o texto de cada jogo pode ter até ~200 palavras (fica ao lado da imagem; veja a regra de estrutura abaixo).
 
+## Vídeo ou post de fora no meio do texto (opcional)
+Para mostrar um post do **X**, um vídeo do **YouTube** ou um post/reel do **Instagram** (por exemplo, um trailer vazado ou um anúncio oficial) **no meio da matéria**, acrescente ao JSON o campo `embeds`:
+```json
+"embeds": [
+  { "url": "https://x.com/WeAreMassEffect/status/2113302258741903427", "depois": 3, "legenda": "O trailer vazado do Mass Effect Universe, no post original no X." }
+]
+```
+- `url`: o link do post ou vídeo (pode colar o link inteiro, com os parâmetros de rastreio; o site descobre a rede pelo endereço e monta o link limpo). Aceita `x.com`/`twitter.com/usuario/status/ID`, `youtube.com/watch?v=`, `youtu.be/`, `youtube.com/shorts/` e `instagram.com/p/`, `/reel/`, `/tv/`.
+- `depois`: o **número do parágrafo** depois do qual o bloco aparece (1 a N; em geral logo depois do parágrafo que fala do que o post mostra).
+- `legenda` (opcional): uma frase curta no cartão.
+- **Como aparece:** um cartão com borda roxa, o título da rede, o botão **"Abrir no X/YouTube/Instagram →"** (abre o original em outra aba) e o post **já carregado, direto, sem clique** (X e Instagram) ou a fachada do player do YouTube (miniatura com play; o vídeo só toca no clique, como nas matérias). Se o post tiver sido apagado, o cartão avisa e o botão "Abrir" continua valendo.
+- **Peso:** o post de fora carrega junto com a página (o Bruno aceitou o peso extra porque poucas matérias terão vídeo). Use só onde o vídeo importa (vazamento, trailer que não pode ir ao canal).
+- **Padrão do TXT:** o Bruno deixa na pasta da matéria um TXT chamado `Vídeo` (ex.: `Video X.txt`, `Video.txt`) só com o link. O TXT é o ponto de partida: eu coloco o link em `embeds`, decido o `depois` e o link que vale é o do JSON. Pode ter mais de um por matéria (uma entrada por post). Vale para notícias e reviews; **não** nos lançamentos com blocos de jogo.
+
 ## Ficha de veredito e fontes (opcionais)
 Dois campos que o site já sabe mostrar. Ficam no mesmo arquivo da matéria; se o campo não existe, a parte simplesmente não aparece.
 ```json

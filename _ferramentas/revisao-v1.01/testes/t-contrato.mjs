@@ -118,6 +118,14 @@ export default async function () {
     ['plataforma na materia (review sem veredito)', { plataforma: 'PS5' }, 'ok'],
     ['plataforma vazia', { plataforma: ' ' }, 'problema', '"plataforma" deve ser um texto'],
     ['plataforma que nao e texto', { plataforma: 5 }, 'problema', '"plataforma" deve ser um texto'],
+    ['embed do X com rastreio', { embeds: [{ url: 'https://x.com/WeAreMassEffect/status/2113302258741903427?s=46&t=abc', depois: 1 }] }, 'ok'],
+    ['embed do YouTube', { embeds: [{ url: 'https://youtu.be/dQw4w9WgXcQ?si=abc', depois: 1, legenda: 'Veja.' }] }, 'ok'],
+    ['embed do Instagram', { embeds: [{ url: 'https://www.instagram.com/reel/Cabcdefghij/?igsh=1', depois: 1 }] }, 'ok'],
+    ['embeds que nao e lista', { embeds: { url: 'https://x.com/WeAreMassEffect/status/2113302258741903427', depois: 1 } }, 'problema', 'deve ser uma lista'],
+    ['embed de rede desconhecida', { embeds: [{ url: 'https://example.com/video/1', depois: 1 }] }, 'problema', 'precisa de "url"'],
+    ['embed sem paragrafo', { embeds: [{ url: 'https://x.com/WeAreMassEffect/status/2113302258741903427' }] }, 'problema', 'precisa de "depois"'],
+    ['embed depois do ultimo paragrafo', { embeds: [{ url: 'https://x.com/WeAreMassEffect/status/2113302258741903427', depois: 99 }] }, 'problema', 'precisa de "depois"'],
+    ['embed com campo desconhecido so avisa', { embeds: [{ url: 'https://x.com/WeAreMassEffect/status/2113302258741903427', depois: 1, cor: 'roxo' }] }, 'aviso', 'campo desconhecido'],
   ];
   for (const [nome, extra, espera, trecho] of regras) {
     const r = validarMateria({ ...base, ...extra }, { id: 'AAAAAAAAAAA', rel: 'x.json', situacao: 'publicada' });

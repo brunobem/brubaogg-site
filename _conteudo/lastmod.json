@@ -4,7 +4,7 @@
   "d": "2026-10-24"
  },
  "arquivo.html": {
-  "h": "0ca6a8acdba7",
+  "h": "9983260d1f43",
   "d": "2026-10-31"
  },
  "arquivo/2024-12.html": {
@@ -72,11 +72,11 @@
   "d": "2026-10-24"
  },
  "arquivo/2026-10.html": {
-  "h": "c052879d8b6e",
+  "h": "bf147101b92c",
   "d": "2026-10-31"
  },
  "busca.html": {
-  "h": "e2b3518f9af3",
+  "h": "4d8fb18d3875",
   "d": "2026-10-31"
  },
  "cortes.html": {
@@ -240,8 +240,8 @@
   "d": "2026-10-28"
  },
  "gta6-novidades/gta-6-xbox-nega-streaming-exclusivo-e-acesso-no-pc.html": {
-  "h": "6c8e05b61ec5",
-  "d": "2026-10-27"
+  "h": "cac1f6214485",
+  "d": "2026-10-31"
  },
  "gta6-novidades/gta6-animais.html": {
   "h": "effb37663fd5",
@@ -300,7 +300,7 @@
   "d": "2026-10-28"
  },
  "index.html": {
-  "h": "55695cebe770",
+  "h": "eb6cd216d000",
   "d": "2026-10-31"
  },
  "lancamentos.html": {
@@ -376,8 +376,8 @@
   "d": "2026-10-24"
  },
  "noticias.html": {
-  "h": "501c8e88169b",
-  "d": "2026-10-27"
+  "h": "10886488e5e5",
+  "d": "2026-10-31"
  },
  "noticias/1666-amsterdam-chegou-ao-acesso-antecipado-em-25-de-agosto.html": {
   "h": "0da1f928fedf",
@@ -388,8 +388,8 @@
   "d": "2026-10-24"
  },
  "noticias/a-bioware-fechou-as-portas-depois-de-mais-de-30-anos.html": {
-  "h": "0b15f4325c59",
-  "d": "2026-10-27"
+  "h": "299fdcd6a165",
+  "d": "2026-10-31"
  },
  "noticias/a-faye-vai-ser-mesmo-a-protagonista-de-god-of-war.html": {
   "h": "ba35bbd9d290",
@@ -423,13 +423,17 @@
   "h": "8ec6d919e4e5",
   "d": "2026-10-26"
  },
+ "noticias/arkane-lyon-corre-risco-de-fechar.html": {
+  "h": "e63c723fd41c",
+  "d": "2026-10-31"
+ },
  "noticias/asha-sharma-diz-que-o-xbox-saiu-da-queda-livre.html": {
   "h": "35ee529d1bac",
   "d": "2026-10-27"
  },
  "noticias/assassin-s-creed-black-flag-resynced-data-e-preco-no-brasil.html": {
-  "h": "30fa9b77f656",
-  "d": "2026-10-24"
+  "h": "b2c7bad3b512",
+  "d": "2026-10-31"
  },
  "noticias/assassin-s-creed-destiny-vazou-mas-ja-estava-cancelado.html": {
   "h": "f537d45b86c1",
@@ -440,20 +444,24 @@
   "d": "2026-10-24"
  },
  "noticias/assassins-creed-black-flag-resynced.html": {
-  "h": "dc47ef83755c",
-  "d": "2026-10-24"
+  "h": "882b73bee6d1",
+  "d": "2026-10-31"
  },
  "noticias/black-extraction-raiders-chega-ao-android-no-brasil.html": {
   "h": "cce5f67a178d",
   "d": "2026-10-24"
  },
+ "noticias/black-flag-resynced-ganha-new-game-plus.html": {
+  "h": "36df7c1418ba",
+  "d": "2026-10-31"
+ },
  "noticias/black-flag-resynced-no-switch-2-o-que-o-vazamento-mostra.html": {
-  "h": "b29d00458c6b",
-  "d": "2026-10-26"
+  "h": "f465d692327e",
+  "d": "2026-10-31"
  },
  "noticias/black-flag-resynced-nota-84-bugs-e-microtransacoes.html": {
-  "h": "13f7b0bbff4a",
-  "d": "2026-10-24"
+  "h": "40e29b3cabb3",
+  "d": "2026-10-31"
  },
  "noticias/blizzard-ajuda-nas-cinematicas-de-fable-diz-matt-booty.html": {
   "h": "956577265430",
@@ -482,6 +490,10 @@
  "noticias/capcom-confirma-vazamento-de-dados-de-11-milhoes.html": {
   "h": "18437440fde9",
   "d": "2026-10-27"
+ },
+ "noticias/capcom-diz-que-acertou-a-dificuldade-de-onimusha.html": {
+  "h": "322a024c0778",
+  "d": "2026-10-31"
  },
  "noticias/caravan-sandwitch-chega-ao-celular-em-agosto.html": {
   "h": "efe3ea731d28",
@@ -615,9 +627,17 @@
   "h": "3d79ddebee9d",
   "d": "2026-10-24"
  },
+ "noticias/fallout-shelter-the-experiment-e-reality-do-prime-video.html": {
+  "h": "e41d4630ad95",
+  "d": "2026-10-31"
+ },
  "noticias/faye-em-god-of-war-laufey-ela-tera-espaco-para-brilhar.html": {
   "h": "bef0134648a1",
   "d": "2026-10-24"
+ },
+ "noticias/fechamento-da-bioware.html": {
+  "h": "13dfbc11555d",
+  "d": "2026-10-31"
  },
  "noticias/filme-de-call-of-duty-tem-data-30-de-junho-de-2028.html": {
   "h": "1907bca27ab3",
@@ -652,8 +672,8 @@
   "d": "2026-10-24"
  },
  "noticias/game-pass-deve-passar-por-uma-grande-reformulacao.html": {
-  "h": "7d173e09ba3e",
-  "d": "2026-10-27"
+  "h": "e023b87d4a0a",
+  "d": "2026-10-31"
  },
  "noticias/game-pass-fica-mais-barato-no-brasil-ultimate-a-r-76-90.html": {
   "h": "f86c0de1650b",
@@ -670,6 +690,10 @@
  "noticias/game-pass-preco.html": {
   "h": "3900aecbe858",
   "d": "2026-10-24"
+ },
+ "noticias/game-pass-reformulacao.html": {
+  "h": "025aeb14dcf7",
+  "d": "2026-10-31"
  },
  "noticias/gen-atlas-novo-jogo-do-criador-de-shadow-of-the-colossus.html": {
   "h": "b783ac9b272b",
@@ -832,8 +856,8 @@
   "d": "2026-10-24"
  },
  "noticias/onimusha-way-of-the-sword-e-antecipado-para-4-de-setembro.html": {
-  "h": "5c6de401d9a5",
-  "d": "2026-10-24"
+  "h": "8a3fbdeec6eb",
+  "d": "2026-10-31"
  },
  "noticias/os-produtores-de-resident-evil-querem-silent-hill.html": {
   "h": "d0f73221aff4",
@@ -868,8 +892,8 @@
   "d": "2026-10-27"
  },
  "noticias/phantom-blade-zero-tera-midia-fisica-mas-so-em-2027.html": {
-  "h": "393a21c7793b",
-  "d": "2026-10-27"
+  "h": "8623c596b993",
+  "d": "2026-10-31"
  },
  "noticias/phantom-blade-zero.html": {
   "h": "c45588a19b77",
@@ -936,12 +960,12 @@
   "d": "2026-10-24"
  },
  "noticias/ragnarok-online-brasil-tem-fim-marcado-para-29-de-julho.html": {
-  "h": "1305077c6b2a",
-  "d": "2026-10-27"
+  "h": "09af5e3b0bc2",
+  "d": "2026-10-31"
  },
  "noticias/resident-evil-classicos-chegam-a-steam-com-drm-da-capcom.html": {
-  "h": "1b2dcde44801",
-  "d": "2026-10-26"
+  "h": "6c70b00e8f45",
+  "d": "2026-10-31"
  },
  "noticias/resident-evil-de-cregger-agrada-em-exibicoes-teste.html": {
   "h": "689c366fee2c",
@@ -1127,6 +1151,10 @@
   "h": "6915a1afb6d2",
   "d": "2026-10-24"
  },
+ "noticias/trailer-do-mass-effect-cancelado-vaza-na-internet.html": {
+  "h": "18e8e23c7362",
+  "d": "2026-10-31"
+ },
  "noticias/vai-dar-pra-ter-pet-em-gta-6.html": {
   "h": "b692af357430",
   "d": "2026-10-24"
@@ -1144,12 +1172,16 @@
   "d": "2026-10-24"
  },
  "noticias/xbox-conquistas-miticas-sao-a-resposta-a-platina.html": {
-  "h": "75663f1cc3cd",
-  "d": "2026-10-27"
+  "h": "0244f8e017cf",
+  "d": "2026-10-31"
  },
  "noticias/xbox-pergunta-se-fallout-e-minecraft-devem-ser-exclusivos.html": {
   "h": "788b2dad2d0c",
   "d": "2026-10-27"
+ },
+ "noticias/xbox-testa-cobranca-por-hora-na-nuvem.html": {
+  "h": "4743f3f78ec9",
+  "d": "2026-10-31"
  },
  "noticias/xbox-xp-nova-divisao-leva-franquias-a-filmes-e-tv.html": {
   "h": "f515b1de534f",
@@ -1204,8 +1236,8 @@
   "d": "2026-10-26"
  },
  "reviews/assassin-s-creed-black-flag-resynced-vale-a-pena-o-remake.html": {
-  "h": "042e754102ba",
-  "d": "2026-10-24"
+  "h": "1f39cfeff6bf",
+  "d": "2026-10-31"
  },
  "reviews/assassin-s-creed-shadows-vale-a-pena-depois-de-zerar.html": {
   "h": "62b385aff213",
@@ -1460,16 +1492,16 @@
   "d": "2026-10-24"
  },
  "series/resident-evil-0-a-historia-e-a-defesa-do-preludio.html": {
-  "h": "d47787093884",
-  "d": "2026-10-27"
+  "h": "766af8179e54",
+  "d": "2026-10-31"
  },
  "series/resident-evil-1-remake-a-historia-completa-da-mansao.html": {
   "h": "fcdc151d6f9e",
   "d": "2026-10-27"
  },
  "series/resident-evil-2-classico-a-historia-completa-de-leon.html": {
-  "h": "c757a00fe240",
-  "d": "2026-10-27"
+  "h": "46c28b80a46e",
+  "d": "2026-10-31"
  },
  "series/resident-evil-2-remake-a-campanha-de-claire-redfield.html": {
   "h": "11cf19dd4fdf",
@@ -1480,20 +1512,20 @@
   "d": "2026-10-27"
  },
  "series/resident-evil-3-remake-e-melhor-que-o-original.html": {
-  "h": "fa6126a53937",
-  "d": "2026-10-24"
+  "h": "9bb8e2bef31c",
+  "d": "2026-10-31"
  },
  "series/resident-evil-4-a-historia-e-o-misterio-dos-las-plagas.html": {
-  "h": "97e28b1df8d7",
-  "d": "2026-10-24"
+  "h": "80ab7de35cb6",
+  "d": "2026-10-31"
  },
  "series/resident-evil-4-remake-vs-classico-o-que-mudou.html": {
-  "h": "20478dae1bd5",
-  "d": "2026-10-24"
+  "h": "713f1c448009",
+  "d": "2026-10-31"
  },
  "series/resident-evil-5-a-lore-o-progenitor-e-a-ia-da-sheva.html": {
-  "h": "c1f23274c1c9",
-  "d": "2026-10-27"
+  "h": "a30db71cd5f4",
+  "d": "2026-10-31"
  },
  "series/resident-evil-6-a-campanha-da-ada-wong-e-carla-radames.html": {
   "h": "1c0408c06998",
@@ -1512,12 +1544,12 @@
   "d": "2026-10-24"
  },
  "series/resident-evil-7-a-volta-do-terror-em-primeira-pessoa.html": {
-  "h": "ab641318feae",
-  "d": "2026-10-27"
+  "h": "11bb751c5cb5",
+  "d": "2026-10-31"
  },
  "series/resident-evil-village-ethan-e-a-opiniao-do-brubao.html": {
-  "h": "48e2fcbc2c41",
-  "d": "2026-10-27"
+  "h": "ff2a9a2f2367",
+  "d": "2026-10-31"
  },
  "sobre.html": {
   "h": "62fccc864aec",
@@ -1532,12 +1564,12 @@
   "d": "2026-10-26"
  },
  "tag/assassin-s-creed-black-flag-resynced.html": {
-  "h": "5639e4db3196",
-  "d": "2026-10-24"
+  "h": "85fa3c620be0",
+  "d": "2026-10-31"
  },
  "tag/assassin-s-creed-black-flag.html": {
-  "h": "4c0dbdf52fde",
-  "d": "2026-10-24"
+  "h": "f1491ff05e74",
+  "d": "2026-10-31"
  },
  "tag/call-of-duty.html": {
   "h": "43db741e496d",
@@ -1611,6 +1643,10 @@
   "h": "2091b0aab184",
   "d": "2026-10-27"
  },
+ "tag/onimusha-way-of-the-sword.html": {
+  "h": "74e0c1b315d3",
+  "d": "2026-10-31"
+ },
  "tag/phantom-blade-zero.html": {
   "h": "37c39832d05f",
   "d": "2026-10-27"
@@ -1680,8 +1716,8 @@
   "d": "2026-10-27"
  },
  "tags.html": {
-  "h": "33837d8cbd1d",
-  "d": "2026-10-27"
+  "h": "332f110d797c",
+  "d": "2026-10-31"
  },
  "termos-tiktok.html": {
   "h": "3fa90121a61f",

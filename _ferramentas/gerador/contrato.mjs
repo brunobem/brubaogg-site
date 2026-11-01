@@ -1,7 +1,7 @@
 // O CONTRATO de uma materia (_conteudo/materias/<tipo>/<ID>/<ID>.json), em um so lugar. Usado pelo gerador, pelo aprovar, pelo pendentes e pelos testes.
 // Devolve { problemas, avisos }: problema = nao pode publicar; aviso = so informa (limite editorial).
 import { LIMITE_DE_FONTES, LIMITE_DE_SHORTS, RECOMENDACOES, WIKI, categorias } from './config.mjs';
-import { usaTextoDeModelo } from './util.mjs';
+import { redeDoLink, usaTextoDeModelo } from './util.mjs';
 
 export const FORMATOS = ['short', 'horizontal'];
 const INICIO_DO_YOUTUBE = new Date('2005-01-01T00:00:00Z'); // nenhum video e mais antigo que isso
@@ -62,6 +62,19 @@ export function validarMateria(m, { id, rel, situacao }) {
         else if (typeof f.url !== 'string' || !/^https:\/\/[^\s"<>]+$/.test(f.url)) P(`a fonte ${i + 1} ("${f.nome}") precisa de "url" comecando com https:// (sem espacos): veio ${JSON.stringify(f.url)}.`);
       });
       if (m.fontes.length > LIMITE_DE_FONTES) A(`${m.fontes.length} fontes (a pagina mostra todas; ate ${LIMITE_DE_FONTES} le melhor)`);
+    }
+  }
+  // Videos/posts de fora no meio do texto: [{ "url": "https://...", "depois": numero do paragrafo (1 a N), "legenda": "texto opcional" }]; a rede (X, YouTube ou Instagram) vem do link
+  if (m.embeds != null) {
+    if (!Array.isArray(m.embeds)) P('"embeds" deve ser uma lista: [{ "url": "https://x.com/usuario/status/ID", "depois": 3 }].');
+    else {
+      m.embeds.forEach((x, i) => {
+        if (x === null || typeof x !== 'object') { P(`o item ${i + 1} de "embeds" deve ser um objeto { "url": ..., "depois": ... }.`); return; }
+        if (typeof x.url !== 'string' || !redeDoLink(x.url)) P(`o item ${i + 1} de "embeds" precisa de "url" de um post do X (x.com/usuario/status/ID), de um video do YouTube ou de um post do Instagram (instagram.com/p/, /reel/): veio ${JSON.stringify(x.url)}.`);
+        if (!Number.isInteger(x.depois) || x.depois < 1 || (Array.isArray(m.corpo) && x.depois > m.corpo.length)) P(`o item ${i + 1} de "embeds" precisa de "depois" = o numero do paragrafo (de 1 a ${Array.isArray(m.corpo) ? m.corpo.length : 'N'}) depois do qual ele aparece.`);
+        if (x.legenda != null && !texto(x.legenda)) P(`a "legenda" do item ${i + 1} de "embeds" deve ser um texto.`);
+        for (const k of Object.keys(x)) if (!['url', 'depois', 'legenda'].includes(k)) A(`campo desconhecido no item ${i + 1} de "embeds": "${k}" (nao aparece na pagina)`);
+      });
     }
   }
   // Shorts anexados: o ID do video (11 caracteres, nao o link) e um titulo; nenhum repetido nem o proprio video da materia

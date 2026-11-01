@@ -3,7 +3,7 @@
 import { ADS_ATIVOS, ADS_NAS_LISTAS, AUTOR, AUTOR_FOTO, BUSCA_DA_SECAO, CARROSSEL, COBERTURA, DOMINIO, GTA6, PALAVRAS_POR_MINUTO, PLAYERS, RECOMENDACOES, SOCIAIS, VIDEOS_POR_PLAYER, WIKI, abas, categorias, lorem, paginasFixasNaBusca, resumosLorem } from './config.mjs';
 import { caminhoAntigo } from './enderecos.mjs';
 import { fonteDaImagem } from './imagens.mjs';
-import { SIZES_CARROSSEL, SIZES_CARTAO, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, duracaoIso, esc, imagemDoCartao, limparTitulo, mesDe, miniatura, miniaturaGrande, slugify, urlDe } from './util.mjs';
+import { redeDoLink, SIZES_CARROSSEL, SIZES_CARTAO, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, duracaoIso, esc, imagemDoCartao, limparTitulo, mesDe, miniatura, miniaturaGrande, slugify, urlDe } from './util.mjs';
 
 // ---- "Ver mais" das listas ----
 // A pagina mostra os 30 primeiros (ja no HTML: rapido, indexavel, funciona sem JavaScript). O resto vai em arquivos de 90 itens
@@ -273,6 +273,7 @@ export function construirMaterias(ctx) {
         veredito: real?.veredito, // a ficha de veredito da review (nota, recomendacao...): aparece no alto da pagina e a mini-busca usa recomendacao e plataforma
         fontes: real?.fontes, // as fontes com link, no fim da pagina
         shorts: real?.shorts, // Shorts anexados ("Shorts desta review"), players verticais pequenos depois dos botoes
+        embeds: real?.embeds, // videos/posts de fora (X, YouTube, Instagram) no meio do texto: [{ url, depois, legenda }]; o gerador reconhece a rede pelo link (redeDoLink)
         tags: resolverTags(real?.tags),
         semTexto,
         short: real?.formato === 'short', // vem do JSON da materia; video sem materia (so nos modos de teste) usa o player horizontal
@@ -377,7 +378,7 @@ ${relacionadasHtml}
       escrever(`${cat.pasta}/${m.slug}.html`, pagina({
         base: '../', titulo: `${m.titulo} | BRUBAOGG`, descricao: m.resumo || (m.video ? `Assista: ${m.titulo}. Vídeo do canal BRUBAOGG.` : m.titulo), og: miniaturaGrande(m.id), corpo, caminho: `${cat.pasta}/${m.slug}.html`,
         noindex: m.ficticio || m.semTexto || m.rascunho, // exemplo, so video ou rascunho: fora do Google
-        tipo: indexavel ? 'article' : 'website', publicado: m.publicado, estruturados, scripts: m.video || m.shorts?.length ? ['compartilhar.js', 'fachada.js'] : ['compartilhar.js'],
+        tipo: indexavel ? 'article' : 'website', publicado: m.publicado, estruturados, scripts: scriptsDaMateria(m),
       }));
       total++;
     }
@@ -667,9 +668,42 @@ function corpoComImagens(ctx, m, pasta) {
   const linhas = [];
   m.corpo.forEach((p, i) => {
     linhas.push(`        <p>${esc(p)}</p>`);
+    for (const x of m.embeds ?? []) if (x.depois === i + 1) linhas.push(embedHtml(ctx, x, ign));
     for (const [n, f] of fotos) if (n * aCada === i + 1 || (i === m.corpo.length - 1 && n * aCada > i + 1)) linhas.push(figuraDaMateria(m, f, ign));
   });
   return linhas.join('\n');
+}
+// VIDEO / POST DE FORA no meio do texto (campo "embeds" do JSON da materia: [{ "url": "https://...", "depois": 3, "legenda": "texto opcional" }]). O gerador reconhece a plataforma pelo link:
+//   X (x.com ou twitter.com/usuario/status/ID): cartao com "Abrir no X" e o post (com o video) ja desenhado na pagina por assets/js/embeds.js, que carrega o script oficial do X na abertura;
+//   YouTube (watch?v=, youtu.be/, /shorts/, /embed/): a mesma fachada do player das materias (miniatura com play; o video so toca no clique) e o link "Abrir no YouTube";
+//   Instagram (/p/, /reel/, /tv/): cartao com "Abrir no Instagram" e o post desenhado por embeds.js.
+// O link pode vir com os parametros de rastreio que as redes poem ao copiar: so o essencial (usuario/ID) e guardado e o endereco limpo e montado aqui. Sem JavaScript sobra o link.
+const LOGO_X = '<svg class="ico" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
+// os scripts de uma materia: o fachada.js cuida do player do YouTube (do video da materia, dos Shorts anexados e de um YouTube dentro do texto) e o embeds.js desenha os posts do X e do Instagram
+function scriptsDaMateria(m) {
+  const redes = (m.embeds ?? []).map((e) => redeDoLink(e.url)?.rede);
+  return ['compartilhar.js', ...(m.video || m.shorts?.length || redes.includes('youtube') ? ['fachada.js'] : []), ...(redes.some((r) => r === 'x' || r === 'instagram') ? ['embeds.js'] : [])];
+}
+function embedHtml(ctx, e, ign) {
+  const r = redeDoLink(e.url);
+  if (!r) return '';
+  const legenda = (padrao) => `<p class="embed-txt">${esc(e.legenda || padrao)}</p>`;
+  if (r.rede === 'youtube') {
+    const fachada = fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${r.id}`, href: r.url, titulo: e.legenda || 'Vídeo do YouTube', imagem: `https://i.ytimg.com/vi/${r.id}/hqdefault.jpg`, lazy: true });
+    return `        <aside class="embed-social embed-yt"${ign}>
+          <p class="embed-tit"><span class="embed-rede">YouTube</span> Vídeo do YouTube</p>
+          ${legenda('Veja o vídeo.')}
+          <div class="art-video${r.short ? ' is-short' : ''}">${fachada}</div>
+          <div class="embed-botoes"><a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Abrir no YouTube &rarr;</a></div>
+        </aside>`;
+  }
+  const x = r.rede === 'x';
+  return `        <aside class="embed-social embed-${r.rede}" data-tipo="${r.rede}" data-id="${esc(r.id)}" data-url="${esc(r.url)}"${ign}>
+          <p class="embed-tit">${x ? `${LOGO_X} Post no X de @${esc(r.usuario)}` : '<span class="embed-rede">Instagram</span> Post no Instagram'}</p>
+          ${legenda('Veja o post original, com o vídeo.')}
+          <div class="embed-botoes"><a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Abrir no ${x ? 'X' : 'Instagram'} &rarr;</a></div>
+          <div class="embed-caixa"></div>
+        </aside>`;
 }
 // LANCAMENTO COM IMAGENS (ex.: os indies do mes, um jogo por paragrafo): cada paragrafo que tem a imagem N vira um BLOCO DE JOGO, texto de um lado e a imagem do outro, alternando
 // (1o: texto a esquerda e imagem a direita; 2o: imagem a esquerda e texto a direita...). O paragrafo SEM imagem (a introducao do mes) fica centralizado, sem bloco. No fim do texto do

@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Capacete de armadura enferrujado numa paisagem desolada, com a logo de Fallout. Texto na arte: "REALITY SHOW".
+Thumb.png: Capacete de armadura enferrujado numa paisagem desolada, com a logo de Fallout. Texto na arte: "REALITY SHOW".
+img-1_meuplaystation.com.jpg: Pip-Boy com o título "Fallout Shelter: The Experiment" na tela, a logo do Prime Video e o texto "DATE ANNOUNCEMENT".
+img-2_estadao.com.jpg: Soldado de armadura pesada caminhando ao pôr do sol com um cão ao lado, num deserto com construções antigas.

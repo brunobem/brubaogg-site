@@ -98,3 +98,16 @@ export function normalizarId(arg) {
   const m = s.match(/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/|\/live\/)([\w-]{11})(?![\w-])/);
   return m ? m[1] : null;
 }
+
+// Reconhece a rede de um link de video/post (campo "embeds" da materia): X, YouTube ou Instagram. Devolve { rede, id, url limpa, ... } ou null.
+const REDE_X = /^https:\/\/(?:www\.)?(?:x|twitter)\.com\/(\w{1,15})\/status\/(\d{5,25})(?:[/?#]|$)/i;
+const REDE_YOUTUBE = /^https:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([\w-]{11})(?:[/?&#]|$)/i;
+const REDE_INSTAGRAM = /^https:\/\/(?:www\.)?instagram\.com\/(p|reel|reels|tv)\/([\w-]{5,30})(?:[/?#]|$)/i;
+export function redeDoLink(url) {
+  const u = String(url);
+  let m;
+  if ((m = u.match(REDE_X))) return { rede: 'x', usuario: m[1], id: m[2], url: `https://x.com/${m[1]}/status/${m[2]}` };
+  if ((m = u.match(REDE_YOUTUBE))) return { rede: 'youtube', id: m[1], short: /youtube\.com\/shorts\//i.test(u), url: `https://www.youtube.com/${/youtube\.com\/shorts\//i.test(u) ? 'shorts/' : 'watch?v='}${m[1]}` };
+  if ((m = u.match(REDE_INSTAGRAM))) { const tipo = m[1] === 'reels' ? 'reel' : m[1]; return { rede: 'instagram', id: m[2], url: `https://www.instagram.com/${tipo}/${m[2]}/` }; }
+  return null;
+}
