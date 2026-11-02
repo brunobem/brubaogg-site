@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Astronauta de capacete dourado ao lado de pequenos robôs, com planeta vermelho, naves e um cristal ao fundo, e a logo de No Man's Sky. Texto na arte: "NO MAN'S SKY FORSAKEN".
+Thumb.png: Astronauta de capacete dourado ao lado de pequenos robôs, com planeta vermelho, naves e um cristal ao fundo, e a logo de No Man's Sky. Texto na arte: "NO MAN'S SKY FORSAKEN".
+img-1_store.playstation.com.jpg: Nave dourada pousando perto de um lago, com um astronauta de roupa vermelha na grama e um planeta com anéis no céu.
+img-2_store.playstation.com.jpg: Dois astronautas numa encosta coberta de neve, com montanhas e neblina ao fundo.

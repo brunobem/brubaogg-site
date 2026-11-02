@@ -1,4 +1,4 @@
-# Publica o site no GitHub Pages a cada envio para a branch main (e quando voce mandar rodar na aba Actions).
+# Publica o site no GitHub Pages a cada envio para a branch main, TODO DIA nos horarios abaixo (para as materias agendadas entrarem no ar) e quando voce mandar rodar na aba Actions.
 # O que ele faz: confere o site, monta a pasta _site/ so com o que deve ser publicado, cria o indice da busca (Pagefind) dentro dela e publica.
 # Nada disso e guardado no repositorio: o indice da busca e refeito aqui, no servidor, a cada envio.
 name: Publicar site
@@ -7,6 +7,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Materias agendadas ("publicar_em" no JSON): o gerador so inclui a materia cuja hora ja chegou, entao basta refazer o site nos horarios combinados.
+  # O cron do GitHub usa UTC (Brasilia = UTC-3): 10:00, 14:00 e 18:00 UTC = 07:00, 11:00 e 15:00 em Brasilia. Pode atrasar de alguns minutos a algumas horas, sem problema.
+  schedule:
+    - cron: "0 10,14,18 * * *"
 
 permissions:
   contents: read
@@ -30,6 +34,10 @@ jobs:
 
       - name: Instalar o indexador da busca
         run: npm ci
+
+      # refaz as paginas com a hora de agora: entra no site a materia agendada cuja hora ja passou (as imagens ja vem prontas no repositorio, o Python nao e necessario)
+      - name: Gerar as paginas (materias agendadas)
+        run: npm run gerar
 
       # confere os links (com a caixa exata das letras, que o Linux exige) e as paginas; se achar problema grave, NADA e publicado
       - name: Conferir o site

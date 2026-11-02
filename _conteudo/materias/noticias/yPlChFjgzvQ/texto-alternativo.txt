@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Praia cheia de gente com guarda-sóis, três mulheres em primeiro plano, e a logo de GTA VI. Texto na arte: "FOLGA!".
+Thumb.png: Praia cheia de gente com guarda-sóis, três mulheres em primeiro plano, e a logo de GTA VI. Texto na arte: "FOLGA!".
+img-1_gq-magazine.co.uk.webp: Rua de Vice City à noite, com hotéis iluminados em neon e carros esportivos, entre eles um conversível azul-claro e um branco.
+img-2_motor1.uol.com.br.jpg: Dois policiais ao lado de uma viatura da "Vice Beach Police", com mulheres sentadas no carro, diante de prédios em neon rosa.

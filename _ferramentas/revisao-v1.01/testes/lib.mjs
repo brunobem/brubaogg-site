@@ -86,7 +86,10 @@ function lerLista(itens) { // [{ id, arq, dados|null, erro }]
 }
 export const materias = () => lerLista(listarConteudos(raiz).itens.filter((c) => c.tipo !== 'wiki')); // as materias de video (o nome da pasta e o ID do video)
 export const conteudosDaWiki = () => lerLista(listarConteudos(raiz).itens.filter((c) => c.tipo === 'wiki')); // a Wiki: pode ser so texto (o nome da pasta e livre)
-export const aprovada = (m) => m.dados && m.dados.status !== 'rascunho';
+// AGENDADA: "publicar_em" no futuro e ainda sem endereco no registro (ainda nao foi ao ar). Fica fora do site ate a hora chegar, entao os testes de pagina nao a cobram.
+const registroDeEnderecos = fs.existsSync(path.join(raiz, '_conteudo', 'enderecos.json')) ? JSON.parse(fs.readFileSync(path.join(raiz, '_conteudo', 'enderecos.json'), 'utf8')) : {};
+export const agendada = (m) => !!m.dados && typeof m.dados.publicar_em === 'string' && new Date(m.dados.publicar_em) > new Date() && !registroDeEnderecos[m.id];
+export const aprovada = (m) => m.dados && m.dados.status !== 'rascunho' && !agendada(m);
 
 /**
  * Os assuntos do site (materias com o mesmo campo "assunto", 2 ou mais), calculados aqui de forma independente do gerador: a partir dos JSONs aprovados, do registro de enderecos e de

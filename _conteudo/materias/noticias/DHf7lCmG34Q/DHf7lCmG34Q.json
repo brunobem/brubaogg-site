@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-02",
+  "publicar_em": "2026-11-05T07:00:00-03:00",
+  "titulo": "ARC Raiders avalia modo PvE depois de teste",
+  "resumo": "Depois do teste PvE de 13 a 20 de outubro, a Embark ainda decide o futuro do modo. Sou a favor: jogar contra trapaceiros desanima, e um modo calmo ajudaria.",
+  "tags": [
+    "ARC Raiders"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/third-person-shooter/arc-raiders-executive-producer-was-a-bit-skeptical-about-adding-pve-but-after-the-successful-test-the-team-needs-to-decide-what-we-want-to-do-going-forward/"
+    },
+    {
+      "nome": "Inven Global",
+      "url": "https://www.invenglobal.com/articles/27426/arc-raiders-pve-test-logs-more-than-30-million-rounds"
+    },
+    {
+      "nome": "Insider Gaming",
+      "url": "https://insider-gaming.com/arc-raiders-pve-future-revealed-november/"
+    }
+  ],
+  "corpo": [
+    "A Embark Studios ainda não decidiu se o ARC Raiders terá um modo PvE. O produtor executivo Aleksander Grondal disse ao MP1st que estava um pouco cético por razões históricas, mas que, depois do teste, a equipe analisa a fundo o que fazer. Para ele, o jogo tem um apelo natural e um certo tipo de jogador quer jogar sem o estresse. Entre os caminhos citados estão um modo casual entre as partidas intensas, um desafio contra a IA ou uma experiência completa só com PvE.",
+    "O teste foi de 13 a 20 de outubro de 2026, com um botão no matchmaking para escolher partidas sem dano entre jogadores. A Embark contou mais de 30 milhões de partidas PvE e disse que o teste dividiu opiniões. Antes dele, a empresa viu que 37% dos jogadores têm perfil cooperativo, 27% misto e 34% PvP, e que 51% demonstraram interesse num PvE dedicado. A Embark deve falar mais em novembro.",
+    "O pano de fundo é a trapaça. Em 1º de outubro, a Embark anunciou banimento permanente sem aviso, e Grondal admitiu que trapaça em jogos é uma indústria bilionária que nunca vai sumir de vez. Parte da comunidade acha que o PvE foge do espírito do jogo, pode inflar a economia ou esvaziar o PvP, e a própria Embark disse antes do teste que era possível que não funcionasse.",
+    "Eu sou a favor. Gosto de jogar ARC Raiders e queria jogar com calma. Jogar contra cheater é muito ruim: quando peguei os primeiros, comecei a me sentir mal e perdi a vontade de jogar. A desconfiança pesa, porque, quando você morre de um jeito estranho, começa a se questionar se o outro joga limpo, e às vezes nem é cheat.",
+    "Também acho que um modo assim deve ter impacto no jogo. O ARC Raiders tem progressão, e no PvE a pessoa acabaria coletando muito mais loot, mas ainda existe a competição por quem encontra primeiro e quem farma primeiro."
+  ]
+}

@@ -10,7 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { categorias } from './config.mjs';
-import { dataDePublicacao } from './contrato.mjs';
+import { dataDePublicacao, instanteDePublicacao } from './contrato.mjs';
 import { ErroDeDados, limparTitulo, lerJson, slugBase } from './util.mjs';
 
 const MAX_SLUG = 60;
@@ -79,13 +79,14 @@ export function novoEndereco({ id, m, rel, registro, feed, doDisco = null }) {
     if (m.categoria != null && m.categoria !== categoria) avisos.push(`${rel}: "categoria" (${m.categoria}) discorda da playlist do YouTube (${categoria}); vale a da playlist`);
   } else { // video antigo (fora dos 15 mais recentes): o arquivo informa
     const cat = categorias.find((c) => c.pasta === m.categoria);
-    const data = dataDePublicacao(m.publicado);
+    const data = m.publicar_em != null ? instanteDePublicacao(m) : dataDePublicacao(m.publicado);
     if (!cat || !data) {
       throw new ErroDeDados(`${rel}: esse video nao esta entre os 15 mais recentes da playlist, entao o arquivo precisa de "categoria" (${categorias.map((c) => c.pasta).join(', ')}) e "publicado" (AAAA-MM-DD).`);
     }
     categoria = cat.pasta;
     publicado = data.toISOString().replace('.000Z', 'Z');
   }
+  if (m.publicar_em != null) publicado = instanteDePublicacao(m).toISOString().replace('.000Z', 'Z'); // a data combinada de entrada no ar e a data da materia
   const noDisco = doDisco?.get(id);
   let slug;
   if (noDisco && noDisco.categoria === categoria) slug = noDisco.slug; // ja esta no ar: o endereco nao muda

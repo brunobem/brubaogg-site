@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Lucia num cômodo com cortinas rosa e prateleiras, segurando um cabide, com um homem de costas à direita e a logo de GTA VI. Texto na arte: "210GB ESPAÇO".
+Thumb.png: Lucia num cômodo com cortinas rosa e prateleiras, segurando um cabide, com um homem de costas à direita e a logo de GTA VI. Texto na arte: "210GB ESPAÇO".
+img-1_br.ign.com.jpg: Arte oficial de Lucia e Jason lado a lado, diante de um carro, com palmeiras e prédios de Vice City ao pôr do sol.
+img-2_br.ign.com.jpg: Lucia apoiada na porta de um carro, olhando para longe, e Jason ao volante com um copo na mão, com prédios de Vice City ao fundo.

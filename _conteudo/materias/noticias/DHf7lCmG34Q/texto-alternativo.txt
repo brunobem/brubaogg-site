@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Dois personagens de ARC Raiders de capacete e armadura, um em tons claros e outro em laranja, com faixas coloridas na diagonal e a logo do jogo. Texto na arte: "MODO PVE".
+Thumb.png: Dois personagens de ARC Raiders de capacete e armadura, um em tons claros e outro em laranja, com faixas coloridas na diagonal e a logo do jogo. Texto na arte: "MODO PVE".
+img-1_steam.com.jpg: Tela de personalização de ARC Raiders com uma personagem de casaco marrom, a lista de roupas à esquerda e o conjunto "Valente" à direita.
+img-2_steam.com.jpg: Tela do conjunto "The Reaver Set" em ARC Raiders, com um personagem de máscara de gás e chifres de cervo e as opções de equipamento ao lado.

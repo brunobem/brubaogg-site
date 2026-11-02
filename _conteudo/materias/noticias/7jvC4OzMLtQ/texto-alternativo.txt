@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Personagem de cabelo branco e capa caminhando num salão gótico escuro, com vitrais ao fundo, e a logo de The Duskbloods. Texto na arte: "ADIADO".
+Thumb.png: Personagem de cabelo branco e capa caminhando num salão gótico escuro, com vitrais ao fundo, e a logo de The Duskbloods. Texto na arte: "ADIADO".
+img-1_pt.ign.com.webp: Personagem de cabelo branco e capa, visto de baixo, com uma arma dourada na mão, contra um céu nublado com lua e pássaros.
+img-2_pt.ign.com.webp: Personagem de cabelo branco e capa com a arma erguida diante de uma grande lua vermelha, numa passarela gótica, com dois adversários à frente.

@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Controle roxo e azul com botões coloridos sobre fundo desfocado com anéis de luz, com a logo de GTA VI. Texto na arte: "CONTROLE XBOX".
+Thumb.png: Controle roxo e azul com botões coloridos sobre fundo desfocado com anéis de luz, com a logo de GTA VI. Texto na arte: "CONTROLE XBOX".
+img-1_flowgames.gg.jpg: Dois controles GameSir com tema de pôr do sol, um laranja e roxo e outro rosa e azul, sobre suportes, diante de um céu com sol e palmeiras.
+img-2_estadao.com.br.jpg: Dois controles DualSense do GTA 6, um preto e outro branco, com o logo VI no touchpad e detalhes em azul e roxo, sobre fundo rosa e laranja.

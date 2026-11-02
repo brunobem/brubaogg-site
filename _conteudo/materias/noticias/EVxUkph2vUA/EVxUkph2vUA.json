@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-02",
+  "publicar_em": "2026-11-05T11:00:00-03:00",
+  "titulo": "Tim Sweeney diz que a Valve atrasou os games",
+  "resumo": "O CEO da Epic acusa a Valve de prender jogos de PC na Steamworks. Para mim, a Steam é mais simples, e a crítica vem de quem é concorrente.",
+  "tags": [
+    "Epic Games",
+    "Steam"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/software/platforms/epic-games-chief-tim-sweeney-claims-valve-has-held-gaming-back-for-years/"
+    },
+    {
+      "nome": "Player.One",
+      "url": "https://www.player.one/epic-games-ceo-tim-sweeney-criticizes-steamworks-valve-holding-pc-gaming-back-164345"
+    },
+    {
+      "nome": "MP1st",
+      "url": "https://mp1st.com/news/epic-games-ceo-tim-sweeney-says-steamworks-api-has-created-a-real-problem-for-the-industry"
+    }
+  ],
+  "corpo": [
+    "Tim Sweeney, CEO da Epic Games, disse no X que a Valve atrasou os games por anos ao prender os jogos de PC dos desenvolvedores no jardim murado social da Steamworks, o conjunto de ferramentas da Steam para amigos, conquistas, multiplayer e chat. Segundo ele, isso impede os jogadores de conversar entre plataformas, como celular, Xbox, PlayStation, Switch e outras lojas de PC.",
+    "A discussão começou com críticas de Kiaran Ritchie, ex-programador da Epic, que disse que dá para fazer uma alternativa à Steam com IA em uma semana e que ela só se mantém pela rede de usuários, como se ainda fosse 2024. Ritchie também criticou os 30% que a Steam cobra; a Epic fica com 12%. Sweeney respondeu concordando.",
+    "Depois, ele admitiu que a Valve não obriga ninguém a usar a Steamworks, mas disse que, na prática, é impossível para os desenvolvedores não usar. A alternativa que a Epic oferece é o Epic Online Services, gratuito e que funciona fora da loja da Epic. A Valve não respondeu. Chet Faliszek, ex-desenvolvedor da Valve, disse que Sweeney estava meio surtando por causa da Steam, e há quem lembre dos exclusivos temporários da própria Epic.",
+    "Para mim, é a concorrente falando mal, e a Epic tem o próprio launcher. Admito que sou meio fã da Steam, mas discordo de pontos dela, como qualquer um. Chamam a Steam de coisa de 2024, mas são só dois anos, e as coisas não mudam tão rápido assim.",
+    "A gente joga na Steam porque é fácil: instalou, não deu problema, e ela quase nem aparece no meu computador. Na Epic, toda hora preciso abrir mais um launcher. Não sei qual é o launcher dos sonhos que ele defende, e pela minha experiência de usuário a Steam é bem mais simples. Tento ser imparcial, mas talvez não consiga."
+  ]
+}

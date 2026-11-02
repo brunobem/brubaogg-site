@@ -14,6 +14,14 @@ export function dataDePublicacao(valor) {
   return isNaN(d) ? null : d;
 }
 
+// "publicar_em": o dia e a hora em que a materia entra no ar, com o fuso (2026-11-04T07:00:00-03:00; -03:00 = Brasilia). Vale tambem como a data de publicacao mostrada na pagina.
+// Sem o campo (ou invalido), devolve 1970: a materia nunca fica "agendada".
+const FORMATO_PUBLICAR_EM = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?(Z|[+-]\d{2}:\d{2})$/;
+export function instanteDePublicacao(m) {
+  const t = typeof m.publicar_em === 'string' && FORMATO_PUBLICAR_EM.test(m.publicar_em) ? Date.parse(m.publicar_em) : NaN;
+  return new Date(Number.isNaN(t) ? 0 : t);
+}
+
 /**
  * situacao: 'publicada' (aprovada) ou 'rascunho' (so validado nos modos de previa).
  * Regras: resumo, corpo, titulo e formato sao obrigatorios na materia aprovada; a data de publicacao, se informada, precisa ser real.
@@ -100,6 +108,12 @@ export function validarMateria(m, { id, rel, situacao }) {
   if (m.assunto != null && (typeof m.assunto !== 'string' || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(m.assunto))) P(`"assunto" deve ser um texto em minusculas, sem acento e com hifens (ex.: "god-of-war-laufey"): veio ${JSON.stringify(m.assunto)}.`);
   // campos de video antigo (fora dos 15 mais recentes do feed): precisam ser reais
   if (m.categoria != null && !categorias.some((c) => c.pasta === m.categoria)) P(`"categoria" desconhecida: ${JSON.stringify(m.categoria)} (use ${categorias.map((c) => c.pasta).join(', ')}).`);
+  if (m.publicar_em != null) {
+    const d = instanteDePublicacao(m);
+    if (d.getTime() === 0) P(`"publicar_em" invalido: ${JSON.stringify(m.publicar_em)}. Use dia, hora e fuso, como 2026-11-04T07:00:00-03:00 (o -03:00 e o horario de Brasilia).`);
+    else if (d < INICIO_DO_YOUTUBE) P(`"publicar_em" ${JSON.stringify(m.publicar_em)} e anterior ao YouTube (confira o ano).`);
+    else if (d > new Date(Date.now() + 120 * 24 * 3600 * 1000)) P(`"publicar_em" ${JSON.stringify(m.publicar_em)} esta a mais de 4 meses (confira o ano).`);
+  }
   if (m.publicado != null) {
     const d = dataDePublicacao(m.publicado);
     if (!d) P(`"publicado" invalido: ${JSON.stringify(m.publicado)} (use AAAA-MM-DD).`);

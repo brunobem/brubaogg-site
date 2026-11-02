@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Prédios tomados por uma montanha de zumbis numa cidade, com a logo de World War Z. Texto na arte: "WORLD WAR Z" e "GTA 6 DE ZUMBI".
+Thumb.png: Prédios tomados por uma montanha de zumbis numa cidade, com a logo de World War Z. Texto na arte: "WORLD WAR Z" e "GTA 6 DE ZUMBI".
+img-1_store.playstation.com.webp: Sobreviventes atirando numa rua de cidade europeia, com a cúpula de uma basílica ao fundo, uma viatura da polícia e uma horda de zumbis.
+img-2_store.playstation.com.jpg: Quatro sobreviventes armados em primeiro plano, com uma mão gigante de zumbi ao lado e o sol se pondo ao fundo.

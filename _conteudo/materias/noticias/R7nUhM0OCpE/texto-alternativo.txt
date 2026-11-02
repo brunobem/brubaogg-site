@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Casal dançando numa balada de luzes roxas, ela de vestido vermelho de lantejoulas e cabelo cacheado, ele de óculos escuros e paletó cinza, com a logo de GTA VI. Texto na arte: "AMOR".
+Thumb.png: Casal dançando numa balada de luzes roxas, ela de vestido vermelho de lantejoulas e cabelo cacheado, ele de óculos escuros e paletó cinza, com a logo de GTA VI. Texto na arte: "AMOR".
+img-1_gameoverdrive.com.br.webp: Arte de Lucia e Jason com pistolas nas mãos, ele de regata e bermuda camuflada, ela sentada no capô de um carro vermelho, com palmeiras ao pôr do sol.
+img-2_br.ign.com.jpg: Lucia e Jason, de roupa preta tática e armados, diante da porta de um cofre de banco, com notas de dólar voando.

@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Mão segurando um celular com a logo do Discord na tela, sobre fundo azul, ao lado do ícone do Discord. Texto na arte: "NO GOOGLE??".
+Thumb.png: Mão segurando um celular com a logo do Discord na tela, sobre fundo azul, ao lado do ícone do Discord. Texto na arte: "NO GOOGLE??".
+img-1_store.epicgames.com.jpg: Logo do Discord sobre fundo azul, com personagens ilustrados, entre eles um homem de chapéu e um sapo lendo, nos telhados de uma vila.
+img-2_pt.ign.com.webp: Monitor e celular com a interface do Discord, ao lado de dois pequenos robôs de desenho e de um controle de videogame.

@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-02",
+  "publicar_em": "2026-11-04T11:00:00-03:00",
+  "titulo": "Playden roda jogos da Steam em PS5 com jailbreak",
+  "resumo": "O Playden é um app em alfa que roda jogos da Steam direto em PS5 desbloqueado, sem Linux. Para mim, mostra como o PS5 já parece um PC.",
+  "tags": [
+    "PlayStation 5",
+    "Steam"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/playstation-5-pode-rodar-jogos-da-steam-com-playden/"
+    },
+    {
+      "nome": "TBreak",
+      "url": "https://tbreak.com/steam-games-on-ps5-playden/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://pcgamer.com/hardware/a-whole-host-of-steam-pc-games-can-now-run-locally-on-a-jailbroken-playstation-5-including-portal-left-4-dead-2-and-many-more"
+    }
+  ],
+  "assunto": "jailbreak-de-consoles",
+  "corpo": [
+    "O Playden é um aplicativo em fase alfa que dá acesso à biblioteca da Steam e roda jogos direto em PS5 com jailbreak, sem instalar Linux e sem streaming: os jogos rodam no hardware do próprio console. O login é feito por QR Code, e é possível importar jogos de pendrive ou HD externo. O projeto é não oficial, fica no GitHub e foi testado principalmente no firmware 13.60.",
+    "Por baixo, ele usa o Wine para rodar jogos de Windows, o DXVK para traduzir DirectX 8 a 11 e o VKD3D-Proton para o DirectX 12, o mesmo tipo de tradução do Steam Deck. A lista de compatibilidade inclui Cyberpunk 2077, Doom Eternal, Fallout 4, Half-Life 2, Portal 2 e Team Fortress 2. Há planos de suporte a GOG, Epic, Ubisoft e Rockstar.",
+    "Ainda há muita limitação. O teste do Cyberpunk foi curto e sem medição de FPS, então prova que o jogo abre, não que roda bem. Multiplayer online e jogos com anti-cheat em nível de kernel não funcionam, e o login da Steam fica salvo sem criptografia no console. Jailbreak também pode trazer consequências para garantia e conta, e eu não ensino a desbloquear nem indico loja.",
+    "Para mim, no fim das contas o PS5 é um PC: processador e GPU da AMD, na mesma arquitetura x86 dos computadores, só que com o sistema da Sony no lugar do Windows. Quando a galera fura a proteção, o console vira uma máquina de PC, e acho isso muito interessante. Minha dúvida é se faz sentido comprar um PS5 só para isso, já que montar um PC pelo mesmo dinheiro parece mais barato. Mas a memória RAM subiu muito de preço, então talvez faça. Não tenho certeza."
+  ]
+}

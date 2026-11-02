@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { GTA6, categorias } from './config.mjs';
-import { validarAssuntos, validarMateria, validarWiki } from './contrato.mjs';
+import { instanteDePublicacao, validarAssuntos, validarMateria, validarWiki } from './contrato.mjs';
 import { caminhoAntigo, feedPorId, gravarRegistro, indiceDoDisco, lerRegistro, novoEndereco } from './enderecos.mjs';
 import { fonteDaImagem, prepararImagens } from './imagens.mjs';
 import { listarConteudos, tipoDaCategoria } from './pastas.mjs';
@@ -95,7 +95,10 @@ export function carregarDados(ctx) {
     // a pasta de tipo tem de combinar com a categoria da materia (o registro de enderecos manda; sem registro, o campo "categoria" do arquivo)
     const categoriaDaMateria = ctx.enderecos[id]?.categoria ?? m.categoria;
     if (categoriaDaMateria && tipoDaCategoria(categoriaDaMateria) !== c.tipo) { ctx.problemas.push(`${rel}: a materia e da categoria "${categoriaDaMateria}" e deveria estar em _conteudo/materias/${tipoDaCategoria(categoriaDaMateria)}/${id}/, mas esta em ${c.tipo}/. Mova a pasta.`); continue; }
-    materias.set(id, { dados: m, situacao: m.status === 'rascunho' ? 'rascunho' : 'publicada', rel });
+    // "publicar_em" no futuro = AGENDADA: validada como as outras (um erro aparece hoje, nao as 7h do dia), mas fica fora de tudo (listas, busca, sitemap, tags, assuntos) ate a hora
+    // chegar. Quem ja tem endereco registrado ja foi ao ar e nunca volta a ser agendada. Os modos de previa (--com-rascunhos e --rascunho) mostram tudo.
+    const agendada = !COM_RASCUNHOS && !RASCUNHO && !ctx.enderecos[id] && instanteDePublicacao(m) > ctx.agora;
+    materias.set(id, { dados: m, situacao: m.status === 'rascunho' ? 'rascunho' : agendada ? 'agendada' : 'publicada', rel });
   }
   // 1b) conteudo da Wiki (_conteudo/materias/wiki/<nome>/<nome>.json): pode ser so texto, sem video. Cada arquivo vira uma "materia" da categoria series (origem "wiki"); o nome do arquivo e o id.
   //     As regras proprias dele estao em contrato.mjs (validarWiki); as de texto (resumo, corpo, titulo...) sao as de sempre e rodam no passo 2.
@@ -123,20 +126,22 @@ export function carregarDados(ctx) {
     }
   }
   ctx.materias = materias;
-  ctx.lerMateria = (id) => materias.get(id)?.dados ?? null;
-  // publica so se o arquivo existe e NAO esta marcado como rascunho (a previa com --com-rascunhos inclui os rascunhos)
-  ctx.temArquivo = (v) => { const m = materias.get(v.id); return !!m && (COM_RASCUNHOS || m.situacao !== 'rascunho'); };
+  ctx.lerMateria = (id) => { const mm = materias.get(id); return !mm || mm.situacao === 'agendada' ? null : mm.dados; }; // a agendada ainda nao existe para o site
+  // publica so se o arquivo existe e NAO esta marcado como rascunho nem agendado (a previa com --com-rascunhos inclui os dois)
+  ctx.temArquivo = (v) => { const m = materias.get(v.id); return !!m && (COM_RASCUNHOS || (m.situacao !== 'rascunho' && m.situacao !== 'agendada')); };
 
-  // 2) valida o que vai ser usado (aprovadas; rascunhos so nos modos de previa) e garante o endereco de cada uma
+  // 2) valida o que vai ser usado (aprovadas e agendadas; rascunhos so nos modos de previa) e garante o endereco de cada uma
   const ativa = (mm) => mm.situacao === 'publicada' || RASCUNHO || COM_RASCUNHOS;
   let indiceDisco = null; // paginas que ja estao no ar (so lido se alguma materia ainda nao tiver endereco registrado)
   let novas = 0;
+  const agendadas = [];
   for (const [id, mm] of materias) {
-    if (!ativa(mm)) continue;
+    if (!ativa(mm) && mm.situacao !== 'agendada') continue;
     const r = validarMateria(mm.dados, { id, rel: mm.rel, situacao: mm.situacao });
     ctx.problemas.push(...r.problemas);
     ctx.avisos.push(...r.avisos);
     if (r.problemas.length) continue;
+    if (mm.situacao === 'agendada') { agendadas.push({ id, em: instanteDePublicacao(mm.dados), titulo: mm.dados.titulo }); continue; } // sem endereco ate a hora: o registro so guarda o que foi ao ar
     const reg = ctx.enderecos[id];
     if (reg?.retirada) { ctx.problemas.push(`${mm.rel}: essa materia foi RETIRADA do ar em ${reg.retirada}, mas o arquivo voltou. Apague o arquivo, ou tire "retirada" de _conteudo/enderecos.json para republicar.`); continue; }
     if (reg) {
@@ -145,7 +150,7 @@ export function carregarDados(ctx) {
       continue;
     }
     try {
-      const persiste = !modoTeste && mm.situacao === 'publicada';
+      const persiste = !modoTeste && !process.env.BRUBAO_AGORA && mm.situacao === 'publicada'; // BRUBAO_AGORA (simular outra data) nunca grava no registro
       if (persiste) indiceDisco ??= indiceDoDisco(site);
       const { endereco, avisos } = novoEndereco({ id, m: mm.dados, rel: mm.rel, registro: { ...ctx.enderecos, ...temporarios }, feed: ctx.feed, doDisco: persiste ? indiceDisco : null });
       ctx.avisos.push(...avisos);
@@ -154,6 +159,10 @@ export function carregarDados(ctx) {
     } catch (e) {
       if (e instanceof ErroDeDados) ctx.problemas.push(e.message); else throw e;
     }
+  }
+  if (agendadas.length) {
+    const prox = agendadas.reduce((a, b) => (b.em < a.em ? b : a));
+    ctx.notas.push(`${agendadas.length} materia(s) AGENDADA(S), fora do site ate a hora do "publicar_em" (a proxima: ${prox.em.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', dateStyle: 'short', timeStyle: 'short' })}, "${prox.titulo}"). Para ver todas no localhost: npm run previa`);
   }
   // assuntos: materias do mesmo "assunto" (2 ou mais) continuam cada uma com a propria pagina; _conteudo/assuntos.json e opcional (so o redirecionamento do endereco do assunto o usa)
   const fa = path.join(site, '_conteudo', 'assuntos.json');

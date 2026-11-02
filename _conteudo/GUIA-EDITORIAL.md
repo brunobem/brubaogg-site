@@ -40,6 +40,19 @@ História, personagem, guia e curiosidade de um jogo **não** são matérias: mo
 `resumo` e `corpo` (ao menos 1 parágrafo, nenhum vazio) são obrigatórios; sem eles o site dá erro ao gerar.
 `status`: use **exatamente** `"rascunho"`. Qualquer outro valor (`"Rascunho"`, `"draft"`...) é recusado pelo gerador. Grave o arquivo em UTF-8 (com ou sem BOM funciona).
 
+## Agendamento: entrar no ar numa data e hora (opcional, "publicar_em")
+Para a matéria **ficar guardada e só aparecer no site num dia e hora combinados**, ponha no JSON:
+```json
+"publicar_em": "2026-11-04T07:00:00-03:00"
+```
+- Formato: **dia, hora e fuso** (`-03:00` = Brasília). Sem o fuso, ou só com o dia, o gerador recusa. Mais de 4 meses à frente também (provável erro de ano).
+- **O que muda:** a data `publicar_em` **é a data de publicação** da matéria (a que aparece na página, nas listas, no arquivo, na busca e no Google). O campo `publicado` é ignorado quando `publicar_em` existe. As matérias do mesmo dia ficam na ordem da hora (7h, 11h, 15h).
+- **Antes da hora** a matéria está AGENDADA: o gerador valida o arquivo (um erro aparece na hora de gerar, não às 7h), mas ela **não existe para o site**: sem página, sem lista, sem busca, sem tag, sem assunto, sem sitemap, e o endereço só é registrado quando ela entra no ar.
+- **Quem faz a matéria entrar:** o GitHub Actions (`.github/workflows/publicar.yml`) refaz o site todo dia às **7h, 11h e 15h de Brasília** (pode atrasar de alguns minutos a algumas horas). Quem já passou da hora entra sozinho. O Bruno só precisa ter dado o push com o JSON e as imagens da matéria.
+- **Depois de entrar** a matéria nunca volta a ser agendada (o registro de endereços guarda que ela foi ao ar). Para mudar o horário de uma agendada, edite o `publicar_em` e dê push; uma que já entrou no ar não muda de data.
+- **Ver tudo no localhost:** `npm run gerar` mostra só o que já está no ar. `npm run previa` inclui as agendadas (e os rascunhos) como se já tivessem entrado, em modo de teste: **não publique**; rode `npm run gerar` antes de copiar para o repositório. Para simular uma data: `BRUBAO_AGORA=2026-11-05T12:00:00-03:00 node _ferramentas/gerar-site.mjs` (também não grava nada no registro).
+- Sem `publicar_em`, a matéria aprovada entra no ar assim que o gerador roda, como sempre.
+
 ## Regras que valem sempre
 - Não inventar fatos, datas, preços ou nomes; dúvida não resolvida: omitir ou marcar `[CONFERIR: ...]`.
 - **Texto sempre em primeira pessoa** ("eu", "para mim", "na minha opinião", "dei nota 7", "nós"), como se fosse o próprio Bruno falando. **Nunca** em terceira pessoa sobre ele: nada de "o Brubão acha", "segundo o Brubão", "para o Brubão", "a nota do Brubão", "ele gostou", "o autor". Vale para título, resumo, corpo e campos do veredito (ex.: `preco`: "preço que paguei"). Opinião é sempre apresentada como opinião ("para mim", "acho que"), nunca como fato. Fatos de terceiros (a Sony anunciou, o diretor disse) seguem normais.
