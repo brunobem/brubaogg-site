@@ -99,7 +99,27 @@ export default async function () {
     const todos = [...bruto.matchAll(/<div class="ads"[^>]*>/g)];
     const ids = [...h.matchAll(/<div class="ads" data-ads="([^"]*)" aria-hidden="true"( hidden)?>ADS<\/div>/g)].filter((m) => (m[2] ?? '') === OCULTO).map((m) => m[1]);
     if (todos.length !== ids.length) ach('alto', `marcador de ADS fora do formato ou no estado errado (com ADS_ATIVOS = ${ADS_ATIVOS} precisa ser exatamente ${marcador('ID')}: rode npm run gerar)`, pagina);
-    if (!esperado.length) { if (todos.length) ach('alto', `marcador de ADS numa pagina que nao pediu (${ids.join(', ')}): so entram nas paginas do inventario FIXOS de t-ads.mjs`, pagina); }
+    if (/<main class="article art-/.test(bruto)) {
+      // PAGINA DE MATERIA: UM espaco de anuncio, dentro do envelope <div class="ads-materia" data-pagefind-ignore>. Materia longa (2 subtitulos ou mais, texto em
+      // coluna inteira): no meio do texto, antes do subtitulo do meio. As outras: antes de "Veja tambem". Materia fora da busca (noindex): nenhum.
+      const indexavel = !/<meta name="robots" content="noindex/.test(bruto);
+      const subs = (h.match(/<h2 class="art-sub">/g) ?? []).length;
+      const envelopes = [...h.matchAll(/<div class="ads-materia" data-pagefind-ignore><div class="ads" data-ads="([^"]*)" aria-hidden="true"(?: hidden)?>ADS<\/div><\/div>/g)];
+      if (!indexavel) { if (todos.length) ach('alto', 'materia fora da busca (sem texto, de mentira ou rascunho) nao leva espaco de anuncio', pagina); }
+      else if (todos.length !== 1 || envelopes.length !== 1) ach('alto', `a materia leva UM espaco de anuncio, dentro de <div class="ads-materia" data-pagefind-ignore> (tem ${todos.length} marcador(es) e ${envelopes.length} envelope(s))`, pagina);
+      else {
+        const [todo, id] = envelopes[0], i = h.indexOf(todo), antes = h.slice(0, i), depois = h.slice(i + todo.length);
+        const cabiaNoMeio = subs >= 2 && !h.includes('<div class="art-split">') && !/<div class="art-body art-jogos">/.test(h);
+        if (id === 'materia-meio') {
+          const antesDele = (antes.match(/<h2 class="art-sub">/g) ?? []).length;
+          if (!cabiaNoMeio) ach('alto', 'anuncio no meio do texto numa materia que nao comporta (menos de 2 subtitulos, ou texto ao lado do video)', pagina);
+          else if (!/^<h2 class="art-sub">/.test(depois) || antesDele !== Math.ceil(subs / 2) || !/<div class="art-body[^"]*">/.test(antes)) ach('alto', `o anuncio do meio devia ficar dentro do texto, logo antes do subtitulo do meio (ha ${antesDele} subtitulo(s) antes dele, de ${subs})`, pagina);
+        } else if (id === 'materia-antes-relacionadas') {
+          if (cabiaNoMeio) ach('alto', 'materia com 2 subtitulos ou mais leva o anuncio no MEIO do texto, nao no fim', pagina);
+          if (!/^(?:<section class="related"(?! data-irmas)[^>]*>|<\/main>)/.test(depois)) ach('alto', 'o anuncio do fim devia ficar logo antes de "Veja tambem" (ou do fim do <main>, se nao ha relacionadas)', pagina);
+        } else ach('alto', `espaco de anuncio desconhecido na materia: ${id}`, pagina);
+      }
+    } else if (!esperado.length) { if (todos.length) ach('alto', `marcador de ADS numa pagina que nao pediu (${ids.join(', ')}): so entram nas paginas do inventario FIXOS de t-ads.mjs`, pagina); }
     else {
       if (JSON.stringify(ids) !== JSON.stringify(esperado.map((x) => x[0]))) ach('alto', `marcadores de ADS: devia haver ${esperado.map((x) => x[0]).join(', ')} (nesta ordem) e ha ${ids.join(', ') || 'nenhum'}`, pagina);
       for (const [id, antes, depois] of esperado) {

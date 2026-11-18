@@ -123,6 +123,7 @@ export default async function () {
       }
       if (!/data-ads-primeiro="3" data-ads-cada="2"/.test(lista) || !lista.includes('assets/js/ads.js')) ach('alto', 'anuncio ligado: a lista de Noticias devia levar data-ads-primeiro/cada e o ads.js', 'noticias.html');
       if (mat && !mat.includes(metaDeVerificacao(C))) ach('alto', 'anuncio ligado: a materia continua levando a meta de verificacao', materia);
+      if (mat && (blocos(mat) !== 1 || />ADS<\/div>/.test(mat) || !/<div class="ads-materia" data-pagefind-ignore><div class="ads ads-real" data-ads="materia-(?:meio|antes-relacionadas)">/.test(mat))) ach('alto', `anuncio ligado: a materia devia ter UM bloco de anuncio, dentro do envelope ads-materia (tem ${blocos(mat)})`, materia);
       // conta errada para o gerador, sem gravar nada
       const ruim = por(true, 'ca-pub-123', B);
       if (ruim.status === 0 || !ruim.saida.includes('ADS_CLIENTE')) ach('alto', `conta fora do formato devia parar o gerador citando ADS_CLIENTE: status ${ruim.status}`);

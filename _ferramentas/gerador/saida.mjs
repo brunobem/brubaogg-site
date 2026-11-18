@@ -235,6 +235,7 @@ function mioloDaPagina(html) {
   const main = html.match(/<main\b[\s\S]*<\/main>/)?.[0] ?? html;
   return main
     .replace(/<section class="related"[^>]*>[\s\S]*?<\/section>/g, '')
+    .replace(/\n[ \t]*<div class="ads-materia"[^>]*>[\s\S]*?<\/div><\/div>/g, '') // o espaco de anuncio da materia (paginas.mjs, adsDaMateria): anuncio nao e conteudo
     .replace(/<!--contagem:inicio-->[\s\S]*?<!--contagem:fim-->/g, '');
 }
 

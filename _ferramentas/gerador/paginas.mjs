@@ -326,7 +326,11 @@ ${outras.map((o) => cartao(o, catDe.get(o), '../')).join('\n')}
       const dividido = m.video && m.short && (m.resumo || m.corpo.length);
       const lead = m.resumo ? `<p class="art-lead"${m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-meta="resumo"'}>${esc(m.resumo)}</p>` : '';
       const video = !m.video ? '' : `<div class="art-video${m.short ? ' is-short' : ''}" id="video">${fachadaHtml(ctx, { embed: `https://www.youtube-nocookie.com/embed/${m.video}`, href: `https://www.youtube.com/watch?v=${m.video}`, titulo: m.titulo, imagem: capaDoPlayer(ctx, m), direto: true })}</div>`;
-      const corpoHtml = m.corpo.length ? corpoComImagens(ctx, m, cat.pasta) : '';
+      // ANUNCIO NA MATERIA (18/11/2026): UM espaco por materia, o minimo. Materia longa (2 subtitulos ou mais, texto em coluna inteira): no MEIO do texto,
+      // antes do subtitulo do meio (corpoComImagens). As outras: antes de "Veja tambem". Materia fora da busca (sem texto, de mentira, rascunho) nao leva.
+      const podeAnuncio = !(m.ficticio || m.semTexto || m.rascunho);
+      const corpoHtml = m.corpo.length ? corpoComImagens(ctx, m, cat.pasta, podeAnuncio && !dividido) : '';
+      const anuncioNoFim = podeAnuncio && !corpoHtml.includes('data-ads="materia-meio"') ? `\n      ${adsDaMateria('materia-antes-relacionadas')}` : '';
       const texto = m.corpo.length ? `<div class="art-body${corpoHtml.includes('class="jogo') ? ' art-jogos' : ''}">\n${corpoHtml}\n      </div>` : '';
       const ignDaFicha = m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore';
       const miolo = dividido
@@ -366,7 +370,7 @@ ${outras.map((o) => cartao(o, catDe.get(o), '../')).join('\n')}
       </div>${blocoShorts ? `\n      ${blocoShorts}` : ''}
 ${irmasHtml}
 ${compartilharHtml(ctx, { titulo: m.titulo, url })}
-${conviteHtml(ctx, ign)}
+${conviteHtml(ctx, ign)}${anuncioNoFim}
 ${relacionadasHtml}
     </main>`;
       // dados estruturados (so para materia de verdade): artigo + video + trilha. Aparecem no Google como resultado de artigo e de video.
@@ -670,14 +674,18 @@ function capaDoPlayer(ctx, m) {
 const subtituloAntes = (m, n) => { const s = (m.subtitulos ?? []).find((x) => x?.antes === n); return s ? `        <h2 class="art-sub">${esc(s.texto)}</h2>` : null; };
 // Os paragrafos do texto, com a imagem N (img-N_<site da fonte>.jpg) logo depois do paragrafo N x (paragrafos por imagem do tipo: 1 na noticia e no lancamento, 2 na review; imagens.mjs);
 // imagem que cairia depois do ultimo paragrafo vai depois dele. Sem arquivo, nao aparece nada.
-function corpoComImagens(ctx, m, pasta) {
+function corpoComImagens(ctx, m, pasta, anuncioNoMeio = false) {
   const reg = ctx.imagens?.get(m.id), aCada = reg?.aCada ?? 1;
   const fotos = [...(reg?.fotos ?? [])].sort((a, b) => a[0] - b[0]);
   const ign = m.ficticio || m.semTexto || m.rascunho ? '' : ' data-pagefind-ignore';
   if (emJogos(pasta, fotos)) return corpoEmJogos(m, fotos, ign);
+  // o anuncio do meio entra antes do subtitulo do meio (o 2o de 2, o 3o de 3 ou de 4...), e so se a materia tem 2 subtitulos ou mais
+  const comSub = m.corpo.map((_, i) => i + 1).filter((n) => subtituloAntes(m, n));
+  const alvo = anuncioNoMeio && comSub.length >= 2 ? comSub[Math.ceil(comSub.length / 2)] : 0;
   const linhas = [];
   m.corpo.forEach((p, i) => {
     const sub = subtituloAntes(m, i + 1);
+    if (sub && i + 1 === alvo) linhas.push(`        ${adsDaMateria('materia-meio')}`);
     if (sub) linhas.push(sub);
     linhas.push(`        <p>${esc(p)}</p>`);
     for (const x of m.embeds ?? []) if (x.depois === i + 1) linhas.push(embedHtml(ctx, x, ign));
@@ -962,6 +970,9 @@ ${blocoHtml(cards, lado)}
 // espaco reservado para anuncio (por enquanto so a palavra ADS, para saber onde cada um fica). `lugar` identifica o espaco (data-ads). Tem altura fixa no CSS
 // (.ads): quando o anuncio de verdade entrar, a pagina nao pula. Escondido do leitor de tela enquanto for so um marcador.
 const adsHtml = (lugar) => `      <div class="ads" data-ads="${lugar}" aria-hidden="true">ADS</div>`;
+// o espaco de anuncio da MATERIA vai num envelope: fica fora do texto da busca (data-pagefind-ignore) e fora da conta da data do sitemap
+// (mioloDaPagina, em saida.mjs, tira o envelope inteiro: ligar, desligar ou mudar o anuncio NAO troca a data de nenhuma materia). Sempre numa linha so.
+const adsDaMateria = (lugar) => `<div class="ads-materia" data-pagefind-ignore>${adsHtml(lugar).trim()}</div>`;
 // nas listas de cartoes (Noticias, Reviews, Lancamentos) os ADS entram ENTRE as linhas de cartoes, e quem os coloca e assets/js/ads.js (mede quantos cartoes cabem por linha):
 // a lista leva os atributos data-ads-primeiro (depois de quantas linhas entra o primeiro) e data-ads-cada (de quantas em quantas linhas os seguintes). Valores em config.mjs.
 const adsNaLista = (secao) => (ADS_ATIVOS && ADS_NAS_LISTAS[secao] ? ` data-ads-primeiro="${ADS_NAS_LISTAS[secao].primeiro}" data-ads-cada="${ADS_NAS_LISTAS[secao].cada}"` : '');
