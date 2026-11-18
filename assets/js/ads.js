@@ -29,6 +29,9 @@
   if (!grades.length) return;
 
   function ehAds(no) { return !!no && no.nodeType === 1 && no.classList.contains('ads'); }
+  // anuncio de verdade (assets/js/anuncio.js, so presente quando a conta do AdSense esta configurada): o espaco leva o bloco do Google em vez da palavra ADS
+  function anuncio() { var a = window.BrubaoAnuncio; return a && a.ativo ? a : null; }
+  function temAuto(grade) { return Array.prototype.some.call(grade.children, function (c) { return ehAds(c) && c.hasAttribute('data-auto'); }); }
 
   function colocar(grade) {
     var primeiro = parseInt(grade.getAttribute('data-ads-primeiro'), 10), cada = parseInt(grade.getAttribute('data-ads-cada'), 10);
@@ -46,9 +49,11 @@
       ads.className = 'ads';
       ads.setAttribute('data-ads', secao + '-na-lista');
       ads.setAttribute('data-auto', '');
-      ads.setAttribute('aria-hidden', 'true');
-      ads.textContent = 'ADS';
+      var real = anuncio();
+      if (real) { ads.className = 'ads ads-real'; ads.appendChild(real.criar()); }
+      else { ads.setAttribute('aria-hidden', 'true'); ads.textContent = 'ADS'; }
       grade.insertBefore(ads, cartoes[i]);
+      if (real) real.pedir(ads.firstChild);
     });
   }
 
@@ -60,7 +65,10 @@
       colocar(grade);
       if (obs) obs.observe(grade, { childList: true, attributes: true, attributeFilter: ['hidden'] });
     }
-    function agendar() { if (agendado) return; agendado = true; window.setTimeout(refazer, 0); }
+    // deLargura = o pedido veio de mudanca de tamanho. Com anuncio de verdade ja colocado, largura nova NAO refaz os espacos: recriar o espaco pediria outro
+    // anuncio ao Google a cada giro de tela. So a lista mudando (busca, filtro, ver mais) refaz.
+    function agendar(deLargura) { if (agendado || (deLargura === true && anuncio() && temAuto(grade))) return; agendado = true; window.setTimeout(refazer, 0); }
+    function porLargura() { agendar(true); }
     if (typeof MutationObserver === 'function') {
       obs = new MutationObserver(function (registros) {
         var relevante = registros.some(function (r) {
@@ -71,8 +79,8 @@
       });
       obs.observe(grade, { childList: true, attributes: true, attributeFilter: ['hidden'] });
     }
-    if (typeof ResizeObserver === 'function') new ResizeObserver(agendar).observe(grade); // largura nova (ou a lista que voltou a aparecer): refaz a conta
-    else window.addEventListener('resize', agendar);
+    if (typeof ResizeObserver === 'function') new ResizeObserver(porLargura).observe(grade); // largura nova (ou a lista que voltou a aparecer): refaz a conta
+    else window.addEventListener('resize', porLargura);
     agendar();
   });
 }());

@@ -14,7 +14,8 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path, { posix } from 'node:path';
-import { ADS_ATIVOS, DOMINIO, SOCIAIS, categorias } from './config.mjs';
+import { ADS_ATIVOS, ADS_BLOCO, ADS_CLIENTE, DOMINIO, SOCIAIS, categorias } from './config.mjs';
+import { EH_ADS_TXT_GERADO, linhaDoAdsTxt, metaDeVerificacao, porAnuncios, scriptsDoAnuncio, situacaoDosAds, temEspacoDeAnuncio, tirarAnuncios } from './anuncio.mjs';
 import { ENDERECO_DAS_IMAGENS, PASTA_NO_R2 } from './imagens.mjs';
 import { carrosselHtml, coberturaHtml, contagemHtml, feedHtml, gta6Html, playersHtml, wikiHtml } from './paginas.mjs';
 import { ErroDeDados, desescapar, esc, hojeEmSaoPaulo, lerJson, urlDe } from './util.mjs';
@@ -117,6 +118,9 @@ function jsonLdDaPagina(ctx, r, html) {
 }
 
 // monta o HTML final de UMA pagina. Erros vao para `problemas` (nada e gravado se houver algum).
+// anuncio de verdade (AdSense): o que esta ligado com os valores de config.mjs (anuncio.mjs explica os tres estados). Com ADS_CLIENTE vazio, nada.
+const ADS = situacaoDosAds({ ativos: ADS_ATIVOS, cliente: ADS_CLIENTE, bloco: ADS_BLOCO });
+
 function montarPagina(ctx, r, original, problemas) {
   const { saidas, icone, headerHtml, footerHtml, social, jsonLd, dado, modelo } = ctx;
   const erro = (msg) => problemas.push(`${r}: ${msg}`);
@@ -188,10 +192,16 @@ function montarPagina(ctx, r, original, problemas) {
     if (!/<meta name="robots" content="noindex">/.test(html)) linhas.push(`<link rel="alternate" type="application/rss+xml" title="${FEED.titulo}: últimas matérias" href="${DOMINIO}/${FEED.arquivo}">`); // o feed (feedRss, abaixo)
     if (html.includes('https://i.ytimg.com/')) linhas.push('<link rel="preconnect" href="https://i.ytimg.com">');
     if (html.includes('youtube-nocookie.com/embed/')) linhas.push('<link rel="preconnect" href="https://www.youtube-nocookie.com">');
+    // AdSense: a meta de verificacao em toda pagina indexavel (o Google confirma que o site e da conta); os scripts so nas paginas que tem espaco de anuncio
+    if (ADS.verificacao && !/<meta name="robots" content="noindex">/.test(html)) linhas.push(metaDeVerificacao(ADS_CLIENTE));
+    if (ADS.anuncios && temEspacoDeAnuncio(html)) linhas.push(...scriptsDoAnuncio(ADS_CLIENTE, ADS_BLOCO, base));
     return `<!--site:recursos-->\n${linhas.join('\n')}\n<!--/site:recursos-->\n${link}`;
   });
   // 7) espacos de ADS: ligados ou escondidos por ADS_ATIVOS (config.mjs), em toda pagina (os marcadores escritos a mao tambem). Escondido = atributo hidden; o codigo fica.
+  //    Com a conta do AdSense preenchida e os anuncios ligados (ADS.anuncios), o marcador da lugar ao bloco de anuncio (anuncio.mjs); o caminho tem volta.
+  html = tirarAnuncios(html);
   html = html.replace(/(<div class="ads" data-ads="[^"]*"(?: aria-hidden="true")?)( hidden)?>/g, (todo, inicio) => `${inicio}${ADS_ATIVOS ? '' : ' hidden'}>`);
+  if (ADS.anuncios) html = porAnuncios(html, ADS_CLIENTE, ADS_BLOCO);
   html = semHtmlNosEnderecos(r, html);
   return html.replace(/[ \t]+(\r?)$/gm, '$1'); // sem espaco sobrando no fim das linhas
 }
@@ -359,7 +369,7 @@ export function gravarTudo(ctx) {
   // 1) monta tudo em memoria e confere os marcadores; se algo estiver errado, para SEM gravar nada
   const apagar = new Set(orfaos(ctx));
   const finais = new Map();
-  const problemas = [];
+  const problemas = [...ADS.problemas];
   for (const r of paginasDoSite(ctx, apagar)) {
     const original = saidas.has(r) ? saidas.get(r) : fs.readFileSync(path.join(site, r), 'utf8');
     finais.set(r, montarPagina(ctx, r, original, problemas));
@@ -379,5 +389,9 @@ export function gravarTudo(ctx) {
   } else fs.rmSync(marcaTeste, { force: true });
 
   sitemapERobots(ctx, atualizarLastmod(ctx, finais));
+  // ads.txt (raiz do site): gerado a partir de ADS_CLIENTE, nunca escrito a mao (uma virgula errada e o Google ignora o arquivo). Sem conta, nao existe.
+  const adsTxt = path.join(site, 'ads.txt');
+  if (ADS.verificacao) gravarSeMudou(adsTxt, `${linhaDoAdsTxt(ADS_CLIENTE)}\n`);
+  else if (fs.existsSync(adsTxt) && EH_ADS_TXT_GERADO.test(fs.readFileSync(adsTxt, 'utf8'))) fs.rmSync(adsTxt);
   if (!modoDeTeste(ctx)) feedRss(ctx); // as previas de teste (rascunhos) nao entram no feed
 }

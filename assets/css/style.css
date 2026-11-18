@@ -590,6 +590,12 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .news-grid > .ads, .pls > .ads { grid-column: 1 / -1; margin: 0; }
 /* ADS escondido (ADS_ATIVOS = false em config.mjs): o atributo hidden precisa vencer o display: grid de .ads */
 .ads[hidden] { display: none; }
+/* Anuncio de verdade (Google AdSense) dentro do espaco reservado: sai a moldura do marcador e o anuncio fica centralizado. O tamanho do anuncio e EXATO por largura
+   de tela (modificacao que o Google aprova: classe + media query): 320x100 no celular, 468x60 no meio, 728x90 no computador. Cabem na altura reservada de .ads. */
+.ads.ads-real { border: 0; background: none; letter-spacing: 0; overflow: hidden; }
+.ads_bloco { width: 320px; height: 100px; }
+@media (min-width: 500px) { .ads_bloco { width: 468px; height: 60px; } }
+@media (min-width: 800px) { .ads_bloco { width: 728px; height: 90px; } }
 
 /* Home: cobertura em andamento (titulo, uma linha de texto e o bloco de cartoes) */
 .cobertura { padding: 0; }

@@ -15,6 +15,12 @@ export const PALAVRAS_POR_MINUTO = 200;
 // nada ocupa lugar e nada roda), mas o codigo, o CSS, o assets/js/ads.js e os testes continuam todos aqui. true = tudo volta a aparecer. Depois de mudar, rode: npm run gerar
 // (o gerador liga ou desliga os marcadores em TODAS as paginas, inclusive nas escritas a mao). Quando o anuncio de verdade entrar, ele vai dentro do marcador.
 export const ADS_ATIVOS = false;
+// ANUNCIO DE VERDADE (Google AdSense; regras e passos em gerador/anuncio.mjs). Os dois valores vem da conta do AdSense e NAO sao segredo (aparecem no codigo de qualquer site com anuncio):
+//   ADS_CLIENTE = o codigo da conta, no formato 'pub-1234567890123456' (sem o "ca-"). Preenchido, o site passa a levar a meta de verificacao do Google e o ads.txt.
+//   ADS_BLOCO   = o numero do bloco de anuncio (data-ad-slot) criado na conta. Com os dois preenchidos e ADS_ATIVOS = true, cada espaco reservado mostra anuncio.
+// Vazios = nada muda no site. Valor fora do formato faz o gerador parar e dizer qual.
+export const ADS_CLIENTE = '';
+export const ADS_BLOCO = '';
 
 // ---- Espacos de anuncio (ADS) nas listas de cartoes ----
 // Por enquanto so o marcador "ADS" (o anuncio de verdade entra na v1.03). Nas listas das secoes o marcador entra ENTRE as linhas de cartoes: assets/js/ads.js mede quantos
