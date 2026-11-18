@@ -3,7 +3,9 @@
 // TUDO AQUI FICA INERTE enquanto ADS_CLIENTE (config.mjs) estiver vazio: nenhuma pagina muda. Os tres estados:
 //   1) ADS_CLIENTE vazio ............................ nada (so os marcadores "ADS" de sempre, ligados ou escondidos por ADS_ATIVOS)
 //   2) ADS_CLIENTE preenchido, ADS_ATIVOS = false ... VERIFICACAO: a meta do Google no <head> e o ads.txt na raiz. E o estado para pedir a aprovacao do site.
-//   3) ADS_CLIENTE + ADS_BLOCO + ADS_ATIVOS = true .. ANUNCIO: cada espaco reservado (.ads) recebe o bloco do AdSense, e as paginas com espaco carregam o script do Google.
+//   3) ADS_CLIENTE + ADS_BLOCO + ADS_ATIVOS = true .. ANUNCIO: cada espaco reservado (.ads) recebe o bloco do AdSense e TODA pagina carrega o assets/js/anuncio.js,
+//      que mostra o AVISO DE COOKIES e so busca o script do Google depois do aceite (guia de cookies da ANPD: cookie de publicidade depende de consentimento).
+//      O script do Google NUNCA vem escrito no HTML. O rodape ganha o link "Preferencias de cookies" (modelos.mjs).
 //
 // De onde saem as regras (lidas em 18/11/2026; confira de novo antes de ligar, porque mudam):
 //   - meta de verificacao e ads.txt: https://support.google.com/adsense/answer/7584263 e https://support.google.com/adsense/answer/12171612
@@ -31,10 +33,11 @@ export const EH_ADS_TXT_GERADO = /^google\.com, pub-\d{16}, DIRECT, f08c47fec094
 
 /** no <head>: a meta que o Google le para confirmar que o site e da conta (dispensa carregar o script antes da aprovacao) */
 export const metaDeVerificacao = (cliente) => `<meta name="google-adsense-account" content="ca-${cliente}">`;
-/** no <head> das paginas que tem espaco de anuncio: o script do Google e o do site (anuncio.js pede um anuncio para cada espaco; `base` = caminho ate a raiz) */
+/** onde o visitante muda a escolha dos cookies: a secao da pagina de privacidade (com JavaScript, o anuncio.js abre a escolha ali mesmo, sem sair da pagina) */
+export const LINK_DE_PREFERENCIAS = 'privacidade.html#cookies';
+/** no <head> de toda pagina, com os anuncios ligados: o script do site, que cuida do aviso de cookies e so depois do aceite busca o do Google (`base` = caminho ate a raiz) */
 export const scriptsDoAnuncio = (cliente, bloco, base = '') => [
-  `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-${cliente}" crossorigin="anonymous"></script>`,
-  `<script src="${base}assets/js/anuncio.js" data-cliente="ca-${cliente}" data-bloco="${bloco}" defer></script>`,
+  `<script src="${base}assets/js/anuncio.js" data-cliente="ca-${cliente}" data-bloco="${bloco}" data-privacidade="${base}${LINK_DE_PREFERENCIAS}" defer></script>`,
 ];
 
 const MARCADOR = /<div class="ads" data-ads="([^"]*)"(?: aria-hidden="true")?(?: hidden)?>ADS<\/div>/g;

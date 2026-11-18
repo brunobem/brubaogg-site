@@ -38,7 +38,12 @@ export default async function () {
   if (!EH_ADS_TXT_GERADO.test(`${linhaDoAdsTxt(C)}\n`)) ach('alto', 'o gerador nao reconheceria o proprio ads.txt (nao conseguiria apagar ao desligar a conta)', '_ferramentas/gerador/anuncio.mjs');
   if (metaDeVerificacao(C) !== '<meta name="google-adsense-account" content="ca-pub-1234567890123456">') ach('critico', `meta de verificacao fora do formato do Google: ${metaDeVerificacao(C)}`, '_ferramentas/gerador/anuncio.mjs');
   const sc = scriptsDoAnuncio(C, B, '../');
-  if (sc.length !== 2 || !sc[0].includes('pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456') || !/ async /.test(sc[0]) || !sc[1].includes('src="../assets/js/anuncio.js" data-cliente="ca-pub-1234567890123456" data-bloco="9876543210" defer')) ach('alto', 'os scripts do anuncio (o do Google e o do site) sairam fora do formato', '_ferramentas/gerador/anuncio.mjs');
+  if (sc.length !== 1 || sc[0] !== '<script src="../assets/js/anuncio.js" data-cliente="ca-pub-1234567890123456" data-bloco="9876543210" data-privacidade="../privacidade.html#cookies" defer></script>') ach('alto', 'o script do anuncio saiu fora do formato (so o anuncio.js, com a conta, o bloco e o endereco da privacidade; o do Google NAO vem no HTML)', '_ferramentas/gerador/anuncio.mjs');
+  // o aviso de cookies (assets/js/anuncio.js): o script do Google so pode ser buscado depois do aceite, e o aviso tem de oferecer rejeitar, escolher e aceitar
+  const js = ler('assets/js/anuncio.js');
+  for (const [trecho, porque] of [["botao('Rejeitar', 'rejeitar')", 'botao Rejeitar'], ["botao('Aceitar', 'aceitar')", 'botao Aceitar'], ["botao('Escolher', 'escolher')", 'botao Escolher (segundo nivel)'], ["caixa.checked = escolha === 'aceito'", 'categoria Publicidade desligada por padrao'], ['localStorage', 'a escolha guardada no navegador'], ['a[data-cookies-preferencias]', 'o link do rodape reabre a escolha']]) if (!js.includes(trecho)) ach('alto', `o aviso de cookies perdeu uma parte obrigatoria: ${porque}`, 'assets/js/anuncio.js');
+  if ((js.match(/pagead2\.googlesyndication\.com/g) ?? []).length !== 1 || !/function carregarGoogle\(\) \{[\s\S]*?pagead2\.googlesyndication\.com[\s\S]*?\n  \}/.test(js) || !/if \(escolha === 'aceito'\) \{ raiz\.classList\.remove\('sem-anuncio'\); carregarGoogle\(\); todos\(\); \}/.test(js)) ach('critico', 'o script do Google so pode ser buscado dentro de carregarGoogle(), chamado so quando a escolha e "aceito"', 'assets/js/anuncio.js');
+  if (!/\.sem-anuncio \.ads\.ads-real \{ display: none; \}/.test(ler('assets/css/style.css'))) ach('alto', 'falta no CSS a regra que esconde os espacos de anuncio enquanto nao ha aceite (.sem-anuncio .ads.ads-real)', 'assets/css/style.css');
   const marc = (id, oculto = '') => `<div class="ads" data-ads="${id}" aria-hidden="true"${oculto}>ADS</div>`;
   const pagina = `<main>\n      ${marc('apos-carrossel')}\n<p>texto</p>\n      ${marc('apos-noticias', ' hidden')}\n</main>`;
   const com = porAnuncios(pagina, C, B);
@@ -60,7 +65,9 @@ export default async function () {
     if (h.includes('name="google-adsense-account"')) comMeta++;
     if (h.includes('pagead2.googlesyndication.com')) comScript++;
     if (h.includes('class="adsbygoogle')) comBloco++;
-    if (!atual.anuncios && (h.includes('pagead2.googlesyndication.com') || h.includes('class="adsbygoogle') || h.includes('assets/js/anuncio.js'))) ach('alto', 'pagina com codigo de anuncio do Google, mas os anuncios nao estao ligados em config.mjs (rode npm run gerar)', rel);
+    if (h.includes('pagead2.googlesyndication.com')) ach('critico', 'o script do Google veio escrito na pagina: quem busca e o anuncio.js, so depois do aceite no aviso de cookies', rel);
+    if (!atual.anuncios && (h.includes('class="adsbygoogle') || h.includes('assets/js/anuncio.js') || h.includes('data-cookies-preferencias'))) ach('alto', 'pagina com codigo de anuncio ou link de preferencias de cookies, mas os anuncios nao estao ligados em config.mjs (rode npm run gerar)', rel);
+    if (atual.anuncios && (!h.includes('assets/js/anuncio.js') || !h.includes('data-cookies-preferencias'))) ach('alto', 'os anuncios estao ligados, mas a pagina nao carrega o anuncio.js ou nao tem o link "Preferencias de cookies" no rodape (rode npm run gerar)', rel);
     if (!atual.verificacao && h.includes('name="google-adsense-account"')) ach('alto', 'pagina com a meta de verificacao do AdSense, mas ADS_CLIENTE esta vazio (rode npm run gerar)', rel);
     if (atual.anuncios && />ADS<\/div>/.test(h)) ach('alto', 'os anuncios estao ligados, mas a pagina ainda tem o marcador "ADS" no lugar do bloco (rode npm run gerar)', rel);
   }
@@ -98,7 +105,7 @@ export default async function () {
       if (!fs.existsSync(path.join(tmp, 'ads.txt')) || lerT('ads.txt') !== `${linhaDoAdsTxt(C)}\n`) ach('critico', 'so com a conta: o ads.txt devia existir na raiz com a linha da conta e mais nada');
       for (const p of ['index.html', 'noticias.html', materia].filter(Boolean)) if (!lerT(p).includes(metaDeVerificacao(C))) ach('alto', 'so com a conta: faltou a meta de verificacao do AdSense no <head>', p);
       if (lerT('404.html').includes('google-adsense-account')) ach('medio', 'pagina fora do indice (404) nao precisa da meta de verificacao', '404.html');
-      for (const p of ['index.html', 'noticias.html']) { const h = lerT(p); if (h.includes('pagead2.googlesyndication.com') || h.includes('adsbygoogle') || !/<div class="ads" data-ads="[^"]*" aria-hidden="true" hidden>ADS<\/div>/.test(h)) ach('alto', 'so com a conta: nao pode haver script nem bloco de anuncio, e os marcadores continuam escondidos', p); }
+      for (const p of ['index.html', 'noticias.html']) { const h = lerT(p); if (h.includes('pagead2.googlesyndication.com') || h.includes('adsbygoogle') || h.includes('assets/js/anuncio.js') || h.includes('data-cookies-preferencias') || !/<div class="ads" data-ads="[^"]*" aria-hidden="true" hidden>ADS<\/div>/.test(h)) ach('alto', 'so com a conta: nao pode haver script, bloco de anuncio nem aviso de cookies, e os marcadores continuam escondidos', p); }
     }
 
     // estado 3: anuncio ligado
@@ -108,13 +115,13 @@ export default async function () {
       const home = lerT('index.html'), lista = lerT('noticias.html'), mat = materia ? lerT(materia) : '';
       const blocos = (h) => (h.match(/<div class="ads ads-real" data-ads="[^"]*"><ins class="adsbygoogle ads_bloco"/g) ?? []).length;
       if (blocos(home) !== 6 || />ADS<\/div>/.test(home)) ach('alto', `anuncio ligado: a home devia ter 6 blocos de anuncio e nenhum marcador "ADS" (tem ${blocos(home)} blocos)`, 'index.html');
-      for (const [p, h] of [['index.html', home], ['noticias.html', lista]]) {
-        if ((h.match(/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-1234567890123456/g) ?? []).length !== 1) ach('alto', 'anuncio ligado: o script do Google devia aparecer exatamente uma vez na pagina', p);
-        if (!/<script src="assets\/js\/anuncio\.js" data-cliente="ca-pub-1234567890123456" data-bloco="9876543210" defer><\/script>/.test(h)) ach('alto', 'anuncio ligado: faltou o anuncio.js com a conta e o bloco', p);
+      for (const [p, h] of [['index.html', home], ['noticias.html', lista], ...(mat ? [[materia, mat]] : [])]) {
+        if (h.includes('pagead2.googlesyndication.com')) ach('critico', 'anuncio ligado: o script do Google NAO pode vir escrito na pagina (so depois do aceite, pelo anuncio.js)', p);
+        if ((h.match(/<script src="(?:\.\.\/)?assets\/js\/anuncio\.js" data-cliente="ca-pub-1234567890123456" data-bloco="9876543210" data-privacidade="(?:\.\.\/)?privacidade\.html#cookies" defer><\/script>/g) ?? []).length !== 1) ach('alto', 'anuncio ligado: toda pagina devia carregar o anuncio.js uma vez, com a conta, o bloco e o endereco da privacidade', p);
         if (h.indexOf('assets/js/anuncio.js') > h.indexOf('</head>')) ach('alto', 'o anuncio.js tem de estar no <head> (roda antes do ads.js, que depende dele)', p);
+        if (!/<a href="(?:\.\.\/)?privacidade\.html#cookies" data-cookies-preferencias>Preferências de cookies<\/a>/.test(h)) ach('alto', 'anuncio ligado: faltou no rodape o link "Preferencias de cookies"', p);
       }
       if (!/data-ads-primeiro="3" data-ads-cada="2"/.test(lista) || !lista.includes('assets/js/ads.js')) ach('alto', 'anuncio ligado: a lista de Noticias devia levar data-ads-primeiro/cada e o ads.js', 'noticias.html');
-      if (mat && (mat.includes('pagead2.googlesyndication.com') || mat.includes('assets/js/anuncio.js'))) ach('medio', 'materia sem espaco de anuncio nao devia carregar os scripts de anuncio', materia);
       if (mat && !mat.includes(metaDeVerificacao(C))) ach('alto', 'anuncio ligado: a materia continua levando a meta de verificacao', materia);
       // conta errada para o gerador, sem gravar nada
       const ruim = por(true, 'ca-pub-123', B);

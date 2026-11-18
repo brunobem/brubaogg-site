@@ -593,6 +593,18 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 /* Anuncio de verdade (Google AdSense) dentro do espaco reservado: sai a moldura do marcador e o anuncio fica centralizado. O tamanho do anuncio e EXATO por largura
    de tela (modificacao que o Google aprova: classe + media query): 320x100 no celular, 468x60 no meio, 728x90 no computador. Cabem na altura reservada de .ads. */
 .ads.ads-real { border: 0; background: none; letter-spacing: 0; overflow: hidden; }
+/* sem o aceite no aviso de cookies (assets/js/anuncio.js poe a classe no <html>), nenhum espaco de anuncio aparece nem ocupa lugar */
+.sem-anuncio .ads.ads-real { display: none; }
+/* Aviso de cookies (so existe com anuncio de verdade ligado; montado pelo anuncio.js). Faixa fixa no pe da tela. "Rejeitar" e "Aceitar" tem o MESMO
+   destaque (os dois sao .btn comum), como pede o guia de cookies da ANPD. */
+.cookies-aviso { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; gap: var(--space-2); justify-items: center; padding: var(--space-2); background: var(--surface-2); border-top: 2px solid var(--accent); box-shadow: 0 -8px 24px rgba(0, 0, 0, .35); }
+.cookies-aviso[hidden], .cookies-detalhe[hidden] { display: none; }
+.cookies-texto { margin: 0; max-width: 72ch; font-size: .95rem; line-height: 1.5; color: var(--text); }
+.cookies-detalhe { display: grid; gap: var(--space-1); max-width: 72ch; font-size: .9rem; line-height: 1.5; color: var(--text); }
+.cookies-detalhe p { margin: 0; }
+.cookies-opcao { display: flex; gap: var(--space-1); align-items: flex-start; cursor: pointer; }
+.cookies-opcao input { width: 20px; height: 20px; margin: 0; flex: none; accent-color: var(--accent); }
+.cookies-botoes { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
 .ads_bloco { width: 320px; height: 100px; }
 @media (min-width: 500px) { .ads_bloco { width: 468px; height: 60px; } }
 @media (min-width: 800px) { .ads_bloco { width: 728px; height: 90px; } }

@@ -1,6 +1,7 @@
 // Modelos de HTML reutilizados pelo gerador: cabecalho (com a faixa de secoes), rodape, pagina completa, cartao.
 // Dependem do estado do site (abas visiveis, se ha tags), por isso recebem o contexto.
-import { DOMINIO, GTA6, SOCIAIS, abas, categorias } from './config.mjs';
+import { ADS_ATIVOS, ADS_BLOCO, ADS_CLIENTE, DOMINIO, GTA6, SOCIAIS, abas, categorias } from './config.mjs';
+import { LINK_DE_PREFERENCIAS, situacaoDosAds } from './anuncio.mjs';
 import { SIZES_CARTAO, SIZES_CARTAO_DESTAQUE, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, esc, imagemDoCartao, urlDe } from './util.mjs';
 
 export function criarModelos(ctx) {
@@ -153,7 +154,7 @@ ${lis(extras, '          ')}
         <nav class="footer-col" aria-label="Legal">
           <p class="footer-titulo">Legal</p>
           <a href="${base}termos.html">Termos de Serviço</a>
-          <a href="${base}privacidade.html">Política de Privacidade</a>
+          <a href="${base}privacidade.html">Política de Privacidade</a>${situacaoDosAds({ ativos: ADS_ATIVOS, cliente: ADS_CLIENTE, bloco: ADS_BLOCO }).anuncios ? `\n          <a href="${base}${LINK_DE_PREFERENCIAS}" data-cookies-preferencias>Preferências de cookies</a>` : ''}
         </nav>
       </div>
       <p class="wrap footer-copy">&copy; 2026 BRUBAOGG</p>

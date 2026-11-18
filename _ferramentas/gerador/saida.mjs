@@ -15,7 +15,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path, { posix } from 'node:path';
 import { ADS_ATIVOS, ADS_BLOCO, ADS_CLIENTE, DOMINIO, SOCIAIS, categorias } from './config.mjs';
-import { EH_ADS_TXT_GERADO, linhaDoAdsTxt, metaDeVerificacao, porAnuncios, scriptsDoAnuncio, situacaoDosAds, temEspacoDeAnuncio, tirarAnuncios } from './anuncio.mjs';
+import { EH_ADS_TXT_GERADO, linhaDoAdsTxt, metaDeVerificacao, porAnuncios, scriptsDoAnuncio, situacaoDosAds, tirarAnuncios } from './anuncio.mjs';
 import { ENDERECO_DAS_IMAGENS, PASTA_NO_R2 } from './imagens.mjs';
 import { carrosselHtml, coberturaHtml, contagemHtml, feedHtml, gta6Html, playersHtml, wikiHtml } from './paginas.mjs';
 import { ErroDeDados, desescapar, esc, hojeEmSaoPaulo, lerJson, urlDe } from './util.mjs';
@@ -192,9 +192,10 @@ function montarPagina(ctx, r, original, problemas) {
     if (!/<meta name="robots" content="noindex">/.test(html)) linhas.push(`<link rel="alternate" type="application/rss+xml" title="${FEED.titulo}: últimas matérias" href="${DOMINIO}/${FEED.arquivo}">`); // o feed (feedRss, abaixo)
     if (html.includes('https://i.ytimg.com/')) linhas.push('<link rel="preconnect" href="https://i.ytimg.com">');
     if (html.includes('youtube-nocookie.com/embed/')) linhas.push('<link rel="preconnect" href="https://www.youtube-nocookie.com">');
-    // AdSense: a meta de verificacao em toda pagina indexavel (o Google confirma que o site e da conta); os scripts so nas paginas que tem espaco de anuncio
+    // AdSense: a meta de verificacao em toda pagina indexavel (o Google confirma que o site e da conta); com os anuncios ligados, o anuncio.js em TODA pagina
+    // (ele mostra o aviso de cookies, atende o link "Preferencias de cookies" do rodape e so depois do aceite busca o script do Google)
     if (ADS.verificacao && !/<meta name="robots" content="noindex">/.test(html)) linhas.push(metaDeVerificacao(ADS_CLIENTE));
-    if (ADS.anuncios && temEspacoDeAnuncio(html)) linhas.push(...scriptsDoAnuncio(ADS_CLIENTE, ADS_BLOCO, base));
+    if (ADS.anuncios) linhas.push(...scriptsDoAnuncio(ADS_CLIENTE, ADS_BLOCO, base));
     return `<!--site:recursos-->\n${linhas.join('\n')}\n<!--/site:recursos-->\n${link}`;
   });
   // 7) espacos de ADS: ligados ou escondidos por ADS_ATIVOS (config.mjs), em toda pagina (os marcadores escritos a mao tambem). Escondido = atributo hidden; o codigo fica.
