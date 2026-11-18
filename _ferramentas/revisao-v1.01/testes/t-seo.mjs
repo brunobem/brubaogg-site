@@ -113,6 +113,7 @@ export default async function () {
   const indexaveis = paginas.filter(({ bruto }) => !/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(limparHtml(bruto)));
   const ehMateria = (rel) => /^(noticias|reviews|lancamentos|gta6-novidades|series)\//.test(rel);
   const registro = existe('_conteudo/enderecos.json') ? JSON.parse(ler('_conteudo/enderecos.json')) : {};
+  const datasDoSitemap = existe('_conteudo/lastmod.json') ? JSON.parse(ler('_conteudo/lastmod.json')) : null;
   const soTexto = new Set(conteudosDaWiki().filter((w) => w.dados && w.dados.video == null && registro[w.id]).map((w) => `${registro[w.id].categoria}/${registro[w.id].slug}.html`)); // paginas da Wiki que nao tem video
   for (const { rel, bruto } of indexaveis) {
     if (!/<meta name="robots" content="max-image-preview:large">/.test(bruto)) a.push(achado('baixo', T, 'falta max-image-preview:large (o Google nao pode mostrar a imagem grande)', rel));
@@ -131,6 +132,13 @@ export default async function () {
       if ((art.headline ?? '').length > 110) a.push(achado('medio', T, `Article.headline com ${art.headline.length} caracteres (o Google aceita ate 110)`, rel));
       if (art.mainEntityOfPage !== canonical) a.push(achado('alto', T, 'Article.mainEntityOfPage diferente do canonical', rel));
       if (Number.isNaN(Date.parse(art.datePublished))) a.push(achado('alto', T, `Article.datePublished invalido: ${art.datePublished}`, rel));
+      // a data de modificacao acompanha a do sitemap (lastmod.json): o dia da ultima mudanca, se for depois do dia da publicacao; senao, a propria publicacao
+      else {
+        const diaPub = new Date(Date.parse(art.datePublished)).toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' });
+        const diaMod = datasDoSitemap?.[rel]?.d;
+        const esperada = diaMod && diaMod > diaPub ? diaMod : art.datePublished;
+        if (art.dateModified !== esperada) a.push(achado('alto', T, `Article.dateModified e ${art.dateModified} e devia ser ${esperada} (publicada em ${diaPub}; sitemap: ${diaMod ?? 'sem registro'}). Rode npm run gerar.`, rel));
+      }
       if (!(art.image ?? []).every((u) => /^https:\/\//.test(u))) a.push(achado('alto', T, 'Article.image precisa ser URL https', rel));
     }
     const player = /youtube-nocookie\.com\/embed\/[\w-]{11}/.test(bruto);

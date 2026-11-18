@@ -239,6 +239,21 @@ function mioloDaPagina(html) {
     .replace(/<!--contagem:inicio-->[\s\S]*?<!--contagem:fim-->/g, '');
 }
 
+// DATA DE MODIFICACAO DA MATERIA (18/11/2026): o "dateModified" dos dados estruturados (Article) acompanha a data do sitemap (lastmod.json), que e a data da
+// ultima mudanca do MIOLO da pagina. Antes ele repetia a data de publicacao para sempre, e o Google lia duas datas diferentes para a mesma materia.
+// Regra: se a pagina mudou num dia DEPOIS do dia da publicacao (dias de Sao Paulo), dateModified = esse dia (AAAA-MM-DD, sem hora: o site nao guarda a hora da
+// mudanca e nao inventa uma); senao, fica igual ao datePublished. A data de PUBLICACAO nunca muda. Os dados ficam no <head>, fora do miolo: esta troca nao
+// mexe na conta da data do sitemap.
+const DATAS_DO_ARTIGO = /("datePublished":"([^"]+)","dateModified":")[^"]+(")/;
+export function comDataDeModificacao(html, dia) {
+  if (!dia || !/<main class="article /.test(html)) return html;
+  return html.replace(DATAS_DO_ARTIGO, (todo, inicio, publicado, fim) => {
+    const t = Date.parse(publicado);
+    const diaDaPublicacao = Number.isNaN(t) ? '' : new Date(t).toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' });
+    return `${inicio}${diaDaPublicacao && dia > diaDaPublicacao ? dia : publicado}${fim}`;
+  });
+}
+
 function atualizarLastmod(ctx, finais) {
   const { site } = ctx;
   const arq = path.join(site, '_conteudo', 'lastmod.json');
@@ -249,7 +264,7 @@ function atualizarLastmod(ctx, finais) {
     const html = finais.get(r);
     const m = crypto.createHash('md5').update(mioloDaPagina(html)).digest('hex').slice(0, 12);
     const ant = antigo?.[r];
-    const dataDoArquivo = () => fs.statSync(path.join(site, r)).mtime.toISOString().slice(0, 10);
+    const dataDoArquivo = () => { const p = path.join(site, r); return fs.existsSync(p) ? fs.statSync(p).mtime.toISOString().slice(0, 10) : hoje; };
     const dataDaMateria = () => { const d = html.match(/<time\b[^>]*\bdatetime="(\d{4}-\d{2}-\d{2})/)?.[1]; return d && d <= hoje ? d : null; };
     let d;
     if (ant?.m) d = ant.m === m ? ant.d : hoje; // mudou o miolo: a data e a de hoje
@@ -378,6 +393,10 @@ export function gravarTudo(ctx) {
   }
   if (problemas.length) throw new ErroDeDados(`O gerador parou: ${problemas.length} problema(s) nas paginas (nada foi gravado).\n${problemas.map((p) => `  - ${p}`).join('\n')}`);
 
+  // 1b) datas: a do sitemap (lastmod.json) e, nas materias, a de modificacao dos dados estruturados, que a acompanha (comDataDeModificacao)
+  const datas = atualizarLastmod(ctx, finais);
+  for (const [r, html] of finais) { const novo = comDataDeModificacao(html, datas[r]?.d); if (novo !== html) finais.set(r, novo); }
+
   // 2) grava
   apagarOrfaos(ctx, [...apagar]);
   for (const [rel, conteudo] of saidas) if (!rel.endsWith('.html')) gravarSeMudou(path.join(site, rel), conteudo); // ex.: indice da busca
@@ -390,7 +409,7 @@ export function gravarTudo(ctx) {
     fs.writeFileSync(marcaTeste, ctx.flags.RASCUNHO ? 'rascunho (lorem ipsum)' : ctx.flags.COM_RASCUNHOS ? 'previa com rascunhos' : 'previa com paginas so com o video', 'utf8');
   } else fs.rmSync(marcaTeste, { force: true });
 
-  sitemapERobots(ctx, atualizarLastmod(ctx, finais));
+  sitemapERobots(ctx, datas);
   // ads.txt (raiz do site): gerado a partir de ADS_CLIENTE, nunca escrito a mao (uma virgula errada e o Google ignora o arquivo). Sem conta, nao existe.
   const adsTxt = path.join(site, 'ads.txt');
   if (ADS.verificacao) gravarSeMudou(adsTxt, `${linhaDoAdsTxt(ADS_CLIENTE)}\n`);
