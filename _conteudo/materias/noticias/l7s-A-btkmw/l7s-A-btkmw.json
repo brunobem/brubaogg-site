@@ -1,0 +1,30 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-09-11",
+  "titulo": "Rockstar abre a beta do nopixel V, servidor oficial de RP",
+  "resumo": "A Rockstar anunciou o nopixel V, versão oficial do servidor de roleplay NoPixel, com beta fechada por convite desde 8 de setembro de 2026.",
+  "tags": [
+    "GTA RP"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Hitmarker",
+      "url": "https://hitmarker.net/news/rockstar-games-announces-official-gta-online-roleplay-server-with-a-closed-beta-starting-september-8-4676725"
+    },
+    {
+      "nome": "GosuGamers",
+      "url": "https://www.gosugamers.net/entertainment/news/79088-rockstar-games-announces-official-gta-v-rp-beta-nopixel-v-launching-for-invited-creators-this-month"
+    },
+    {
+      "nome": "GameSpot",
+      "url": "https://gamespot.com/articles/rockstar-acquires-gta-role-playing-community-as-gta-6-continues-development/1100-6516790/"
+    }
+  ],
+  "corpo": [
+    "A Rockstar anunciou o nopixel V, versão oficialmente apoiada do servidor de roleplay NoPixel para GTA V, com beta fechada desde 8 de setembro de 2026, pelo Rockstar Games Launcher. O acesso é só por convite: a lista inicial tinha 439 jogadores, e os demais podem apenas assistir pela Twitch. Durante anos, o roleplay em GTA dependeu de mods criados pela comunidade, sem apoio oficial de uma desenvolvedora.",
+    "A versão oficial traz um sistema de criação de personagens reformulado, a reforma de seis quarteirões de Cypress Flats e o Pixel Hotel & Casino. O servidor roda em separado do GTA Online. De todos os servidores de roleplay, a Rockstar escolheu o NoPixel, que já era referência antes de virar oficial, o que, para mim, mostra o tamanho do roleplay.",
+    "Lembro que a mudança já era esperada desde que a Rockstar comprou a Cfx.re, equipe por trás do FiveM e do RedM, em acordo anunciado em 11 de agosto de 2023. Especulo que algo parecido também possa aparecer no GTA 6."
+  ]
+}

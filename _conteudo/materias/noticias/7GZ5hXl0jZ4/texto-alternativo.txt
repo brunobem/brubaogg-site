@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+card.png: Duas caixas de jogo de Nintendo Switch lado a lado, Pokémon Pokopia (Switch 2) e Pokémon Violet, com a logo da Nintendo. Texto na arte: "FEZ UMA!".
+Thumb.png: Duas caixas de jogo de Nintendo Switch lado a lado, Pokémon Pokopia (Switch 2) e Pokémon Violet, com a logo da Nintendo. Texto na arte: "FEZ UMA!".

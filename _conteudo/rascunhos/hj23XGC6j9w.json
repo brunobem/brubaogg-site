@@ -1,0 +1,44 @@
+{
+  "formato": "horizontal",
+  "categoria": "reviews",
+  "publicado": "2026-09-10",
+  "titulo": "The Baby in Yellow vale a pena? Minha nota é 6",
+  "resumo": "Zerei The Baby in Yellow e dou nota 6: ideias demais e pouca paciência para desenvolver cada uma, mas barato e bom para passar o tempo.",
+  "tags": [
+    "The Baby in Yellow"
+  ],
+  "veredito": {
+    "nota": 6,
+    "recomendacao": "espere-promocao",
+    "preco": "Grátis no celular (com anúncios); cerca de R$ 45 na Steam (paguei R$ 5 a R$ 6 em promoção)",
+    "plataforma": "PC (Steam)",
+    "paraQuem": "Quem curte jogo curto e esquisito, mais do que assustador, e paga pouco."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PocketGamer.biz",
+      "url": "https://www.pocketgamer.biz/interview/83030/behind-the-scenes-creating-the-viral-hit-baby-in-yellow/"
+    },
+    {
+      "nome": "App Developer Magazine",
+      "url": "https://appdevelopermagazine.com/the-baby-in-yellow-black-cat-update-is-out-now/"
+    },
+    {
+      "nome": "Steam",
+      "url": "https://store.steampowered.com/app/2291340/The_Baby_in_Yellow"
+    }
+  ],
+  "corpo": [
+    "Dou nota 6 em 10 a The Baby in Yellow, que joguei do início ao fim na Steam. Foi uma indicação de um inscrito, e fui jogar sem expectativa, achando que era um jogo meme. Para mim, é um jogo para passar o tempo, com uma lore interessante, mas mal contada, e jogabilidade repetitiva.",
+    "É um jogo de terror em primeira pessoa de um estúdio pequeno da Escócia, a Team Terrible, que começou de brincadeira, como um projetinho de fim de semana de 2020. Virou aplicativo de celular, tem versão para PC e consoles e foi baixado mais de 200 milhões de vezes, e acredito que a maioria não chegou ao fim. Ele foi lançado em capítulos, o que pode explicar isso.",
+    "O jogador trabalha como babá em um apartamento. No primeiro capítulo, a rotina é monótona: trocar fralda e alimentar o menino por dois dias, enquanto ouve áudios de babás anteriores dizendo que algo aconteceu. Aparecem nomes como Hastur e Cassilda, a mãe adotiva, que liga desesperada à agência pedindo reforço. O pai e o rei demoníaco só são sugeridos por sussurros e símbolos espalhados pelo cenário.",
+    "O terror só começa de fato no segundo capítulo, com os bichos de pelúcia com medo do bebê e uma perseguição. O jogo vai melhorando, inclusive nos gráficos, a cada capítulo. No terceiro, o jogador persegue um gato, explora o subsolo da casa, passa por um labirinto de poções e conhece um robozinho chamado Newt e o Dr. Arkham, de uma ordem secreta que tenta impedir o retorno do rei.",
+    "A jogabilidade é muito simplificada, principalmente no primeiro capítulo, porque o jogo nasceu para o celular: é meio point-and-click. Depois de uma primeira meia hora monótona, vêm desafios: seguir marcas escondidas pela casa, resolver puzzles ambientais e mexer na física dos objetos. O problema é que várias mecânicas aparecem uma única vez, como o puzzle de seguir um rastro e um esconde-esconde, e nunca voltam.",
+    "Fica a sensação de rascunho, de ideia solta que nunca virou sistema. Acho que o jogo tem ideia demais e paciência de menos para amadurecer cada uma, e que a pressa dos lançamentos por capítulo faz o jogo perder potencial.",
+    "No celular, o jogo é de graça, com anúncios no meio. No PC, custa cerca de R$ 45 na Steam, ainda em acesso antecipado, e paguei R$ 5 a R$ 6 em uma promoção. No Metacritic, a nota é baixa, baseada em pouquíssima gente; na Steam, a aprovação passa de 90%. Para mim, quem julga de longe, pela fama do aplicativo ou pelo meme, tende a subestimar, e quem joga até o fim sai surpreso.",
+    "Recomendo para quem gosta de jogo curto e esquisito, mais do que assustador, já que é barato. Não recomendo para quem quer a história bem entregue nos primeiros minutos ou procura susto de verdade.",
+    "The Baby in Yellow é da Team Terrible, da Escócia, e nasceu de um jogo criado em 48 horas, em uma game jam, em 2020. Chegou à Steam em acesso antecipado em maio de 2023, com a atualização Black Cat, que adicionou três capítulos. O CEO do estúdio fala em cerca de 200 milhões de downloads.",
+    "No fim das contas, dou nota 6 ao jogo: deu para passar o tempo e foi barato, mas as coisas legais aparecem uma vez só."
+  ]
+}

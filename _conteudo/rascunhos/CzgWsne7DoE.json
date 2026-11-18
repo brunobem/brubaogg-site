@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-06-24",
+  "titulo": "Resident Evil Veronica será em terceira pessoa",
+  "resumo": "O produtor Yoshiaki Hirabayashi confirmou que Resident Evil: Veronica é totalmente em terceira pessoa, apesar do trailer em primeira pessoa.",
+  "tags": [
+    "Resident Evil Veronica"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Windows Central",
+      "url": "https://www.windowscentral.com/gaming/capcom-confirms-resident-evil-veronica-remake-is-fully-third-person"
+    },
+    {
+      "nome": "Push Square",
+      "url": "https://www.pushsquare.com/news/2026/06/unlike-its-reveal-trailer-resident-evil-veronica-on-ps5-will-be-fully-third-person"
+    },
+    {
+      "nome": "GamingBolt",
+      "url": "https://gamingbolt.com/resident-evil-veronica-is-in-3rd-person-says-producer-who-compares-it-to-resident-evil-2-remake"
+    },
+    {
+      "nome": "One More Game",
+      "url": "https://onemoregame.ph/?p=148170"
+    }
+  ],
+  "corpo": [
+    "O trailer de revelação de Resident Evil: Veronica foi apresentado com visão em primeira pessoa, e muita gente se perguntou se o jogo alternaria entre primeira e terceira pessoa, como Resident Evil Requiem. O produtor Yoshiaki Hirabayashi esclareceu em entrevista que o jogo será em terceira pessoa do início ao fim, sem trechos em primeira, e a cobertura trata a visão do trailer como uma pista falsa proposital.",
+    "Hirabayashi disse à Polygon que o jogo terá uma sensação próxima à do remake de Resident Evil 2, e que o Code Veronica original compartilhava muito do DNA do RE2 original, com gerenciamento de recursos. Ele também afirmou que não é simplesmente um RE4 com a Claire, e sim uma história e uma experiência separadas.",
+    "Acho que a terceira pessoa é o que faz sentido: o jogador joga com Claire, uma das protagonistas principais da franquia, e quer ver o personagem. Para mim, não faria sentido jogar com Leon em primeira pessoa: com Leon e com Claire o jogador quer ver o personagem e estar na pele do protagonista de que gosta, diferente de Ethan, que o jogador ainda estava aprendendo a conhecer. Lembro que Resident Evil também não é só um jogo de sobrevivência contra zumbis."
+  ]
+}

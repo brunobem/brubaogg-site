@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Silhueta escura de uma pessoa atrás do logo do GTA VI, sobre fundo rosa. Texto na arte: "CAMISAS DO MIAMI HEAT" e "BRUBAOGG".
+Thumb.png: Silhueta escura de uma pessoa atrás do logo do GTA VI, sobre fundo rosa. Texto na arte: "CAMISAS DO MIAMI HEAT" e "BRUBAOGG".
+img-1_pichauarena.com.br.webp: Vista aérea, à noite, da arena do Miami Heat com o letreiro rosa "Welcome to Vice City" no teto.
+img-2_viciados.net.webp: Vista aérea, de dia, da arena do Miami Heat à beira da água, com o letreiro de neon "Vice City" no teto.

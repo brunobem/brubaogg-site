@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Logo da Steam sobre um mosaico inclinado de capas de jogos. Texto na arte: "CONTROLE DE IA?".
+Thumb.png: Logo da Steam sobre um mosaico inclinado de capas de jogos. Texto na arte: "CONTROLE DE IA?".
+img-1_tweaktown.com.webp: Logo da Steam à esquerda e, à direita, um robô branco humanoide pensativo, com a mão no queixo, diante de uma tela de computador.
+img-2_polygon.com.jpg: Logo da Steam em estilo retrô, em rosa e roxo, sobre uma grade neon com elementos de interface, como "LIVE" e "PC | MAC".

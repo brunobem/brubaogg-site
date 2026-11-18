@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-06-02",
+  "titulo": "Warzone deixa de funcionar no PS4 e no Xbox One em 2026",
+  "resumo": "A Activision reduz os serviços do Warzone no PS4 e no Xbox One desde 4 de junho de 2026, com o fim do suporte previsto para o Modern Warfare 4.",
+  "tags": [
+    "Call of Duty"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "VGC",
+      "url": "https://videogameschronicle.com/news/activision-confirms-call-of-duty-warzone-is-shutting-down-on-last-gen-playstation-and-xbox"
+    },
+    {
+      "nome": "Push Square",
+      "url": "https://www.pushsquare.com/news/2026/05/warzone-to-be-delisted-taken-offline-on-ps4-as-modern-warfare-4-goes-current-gen-only"
+    },
+    {
+      "nome": "Shacknews",
+      "url": "https://shacknews.com/article/149337/call-of-duty-warzone-ps4-xbox-one-support-ending"
+    },
+    {
+      "nome": "The Sixth Axis",
+      "url": "https://www.thesixthaxis.com/?p=472270"
+    }
+  ],
+  "assunto": "call-of-duty-fim-do-ps4",
+  "corpo": [
+    "A Activision confirmou que o Call of Duty: Warzone deixará de funcionar no PS4 e no Xbox One em 2026. A partir de 4 de junho, a empresa começou a reduzir os serviços do jogo nesses consoles, e o suporte termina com o lançamento de Call of Duty: Modern Warfare 4, em 23 de outubro, e da primeira temporada do Warzone, que começa pouco depois. Uma das fontes diz que a data exata do desligamento ainda não foi informada.",
+    "Contextualizo: a nova geração, PS5 e Xbox Series, já não é tão nova, e a geração antiga fica para trás. Com a próxima geração à vista, com o PS6 e o novo Xbox, alguns jogos deixam de dar suporte, e o Warzone é o caso do momento: em algum ponto do ano, ele vai parar de funcionar no PS4 e em alguns Xbox. É bem triste, mas é a realidade batendo na porta.",
+    "O Modern Warfare 4 também pula o PS4 e o Xbox One, e é o primeiro Modern Warfare a ignorar a geração anterior. O jogo sai para PS5, Xbox Series, PC e Switch 2."
+  ]
+}

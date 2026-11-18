@@ -1,0 +1,3 @@
+# Enderecos antigos das imagens das materias (ate 18/11/2026 elas ficavam junto das paginas): vao para o R2, de forma permanente.
+# Este arquivo e copiado para _site/_redirects na publicacao (.github/workflows/publicar.yml). Limite: 100 regras com *.
+/assets/img/m/* https://img.brubaogg.com.br/m/:splat 301

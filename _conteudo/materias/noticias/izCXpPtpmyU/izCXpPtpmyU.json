@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-18",
+  "titulo": "CS2: tese de mestrado usa mouse e teclado contra smurfs",
+  "resumo": "Um estudante da NTNU criou um sistema que identifica jogadores de CS2 pelo mouse e pelo teclado. A Valve não adotou nada. Para mim, cheater é pior que smurf.",
+  "tags": [
+    "Counter-Strike 2"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/hardware/counter-strike-2-player-dedicates-masters-thesis-to-rooting-out-cheaters-creates-grade-a-player-tracking-system/"
+    },
+    {
+      "nome": "Dexerto",
+      "url": "https://www.dexerto.com/counter-strike-2/cs2-player-writes-masters-thesis-on-how-to-ban-cheaters-forever-instead-of-just-accounts-3416037/"
+    },
+    {
+      "nome": "Critical Hits",
+      "url": "https://criticalhits.com.br/games/jogador-de-cs2-apresenta-tese-de-mestrado-com-o-melhor-metodo-para-banir-cheaters/"
+    }
+  ],
+  "corpo": [
+    "Christopher B. Didriksen, estudante de mestrado da Universidade Norueguesa de Ciência e Tecnologia (NTNU), dedicou a tese ao combate de trapaceiros no Counter-Strike 2 e tirou nota A. O sistema analisa as demos das partidas competitivas e usa dois sinais: o movimento do mouse e o uso do teclado. Juntos, formam uma espécie de impressão digital do jogador, estável entre mapas, sessões e partidas separadas por meses.",
+    "Em um conjunto com mais de mil jogadores, o teclado sozinho identificou o jogador certo em 98% dos casos, e o mouse também identificou, mas muitas vezes por margem pequena. O pesquisador diz que o método é rápido o bastante para checar cada partida nova e que achou smurfs nunca reportados. Esses números são dele, repassados pela imprensa, e o método não é perfeito: contas compartilhadas confundem o sistema.",
+    "O sistema não detecta cheat, como aimbot ou wallhack: ele identifica quem está por trás da conta. A ideia é que um jogador banido não consiga voltar escondido numa conta nova no mesmo dia, e a tese propõe usar isso junto do VAC e do Trust Factor da Valve. A Valve não adotou nada disso.",
+    "Quem joga CS2 sabe como é frustrante lidar com cheaters, e uma partida dura de 30 a 40 minutos que acabam estragados. Para mim, cheater é até pior que smurf, que é o jogador de nível alto que cria uma conta nova para jogar com gente abaixo, e é outro problema. Ainda é só uma tese, mas dá esperança."
+  ]
+}

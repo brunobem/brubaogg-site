@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Uma mulher e um homem de costas num cenário iluminado e enevoado, ela de mochila e ele de camiseta clara, com a logo de GTA VI. Texto na arte: "+ 100 HORAS DE CAMPANHA".
+Thumb.png: Uma mulher e um homem de costas num cenário iluminado e enevoado, ela de mochila e ele de camiseta clara, com a logo de GTA VI. Texto na arte: "+ 100 HORAS DE CAMPANHA".
+img-1_viciados.net.webp: Outdoor de GTA VI sob céu azul, com a arte de Lucia e Jason sentados num carro, entre palmeiras e prédios de Vice City.
+img-2_newsletter.jornaldosjogos.com.br.jpg: Um homem e uma mulher de boné e roupas com estampa de jacaré rosa e o texto "Vice City Leonida", diante de um mural com a palavra "Vice City".

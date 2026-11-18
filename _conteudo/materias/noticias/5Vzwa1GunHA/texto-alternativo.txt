@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Ilustração de uma rede de pontos ligados dentro do contorno de uma cabeça, ao lado de um registro de válvula vermelho em um fundo escuro. Texto na arte: "QUEM ESTÁ CERTO?".
+Thumb.png: Ilustração de uma rede de pontos ligados dentro do contorno de uma cabeça, ao lado de um registro de válvula vermelho em um fundo escuro. Texto na arte: "QUEM ESTÁ CERTO?".
+img-1_anthropic.com.jpg: Ilustração de um rosto de perfil em traços pretos e uma mão, com uma rede de pontos ligados por linhas cor de salmão, sobre fundo claro.
+img-2_anthropic.com.jpg: Ilustração de uma tela de computador sobre um suporte, com três pontos ligados por linhas pretas, sobre fundo laranja.

@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-25",
+  "titulo": "Steam libera conjuntos de conquistas no cliente beta",
+  "resumo": "A Steam ganhou conjuntos de conquistas com barra de progresso, troféu de conjunto completo e comparação com até três amigos. Para mim, é bom se for saudável.",
+  "tags": [
+    "Steam"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/steam-libera-conjuntos-de-conquistas-para-jogadores/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://pcgamer.com/software/platforms/steam-achievements-are-getting-a-huge-overhaul-with-separate-sets-for-dlc-and-season-passes-and-an-easy-way-to-compare-with-friends"
+    },
+    {
+      "nome": "God Is A Geek",
+      "url": "https://godisageek.com/2026/10/steam-achievement-sets-beta/"
+    }
+  ],
+  "corpo": [
+    "A Steam liberou no cliente beta, em 15 de outubro de 2026, os conjuntos de conquistas. O desenvolvedor agrupa as conquistas como quiser: um conjunto para o single player e outro para o multiplayer, um para cada DLC, e cada conjunto tem a própria barra de progresso. Conquistas de DLC ficam num conjunto separado e não derrubam mais o 100% do jogo base. Não há data oficial para o lançamento geral.",
+    "Quem completa um conjunto ganha um troféu de conjunto completo no perfil, que continua valendo mesmo se o jogo receber conquistas novas. Os desenvolvedores também podem arquivar conquistas sazonais ou de tempo limitado, que deixam de aparecer como pendentes. A página de conquistas foi refeita, com filtros para achar o que falta, e a aba Jogos perfeitos virou Concluídos.",
+    "Dá para comparar o progresso com até três amigos, com conquistas raras, conjuntos completos e progresso de DLC. Dezessete jogos já usam o sistema, entre eles Portal 2, Team Fortress 2, Left 4 Dead 2 e Forza Horizon 5. Não é uma platina única como a do PlayStation, mas chega perto, e vem depois de o Xbox lançar as Conquistas Míticas.",
+    "Acho legal, e acho que deve até ser promovido: conquista move as pessoas, e isso ajuda Sony, Microsoft e Valve, porque a gente joga mais para aumentar o número. A zoeira entre amigos é aceitável, mas o problema é quando alguém se acha superior só pela quantidade de conquistas. Para mim, a competição tem que ser saudável e não pode passar de uma linha."
+  ]
+}

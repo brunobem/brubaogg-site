@@ -1,0 +1,9 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Arte de Overwatch com personagens em estilo de ilustração, uma mulher de cabelo escuro na frente e um homem de colete atrás. Texto na arte: "PROTOCOLO EVE" e "BRUBAOGG".
+Thumb.png: Arte de Overwatch com personagens em estilo de ilustração, uma mulher de cabelo escuro na frente e um homem de colete atrás. Texto na arte: "PROTOCOLO EVE" e "BRUBAOGG".
+img-1_eu.shop.battle.net.jpg: Arte do evento Protocolo Eve, de Overwatch x Stellar Blade, com cinco personagens lado a lado, a do centro com traje branco e verde, diante de um círculo azul luminoso.
+img-2_eu.shop.battle.net.webp: Personagem de cabelo preto e traje branco e verde, a skin da Widowmaker como Eve, de pé diante de um círculo azul luminoso.
+img-3_eu.shop.battle.net.webp: Personagem de cabelo preto longo, com traje branco e azul e uma arma longa na mão, diante de um círculo azul luminoso.

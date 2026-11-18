@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Estátua facetada e dourada, com os braços abertos, contra o céu azul, com a logo de GTA 6. Texto na arte: "GOTY???".
+Thumb.png: Estátua facetada e dourada, com os braços abertos, contra o céu azul, com a logo de GTA 6. Texto na arte: "GOTY???".

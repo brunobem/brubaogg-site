@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Homem careca de barba e marca vermelha no rosto (Kratos), de terno azul e gravata vermelha, apontando o dedo como num tribunal de jogo de advogados, com o logo do PS5. Texto na arte: "OVERDRIVE".
+Thumb.png: Homem careca de barba e marca vermelha no rosto (Kratos), de terno azul e gravata vermelha, apontando o dedo como num tribunal de jogo de advogados, com o logo do PS5. Texto na arte: "OVERDRIVE".
+img-1_adrenaline.com.webp: Tela da biblioteca da loja Overdrive, com capas de jogos como Black Myth: Wukong, Baldur's Gate 3, No Man's Sky, Battlefield 6, Ready or Not e Forza Horizon 5.

@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-05",
+  "titulo": "Epic Games demite mais de 1.000 funcionários",
+  "resumo": "A Epic Games demitiu mais de 1.000 pessoas em 24 de março de 2026, cerca de 20% da equipe, citando a queda de engajamento do Fortnite.",
+  "tags": [
+    "Fortnite"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "The Sixth Axis",
+      "url": "https://www.thesixthaxis.com/2026/03/24/epic-confirms-layoffs-of-over-1000-employees-as-fortnite-engagement-slides/"
+    },
+    {
+      "nome": "Hitmarker",
+      "url": "https://hitmarker.net/news/epic-games-is-laying-off-over-1-000-employees-due-to-fortnite-underperformance-1679210"
+    },
+    {
+      "nome": "Gigazine",
+      "url": "https://gigazine.net/gsc_news/en/20260325-fortnite-epic-games-cuts-1000-jobs"
+    },
+    {
+      "nome": "PBS",
+      "url": "https://www.pbs.org/newshour/amp/economy/epic-games-lays-off-more-than-1000-employees-as-fortnite-engagement-slows"
+    }
+  ],
+  "corpo": [
+    "A Epic Games informou em 24 de março de 2026 que demitiria mais de 1.000 funcionários, cerca de 20% da equipe, ficando com cerca de 4.000. Em memorando, o CEO Tim Sweeney ligou os cortes à queda de engajamento do Fortnite desde 2025 e disse que a empresa estava gastando significativamente mais do que ganhava. Ele afirmou que os cortes não têm relação com inteligência artificial.",
+    "A Epic disse ter identificado mais de US$ 500 milhões em economias, em contratos, marketing e vagas abertas. Os demitidos recebem pelo menos quatro meses de salário-base, e alguns funcionários dos Estados Unidos, seis meses de plano de saúde. É a segunda grande rodada de cortes; a anterior foi em 2023, com 830 vagas, cerca de 16% da equipe. Relatos ligam o momento a mudanças no jogo, como modos saindo do ar e o aumento do preço dos V-Bucks.",
+    "Eu disse que a empresa não deu muitos detalhes e que circulava a ideia de corte de custos, porque o Fortnite não fatura tanto quanto antes, o que o memorando de Sweeney depois confirmou. Lembro que o jogo ficou muito tempo no auge e que isso já foi algo incrível, com tanto jogo por aí."
+  ]
+}

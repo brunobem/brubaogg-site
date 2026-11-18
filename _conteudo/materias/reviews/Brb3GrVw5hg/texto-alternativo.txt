@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Página de um livro roxo com um mago de barba branca e fones de ouvido, e o texto "Ah, Pontinho, meu rapaz!".
+img-2_steam.com.jpg: Pote azul transparente com uma paisagem de deserto e montanhas desenhada dentro, com personagens e pássaros.
+img-3_steam.com.jpg: Página amarela de um livro com um mapa colorido de uma vila, árvores e a frase "A música estava bombando.".

@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-02",
+  "publicar_em": "2026-11-04T07:00:00-03:00",
+  "titulo": "Fãs de Mass Effect põem outdoor na Times Square",
+  "resumo": "O grupo We Are Mass Effect exibiu um outdoor na Times Square para divulgar a petição pela série após o fechamento da BioWare. Acho a atitude bonita.",
+  "tags": [
+    "Mass Effect"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/mass-effect/mass-effect-fan-group-buys-billboard-in-times-square-promoting-petition-to-save-series/"
+    },
+    {
+      "nome": "Windows Central",
+      "url": "https://www.windowscentral.com/gaming/save-mass-effect-is-now-live-in-times-square-as-petition-surges-past-216-000-signatures"
+    },
+    {
+      "nome": "Nerdist",
+      "url": "https://nerdist.com/article/save-mass-effect-fan-campaign-gets-nyc-billboard-times-square/"
+    }
+  ],
+  "assunto": "fechamento-da-bioware",
+  "corpo": [
+    "O grupo de fãs We Are Mass Effect comprou espaço num telão na Times Square, em Nova York, para divulgar a petição #SaveMassEffect. O vídeo de 15 segundos passou durante todo o dia 26 de outubro de 2026, sempre aos 35 minutos de cada hora, no número 1560 da Broadway, na Duffy Square. A campanha tem a participação da criadora de conteúdo Kala Elizabeth.",
+    "A arte lembra a tela inicial do primeiro Mass Effect, com a faixa vermelha N7 e a frase Keelah si'yah, #SaveMassEffect. A petição, no Change.org, passava de 216 mil assinaturas na cobertura do dia. O foco não é salvar a BioWare, que fechou em 21 de outubro, e sim a série: o pedido é que a EA se comprometa a continuar Mass Effect como videogame, feito por ela mesma ou licenciado para outra empresa. A EA não respondeu.",
+    "Os fãs também planejaram um outdoor perto da sede da EA, na Califórnia. O valor do telão da Times Square não foi divulgado.",
+    "Para mim, é uma atitude linda, pelo menos no que eu acredito. A ressalva é que a gente não sabe o que acontece por trás das coisas e eu não ponho a mão no fogo por ninguém, mas prefiro acreditar que é um gesto bonito. Imagino que deva ter sido caro. A reivindicação é ampla, e levar a série para outro estúdio faz sentido para quem quer o jogo vivo."
+  ]
+}

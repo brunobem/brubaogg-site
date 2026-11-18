@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-02",
+  "titulo": "Game Pass mais barato e parceria com a Netflix: o rumor",
+  "resumo": "Em março, o The Information disse que a nova CEO do Xbox avalia um Game Pass mais barato e um pacote com a Netflix. O corte veio em abril.",
+  "tags": [
+    "Game Pass"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Pure Xbox",
+      "url": "https://www.purexbox.com/news/2026/03/new-xbox-boss-has-considered-pricing-revamp-for-game-pass-claims-report"
+    },
+    {
+      "nome": "Players",
+      "url": "https://players.com.ua/en/news/new-xbox-ceo-plans-cheaper-game-pass-and-possible-bundle-with-netflix/"
+    },
+    {
+      "nome": "Canaltech",
+      "url": "https://canaltech.com.br/games/game-pass-mais-barato-xbox-avalia-novos-precos-e-parceria-com-a-netflix/"
+    },
+    {
+      "nome": "Hitmarker",
+      "url": "https://hitmarker.net/news/xbox-game-pass-recent-price-cut-is-working-ceo-asha-sharma-says-1724461"
+    }
+  ],
+  "assunto": "game-pass-preco",
+  "corpo": [
+    "O jornal The Information informou em 24 de março de 2026 que Asha Sharma, que assumiu o Xbox no lugar de Phil Spencer em fevereiro, avaliava uma revisão de preços do Game Pass, com planos mais baratos para atrair novos jogadores, possivelmente com anúncios, e uma parceria com a Netflix para um pacote conjunto. O co-CEO da Netflix, Greg Peters, disse ter trocado ideias com Sharma, mas que não havia planos sólidos e que não eliminaria nenhuma possibilidade.",
+    "Trato a informação como rumor de um único veículo. Pelo que sei, a Netflix tinha uma desenvolvedora e publicadora de jogos que acabou se encerrando, e teria se aproximado do Game Pass para virar uma desenvolvedora dentro do guarda-chuva do Xbox; as fontes consultadas não confirmam esse detalhe. Ligo o movimento ao que a Nintendo faz ao baixar o preço dos seus jogos.",
+    "O rumor se confirmou em parte: em abril de 2026, a Microsoft reduziu o Game Pass Ultimate de US$ 29,99 para US$ 22,99 e o PC Game Pass de US$ 16,49 para US$ 13,99, em troca de os novos Call of Duty deixarem de chegar ao serviço no primeiro dia. A parceria com a Netflix não foi anunciada nas fontes consultadas."
+  ]
+}

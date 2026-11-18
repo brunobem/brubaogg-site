@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Mulher de cabelo preto longo flutuando de cabeça para baixo em meio a anéis de luz turquesa, em traje justo.
+img-2_steam.com.jpg: Close de uma jovem de cabelo castanho curto, sorrindo e apontando a mão para a câmera, num ambiente com garrafas.
+img-3_steam.com.jpg: Mulher de rabo de cavalo e um homem de jaqueta diante de uma grande cápsula metálica com uma luz azul.

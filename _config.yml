@@ -1,0 +1,9 @@
+# Configuracao do GitHub Pages (Jekyll). Aqui so dizemos o que NAO deve ser publicado.
+# Pastas que comecam com "_" (_ferramentas, _conteudo, _marca) ja sao ignoradas automaticamente.
+exclude:
+  - README.md
+  - package.json
+  - package-lock.json
+  - assets/icones/LEIA-ME.md
+  - assets/fonts/LEIA-ME.md
+  - assets/img/rodape/LEIA-ME.md

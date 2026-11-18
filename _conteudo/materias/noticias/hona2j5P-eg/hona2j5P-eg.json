@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-12",
+  "titulo": "The Last of Us Online estava 80% pronto, diz ex-diretor",
+  "resumo": "Vinit Agarwal, ex-diretor de The Last of Us Online, disse que o jogo estava perto de 80% e que soube do cancelamento um dia antes.",
+  "tags": [
+    "The Last of Us"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "TechRadar",
+      "url": "https://www.techradar.com/gaming/the-last-of-us-online-director-reveals-naughty-dog-had-to-choose-between-canceling-the-80-percent-completed-game-and-intergalactic-the-heretic-prophet-it-was-soul-crushing-to-find-out-that-it-was-getting-canceled-24-hours-before-it-was-announced-publicly"
+    },
+    {
+      "nome": "Dark Horizons",
+      "url": "https://www.darkhorizons.com/the-last-of-us-multiplayer-was-80-done/"
+    },
+    {
+      "nome": "T-Break",
+      "url": "https://tbreak.com/last-us-online-cancelled-80-percent-complete"
+    },
+    {
+      "nome": "LevelUp",
+      "url": "https://www.levelup.com/en/news/the-last-of-us-online-cost-playstation-hundreds-of-millions-before-its-cancellation/"
+    }
+  ],
+  "corpo": [
+    "Vinit Agarwal, ex-diretor do multiplayer de The Last of Us da Naughty Dog, disse que o jogo estava quase em 80% de conclusão e muito perto de ficar pronto quando foi cancelado, em dezembro de 2023. Ele contou que trabalhou sete anos no projeto e que soube do cancelamento 24 horas antes de o público saber, o que descreveu como de partir o coração e devastador.",
+    "A Naughty Dog disse na época que não queria se tornar um estúdio apenas de jogos de serviço. Na versão de Agarwal, o estúdio teve de escolher entre cancelar o jogo, já em estágio avançado, e Intergalactic: The Heretic Prophet. Outros relatos falam em quatro anos de desenvolvimento e uma equipe de centenas de pessoas, o que conflita com os sete anos citados.",
+    "Lembro que o desenvolvimento de um jogo costuma ficar muito mais pronto no final, e que o jogo estava quase entrando em modo gold. É bem triste: eu não queria um jogo multiplayer, mas, se tivesse, estaria por aí."
+  ]
+}

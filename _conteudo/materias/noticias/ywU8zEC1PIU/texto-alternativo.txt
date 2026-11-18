@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Dois personagens de Cyberpunk 2077, um de jaqueta de couro e outro de óculos vermelhos, diante de uma tela de personagens, com a logo do jogo. Texto na arte: "UPDATE 2.5".
+Thumb.png: Dois personagens de Cyberpunk 2077, um de jaqueta de couro e outro de óculos vermelhos, diante de uma tela de personagens, com a logo do jogo. Texto na arte: "UPDATE 2.5".
+img-1_br.ign.com.png: Rua de neon de Night City, com uma pessoa de costas olhando um letreiro e outra sentada à direita.

@@ -1,0 +1,32 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-10",
+  "titulo": "SteamOS roda no Mac com o projeto FX Steam Launcher",
+  "resumo": "O FX Steam Launcher leva o SteamOS a Macs com chip da Apple e roda jogos de Windows. Para mim, é um respiro para quem tem Mac e fica sem jogos.",
+  "tags": [
+    "SteamOS",
+    "Steam"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/software/operating-systems/modders-bring-steam-frame-build-of-steamos-and-all-of-its-translation-layer-goodness-to-mac/"
+    },
+    {
+      "nome": "TBreak",
+      "url": "https://tbreak.com/steamos-on-mac-fx-steam-launcher/"
+    },
+    {
+      "nome": "iThinkDifferent",
+      "url": "https://www.ithinkdiff.com/steamos-on-mac-fx-steam-launcher/"
+    }
+  ],
+  "corpo": [
+    "O FX Steam Launcher é um projeto independente e de código aberto que leva o SteamOS, o sistema do Steam Deck, para Macs com chip da Apple. O truque é usar a versão ARM64 do SteamOS que a Valve fez para o Steam Frame, o óculos de realidade virtual dela, que usa o mesmo tipo de processador dos Macs. O launcher baixa a imagem oficial dos servidores da Valve e cuida das atualizações.",
+    "Para rodar jogos de Windows, ele usa as mesmas camadas de tradução do Steam Deck, como Proton, FEX, DXVK e VKD3D-Proton, e passa os gráficos para o sistema da Apple. Num teste do canal ETA Prime, num Mac com chip M4 Max e configuração alta, Witcher 3, Stellar Blade e Left 4 Dead 2 passaram de 70 FPS, e o Left 4 Dead 2 passou de 200 FPS. O Stellar Blade rodou em 800p, e os outros em até 1080p.",
+    "Há limites importantes. O projeto não é oficial: a Valve hospeda a imagem do sistema, mas não participa dele. O SteamOS roda numa máquina virtual dentro do Mac, e não numa instalação nativa, e o projeto exige macOS 15 ou mais novo, com algumas funções só no macOS 26. O teste foi num Mac muito caro, então nem todo jogo deve rodar tão bem.",
+    "Para mim, é muito interessante. Quem usa Mac fica de fora da maioria dos jogos, principalmente dos indies que viralizam do nada, e é frustrante investir numa máquina cara e não poder jogar nem um simples Supermarket Simulator. Normalmente seriam necessárias gambiarras complicadas, e acho que uma opção assim facilita a vida de quem não é usuário avançado."
+  ]
+}

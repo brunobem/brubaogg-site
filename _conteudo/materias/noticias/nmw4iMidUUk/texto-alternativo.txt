@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Celular rosa mostrando o aplicativo iFruit com a lista de atividades, como corrida de rua e assalto à joalheria, com a logo de GTA 6. Texto na arte: "APLICATIVO".
+Thumb.png: Celular rosa mostrando o aplicativo iFruit com a lista de atividades, como corrida de rua e assalto à joalheria, com a logo de GTA 6. Texto na arte: "APLICATIVO".

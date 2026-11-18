@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-12",
+  "titulo": "Nexus Mods não proíbe IA, mas exige aviso nos mods",
+  "resumo": "O Nexus Mods passou a exigir aviso de uso de IA em todo mod, sem proibir. Para mim, é o caminho certo, mas IA não cria, copia.",
+  "tags": [
+    "Nexus Mods",
+    "IA"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/nexus-mods-takes-the-valve-approach-to-ai-generated-content-no-outright-bans-but-mandatory-disclosures/"
+    },
+    {
+      "nome": "Kotaku",
+      "url": "https://kotaku.com/nexus-mods-gen-ai-disclosure-rules-steam-itch-update-2000753301"
+    },
+    {
+      "nome": "80 Level",
+      "url": "https://80.lv/articles/nexus-mods-introduces-mandatory-ai-disclosure/"
+    }
+  ],
+  "assunto": "steam-clones-e-ia",
+  "corpo": [
+    "O Nexus Mods, maior site de mods do PC, decidiu não proibir conteúdo feito com IA, mas passou a exigir aviso. As regras valem desde 3 de novembro de 2026. Ao subir um mod, o criador marca se ele foi gerado por IA, se teve ajuda de IA, e aí precisa explicar onde e como usou, ou se não usou IA. O aviso vale também para o material de divulgação.",
+    "O dono do site, Victor Folmann, explicou que um banimento não tiraria a IA do processo de criação de mods, só faria as pessoas pararem de dizer que usam. Os usuários ganham filtros para esconder conteúdo feito com IA, e o Nexus promete nunca usar os mods para treinar IA nem vendê-los com esse fim. Os mods antigos têm 60 dias, até 2 de janeiro de 2027, para se adequar.",
+    "É o mesmo caminho da Valve na Steam, que também não proíbe IA, mas pede aviso, e disse que não quer ser guardiã das ferramentas que os desenvolvedores usam. O Folmann reconhece que nem todo mundo vai avisar por conta própria, por isso o site promete moderação com regras claras e consequências para quem descumprir.",
+    "Eu gosto muito dessa regra. Para mim, não é lutar contra a maré, é entender como ela funciona e deixar o próprio jogador decidir se faz sentido usar ou não. Mod é uma extensão do desenvolvimento do jogo, e há mods incríveis por aí. Mas quem usa IA tem que deixar claro, porque, na minha opinião, IA não cria, copia: ela se baseia no que já existe. Pode juntar coisas de um jeito novo, mas a base é sempre outra. Esse é um debate aberto, e essa é a minha leitura."
+  ]
+}

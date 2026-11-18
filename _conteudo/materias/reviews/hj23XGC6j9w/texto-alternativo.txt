@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Bebê careca de macacão amarelo sentado numa cadeira alta, ao lado de uma mamadeira, com a lista de tarefas "Night 1" na tela.
+img-2_steam.com.jpg: Bebê de macacão amarelo e fralda ao lado de um escorregador e de uma gangorra com outro bebê, numa sala de brinquedos.
+img-3_steam.com.jpg: Bebê de fralda pendurado numa cadeira numa sala escura, com a lista de tarefas "Night 3" na tela.

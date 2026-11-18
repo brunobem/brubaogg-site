@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Dois guerreiros de espada, um deles de costas, diante de criaturas sombrias, com a logo de Onimusha: Way of the Sword. Texto na arte: "DIFICULDADE".
+Thumb.png: Dois guerreiros de espada, um deles de costas, diante de criaturas sombrias, com a logo de Onimusha: Way of the Sword. Texto na arte: "DIFICULDADE".
+img-1_conectageek.com.br.webp: Mulher de cabelo ruivo e roupa verde, de perfil, diante de uma máscara azul e de uma mão de pele azulada, numa cena escura.
+img-2_gamehall.com.br.jpg: Guerreiro de chapéu largo e capa, empunhando uma espada, com o título "Onimusha: Way of the Sword".

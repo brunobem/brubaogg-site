@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Colagem de soldados de Call of Duty, incluindo o capitão Price e Ghost, de máscara de caveira, com siglas de jogos da série e a logo. Texto na arte: "JOGO FUTURISTA?".
+Thumb.png: Colagem de soldados de Call of Duty, incluindo o capitão Price e Ghost, de máscara de caveira, com siglas de jogos da série e a logo. Texto na arte: "JOGO FUTURISTA?".
+img-1_flowgames.gg.jpg: Ghost, de máscara de caveira e boné, fazendo sinal de positivo, com soldados em combate e explosões ao fundo.
+img-2_steam.com.jpg: Três soldados de capacete e equipamento avançando com fuzis por um beco escuro, em tons de preto e branco.

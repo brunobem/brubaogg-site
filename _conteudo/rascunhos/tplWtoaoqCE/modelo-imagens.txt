@@ -1,0 +1,19 @@
+MODELO DE IMAGENS DESTA MATÉRIA (o site ignora este arquivo; pode apagar depois)
+
+Coloque as imagens NESTA pasta, ao lado do tplWtoaoqCE.json, com estes nomes:
+
+  Thumb.png         capa do player (vídeo horizontal, 16:9). Você sobe; não achei pasta de thumbnail deste vídeo.
+  Card.png          a mesma arte em 16:9 (cartões, home, compartilhamento). Você sobe.
+  img-1_site.jpg      imagem depois do parágrafo 1
+  img-2_site.jpg      imagem depois do parágrafo 2
+  img-3_site.jpg      imagem depois do parágrafo 3
+  img-4_site.jpg      imagem depois do parágrafo 4
+  img-5_site.jpg      imagem depois do parágrafo 5
+  img-6_site.jpg      imagem depois do parágrafo 6
+  img-7_site.jpg      imagem depois do parágrafo 7
+
+Extensões aceitas: jpg, png ou webp.
+No nome das imagens do texto, troque "site" pelo domínio de onde a imagem veio, sem espaço:
+  img-1_arkade.com.br.jpg   -> aparece "Imagem: arkade.com.br" embaixo da foto.
+Imagem do texto sem o domínio no nome faz o `npm run gerar` parar.
+Esta matéria tem 7 parágrafos, então os números de 1 a 7 caem depois do parágrafo de mesmo número.

@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-11",
+  "publicar_em": "2026-11-11T11:00:00-03:00",
+  "titulo": "Valve admite atraso de até 12 dias úteis na Steam",
+  "resumo": "A Valve diz que a revisão de jogos na Steam, de 3 a 5 dias, leva até 12 dias úteis. Para mim, é um sistema de qualidade, mas há dev esperando mais.",
+  "tags": [
+    "Steam"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/gaming-industry/valve-admits-its-running-behind-on-approving-steam-games-because-it-has-to-keep-re-reviewing-them-which-surely-has-nothing-to-do-with-ai/"
+    },
+    {
+      "nome": "Game Developer",
+      "url": "https://gamedeveloper.com/business/valve-warns-of-slower-steam-approval-process-due-to-flood-of-new-games"
+    },
+    {
+      "nome": "God Is a Geek",
+      "url": "https://godisageek.com/2026/11/steam-game-review-12-business-days/"
+    }
+  ],
+  "assunto": "steam-clones-e-ia",
+  "corpo": [
+    "A Valve admitiu, numa atualização do Steamworks de 3 de novembro de 2026, que está atrasada na aprovação de jogos na Steam. Ela diz que costuma testar cada versão de jogo em 3 a 5 dias, mas que agora está levando até 12 dias úteis. Segundo a empresa, boa parte do atraso vem de ter que revisar jogos de novo: a versão chega com problema, volta para o desenvolvedor e precisa ser revisada outra vez.",
+    "A Valve também contou uma curiosidade: às vezes revisa versões que nunca foram jogadas pela Steam. Por isso criou novas listas de verificação, como testar o jogo pela Steam por pelo menos cinco minutos, confirmar que o salvamento na nuvem e as conquistas funcionam e ter ao menos cinco imagens de gameplay na página da loja. A empresa diz que vêm mais mudanças no processo.",
+    "Nem todo mundo está tranquilo: desenvolvedores relatam esperas de até 20 dias, e alguns dizem que não conseguem falar com a Valve. A empresa cita um aumento significativo de envios nos últimos meses, sem dar números. O PC Gamer acha que a causa é a enxurrada de jogos feitos às pressas com IA, mas a Valve não confirmou isso.",
+    "Para mim, a Valve veio com transparência depois da crítica recente do CEO da Epic, Tim Sweeney, de que a Steam atrasou os games. A ligação é leitura minha: ele falou de inovação, não da fila de aprovação. Não acho o atraso ruim: é um sistema de qualidade em que o desenvolvedor precisa testar o jogo. Pelo que entendi, a revisão é técnica e não julga se o jogo é bom, e suspeito que, com tanta IA no desenvolvimento, muita gente nem testa o jogo manualmente."
+  ]
+}

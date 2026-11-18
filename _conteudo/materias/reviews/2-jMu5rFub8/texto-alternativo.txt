@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Mulher de roupa vermelha sentada num trono de engrenagens e canos de cobre, numa sala com grandes janelas.
+img-2_steam.com.jpg: Detalhe de uma máquina de bronze em primeiro plano, com um autômato de pernas finas ao fundo, numa sala iluminada pelo sol.
+img-3_steam.com.jpg: Rosto de um homem de cabelo grisalho, com sangue na testa, olhando para o lado, de capa escura sobre um fundo escuro.

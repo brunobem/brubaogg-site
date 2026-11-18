@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: CJ, personagem de GTA San Andreas, pulando numa rua da cidade, com o logo do Nexus Mods em primeiro plano. Texto na arte: "NEXUS MODS", "IA NOS MODS" e "BRUBAOGG".
+Thumb.png: CJ, personagem de GTA San Andreas, pulando numa rua da cidade, com o logo do Nexus Mods em primeiro plano. Texto na arte: "NEXUS MODS", "IA NOS MODS" e "BRUBAOGG".
+img-1_thegamer.com.jpg: Captura de tela de um jogo com um mod que põe o rosto de um trem de brinquedo num personagem gigante, em meio a fogo e a uma personagem em primeiro plano.
+img-2_pcgamer.com.jpg: Captura de tela de um mod que coloca o Shrek num cenário de RPG, perto de um personagem de capuz, num campo verde.

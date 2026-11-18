@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Gráfico e etiqueta de preço de US$ 70 ao lado da logo do Xbox Game Pass e de um ícone de grupo, sobre um fundo verde. Texto na arte: "LAN HOUSE".
+Thumb.png: Gráfico e etiqueta de preço de US$ 70 ao lado da logo do Xbox Game Pass e de um ícone de grupo, sobre um fundo verde. Texto na arte: "LAN HOUSE".
+img-1_ovicio.com.webp: Logo do Xbox Game Pass ao centro de uma colagem escurecida de personagens de vários jogos.
+img-2_colunatech.com.jpeg: Logo do Xbox Game Pass sobre uma colagem de personagens e cenários de vários jogos.

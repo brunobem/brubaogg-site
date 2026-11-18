@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Homem de tranças, óculos escuros, corrente dourada e terno azul numa festa à noite, entre plantas, com a logo de GTA 6. Texto na arte: "GANGSTER".
+thumb.png: Homem de tranças, óculos escuros, corrente dourada e terno azul numa festa à noite, entre plantas, com a logo de GTA 6. Texto na arte: "GANGSTER".

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Busca | BRUBAOGG</title>
+<meta name="description" content="Busque no site do BRUBAOGG por jogo, notícia, review ou lançamento.">
+<meta name="theme-color" content="#302D33">
+<meta property="og:title" content="Busca | BRUBAOGG">
+<meta property="og:description" content="Busque no site do BRUBAOGG por jogo, notícia, review ou lançamento.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BRUBAOGG">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://brubaogg.com.br/assets/img/compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="assets/img/logo-96.png">
+<!--site:recursos-->
+<link rel="preload" href="assets/fonts/lilita-one-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
+<!--/site:recursos-->
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <!--site:header--><header class="topbar">
+      <a class="brand" href="/" aria-label="BRUBAOGG, página inicial"><img src="assets/img/logo-96.png" alt="" width="44" height="44"> BRUBAOGG</a>
+      <form class="search" role="search" action="busca.html" method="get" data-base="">
+        <svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 1 0 4.900 14.300l5.400 5.400 1.400-1.400-5.400-5.400A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/></svg>
+        <input type="search" name="q" placeholder="Buscar matérias..." aria-label="Buscar no site" maxlength="200" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+        <button type="submit" class="sr-only" tabindex="-1">Buscar</button>
+        <div class="search-results" id="search-results" role="listbox" hidden></div>
+        <span class="sr-only" id="search-status" role="status" aria-live="polite"></span>
+      </form>
+      <div class="social-bar"><a href="https://youtube.com/@brubaogg" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.tiktok.com/@brubaogameplay" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.instagram.com/brubaogg" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a><a href="https://www.twitch.tv/brubaogg" target="_blank" rel="noopener" aria-label="Twitch" title="Twitch"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg></a><a href="https://discord.gg/tQkkXMqAnU" target="_blank" rel="noopener" aria-label="Discord" title="Discord"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></a></div>
+    </header>
+    <nav class="nav-site" aria-label="Seções do site">
+      <button class="nav-menu" type="button" aria-haspopup="dialog" aria-controls="menu-painel" aria-expanded="false" hidden><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16" /> <path d="M4 12h16" /> <path d="M4 19h16" /></svg> Menu</button>
+      <ul class="nav-site-links">
+        <li><a class="nav-casa" href="/" aria-label="Início"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg></a></li>
+        <li><a href="gta6">GTA 6</a></li>
+        <li><a href="noticias">Notícias</a></li>
+        <li><a href="reviews">Reviews</a></li>
+        <li><a href="lancamentos">Lançamentos</a></li>
+        <li><a href="wiki">Wiki</a></li>
+        <li><a href="cortes">Cortes</a></li>
+        <li><a href="lives">Lives</a></li>
+      </ul>
+    </nav>
+    <dialog class="menu-painel" id="menu-painel" aria-label="Menu do site">
+      <div class="menu-caixa">
+        <div class="menu-topo">
+          <a class="menu-marca" href="/" aria-label="BRUBAOGG, página inicial"><img src="assets/img/logo-96.png" alt="" width="56" height="56"></a>
+          <button class="menu-fechar" type="button" aria-label="Fechar menu" autofocus><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></svg></button>
+        </div>
+        <ul class="menu-lista">
+          <li><a href="gta6">GTA 6</a></li>
+          <li><a href="noticias">Notícias</a></li>
+          <li><a href="reviews">Reviews</a></li>
+          <li><a href="lancamentos">Lançamentos</a></li>
+          <li><a href="wiki">Wiki</a></li>
+          <li><a href="cortes">Cortes</a></li>
+          <li><a href="lives">Lives</a></li>
+        </ul>
+        <ul class="menu-lista menu-extras">
+          <li><a href="/">Início</a></li>
+          <li><a href="tags">Tags</a></li>
+          <li><a href="arquivo">Arquivo</a></li>
+          <li><a href="sobre">Sobre e contato</a></li>
+        </ul>
+      </div>
+    </dialog>
+    <script src="assets/js/nav.js" defer></script><!--/site:header-->
+
+    <script>if (/[?&](q|cat|n)=/.test(location.search)) document.documentElement.classList.add('com-busca');</script>
+    <main>
+      <section class="cat-hero">
+        <h1><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /></svg> Busca</h1>
+        <p class="lead" id="busca-titulo">Matérias mais recentes</p>
+      </section>
+      <div class="busca-filtros" id="busca-filtros" role="group" aria-label="Filtrar por categoria" data-categorias="Notícia|Review|Lançamento|GTA 6|Série" hidden></div>
+      <p class="busca-atalhos" id="busca-atalhos" hidden></p>
+      <p class="busca-status" id="busca-status" role="status" aria-live="polite"></p>
+      <section class="news-grid" id="busca-lista" aria-label="Resultados">
+          <a class="news-card" href="noticias/bug-faz-nier-automata-pular-de-50-gb-para-366-gb">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/zmlq7b3ingy/card-198e2e30-640.webp" srcset="https://img.brubaogg.com.br/m/zmlq7b3ingy/card-198e2e30-480.webp 480w, https://img.brubaogg.com.br/m/zmlq7b3ingy/card-198e2e30-640.webp 640w, https://img.brubaogg.com.br/m/zmlq7b3ingy/card-198e2e30-800.webp 800w, https://img.brubaogg.com.br/m/zmlq7b3ingy/card-198e2e30-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="2B e 9S, de Nier: Automata, numa cidade em ruínas, com o logo do jogo. Texto na arte: &quot;50 GB PARA 366 GB&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Bug faz Nier: Automata pular de 50 GB para 366 GB</b>
+              <span class="news-excerpt">Uma atualização na Steam fez o Nier: Automata pedir 366 GB. A Square Enix investiga, e tudo indica que é bug nas DLCs, não conteúdo novo.</span>
+              <small class="news-date">14 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/rockstar-faz-promocao-de-gta-antigos-so-no-pc">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/oh2azvizmwi/card-99fa62c0-640.webp" srcset="https://img.brubaogg.com.br/m/oh2azvizmwi/card-99fa62c0-480.webp 480w, https://img.brubaogg.com.br/m/oh2azvizmwi/card-99fa62c0-640.webp 640w, https://img.brubaogg.com.br/m/oh2azvizmwi/card-99fa62c0-800.webp 800w, https://img.brubaogg.com.br/m/oh2azvizmwi/card-99fa62c0-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Colagem com as capas de GTA III, GTA Vice City e GTA San Andreas, em estilo de quadrinhos. Texto na arte: &quot;GTA EM PROMOÇÃO&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">Rockstar faz promoção de GTA antigos só no PC</b>
+              <span class="news-excerpt">A Steam tem a GTA Trilogy com 67% de desconto e o GTA 4 com 70% até 19 de novembro, dia em que o GTA 6 sai sem versão de PC.</span>
+              <small class="news-date">14 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/ex-rockstar-ia-pode-apressar-o-gta-6-no-pc">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/bmgxojrahpw/card-b069d765-640.webp" srcset="https://img.brubaogg.com.br/m/bmgxojrahpw/card-b069d765-480.webp 480w, https://img.brubaogg.com.br/m/bmgxojrahpw/card-b069d765-640.webp 640w, https://img.brubaogg.com.br/m/bmgxojrahpw/card-b069d765-800.webp 800w, https://img.brubaogg.com.br/m/bmgxojrahpw/card-b069d765-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Jason e Lucia, de GTA 6, encostados num carro, ao lado do logo do GTA VI. Texto na arte: &quot;GTA 6 NO PC&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">Ex-Rockstar: IA pode apressar o GTA 6 no PC</b>
+              <span class="news-excerpt">O ex-diretor técnico da Rockstar Obbe Vermeij diz que ports feitos com IA podem apressar o GTA 6 no PC. Para mim, a Rockstar não vai esperar tanto.</span>
+              <small class="news-date">14 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/miami-heat-revela-uniforme-de-vice-city-do-gta-6">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/p_7agawieom/card-d823b820-640.webp" srcset="https://img.brubaogg.com.br/m/p_7agawieom/card-d823b820-480.webp 480w, https://img.brubaogg.com.br/m/p_7agawieom/card-d823b820-640.webp 640w, https://img.brubaogg.com.br/m/p_7agawieom/card-d823b820-800.webp 800w, https://img.brubaogg.com.br/m/p_7agawieom/card-d823b820-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Silhueta escura de uma pessoa atrás do logo do GTA VI, sobre fundo rosa. Texto na arte: &quot;CAMISAS DO MIAMI HEAT&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">Miami Heat revela uniforme de Vice City do GTA 6</b>
+              <span class="news-excerpt">O Miami Heat joga em 18 de novembro com um uniforme de Vice City, feito com a Nike e a Cactus Jack. Para mim, faltou GTA na camisa.</span>
+              <small class="news-date">13 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/overwatch-widowmaker-vira-eve-de-stellar-blade">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/0mjszdtyypy/card-debaa248-640.webp" srcset="https://img.brubaogg.com.br/m/0mjszdtyypy/card-debaa248-480.webp 480w, https://img.brubaogg.com.br/m/0mjszdtyypy/card-debaa248-640.webp 640w, https://img.brubaogg.com.br/m/0mjszdtyypy/card-debaa248-800.webp 800w, https://img.brubaogg.com.br/m/0mjszdtyypy/card-debaa248-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Arte de Overwatch com personagens em estilo de ilustração, uma mulher de cabelo escuro na frente e um homem de colete atrás. Texto na arte: &quot;PROTOCOLO EVE&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Overwatch: Widowmaker vira Eve, de Stellar Blade</b>
+              <span class="news-excerpt">O evento Protocolo Eve leva cinco skins de Stellar Blade ao Overwatch até 17 de novembro. Para mim, esse visual no jogo é apelação.</span>
+              <small class="news-date">13 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/remake-de-ocarina-of-time-ja-roda-fora-do-switch-2">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/drz1oylk3li/card-9355047b-640.webp" srcset="https://img.brubaogg.com.br/m/drz1oylk3li/card-9355047b-480.webp 480w, https://img.brubaogg.com.br/m/drz1oylk3li/card-9355047b-640.webp 640w, https://img.brubaogg.com.br/m/drz1oylk3li/card-9355047b-800.webp 800w, https://img.brubaogg.com.br/m/drz1oylk3li/card-9355047b-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Close de um personagem de cabelo laranja e olhos azuis grandes, com o logo de The Legend of Zelda. Texto na arte: &quot;ZELDA NO PC&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Remake de Ocarina of Time já roda fora do Switch 2</b>
+              <span class="news-excerpt">O remake de Ocarina of Time já foi emulado no PC e há quem tente rodá-lo num PS5 com jailbreak. Para mim, a dúvida é se a Nintendo vai reagir.</span>
+              <small class="news-date">13 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/take-two-diz-que-gta-6-e-feito-a-mao-mas-usa-ia">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/i1ui22y9kve/card-7be463b2-640.webp" srcset="https://img.brubaogg.com.br/m/i1ui22y9kve/card-7be463b2-480.webp 480w, https://img.brubaogg.com.br/m/i1ui22y9kve/card-7be463b2-640.webp 640w, https://img.brubaogg.com.br/m/i1ui22y9kve/card-7be463b2-800.webp 800w, https://img.brubaogg.com.br/m/i1ui22y9kve/card-7be463b2-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Close do rosto de um homem de cabelo escuro e expressão séria, o CEO da Take-Two. Texto na arte: &quot;CEO DA TAKE-TWO&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">Take-Two diz que GTA 6 é feito à mão, mas usa IA</b>
+              <span class="news-excerpt">O CEO da Take-Two diz que o GTA 6 é feito à mão, mas que a empresa usa IA em processos. Para mim, esse discurso é uma ladainha.</span>
+              <small class="news-date">12 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/app-do-xbox-no-pc-fica-ate-60-mais-rapido">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/4pqybcxjlee/card-a3a4b41e-640.webp" srcset="https://img.brubaogg.com.br/m/4pqybcxjlee/card-a3a4b41e-480.webp 480w, https://img.brubaogg.com.br/m/4pqybcxjlee/card-a3a4b41e-640.webp 640w, https://img.brubaogg.com.br/m/4pqybcxjlee/card-a3a4b41e-800.webp 800w, https://img.brubaogg.com.br/m/4pqybcxjlee/card-a3a4b41e-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Tela do aplicativo do Xbox no PC, com o menu do perfil, a seção &quot;Jump back in&quot; e o logo do Xbox Game Pass. Texto na arte: &quot;APLICATIVO MAIS RAPIDO&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">App do Xbox no PC fica até 60% mais rápido</b>
+              <span class="news-excerpt">A Microsoft deixou o app do Xbox no PC até 60% mais rápido e com visual novo, por ora só para Insiders. Para mim, o problema é o consumo.</span>
+              <small class="news-date">12 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/nexus-mods-nao-proibe-ia-mas-exige-aviso-nos-mods">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/0kg8p1hi8pw/card-9791ee2b-640.webp" srcset="https://img.brubaogg.com.br/m/0kg8p1hi8pw/card-9791ee2b-480.webp 480w, https://img.brubaogg.com.br/m/0kg8p1hi8pw/card-9791ee2b-640.webp 640w, https://img.brubaogg.com.br/m/0kg8p1hi8pw/card-9791ee2b-800.webp 800w, https://img.brubaogg.com.br/m/0kg8p1hi8pw/card-9791ee2b-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="CJ, personagem de GTA San Andreas, pulando numa rua da cidade, com o logo do Nexus Mods em primeiro plano. Texto na arte: &quot;NEXUS MODS&quot;, &quot;IA NOS MODS&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Nexus Mods não proíbe IA, mas exige aviso nos mods</b>
+              <span class="news-excerpt">O Nexus Mods passou a exigir aviso de uso de IA em todo mod, sem proibir. Para mim, é o caminho certo, mas IA não cria, copia.</span>
+              <small class="news-date">12 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/god-of-war-laufey-e-adiado-para-20-de-maio-de-2027">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/dnmuaip8j-s/card-32121e74-640.webp" srcset="https://img.brubaogg.com.br/m/dnmuaip8j-s/card-32121e74-480.webp 480w, https://img.brubaogg.com.br/m/dnmuaip8j-s/card-32121e74-640.webp 640w, https://img.brubaogg.com.br/m/dnmuaip8j-s/card-32121e74-800.webp 800w, https://img.brubaogg.com.br/m/dnmuaip8j-s/card-32121e74-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Faye, mulher ruiva de olhos azuis e sorriso discreto, ao centro; ao lado, Kratos gritando, de barba e tinta de guerra, e um guerreiro barbudo de olhos brilhantes. Texto na arte: &quot;ADIADO PARA MAIO DE 2027&quot; e &quot;BRUBAOGG&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">God of War Laufey é adiado para 20 de maio de 2027</b>
+              <span class="news-excerpt">O Santa Monica Studio adiou God of War Laufey, do PS5, de fevereiro para maio de 2027. Para mim, a justificativa é sempre a mesma frase.</span>
+              <small class="news-date">11 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/valve-admite-atraso-de-ate-12-dias-uteis-na-steam">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/_bcwdmjx7ju/card-e6e9835a-640.webp" srcset="https://img.brubaogg.com.br/m/_bcwdmjx7ju/card-e6e9835a-480.webp 480w, https://img.brubaogg.com.br/m/_bcwdmjx7ju/card-e6e9835a-640.webp 640w, https://img.brubaogg.com.br/m/_bcwdmjx7ju/card-e6e9835a-800.webp 800w, https://img.brubaogg.com.br/m/_bcwdmjx7ju/card-e6e9835a-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Close da lateral de uma cabeça careca com um registro de válvula vermelho parafusado, como se fosse uma torneira. Texto na arte: &quot;JOGOS NA STEAM&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Valve admite atraso de até 12 dias úteis na Steam</b>
+              <span class="news-excerpt">A Valve diz que a revisão de jogos na Steam, de 3 a 5 dias, leva até 12 dias úteis. Para mim, é um sistema de qualidade, mas há dev esperando mais.</span>
+              <small class="news-date">11 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/ubisoft-quer-comprar-a-arkane-estudio-de-dishonored">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/m6s1fpv-jmi/card-57d4680c-640.webp" srcset="https://img.brubaogg.com.br/m/m6s1fpv-jmi/card-57d4680c-480.webp 480w, https://img.brubaogg.com.br/m/m6s1fpv-jmi/card-57d4680c-640.webp 640w, https://img.brubaogg.com.br/m/m6s1fpv-jmi/card-57d4680c-800.webp 800w, https://img.brubaogg.com.br/m/m6s1fpv-jmi/card-57d4680c-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Logo da Ubisoft sobre um céu de nuvens escuras, com navios ao fundo. Texto na arte: &quot;UBISOFT QUER COMPRAR A ARKANE&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Ubisoft quer comprar a Arkane, estúdio de Dishonored</b>
+              <span class="news-excerpt">Segundo a Bloomberg, a Ubisoft está entre os interessados na Arkane Lyon, que o Xbox quis fechar. Para mim, a compra pode ser salvação ou prego no caixão.</span>
+              <small class="news-date">11 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/ps5-ganha-firmware-14-22-de-seguranca-antes-do-gta-6">
+            <span class="thumb"><img src="https://i.ytimg.com/vi/Mj4wUTobJuk/hqdefault.jpg" alt="" loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">PS5 ganha firmware 14.22, de segurança, antes do GTA 6</b>
+              <span class="news-excerpt">A Sony lançou a 14.22 do PS5 só com correções de segurança, 12 dias após a 14.20. Para mim, a briga com o jailbreak começou bem antes do GTA 6.</span>
+              <small class="news-date">10 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/steamos-roda-no-mac-com-o-projeto-fx-steam-launcher">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/hd4dhv4od4q/card-403e6a0a-640.webp" srcset="https://img.brubaogg.com.br/m/hd4dhv4od4q/card-403e6a0a-480.webp 480w, https://img.brubaogg.com.br/m/hd4dhv4od4q/card-403e6a0a-640.webp 640w, https://img.brubaogg.com.br/m/hd4dhv4od4q/card-403e6a0a-800.webp 800w, https://img.brubaogg.com.br/m/hd4dhv4od4q/card-403e6a0a-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Tela inicial do SteamOS com a biblioteca de jogos, como Ultrakill, Deadlock e The Last of Us Part II, e o logo da Steam. Texto na arte: &quot;SteamOS para o MAC&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">SteamOS roda no Mac com o projeto FX Steam Launcher</b>
+              <span class="news-excerpt">O FX Steam Launcher leva o SteamOS a Macs com chip da Apple e roda jogos de Windows. Para mim, é um respiro para quem tem Mac e fica sem jogos.</span>
+              <small class="news-date">10 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/anthropic-faz-o-claude-code-evitar-recriar-jogos">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/5vzwa1gunha/card-e5ec06ad-640.webp" srcset="https://img.brubaogg.com.br/m/5vzwa1gunha/card-e5ec06ad-480.webp 480w, https://img.brubaogg.com.br/m/5vzwa1gunha/card-e5ec06ad-640.webp 640w, https://img.brubaogg.com.br/m/5vzwa1gunha/card-e5ec06ad-800.webp 800w, https://img.brubaogg.com.br/m/5vzwa1gunha/card-e5ec06ad-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Ilustração de uma rede de pontos ligados dentro do contorno de uma cabeça, ao lado de um registro de válvula vermelho em um fundo escuro. Texto na arte: &quot;QUEM ESTÁ CERTO?&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Anthropic faz o Claude Code evitar recriar jogos</b>
+              <span class="news-excerpt">A Anthropic pôs no Claude Code uma regra contra recriar jogos, em meio à onda de clones na Steam. Fico do lado da Steam: o mercado se regula.</span>
+              <small class="news-date">10 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta-6-pode-passar-de-100-horas-com-tudo-o-que-tem">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/acew6mco55i/card-9f3e091e-640.webp" srcset="https://img.brubaogg.com.br/m/acew6mco55i/card-9f3e091e-480.webp 480w, https://img.brubaogg.com.br/m/acew6mco55i/card-9f3e091e-640.webp 640w, https://img.brubaogg.com.br/m/acew6mco55i/card-9f3e091e-800.webp 800w, https://img.brubaogg.com.br/m/acew6mco55i/card-9f3e091e-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Uma mulher e um homem de costas num cenário iluminado e enevoado, ela de mochila e ele de camiseta clara, com a logo de GTA VI. Texto na arte: &quot;+ 100 HORAS DE CAMPANHA&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6 pode passar de 100 horas com tudo o que tem</b>
+              <span class="news-excerpt">Com 80 horas de história, medidor de casal, Perfil Criminal e atividades extras, estimo que o GTA 6 passe de 100 horas. É estimativa minha, não da Rockstar.</span>
+              <small class="news-date">09 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta-6-o-relacionamento-de-jason-e-lucia-muda-o-final">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/r7nuhm0ocpe/card-3d6c6a50-640.webp" srcset="https://img.brubaogg.com.br/m/r7nuhm0ocpe/card-3d6c6a50-480.webp 480w, https://img.brubaogg.com.br/m/r7nuhm0ocpe/card-3d6c6a50-640.webp 640w, https://img.brubaogg.com.br/m/r7nuhm0ocpe/card-3d6c6a50-800.webp 800w, https://img.brubaogg.com.br/m/r7nuhm0ocpe/card-3d6c6a50-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Casal dançando numa balada de luzes roxas, ela de vestido vermelho de lantejoulas e cabelo cacheado, ele de óculos escuros e paletó cinza, com a logo de GTA VI. Texto na arte: &quot;AMOR&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: o relacionamento de Jason e Lucia muda o final?</b>
+              <span class="news-excerpt">A Edge descreve um medidor de casal de quatro níveis no GTA 6, e as escolhas só mudam a história num leque pequeno. Tenho dúvida sobre os finais.</span>
+              <small class="news-date">09 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta-6-perfil-criminal-vai-do-profissional-ao-irredimivel">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/jyc4lx79me8/card-86bc3045-640.webp" srcset="https://img.brubaogg.com.br/m/jyc4lx79me8/card-86bc3045-480.webp 480w, https://img.brubaogg.com.br/m/jyc4lx79me8/card-86bc3045-640.webp 640w, https://img.brubaogg.com.br/m/jyc4lx79me8/card-86bc3045-800.webp 800w, https://img.brubaogg.com.br/m/jyc4lx79me8/card-86bc3045-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Picape off-road com faixas amarelas num caminho de lama entre árvores, com a logo de GTA VI. Texto na arte: &quot;SISTEMA DE KARMA?&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6: Perfil Criminal vai do Profissional ao Irredimível</b>
+              <span class="news-excerpt">Rob Nelson deu detalhes do Perfil Criminal do GTA 6, escala de Profissional a Irredimível que muda a reação do mundo e da história. Para mim, não é um Nemesis.</span>
+              <small class="news-date">09 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/the-duskbloods-e-adiado-para-2027">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/7jvc4ozmltq/card-5b53ebb6-640.webp" srcset="https://img.brubaogg.com.br/m/7jvc4ozmltq/card-5b53ebb6-480.webp 480w, https://img.brubaogg.com.br/m/7jvc4ozmltq/card-5b53ebb6-640.webp 640w, https://img.brubaogg.com.br/m/7jvc4ozmltq/card-5b53ebb6-800.webp 800w, https://img.brubaogg.com.br/m/7jvc4ozmltq/card-5b53ebb6-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Personagem de cabelo branco e capa caminhando num salão gótico escuro, com vitrais ao fundo, e a logo de The Duskbloods. Texto na arte: &quot;ADIADO&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">The Duskbloods é adiado para 2027</b>
+              <span class="news-excerpt">A FromSoftware adiou The Duskbloods, exclusivo do Switch 2, para 2027, para ajustar regras e balanceamento após o teste de rede. Para mim, é ruim, mas é bom.</span>
+              <small class="news-date">08 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta-6-tera-mapa-com-o-dobro-do-tamanho-do-gta-5">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/ifvescg9dhy/card-b51b159e-640.webp" srcset="https://img.brubaogg.com.br/m/ifvescg9dhy/card-b51b159e-480.webp 480w, https://img.brubaogg.com.br/m/ifvescg9dhy/card-b51b159e-640.webp 640w, https://img.brubaogg.com.br/m/ifvescg9dhy/card-b51b159e-800.webp 800w, https://img.brubaogg.com.br/m/ifvescg9dhy/card-b51b159e-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Prédios altos de Vice City ao entardecer, com um helicóptero no céu e a logo de GTA VI. Texto na arte: &quot;MAPA GRANDE?&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6 terá mapa com o dobro do tamanho do GTA 5</b>
+              <span class="news-excerpt">A Rockstar diz que o mapa do GTA 6 tem cerca do dobro do GTA 5 e foca em densidade. Para mim, tamanho só importa se os lugares forem acessíveis.</span>
+              <small class="news-date">08 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/gta-6-aparece-em-south-park-com-cena-de-gameplay">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/bdlzhqd3nas/card-569d5c79-640.webp" srcset="https://img.brubaogg.com.br/m/bdlzhqd3nas/card-569d5c79-480.webp 480w, https://img.brubaogg.com.br/m/bdlzhqd3nas/card-569d5c79-640.webp 640w, https://img.brubaogg.com.br/m/bdlzhqd3nas/card-569d5c79-800.webp 800w, https://img.brubaogg.com.br/m/bdlzhqd3nas/card-569d5c79-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Personagem de South Park, uma senhora de cabelo loiro, olhando uma TV que mostra uma praia lotada, com a logo de GTA VI. Texto na arte: &quot;SOUTH PARK&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">GTA 6 aparece em South Park com cena de gameplay</b>
+              <span class="news-excerpt">South Park exibiu um trecho de gameplay do GTA 6 cedido pela Rockstar, com Jason e Lucia na praia. Para mim, o GTA foi longe demais ao aparecer no desenho.</span>
+              <small class="news-date">08 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/death-stranding-isolations-anime-ganha-primeiro-teaser">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/moe6l_hsjhg/card-44053d2b-640.webp" srcset="https://img.brubaogg.com.br/m/moe6l_hsjhg/card-44053d2b-480.webp 480w, https://img.brubaogg.com.br/m/moe6l_hsjhg/card-44053d2b-640.webp 640w, https://img.brubaogg.com.br/m/moe6l_hsjhg/card-44053d2b-800.webp 800w, https://img.brubaogg.com.br/m/moe6l_hsjhg/card-44053d2b-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Cratera enorme numa paisagem escura de montanhas, com uma figura pequena carregando carga, e o título do anime. Texto na arte: &quot;DEATH STRANDING ISOLATIONS&quot; e &quot;DISNEY +&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Death Stranding Isolations: anime ganha primeiro teaser</b>
+              <span class="news-excerpt">Death Stranding Isolations, anime do universo de Kojima, ganhou teaser e chega ao Disney+ em 2027. Fiquei animado e provavelmente vou assinar.</span>
+              <small class="news-date">07 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/world-war-z-atualizacao-viral-state-chega-em-12-de-novembro">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/s9nxwzqeaiq/card-6f8d1d10-640.webp" srcset="https://img.brubaogg.com.br/m/s9nxwzqeaiq/card-6f8d1d10-480.webp 480w, https://img.brubaogg.com.br/m/s9nxwzqeaiq/card-6f8d1d10-640.webp 640w, https://img.brubaogg.com.br/m/s9nxwzqeaiq/card-6f8d1d10-800.webp 800w, https://img.brubaogg.com.br/m/s9nxwzqeaiq/card-6f8d1d10-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Prédios tomados por uma montanha de zumbis numa cidade, com a logo de World War Z. Texto na arte: &quot;WORLD WAR Z&quot; e &quot;GTA 6 DE ZUMBI&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">World War Z: atualização Viral State chega em 12 de novembro</b>
+              <span class="news-excerpt">A Saber lança a Viral State em 12 de novembro, com mapas na Flórida. Não cita o GTA 6, mas o neon e o clima de Miami me parecem carona no hype.</span>
+              <small class="news-date">07 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/valve-admite-problema-de-clones-e-ia-na-steam">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/kqr7pq0ummu/card-09bf425c-640.webp" srcset="https://img.brubaogg.com.br/m/kqr7pq0ummu/card-09bf425c-480.webp 480w, https://img.brubaogg.com.br/m/kqr7pq0ummu/card-09bf425c-640.webp 640w, https://img.brubaogg.com.br/m/kqr7pq0ummu/card-09bf425c-800.webp 800w, https://img.brubaogg.com.br/m/kqr7pq0ummu/card-09bf425c-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Logo da Steam sobre um mosaico inclinado de capas de jogos. Texto na arte: &quot;CONTROLE DE IA?&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Valve admite problema de clones e IA na Steam</b>
+              <span class="news-excerpt">Num evento na Coreia do Sul, a Valve admitiu o problema de clones e jogos feitos com IA, mas disse que não quer ser porteira. Concordo com a posição dela.</span>
+              <small class="news-date">07 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="gta6-novidades/pedidos-de-folga-no-lancamento-do-gta-6-sobem-ate-17">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/yplchfjgzvq/card-adead41a-640.webp" srcset="https://img.brubaogg.com.br/m/yplchfjgzvq/card-adead41a-480.webp 480w, https://img.brubaogg.com.br/m/yplchfjgzvq/card-adead41a-640.webp 640w, https://img.brubaogg.com.br/m/yplchfjgzvq/card-adead41a-800.webp 800w, https://img.brubaogg.com.br/m/yplchfjgzvq/card-adead41a-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Praia cheia de gente com guarda-sóis, três mulheres em primeiro plano, e a logo de GTA VI. Texto na arte: &quot;FOLGA!&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg> GTA 6</span>
+              <b class="news-title">Pedidos de folga no lançamento do GTA 6 sobem até 17%</b>
+              <span class="news-excerpt">Dados da BambooHR mostram pedidos de folga para 19 de novembro de 9% a 17% acima do normal nos EUA. Eu mesmo tirei folga, mas não sei se entro na conta.</span>
+              <small class="news-date">06 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/no-man-s-sky-ganha-forsaken-update-gratuito-de-terror">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/lanapabzknk/card-199ad400-640.webp" srcset="https://img.brubaogg.com.br/m/lanapabzknk/card-199ad400-480.webp 480w, https://img.brubaogg.com.br/m/lanapabzknk/card-199ad400-640.webp 640w, https://img.brubaogg.com.br/m/lanapabzknk/card-199ad400-800.webp 800w, https://img.brubaogg.com.br/m/lanapabzknk/card-199ad400-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Astronauta de capacete dourado ao lado de pequenos robôs, com planeta vermelho, naves e um cristal ao fundo, e a logo de No Man's Sky. Texto na arte: &quot;NO MAN'S SKY FORSAKEN&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">No Man's Sky ganha Forsaken, update gratuito de terror</b>
+              <span class="news-excerpt">A atualização Forsaken, gratuita, traz terror ao No Man's Sky e chegou 49 dias depois da Cosmos. Para mim, a Hello Games segue investindo no jogo.</span>
+              <small class="news-date">06 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/discord-vai-mostrar-mensagens-de-canais-publicos-no-google">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/j9xazfcd3ya/card-649988e7-640.webp" srcset="https://img.brubaogg.com.br/m/j9xazfcd3ya/card-649988e7-480.webp 480w, https://img.brubaogg.com.br/m/j9xazfcd3ya/card-649988e7-640.webp 640w, https://img.brubaogg.com.br/m/j9xazfcd3ya/card-649988e7-800.webp 800w, https://img.brubaogg.com.br/m/j9xazfcd3ya/card-649988e7-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Mão segurando um celular com a logo do Discord na tela, sobre fundo azul, ao lado do ícone do Discord. Texto na arte: &quot;NO GOOGLE??&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Discord vai mostrar mensagens de canais públicos no Google</b>
+              <span class="news-excerpt">A partir de meados de dezembro, mensagens de servidores públicos do Discord com mais de mil membros poderão aparecer no Google. Acho a mudança meio perigosa.</span>
+              <small class="news-date">06 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/gamesir-lanca-controles-inspirados-em-gta-6">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/xwvnsmsymey/card-b651a2a1-640.webp" srcset="https://img.brubaogg.com.br/m/xwvnsmsymey/card-b651a2a1-480.webp 480w, https://img.brubaogg.com.br/m/xwvnsmsymey/card-b651a2a1-640.webp 640w, https://img.brubaogg.com.br/m/xwvnsmsymey/card-b651a2a1-800.webp 800w, https://img.brubaogg.com.br/m/xwvnsmsymey/card-b651a2a1-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Controle roxo e azul com botões coloridos sobre fundo desfocado com anéis de luz, com a logo de GTA VI. Texto na arte: &quot;CONTROLE XBOX&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">GameSir lança controles inspirados em GTA 6</b>
+              <span class="news-excerpt">A GameSir abriu a pré-venda de duas versões do G7 Pro inspiradas em GTA 6, a US$ 89,99. Não são licenciados pela Rockstar. Para mim, é carona no hype.</span>
+              <small class="news-date">05 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/tim-sweeney-diz-que-a-valve-atrasou-os-games">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/evxukph2vua/card-43eb7aa2-640.webp" srcset="https://img.brubaogg.com.br/m/evxukph2vua/card-43eb7aa2-480.webp 480w, https://img.brubaogg.com.br/m/evxukph2vua/card-43eb7aa2-640.webp 640w, https://img.brubaogg.com.br/m/evxukph2vua/card-43eb7aa2-800.webp 800w, https://img.brubaogg.com.br/m/evxukph2vua/card-43eb7aa2-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Biblioteca de jogos da Epic Games Store aberta num monitor, com capas como Control Resonant, Crimson Desert e ARC Raiders. Texto na arte: &quot;EPIC &gt; STEAM??&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">Tim Sweeney diz que a Valve atrasou os games</b>
+              <span class="news-excerpt">O CEO da Epic acusa a Valve de prender jogos de PC na Steamworks. Para mim, a Steam é mais simples, e a crítica vem de quem é concorrente.</span>
+              <small class="news-date">05 de nov. de 2026</small>
+            </span>
+          </a>
+          <a class="news-card" href="noticias/arc-raiders-avalia-modo-pve-depois-de-teste">
+            <span class="thumb"><img src="https://img.brubaogg.com.br/m/dhf7lcmg34q/card-626e34db-640.webp" srcset="https://img.brubaogg.com.br/m/dhf7lcmg34q/card-626e34db-480.webp 480w, https://img.brubaogg.com.br/m/dhf7lcmg34q/card-626e34db-640.webp 640w, https://img.brubaogg.com.br/m/dhf7lcmg34q/card-626e34db-800.webp 800w, https://img.brubaogg.com.br/m/dhf7lcmg34q/card-626e34db-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 300px" alt="Dois personagens de ARC Raiders de capacete e armadura, um em tons claros e outro em laranja, com faixas coloridas na diagonal e a logo do jogo. Texto na arte: &quot;MODO PVE&quot;." loading="lazy"></span>
+            <span class="news-body">
+              <span class="tag"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg> Notícia</span>
+              <b class="news-title">ARC Raiders avalia modo PvE depois de teste</b>
+              <span class="news-excerpt">Depois do teste PvE de 13 a 20 de outubro, a Embark ainda decide o futuro do modo. Sou a favor: jogar contra trapaceiros desanima, e um modo calmo ajudaria.</span>
+              <small class="news-date">05 de nov. de 2026</small>
+            </span>
+          </a>
+      </section>
+      <div class="busca-mais"><button type="button" class="btn" id="busca-mais" data-total="310" hidden>Ver mais</button></div>
+      <noscript><p class="busca-aviso">A busca por texto precisa do JavaScript ligado. Sem ele, estas são as matérias mais recentes; para ver outras, abra <a href="noticias">Notícias</a>, <a href="reviews">Reviews</a>, <a href="lancamentos">Lançamentos</a> ou <a href="tags">as tags</a>.</p></noscript>
+      <template id="busca-icones"><span data-cat="Notícia"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18h-5" /> <path d="M18 14h-8" /> <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /> <rect width="8" height="4" x="10" y="6" rx="1" /></svg></span><span data-cat="Review"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg></span><span data-cat="Lançamento"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" /> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" /> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" /></svg></span><span data-cat="GTA 6"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.6Q6.0 2.2 1.8 12.5Q6.58 7.63 12 8.6ZM12.00 8.60Q18.00 2.20 22.20 12.50Q17.42 7.63 12.00 8.60ZM12 8.6Q6.8 2.4 4.2 3.2Q7.64 4.68 12 8.6ZM12.00 8.60Q17.20 2.40 19.80 3.20Q16.36 4.68 12.00 8.60ZM12 8.6Q9.0 3.8 9.5 1.6Q10.14 4.64 12 8.6ZM12.00 8.60Q15.00 3.80 14.50 1.60Q13.86 4.64 12.00 8.60ZM12 8.6Q6.8 7.6 4.6 15.0Q7.78 10.33 12 8.6ZM12.00 8.60Q17.20 7.60 19.40 15.00Q16.22 10.33 12.00 8.60ZM11.0 9.8C12.6 13 12.9 18 11.4 22.6L13.0 22.6C14.4 18 14.0 13 12.9 9.8ZM10.3 9.799999999999999a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0ZM12.6 10.2a1.1 1.1 0 1 0 2.2 0a1.1 1.1 0 1 0-2.2 0Z"/></svg></span><span data-cat="Série"><svg class="ico ico-linha" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 7v14" /> <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></svg></span></template>
+    </main>
+  </div>
+  <!--site:footer--><footer class="site-footer">
+    <div class="footer-scene" aria-hidden="true">
+      <img class="fp fp-grupo fp-grupo-esq" src="assets/img/rodape/palmeiras-grupo.webp" alt="" loading="lazy">
+      <img class="fp fp-grupo fp-grupo-dir" src="assets/img/rodape/palmeiras-grupo.webp" alt="" loading="lazy">
+      <img class="fp fp-a" src="assets/img/rodape/palmeira-a.webp" alt="" loading="lazy">
+      <img class="fp fp-b" src="assets/img/rodape/palmeira-b.webp" alt="" loading="lazy">
+    </div>
+    <div class="footer-body">
+      <div class="wrap footer-grid">
+        <div class="footer-col footer-brand">
+          <a class="brand" href="/"><img src="assets/img/logo-96.png" alt="Logo BRUBAOGG" width="44" height="44"> BRUBAOGG</a>
+          <p>Notícias, reviews, lançamentos e cortes de games.</p>
+          <div class="social-bar"><a href="https://youtube.com/@brubaogg" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.tiktok.com/@brubaogameplay" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.instagram.com/brubaogg" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a><a href="https://www.twitch.tv/brubaogg" target="_blank" rel="noopener" aria-label="Twitch" title="Twitch"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg></a><a href="https://discord.gg/tQkkXMqAnU" target="_blank" rel="noopener" aria-label="Discord" title="Discord"><svg class="ico ico-cheio" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></a></div>
+        </div>
+        <nav class="footer-col footer-navegar" aria-label="Navegar">
+          <p class="footer-titulo">Navegar</p>
+          <div class="footer-links">
+        <a href="/">Início</a>
+        <a href="gta6">GTA 6</a>
+        <a href="noticias">Notícias</a>
+        <a href="reviews">Reviews</a>
+        <a href="lancamentos">Lançamentos</a>
+        <a href="wiki">Wiki</a>
+        <a href="cortes">Cortes</a>
+        <a href="lives">Lives</a>
+        <a href="tags">Tags</a>
+        <a href="arquivo">Arquivo</a>
+        <a href="feed.xml">Feed RSS</a>
+        <a href="sobre">Sobre e contato</a>
+          </div>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <p class="footer-titulo">Legal</p>
+          <a href="termos.html">Termos de Serviço</a>
+          <a href="privacidade.html">Política de Privacidade</a>
+        </nav>
+      </div>
+      <p class="wrap footer-copy">&copy; 2026 BRUBAOGG</p>
+    </div>
+  </footer><!--/site:footer-->
+  <script src="assets/js/busca.js" defer></script>
+</body>
+</html>

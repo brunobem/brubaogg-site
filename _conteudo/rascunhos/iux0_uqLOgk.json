@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-05-04",
+  "titulo": "Game Pass fica mais barato no Brasil: Ultimate a R$ 76,90",
+  "resumo": "Em 21 de abril de 2026, o Game Pass Ultimate caiu de R$ 119,90 para R$ 76,90 no Brasil, e o PC Game Pass, de R$ 69,90 para R$ 59,99.",
+  "tags": [
+    "Game Pass"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "TecMundo",
+      "url": "https://www.tecmundo.com.br/voxel/504091-xbox-game-pass-reduz-preco-no-brasil-e-no-mundo-veja-novos-valores.htm"
+    },
+    {
+      "nome": "Tecnoblog",
+      "url": "https://tecnoblog.net/noticias/xbox-game-pass-ultimate-fica-36-mais-barato-no-brasil/"
+    },
+    {
+      "nome": "Canaltech",
+      "url": "https://canaltech.com.br/games/alivio-no-cartao-xbox-game-pass-fica-ate-35-mais-barato-no-brasil/"
+    },
+    {
+      "nome": "Omelete",
+      "url": "https://www.omelete.com.br/games/xbox-game-pass-ultimate-reducao-preco"
+    }
+  ],
+  "assunto": "game-pass-preco",
+  "corpo": [
+    "A Microsoft reduziu o preço do Xbox Game Pass no Brasil em 21 de abril de 2026. O Game Pass Ultimate passou de R$ 119,90 para R$ 76,90 por mês, uma queda de cerca de 36%, e o PC Game Pass, de R$ 69,90 para R$ 59,99. Os planos Essential, a R$ 43,90, e Premium, a R$ 59,90, não mudaram. A mudança entrou em vigor no dia do anúncio.",
+    "O preço do Ultimate tinha dobrado em outubro de 2025, de R$ 59,99 para R$ 119,90. Depois, a nova CEO do Xbox, Asha Sharma, afirmou que o serviço ficou caro demais e precisava de uma proposta de valor mais competitiva. Há uma contrapartida: os próximos Call of Duty deixaram de entrar no Game Pass no lançamento e passam a ser adicionados cerca de um ano depois.",
+    "Chamo de notícia maravilhosa e digo que a redução não é tão grande, mas é uma redução de preço. Conto que a CEO tem dito que o Xbox não precisa cobrar tanto pelos serviços e que parece que a Microsoft não está pressionando tanto o Xbox para ter lucro, dando um pouco mais de tempo ao trabalho. Para mim, essa CEO provavelmente vai fazer o Xbox ir em frente."
+  ]
+}

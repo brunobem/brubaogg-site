@@ -1,0 +1,27 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-14",
+  "titulo": "Asha Sharma diz que o Xbox saiu da queda livre",
+  "resumo": "A CEO da marca Xbox disse em reunião interna que o tempo de jogo se estabilizou e que os jogos first party voltaram a crescer. Acho que ela merece elogio.",
+  "tags": [
+    "Xbox"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/xbox-nao-esta-mais-em-queda-livre-diz-asha-sharma/"
+    },
+    {
+      "nome": "Insider Gaming",
+      "url": "https://insider-gaming.com/asha-sharma-says-xbox-has-finally-started-to-return-to-growth/"
+    }
+  ],
+  "corpo": [
+    "Asha Sharma, CEO da marca Xbox, afirmou em reunião interna com funcionários que o Xbox saiu da queda livre. A informação vem da transcrição da reunião, obtida e verificada pelo Windows Central e repercutida pelo Flow Games em 7 de outubro de 2026. Segundo ela, o início de 2026 teve queda em horas jogadas, número de jogadores e receita.",
+    "Sharma disse que as mudanças dos últimos meses começaram a dar resultado: o tempo de jogo se estabilizou e os jogos first party, os publicados pela própria Microsoft, voltaram a crescer em relação ao ano anterior. Alguns indicadores cresceram de duas a três vezes a partir do ponto mais baixo, sem detalhamento, e a percepção positiva da marca melhorou 30% no último ano. Ela citou bons resultados iniciais de Gears of War: E-Day, Minecraft Dungeons II e World of Warcraft Forever.",
+    "O Windows Central ressalva que o crescimento citado é só dos jogos first party, o que não prova que o Xbox inteiro voltou a crescer. Sharma também falou do Project Helix, a próxima geração, descrita como uma família de dispositivos com um console tradicional como protagonista, sem data. A estratégia inclui nuvem, Play Anywhere e PC.",
+    "Na minha opinião, ela merece elogio. Para mim, tomou decisões pensando na comunidade, e não só no acionista, mas é leitura minha: a reportagem não detalha decisões desse tipo. O Xbox não passou a Sony, que está conquistando mais, principalmente com o relacionamento que tem com GTA 6. Ainda assim, quem estava em queda e virou o jogo merece o crédito. Eu até diria que o Helix podia se chamar Projeto Fênix, embora seja exagero, porque o Xbox não faliu."
+  ]
+}

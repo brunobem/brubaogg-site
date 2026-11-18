@@ -1,0 +1,42 @@
+{
+  "formato": "horizontal",
+  "categoria": "reviews",
+  "publicado": "2024-12-11",
+  "titulo": "Astro's Playroom vale a pena? Minha nota é 5",
+  "resumo": "Voltei ao PS5 para platinar Astro's Playroom, plataforma curta que vem no console. Acho bem feito e divertido, mas dou nota 5: não é o meu gênero.",
+  "tags": [
+    "Astro's Playroom"
+  ],
+  "veredito": {
+    "nota": 5,
+    "preco": "Grátis, já vem instalado no PS5",
+    "horas": "até 4",
+    "plataforma": "PS5",
+    "paraQuem": "Quem gosta de plataforma curta e simples."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/astros-playroom-novo-update-personagem-escondida/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/playstation-5-review/"
+    },
+    {
+      "nome": "Game Informer",
+      "url": "https://www.gameinformer.com/2020/10/06/astros-playroom-comes-pre-installed-on-ps5-takes-several-hours-to-beat"
+    }
+  ],
+  "corpo": [
+    "Dou nota 5 em 10 a Astro's Playroom, um jogo mediano, até um pouco abaixo disso. O motivo não é a execução: acho o jogo bem feito e divertido para o que se propõe, mas não gosto tanto de jogos de plataforma.",
+    "Voltei ao PlayStation 5 depois de um tempo sem ligar o console, motivado por um amigo que comprou o aparelho e por uma vontade nova de platinar jogos. Astro's Playroom foi o primeiro da lista. Eu já tinha jogado de 30 a 40 minutos tempos atrás e largado, porque queria jogar outros títulos, como The Last of Us e jogos de PlayStation 4.",
+    "Não há história no jogo. No lugar dela, aparecem homenagens à PlayStation: robozinhos vestidos como personagens e referências a franquias, como Kratos e Atreus dentro de um barco.",
+    "A jogabilidade é de plataforma simples. O personagem pula, quase plana com um propulsor no pé e gira batendo com o quadrado, e os controles praticamente se resumem a isso. Em trechos pontuais, aparecem uma metralhadora que atira bolinhas e um arco. Um dos troféus exige bloquear com uma flecha o projétil disparado por um inimigo, e achei difícil fazer isso sem consultar guia. As ideias de cada recurso, na minha avaliação, são bem legais.",
+    "O visual é de plataforma, nada realista, mas bonitinho, com cara de desenhado e construído. O jogo tem quatro cenários e termina com uma luta de chefe. Dá no máximo quatro horas para platinar, e menos que isso para só zerar.",
+    "Quem curte plataforma vai achar o jogo muito bem feito. Eu mesmo não gosto muito desse tipo de jogo, e é por isso que a nota ficou em 5.",
+    "Astro's Playroom foi lançado em 12 de novembro de 2020, junto com o PlayStation 5, e vem instalado no console. É um jogo gratuito da Sony feito para mostrar os recursos do controle DualSense, como a resposta tátil.",
+    "No fim das contas, vejo em Astro's Playroom um jogo que cumpre o que promete, mas não foi feito para o meu gosto. Minha ideia era seguir para a platina e os troféus."
+  ]
+}

@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: 2B e 9S, de Nier: Automata, numa cidade em ruínas, com o logo do jogo. Texto na arte: "50 GB PARA 366 GB" e "BRUBAOGG".
+Thumb.png: 2B e 9S, de Nier: Automata, numa cidade em ruínas, com o logo do jogo. Texto na arte: "50 GB PARA 366 GB" e "BRUBAOGG".
+img-1_store.playstation.com.webp: Cena de Nier: Automata: 2B e 9S enfrentam máquinas numa cidade em ruínas, com fogo ao redor.
+img-2_criticalhits.com.br.webp: Cena de Nier: Automata: a 2B, de espada na mão, diante de uma máquina pequena, num cenário de ruínas tomado por plantas.

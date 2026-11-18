@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Close do rosto de um homem de cabelo escuro e expressão séria, o CEO da Take-Two. Texto na arte: "CEO DA TAKE-TWO" e "BRUBAOGG".
+Thumb.png: Close do rosto de um homem de cabelo escuro e expressão séria, o CEO da Take-Two. Texto na arte: "CEO DA TAKE-TWO" e "BRUBAOGG".
+img-1_adrenaline.com.br.webp: Logo da Take-Two Interactive, com o T2 azul, e os logos da Rockstar Games, 2K, Private Division, Ghost Story Games e Socialpoint, sobre um céu rosa com prédios ao fundo.
+img-2_viciados.net.webp: Logo do GTA VI ao lado do logo T2 da Take-Two Interactive, sobre um fundo de pôr do sol em tons de roxo e laranja.

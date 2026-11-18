@@ -1,0 +1,85 @@
+# Publica o site no GitHub Pages a cada envio para a branch main, TODO DIA nos horarios abaixo (para as materias agendadas entrarem no ar) e quando voce mandar rodar na aba Actions.
+# O que ele faz: confere o site, monta a pasta _site/ so com o que deve ser publicado, cria o indice da busca (Pagefind) dentro dela e publica.
+# Nada disso e guardado no repositorio: o indice da busca e refeito aqui, no servidor, a cada envio.
+name: Publicar site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Materias agendadas ("publicar_em" no JSON): o gerador so inclui a materia cuja hora ja chegou, entao basta refazer o site nos horarios combinados.
+  # O cron do GitHub usa UTC (Brasilia = UTC-3): 10:00, 14:00 e 18:00 UTC = 07:00, 11:00 e 15:00 em Brasilia. Pode atrasar de alguns minutos a algumas horas, sem problema.
+  schedule:
+    - cron: "0 10,14,18 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  montar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar o indexador da busca
+        run: npm ci
+
+      # refaz as paginas com a hora de agora: entra no site a materia agendada cuja hora ja passou (as imagens ja vem prontas no repositorio, o Python nao e necessario)
+      - name: Gerar as paginas (materias agendadas)
+        run: npm run gerar
+
+      # confere os links (com a caixa exata das letras, que o Linux exige) e as paginas; se achar problema grave, NADA e publicado
+      - name: Conferir o site
+        run: npm run verificar
+
+      # os testes completos tambem rodam, mas por enquanto so avisam (continue-on-error): depois da primeira rodada verde, tire esta linha
+      - name: Testes
+        run: npm run testar
+        continue-on-error: true
+
+      - name: Montar o site e criar o indice da busca
+        run: npm run indexar
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      # O SITE NO AR vem da Cloudflare desde 17/11/2026 (o dominio brubaogg.com.br esta ligado ao Worker "brubaogg-site").
+      # Este passo manda a MESMA pasta _site/ para la. Se ele falhar, a publicacao inteira fica vermelha de proposito:
+      # o site no ar NAO foi atualizado e alguem precisa ver. O GitHub Pages recebe a mesma pasta, so como reserva.
+      # Precisa de dois segredos no repositorio: CLOUDFLARE_API_TOKEN e CLOUDFLARE_ACCOUNT_ID.
+      - name: Marcar o endereco de teste (workers.dev) para nao ser indexado
+        run: |
+          cp _ferramentas/cloudflare/_headers _site/_headers
+          cp _ferramentas/cloudflare/_redirects _site/_redirects
+
+      - name: Publicar o site na Cloudflare
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: _ferramentas/cloudflare
+          command: deploy
+
+  publicar:
+    needs: montar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+    steps:
+      - id: publicacao
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-12",
+  "titulo": "Xbox: Conquistas Míticas são a resposta à Platina",
+  "resumo": "O Xbox criou as Conquistas Míticas, para quem libera todas as conquistas originais de um jogo. Estão em teste com os Insiders e valem para jogos antigos.",
+  "tags": [
+    "Xbox"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Fextralife",
+      "url": "https://fextralife.com/xbox-has-finally-dethroned-playstation-after-their-18-year-long-reign/"
+    },
+    {
+      "nome": "TweakTown",
+      "url": "https://www.tweaktown.com/news/113812/xboxs-new-mythic-achievements-are-retroactive-and-can-unlock-for-older-games/index.html"
+    },
+    {
+      "nome": "Games.gg",
+      "url": "https://games.gg/news/xbox-mythic-achievement-release-details/"
+    }
+  ],
+  "corpo": [
+    "O Xbox anunciou em 29 de setembro de 2026 as Conquistas Míticas (Mythic Achievements), a resposta da Microsoft ao troféu de Platina da PlayStation. O jogador recebe a Conquista Mítica quando libera todas as conquistas originais de um jogo. As que chegam depois, por DLC ou atualizações, não são exigidas, e quem já tem o status o mantém mesmo que apareçam conquistas novas.",
+    "O recurso é retroativo e vale para jogos desde a era do Xbox 360: quem terminou um jogo elegível no passado pode receber a conquista sem jogar de novo. Ela ganha visual próprio no histórico, o total aparece no perfil e a lista de conquistas do jogo mostra o progresso até ela. Por enquanto, o recurso está em teste com os Xbox Insiders, que recebem as novidades antes dos demais jogadores, e o Xbox não divulgou data para todo mundo.",
+    "Para mim, demorou muito, muito mesmo, para o Xbox bater de frente com a Platina. Na minha opinião, a Sony acertou lá atrás ao distribuir os troféus por nível de conquista, enquanto o Xbox ficou muito tempo só na pontuação. Isso criou uma comunidade de platinadores, como são chamados os jogadores que correm atrás da Platina, que acompanha a marca e não quer perder o que já conquistou. Por isso, acho que muita gente segue comprando da Sony para não abandonar as suas platinas.",
+    "Falta saber quais jogos são elegíveis, porque o Xbox não publicou a lista completa, e quanto a Conquista Mítica vai valer em Gamerscore, valor que também não foi divulgado. É uma resposta aguardada, mas só o teste com os Insiders vai mostrar se ela atrai esse público."
+  ]
+}

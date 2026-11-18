@@ -1,0 +1,30 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-07-08",
+  "titulo": "Memória RAM deve ficar mais cara por causa da IA",
+  "resumo": "A demanda da inteligência artificial segue encarecendo a memória RAM. A TrendForce previu alta de 13% a 18% nos contratos de DRAM no 3º trimestre.",
+  "tags": [
+    "Memória RAM"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260703-13134.html"
+    },
+    {
+      "nome": "Naavik",
+      "url": "https://naavik.co/digest/the-ai-boom-is-repricing-gaming-hardware-and-rewiring-the-console-business/"
+    },
+    {
+      "nome": "TechRepublic",
+      "url": "https://www.techrepublic.com/article/news-xbox-console-price-increase/"
+    }
+  ],
+  "corpo": [
+    "O preço da memória RAM segue subindo porque a demanda de inteligência artificial consome boa parte da produção. A TrendForce projetou, em relatório de 3 de julho de 2026, que os preços de contrato da DRAM subiriam de 13% a 18% no terceiro trimestre, em ritmo menor que nos trimestres anteriores, porque os compradores de PCs e celulares chegaram ao limite do que podem pagar. Os fabricantes seguem priorizando clientes de IA e de servidores.",
+    "Eu estimava cerca de 50% de aumento até setembro. Analistas citados pela Naavik falavam em altas de 40% a 50% para o consumidor no terceiro trimestre e de 30% a 40% no quarto. O impacto já chegou aos consoles: em 1º de agosto, a Microsoft reajustou o Xbox em US$ 100 nos modelos de 512 GB e em US$ 150 nos de 1 TB, citando o custo de memória e armazenamento, e o PS5 chegou a US$ 649,99, segundo a Naavik.",
+    "Eu citava uma projeção de queda em 2027, mas não brusca. A Naavik, no entanto, vê preços estáveis ou em alta ao longo de 2027, com normalização só a partir de cerca de 2028. Para quem monta um PC gamer, chamo o cenário de muito ruim, e o dilema é esperar a turbulência passar ou montar um computador novo agora."
+  ]
+}

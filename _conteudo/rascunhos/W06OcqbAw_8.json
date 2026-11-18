@@ -1,0 +1,30 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-09-18",
+  "titulo": "Sony desiste do Physint, de Kojima, e a Xbox assume",
+  "resumo": "A PlayStation encerrou a parceria do Physint com Kojima, e a Xbox passou a publicar o jogo. O motivo, segundo a Bloomberg, seria dinheiro.",
+  "tags": [
+    "Physint"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Windows Central",
+      "url": "https://www.windowscentral.com/gaming/xbox/bloomberg-states-reasons-why-sony-decided-to-cancel-physint-hideo-kojimas-newest-ip-and-metal-gear-solid-successor-thats-coming-soon-to-xbox-and-pc"
+    },
+    {
+      "nome": "Shacknews",
+      "url": "https://www.shacknews.com/article/150695/playstation-physint-budget-concerns"
+    },
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/report-playstation-cancelled-hideo-kojimas-physint-because-death-stranding-and-its-sequel-did-meet-revenue-expectations/"
+    }
+  ],
+  "corpo": [
+    "A PlayStation encerrou a parceria com a Kojima Productions no Physint, jogo de espionagem anunciado em 2024, e a Xbox passou a publicar o título. Hideo Kojima disse que a PlayStation avisou em junho que não financiaria mais o projeto, e o fim da parceria foi anunciado em setembro de 2026. Nem a Xbox nem a Kojima Productions anunciaram as plataformas finais do jogo.",
+    "O motivo ainda é um rumor do jornalista Jason Schreier, da Bloomberg, e deve ser tratado como informação não confirmada. Segundo a reportagem, o Physint estava acima do orçamento e atrasado, e o desempenho abaixo do esperado de Death Stranding e de sua sequência pesou como um dos fatores principais. A Sony também teria receio de investir centenas de milhões de dólares em um jogo que não ficaria exclusivo do PlayStation.",
+    "A Kojima Productions contestou a reportagem em comunicado de 20 de setembro, dizendo que as alegações sobre a franquia Death Stranding e o investimento no Physint não vieram de fontes oficiais, e Kojima afirmou que a relação com a Sony continua forte. Observo que, pelo rumor, não faltou confiança no talento de Kojima, e questiono a lógica de cancelar o jogo de um criador de talento enquanto a Sony segue investindo em live service."
+  ]
+}

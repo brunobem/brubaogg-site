@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Personagem de cabelo claro e capa caminhando por uma sala metálica com uma fonte de luz no centro.
+img-2_steam.com.jpg: Personagem de capa escura caminhando por um deserto de ruínas, com uma criatura de asas rasgadas ao longe.
+img-3_steam.com.jpg: Personagem de espada diante de um grande robô de máscara de gás, num salão sombrio.

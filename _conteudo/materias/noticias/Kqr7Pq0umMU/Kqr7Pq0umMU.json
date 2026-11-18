@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-02",
+  "publicar_em": "2026-11-07T07:00:00-03:00",
+  "titulo": "Valve admite problema de clones e IA na Steam",
+  "resumo": "Num evento na Coreia do Sul, a Valve admitiu o problema de clones e jogos feitos com IA, mas disse que não quer ser porteira. Concordo com a posição dela.",
+  "tags": [
+    "Steam"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/software/ai/valve-admits-steam-has-an-ai-slop-and-cloning-problem-but-says-we-dont-want-to-be-gatekeepers-telling-developers-which-tools-they-should-or-shouldnt-use/"
+    },
+    {
+      "nome": "Inven Global",
+      "url": "https://invenglobal.com/articles/27761/valve-responds-to-developers-fearing-ai-slop-and-clones"
+    },
+    {
+      "nome": "Esports.gg",
+      "url": "https://esports.gg/news/valve-indie-devs-ai-clones-updates/"
+    }
+  ],
+  "assunto": "steam-clones-e-ia",
+  "corpo": [
+    "A Valve admitiu que a Steam tem um problema de clones e de jogos de baixa qualidade feitos com IA, o chamado AI slop, mas disse que não quer limitar as ferramentas dos desenvolvedores. A fala é de Tom Giardino e Marc Wilkinson, no Steam Indie Connect, evento de desenvolvedores em Busan, na Coreia do Sul, no fim de outubro de 2026. Giardino disse que a empresa não quer ser porteira dizendo quais ferramentas os desenvolvedores devem ou não usar.",
+    "Segundo a Valve, clonar jogos já existia antes da IA, só que num ritmo mais lento. Em vez de limitar o acesso, a estratégia é deixar a Steam mais inteligente e dinâmica. O conselho de Giardino aos desenvolvedores é não depender de uma única mecânica que qualquer um copia e continuar crescendo o jogo e a comunidade, com atualizações. Wilkinson admitiu o custo: alguns jogos de baixa qualidade acabam ganhando exposição, e muita gente na empresa pensa em como resolver.",
+    "Do lado dos desenvolvedores, o medo é real. Um deles relatou uma ameaça de extorsão: pagar ou ter o jogo clonado com IA e lançado antes. O estúdio por trás de Moonlighter cancelou o playtest público do próximo jogo por medo de clonagem. Quase 23 mil jogos foram lançados na Steam em 2026 até o fim de outubro, segundo a SteamDB, e a Valve reconheceu que o Next Fest está saturado de demos fracas.",
+    "Concordo bastante com a Steam nesse caso. A cópia de jogos acontece há muito tempo, a IA só potencializou, e a Steam não precisa ser a guardiã disso. Essa é a postura de sempre dela, com clientes e com desenvolvedores: não ser invasiva.",
+    "Na minha leitura, a biblioteca está ali. Se a pessoa comprar um clone e gostar, ela comprou, e se a maioria não comprar, o jogo flopa e o mercado se regula sozinho. Essa ideia de mercado é opinião minha, não uma fala da Valve, mas acho a posição maravilhosa."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-02",
+  "titulo": "The Witcher 3 Remastered estreia com 94 no Metacritic",
+  "resumo": "O remaster de The Witcher 3, lançado em 29 de setembro de 2026, tem 94 no Metacritic, a maior nota do ano, com poucas análises ainda.",
+  "tags": [
+    "The Witcher 3 Remastered"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/the-witcher-3-remastered-is-now-the-highest-scoring-game-of-2026-on-metacritic/"
+    },
+    {
+      "nome": "LevelUp",
+      "url": "https://www.levelup.com/en/news/new-release-becomes-top-rated-game-of-2026-and-strong-goty-contender-though-it-originally-released-years-ago/"
+    },
+    {
+      "nome": "Push Square",
+      "url": "https://www.pushsquare.com/reviews/ps5/the-witcher-3-wild-hunt-remastered"
+    },
+    {
+      "nome": "Vulkk",
+      "url": "https://vulkk.com/2026/09/28/the-witcher-3-remastered-review/"
+    }
+  ],
+  "corpo": [
+    "The Witcher 3 Remastered, lançado em 29 de setembro de 2026 para PS5, Xbox Series, PC e Switch 2, estreou com 94 no Metacritic, a maior nota de um jogo de 2026 até então, segundo a VGC. A média vinha de apenas oito análises iniciais de PC, então pode mudar bastante. A versão original, de 2015, está em 92, e o upgrade é gratuito para quem já tem o jogo.",
+    "As análises elogiam a iluminação com ray tracing e path tracing, a câmera adaptativa que se ajusta à luta, as novas finalizações de combate e a árvore de habilidades reformulada. O principal ponto negativo é o desempenho: uma análise relata engasgos com ray tracing ligado, e na PS5 o ray tracing a 60 fps só aparece no PS5 Pro, enquanto no PS5 base fica em 30 fps.",
+    "Vou esperar mais notas antes de bater o martelo, mas acho impressionante que um jogo de 2015 esteja com a maior nota do ano. Para mim, é um jogão, de que muita gente gosta."
+  ]
+}

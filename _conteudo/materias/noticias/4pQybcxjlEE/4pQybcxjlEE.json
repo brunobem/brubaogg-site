@@ -1,0 +1,32 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-12",
+  "titulo": "App do Xbox no PC fica até 60% mais rápido",
+  "resumo": "A Microsoft deixou o app do Xbox no PC até 60% mais rápido e com visual novo, por ora só para Insiders. Para mim, o problema é o consumo.",
+  "tags": [
+    "Xbox",
+    "PC"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/aplicativo-do-xbox-fica-mais-rapido-nos-pcs/"
+    },
+    {
+      "nome": "Insider Gaming",
+      "url": "https://insider-gaming.com/xbox-pc-app-update-faster/"
+    },
+    {
+      "nome": "TBreak",
+      "url": "https://tbreak.com/xbox-pc-app-faster-redesign-insiders/"
+    }
+  ],
+  "corpo": [
+    "A Microsoft atualizou o app do Xbox no PC, e diz que ele abre até 60% mais rápido. Num vídeo publicado por Asha Sharma, CEO do Xbox, a versão nova abre em 5,2 segundos, enquanto a antiga levava mais de 15. As páginas de Início, Loja e Game Pass carregam até 50% mais rápido. Os números são da própria Microsoft, e nenhum teste independente os confirmou até onde vi.",
+    "A interface também mudou: os amigos foram para a navegação principal, a busca encontra jogos, DLCs e pessoas, e a biblioteca ganhou mais formas de organizar os jogos. O Flow Games diz que o visual ficou mais próximo do Xbox Cloud Gaming no navegador e nas TVs. Por enquanto, a atualização está só para quem participa do Xbox Insider; o Flow Games fala em chegar a todos nas próximas semanas, mas, segundo o TBreak, a Microsoft não deu data.",
+    "Para mim, a interface nova lembra muito a da Steam, e faz sentido: no PC, todos os launchers perdem para ela, então o jeito é seguir o líder. Entendo também por que o Xbox quer melhorar o app, pensando no Xbox Cloud Gaming: deixar a porta de entrada mais leve faz todo sentido.",
+    "Minha crítica é outra. O problema desses apps, tanto o do Xbox quanto o da Epic, nunca foi só abrir rápido: é que eles são muito intrusivos, ficam rodando em segundo plano, consomem muito e deixam o PC lento. A Steam também roda em segundo plano, mas, na minha experiência, com todos abertos no gerenciador de tarefas, o consumo dos outros é bem maior. As melhorias divulgadas falam de velocidade de abertura e de navegação, não de consumo, então não sei se o app ficou menos pesado. Se ficar, aí sim, da hora."
+  ]
+}

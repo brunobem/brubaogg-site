@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Close da lateral de uma cabeça careca com um registro de válvula vermelho parafusado, como se fosse uma torneira. Texto na arte: "JOGOS NA STEAM".
+Thumb.png: Close da lateral de uma cabeça careca com um registro de válvula vermelho parafusado, como se fosse uma torneira. Texto na arte: "JOGOS NA STEAM".
+img-1_gameplayscassi.com.br.jpg: Logo da Steam, um círculo escuro com a engrenagem branca, sobre um fundo em degradê de roxo e verde.
+img-2_newsletter.jornaldosjogos.com.br.jpg: Logo da Steam ao centro, entre o bruxo Geralt, de The Witcher, e Arthur Morgan, de Red Dead Redemption 2, que apontam armas.

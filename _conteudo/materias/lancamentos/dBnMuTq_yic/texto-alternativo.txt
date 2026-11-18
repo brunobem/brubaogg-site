@@ -1,0 +1,27 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Homem de olhos arregalados ao lado de arte de jogos indie, com um personagem de pinheiro armado e um console portátil. Texto na arte: "OS INDIES DE NOVEMBRO". Versão vertical.
+Thumb.png: Homem de barba e fones de ouvido, de olhos arregalados, ao lado de arte de jogos indie com personagens de desenho em tons de verde. Texto na arte: "OS INDIES DE NOVEMBRO". Versão horizontal.
+img-2_steam.com.png: Cão buldogue armado, de colete azul, ao lado de outros soldados caninos sob um céu roxo, com o título "GRAVHOUNDS".
+img-3_steam.com.png: Ilustração de um quarto à noite, com um homem deitado na cama e uma enfermeira ao lado, com o título "Death at Fleming Manor". Texto na arte: "DETETIVE".
+img-4_steam.com.png: Oficina aconchegante com um computador antigo e cartuchos, com o título "Cozy Game Restoration". Texto na arte: "CARTUCHOS".
+img-5_steam.com.png: Carro de brinquedo laranja num cenário azul-escuro, com o título "Lost Host". Texto na arte: "TOY STORY?".
+img-6_steam.com.png: Cavalo marrom amarrado a uma cerca de madeira, com o título "Horses of Hoofprint Bay".
+img-7_steam.com.png: Mapa de um reino verde, com cidades, rios e florestas, e o título "County of Fortune". Texto na arte: "REINO".
+img-8_steam.com.png: Piloto numa moto aérea vermelha dentro de um prédio futurista, com o título "Airframe Ultra".
+img-9_steam.com.png: Vagão de trem antigo e um tentáculo saindo do mar, com o título "DREADMOOR". Texto na arte: "FUNDO DO MAR".
+img-10_steam.com.png: Soldado de armadura atirando um raio azul em criaturas aladas, num planeta com uma lua grande ao fundo, com o título "Project Tomorrow". Texto na arte: "GUERRA E TERRAFORMAGEM".
+img-11_steam.com.png: Personagem de cabelo rosa e chapéu de policial, de cara brava, com o título "Neo Junk City" em neon.
+img-12_steam.com.png: Menu do jogo em pixel art, com as opções "PLAY", "OPTION" e "QUIT" e um mago ao lado de uma fogueira, com o título "SLOTBOUND".
+img-13_steam.com.png: Quatro heróis diante de um dragão de asas rosa, com o título "Stormforge". Texto na arte: "PRESOS NO GELO, JUNTOS".
+img-14_steam.com.png: Fábrica com várias máquinas industriais alinhadas, com o título "Main Sequence". Texto na arte: "PRODUÇÃO EM MASSA".
+img-15_steam.com.png: Mesa de madeira cheia de dados coloridos, com um grande dado de vinte lados, e o título "Dice Hoarder".
+img-16_steam.com.png: Personagem pequeno num campo gramado com árvores e pedras, com o título "Trees Hate You".
+img-17_steam.com.png: Guerreiro de capuz e armadura com espinhos, de rosto verde brilhante, com o título "Lord of Undead". Texto na arte: "VILÕES".
+img-18_steam.com.png: Personagens de blocos num caminho de pedra de um cenário medieval, com o título "Grand Theft Timeline".
+img-19_steam.com.png: Quebra-cabeça com blocos e as frases "IS PUSH" e "IS BIG", um personagem em forma de cone e pedras, com o título "Me and You". Texto na arte: "COOP GAMEPLAY".
+img-20_steam.com.png: Picape enferrujada numa paisagem de neve sob uma aurora, com duas pessoas ao lado, e o título "Arctic Drive".
+img-21_steam.com.png: Bancada com peças antigas e um baú metálico sendo restaurado, com o título "Reshine".
+img-22_steam.com.png: Campo de futebol de rua visto de cima, com jogadores pequenos, e o título "Football Story". Texto na arte: "FUT COM RPG".

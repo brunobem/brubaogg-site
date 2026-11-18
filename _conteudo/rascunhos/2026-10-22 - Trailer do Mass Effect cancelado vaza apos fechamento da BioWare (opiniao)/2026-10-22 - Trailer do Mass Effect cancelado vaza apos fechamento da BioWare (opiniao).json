@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "status": "rascunho",
+  "categoria": "noticias",
+  "publicado": "2026-10-22",
+  "titulo": "Trailer do Mass Effect cancelado vaza na internet",
+  "resumo": "Um vídeo de Mass Effect Universe vazou no Reddit um dia após o fechamento da BioWare. A autenticidade não foi confirmada oficialmente. Máximo respeito.",
+  "tags": [
+    "Mass Effect"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/mass-effect-universe-cai-na-internet-trailer-vazado/"
+    },
+    {
+      "nome": "AltChar",
+      "url": "https://www.altchar.com/game-news/ea-are-shutting-down-bioware-and-cancelling-the-next-mass-effect-aQBOH0L0hc18"
+    },
+    {
+      "nome": "Notebookcheck",
+      "url": "https://notebookcheck.net/Next-Mass-Effect-game-cancelled-as-EA-shuts-down-BioWare.1430480.0.html"
+    }
+  ],
+  "assunto": "fechamento-da-bioware",
+  "corpo": [
+    "Um trailer do cancelado Mass Effect Universe vazou em 22 de outubro de 2026, um dia depois do anúncio do fechamento da BioWare. O vídeo foi postado no Reddit, no r/masseffect, por uma conta descartável, possivelmente de um ex-desenvolvedor da BioWare não identificado, e se espalhou no X pelo perfil @WeAreMassEffect. A EA e a BioWare não comentaram.",
+    "Sobre a autenticidade, o Flow Games diz que ela segue não verificada oficialmente. Segundo relatos, jornalistas como Jason Schreier, da Bloomberg, e a IGN consideraram o vídeo real. Seria um vídeo no motor do jogo, de cerca de dois minutos, sem gameplay, com Coming soon no fim, feito com material de pré-produção por um time pequeno, para uso interno.",
+    "O que ele mostra: o título Mass Effect Universe e uma ambientação depois da guerra contra os Ceifadores, com as fontes divergindo entre centenas e milhares de anos depois da trilogia. O protagonista é um humano ex-militar no lugar do Shepard, em clima de thriller de espionagem. Aparecem uma briga de bar numa boate com ajuda da Liara, viagens pela galáxia, um turiano parecido com o Garrus e, no final, a Liara T'Soni mais velha.",
+    "O jogo estava em desenvolvimento inicial, longe de sair, então o vídeo representa a ideia do jogo, e não o jogo pronto.",
+    "A EA fechou a BioWare em 21 de outubro, dentro de um corte de cerca de 400 vagas, e o motivo oficial foi uma análise aprofundada do negócio. O Veilguard, que teve 1,5 milhão de jogadores no trimestre de lançamento, cerca de 50% abaixo da expectativa da EA, foi um dos fatores, mas várias coberturas apontam mais a dívida e a pressão financeira após a compra da EA por um consórcio liderado pelo fundo saudita PIF.",
+    "Mesmo assim, é um estúdio lendário, máximo respeito. Para mim, a queda da BioWare está atrelada ao fracasso do Dragon Age: The Veilguard, que teve toda uma polêmica, mas esse é só um dos fatores. Sobre o vazamento, muita coisa sugere vingança de ex-funcionário demitido, mas nenhuma fonte diz isso: é só teoria da comunidade. Se o trailer for verdadeiro, ele pareceu muito bem polido e muito legal."
+  ]
+}

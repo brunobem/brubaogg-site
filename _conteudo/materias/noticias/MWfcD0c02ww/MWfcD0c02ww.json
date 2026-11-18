@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-05-24",
+  "titulo": "Amazon cancela o MMORPG de O Senhor dos Anéis",
+  "resumo": "A Amazon cancelou o MMORPG de O Senhor dos Anéis, segundo a Eurogamer, e diz explorar outro jogo da franquia.",
+  "tags": [
+    "O Senhor dos Anéis"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Vice",
+      "url": "https://www.vice.com/en/article/lord-of-the-rings-mmo-officially-canceled-as-amazon-begins-work-on-a-new-game/"
+    },
+    {
+      "nome": "GosuGamers",
+      "url": "https://www.gosugamers.net/entertainment/news/78434-amazon-teases-another-lord-of-the-rings-game-after-confirming-mmo-cancellation"
+    },
+    {
+      "nome": "PSU",
+      "url": "https://www.psu.com/news/the-lord-of-the-rings-mmo-reportedly-scrapped-but-amazon-games-confirms-a-new-game-experience-set-in-middle-earth-is-coming/"
+    },
+    {
+      "nome": "Engadget",
+      "url": "https://engadget.com/2173272/amazon-has-hurled-its-lord-of-the-rings-mmo-back-into-the-fires-of-mount-doom"
+    }
+  ],
+  "corpo": [
+    "A Eurogamer informou em 14 de maio de 2026 que a Amazon cancelou o MMORPG de O Senhor dos Anéis, anunciado em 2023 em parceria com a Middle-earth Enterprises, da Embracer. A Amazon confirmou o cancelamento de forma indireta, ao responder à reportagem, e o futuro do projeto já estava em dúvida desde outubro de 2025, quando a empresa demitiu parte da divisão de jogos e encerrou o desenvolvimento ativo de New World.",
+    "A Amazon não abandonou a franquia. Em declaração, disse que a equipe criativa continua explorando uma nova experiência de jogo que faça justiça ao mundo de Tolkien, que trabalha de perto com a Middle-earth Enterprises e que segue animada com a propriedade. Não há detalhes sobre esse novo jogo. Foi o segundo MMO de O Senhor dos Anéis da empresa a ser cancelado: o primeiro, revelado em 2019, foi abandonado em 2021.",
+    "Minha opinião rápida é que, se o cancelamento foi por causa da qualidade do jogo, melhor ter cancelado, porque vale gastar dinheiro para ter algo bom. Lembro que já houve um jogo no passado que era relativamente bom, mas que a tecnologia atual está muito avançada e que O Senhor dos Anéis merece um jogo maravilhoso."
+  ]
+}

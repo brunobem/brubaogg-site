@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Corredor digital azul com fileiras de guerreiros de luz dos dois lados e duas figuras brilhantes ao fundo.
+img-2_steam.com.jpg: Portão torii sobre uma passarela espelhada num cenário rosado, em primeira pessoa, com a mão do jogador e a logo do jogo.
+img-3_steam.com.jpg: Plataforma industrial com um personagem de armadura amarela ao fundo, com a logo do jogo.

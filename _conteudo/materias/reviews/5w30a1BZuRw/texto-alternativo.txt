@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Três personagens caricatos em pânico, um deles de óculos, num corredor de shopping com placas "PRESENT".
+img-2_steam.com.jpg: Criatura pálida rastejando perto de um rádio de mão verde, com a frase "FIND THE EXIT" riscada na parede.
+img-3_steam.com.jpg: Corredor amplo e escuro de um shopping vazio, com escada rolante e placas de loja ao fundo e plantas à direita.

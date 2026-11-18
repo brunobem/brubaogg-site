@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Picape off-road com faixas amarelas num caminho de lama entre árvores, com a logo de GTA VI. Texto na arte: "SISTEMA DE KARMA?".
+Thumb.png: Picape off-road com faixas amarelas num caminho de lama entre árvores, com a logo de GTA VI. Texto na arte: "SISTEMA DE KARMA?".
+img-1_redbull.com.jpg: Vista de cima de uma rua à noite em GTA 6, com multidão e carros com luzes neon verdes e roxas diante de um estabelecimento com palmeiras.
+img-2_caranddriver.com.jpg: Rua de Vice City com viadutos grafitados em roxo, motos e carros, entre eles um sedã azul-claro de costas.

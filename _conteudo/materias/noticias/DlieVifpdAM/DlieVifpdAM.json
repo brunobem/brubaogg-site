@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-03",
+  "titulo": "Minecraft ganha The Sift, a primeira dimensão em 14 anos",
+  "resumo": "A Mojang revelou The Sift, a quarta dimensão do Minecraft e a primeira desde o End, em 2011. Ela chega ao jogo em 2027.",
+  "tags": [
+    "Minecraft"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Stevivor",
+      "url": "https://stevivor.com/news/minecraft-gets-its-fourth-dimension-as-mojang-reveals-the-sift/"
+    },
+    {
+      "nome": "Nerdist",
+      "url": "https://nerdist.com/article/minecraft-unveils-new-dimension-the-sift/"
+    },
+    {
+      "nome": "Pocket Tactics",
+      "url": "https://www.pockettactics.com/minecraft/the-sift-dimension"
+    },
+    {
+      "nome": "Digital Citizen",
+      "url": "https://www.digitalcitizen.life/minecraft-is-getting-its-first-new-dimension-in-15-years-with-the-sift-in-2027/"
+    }
+  ],
+  "corpo": [
+    "A Mojang revelou, no Minecraft Live de setembro de 2026, The Sift, a quarta dimensão do Minecraft e a primeira nova desde The End, que chegou em 2011. Desde então eram só Overworld, Nether e End. Ela chega ao Minecraft Java e Bedrock em 2027, mas estreia antes em Minecraft Dungeons II, que chegou em 29 de setembro de 2026 ao Switch e ao Switch 2.",
+    "A Mojang divulgou pouco: não detalhou como chegar lá, nem quais biomas, criaturas e blocos virão para o jogo principal. Pelo que se viu em Dungeons II, o ambiente tem vegetação azul-esverdeada e blocos rosados, além de um fluido iridescente chamado ichor, que queima o jogador, mas não afeta as criaturas locais.",
+    "Digo que um diretor criativo da Mojang descreveu a dimensão como um tipo de Overworld diferente, bonito e colorido, onde dá até para imaginar morar, com pedra vermelha, laranja, vegetação verde e inimigos novos; as reportagens consultadas descrevem blocos rosados. Para mim, Minecraft é um dos melhores jogos que já joguei, e é um momento de comemorar, mesmo que a Mojang e a Microsoft demorem muito para lançar novidades."
+  ]
+}

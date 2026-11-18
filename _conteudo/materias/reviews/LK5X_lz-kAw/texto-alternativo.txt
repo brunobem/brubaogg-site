@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Guerreira de cabelo loiro, de costas, diante de um eclipse escuro num cenário sombrio.
+img-2_steam.com.jpg: Luta na neve entre uma guerreira de espada e vários inimigos, com faíscas vermelhas.
+img-3_steam.com.jpg: Guerreira de espada enfrentando uma criatura enorme que sangra, num campo de neve azulado.

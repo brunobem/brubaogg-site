@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Personagem de jaqueta em meio a uma explosão rosa de destroços numa sala de escritório.
+img-2_steam.com.jpg: Duas figuras lutando, uma derrubando um homem de colete com energia azul, cercadas de pedaços voando.
+img-3_steam.com.jpg: Silhueta de uma pessoa diante de uma cidade escura de prédios em ruínas, sob um céu estrelado azulado.

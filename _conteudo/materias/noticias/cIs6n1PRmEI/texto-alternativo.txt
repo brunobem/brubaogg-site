@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Grupo de homens de chapéu e colete em pé, em tom sépia e poeira, com a logo de Red Dead Redemption II. Texto na arte: "SISTEMA NEMESIS".
+Thumb.png: Grupo de homens de chapéu e colete em pé, em tom sépia e poeira, com a logo de Red Dead Redemption II. Texto na arte: "SISTEMA NEMESIS".
+img-1_br.ign.com.webp: Tela escura do mod enRage com o organograma da gangue "O'Driscoll Boys": líder, tenentes, capitães e membros ligados por linhas.
+img-2_flowgames.gg.jpg: Cena de Red Dead Redemption 2 em que um homem de camisa azul segura outro pelo colarinho, com uma arma, numa varanda, com menu de diálogo e minimapa na tela.

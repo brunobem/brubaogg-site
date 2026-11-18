@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Thumb.png: Chip de computador sobre uma placa de circuitos azul-escura, com a palavra "firmware" escrita no chip. Texto na arte: "ATUALIZOU DNV".
+img-1_avg.com.webp: Ilustração sobre atualizações de segurança, com um computador, um celular, um escudo, um inseto e uma lixeira com vassoura.
+img-2_avg.com.jpg: Chip de computador sobre uma placa de circuitos azul.

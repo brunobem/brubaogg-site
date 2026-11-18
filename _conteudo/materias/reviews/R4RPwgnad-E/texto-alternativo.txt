@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Personagem de costas num bar movimentado, com um balcão iluminado ao fundo e clientes de várias espécies.
+img-2_steam.com.jpg: Personagem de jaqueta andando por uma rua de neon, com uma criatura de quatro patas ao lado e soldados brancos ao fundo.
+img-3_steam.com.jpg: Personagem sobre uma moto num deserto rochoso, com naves voando no céu.

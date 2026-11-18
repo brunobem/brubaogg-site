@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_playstation.com.webp: Kena, de coque e roupa azul, com a mão erguida perto de uma pedra escura flutuante, com uma luz azul brilhando na floresta.
+img-2_playstation.com.webp: Duas crianças de cabelo verde-azulado abraçando pequenas criaturas pretas numa clareira, com Kena de costas em primeiro plano.
+img-3_playstation.com.webp: Kena de costas caminhando por um caminho de pedra numa floresta, com ruínas e lanternas ao fundo.

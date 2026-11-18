@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-03-19",
+  "titulo": "Riot passa a exigir verificação de idade no Brasil",
+  "resumo": "A Riot começou a verificar a idade dos jogadores no Brasil em 16 de março de 2026 e restringiu menores de 18 anos em LoL e TFT.",
+  "tags": [
+    "Riot Games"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Tecnoblog",
+      "url": "https://tecnoblog.net/noticias/riot-games-comeca-a-bloquear-acesso-de-menores-a-jogos/"
+    },
+    {
+      "nome": "TecMundo",
+      "url": "https://www.tecmundo.com.br/voxel/503774-riot-bloqueia-league-of-legends-e-mais-jogos-para-menores-de-18-anos-no-brasil.htm"
+    },
+    {
+      "nome": "Riot Games",
+      "url": "https://www.riotgames.com/pt-br/not%C3%ADcias/eca-digital-brasil"
+    },
+    {
+      "nome": "Poder360",
+      "url": "https://www.poder360.com.br/poder-tech/eca-digital-restringe-jogos-para-menores-no-brasil-veja-lista/"
+    }
+  ],
+  "corpo": [
+    "A Riot Games passou a exigir verificação de idade no Brasil em 16 de março de 2026, para cumprir o ECA Digital. A verificação obrigatória começou com jogadores de 18 anos ou mais, e as mudanças para menores de 18 valeram a partir de 18 de março. League of Legends, Teamfight Tactics, Wild Rift, 2XKO e Legends of Runeterra tiveram a classificação indicativa elevada temporariamente para 18 anos, e a Riot espera que voltem às originais até o início de 2027.",
+    "O Valorant é a exceção: jogadores de 12 a 17 anos podem jogar com consentimento dos pais, por um sistema de controle parental com o e-mail do responsável. Para adultos, a verificação pode ser feita por CPF, cartão de crédito ou débito, documento oficial ou reconhecimento facial. Sem verificação, as skins e as contas ficam congeladas, e os perfis não são apagados: os dados ficam salvos até o usuário poder voltar.",
+    "Resumindo: é preciso ter mais de 18 anos para jogar LoL, e a verificação vale também para os jogos mobile da Riot. Para mim, a mudança tem um lado bom, porque abre um pretexto para combater hackers e cheaters, já que o jogo passa a ser ligado ao CPF: quem fizer besteira e for banido arrisca o CPF."
+  ]
+}

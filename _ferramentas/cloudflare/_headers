@@ -1,0 +1,5 @@
+# Copiado para dentro de _site/ so na hora de publicar na Cloudflare (ver publicar.yml).
+# O endereco de teste (*.workers.dev) e publico: sem isto o Google veria o site duas vezes.
+# Nao afeta brubaogg.com.br.
+https://:version.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex

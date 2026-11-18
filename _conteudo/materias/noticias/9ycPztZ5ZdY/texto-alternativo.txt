@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: PS5 branco ao lado de um monitor com a biblioteca da Steam aberta, com capas como Cyberpunk 2077, God of War e Hades, e o logo do PS5. Texto na arte: "PLAYDEN: PS5 TO STEAM".
+Thumb.png: PS5 branco ao lado de um monitor com a biblioteca da Steam aberta, com capas como Cyberpunk 2077, God of War e Hades, e o logo do PS5. Texto na arte: "PLAYDEN: PS5 TO STEAM".
+img-1_adrenaline.com.br.webp: PS5 e controle DualSense diante de uma TV com a biblioteca de jogos do Playden, com os logos de Steam, Wine e Vulkan à esquerda.
+img-2_pcguia.pt.jpg: Foto de uma TV com a tela do aplicativo Playden no PS5, com o botão "Play Game" e uma arte colorida de fantasia ao fundo.

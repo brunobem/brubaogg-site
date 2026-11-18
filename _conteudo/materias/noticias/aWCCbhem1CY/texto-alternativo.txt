@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Produtos da coleção oficial de GTA 6 sobre uma mesa: bonés rosa e preto, camisetas (uma preta com a estampa de Vice City), sacola rosa, isqueiro e chaveiros, com a logo do jogo. Texto na arte: "PRODUTOS".
+thumb.png: Produtos da coleção oficial de GTA 6 sobre uma mesa: bonés rosa e preto, camisetas (uma preta com a estampa de Vice City), sacola rosa, isqueiro e chaveiros, com a logo do jogo. Texto na arte: "PRODUTOS".

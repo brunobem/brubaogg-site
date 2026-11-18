@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-25",
+  "titulo": "Zelda Link's Awakening roda nativo no PC, feito com IA",
+  "resumo": "O Zelda: Link's Awakening virou o primeiro jogo de Switch recompilado nativamente para PC, com IA. Para mim, é arriscado, mas pode salvar jogos esquecidos.",
+  "tags": [
+    "The Legend of Zelda: Link's Awakening"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/zelda-do-switch-ganha-versao-nativa-para-pc/"
+    },
+    {
+      "nome": "TweakTown",
+      "url": "https://www.tweaktown.com/news/114092/first-native-nintendo-switch-pc-port-has-arrived-and-its-a-the-legend-of-zelda-game/index.html"
+    },
+    {
+      "nome": "TechSpot",
+      "url": "https://techspot.com/news/114228-nintendo-switch-games-latest-targets-ai-built-pc.html"
+    }
+  ],
+  "corpo": [
+    "O Zelda: Link's Awakening, do Switch, passou a rodar nativamente no PC, e isso é diferente de emulador. O Flow Games, com base no Wccftech, noticiou em 17 de outubro de 2026 que é o primeiro jogo de Switch recompilado para PC, sem emulação, em Windows, Linux e macOS. Emulador finge ser o console; aqui o código do jogo é traduzido direto para o PC, o que se chama de recompilação.",
+    "A ferramenta se chama LASRecomp, é pública no GitHub e ainda está em estágio inicial. Segundo o TweakTown, foi feita quase toda com IA, o Claude Code, que fez a engenharia reversa, o código e a documentação, sob direção de uma pessoa. O projeto não inclui o jogo: é preciso ter os arquivos da própria cópia, e o TweakTown descreve a recompilação como uma zona cinzenta. Antes disso, já tinham recebido ports nativos jogos de Xbox 360, PS3, PS4 e GameCube.",
+    "O port traz proporção 16:9 alterável, incluindo ultrawide, suporte a controle e a teclado e mouse, ícones de botão de PlayStation ou Xbox, câmera de 360 graus, suporte a upscalers, como o MetalFX da Apple, e um modo randomizer que embaralha a localização dos itens.",
+    "Para mim, é muito jogo esquecido, que nem a própria empresa portou, ganhando vida nova no PC, e a IA pode ajudar a comunidade a salvar jogos antigos, ainda mais com o fim da mídia física no horizonte. Mas com a Nintendo no meio fico com o pé atrás: ela costuma agir contra quem mexe nas coisas dela, e o projeto está público no GitHub, fácil de ser encontrado."
+  ]
+}

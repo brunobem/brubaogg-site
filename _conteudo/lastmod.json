@@ -1,0 +1,1942 @@
+{
+ "404.html": {
+  "m": "d850a256dfe6",
+  "d": "2026-10-24"
+ },
+ "arquivo.html": {
+  "m": "0542d4b0c0b6",
+  "d": "2026-11-13"
+ },
+ "arquivo/2024-12.html": {
+  "m": "e466686a9d72",
+  "d": "2026-10-24"
+ },
+ "arquivo/2025-01.html": {
+  "m": "9963a8f9dd0f",
+  "d": "2026-10-24"
+ },
+ "arquivo/2025-02.html": {
+  "m": "4037d3ac9cbd",
+  "d": "2026-10-24"
+ },
+ "arquivo/2025-03.html": {
+  "m": "75505102c2de",
+  "d": "2026-10-24"
+ },
+ "arquivo/2025-05.html": {
+  "m": "c23dcd49aef9",
+  "d": "2026-10-24"
+ },
+ "arquivo/2025-09.html": {
+  "m": "7e0b575dc7ca",
+  "d": "2026-10-24"
+ },
+ "arquivo/2025-12.html": {
+  "m": "b6f2bb3a4c4a",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-01.html": {
+  "m": "d528df02e9b8",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-02.html": {
+  "m": "0c24be1363ae",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-03.html": {
+  "m": "c727ef32b534",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-04.html": {
+  "m": "f95fac558726",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-05.html": {
+  "m": "1d92f9ad9f63",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-06.html": {
+  "m": "99eca0624381",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-07.html": {
+  "m": "c4671a3f74aa",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-08.html": {
+  "m": "dfa44f76a0e1",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-09.html": {
+  "m": "45b384b5ca67",
+  "d": "2026-10-24"
+ },
+ "arquivo/2026-10.html": {
+  "m": "b4891a634d0b",
+  "d": "2026-11-13"
+ },
+ "arquivo/2026-11.html": {
+  "m": "4ce4527c5844",
+  "d": "2026-11-13"
+ },
+ "busca.html": {
+  "m": "34bca8826dd8",
+  "d": "2026-11-18"
+ },
+ "cortes.html": {
+  "m": "2dee98c5f749",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/burger-shot-do-gta-6-chega-a-arena-do-miami-heat.html": {
+  "m": "c7bfbfa945fb",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/cervejas-do-gta-6-podem-virar-realidade-nos-eua.html": {
+  "m": "42abe4182e21",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/ex-rockstar-ia-pode-apressar-o-gta-6-no-pc.html": {
+  "m": "9eab0715a1f5",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/god-of-war-laufey-pode-fugir-do-gta-6-e-ir-para-2027.html": {
+  "m": "8dea7b884cc8",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-25-minutos-de-gameplay-vazam-rockstar-nao-comenta.html": {
+  "m": "66f8418b3637",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-aparece-em-south-park-com-cena-de-gameplay.html": {
+  "m": "c6ba7d9b2d96",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-as-6-primeiras-radios-e-a-volta-da-flash-fm.html": {
+  "m": "00723da63a5f",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-atrasou-em-parte-por-causa-dos-npcs-e-ainda-bem.html": {
+  "m": "2e08b2425bc6",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-carros-reais-com-visual-do-jogo-rodam-em-miami.html": {
+  "m": "c7145e77c10c",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-casal-assina-contrato-para-jogar-sem-ser-interrompido.html": {
+  "m": "c8c246a40821",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-colecionador-custa-cerca-de-r-2-mil-sem-o-jogo.html": {
+  "m": "70f2b1c6b5bc",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-custa-r-449-90-no-brasil-na-pre-venda.html": {
+  "m": "620d4f8c67d7",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-cyberleek-ameaca-a-take-two-com-botao-de-emergencia.html": {
+  "m": "3910aaa98b5b",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-da-para-ouvir-podcasts-ate-fora-do-carro.html": {
+  "m": "9f3fe7600522",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-deve-ficar-sem-loot-box-mas-tera-compras-no-jogo.html": {
+  "m": "c3f8dbc71670",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-do-celular-de-gta-5-aos-apps-waink-e-rydeme.html": {
+  "m": "07860b21afad",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-entra-no-the-game-awards-2026-por-um-dia.html": {
+  "m": "0ce2d4e4c190",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-funcionarios-da-rockstar-na-india-relatam-crunch.html": {
+  "m": "e5cf2dfc9511",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-game-informer-descreve-furacoes-e-tempestades.html": {
+  "m": "0ef3e034be64",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-lista-de-atividades-ja-supera-a-de-gta-5.html": {
+  "m": "1f6373748737",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-lucia-e-jason-estampam-a-revista-love.html": {
+  "m": "a8a0a4fbb1be",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-miami-beach-aprova-anuncios-em-cadeiras-de-praia.html": {
+  "m": "f1ca9ce17620",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-miami-heat-lanca-roupas-e-uniforme-de-vice-city.html": {
+  "m": "29eb7cb8dd3d",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-o-assalto-a-banco-do-trailer-e-a-lucia.html": {
+  "m": "c13807948fb2",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-o-passado-do-jason-no-exercito-no-trailer.html": {
+  "m": "ec1c71f16b8a",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-o-relacionamento-de-jason-e-lucia-muda-o-final.html": {
+  "m": "5d856f923133",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-perfil-criminal-vai-do-profissional-ao-irredimivel.html": {
+  "m": "d36ce1292c15",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-pode-passar-de-100-horas-com-tudo-o-que-tem.html": {
+  "m": "14ddfb166c51",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-pre-venda-no-ps5-supera-o-xbox-diz-levantamento.html": {
+  "m": "11b7a2f72268",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-rockstar-andou-com-policiais-e-gangues-na-florida.html": {
+  "m": "ce814b10a1b1",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-rockstar-confirma-atividades-de-sinuca-a-jet-ski.html": {
+  "m": "0433d30af5f4",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-rockstar-lanca-colecao-oficial-de-produtos.html": {
+  "m": "539cbe8a379b",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-rockstar-montou-um-time-so-para-falas-de-npcs.html": {
+  "m": "e2ec494fa40e",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-roubo-de-carros-ganha-app-de-celular-e-rastreadores.html": {
+  "m": "c35f513ac6ed",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-sera-liberado-a-meia-noite-de-19-de-novembro-no-brasil.html": {
+  "m": "8dd07886f17e",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-sony-veste-o-ps5-de-vice-city-na-pre-venda.html": {
+  "m": "0215777f1361",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-tera-170-especies-de-animais-rdr2-tem-cerca-de-200.html": {
+  "m": "e2988c978ec7",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-tera-app-de-carona-e-satira-do-instagram.html": {
+  "m": "f26b9afce602",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-tera-mais-de-170-animais-mas-e-o-fundo-do-mar.html": {
+  "m": "fd29792c5864",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-tera-mapa-com-o-dobro-do-tamanho-do-gta-5.html": {
+  "m": "a077b0b52c05",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-tera-pets-o-que-se-sabe-sobre-os-170-animais-do-jogo.html": {
+  "m": "49376f7144cd",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-teria-210-gb-no-ps5-segundo-vazamento.html": {
+  "m": "3716a67acdef",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-trailer-reforca-a-campanha-da-sony-pelo-ps5.html": {
+  "m": "ddd2fb0badd3",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-ultimate-edition-o-que-vem-na-versao-mais-cara.html": {
+  "m": "1d3142ba8070",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-um-playtest-saiu-dos-trilhos-por-duas-horas.html": {
+  "m": "162b05e4dffb",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-vazamento-da-best-buy-citava-18-a-21-de-maio.html": {
+  "m": "1ba246826df1",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-xbox-nega-streaming-exclusivo-e-acesso-no-pc.html": {
+  "m": "7c9a7dc7bdcf",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-animais.html": {
+  "m": "a0c53ab4b4f6",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-atividades-secundarias.html": {
+  "m": "faa694af7e88",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-celular.html": {
+  "m": "4600baedcff5",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-marcas-na-vida-real.html": {
+  "m": "2024fce494a3",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-moralidade-e-relacionamento.html": {
+  "m": "a3a82477e018",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-mundo-vivo.html": {
+  "m": "6e74c716cf53",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-no-pc.html": {
+  "m": "e3f24d79a0c3",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-preco-e-pre-venda.html": {
+  "m": "09f4e37ed460",
+  "d": "2026-10-24"
+ },
+ "gta6-novidades/gta6-radios-e-podcasts.html": {
+  "m": "2dc1d75cbd2b",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-revista-love.html": {
+  "m": "86913b363764",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/gta6-trailer-de-lancamento.html": {
+  "m": "21a99e63be7f",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/jacare-flamingo-e-peixe-boi-os-animais-de-gta-6.html": {
+  "m": "2c0c89407093",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/miami-heat-revela-uniforme-de-vice-city-do-gta-6.html": {
+  "m": "dcc83539441d",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/nem-a-rockstar-sabe-tudo-o-que-tem-no-gta-6.html": {
+  "m": "a59d692ff379",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/pedidos-de-folga-no-lancamento-do-gta-6-sobem-ate-17.html": {
+  "m": "9b394c6bf2e1",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/rockstar-endurece-regras-de-mods-e-veta-crossovers-em-gta-6.html": {
+  "m": "8c844512bbf7",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/rockstar-faz-promocao-de-gta-antigos-so-no-pc.html": {
+  "m": "53811988cdb3",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/take-two-diz-que-gta-6-e-feito-a-mao-mas-usa-ia.html": {
+  "m": "118c145f3fd8",
+  "d": "2026-11-18"
+ },
+ "gta6-novidades/voce-zerou-gta-5-a-maioria-nao.html": {
+  "m": "764735222ddb",
+  "d": "2026-11-18"
+ },
+ "gta6.html": {
+  "m": "3595254d4a9b",
+  "d": "2026-11-18"
+ },
+ "index.html": {
+  "m": "e9328a3b4b3b",
+  "d": "2026-11-18"
+ },
+ "lancamentos.html": {
+  "m": "582c18a36519",
+  "d": "2026-11-18"
+ },
+ "lancamentos/9-jogos-indie-que-chegam-em-outubro-de-2026.html": {
+  "m": "78d9d68050cc",
+  "d": "2026-11-18"
+ },
+ "lancamentos/agosto-2026-tem-tudo-hell-let-loose-vietnam-elden-ring-no-switch-2-e-m.html": {
+  "m": "d6714444eeba",
+  "d": "2026-10-24"
+ },
+ "lancamentos/call-of-duty-final-fantasy-e-mais-6-bombas-em-outubro.html": {
+  "m": "dc2665b9ee3d",
+  "d": "2026-10-24"
+ },
+ "lancamentos/lancamentos-de-agosto-de-2026-hell-let-loose-vietnam-e-mais.html": {
+  "m": "d8740445485c",
+  "d": "2026-11-18"
+ },
+ "lancamentos/lancamentos-de-julho-de-2026-black-flag-resynced-e-mais.html": {
+  "m": "35cf71ea1143",
+  "d": "2026-11-18"
+ },
+ "lancamentos/lancamentos-de-junho-de-2026-gothic-remake-star-fox-e-mais.html": {
+  "m": "2244ea0b0d28",
+  "d": "2026-11-18"
+ },
+ "lancamentos/lancamentos-de-maio-de-2026-forza-horizon-6-e-mais.html": {
+  "m": "6f9e7f127be3",
+  "d": "2026-11-18"
+ },
+ "lancamentos/lancamentos-de-outubro-de-2026-modern-warfare-4-e-mais.html": {
+  "m": "1dd47823aa61",
+  "d": "2026-11-18"
+ },
+ "lancamentos/lancamentos-de-setembro-de-2026-wolverine-e-dawnwalker.html": {
+  "m": "77d203023be7",
+  "d": "2026-11-18"
+ },
+ "lancamentos/lancamentos-indie-de-novembro-de-2026-21-jogos.html": {
+  "m": "e89d82a4c32e",
+  "d": "2026-11-18"
+ },
+ "lancamentos/maio-vai-ser-insano-10-jogos-que-nao-pode-perder.html": {
+  "m": "8acc6c101e63",
+  "d": "2026-10-24"
+ },
+ "lancamentos/os-games-mais-esperados-de-julho-chegaram.html": {
+  "m": "558b55fe30f7",
+  "d": "2026-10-24"
+ },
+ "lancamentos/os-melhores-jogos-de-junho.html": {
+  "m": "53788c0f3425",
+  "d": "2026-10-24"
+ },
+ "lancamentos/setembro-vai-ser-insano-os-9-melhores-jogos-do-mes.html": {
+  "m": "2a781fcf6e48",
+  "d": "2026-10-24"
+ },
+ "lives.html": {
+  "m": "1b697445c02a",
+  "d": "2026-11-18"
+ },
+ "mcp-tiktok.html": {
+  "m": "7380e2e98d78",
+  "d": "2026-10-24"
+ },
+ "mcp-youtube.html": {
+  "m": "d2726f1ba741",
+  "d": "2026-10-24"
+ },
+ "noticias.html": {
+  "m": "115a271b8c86",
+  "d": "2026-11-18"
+ },
+ "noticias/1666-amsterdam-chegou-ao-acesso-antecipado-em-25-de-agosto.html": {
+  "m": "73b1fc249928",
+  "d": "2026-11-18"
+ },
+ "noticias/171-o-gta-brasileiro-e-adiado-para-2027.html": {
+  "m": "dac00ff85690",
+  "d": "2026-11-18"
+ },
+ "noticias/a-bioware-fechou-as-portas-depois-de-mais-de-30-anos.html": {
+  "m": "117e836ddee1",
+  "d": "2026-11-18"
+ },
+ "noticias/a-faye-vai-ser-mesmo-a-protagonista-de-god-of-war.html": {
+  "m": "fc5fd5444643",
+  "d": "2026-11-18"
+ },
+ "noticias/a-rockstar-odeia-criadores-de-mods.html": {
+  "m": "045100b694dd",
+  "d": "2026-10-24"
+ },
+ "noticias/a-rockstar-perdeu-a-nocao-com-esse-preco-do-gta-6.html": {
+  "m": "ef2f2e673f38",
+  "d": "2026-10-24"
+ },
+ "noticias/a-steam-provou-que-jogo-acessivel-vence-a-pirataria.html": {
+  "m": "21222e0b23b1",
+  "d": "2026-10-24"
+ },
+ "noticias/amazon-cancela-o-mmorpg-de-o-senhor-dos-aneis.html": {
+  "m": "3d1e62105ee4",
+  "d": "2026-11-18"
+ },
+ "noticias/amd-fsr-4-1-vai-chegar-ao-xbox-series-x-e-s.html": {
+  "m": "85c35278bf2e",
+  "d": "2026-11-18"
+ },
+ "noticias/anthropic-faz-o-claude-code-evitar-recriar-jogos.html": {
+  "m": "a8fda1a20ae2",
+  "d": "2026-11-18"
+ },
+ "noticias/app-do-xbox-no-pc-fica-ate-60-mais-rapido.html": {
+  "m": "840803bebfb8",
+  "d": "2026-11-18"
+ },
+ "noticias/arc-raiders-2-0-a-maior-atualizacao-desde-o-lancamento.html": {
+  "m": "6fa0f7c863bb",
+  "d": "2026-11-18"
+ },
+ "noticias/arc-raiders-avalia-modo-pve-depois-de-teste.html": {
+  "m": "f1904ebb2b31",
+  "d": "2026-11-18"
+ },
+ "noticias/arc-raiders-troca-vozes-de-ia-por-atores-de-verdade.html": {
+  "m": "6b1dbda38efc",
+  "d": "2026-11-18"
+ },
+ "noticias/arkane-lyon-corre-risco-de-fechar.html": {
+  "m": "423d2f75e83b",
+  "d": "2026-11-18"
+ },
+ "noticias/asha-sharma-diz-que-o-xbox-saiu-da-queda-livre.html": {
+  "m": "0783194c7610",
+  "d": "2026-11-18"
+ },
+ "noticias/assassin-s-creed-black-flag-resynced-data-e-preco-no-brasil.html": {
+  "m": "71cdb983cea8",
+  "d": "2026-11-18"
+ },
+ "noticias/assassin-s-creed-destiny-vazou-mas-ja-estava-cancelado.html": {
+  "m": "19ac54a523a0",
+  "d": "2026-11-18"
+ },
+ "noticias/assassin-s-creed-hexe-rumor-traz-ezio-como-mentor.html": {
+  "m": "c5ebc0e67c6e",
+  "d": "2026-11-18"
+ },
+ "noticias/assassins-creed-black-flag-resynced.html": {
+  "m": "daeabe022175",
+  "d": "2026-11-18"
+ },
+ "noticias/black-extraction-raiders-chega-ao-android-no-brasil.html": {
+  "m": "8ffe7e034ecf",
+  "d": "2026-11-18"
+ },
+ "noticias/black-flag-resynced-ganha-new-game-plus.html": {
+  "m": "4c6b972abbde",
+  "d": "2026-11-18"
+ },
+ "noticias/black-flag-resynced-no-switch-2-o-que-o-vazamento-mostra.html": {
+  "m": "c735cfa72380",
+  "d": "2026-11-18"
+ },
+ "noticias/black-flag-resynced-nota-84-bugs-e-microtransacoes.html": {
+  "m": "dc1c7c01e328",
+  "d": "2026-11-18"
+ },
+ "noticias/blizzard-ajuda-nas-cinematicas-de-fable-diz-matt-booty.html": {
+  "m": "6a0e20f4ab09",
+  "d": "2026-11-18"
+ },
+ "noticias/bloodborne-vai-virar-animacao-para-maiores-da-sony.html": {
+  "m": "2368d103d3e0",
+  "d": "2026-11-18"
+ },
+ "noticias/bug-faz-nier-automata-pular-de-50-gb-para-366-gb.html": {
+  "m": "16b2dc7d2c31",
+  "d": "2026-11-18"
+ },
+ "noticias/call-of-duty-filme-ganha-teaser-no-cinemacon.html": {
+  "m": "1adfacd4047c",
+  "d": "2026-11-18"
+ },
+ "noticias/call-of-duty-filme.html": {
+  "m": "b04db7aa563f",
+  "d": "2026-11-18"
+ },
+ "noticias/call-of-duty-fim-do-ps4.html": {
+  "m": "53db6c1ad847",
+  "d": "2026-10-24"
+ },
+ "noticias/call-of-duty-modern-warfare-4-nao-sai-para-ps4.html": {
+  "m": "d74cd2e727eb",
+  "d": "2026-11-18"
+ },
+ "noticias/capcom-confirma-vazamento-de-dados-de-11-milhoes.html": {
+  "m": "f594ea804f2d",
+  "d": "2026-11-18"
+ },
+ "noticias/capcom-diz-que-acertou-a-dificuldade-de-onimusha.html": {
+  "m": "2d125dc7755d",
+  "d": "2026-11-18"
+ },
+ "noticias/caravan-sandwitch-chega-ao-celular-em-agosto.html": {
+  "m": "846cbf8c6315",
+  "d": "2026-11-18"
+ },
+ "noticias/ceo-do-xbox-diz-que-o-corte-de-preco-do-game-pass-funcionou.html": {
+  "m": "768c554b8ed7",
+  "d": "2026-11-18"
+ },
+ "noticias/charlie-cox-jogou-clair-obscur-e-admite-que-nao-e-bom.html": {
+  "m": "02d3a397603b",
+  "d": "2026-11-18"
+ },
+ "noticias/control-resonant-chegou-em-24-de-setembro-com-dylan-faden.html": {
+  "m": "72b64453ca4b",
+  "d": "2026-11-18"
+ },
+ "noticias/control-resonant-ps-store-brasileira-corrige-o-preco.html": {
+  "m": "5eb3c55bd226",
+  "d": "2026-11-18"
+ },
+ "noticias/control-resonant-tera-dublagem-e-legendas-em-portugues.html": {
+  "m": "82379a83080c",
+  "d": "2026-11-18"
+ },
+ "noticias/control-resonant.html": {
+  "m": "0d8efdb3bb1f",
+  "d": "2026-10-24"
+ },
+ "noticias/crimson-desert-chegou-em-19-de-marco-e-vendeu-6-milhoes.html": {
+  "m": "cd7518d2bdce",
+  "d": "2026-11-18"
+ },
+ "noticias/cs2-como-conseguir-a-galinha-de-estimacao-de-graca.html": {
+  "m": "5871b022df76",
+  "d": "2026-11-18"
+ },
+ "noticias/cs2-tese-de-mestrado-usa-mouse-e-teclado-contra-smurfs.html": {
+  "m": "41ed1a56434b",
+  "d": "2026-11-18"
+ },
+ "noticias/cyberpunk-2077-chega-a-40-milhoes-de-copias-vendidas.html": {
+  "m": "43f55bf926cc",
+  "d": "2026-11-18"
+ },
+ "noticias/cyberpunk-2077-ganha-filme-live-action-da-paramount.html": {
+  "m": "7b0d49f98090",
+  "d": "2026-11-18"
+ },
+ "noticias/cyberpunk-2077-ganha-update-2-5-de-edgerunners-2.html": {
+  "m": "c56bbb4e1f86",
+  "d": "2026-11-18"
+ },
+ "noticias/cyberpunk-edgerunners-2-estreia-em-20-de-outubro.html": {
+  "m": "8339c07a8a9b",
+  "d": "2026-11-18"
+ },
+ "noticias/darksiders-warmastered-gratis-no-xbox-us-10-no-ps5.html": {
+  "m": "ef2c7f2ac3c4",
+  "d": "2026-11-18"
+ },
+ "noticias/dave-the-diver-chega-ao-celular-em-17-de-setembro.html": {
+  "m": "346e0c062cff",
+  "d": "2026-11-18"
+ },
+ "noticias/death-stranding-isolations-anime-ganha-primeiro-teaser.html": {
+  "m": "007f47a7fd62",
+  "d": "2026-11-18"
+ },
+ "noticias/diablo-5-e-anunciado-para-a-primavera-de-2029.html": {
+  "m": "aa7ecff7bf26",
+  "d": "2026-11-18"
+ },
+ "noticias/digimon-up-chegou-ao-celular-em-15-de-julho.html": {
+  "m": "d82ab07e2a8b",
+  "d": "2026-11-18"
+ },
+ "noticias/discord-vai-mostrar-mensagens-de-canais-publicos-no-google.html": {
+  "m": "5064212ae2ea",
+  "d": "2026-11-18"
+ },
+ "noticias/dlss-5-causa-caos-e-memes-minha-opiniao.html": {
+  "m": "7bccd243917c",
+  "d": "2026-11-18"
+ },
+ "noticias/dlss-5-nao-oficial-em-mods-o-que-se-sabe-e-os-riscos.html": {
+  "m": "b100c2af185b",
+  "d": "2026-11-18"
+ },
+ "noticias/dlss-5.html": {
+  "m": "fac6f7e2c11b",
+  "d": "2026-10-24"
+ },
+ "noticias/dying-light-the-beast-nao-tera-mais-conteudo-novo.html": {
+  "m": "be01891a9b46",
+  "d": "2026-11-18"
+ },
+ "noticias/echoes-of-aincrad-o-trailer-que-parecia-um-anime-novo.html": {
+  "m": "345bae90070c",
+  "d": "2026-11-18"
+ },
+ "noticias/emulador-de-xbox-360-para-android-chega-via-github.html": {
+  "m": "cfc56891326a",
+  "d": "2026-11-18"
+ },
+ "noticias/epic-games-demite-mais-de-1-000-funcionarios.html": {
+  "m": "bdab8d786290",
+  "d": "2026-11-18"
+ },
+ "noticias/epic-ofereceu-broken-sword-reforged-de-graca-no-android.html": {
+  "m": "0b6d2119025a",
+  "d": "2026-11-18"
+ },
+ "noticias/eu-nao-gosto-nada-do-fim-da-midia-fisica.html": {
+  "m": "489dcfc6d9f6",
+  "d": "2026-11-18"
+ },
+ "noticias/fable-adiamento.html": {
+  "m": "892be623d8da",
+  "d": "2026-10-24"
+ },
+ "noticias/fable-ainda-dizia-que-enfrentaria-o-gta-6-em-2026.html": {
+  "m": "e79f3ef0c4ba",
+  "d": "2026-11-18"
+ },
+ "noticias/fable-e-adiado-para-23-de-fevereiro-de-2027.html": {
+  "m": "8e06e4f60938",
+  "d": "2026-11-18"
+ },
+ "noticias/fable-ganha-30-minutos-de-gameplay-focados-em-npcs.html": {
+  "m": "3172a8372bb2",
+  "d": "2026-11-18"
+ },
+ "noticias/fable-o-combate-sera-acessivel-mas-nao-facil.html": {
+  "m": "93c8c77cedf4",
+  "d": "2026-11-18"
+ },
+ "noticias/fallen-anuncia-aposentadoria-no-fim-de-2026.html": {
+  "m": "cec597e34e8e",
+  "d": "2026-11-18"
+ },
+ "noticias/fallout-shelter-the-experiment-e-reality-do-prime-video.html": {
+  "m": "b893e70d057f",
+  "d": "2026-11-18"
+ },
+ "noticias/fas-de-mass-effect-poem-outdoor-na-times-square.html": {
+  "m": "04448ccb03a2",
+  "d": "2026-11-18"
+ },
+ "noticias/faye-em-god-of-war-laufey-ela-tera-espaco-para-brilhar.html": {
+  "m": "925234d7d966",
+  "d": "2026-11-18"
+ },
+ "noticias/fechamento-da-bioware.html": {
+  "m": "4a2a1ab40d65",
+  "d": "2026-11-18"
+ },
+ "noticias/filme-de-call-of-duty-nao-sera-so-tiro-diz-diretor.html": {
+  "m": "e3d226f9af12",
+  "d": "2026-11-18"
+ },
+ "noticias/filme-de-call-of-duty-tem-data-30-de-junho-de-2028.html": {
+  "m": "85bc9555ed62",
+  "d": "2026-11-18"
+ },
+ "noticias/filme-de-elden-ring-tem-elenco-e-data-3-de-marco-de-2028.html": {
+  "m": "0ba0afee83de",
+  "d": "2026-11-18"
+ },
+ "noticias/fim-da-midia-fisica.html": {
+  "m": "d621f33a911b",
+  "d": "2026-11-18"
+ },
+ "noticias/fim-do-disco-o-que-muda-no-preco-e-no-ps6-para-mim.html": {
+  "m": "d72a932e9f18",
+  "d": "2026-11-18"
+ },
+ "noticias/final-fantasy-vii-revelation-e-anunciado-para-2027.html": {
+  "m": "5ceb6f02052a",
+  "d": "2026-11-18"
+ },
+ "noticias/final-fantasy-vii-revelation-permite-pilotar-a-highwind.html": {
+  "m": "37cf4a0f5d01",
+  "d": "2026-11-18"
+ },
+ "noticias/fortnite-salve-o-mundo-vira-gratuito-em-16-de-abril.html": {
+  "m": "50e39d1b533e",
+  "d": "2026-11-18"
+ },
+ "noticias/fortnite-volta-a-app-store-do-iphone-no-mundo-todo.html": {
+  "m": "2592dac1d5d1",
+  "d": "2026-11-18"
+ },
+ "noticias/game-pass-deve-passar-por-uma-grande-reformulacao.html": {
+  "m": "036e7c33cf44",
+  "d": "2026-11-18"
+ },
+ "noticias/game-pass-fica-mais-barato-no-brasil-ultimate-a-r-76-90.html": {
+  "m": "d12167deac0a",
+  "d": "2026-11-18"
+ },
+ "noticias/game-pass-mais-barato-e-parceria-com-a-netflix-o-rumor.html": {
+  "m": "cc2141d045c3",
+  "d": "2026-11-18"
+ },
+ "noticias/game-pass-perdeu-cyberpunk-2077-e-mais-nove-jogos.html": {
+  "m": "b13dc34fd40e",
+  "d": "2026-11-18"
+ },
+ "noticias/game-pass-preco.html": {
+  "m": "3900aecbe858",
+  "d": "2026-10-24"
+ },
+ "noticias/game-pass-reformulacao.html": {
+  "m": "1c14ec91707c",
+  "d": "2026-11-18"
+ },
+ "noticias/gamesir-lanca-controles-inspirados-em-gta-6.html": {
+  "m": "9b970f9ca1d6",
+  "d": "2026-11-18"
+ },
+ "noticias/gen-atlas-novo-jogo-do-criador-de-shadow-of-the-colossus.html": {
+  "m": "6ce2fb975b52",
+  "d": "2026-11-18"
+ },
+ "noticias/gerente-do-xbox-desativa-conta-no-x-apos-falar-de-ia.html": {
+  "m": "c8a6e69fa78a",
+  "d": "2026-11-18"
+ },
+ "noticias/god-of-war-laufey-e-adiado-para-20-de-maio-de-2027.html": {
+  "m": "733baa3bd03d",
+  "d": "2026-11-18"
+ },
+ "noticias/god-of-war-laufey-e-revelado-no-state-of-play-de-2-de-junho.html": {
+  "m": "359ea7723888",
+  "d": "2026-11-18"
+ },
+ "noticias/god-of-war-laufey-estava-nos-planos-desde-2018-diz-atriz.html": {
+  "m": "e4ca30b5a06d",
+  "d": "2026-11-18"
+ },
+ "noticias/god-of-war-laufey-fas-especulam-volta-de-deuses-mortos.html": {
+  "m": "be8c3af6ac17",
+  "d": "2026-11-18"
+ },
+ "noticias/god-of-war-laufey-pre-venda-abre-veja-edicoes-e-precos.html": {
+  "m": "e4cbafe7bc29",
+  "d": "2026-11-18"
+ },
+ "noticias/god-of-war-laufey-quem-fara-o-papel-de-mimir-para-a-faye.html": {
+  "m": "ad34d2af9b78",
+  "d": "2026-11-18"
+ },
+ "noticias/god-of-war-laufey.html": {
+  "m": "db1543a263de",
+  "d": "2026-11-18"
+ },
+ "noticias/gta-6-colecionador-custa-cerca-de-r-2-mil-sem-o-jogo.html": {
+  "m": "ef2f2e673f38",
+  "d": "2026-10-24"
+ },
+ "noticias/gta-6-fica-fora-do-topo-da-lista-da-famitsu.html": {
+  "m": "608a9c5c3571",
+  "d": "2026-11-18"
+ },
+ "noticias/gta-6-tera-mais-de-170-animais-mas-e-o-fundo-do-mar.html": {
+  "m": "c29a9250ea04",
+  "d": "2026-11-18"
+ },
+ "noticias/gta-6-tera-pets-o-que-se-sabe-sobre-os-170-animais-do-jogo.html": {
+  "m": "5d3e4e8821dc",
+  "d": "2026-11-18"
+ },
+ "noticias/gta6-carona-no-hype.html": {
+  "m": "33482811b24a",
+  "d": "2026-11-18"
+ },
+ "noticias/guild-wars-3-e-anunciado-para-pc-e-ps5-com-beta-em-2027.html": {
+  "m": "6f80f9af156e",
+  "d": "2026-11-18"
+ },
+ "noticias/guns-of-eschaton-o-ultimo-jogo-de-viktor-antonov.html": {
+  "m": "8a7a354a6549",
+  "d": "2026-11-18"
+ },
+ "noticias/helldivers-2-troca-anti-cheat-e-quebra-mods.html": {
+  "m": "0fd0c65df975",
+  "d": "2026-11-18"
+ },
+ "noticias/inside-jogo-curtinho-com-o-final-mais-bizarro-que-ja-vi.html": {
+  "m": "56e29579472f",
+  "d": "2026-10-24"
+ },
+ "noticias/inside-jogo-curto-final-impactante-e-arte-premiada.html": {
+  "m": "56e29579472f",
+  "d": "2026-10-24"
+ },
+ "noticias/inzoi-no-ps5-lancamento-seria-so-no-1-semestre-de-2027.html": {
+  "m": "413731fe60fe",
+  "d": "2026-11-18"
+ },
+ "noticias/jailbreak-de-consoles.html": {
+  "m": "1abc363ba95f",
+  "d": "2026-11-18"
+ },
+ "noticias/jensen-huang-defende-o-dlss-5-nao-e-um-filtro.html": {
+  "m": "7e2628addb9c",
+  "d": "2026-11-18"
+ },
+ "noticias/kingdom-hearts-4-ganha-trailer-e-mira-o-fim-de-2027.html": {
+  "m": "5a88c9beac57",
+  "d": "2026-11-18"
+ },
+ "noticias/league-of-legends-classic-acaba-em-6-de-janeiro-de-2027.html": {
+  "m": "07a3e20101c2",
+  "d": "2026-11-18"
+ },
+ "noticias/lies-of-p-2-sai-da-prototipagem-e-entra-em-producao.html": {
+  "m": "1f8efe4857d9",
+  "d": "2026-11-18"
+ },
+ "noticias/loja-pirata-do-ps5-sai-do-ar-mas-clones-ja-voltaram.html": {
+  "m": "47d7e8841049",
+  "d": "2026-11-18"
+ },
+ "noticias/marvel-s-wolverine-estreia-com-78-no-metacritic.html": {
+  "m": "cc32c122e0a7",
+  "d": "2026-11-18"
+ },
+ "noticias/meccha-chameleon-indie-barato-passa-de-15-milhoes.html": {
+  "m": "dc8f6e2b9b48",
+  "d": "2026-11-18"
+ },
+ "noticias/memoria-ram-deve-ficar-mais-cara-por-causa-da-ia.html": {
+  "m": "463aa4fb5bcb",
+  "d": "2026-11-18"
+ },
+ "noticias/mindseye-corta-o-preco-e-ganha-a-missao-blacklisted.html": {
+  "m": "51c92e9d8c8a",
+  "d": "2026-11-18"
+ },
+ "noticias/minecraft-almofadas-para-sentar-dividem-a-comunidade.html": {
+  "m": "4fdf8da4a6e5",
+  "d": "2026-11-18"
+ },
+ "noticias/minecraft-ganha-the-sift-primeira-dimensao-nova-em-14-anos.html": {
+  "m": "49285487bf32",
+  "d": "2026-11-18"
+ },
+ "noticias/minecraft-ganhou-a-primeira-dimensao-nova-em-14-anos.html": {
+  "m": "5b8dcc014768",
+  "d": "2026-11-18"
+ },
+ "noticias/modern-warfare-4-volta-a-boa-forma-segundo-a-critica.html": {
+  "m": "558eea85d610",
+  "d": "2026-11-18"
+ },
+ "noticias/nexus-mods-nao-proibe-ia-mas-exige-aviso-nos-mods.html": {
+  "m": "cfb033603c74",
+  "d": "2026-11-18"
+ },
+ "noticias/nicolas-cage-chega-ao-call-of-duty-como-operador-jogavel.html": {
+  "m": "6dda431e965a",
+  "d": "2026-11-18"
+ },
+ "noticias/nintendo-diz-que-nao-tem-planos-de-abandonar-o-fisico.html": {
+  "m": "8bd3cb78801e",
+  "d": "2026-11-18"
+ },
+ "noticias/nintendo-tera-jogos-digitais-mais-baratos-no-brasil.html": {
+  "m": "6d650b54e321",
+  "d": "2026-11-18"
+ },
+ "noticias/no-man-s-sky-ganha-forsaken-update-gratuito-de-terror.html": {
+  "m": "2d1d45e318f2",
+  "d": "2026-11-18"
+ },
+ "noticias/nvidia-ntc-textura-neural-reduz-o-uso-de-vram.html": {
+  "m": "f4b829925091",
+  "d": "2026-11-18"
+ },
+ "noticias/o-fim-da-midia-fisica-sony-gta-6-e-o-futuro-dos-discos.html": {
+  "m": "ae5d7a136c98",
+  "d": "2026-11-18"
+ },
+ "noticias/o-que-vai-ter-debaixo-do-mar-em-gta-6.html": {
+  "m": "c29a9250ea04",
+  "d": "2026-11-18"
+ },
+ "noticias/o-switch-2-ganha-seu-primeiro-jailbreak.html": {
+  "m": "b8ca1d2b3f29",
+  "d": "2026-11-18"
+ },
+ "noticias/ocarina-of-time-remake-custa-r-120-a-menos-que-gta-6.html": {
+  "m": "1f7f17bcdc26",
+  "d": "2026-11-18"
+ },
+ "noticias/od-de-kojima-tera-sistema-para-quem-tem-medo-de-continuar.html": {
+  "m": "62dceca499a5",
+  "d": "2026-11-18"
+ },
+ "noticias/onimusha-way-of-the-sword-e-antecipado-para-4-de-setembro.html": {
+  "m": "feed77a7bce6",
+  "d": "2026-11-18"
+ },
+ "noticias/os-produtores-de-resident-evil-querem-silent-hill.html": {
+  "m": "d0f73221aff4",
+  "d": "2026-10-24"
+ },
+ "noticias/overwatch-widowmaker-vira-eve-de-stellar-blade.html": {
+  "m": "e44342935ace",
+  "d": "2026-11-18"
+ },
+ "noticias/palworld-1-0-sai-do-acesso-antecipado-com-72-novos-pals.html": {
+  "m": "1cd7657ee840",
+  "d": "2026-11-18"
+ },
+ "noticias/paralives-chega-ao-acesso-antecipado-e-desafia-o-the-sims.html": {
+  "m": "a83a57ea160a",
+  "d": "2026-11-18"
+ },
+ "noticias/parasite-z-terror-gratuito-no-estilo-resident-evil-classico.html": {
+  "m": "ac365f7e76dd",
+  "d": "2026-11-18"
+ },
+ "noticias/peak-chega-aos-consoles-com-crossplay.html": {
+  "m": "03ca8cc8132d",
+  "d": "2026-11-18"
+ },
+ "noticias/phantom-blade-zero-deve-ficar-sem-midia-fisica-no-ps5.html": {
+  "m": "7571ce5e267a",
+  "d": "2026-11-18"
+ },
+ "noticias/phantom-blade-zero-e-adiado-para-29-de-outubro.html": {
+  "m": "f112a4562bd1",
+  "d": "2026-11-18"
+ },
+ "noticias/phantom-blade-zero-no-gamescom-latam-demo-e-muito-dificil.html": {
+  "m": "b1861c6458da",
+  "d": "2026-11-18"
+ },
+ "noticias/phantom-blade-zero-tera-midia-fisica-mas-so-em-2027.html": {
+  "m": "46b97a0cbe12",
+  "d": "2026-11-18"
+ },
+ "noticias/phantom-blade-zero.html": {
+  "m": "513ac384b901",
+  "d": "2026-11-18"
+ },
+ "noticias/phasmophobia-by-alan-wake-o-evento-que-chegou-em-maio.html": {
+  "m": "eee75f514a16",
+  "d": "2026-11-18"
+ },
+ "noticias/pirataria-e-problema-de-servico-nao-so-de-preco.html": {
+  "m": "e7d7e2eb20a3",
+  "d": "2026-11-18"
+ },
+ "noticias/playden-roda-jogos-da-steam-em-ps5-com-jailbreak.html": {
+  "m": "3e993294eb58",
+  "d": "2026-11-18"
+ },
+ "noticias/playstation-6-pode-passar-de-us-1-000-dizem-rumores.html": {
+  "m": "321ca428d718",
+  "d": "2026-11-18"
+ },
+ "noticias/playstation-blackout-nao-teve-impacto-medido-diz-circana.html": {
+  "m": "56f6c5666976",
+  "d": "2026-11-18"
+ },
+ "noticias/playstation-vai-exigir-verificacao-de-idade-no-brasil.html": {
+  "m": "52c31c90d933",
+  "d": "2026-11-18"
+ },
+ "noticias/pragmata-o-efeito-diana-e-as-vendas-de-2-milhoes.html": {
+  "m": "6fa8fccc41a1",
+  "d": "2026-11-18"
+ },
+ "noticias/pragmata-tera-dublagem-em-portugues-brasileiro.html": {
+  "m": "81a757068cb5",
+  "d": "2026-11-18"
+ },
+ "noticias/pragmata.html": {
+  "m": "cca87c344a9e",
+  "d": "2026-10-24"
+ },
+ "noticias/pre-venda-de-god-of-war-laufey-abriu-veja-as-edicoes.html": {
+  "m": "a6c598b622c6",
+  "d": "2026-10-24"
+ },
+ "noticias/produtor-de-resident-evil-prepara-projeto-de-silent-hill.html": {
+  "m": "a49e99590a6e",
+  "d": "2026-11-18"
+ },
+ "noticias/projeto-roda-game-pass-no-linux-e-no-steam-deck.html": {
+  "m": "b04c69566871",
+  "d": "2026-11-18"
+ },
+ "noticias/ps5-fica-mais-caro-no-brasil-a-partir-de-2-de-abril.html": {
+  "m": "2e3bd836c4d1",
+  "d": "2026-11-18"
+ },
+ "noticias/ps5-ganha-firmware-14-20-antes-do-gta-6.html": {
+  "m": "73abfd3f7680",
+  "d": "2026-11-18"
+ },
+ "noticias/ps5-ganha-firmware-14-22-de-seguranca-antes-do-gta-6.html": {
+  "m": "3b43dc8c91bb",
+  "d": "2026-11-18"
+ },
+ "noticias/ps5-tera-hub-de-anime-ligado-a-crunchyroll-em-2027.html": {
+  "m": "71355e4d90eb",
+  "d": "2026-11-18"
+ },
+ "noticias/quem-vai-ser-o-mimir-da-faye-em-god-of-war.html": {
+  "m": "58c444daf306",
+  "d": "2026-11-18"
+ },
+ "noticias/ragnarok-online-brasil-tem-fim-marcado-para-29-de-julho.html": {
+  "m": "f12deb8bbb7a",
+  "d": "2026-11-18"
+ },
+ "noticias/red-dead-redemption-2-ganha-mod-com-sistema-nemesis.html": {
+  "m": "fce0ec79b150",
+  "d": "2026-11-18"
+ },
+ "noticias/remake-de-ocarina-of-time-ja-roda-fora-do-switch-2.html": {
+  "m": "b53c9118260a",
+  "d": "2026-11-18"
+ },
+ "noticias/resident-evil-classicos-chegam-a-steam-com-drm-da-capcom.html": {
+  "m": "1c6dc9046465",
+  "d": "2026-11-18"
+ },
+ "noticias/resident-evil-de-cregger-agrada-em-exibicoes-teste.html": {
+  "m": "f0559ccea1d2",
+  "d": "2026-11-18"
+ },
+ "noticias/resident-evil-de-zach-cregger-chega-ao-digital.html": {
+  "m": "bc847d9c7064",
+  "d": "2026-11-18"
+ },
+ "noticias/resident-evil-filme-de-zach-cregger-e-elogiado-pela-critica.html": {
+  "m": "6ad308692b42",
+  "d": "2026-11-18"
+ },
+ "noticias/resident-evil-filme.html": {
+  "m": "86347e7ce927",
+  "d": "2026-11-18"
+ },
+ "noticias/resident-evil-requiem-ganha-o-modo-leon-must-die-forever.html": {
+  "m": "6dc5f7f7baad",
+  "d": "2026-11-18"
+ },
+ "noticias/resident-evil-requiem-quase-foi-um-jogo-online.html": {
+  "m": "648d4f140d5e",
+  "d": "2026-11-18"
+ },
+ "noticias/resident-evil-veronica-o-remake-e-a-ligacao-com-requiem.html": {
+  "m": "98805ad4e347",
+  "d": "2026-11-18"
+ },
+ "noticias/resident-evil-veronica-sera-em-terceira-pessoa.html": {
+  "m": "cb974941e803",
+  "d": "2026-11-18"
+ },
+ "noticias/riot-passa-a-exigir-verificacao-de-idade-no-brasil.html": {
+  "m": "b05ee372f5ae",
+  "d": "2026-11-18"
+ },
+ "noticias/roblox-ganha-versao-nativa-para-o-ps5.html": {
+  "m": "8ba3c97eb3b1",
+  "d": "2026-11-18"
+ },
+ "noticias/rockstar-abre-a-beta-do-nopixel-v-servidor-oficial-de-rp.html": {
+  "m": "d8d19574fbf6",
+  "d": "2026-11-18"
+ },
+ "noticias/rockstar-endurece-regras-de-mods-e-veta-crossovers-em-gta-6.html": {
+  "m": "045100b694dd",
+  "d": "2026-10-24"
+ },
+ "noticias/samson-estreia-com-notas-baixas-no-metacritic.html": {
+  "m": "71b841864679",
+  "d": "2026-11-18"
+ },
+ "noticias/samson-tera-atualizacoes-e-versao-para-consoles.html": {
+  "m": "aa8bad6f1731",
+  "d": "2026-11-18"
+ },
+ "noticias/samson.html": {
+  "m": "8f8b979bf851",
+  "d": "2026-10-24"
+ },
+ "noticias/senua-ninja-theory-revela-novo-jogo-para-2027.html": {
+  "m": "003f01139c80",
+  "d": "2026-11-18"
+ },
+ "noticias/sin-reloaded-da-nightdive-tem-data-em-24-de-setembro.html": {
+  "m": "41bec5dd382d",
+  "d": "2026-11-18"
+ },
+ "noticias/slime-rancher-chegou-ao-celular-em-26-de-maio.html": {
+  "m": "6bb4d63c6d15",
+  "d": "2026-11-18"
+ },
+ "noticias/sony-desiste-do-physint-de-kojima-e-a-xbox-assume.html": {
+  "m": "55b2f45f63a0",
+  "d": "2026-11-18"
+ },
+ "noticias/sony-diz-que-vai-insistir-em-jogos-live-service.html": {
+  "m": "09a0cb31a892",
+  "d": "2026-11-18"
+ },
+ "noticias/sony-explica-a-verificacao-de-30-dias-dos-jogos-digitais.html": {
+  "m": "ddefc7f676dc",
+  "d": "2026-11-18"
+ },
+ "noticias/sony-vai-acabar-com-discos-de-jogos-novos-em-janeiro-de-2028.html": {
+  "m": "70238fac2424",
+  "d": "2026-11-18"
+ },
+ "noticias/sony-vai-fechar-as-lojas-digitais-do-ps3-e-do-ps-vita.html": {
+  "m": "ca4ada0376ae",
+  "d": "2026-11-18"
+ },
+ "noticias/south-of-midnight-chega-ao-ps5-e-ao-switch-2-em-31-de-marco.html": {
+  "m": "534251e0adf0",
+  "d": "2026-11-18"
+ },
+ "noticias/star-wars-zero-company-chegou-em-27-de-agosto.html": {
+  "m": "2c27cb4bbe8b",
+  "d": "2026-11-18"
+ },
+ "noticias/starcraft-vira-shooter-em-mundo-aberto-e-divide-fas.html": {
+  "m": "bc612fbbc5df",
+  "d": "2026-11-18"
+ },
+ "noticias/state-of-decay-3-mostra-gameplay-e-mira-2027.html": {
+  "m": "f12508b4f262",
+  "d": "2026-11-18"
+ },
+ "noticias/state-of-decay-3-o-trailer-de-2020-era-so-um-conceito.html": {
+  "m": "f1660789789c",
+  "d": "2026-11-18"
+ },
+ "noticias/state-of-play-e-o-fim-dos-portes-da-sony-para-pc.html": {
+  "m": "979faad83c5e",
+  "d": "2026-11-18"
+ },
+ "noticias/steam-clones-e-ia.html": {
+  "m": "5c8cdaf31d32",
+  "d": "2026-11-18"
+ },
+ "noticias/steam-libera-conjuntos-de-conquistas-no-cliente-beta.html": {
+  "m": "5caa86d94914",
+  "d": "2026-11-18"
+ },
+ "noticias/steamos-roda-no-mac-com-o-projeto-fx-steam-launcher.html": {
+  "m": "b2d6f167d18a",
+  "d": "2026-11-18"
+ },
+ "noticias/stellar-blade-blood-rain-e-anunciado-com-a-heroina-evie.html": {
+  "m": "856452766a3c",
+  "d": "2026-11-18"
+ },
+ "noticias/storebound-terror-no-shopping-funciona-melhor-com-amigos.html": {
+  "m": "3a5b7e0ca61f",
+  "d": "2026-10-24"
+ },
+ "noticias/subnautica-2-estreia-em-acesso-antecipado-com-co-op.html": {
+  "m": "255ae6426ebc",
+  "d": "2026-11-18"
+ },
+ "noticias/tcg-card-shop-simulator-ganha-mod-de-yu-gi-oh.html": {
+  "m": "c7e97970eef4",
+  "d": "2026-11-18"
+ },
+ "noticias/tft-draven-ivern-e-lux-voltam-no-set-enchanted-wilds.html": {
+  "m": "cc6682ebc7ab",
+  "d": "2026-11-18"
+ },
+ "noticias/tft-set-17-space-gods-acaba-com-o-carrossel.html": {
+  "m": "632143b86599",
+  "d": "2026-11-18"
+ },
+ "noticias/the-blood-of-dawnwalker-pre-venda-de-r-400-no-ps5.html": {
+  "m": "250b1b059dd8",
+  "d": "2026-11-18"
+ },
+ "noticias/the-division-resurgence-chegou-ao-mundo-todo-em-31-03.html": {
+  "m": "114d3732491c",
+  "d": "2026-11-18"
+ },
+ "noticias/the-duskbloods-e-adiado-para-2027.html": {
+  "m": "3077c3efe81d",
+  "d": "2026-11-18"
+ },
+ "noticias/the-duskbloods-mantem-2026-e-continua-sem-data.html": {
+  "m": "e712c5a83e15",
+  "d": "2026-11-18"
+ },
+ "noticias/the-last-of-us-online-estava-80-pronto-diz-ex-diretor.html": {
+  "m": "8fd0b68ce4bf",
+  "d": "2026-11-18"
+ },
+ "noticias/the-playerbase-fas-da-playstation-entram-em-gran-turismo-7.html": {
+  "m": "47d70ffe4c77",
+  "d": "2026-11-18"
+ },
+ "noticias/the-witcher-3-remastered-maior-nota-de-2026-no-metacritic.html": {
+  "m": "4ee0dda68074",
+  "d": "2026-11-18"
+ },
+ "noticias/the-witcher-3-remastered-tem-a-maior-nota-de-2026.html": {
+  "m": "609c79804290",
+  "d": "2026-11-18"
+ },
+ "noticias/the-wolf-among-us-2-e-para-2027-com-remaster-em-outubro.html": {
+  "m": "921c0f57692e",
+  "d": "2026-11-18"
+ },
+ "noticias/tim-sweeney-diz-que-a-valve-atrasou-os-games.html": {
+  "m": "07f1aaf9076b",
+  "d": "2026-11-18"
+ },
+ "noticias/tmnt-the-last-ronin-ganha-teaser-com-a-platinumgames.html": {
+  "m": "287bc783d09f",
+  "d": "2026-11-18"
+ },
+ "noticias/toei-games-divisao-de-jogos-da-dona-de-dragon-ball.html": {
+  "m": "f30bb70fa742",
+  "d": "2026-11-18"
+ },
+ "noticias/trailer-do-mass-effect-cancelado-vaza-na-internet.html": {
+  "m": "392d02fec05e",
+  "d": "2026-11-18"
+ },
+ "noticias/ubisoft-quer-comprar-a-arkane-estudio-de-dishonored.html": {
+  "m": "6683aba0dbd7",
+  "d": "2026-11-18"
+ },
+ "noticias/vai-dar-pra-ter-pet-em-gta-6.html": {
+  "m": "5d3e4e8821dc",
+  "d": "2026-11-18"
+ },
+ "noticias/valve-admite-atraso-de-ate-12-dias-uteis-na-steam.html": {
+  "m": "5e488139665c",
+  "d": "2026-11-18"
+ },
+ "noticias/valve-admite-problema-de-clones-e-ia-na-steam.html": {
+  "m": "fca88837e196",
+  "d": "2026-11-18"
+ },
+ "noticias/warzone-deixa-de-funcionar-no-ps4-e-no-xbox-one-em-2026.html": {
+  "m": "2a4e0894afb6",
+  "d": "2026-11-18"
+ },
+ "noticias/wolverine-teve-35-das-vendas-em-disco-no-ps5.html": {
+  "m": "eec81b8bcbf0",
+  "d": "2026-11-18"
+ },
+ "noticias/world-war-z-atualizacao-viral-state-chega-em-12-de-novembro.html": {
+  "m": "10574e190532",
+  "d": "2026-11-18"
+ },
+ "noticias/wow-forever-blizzard-recria-2004-sem-servidores-separados.html": {
+  "m": "0c6f58d1ed8c",
+  "d": "2026-11-18"
+ },
+ "noticias/xbox-conquistas-miticas-sao-a-resposta-a-platina.html": {
+  "m": "3a173e0c5b6a",
+  "d": "2026-11-18"
+ },
+ "noticias/xbox-pergunta-se-fallout-e-minecraft-devem-ser-exclusivos.html": {
+  "m": "752f28341506",
+  "d": "2026-11-18"
+ },
+ "noticias/xbox-testa-cobranca-por-hora-na-nuvem.html": {
+  "m": "c4030689404c",
+  "d": "2026-11-18"
+ },
+ "noticias/xbox-xp-nova-divisao-leva-franquias-a-filmes-e-tv.html": {
+  "m": "c031a83871bb",
+  "d": "2026-11-18"
+ },
+ "noticias/zelda-link-s-awakening-roda-nativo-no-pc-feito-com-ia.html": {
+  "m": "79332af95600",
+  "d": "2026-11-18"
+ },
+ "noticias/zeramos-storebound-com-os-amigos-e-a-verdade-doi.html": {
+  "m": "3a5b7e0ca61f",
+  "d": "2026-10-24"
+ },
+ "privacidade-tiktok.html": {
+  "m": "d164b803a3d1",
+  "d": "2026-10-24"
+ },
+ "privacidade-youtube.html": {
+  "m": "0c9a0ad437af",
+  "d": "2026-10-24"
+ },
+ "privacidade.html": {
+  "m": "8cae848bad93",
+  "d": "2026-10-24"
+ },
+ "reviews.html": {
+  "m": "9f741ec1dc46",
+  "d": "2026-11-18"
+ },
+ "reviews/a-i-l-a-vale-a-pena-o-terror-brasileiro-com-ia.html": {
+  "m": "232990ec088e",
+  "d": "2026-11-18"
+ },
+ "reviews/ai-limit-a-demo-do-soulslike-de-anime-vale-a-pena.html": {
+  "m": "5da14a56a623",
+  "d": "2026-11-18"
+ },
+ "reviews/ai-limit-o-soulslike-de-anime-barato-vale-a-pena.html": {
+  "m": "11fcdfd1afc1",
+  "d": "2026-11-18"
+ },
+ "reviews/alan-wake-2-nao-e-para-todo-mundo-vale-a-pena.html": {
+  "m": "60bc9faf90ea",
+  "d": "2026-11-18"
+ },
+ "reviews/alan-wake-remastered-ainda-vale-jogar-em-2026.html": {
+  "m": "e4174ffd633a",
+  "d": "2026-11-18"
+ },
+ "reviews/arc-raiders-vale-a-pena-pagar-a-entrada-agora.html": {
+  "m": "b437e9c81922",
+  "d": "2026-11-18"
+ },
+ "reviews/assassin-s-creed-black-flag-resynced-vale-a-pena-o-remake.html": {
+  "m": "6d17dfb563bc",
+  "d": "2026-11-18"
+ },
+ "reviews/assassin-s-creed-shadows-vale-a-pena-depois-de-zerar.html": {
+  "m": "4d4b1a09d87f",
+  "d": "2026-11-18"
+ },
+ "reviews/astro-bot-vale-a-pena-pelo-preco-nota-6-5-do-brubao.html": {
+  "m": "a4332242c8f8",
+  "d": "2026-11-18"
+ },
+ "reviews/astro-s-playroom-vale-a-pena-minha-nota-e-5.html": {
+  "m": "35003b4b7256",
+  "d": "2026-11-18"
+ },
+ "reviews/battlefield-6-vale-comprar-so-pela-campanha.html": {
+  "m": "138a92bbb3cd",
+  "d": "2026-11-18"
+ },
+ "reviews/black-myth-wukong-vale-a-pena-minha-nota-e-9.html": {
+  "m": "1725067dfd1e",
+  "d": "2026-11-18"
+ },
+ "reviews/clair-obscur-expedition-33-vale-a-pena-jogar.html": {
+  "m": "422d4f9fed43",
+  "d": "2026-11-18"
+ },
+ "reviews/control-vale-jogar-antes-do-resonant.html": {
+  "m": "ad0a27a3eca4",
+  "d": "2026-10-24"
+ },
+ "reviews/control-vale-jogar-o-original-antes-de-control-resonant.html": {
+  "m": "ec3ecb0e6b2c",
+  "d": "2026-11-18"
+ },
+ "reviews/cyberpunk-2077-em-2026-vale-a-pena-jogar-agora.html": {
+  "m": "0d86c19fd4f3",
+  "d": "2026-11-18"
+ },
+ "reviews/dead-island-2-15-horas-de-caos-em-coop-valeu.html": {
+  "m": "af38c1099f09",
+  "d": "2026-11-18"
+ },
+ "reviews/death-stranding-2-on-the-beach-vale-a-pena.html": {
+  "m": "e617016f3a47",
+  "d": "2026-11-18"
+ },
+ "reviews/dishonored-death-of-the-outsider-vale-a-pena-em-2025.html": {
+  "m": "33f6d69942c6",
+  "d": "2026-11-18"
+ },
+ "reviews/dying-light-nota-7-e-ainda-vale-pelo-parkour.html": {
+  "m": "0ec9aa5a1122",
+  "d": "2026-11-18"
+ },
+ "reviews/garten-of-banban-o-pior-jogo-que-ja-joguei.html": {
+  "m": "89408be60d28",
+  "d": "2026-10-24"
+ },
+ "reviews/garten-of-banban-por-que-o-brubao-deu-nota-2-a-serie.html": {
+  "m": "a8bbe302da22",
+  "d": "2026-11-18"
+ },
+ "reviews/ghostrunner-2-perdeu-o-frenesi-do-primeiro.html": {
+  "m": "cca766c79b06",
+  "d": "2026-11-18"
+ },
+ "reviews/ghostrunner-joguei-sem-saber-nada-e-virei-fa.html": {
+  "m": "4acd5203fac1",
+  "d": "2026-11-18"
+ },
+ "reviews/helldivers-2-vale-a-pena-jogar-mesmo-sem-campanha.html": {
+  "m": "7681a21a4ea0",
+  "d": "2026-11-18"
+ },
+ "reviews/hytale-o-rival-de-minecraft-chegou-ou-foi-so-hype.html": {
+  "m": "7f695cffab1d",
+  "d": "2026-11-18"
+ },
+ "reviews/inside-o-jogo-curtinho-com-o-final-mais-bizarro-que-ja-vi.html": {
+  "m": "56e29579472f",
+  "d": "2026-10-24"
+ },
+ "reviews/inside-vale-a-pena-jogar-o-classico-da-playdead-hoje.html": {
+  "m": "a1e84adc063e",
+  "d": "2026-11-18"
+ },
+ "reviews/kena-bridge-of-spirits-vale-a-pena-minha-nota-e-7.html": {
+  "m": "3a001f098a71",
+  "d": "2026-11-18"
+ },
+ "reviews/khazan-vale-a-pena-jogar-a-demo-do-soulslike.html": {
+  "m": "1502d111df85",
+  "d": "2026-11-18"
+ },
+ "reviews/mafia-definitive-edition-vale-a-pena-minha-nota-e-5.html": {
+  "m": "beb11ee10d49",
+  "d": "2026-11-18"
+ },
+ "reviews/o-bebe-de-amarelo-bom-ou-ruim.html": {
+  "m": "9d7f1e856cb3",
+  "d": "2026-10-24"
+ },
+ "reviews/o-terror-que-virou-comedia-com-os-amigos-shift-at-midnight.html": {
+  "m": "c84e803508d4",
+  "d": "2026-11-18"
+ },
+ "reviews/poppy-playtime-nao-e-de-crianca-review-dos-capitulos-1-a-5.html": {
+  "m": "e6a862dc16c8",
+  "d": "2026-11-18"
+ },
+ "reviews/poppy-playtime-nao-e-jogo-de-crianca.html": {
+  "m": "939cdbd525d4",
+  "d": "2026-10-24"
+ },
+ "reviews/por-que-alan-wake-2-nao-e-pra-todo-mundo.html": {
+  "m": "0a22f5097843",
+  "d": "2026-10-24"
+ },
+ "reviews/pragmata-a-diana-me-pegou-de-surpresa-review-do-brubao.html": {
+  "m": "30082e03eb4d",
+  "d": "2026-11-18"
+ },
+ "reviews/pragmata-a-diana-me-pegou-de-surpresa.html": {
+  "m": "7db7f71f4dfd",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-0-a-historia-e-a-defesa-do-preludio.html": {
+  "m": "f2844d65843a",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-1-remake-a-historia-completa-da-mansao.html": {
+  "m": "6236c0aefc46",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-2-classico-a-historia-completa-de-leon.html": {
+  "m": "33887685890d",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-2-remake-a-campanha-de-claire-redfield.html": {
+  "m": "14ed3dc3a307",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-3-nemesis-o-labirinto-de-survival-horror.html": {
+  "m": "9284860caaad",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-3-remake-e-melhor-que-o-original.html": {
+  "m": "ea97f437bcdd",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-4-a-historia-e-o-misterio-dos-las-plagas.html": {
+  "m": "f2439758467b",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-4-remake-vs-classico-o-que-mudou.html": {
+  "m": "27ebe864365b",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-5-a-lore-o-progenitor-e-a-ia-da-sheva.html": {
+  "m": "a1fc067fe11c",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-6-a-ada-wong-clonada-faz-sentido.html": {
+  "m": "0b7cad323dc5",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-6-a-campanha-da-ada-wong-e-carla-radames.html": {
+  "m": "0b7cad323dc5",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-6-a-campanha-de-leon-e-helena-harper.html": {
+  "m": "3f6ea3304e01",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-6-chris-redfield-o-soldado-que-perdeu-tudo.html": {
+  "m": "7d3f6167c53a",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-6-jake-e-sherry-contra-o-ustanak-vale-a-pena.html": {
+  "m": "4c8ad51389a7",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-6-jake-e-sherry-e-o-ustanak-vale-a-pena.html": {
+  "m": "4c8ad51389a7",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-7-a-volta-do-terror-em-primeira-pessoa.html": {
+  "m": "52e236e2f2e0",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-7-vale-a-pena-o-maior-acerto-da-capcom.html": {
+  "m": "52e236e2f2e0",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-village-ethan-e-a-opiniao-do-brubao.html": {
+  "m": "264c23e88dc5",
+  "d": "2026-10-24"
+ },
+ "reviews/resident-evil-village-re8-tudo-que-voce-precisa-saber.html": {
+  "m": "264c23e88dc5",
+  "d": "2026-10-24"
+ },
+ "reviews/shift-at-midnight-o-terror-que-vira-comedia-com-amigos.html": {
+  "m": "be22119ddd2d",
+  "d": "2026-11-18"
+ },
+ "reviews/split-fiction-10-horas-de-co-op-e-nota-9-do-brubao.html": {
+  "m": "049de0f54208",
+  "d": "2026-11-18"
+ },
+ "reviews/star-wars-outlaws-so-vale-a-pena-para-fa-de-star-wars.html": {
+  "m": "4de9227aef2e",
+  "d": "2026-11-18"
+ },
+ "reviews/stellar-blade-acao-de-ps5-que-merece-nota-8-do-brubao.html": {
+  "m": "41b05e497c28",
+  "d": "2026-11-18"
+ },
+ "reviews/storebound-vale-a-pena-jogar-o-terror-cooperativo.html": {
+  "m": "c40ce53571ed",
+  "d": "2026-11-18"
+ },
+ "reviews/streamer-life-simulator-2-vale-a-pena-o-simulador.html": {
+  "m": "9d271b37d349",
+  "d": "2026-11-18"
+ },
+ "reviews/the-baby-in-yellow-200-milhoes-de-downloads-mas-e-bom.html": {
+  "m": "3331a65c288c",
+  "d": "2026-11-18"
+ },
+ "reviews/the-blood-of-dawnwalker-nota-7-e-melhor-esperar.html": {
+  "m": "b0c7437ad5db",
+  "d": "2026-11-18"
+ },
+ "reviews/the-first-berserker-khazan-e-mesmo-tao-bom-assim.html": {
+  "m": "c1f0a55953c1",
+  "d": "2026-11-18"
+ },
+ "reviews/the-plucky-squire-o-escudeiro-valente-minha-nota-e-4.html": {
+  "m": "18d40dfe9ddd",
+  "d": "2026-11-18"
+ },
+ "reviews/vale-a-pena-jogar-storebound-antes-dele-chegar-no-console.html": {
+  "m": "3a5b7e0ca61f",
+  "d": "2026-10-24"
+ },
+ "reviews/voltei-pro-black-flag-depois-de-13-anos-resynced-vale-a-pena.html": {
+  "m": "402058d6fda2",
+  "d": "2026-11-18"
+ },
+ "series.html": {
+  "m": "f1aa36cb777f",
+  "d": "2026-10-24"
+ },
+ "series/resident-evil-0-a-historia-e-a-defesa-do-preludio.html": {
+  "m": "c64a3eefe3ff",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-1-remake-a-historia-completa-da-mansao.html": {
+  "m": "d0c2689e7c5f",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-2-classico-a-historia-completa-de-leon.html": {
+  "m": "dc857b5ad243",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-2-remake-a-campanha-de-claire-redfield.html": {
+  "m": "970312029160",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-3-nemesis-o-labirinto-de-survival-horror.html": {
+  "m": "58d9c80f305e",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-3-remake-e-melhor-que-o-original.html": {
+  "m": "86a921e5c481",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-4-a-historia-e-o-misterio-dos-las-plagas.html": {
+  "m": "692f98157872",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-4-remake-vs-classico-o-que-mudou.html": {
+  "m": "69141da5dee0",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-5-a-lore-o-progenitor-e-a-ia-da-sheva.html": {
+  "m": "8488a0c369b3",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-6-a-campanha-da-ada-wong-e-carla-radames.html": {
+  "m": "8e70e737d32a",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-6-a-campanha-de-leon-e-helena-harper.html": {
+  "m": "d6a405671ce3",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-6-chris-redfield-o-soldado-que-perdeu-tudo.html": {
+  "m": "eb3714ece0d0",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-6-jake-e-sherry-e-o-ustanak-vale-a-pena.html": {
+  "m": "5d1866d4957e",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-7-a-volta-do-terror-em-primeira-pessoa.html": {
+  "m": "9e086a6d8c3b",
+  "d": "2026-11-18"
+ },
+ "series/resident-evil-village-ethan-e-a-opiniao-do-brubao.html": {
+  "m": "d1fb2be68de7",
+  "d": "2026-11-18"
+ },
+ "sobre.html": {
+  "m": "75cdbc069896",
+  "d": "2026-10-24"
+ },
+ "tag/ai-limit.html": {
+  "m": "c5f286a88e20",
+  "d": "2026-10-24"
+ },
+ "tag/arc-raiders.html": {
+  "m": "089f9ff4f8b8",
+  "d": "2026-11-18"
+ },
+ "tag/arkane.html": {
+  "m": "2bbbda1203e8",
+  "d": "2026-11-18"
+ },
+ "tag/assassin-s-creed-black-flag-resynced.html": {
+  "m": "485c1c1ca7a5",
+  "d": "2026-11-18"
+ },
+ "tag/assassin-s-creed-black-flag.html": {
+  "m": "4af89f8bc345",
+  "d": "2026-11-18"
+ },
+ "tag/call-of-duty-modern-warfare-4.html": {
+  "m": "8801e776e703",
+  "d": "2026-11-18"
+ },
+ "tag/call-of-duty.html": {
+  "m": "53462575015f",
+  "d": "2026-11-18"
+ },
+ "tag/clair-obscur-expedition-33.html": {
+  "m": "d5b53c8e25b9",
+  "d": "2026-10-24"
+ },
+ "tag/control-resonant.html": {
+  "m": "f23683c60d4d",
+  "d": "2026-10-24"
+ },
+ "tag/control.html": {
+  "m": "8b31e7448b49",
+  "d": "2026-10-24"
+ },
+ "tag/counter-strike-2.html": {
+  "m": "6cdde97f0e36",
+  "d": "2026-11-18"
+ },
+ "tag/cyberpunk-2077.html": {
+  "m": "cb7a7ff38dcb",
+  "d": "2026-11-18"
+ },
+ "tag/dlss-5.html": {
+  "m": "f57aed03ad7c",
+  "d": "2026-10-24"
+ },
+ "tag/elden-ring.html": {
+  "m": "bfb32aacbf24",
+  "d": "2026-10-24"
+ },
+ "tag/epic-games.html": {
+  "m": "819d9e5e8491",
+  "d": "2026-11-18"
+ },
+ "tag/fable.html": {
+  "m": "08734095ef84",
+  "d": "2026-11-18"
+ },
+ "tag/final-fantasy-vii-revelation.html": {
+  "m": "1a3a8740ab69",
+  "d": "2026-10-24"
+ },
+ "tag/fortnite.html": {
+  "m": "c079fab5d346",
+  "d": "2026-10-24"
+ },
+ "tag/game-pass.html": {
+  "m": "401911f26d45",
+  "d": "2026-11-18"
+ },
+ "tag/god-of-war-laufey.html": {
+  "m": "2ff41b30e0ec",
+  "d": "2026-11-18"
+ },
+ "tag/god-of-war.html": {
+  "m": "70f2f898806c",
+  "d": "2026-11-18"
+ },
+ "tag/helldivers-2.html": {
+  "m": "3e71a92bbbbb",
+  "d": "2026-11-18"
+ },
+ "tag/ia.html": {
+  "m": "fcb8951ed572",
+  "d": "2026-11-18"
+ },
+ "tag/marvel-s-wolverine.html": {
+  "m": "52ecab489ea3",
+  "d": "2026-10-24"
+ },
+ "tag/mass-effect.html": {
+  "m": "bc8d1f834788",
+  "d": "2026-11-18"
+ },
+ "tag/miami-heat.html": {
+  "m": "1e9a304a4bcc",
+  "d": "2026-11-18"
+ },
+ "tag/minecraft.html": {
+  "m": "bd9f8b1b7bcf",
+  "d": "2026-11-18"
+ },
+ "tag/nintendo.html": {
+  "m": "1e1dd01d7c6a",
+  "d": "2026-11-18"
+ },
+ "tag/onimusha-way-of-the-sword.html": {
+  "m": "e9c01d6fde9e",
+  "d": "2026-11-18"
+ },
+ "tag/phantom-blade-zero.html": {
+  "m": "bd974017edce",
+  "d": "2026-11-18"
+ },
+ "tag/playstation-5.html": {
+  "m": "905fba3f70a0",
+  "d": "2026-11-18"
+ },
+ "tag/playstation.html": {
+  "m": "b79113fe9aef",
+  "d": "2026-11-18"
+ },
+ "tag/pragmata.html": {
+  "m": "fa4d5be55e7f",
+  "d": "2026-10-24"
+ },
+ "tag/resident-evil-6.html": {
+  "m": "44675102b57e",
+  "d": "2026-10-24"
+ },
+ "tag/resident-evil-requiem.html": {
+  "m": "2f512f1612eb",
+  "d": "2026-11-18"
+ },
+ "tag/resident-evil-veronica.html": {
+  "m": "246369e40647",
+  "d": "2026-10-24"
+ },
+ "tag/resident-evil.html": {
+  "m": "ede3bee0855d",
+  "d": "2026-11-18"
+ },
+ "tag/samson.html": {
+  "m": "2a85efd8be64",
+  "d": "2026-10-24"
+ },
+ "tag/silent-hill.html": {
+  "m": "b55ab4fb36cf",
+  "d": "2026-10-24"
+ },
+ "tag/state-of-decay-3.html": {
+  "m": "342d8e2b9683",
+  "d": "2026-10-24"
+ },
+ "tag/steam.html": {
+  "m": "b1a7117553e9",
+  "d": "2026-11-18"
+ },
+ "tag/stellar-blade.html": {
+  "m": "7fa3d3787e32",
+  "d": "2026-11-18"
+ },
+ "tag/subnautica-2.html": {
+  "m": "c5f49063dacb",
+  "d": "2026-10-24"
+ },
+ "tag/teamfight-tactics.html": {
+  "m": "96c3c6750460",
+  "d": "2026-10-24"
+ },
+ "tag/the-blood-of-dawnwalker.html": {
+  "m": "f0690e11ddfe",
+  "d": "2026-11-18"
+ },
+ "tag/the-duskbloods.html": {
+  "m": "79170ddea4d1",
+  "d": "2026-11-18"
+ },
+ "tag/the-first-berserker-khazan.html": {
+  "m": "b0164a9adc2b",
+  "d": "2026-10-24"
+ },
+ "tag/xbox.html": {
+  "m": "521c0b99e08a",
+  "d": "2026-11-18"
+ },
+ "tags.html": {
+  "m": "e53d341df32b",
+  "d": "2026-11-13"
+ },
+ "termos-tiktok.html": {
+  "m": "c1a0d43dd9c1",
+  "d": "2026-10-24"
+ },
+ "termos-youtube.html": {
+  "m": "a315b1e6747b",
+  "d": "2026-10-24"
+ },
+ "termos.html": {
+  "m": "a6fc99ca1be7",
+  "d": "2026-10-24"
+ },
+ "wiki.html": {
+  "m": "0d8342c752fc",
+  "d": "2026-11-18"
+ },
+ "wiki/gta.html": {
+  "m": "052f1e917390",
+  "d": "2026-11-18"
+ },
+ "wiki/resident-evil.html": {
+  "m": "347204771e05",
+  "d": "2026-11-18"
+ }
+}

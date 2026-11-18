@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Placa de vídeo AMD escura sobre um fundo rosa e roxo, com a logo da AMD. Texto na arte: "FSR 4.1 em 2027" e "NOVO UPDATE".
+Thumb.png: Placa de vídeo AMD escura sobre um fundo rosa e roxo, com a logo da AMD. Texto na arte: "FSR 4.1 em 2027" e "NOVO UPDATE".
+img-1_en.shiftdelete.net.jpg: Arte promocional "AMD FSR 4.1: Upscaling Coming To More Devices", com uma placa de vídeo, um console portátil e um processador Ryzen.

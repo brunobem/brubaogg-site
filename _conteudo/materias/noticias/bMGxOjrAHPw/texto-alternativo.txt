@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Jason e Lucia, de GTA 6, encostados num carro, ao lado do logo do GTA VI. Texto na arte: "GTA 6 NO PC" e "BRUBAOGG".
+Thumb.png: Jason e Lucia, de GTA 6, encostados num carro, ao lado do logo do GTA VI. Texto na arte: "GTA 6 NO PC" e "BRUBAOGG".
+img-1_playstation.com.jpg: Arte de GTA 6 em colagem de quadros: Jason, Lucia e outros personagens, barco, carro esportivo, jacaré e moto, em volta do logo do GTA VI.
+img-2_playstation.com.webp: Vista aérea de um barco com hélice em um pântano de vegetação densa, à noite, em GTA 6.

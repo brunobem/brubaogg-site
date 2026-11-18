@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Capacete de soldado N7 em primeiro plano diante de um planeta azul e naves vermelhas no espaço, com a logo de Mass Effect. Texto na arte: "TRAILER".
+Thumb.png: Capacete de soldado N7 em primeiro plano diante de um planeta azul e naves vermelhas no espaço, com a logo de Mass Effect. Texto na arte: "TRAILER".
+img-1_culpadolag.com.webp: Astronauta de costas, de armadura vermelha e cinza, olhando um planeta ao longe, com fumaça subindo de um destroço.

@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-03-26",
+  "titulo": "Jensen Huang defende o DLSS 5: não é um filtro",
+  "resumo": "O CEO da Nvidia disse que o DLSS 5 é controle generativo no nível da geometria, e não pós-processamento. Para mim, o jogo fica sem alma.",
+  "tags": [
+    "DLSS 5"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Tom's Hardware",
+      "url": "https://tomshardware.com/pc-components/gpus/jensen-huang-says-gamers-are-completely-wrong-about-dlss-5-nvidia-ceo-responds-to-dlss-5-backlash"
+    },
+    {
+      "nome": "Tom's Guide",
+      "url": "https://www.tomsguide.com/gaming/theyre-completely-wrong-nvidia-ceo-jensen-huang-responds-to-dlss-5-criticism"
+    },
+    {
+      "nome": "TechRadar",
+      "url": "https://www.techradar.com/computing/gpu/nvidias-ceo-goes-full-principal-skinner-in-response-to-dlss-5-backlash-says-its-the-gamers-who-are-completely-wrong"
+    },
+    {
+      "nome": "T-Break",
+      "url": "https://tbreak.com/jensen-huang-dlss-5-critics-wrong/"
+    }
+  ],
+  "assunto": "dlss-5",
+  "corpo": [
+    "Em entrevista coletiva do GTC 2026, o CEO da Nvidia, Jensen Huang, respondeu às críticas ao DLSS 5 dizendo que quem reclama está completamente errado. Segundo ele, o DLSS 5 não é pós-processamento no nível de frames, e sim controle generativo no nível da geometria: combina a controlabilidade da geometria e das texturas do jogo com IA generativa, que os desenvolvedores podem calibrar ao estilo do jogo, mantendo o controle artístico.",
+    "Huang rejeitou o rótulo de filtro e chamou a abordagem de IA generativa com controle de conteúdo, o que a Nvidia chama de renderização neural. A resposta foi vista por muitos críticos como uma não resposta, e alguns argumentaram que IA generativa e IA generativa controlada são, na prática, a mesma coisa.",
+    "Afirmo que todo esse desenvolvimento nem foi consultado pelas publicadoras, e que dá para ver nas imagens que circulam na internet todo mundo ficando quadrado e bonitão, o que deixa o jogo meio sem alma."
+  ]
+}

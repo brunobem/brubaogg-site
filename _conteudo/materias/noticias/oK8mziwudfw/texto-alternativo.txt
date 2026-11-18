@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Guerreiro de cabelo grisalho e chapéu largo, com a logo de Phantom Blade. Texto na arte: "VEM COM CD".
+Thumb.png: Guerreiro de cabelo grisalho e chapéu largo, com a logo de Phantom Blade. Texto na arte: "VEM COM CD".
+img-1_flowgames.gg.jpg: Guerreiro de chapéu de palha erguendo uma espada, com o título "Phantom Blade Zero".

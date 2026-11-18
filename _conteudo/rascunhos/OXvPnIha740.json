@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-07-22",
+  "titulo": "TFT: Draven, Ivern e Lux voltam no set Enchanted Wilds",
+  "resumo": "O set 18 do Teamfight Tactics, Enchanted Wilds, trouxe Draven, Ivern e Lux de volta e fez o carrossel voltar com campeões mais fortes.",
+  "tags": [
+    "Teamfight Tactics"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Esports.gg",
+      "url": "https://esports.gg/news/teamfight-tactics/tft-set-18-enchanted-wilds-is-full-of-wisps-and-whimsy/"
+    },
+    {
+      "nome": "Esports.gg",
+      "url": "https://esports.gg/news/teamfight-tactics/tft-set-18-patch-notes-welcome-to-the-enchanted-wilds/"
+    },
+    {
+      "nome": "Liquipedia",
+      "url": "https://liquipedia.net/tft/Patch_TFT18.1"
+    },
+    {
+      "nome": "Gamewave",
+      "url": "https://gamewave.fr/tft/tft-maj-18-1-les-details-de-la-mise-a-jour-du-lancement-d-enchanted-wilds/"
+    }
+  ],
+  "corpo": [
+    "O set 18 do Teamfight Tactics, Enchanted Wilds (que chamo de Selvas Encantadas), entrou no ar com o patch 18.1 no fim de agosto de 2026: a Riot informou 25 de agosto como data global, e algumas fontes citam 26. Antes, o set passou por quatro semanas de testes no servidor PBE, a partir de 28 de julho. Eu previa a chegada em 8 de agosto; as fontes consultadas apontam o fim do mês.",
+    "Entre os campeões que voltam, destaco que Draven chega com um sistema de recompensa exclusivo. As reportagens o descrevem como um quadro de recompensas que paga o jogador por cumprir objetivos em combate. Já o Ivern traz uma ferramenta diferente de montagem do tabuleiro, que chamo de Pai do Verde, e que as reportagens descrevem como um quebra-cabeça de biomas que faz crescer hexágonos que fortalecem quem está sobre eles.",
+    "A Lux volta como campeã lendária, com flexibilidade de posição entre os grupos de campeões da composição, como expliquei, e as reportagens a tratam como o Avatar do set. O carrossel também voltou, com mais chance de trazer itens ou campeões mais caros, o que ajuda a fechar a composição desejada. O patch 18.1 marcou ainda a troca do motor do jogo, da Hextech para a Unreal, e a Riot avisou que podia haver mais bugs que o normal."
+  ]
+}

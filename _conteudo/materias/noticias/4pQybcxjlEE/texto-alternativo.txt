@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Tela do aplicativo do Xbox no PC, com o menu do perfil, a seção "Jump back in" e o logo do Xbox Game Pass. Texto na arte: "APLICATIVO MAIS RAPIDO" e "BRUBAOGG".
+Thumb.png: Tela do aplicativo do Xbox no PC, com o menu do perfil, a seção "Jump back in" e o logo do Xbox Game Pass. Texto na arte: "APLICATIVO MAIS RAPIDO" e "BRUBAOGG".
+img-1_flowgames.gg.jpg: Tela do aplicativo do Xbox no PC, com o menu lateral, ofertas de jogos e uma lista de jogos do Game Pass.
+img-2_flowgames.gg.jpg: Tela inicial da nova versão do app do Xbox no PC, com Call of Duty: Modern Warfare 4 em destaque, a lista de amigos à esquerda e sugestões de jogos.

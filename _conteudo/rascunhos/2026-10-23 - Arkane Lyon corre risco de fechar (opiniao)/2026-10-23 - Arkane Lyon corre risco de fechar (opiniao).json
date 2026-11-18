@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "status": "rascunho",
+  "categoria": "noticias",
+  "publicado": "2026-10-23",
+  "titulo": "Arkane Lyon corre risco de fechar",
+  "resumo": "Segundo o Le Monde, a Arkane Lyon tem até 13 de novembro para achar comprador ou parceiro, ou a Microsoft pode fechá-la. Acho triste esse cenário.",
+  "tags": [
+    "Arkane"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/gaming-industry/time-could-be-running-out-for-arkane/"
+    },
+    {
+      "nome": "Game Informer",
+      "url": "https://gameinformer.com/2026/06/30/report-microsoft-is-considering-shutting-down-arkane-studios-and-canceling-marvels-blade"
+    },
+    {
+      "nome": "Bloody Disgusting",
+      "url": "https://bloody-disgusting.com/video-games/3958014/arkane-lyon-reportedly-facing-closure-marvels-blade-to-be-cancelled/"
+    }
+  ],
+  "corpo": [
+    "A Arkane Lyon pode fechar. Segundo reportagem do jornal francês Le Monde, de 23 de outubro de 2026, repercutida pelo PC Gamer, o estúdio tem até 13 de novembro para encontrar um comprador ou parceiro, e, se não encontrar, a Microsoft pode fechá-lo. O prazo já foi estendido em um mês. São 217 funcionários, e em 16 de julho a direção avisou que a Xbox pretendia fechar o estúdio.",
+    "Documentos falam em cessação completa e permanente das atividades, com encerramento entre o fim de 2026 e o início de 2027. A Microsoft diz que segue explorando opções, buscando um parceiro para apoiar o desenvolvimento e levar o projeto ao mercado, e que os documentos não representam uma decisão final. Uma lei francesa, a Lei Florange, obriga empresas com mais de 1.000 funcionários a procurar comprador antes de fechar uma unidade.",
+    "O jogo atual da Arkane Lyon é Marvel's Blade, anunciado no The Game Awards 2023. O estado dele é incerto: fontes próximas ao estúdio dizem que ainda faltam anos, e um representante sindical diz que está perto do fim da produção e que perdê-lo seria um desperdício monumental. Raphael Colantonio, fundador da Arkane, hoje na WolfEye, já sugeriu interesse em comprar, mas não ficou claro se falava sério.",
+    "Não é um caso isolado. A Xbox anunciou em julho demissões de cerca de 3.200 pessoas, Double Fine, Compulsion Games e Undead Labs viraram independentes, a Ninja Theory deve fechar e a BioWare fechou em 21 de outubro. Importante não misturar: o grande fracasso recente foi o Redfall, da Arkane Austin, fechada em 2024, e não da Lyon. O Deathloop, da Lyon, foi elogiado pela crítica, com nota na casa de 88 no Metacritic, e as vendas nunca foram divulgadas.",
+    "Há uma onda de estúdios grandes e históricos com dificuldade de continuar ativos, por lançamentos recentes que não deram o lucro esperado. A Arkane é muito conhecida por Dishonored, que a deixou em evidência. O Deathloop, para mim, não foi tão bom, e talvez sejam apostas para abraçar mais público, e não só o original, mais de nicho. Acho meio triste ver como o cenário está."
+  ]
+}

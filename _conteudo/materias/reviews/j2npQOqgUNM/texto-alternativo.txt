@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Pessoa de jaqueta amarela, de costas, diante de um grande prédio com veículos voadores no céu.
+img-2_steam.com.jpg: Homem de jaqueta amarela e branca segurando uma grande arma verde sobre o ombro, numa rua de neon.
+img-3_steam.com.jpg: Homem de casaco longo e óculos escuros apontando uma pistola dourada numa rua à noite.

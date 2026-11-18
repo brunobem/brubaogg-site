@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Personagem de Horizon, de capacete com luzes azuis, com o rosto apoiado nas mãos e expressão desanimada, diante de máquinas. Texto na arte: "IA = JOGOS?".
+Thumb.png: Personagem de Horizon, de capacete com luzes azuis, com o rosto apoiado nas mãos e expressão desanimada, diante de máquinas. Texto na arte: "IA = JOGOS?".
+img-1_olhardigital.com.jpg: Ilustração de um circuito azul brilhante com as letras "AI" no centro.

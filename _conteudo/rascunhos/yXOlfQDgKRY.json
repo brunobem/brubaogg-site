@@ -1,0 +1,45 @@
+{
+  "formato": "horizontal",
+  "categoria": "reviews",
+  "publicado": "2026-03-26",
+  "titulo": "A.I.L.A vale a pena? Minha nota é 7",
+  "resumo": "Joguei A.I.L.A, terror brasileiro da Pulsatrix, e dou nota 7: bonito, com puzzles ótimos e boa premissa, mas combate travado. Custa cerca de R$ 80.",
+  "tags": [
+    "A.I.L.A"
+  ],
+  "veredito": {
+    "nota": 7,
+    "recomendacao": "compre",
+    "preco": "Cerca de R$ 80 (R$ 79,95 no Brasil)",
+    "horas": "cerca de 12",
+    "plataforma": "Consoles e PC",
+    "paraQuem": "Quem curte terror com puzzles, no estilo Resident Evil, e quer um jogo brasileiro com bom preço."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/review-a-i-l-a-e-um-terror-com-repertorio-e-realismo/"
+    },
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/aila-jogo-de-terror-br-menos-de-80-na-ps-store/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/horror/a-games-tester-is-trapped-in-a-nightmare-vr-experience-run-by-an-ai-in-sci-fi-horror-game-aila/"
+    }
+  ],
+  "corpo": [
+    "Dou nota 7 em 10 a A.I.L.A. Descrevo o jogo como um terror indie brasileiro da Pulsatrix, com apoio do youtuber MaxMRM, e uma inteligência artificial sádica que tenta assustar o jogador de todas as maneiras. Levei muito susto, inclusive durante a live, e recomendo.",
+    "O protagonista é Samuel, um beta tester de games que vive em 2035 em um apartamento bem tecnológico. Ele recebe de uma empresa uma ferramenta de inteligência artificial generativa, a A.I.L.A, que cria jogos diferentes para cada pessoa com base nos medos e traumas dela, inclusive da família e da infância. Por isso, a história gira em torno do que Samuel viveu.",
+    "A A.I.L.A acaba sendo invasiva e entra até na casa de Samuel, porque quer entendê-lo, que é o objetivo para o qual foi criada. Gostei da premissa, mas senti falta de aprofundamento nas dores de Samuel e queria mais impacto na virada de chave do jogo.",
+    "Os cenários mudam: o jogo começa com um visual pixelado, inspirado em Minecraft, e depois vêm uma sala fechada, uma fase medieval e outra com alienígenas. Tudo roda na Unreal Engine 5, e me surpreendi positivamente com a qualidade dos assets e das texturas em um jogo brasileiro, embora reconheça que o motor gráfico facilitou muita coisa.",
+    "A jogabilidade varia com o cenário. Na sala fechada e na fase medieval, o combate é corpo a corpo, com machado, espada, arco e besta; na parte dos alienígenas, aparece uma arma de fogo, com inspiração em Resident Evil. Os puzzles são o ponto forte: vários são muito bem elaborados, como o das espadas, em que é preciso contar.",
+    "A jogabilidade é o ponto mais baixo. Achei travada, parecida com a dos jogos de ação do fim do PlayStation 3 e começo do PlayStation 4. No corpo a corpo, não há parry nem peso na arma, e no tiro o inimigo parece uma esponja de dano, sem impacto no corpo. Acredito que o estúdio está evoluindo em relação a Fobia.",
+    "Gostei do level design, que faz sentido, e da narrativa, que poderia ser explorada de outras formas. O gráfico é bonito. O jogo custa cerca de R$ 80, em qualquer console e no PC, e dura cerca de 12 horas, e acho o preço bom.",
+    "Para mim, a Pulsatrix, que já fez Fobia, tem um futuro legal: a construção de narrativa já mostrou que tem, e basta encaixar uma jogabilidade melhor. Para um jogo brasileiro, A.I.L.A promete muito.",
+    "A.I.L.A foi lançado em 25 de novembro de 2025 para PlayStation 5, Xbox Series X|S e PC, com publicação da Fireshine Games e preço de R$ 79,95 no Brasil, o mesmo em todas as plataformas. A direção criativa é de MaxMRM, e o jogo é sucessor de Fobia – St. Dinfna Hotel. Os desenvolvedores falaram em 15 a 20 horas de campanha; eu levei cerca de 12.",
+    "No fim das contas, recomendo A.I.L.A como um terror brasileiro que promete, e dou nota 7, muito bem paga pelo preço."
+  ]
+}

@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Duas personagens lado a lado, uma de cabelo loiro e túnica verde e outra de cabelo escuro com um dragão laranja no ombro, numa floresta.
+img-2_steam.com.jpg: Tela dividida em duas, com uma esfera brilhante de hexágonos e explosões numa instalação industrial.
+img-3_steam.com.jpg: Tela dividida em duas: à esquerda, um balão de morango sobre uma ilha de pedra; à direita, legumes gigantes e um porquinho sobre uma mola.

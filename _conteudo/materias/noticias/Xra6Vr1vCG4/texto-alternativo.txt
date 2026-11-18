@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Uma asari de pele azul ao lado de uma figura encapuzada de vermelho, num bar de luz vermelha, com a logo de Mass Effect. Texto na arte: "FÃS SZ JOGO".
+Thumb.png: Uma asari de pele azul ao lado de uma figura encapuzada de vermelho, num bar de luz vermelha, com a logo de Mass Effect. Texto na arte: "FÃS SZ JOGO".
+img-1_br.ign.com.jpg: Close de Garrus, um turiano de armadura azul e rosto com cicatrizes.
+img-2_br.ign.com.jpg: Uma asari de pele azul em primeiro plano, com um salariano de jaleco branco e um drell de pele verde atrás.

@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-05-30",
+  "titulo": "State of Play e o fim dos portes da Sony para PC",
+  "resumo": "A Sony deixou de levar jogos single-player ao PC, segundo a Bloomberg. O State of Play de 2 de junho mostrou God of War Laufey e Wolverine.",
+  "tags": [
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Push Square",
+      "url": "https://pushsquare.com/news/2026/03/sony-returns-to-playstation-exclusivity-and-stops-single-player-pc-ports-new-report-says"
+    },
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/playstations-pc-port-era-appears-over-as-sony-scrubs-key-policy-language/"
+    },
+    {
+      "nome": "God Is a Geek",
+      "url": "https://godisageek.com/2026/06/sony-state-of-play-june-2026-announcements/"
+    },
+    {
+      "nome": "T-Break",
+      "url": "https://tbreak.com/everything-announced-during-playstations-june-2026-state-of-play/"
+    }
+  ],
+  "corpo": [
+    "Em março de 2026, a Bloomberg informou que a Sony deixaria de lançar no PC os jogos single-player de seus estúdios. Segundo o relato, o presidente da PlayStation Studios, Hermen Hulst, disse à equipe que os jogos narrativos para um jogador seriam exclusivos do PlayStation. A mudança afeta títulos como Marvel's Wolverine e Intergalactic: The Heretic Prophet, enquanto jogos de serviço, como Marathon, seguem em outras plataformas. O relatório anual da Sony também retirou a frase sobre levar seus jogos a várias plataformas, como o PC.",
+    "O State of Play aconteceu em 2 de junho de 2026 e durou mais de 60 minutos. O Wolverine abriu o evento com cerca de 10 minutos de gameplay, com lançamento em 15 de setembro, e o God of War Laufey fechou a apresentação, na época sem data. Também apareceram a data de Phantom Blade Zero, novidades de Control Resonant e o anúncio de Until Dawn 2. Segundo os resumos, Intergalactic e GTA 6 não apareceram.",
+    "Eu avisava que a expectativa devia ser baixa: o evento falaria do Wolverine e talvez de mais um exclusivo, e eu nem esperava ouvir falar de GTA, por uma possível parceria de exclusividade de marketing entre a Sony e a Rockstar, que é hipótese minha. O segundo exclusivo foi o God of War Laufey, e o GTA 6 de fato ficou de fora."
+  ]
+}

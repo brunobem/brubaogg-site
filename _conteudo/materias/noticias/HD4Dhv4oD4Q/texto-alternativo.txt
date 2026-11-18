@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Tela inicial do SteamOS com a biblioteca de jogos, como Ultrakill, Deadlock e The Last of Us Part II, e o logo da Steam. Texto na arte: "SteamOS para o MAC".
+Thumb.png: Tela inicial do SteamOS com a biblioteca de jogos, como Deadlock e Tartarugas Ninja, e o logo da Steam. Texto na arte: "SteamOS para o MAC".
+img-1_pt.linuxadictos.com.png: Área de trabalho do SteamOS com a janela "About this system" aberta, mostrando as informações do sistema.
+img-2_reddit.com.webp: Janela de terminal do SteamOS com a saída de informações do sistema, ao lado de uma imagem colorida de confeitos num prato.

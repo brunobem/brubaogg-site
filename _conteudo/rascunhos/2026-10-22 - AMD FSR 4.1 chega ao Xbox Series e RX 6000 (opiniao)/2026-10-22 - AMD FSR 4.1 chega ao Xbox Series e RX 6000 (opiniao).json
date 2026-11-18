@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "status": "rascunho",
+  "categoria": "noticias",
+  "publicado": "2026-10-22",
+  "titulo": "AMD FSR 4.1 vai chegar ao Xbox Series X e S",
+  "resumo": "A AMD confirmou o FSR 4.1 nas RX 6000 e, com o CTO do Xbox, nos consoles Series, sem data. Para mim, o Game Pass pode ganhar com isso.",
+  "tags": [
+    "FSR 4.1",
+    "Xbox"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/amd-fsr-4-1-ajuda-melhorar-jogos-xbox-series-s"
+    },
+    {
+      "nome": "TweakTown",
+      "url": "https://www.tweaktown.com/news/114186/amd-confirms-fsr-4-1-expands-to-rx-6000-gpus-ryzen-laptops-handhelds-and-xbox-consoles/index.html"
+    },
+    {
+      "nome": "Gaming.net",
+      "url": "https://www.gaming.net/amd-brings-fsr-upscaling-4-1-to-xbox-series-x-s-and-rog-xbox-ally-x/"
+    }
+  ],
+  "corpo": [
+    "A AMD anunciou, em vídeo de 20 de outubro de 2026, que o FSR 4.1 vai chegar ao Xbox Series X e ao Series S. O vídeo teve a participação de Scott Van Vliet, CTO do Xbox, que falou em dar aos desenvolvedores mais uma ferramenta poderosa de desempenho e qualidade visual e disse que isso é só o começo. Não há data: a AMD fala em atualizações a caminho, e ele em em breve.",
+    "O FSR 4.1 é o upscaling da AMD com inteligência artificial: o jogo roda numa resolução mais baixa e a IA reconstrói a imagem com mais nitidez. No PC, ele chegou a toda a série RX 6000, da RX 6400 à RX 6900, com o driver Radeon 26.10.1.",
+    "Isso importa porque o chip do Series X e do Series S é da arquitetura RDNA 2, a mesma das RX 6000. Nas RX 9000, o FSR 4 usa hardware dedicado, e nas RX 6000 a AMD adaptou o modelo para rodar em INT8 nos shaders.",
+    "Como é uma ferramenta para desenvolvedores, não está confirmado que jogos já lançados vão receber o recurso, e o catálogo inteiro mais bonito é expectativa minha. Num teste rápido com uma RX 6900 XT, em 4K no modo Balanced no Cyberpunk 2077, o FSR 4 custou cerca de 13% de desempenho, e a AMD diz que a imagem fica melhor que a do FSR 3 nas mesmas condições. Segundo a cobertura, o próximo Xbox, o Project Helix, deve usar o FSR Diamond, apresentado na GDC de março de 2026.",
+    "Para mim, o contexto é o rebuliço do DLSS 5, que é da NVIDIA: dentro do Xbox não tem NVIDIA, tem AMD, então o que importa é o upscaling da AMD. É interessante ver o CTO do Xbox no anúncio, ainda mais a poucos passos de uma nova geração de consoles. Imagino o Game Pass rodando bem no console, e ter placas que trabalham com esse upscale vai ser legal."
+  ]
+}

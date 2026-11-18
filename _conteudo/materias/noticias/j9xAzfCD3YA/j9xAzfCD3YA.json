@@ -1,0 +1,32 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-02",
+  "publicar_em": "2026-11-06T07:00:00-03:00",
+  "titulo": "Discord vai mostrar mensagens de canais públicos no Google",
+  "resumo": "A partir de meados de dezembro, mensagens de servidores públicos do Discord com mais de mil membros poderão aparecer no Google. Acho a mudança meio perigosa.",
+  "tags": [
+    "Discord"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/discord-mensagens-de-canais-aparecerao-no-google/"
+    },
+    {
+      "nome": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/discord-to-let-search-engines-index-public-server-messages/"
+    },
+    {
+      "nome": "The Next Web",
+      "url": "https://thenextweb.com/news/discord-public-server-messages-google-search"
+    }
+  ],
+  "corpo": [
+    "O Discord vai permitir que mensagens de canais públicos apareçam em buscadores como o Google, a partir de meados de dezembro de 2026. Vale só para os Discoverable Servers, servidores públicos com pelo menos 1.000 membros, que qualquer pessoa pode entrar sem convite. O Discord diz que são mais de 63 mil. A partir de 16 de novembro, cada servidor elegível ganha uma página pública, que pode ter resumos automáticos das conversas.",
+    "Nada privado entra: servidores privados ou só com convite, canais restritos, mensagens diretas e grupos ficam de fora. Nome de usuário e avatar não aparecem junto das mensagens, e mensagens enviadas antes da mudança não entram. O motivo dado pelo Discord é que muitos fóruns e wikis migraram para o app, e muita informação útil ficou presa nas conversas, inacessível para o resto da internet.",
+    "Os controles ficam com os administradores, nas configurações do servidor, e com cada usuário, em Configurações de usuário, Dados e privacidade. No Brasil, a opção vem desligada por padrão, assim como na União Europeia, no Reino Unido, no Canadá, na Austrália e na Coreia do Sul, e menores de idade ficam de fora. Na maior parte do mundo ela vem ligada, e desligar depois não remove as mensagens que já ficaram elegíveis: elas precisam ser apagadas uma a uma, e o buscador ainda pode guardar uma cópia.",
+    "Para mim, a novidade é meio perigosa, porque o risco é as pessoas esquecerem essa função habilitada. O nome já diz: canal público. Quem escreve ali já sabe que outras pessoas podem ler, e não só quem está no servidor. Mesmo assim, ter qualquer mensagem indexada no Google é outro nível. Reconheço que nada privado aparece, mas o ser humano é meio difícil, e as pessoas escrevem sem pensar."
+  ]
+}

@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Dois soldados de capacete e óculos, armados, ao lado de um veículo com placa em hindi, com a logo de Call of Duty. Texto na arte: "FILME ROMÂNTICO".
+Thumb.png: Dois soldados de capacete e óculos, armados, ao lado de um veículo com placa em hindi, com a logo de Call of Duty. Texto na arte: "FILME ROMÂNTICO".
+img-1_flowgames.gg.jpg: Quatro soldados de armadura e fuzis num cenário de tons verdes e névoa vermelha, com o personagem central de barba curta em destaque.
+img-2_flowgames.gg.jpg: Arte em vermelho e preto de soldados de capacete e máscara, com o capitão Price e Ghost, de caveira, entre respingos de tinta.

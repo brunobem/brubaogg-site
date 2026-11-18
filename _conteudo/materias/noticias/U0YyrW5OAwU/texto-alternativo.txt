@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Três assassinos de armadura, um de capuz vermelho, um de branco e um de preto, com o símbolo roxo da Irmandade e a logo de Assassin's Creed Destiny. Texto na arte: "CANCELADO".
+Thumb.png: Assassino de armadura branca com o símbolo roxo da Irmandade e a logo de Assassin's Creed Destiny. Texto na arte: "EXCLUSIVOS".

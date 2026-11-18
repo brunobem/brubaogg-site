@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Geralt de Rívia em primeiro plano, com Yennefer e Triss ao fundo, e a logo de The Witcher 3: Wild Hunt Remastered. Texto na arte: "BOM? 94 DE NOTA".
+Thumb.png: Geralt de Rívia em primeiro plano, com Yennefer e Triss ao fundo, e a logo de The Witcher 3: Wild Hunt Remastered. Texto na arte: "BOM? 94 DE NOTA".

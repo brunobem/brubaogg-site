@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Logo da Ubisoft sobre um céu de nuvens escuras, com navios ao fundo. Texto na arte: "UBISOFT QUER COMPRAR A ARKANE".
+Thumb.png: Logo da Ubisoft sobre um céu de nuvens escuras, com navios ao fundo. Texto na arte: "UBISOFT QUER COMPRAR A ARKANE".
+img-1_newsletter.jornaldosjogos.com.br.jpg: Logo da Ubisoft sobre um céu azul e roxo de nuvens, com um farol ao fundo.
+img-2_newsletter.jornaldosjogos.com.br.jpg: Grade com capas de jogos da Ubisoft, como Prince of Persia, Monopoly, Star Wars Outlaws, Avatar: Frontiers of Pandora, Assassin's Creed Mirage e Far Cry 6.

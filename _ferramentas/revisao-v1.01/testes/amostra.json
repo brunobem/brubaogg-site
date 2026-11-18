@@ -1,0 +1,122 @@
+[
+ {
+  "pagina": "404.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "arquivo.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "busca.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "cortes.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "gta6.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "index.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "lancamentos.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "lives.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "mcp-tiktok.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "mcp-youtube.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "noticias.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "privacidade-tiktok.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "privacidade-youtube.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "privacidade.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "reviews.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "tags.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "termos-tiktok.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "termos-youtube.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "termos.html",
+  "motivo": "pagina fixa ou lista"
+ },
+ {
+  "pagina": "tag/resident-evil.html",
+  "motivo": "tag com mais cartoes"
+ },
+ {
+  "pagina": "tag/inside.html",
+  "motivo": "tag com menos cartoes"
+ },
+ {
+  "pagina": "noticias/o-fim-da-midia-fisica-sony-gta-6-e-o-futuro-dos-discos.html",
+  "motivo": "noticias: formato short"
+ },
+ {
+  "pagina": "reviews/resident-evil-6-jake-e-sherry-e-o-ustanak-vale-a-pena.html",
+  "motivo": "reviews: formato horizontal"
+ },
+ {
+  "pagina": "lancamentos/lancamentos-de-agosto-de-2026-hell-let-loose-vietnam-e-mais.html",
+  "motivo": "lancamentos: formato horizontal"
+ },
+ {
+  "pagina": "gta6-novidades/gta-6-rockstar-confirma-atividades-de-sinuca-a-jet-ski.html",
+  "motivo": "gta6-novidades: formato short"
+ },
+ {
+  "pagina": "noticias/storebound-terror-no-shopping-funciona-melhor-com-amigos.html",
+  "motivo": "menor texto"
+ },
+ {
+  "pagina": "busca.html?q=resident",
+  "motivo": "busca com texto (precisa do site montado)"
+ },
+ {
+  "pagina": "busca.html?cat=Review&n=60",
+  "motivo": "mais recentes filtrado por categoria (precisa do site montado)"
+ },
+ {
+  "pagina": "busca.html?q=zzzzxq",
+  "motivo": "busca sem resultado (precisa do site montado)"
+ },
+ {
+  "pagina": "arquivo/2026-09.html",
+  "motivo": "arquivo: mes com mais materias"
+ }
+]

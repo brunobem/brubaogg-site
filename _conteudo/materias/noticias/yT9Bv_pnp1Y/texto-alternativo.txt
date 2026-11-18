@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Mulher de cabelo longo e escuro, sorrindo, de blusa estampada, sobre um fundo cinza e roxo, com a logo do Xbox. Texto na arte: "XBOX VIVE?".
+thumb.png: Mulher de cabelo longo e escuro, sorrindo, de blusa estampada, sobre um fundo cinza e roxo, com a logo do Xbox. Texto na arte: "XBOX VIVE?".

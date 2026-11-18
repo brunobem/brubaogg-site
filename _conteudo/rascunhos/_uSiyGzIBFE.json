@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-09-14",
+  "titulo": "DLSS 5 não oficial em mods: o que se sabe e os riscos",
+  "resumo": "A Nvidia lançou o DLSS 5 em setembro de 2026 com suporte oficial só no NBA 2K27, e modders já o aplicam a outros jogos, com falhas visuais.",
+  "tags": [
+    "DLSS 5"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "DSOGaming",
+      "url": "https://www.dsogaming.com/news/nvidia-dlss-5-will-be-officially-released-on-september-4th/"
+    },
+    {
+      "nome": "God Is a Geek",
+      "url": "https://godisageek.com/2026/09/dlss-5-autopilot-performance-fix-mod/"
+    },
+    {
+      "nome": "Mezha",
+      "url": "https://mezha.ua/en/news/nvidia-dlss-5-nba-2k27-control-gta-5-314621/"
+    }
+  ],
+  "assunto": "dlss-5",
+  "corpo": [
+    "A Nvidia lançou o DLSS 5 no início de setembro de 2026, e o NBA 2K27 é, até agora, o único jogo com suporte oficial. A tecnologia exige uma placa GeForce RTX série 50 ou o GeForce NOW Ultimate. Modders encontraram uma biblioteca do DLSS 5 nos arquivos de acesso antecipado do NBA 2K27, e a comunidade RenoDX a adaptou para outros jogos, entre eles Control e GTA V.",
+    "Cito o mod Star Wars Genesis, de Starfield, como um dos que ganharam uma versão com DLSS 5 feita por modders; as reportagens consultadas não confirmam esse caso específico. A favor da instalação, aponto a melhoria visual em rostos e na iluminação e a vantagem de não esperar meses ou anos até um estúdio liberar o suporte oficial. Contra, a implementação não foi testada pela própria Nvidia.",
+    "Entre os efeitos colaterais, cito saturação de cor, inconsistências que exigem ajuste manual e risco de instabilidade ou bugs que uma versão oficial não teria, além da necessidade de conhecimento técnico. Reportagens relatam também cintilação e artefatos com a câmera em movimento. Para quem tem medo de arriscar o PC, recomendo esperar a versão oficial. Eu mesmo já estou testando."
+  ]
+}

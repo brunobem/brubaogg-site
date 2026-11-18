@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Soldados atirando numa floresta de palmeiras iluminada pelo pôr do sol, com a legenda "Captured on PC".
+img-2_steam.com.jpg: Soldado de armadura azul com a sigla "SEAF" apontando um rifle diante de criaturas alienígenas, num cenário azul, com a legenda "Captured on PS5".
+img-3_steam.com.jpg: Soldado de capacete azul e dourado atirando num campo roxo com explosões e inimigos ao fundo, com a legenda "Captured on PS5".

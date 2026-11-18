@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-10",
+  "titulo": "PS5 ganha firmware 14.22, de segurança, antes do GTA 6",
+  "resumo": "A Sony lançou a 14.22 do PS5 só com correções de segurança, 12 dias após a 14.20. Para mim, a briga com o jailbreak começou bem antes do GTA 6.",
+  "tags": [
+    "PlayStation",
+    "GTA 6"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/playstation-5-firmware-atualizada-antes-gta-6-chegar/"
+    },
+    {
+      "nome": "Insider Gaming",
+      "url": "https://insider-gaming.com/latest-ps5-firmware-update-improves-security-ahead-of-gta-6-release/"
+    },
+    {
+      "nome": "God Is a Geek",
+      "url": "https://godisageek.com/2026/11/gta-6-ps5-firmware-requirement/"
+    }
+  ],
+  "assunto": "jailbreak-de-consoles",
+  "corpo": [
+    "A Sony lançou em 2 de novembro de 2026 a atualização 14.22.00 do PS5. Segundo o site da Sony, ela serve só para corrigir algumas questões de segurança do sistema, sem novidade para o jogador. É a segunda atualização em poucas semanas: a 14.20, de 21 de outubro, foi descrita como melhoria de mensagens e de telas. Sem atualizar, o console não acessa a PS Store e não abre alguns jogos comprados digitalmente.",
+    "O GTA 6 entra na história por causa do perfil PlayStation Game Size, no X, que costuma acertar informações de lojas e tamanhos de jogos. Segundo ele, o jogo vai exigir justamente a versão 14.22.00.00, e o mesmo perfil fala em pré-download em 12 de novembro e lançamento em 19 de novembro, à meia-noite, por 79,99 dólares na edição padrão. Nada disso é oficial: nem a Sony nem a Rockstar confirmaram a exigência de firmware.",
+    "Muita gente desconfiou que a 14.20 já tinha sido feita para barrar o GTA 6 em consoles com jailbreak, mas isso nunca foi confirmado, e agora a Sony só fala em segurança. O que existe de fato é uma corrida entre quem desbloqueia o console e a Sony, que fecha brechas com atualizações. Aqui não ensino nem indico jailbreak.",
+    "Para mim, essa guerra começou há muito tempo: a Sony vem de um lado, a Rockstar de outro e a galera da pirataria vem com tudo, desbloqueando muita coisa, e rápido. Por enquanto, na minha leitura, a Sony está no comando, porque tem o GTA 6 na mão."
+  ]
+}

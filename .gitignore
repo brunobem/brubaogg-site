@@ -1,0 +1,25 @@
+# dependencias e lixo de sistema
+node_modules/
+.DS_Store
+Thumbs.db
+~$*
+*.log
+
+# o site montado para publicar e o indice da busca: o servidor do GitHub refaz a cada envio (npm run indexar)
+_site/
+pagefind/
+
+# imagens das materias: moram no R2 da Cloudflare (npm run enviar-imagens). No Git fica so o registro (_conteudo/imagens.json e
+# imagens-enviadas.json). _r2/ e a pasta local de envio; os originais ficam SO na pasta da materia, no PC do Bruno (nao sobem para lugar nenhum).
+_r2/
+_conteudo/materias/**/thumb.*
+_conteudo/materias/**/card.*
+_conteudo/materias/**/img-*
+
+# nunca versionar credenciais
+.env
+.env.*
+tokens.json
+
+# resultado temporario dos testes (o estado-inicial.json, esse sim, fica)
+_ferramentas/revisao-v1.01/testes/resultado-ultimo.json

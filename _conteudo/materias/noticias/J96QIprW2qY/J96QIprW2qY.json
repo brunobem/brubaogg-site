@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-14",
+  "titulo": "NVIDIA NTC: textura neural reduz o uso de VRAM",
+  "resumo": "A Nvidia mostrou no GTC 2026 que o NTC reduz o uso de VRAM de texturas de 6,5 GB para 970 MB. Eu falei também em ganho de FPS.",
+  "tags": [
+    "NVIDIA"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "TweakTown",
+      "url": "https://www.tweaktown.com/news/110886/nvidias-neural-texture-compression-cuts-vram-usage-from-6-5gb-down-to-970mb/index.html"
+    },
+    {
+      "nome": "Igor'sLAB",
+      "url": "https://www.igorslab.de/en/nvidias-neural-texture-compression-ai-is-designed-to-alleviate-vram-pressure-in-pc-games/"
+    },
+    {
+      "nome": "GameGPU",
+      "url": "https://en.gamegpu.com/news/zhelezo/rtx-neural-texture-compression-nvidia-pokazala-testy-novoj-tekhnologii-szhatiya-tekstur"
+    },
+    {
+      "nome": "Let's Data Science",
+      "url": "https://letsdatascience.com/news/nvidia-uses-neural-texture-compression-to-slash-vram-a92dcbd0"
+    }
+  ],
+  "corpo": [
+    "A Nvidia demonstrou no GTC 2026 o Neural Texture Compression (NTC), uma compressão de texturas por rede neural. Em uma cena de demonstração, o uso de VRAM com texturas caiu de 6,5 GB para 970 MB, uma redução de cerca de 85%, e a empresa fala em até 4 vezes mais resolução efetiva na imagem final. É um resultado de demonstração, e não uma média: os desenvolvedores precisam integrar a tecnologia, e não há benefício automático para jogos existentes.",
+    "Um relato da GameGPU diz que a tecnologia ainda está em beta, mas já tem suporte às placas RTX das séries 20, 30, 40 e 50. Em placas sem suporte adequado, o jogo volta a usar as texturas comuns. Um teste independente da Compusemble, em uma RTX 4090, mediu redução de 95,8% da memória de texturas em relação à compressão não neural, mas notou que a taxa de quadros pode cair.",
+    "Relaciono a novidade ao DLSS 5 e digo que a Nvidia anunciou que a tecnologia vai aumentar a taxa de quadros de 30 para quase 80 e diminuir o uso de VRAM; as fontes consultadas falam em redução de memória, e não em ganho de FPS. Para mim, a arquitetura só chegaria às novas placas, e quem tem placa abaixo da série 30 não verá a tecnologia."
+  ]
+}

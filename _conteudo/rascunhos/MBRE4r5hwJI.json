@@ -1,0 +1,30 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-03",
+  "titulo": "Nintendo terá jogos digitais mais baratos no Brasil",
+  "resumo": "A partir de maio de 2026, os jogos digitais próprios da Nintendo para Switch 2 terão preço sugerido diferente do físico no Brasil.",
+  "tags": [
+    "Nintendo"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Showmetech",
+      "url": "https://www.showmetech.com.br/precos-de-jogos-da-nintendo-caem-no-brasil-veja-lista/"
+    },
+    {
+      "nome": "Canaltech",
+      "url": "https://canaltech.com.br/games/por-essa-voce-nao-esperava-jogos-do-switch-2-ficarao-mais-baratos-no-brasil/"
+    },
+    {
+      "nome": "SBT News",
+      "url": "https://sbtnews.sbt.com.br/noticia/games/por-que-jogos-sao-caros-no-brasil-nintendo-explica-e-mira-reduzir-preco-digital"
+    }
+  ],
+  "corpo": [
+    "A Nintendo anunciou que, a partir de maio de 2026, os jogos digitais que lançar exclusivamente para o Switch 2 terão preço sugerido diferente do das versões físicas no Brasil, começando com as pré-vendas de Yoshi and the Mysterious Book. A empresa justificou que não faz mais sentido cobrar o mesmo valor de quem não gera custo de produção de cartucho. Antes, jogos físicos e digitais tinham o mesmo preço.",
+    "A Nintendo também reduziu preços na eShop brasileira: Mario Kart World foi de R$ 499 para R$ 439, Donkey Kong Bananza, de R$ 439 para R$ 389, e Pokémon Pokopia, de R$ 439,90 para R$ 389,90, e os jogos digitais de Switch 1 passam a ter preço padrão de R$ 329. A empresa diz que os varejistas definem seus próprios preços, físicos e digitais, então os valores de cada título podem variar.",
+    "Destaco que a Nintendo tem se aproximado do mercado brasileiro, com traduções, legendas e até dublagens, o que não acontecia no passado. Celebro a notícia, mas lembro que um jogo ainda sai por cerca de R$ 360, e que a Nintendo é para quem tem grana, principalmente nos jogos originais. O Canaltech alerta que, com a crise dos chips de memória, é esperado um aumento no preço dos videogames em 2026."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-05-26",
+  "titulo": "Fortnite volta à App Store do iPhone no mundo todo",
+  "resumo": "A Epic anunciou em 19 de maio de 2026 que o Fortnite voltou à App Store em quase todo o mundo, com exceção da Austrália.",
+  "tags": [
+    "Fortnite"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Shacknews",
+      "url": "https://www.shacknews.com/article/149201/fortnite-back-on-ios-app-store"
+    },
+    {
+      "nome": "PocketGamer.biz",
+      "url": "https://www.pocketgamer.biz/fortnite-returns-globally-on-the-app-store-with-one-exception/"
+    },
+    {
+      "nome": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/06/apple-epic-games-lawsuit-supreme-court-appeal-app-store-commission/"
+    },
+    {
+      "nome": "jeu.video",
+      "url": "https://jeu.video/en/article/fortnite-iphone-brazil-epic-games-store"
+    }
+  ],
+  "corpo": [
+    "A Epic Games anunciou em 19 de maio de 2026 que o Fortnite voltou à App Store em quase todo o mundo, com a Austrália como principal exceção, onde o retorno depende de uma decisão judicial. A Epic ligou a volta ao caso nos Estados Unidos e disse que governos não vão aceitar taxas abusivas da Apple quando ela for obrigada a revelar seus custos. O jogo já estava na App Store americana desde maio de 2025 e voltou ao Google Play em 19 de março de 2026.",
+    "A briga começou em 2020, quando a Epic criou um pagamento direto para os V-Bucks que evitava as taxas da Apple, e o jogo foi removido. Explico que parte do dinheiro das compras de skins feitas no aplicativo ia para a Apple, e estimo essa fatia em cerca de 20%; as fontes consultadas falam em comissão de 30%. A Epic queria que os usuários pudessem baixar o aplicativo e fazer as compras normalmente dentro da própria loja.",
+    "A disputa segue na Justiça americana: a Suprema Corte aceitou em 30 de junho de 2026 julgar o recurso da Apple contra a decisão de desacato. Digo que não se sabe como foi o acordo, mas que o Fortnite voltou e já pode estar liberado no iPhone. No Brasil, a Epic anunciou em 30 de julho de 2026 que o jogo volta ao iPhone pela Epic Games Store, e não pela App Store."
+  ]
+}

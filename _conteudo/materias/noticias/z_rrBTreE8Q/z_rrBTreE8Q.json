@@ -1,0 +1,24 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-27",
+  "titulo": "Capcom confirma vazamento de dados de 11 milhões",
+  "resumo": "A Capcom confirmou que e-mails e IPs de mais de 11 milhões de contas do CAPCOM ID vazaram. Senhas dos jogadores e cartões não. Cuidado com phishing.",
+  "tags": [
+    "Capcom"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/hardware/capcom-confirms-a-data-breach-has-affected-over-11-million-people-with-emails-ip-addresses-and-birthdays-caught-up-in-the-mix/"
+    }
+  ],
+  "corpo": [
+    "A Capcom confirmou, em comunicado de desculpas de 22 de outubro de 2026, um vazamento de dados de mais de 11 milhões de contas do CAPCOM ID, segundo o PC Gamer. Foram 11.774.247 endereços de e-mail, com a data de criação da conta, a data do último login, o número de logins e o endereço IP do último login.",
+    "Em 43 contas vazaram também data de nascimento, gênero, país ou região e apelido. Em 196 contas, os invasores trocaram a senha, e a Capcom já redefiniu essas senhas. A empresa diz que não há confirmação de vazamento de senhas definidas pelos próprios jogadores e que dados de cartão de crédito não foram expostos.",
+    "A linha do tempo: o acesso foi detectado e bloqueado em 19 de outubro, uma força-tarefa foi montada em 20 de outubro, a polícia e a Comissão de Proteção de Informações Pessoais do Japão foram avisadas em 21 de outubro e o pedido de desculpas veio em 22. A Capcom não revelou quem fez nem como os invasores entraram, e disse só que identificou o método e aplicou medidas de emergência. Quem foi afetado deve receber um e-mail da empresa, em etapas por região.",
+    "O maior risco agora é phishing. Com e-mail e IP, golpistas podem montar mensagens mais convincentes, se passando pela Capcom ou por outras empresas. Vale desconfiar de e-mail que pede informação, não clicar em link suspeito, entrar no site da Capcom direto pelo navegador, usar uma senha diferente em cada conta e ativar a verificação em duas etapas onde der.",
+    "Para mim, é meio triste e meio perigoso. 2026 foi o ano da Capcom, com Pragmata, o novo Resident Evil e Monster Hunter, e esse vazamento veio no finalzinho. Joguei Resident Evil Requiem, Pragmata e outros jogos deles, então pode ser que meus dados estejam lá. Acho que a empresa vai falar pouco para não dar força a um possível pedido de resgate, mas isso é teoria minha: nenhuma cobertura fala em resgate ou venda dos dados."
+  ]
+}

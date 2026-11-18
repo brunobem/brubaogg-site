@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-03",
+  "publicar_em": "2026-11-03T07:00:00-03:00",
+  "titulo": "Red Dead Redemption 2 ganha mod com sistema Nemesis",
+  "resumo": "O mod enRage dá ao Red Dead Redemption 2 inimigos que lembram o que você fez, no estilo Nemesis. É grátis, está em beta e é só para PC.",
+  "tags": [
+    "Red Dead Redemption 2"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/red-dead-redemption-2-tem-mod-absurdo-sistema-nemesis/"
+    },
+    {
+      "nome": "TweakTown",
+      "url": "https://www.tweaktown.com/news/114149/red-dead-redemption-2-receives-iconic-shadow-of-mordor-style-nemesis-system/index.html"
+    },
+    {
+      "nome": "PrimaGames",
+      "url": "https://primagames.com/news/red-dead-redemption-2-mod-adds-a-nemesis-system-gang-wars-more"
+    }
+  ],
+  "corpo": [
+    "Um mod chamado enRage leva para o Red Dead Redemption 2 um sistema inspirado no Nemesis, criado para Terra-média: Sombras de Mordor. O autor é o modder nicklovin99, que publicou a versão em acesso antecipado no Nexus Mods em 17 de outubro de 2026. O mod é gratuito, está em beta, recebe atualizações e funciona na versão de PC do jogo, no modo história.",
+    "Na prática, os NPCs ganham nome, temperamento, características e memória. Se o Arthur machuca, rouba ou mata alguém, a família e os amigos dessa pessoa podem ir atrás dele. Inimigos que sobrevivem podem ficar com cicatriz, dá para conversar, intimidar ou negociar, e um NPC interrogado pode mentir e armar uma emboscada. Usar máscara ajuda a esconder a identidade, e as cidades passam a julgar o Arthur pela reputação.",
+    "O mod também mexe nas gangues, com acampamentos, membros que podem trair e rivais que atacam grupos enfraquecidos. Aparecem ainda caçadores de recompensa e emboscadas, e dá para mandar telegramas para oferecer trégua ou ameaçar.",
+    "Para mim, é uma das mudanças mais legais que já vi num mod. Ele não muda a estrutura do jogo, mas muda a interação que a gente tem com ele, e isso me deixou sem palavras. O Red Dead 2 já tem NPCs que parecem ter vida própria, e ver as suas ações gerarem revolta e vingança fecha esse círculo.",
+    "Sobre o Nemesis em si: o sistema é de outra equipe, a Monolith, e a Warner tem patente dele, o que costuma ser apontado como o motivo de quase nenhum jogo ter algo parecido. Num mod de fã, sem fins comerciais, a situação é outra."
+  ]
+}

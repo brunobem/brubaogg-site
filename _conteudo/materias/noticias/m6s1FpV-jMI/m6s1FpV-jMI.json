@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-11",
+  "publicar_em": "2026-11-11T07:00:00-03:00",
+  "titulo": "Ubisoft quer comprar a Arkane, estúdio de Dishonored",
+  "resumo": "Segundo a Bloomberg, a Ubisoft está entre os interessados na Arkane Lyon, que o Xbox quis fechar. Para mim, a compra pode ser salvação ou prego no caixão.",
+  "tags": [
+    "Arkane",
+    "Ubisoft"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/gaming-industry/ubisoft-reportedly-wants-to-buy-arkane-from-xbox/"
+    },
+    {
+      "nome": "Video Games Chronicle",
+      "url": "https://www.videogameschronicle.com/news/ubisoft-has-reportedly-offered-to-buy-arkane-lyon-from-xbox/"
+    },
+    {
+      "nome": "GamesRadar",
+      "url": "https://www.gamesradar.com/games/ubisoft-reportedly-among-the-studios-offering-to-buy-arkane-from-microsoft-as-it-tries-to-finish-blade/"
+    }
+  ],
+  "corpo": [
+    "Segundo a Bloomberg, repercutida pelo PC Gamer, a Ubisoft quer comprar a Arkane Lyon, estúdio de Dishonored, Prey e Deathloop que hoje pertence ao Xbox. Outras coberturas dizem que a Ubisoft não é a única, com ao menos duas outras empresas fazendo oferta. Nada está confirmado: o PC Gamer pediu comentário ao Xbox e à Ubisoft e não teve resposta.",
+    "O contexto é a reestruturação do Xbox em julho, com milhares de demissões e estúdios cortados. A Arkane só não fechou por causa de uma lei francesa, a Lei Florange, que obriga a empresa a procurar um comprador antes. O prazo era 13 de novembro, e a Microsoft o estendeu por mais um mês. O Xbox também chegou a pensar em vender a Arkane à própria diretoria do estúdio, mas não se sabe se isso ainda está em discussão.",
+    "O Marvel's Blade continua em desenvolvimento na Arkane, e a Microsoft estendeu o prazo também para achar um parceiro que ajude a terminar o jogo. Comprar o estúdio não significa necessariamente levar a marca: as reportagens não dizem se a franquia Dishonored entra no negócio.",
+    "Para mim, a dúvida é se isso é bom. A Ubisoft ainda não se recuperou: vem sofrendo com demissões, fechamentos de estúdios e lançamentos que não deram certo, e a compra pode ser o último prego no caixão da Arkane. Mas a Arkane é especialista em jogos com muita liberdade de abordagem, e o PC Gamer imagina um Splinter Cell no estilo de Dishonored. Eu sinceramente não sei."
+  ]
+}

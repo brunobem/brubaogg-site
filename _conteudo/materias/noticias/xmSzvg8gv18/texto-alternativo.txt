@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Logo do Burger Shot, um hambúrguer com molho escorrendo, sobre uma cidade desfocada ao pôr do sol, com a logo de GTA 6. Texto na arte: "BURGER SHOT".
+Thumb.png: Logo do Burger Shot, um hambúrguer com molho escorrendo, sobre uma cidade desfocada ao pôr do sol, com a logo de GTA 6. Texto na arte: "BURGER SHOT".
+img-1_tmc.com.br.jpg: Fachada do Burger Shot numa praça de alimentação, com o letreiro vermelho e o hambúrguer pintado numa coluna.

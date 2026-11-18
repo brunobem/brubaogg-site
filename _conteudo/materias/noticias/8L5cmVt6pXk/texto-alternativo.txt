@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Homem lutando com um zumbi numa floresta, com a logo de Dying Light: The Beast. Texto na arte: "SEM UPDATE".
+Thumb.png: Homem lutando com um zumbi numa floresta, com a logo de Dying Light: The Beast. Texto na arte: "SEM UPDATE".
+img-1_flowgames.gg.jpg: Personagem de costas numa floresta, olhando uma cidade ao longe com zumbis, com a logo de Dying Light: The Beast.

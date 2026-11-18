@@ -1,0 +1,30 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-02",
+  "publicar_em": "2026-11-10T07:00:00-03:00",
+  "titulo": "Anthropic faz o Claude Code evitar recriar jogos",
+  "resumo": "A Anthropic pôs no Claude Code uma regra contra recriar jogos, em meio à onda de clones na Steam. Fico do lado da Steam: o mercado se regula.",
+  "tags": [
+    "Steam"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/gaming-industry/anthropic-updates-claude-to-steer-it-away-from-letting-users-clone-games-following-weeks-of-steam-being-inundated-with-ai-slop/"
+    },
+    {
+      "nome": "Game Developer",
+      "url": "https://www.gamedeveloper.com/programming/anthropic-appears-to-have-ordered-ai-tool-claude-to-stop-remaking-video-games"
+    }
+  ],
+  "assunto": "steam-clones-e-ia",
+  "corpo": [
+    "A Anthropic adicionou duas frases às instruções do Claude Code no modelo Opus 5.5 para evitar que a ferramenta recrie jogos que já existem. A regra diz para não construir uma recriação de um jogo específico existente, mesmo que ele seja renomeado ou chamado de original. A mudança foi notada por um usuário no X e confirmada por Addy Osmani, da equipe técnica da Anthropic, segundo a PC Gamer em 31 de outubro de 2026.",
+    "A justificativa de Osmani é que usar o Claude para violar propriedade intelectual vai contra a política de uso da empresa. Ele disse também que jogos originais, jogos de gênero e jogos com design próprio continuam funcionando. A reportagem não diz se a regra vale para outros produtos, e Osmani afirmou que a empresa vai continuar ajustando.",
+    "O contexto é a enxurrada de jogos feitos às pressas com IA na Steam, muitos deles cópias. Na última Steam Next Fest, o número de demos dobrou, e a maior parte do aumento veio de jogos feitos com ajuda de IA. O estúdio por trás de Moonlighter cancelou o playtest público do próximo jogo e disse que, se não dá para mostrar o jogo sem medo de ser clonado, alguma coisa está quebrada.",
+    "Para mim, é mais uma barreira que a Anthropic coloca no que o Claude pode fazer. Não sei se gosto tanto da mudança: fico mais do lado da Steam, que acha que o mercado deve se autorregular, sem uma intervenção desse tipo. Acho que a Anthropic recuou diante da pressão de quem reclamou, provavelmente desenvolvedores que tiveram jogos copiados, mas isso é leitura minha: a empresa justifica a regra com a política de propriedade intelectual que já existia.",
+    "Meu ponto principal é que a mudança não freia o problema, só tira a responsabilidade da Anthropic. A galera ainda pode usar outras ferramentas ou rodar IA localmente. Se clonar jogo virou um produto que dá dinheiro, esse dinheiro pode financiar máquinas potentes para rodar IA local focada em engenharia reversa. No fim, é um posicionamento da Anthropic, e só isso."
+  ]
+}

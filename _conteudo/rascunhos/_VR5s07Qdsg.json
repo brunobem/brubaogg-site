@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-05-02",
+  "titulo": "PlayStation vai exigir verificação de idade no Brasil",
+  "resumo": "A PlayStation passou a pedir verificação de idade a contas de adultos no Brasil, por causa do ECA Digital, para comprar jogos 18+.",
+  "tags": [
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PlayStation",
+      "url": "https://www.playstation.com/pt-br/support/account/age-verification-faq/"
+    },
+    {
+      "nome": "Olhar Digital",
+      "url": "https://olhardigital.com.br/2026/06/12/games-e-consoles/playstation-exigira-verificacao-de-idade/"
+    },
+    {
+      "nome": "Canaltech",
+      "url": "https://canaltech.com.br/games/nova-exigencia-do-playstation-vai-mudar-a-forma-como-voce-compra-jogos-no-brasil/"
+    },
+    {
+      "nome": "Bem Paraná",
+      "url": "https://www.bemparana.com.br/noticias/parana/plataformas-de-jogos-adotam-medidas-desiguais-diante-do-eca-digital/"
+    }
+  ],
+  "corpo": [
+    "A PlayStation passou a pedir verificação de idade a contas de adultos registradas no Brasil, por causa do ECA Digital, conhecido como Lei Felca. A Sony avisou os usuários em junho de 2026 que a verificação é necessária para comprar jogos e conteúdo 18+ na PlayStation Store: quem não verificar continua jogando e pode comprar outros jogos, mas não títulos 18+. A verificação é feita uma vez por conta.",
+    "A verificação é feita pela terceirizada Yoti, por número de celular pós-pago em nome do titular, por escaneamento facial, que estima a idade pela geometria do rosto, ou por documento de identidade, com passaporte, carteira de motorista ou RG, em 3 a 6 minutos. A PlayStation recebe só o resultado, e a Yoti exclui os dados do rosto. Contas novas podem ser solicitadas durante a criação, e contas existentes, ao usar certos recursos.",
+    "Relatei em maio que a PlayStation tinha dito a veículos de imprensa que inseriria uma política de privacidade para uso de comunicação e que menores sem verificação não poderiam usar comunicação nos jogos nem nas ferramentas da PlayStation; as fontes consultadas só trazem a verificação para compras 18+. A lei é a Lei nº 15.211/25, cujos decretos de regulamentação foram assinados em março de 2026."
+  ]
+}

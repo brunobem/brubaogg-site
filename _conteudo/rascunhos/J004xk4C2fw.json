@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-07-06",
+  "titulo": "Sony diz que vai insistir em jogos live service",
+  "resumo": "Em entrevista à Famitsu, o presidente da PlayStation reafirmou a aposta em live service, apesar de Concord, Destiny 2 e Marathon.",
+  "tags": [
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Hitmarker",
+      "url": "https://hitmarker.net/news/sony-reaffirms-commitment-to-live-service-games-despite-concord-failure-and-765-million-bungie-loss-1747052"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://pcgamer.com/gaming-industry/sony-games-boss-says-company-will-bravely-keep-sending-live-services-over-the-top-despite-cancelling-8-of-the-12-ones-planned-for-2025-and-wiping-out-most-of-destiny-2s-developers/"
+    },
+    {
+      "nome": "TweakTown",
+      "url": "https://tweaktown.com/news/110641/marathon-has-sold-1-2-million-copies-on-all-platforms-analyst-firm-estimates/index.html"
+    },
+    {
+      "nome": "Push Square",
+      "url": "https://www.pushsquare.com/news/2026/08/sonys-live-service-strategy-may-have-failed-but-helldivers-2-has-been-a-monstrous-hit"
+    }
+  ],
+  "corpo": [
+    "A Sony diz que vai continuar investindo em jogos live service. Em entrevista à revista japonesa Famitsu, o presidente da PlayStation, Hideaki Nishino, afirmou que esses jogos atraem usuários em escala global e que a empresa quer ampliar o mercado com conteúdo próprio e de terceiros, porque nesse modelo é importante oferecer algo de forma contínua.",
+    "O histórico recente, porém, é ruim. O Concord foi retirado de venda em duas semanas, e o estúdio que o fez, a Firewalk, foi fechado. O PC Gamer relata que a Sony cancelou oito dos 12 live services planejados para 2025. Lembro ainda do Destiny 2, da Bungie, comprada pela Sony por bilhões e com a base de jogadores em queda, pelo que vi, e do Marathon, que a Alinea Analytics estimou em cerca de 1,2 milhão de cópias nos primeiros 19 dias. Para mim, o jogo chegou morto.",
+    "Também há exemplos de sucesso: segundo a Sony, o Helldivers 2 já atraiu mais de 22 milhões de jogadores desde 2024. Mesmo assim, questiono se faz sentido a Sony insistir no modelo depois de tantos fracassos, quando a resposta dela, pelo que entendo, é investir mais dinheiro."
+  ]
+}

@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Menino diante de um milharal sob chuva e névoa, com um vulto escuro ao longe, em tons de cinza.
+img-2_steam.com.jpg: Menino de blusa vermelha diante de uma grande porta de madeira num cenário de cinza, iluminado por uma luz amarela.
+img-3_steam.com.jpg: Grupo de pessoas em fila num galpão industrial escuro, vistas ao longe.

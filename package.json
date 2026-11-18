@@ -1,0 +1,37 @@
+{
+  "name": "site-brubaogg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site do canal BRUBAOGG (brubaogg.com.br), publicado no GitHub Pages",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "atualizar": "node _ferramentas/atualizar-videos.mjs && node _ferramentas/miniaturas-grandes.mjs && node _ferramentas/duracoes-videos.mjs && node _ferramentas/gerar-site.mjs",
+    "videos": "node _ferramentas/atualizar-videos.mjs",
+    "miniaturas": "node _ferramentas/miniaturas-grandes.mjs",
+    "duracoes": "node _ferramentas/duracoes-videos.mjs",
+    "gerar": "node _ferramentas/gerar-site.mjs",
+    "rascunho": "node _ferramentas/gerar-site.mjs --rascunho",
+    "pendentes": "node _ferramentas/pendentes.mjs",
+    "formato": "node _ferramentas/formato-video.mjs",
+    "nova": "node _ferramentas/nova-materia.mjs",
+    "verificar": "node _ferramentas/verificar-links.mjs",
+    "validar-html": "node _ferramentas/validar-html.mjs",
+    "aprovar": "node _ferramentas/aprovar-materia.mjs",
+    "endereco": "node _ferramentas/endereco.mjs",
+    "retirar": "node _ferramentas/retirar-materia.mjs",
+    "mover": "node _ferramentas/mover-materia.mjs",
+    "wiki": "node _ferramentas/nova-wiki.mjs",
+    "previa": "node _ferramentas/gerar-site.mjs --com-rascunhos",
+    "indexar": "node _ferramentas/montar-site.mjs",
+    "enviar-imagens": "node _ferramentas/enviar-imagens.mjs",
+    "estresse": "node _ferramentas/revisao-v1.01/testes/estresse.mjs",
+    "testar": "node _ferramentas/revisao-v1.01/testes/testar.mjs"
+  },
+  "devDependencies": {
+    "pagefind": "1.5.2",
+    "wrangler": "4.164.0"
+  }
+}

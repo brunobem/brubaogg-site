@@ -1,0 +1,7 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+img-1_steam.com.jpg: Visão em primeira pessoa com uma pistola na mão, numa garagem escura com um carro preto e prateleiras, com a marca "A.I.L.A" no canto.
+img-2_steam.com.jpg: Capela em ruínas iluminada por velas, com um altar ao fundo.
+img-3_steam.com.jpg: Interior escuro de uma catedral gótica com um grande vitral redondo e figuras de manto ao fundo, com a marca "A.I.L.A" no canto.

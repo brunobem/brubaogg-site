@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-13",
+  "titulo": "Remake de Ocarina of Time já roda fora do Switch 2",
+  "resumo": "O remake de Ocarina of Time já foi emulado no PC e há quem tente rodá-lo num PS5 com jailbreak. Para mim, a dúvida é se a Nintendo vai reagir.",
+  "tags": [
+    "Zelda",
+    "Nintendo"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/zelda-ocarina-of-time-remake-funciona-emuladores-pc/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/software/zelda-ocarina-of-time-remake-reportedly-running-at-60-fps-on-pc-just-hours-after-games-official-nintendo-switch-2-release/"
+    },
+    {
+      "nome": "Notebookcheck",
+      "url": "https://notebookcheck.net/Zelda-Ocarina-of-Time-remake-runs-on-PS5-with-jailbreak-and-Switch-2-emulator.1443533.0.html"
+    }
+  ],
+  "assunto": "jailbreak-de-consoles",
+  "corpo": [
+    "O remake de The Legend of Zelda: Ocarina of Time saiu no Switch 2 em 5 de novembro de 2026 e, em menos de 24 horas, já aparecia rodando em emulador no PC. Segundo o PC Gamer, o primeiro vídeo mostrava o jogo passando da tela de abertura, com cenas razoáveis, mas com flicker, travadas e 20 a 30 FPS durante o jogo. Um vídeo 12 horas depois mostrava de 30 a 60 FPS, e outro usuário diz ter 60 FPS estáveis.",
+    "O teste foi feito num PC muito forte, com um Ryzen 7 9800X3D, e a emulação ainda está no começo: o PC Gamer diz que falta muito para chegar à experiência do Switch 2. O Flow Games, que cita o DSOGaming, conta que um desenvolvedor também tenta rodar o jogo num PS5 com jailbreak, mas até agora só mostrou a tela de título. Aqui eu só relato o fato: não cito nomes de emuladores nem ensino nada.",
+    "O PC Gamer lembra que a Nintendo tem histórico de derrubar esses projetos: os criadores do emulador Yuzu fecharam um acordo com a Nintendo e encerraram o desenvolvimento em 2024. As coberturas que li não falam de nenhuma resposta da Nintendo a esses vídeos até agora.",
+    "Para mim, o simples fato de alguém tentar rodar um jogo exclusivo da Nintendo no console da Sony mostra até onde a tecnologia chegou. Tenho a impressão de que qualquer lançamento vai poder ser jogado em qualquer lugar, mas isso é exagero meu: hoje a emulação exige um PC de ponta e, no PS5, não passou da tela inicial. A minha dúvida é se a Nintendo vai deixar isso barato e por quanto tempo esses vídeos continuam no ar."
+  ]
+}

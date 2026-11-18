@@ -1,0 +1,18 @@
+MODELO DE IMAGENS DESTA REVIEW (o site ignora este arquivo; pode apagar depois)
+
+Coloque as imagens NESTA pasta, ao lado do pLx23hfuNPY.json, com estes nomes:
+
+  thumb.png         capa do player (vídeo horizontal: 16:9). Só uma.
+  card.png          capa dos cartões, home e compartilhamento (16:9). Só uma.
+  img-1_site.jpg      imagem depois do parágrafo 2
+  img-2_site.jpg      imagem depois do parágrafo 4
+  img-3_site.jpg      imagem depois do parágrafo 6
+  img-4_site.jpg      imagem depois do parágrafo 8
+  img-5_site.jpg      imagem depois do parágrafo 10
+
+Em review, cada imagem cai a cada dois parágrafos (img-1 depois do 2º, img-2 depois do 4º...).
+Extensões aceitas: jpg, png ou webp.
+No nome das imagens do texto, troque "site" pelo domínio de onde a imagem veio, sem espaço:
+  img-1_ign.com.br.jpg   -> aparece "Imagem: ign.com.br" embaixo da foto.
+Imagem do texto sem o domínio no nome faz o `npm run gerar` parar.
+Esta review tem 11 parágrafos.

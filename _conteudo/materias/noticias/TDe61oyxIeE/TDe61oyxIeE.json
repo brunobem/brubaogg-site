@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-21",
+  "titulo": "League of Legends Classic acaba em 6 de janeiro de 2027",
+  "resumo": "A Riot encerra o League Classic em 6 de janeiro de 2027, três meses após a estreia, porque a maioria voltou ao LoL atual. Bateu nostalgia, mas passou.",
+  "tags": [
+    "League of Legends"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/f-league-classic-sera-encerrado-no-comeco-de-2027/"
+    },
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/moba/3-months-after-launch-riot-announces-league-of-legends-classic-will-be-killed-in-january-most-have-gone-back-to-other-parts-of-league/"
+    },
+    {
+      "nome": "Riot Games",
+      "url": "https://www.leagueoflegends.com/de-de/news/dev/dev-league-classic/"
+    }
+  ],
+  "corpo": [
+    "A Riot anunciou em 14 de outubro de 2026 que o League of Legends Classic acaba depois da Temporada 3 de 2026, às 23h59 de 6 de janeiro de 2027. O modo chegou em 29 de julho, dentro do próprio cliente, recriando principalmente o LoL da Season 3, de 2013, com o Summoner's Rift antigo, itens e runas clássicos, combate mais lento e campeões da época. No total, vai durar pouco mais de cinco meses.",
+    "O motivo oficial é que a maioria dos jogadores voltou para outras partes do League. Em algumas regiões, isso deixou as filas longas e com grande diferença de nível, e a Riot passou a limitar os horários de fila onde há menos gente. Antes do fim ainda chegam campeões como Mordekaiser, Yorick, Hecarim, Lucian, Volibear, Urgot e Udyr, e quem gastou RP em conteúdo do modo recebe reembolso.",
+    "A Riot diz que vai guardar o Classic na caixa por enquanto, com o objetivo de trazê-lo de volta, provavelmente como modo de evento, com ajustes e novidades. Acho legal a ideia, como acontece com o URF.",
+    "Bateu nostalgia em mim também: LoL é um dos jogos que mais joguei na vida, fácil mais de 3 mil horas, embora eu tenha começado só na Season 6. Para mim, o fim é o ciclo natural: a nostalgia faz voltar, mas, quando a saudade passa, a gente quer jogar o jogo que conhece hoje, que ficou muito mais rápido e competitivo."
+  ]
+}

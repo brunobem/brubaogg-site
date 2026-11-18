@@ -1,0 +1,6 @@
+# Mesmas quebras de linha (LF) no repositorio, em qualquer computador (o Windows converte sozinho no commit)
+* text=auto eol=lf
+*.png binary
+*.webp binary
+*.jpg binary
+*.ico binary

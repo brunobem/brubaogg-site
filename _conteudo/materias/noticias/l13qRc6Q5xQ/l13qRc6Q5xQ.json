@@ -1,0 +1,27 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-07-10",
+  "titulo": "Sony vai acabar com discos de jogos novos em janeiro de 2028",
+  "resumo": "A Sony anunciou que, a partir de janeiro de 2028, jogos novos do PlayStation sairão só em formato digital. Para mim, o jogo deixa de ser do jogador.",
+  "tags": [
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Fox Business",
+      "url": "https://www.foxbusiness.com/lifestyle/sony-end-physical-playstation-game-discs-new-releases-starting-2028"
+    },
+    {
+      "nome": "The Next Web",
+      "url": "https://thenextweb.com/news/sony-ends-physical-playstation-game-discs-2028"
+    }
+  ],
+  "assunto": "fim-da-midia-fisica",
+  "corpo": [
+    "A Sony anunciou em 1º de julho de 2026, em um post no PlayStation Blog, que vai parar de produzir discos físicos de todos os jogos novos dos consoles PlayStation a partir de janeiro de 2028. Os jogos lançados desde então serão vendidos só em formato digital, pela PlayStation Store e por varejistas parceiros. Os jogos já lançados, ou que saírem em disco antes de janeiro de 2028, não são afetados.",
+    "Digo que a Sony justificou a decisão pela preferência dos consumidores. Os números ajudam a explicar: segundo a The Next Web, com base nos relatórios financeiros da empresa, 78% das vendas de jogos completos do PS4 e do PS5 no último ano fiscal foram digitais, e 85% no trimestre mais recente.",
+    "O que a Sony não conta, aponto, é que sem o jogo físico o jogo deixa de ser do jogador, que compra uma licença de uso, e a empresa controla o catálogo digital. Reconheço que o digital é mais cômodo e, muitas vezes, mais barato, mas lembro que, se uma dessas empresas decidir que o jogador não é mais dono do jogo, o jogo deixa de ser dele."
+  ]
+}

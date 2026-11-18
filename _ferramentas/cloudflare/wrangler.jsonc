@@ -1,0 +1,35 @@
+// Copia do site na Cloudflare (Workers com arquivos estaticos). Fase 2 do plano: portal\tecnologia\plano-site-arquitetura.md
+// Publica a MESMA pasta _site/ que vai para o GitHub Pages. Quem roda e o ultimo passo de .github/workflows/publicar.yml.
+// Esta pasta comeca com "_", entao nada daqui e publicado no site.
+{
+  "name": "brubaogg-site",
+  "main": "./worker.mjs",
+  "compatibility_date": "2026-11-17",
+  // Fase 3 do plano (17/11/2026): o dominio de verdade passa a ser servido por aqui. A Cloudflare cria o registro de DNS e o certificado.
+  // Para VOLTAR ao GitHub Pages: tirar este bloco "routes", remover o dominio no painel (Workers & Pages > brubaogg-site > Settings >
+  // Domains & Routes) e recriar os 4 registros A do dominio (185.199.108.153 a 185.199.111.153, "DNS only"). Detalhes no plano.
+  "routes": [
+    { "pattern": "brubaogg.com.br", "custom_domain": true }
+  ],
+  // mantem o endereco de teste *.workers.dev no ar (com "routes" definido ele seria desligado); ele continua marcado como noindex
+  "workers_dev": true,
+  "assets": {
+    "directory": "../../_site",
+    "binding": "ASSETS",
+    // endereco que nao existe: mostra o 404.html do site, com codigo 404
+    "not_found_handling": "404-page",
+    // O padrao da Cloudflare redireciona /pagina.html para /pagina (codigo 307). As paginas abaixo estao cadastradas
+    // COM .html no TikTok e no Google Cloud e nao podem redirecionar: nelas roda o worker.mjs, que entrega a pagina direto.
+    // A lista e a mesma de _conteudo/paginas-com-html.json (menos o 404.html). Mudou la, mude aqui.
+    "run_worker_first": [
+      "/mcp-tiktok.html",
+      "/mcp-youtube.html",
+      "/privacidade-tiktok.html",
+      "/privacidade-youtube.html",
+      "/privacidade.html",
+      "/termos-tiktok.html",
+      "/termos-youtube.html",
+      "/termos.html"
+    ]
+  }
+}

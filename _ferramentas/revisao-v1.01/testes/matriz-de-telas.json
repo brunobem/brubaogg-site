@@ -1,0 +1,7 @@
+{
+  "comentario": "Telas do teste de layout. larguras: em pe, com alturaPadrao. deitados e baixas: [largura, altura].",
+  "larguras": [280, 320, 344, 375, 393, 412, 440, 600, 768, 820, 861, 912, 1024, 1032, 1280, 1440, 1920, 2560],
+  "alturaPadrao": 800,
+  "deitados": [[667, 375], [844, 390], [932, 430]],
+  "baixas": [[1024, 600], [1280, 700]]
+}

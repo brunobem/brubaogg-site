@@ -1,0 +1,27 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-07-13",
+  "titulo": "Fim do disco: o que muda no preço e no PS6, para mim",
+  "resumo": "Com o fim dos discos de jogos novos em 2028, vejo risco de a Sony controlar o preço dos jogos e de o PS6 chegar sem leitor.",
+  "tags": [
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Fox Business",
+      "url": "https://www.foxbusiness.com/lifestyle/sony-end-physical-playstation-game-discs-new-releases-starting-2028"
+    },
+    {
+      "nome": "The Next Web",
+      "url": "https://thenextweb.com/news/sony-ends-physical-playstation-game-discs-2028"
+    }
+  ],
+  "assunto": "fim-da-midia-fisica",
+  "corpo": [
+    "Depois do anúncio da Sony de acabar com os discos de jogos novos a partir de janeiro de 2028, aponto duas consequências que, para mim, ainda passam despercebidas. A primeira é o controle de preços: hoje, o preço de lançamento fica em uma tabela perto de US$ 60 a 70, mas o mercado de usados e as lojas físicas fazem jogos mais antigos perderem valor. Sem disco, a Sony passa a ditar o preço do jogo depois do lançamento, o que chamo de monopólio.",
+    "A segunda é a data: para mim, 2028 não é aleatório e provavelmente coincide com a chegada do PlayStation 6, que viria sem leitor de disco. É uma hipótese minha: as reportagens consultadas não citam o PS6, e a Sony não confirmou nada sobre o assunto. Os discos de jogos já lançados continuam valendo, segundo a empresa.",
+    "Se for assim, todos os jogos do PS6 serão licenças, e não do jogador. Questiono se ainda faz sentido apostar na Sony ou se vale mais montar um PC, que custaria perto do preço de um console e faria várias outras coisas além de jogar."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-10-26",
+  "titulo": "Loja pirata do PS5 sai do ar, mas clones já voltaram",
+  "resumo": "Segundo relatos, a Sony derrubou a Overdrive, loja com 1.600 jogos piratas, mas cópias surgiram em horas. Para mim, a Sony luta contra uma maré.",
+  "tags": [
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/playstation-5-loja-de-jogos-piratas-sai-do-ar/"
+    },
+    {
+      "nome": "TechSpot",
+      "url": "https://www.techspot.com/news/114203-sony-shut-down-overdrive-fake-playstation-store-pirated.html"
+    },
+    {
+      "nome": "Beebom",
+      "url": "https://beebom.com/sony-takes-down-overdrive-ps5-jailbreak-store/"
+    }
+  ],
+  "assunto": "jailbreak-de-consoles",
+  "corpo": [
+    "A Overdrive, uma loja não oficial que oferecia mais de 1.600 jogos de PS4 e PS5 de graça para consoles desbloqueados, saiu do ar em meados de outubro de 2026. Segundo relatos, advogados da Sony mandaram uma notificação de cessar e desistir, e o projeto sumiu do GitHub. Nem a Sony nem o criador confirmaram, e as datas variam entre as fontes, entre 13 e 14 de outubro.",
+    "A loja rodava em consoles desbloqueados com o Relapse, jailbreak lançado em 29 de setembro que usa uma falha dos firmwares 7.00 a 13.60 do PS5 e do PS5 Pro. A Sony fechou essa brecha a partir do firmware 14.00, e a 14.10 passou a ser exigida para entrar na PSN. Há relato de que a loja foi feita com ajuda de IA, mas não há confirmação de que o jailbreak foi feito por IA.",
+    "Em poucas horas apareceram cópias do projeto, e uma delas chegou a mais de 1.800 títulos em um dia, segundo a cobertura do TechSpot. Ou seja, a Sony derruba uma e nascem outras.",
+    "Para mim, é muito difícil a Sony lutar contra uma maré de gente. Piratear sempre vai existir, mas a quantidade de gente que vai para esse lado cresce com a falta de recurso. O PS5 com leitor passou a custar R$ 5.099,90 no Brasil desde 2 de abril de 2026, e a PS Plus Essential foi para R$ 39,90 por mês em 20 de maio.",
+    "A grande massa prefere a comodidade de um serviço bem atendido e a preço justo. Sem isso, e com a Sony estática no serviço, parte da galera vai para o jailbreak. A ligação com o fim da mídia física é leitura minha: a notícia não faz essa conexão, e o jailbreak nasceu de uma falha técnica. Não ensino a desbloquear nem indico loja, e vale lembrar que a conta pode ser banida."
+  ]
+}

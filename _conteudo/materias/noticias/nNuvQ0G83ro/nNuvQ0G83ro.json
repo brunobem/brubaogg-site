@@ -1,0 +1,35 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-06-03",
+  "titulo": "CEO do Xbox diz que o corte de preço do Game Pass funcionou",
+  "resumo": "A CEO do Xbox, Asha Sharma, disse em memorando que o corte de preço do Game Pass de abril melhorou aquisição e retenção, sem divulgar números.",
+  "tags": [
+    "Game Pass"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Hitmarker",
+      "url": "https://hitmarker.net/news/xbox-game-pass-recent-price-cut-is-working-ceo-asha-sharma-says-1724461"
+    },
+    {
+      "nome": "Windows Central",
+      "url": "https://www.windowscentral.com/gaming/xbox/xbox-ceo-says-game-pass-cuts-helped-retention-improve-but-warns-the-bigger-challenge-will-take-time"
+    },
+    {
+      "nome": "T-Break",
+      "url": "https://tbreak.com/xbox-game-pass-price-cut-working-ceo/"
+    },
+    {
+      "nome": "Digital Citizen",
+      "url": "https://www.digitalcitizen.life/xbox-game-pass-price-cut-helped-retention-but-microsoft-says-the-recovery-will-take-time/"
+    }
+  ],
+  "assunto": "game-pass-preco",
+  "corpo": [
+    "Em um memorando interno, a CEO do Xbox, Asha Sharma, disse que a redução de preço do Game Pass, feita em abril de 2026, está funcionando: desde o corte, a aquisição de assinantes cresceu e a retenção melhorou. Sharma chamou o corte de um bom primeiro passo e admitiu que o crescimento desacelerou e a perda de assinantes acelerou depois das mudanças de preço e de planos do ano anterior. Nenhum número foi divulgado.",
+    "O Game Pass Ultimate caiu de US$ 29,99 para US$ 22,99, e o PC Game Pass, de US$ 16,49 para US$ 13,99. Em troca, os novos Call of Duty deixaram de chegar ao serviço no primeiro dia e passaram a entrar cerca de um ano depois. O último número de assinantes divulgado, do quarto trimestre de 2025, era de cerca de 35 milhões.",
+    "Sharma avisou que o problema não será resolvido de uma vez e que o Xbox quer tornar o Game Pass uma assinatura mais flexível. Resumo: baixar o preço fez a maioria dos usuários voltar, e a retenção, o tempo em que a mensalidade fica ativa, também aumentou. Para mim, quem presta um bom serviço atrai muita gente e ganha mais com muitos assinantes do que tentando lucrar 100% sobre cada um, e as decisões recentes do Xbox são boas para quem gosta de videogame."
+  ]
+}

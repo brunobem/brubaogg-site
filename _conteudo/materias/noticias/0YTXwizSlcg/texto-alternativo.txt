@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Personagem mascarado e encapuzado agachado numa sacada, com uma adaga, diante de uma janela e de uma torre com luz azul, com a logo de Dishonored. Texto na arte: "ARKANE LYON".
+Thumb.png: Personagem mascarado e encapuzado agachado numa sacada, com uma adaga, diante de uma janela e de uma torre com luz azul, com a logo de Dishonored. Texto na arte: "ARKANE LYON".
+img-1_playstation.com.jpg: Visão em primeira pessoa com a mão estendida numa rua em ruínas à luz de uma fogueira, com ratos no chão e um homem de casaco ao fundo.
+img-2_playstation.com.webp: Dois homens de cartola e colete numa rua de cidade antiga, um deles apontando uma pistola, sob luzes de neon e letreiros.

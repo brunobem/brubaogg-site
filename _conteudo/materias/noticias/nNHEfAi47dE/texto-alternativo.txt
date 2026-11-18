@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Judy Alvarez, de Cyberpunk 2077, de cabelo verde e roxo e tatuagens, apoiada numa mesa de som num bar iluminado em neon, com a logo do jogo. Texto na arte: "JÁ PERDOU?".
+Thumb.png: Judy Alvarez, de Cyberpunk 2077, de cabelo verde e roxo e tatuagens, apoiada numa mesa de som num bar iluminado em neon, com a logo do jogo. Texto na arte: "JÁ PERDOU?".

@@ -1,0 +1,34 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-04-19",
+  "titulo": "FalleN anuncia aposentadoria no fim de 2026",
+  "resumo": "Gabriel FalleN Toledo anunciou em 17 de abril de 2026, na IEM Rio, que encerra a carreira como jogador de CS2 no fim da temporada.",
+  "tags": [
+    "FalleN"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Omelete",
+      "url": "https://www.omelete.com.br/games/counter-strike-cs-brasileiro-fallen-aposentadoria"
+    },
+    {
+      "nome": "Esports.gg",
+      "url": "https://esports.gg/news/counter-strike-2/fallen-official-retirement/"
+    },
+    {
+      "nome": "Dust2",
+      "url": "https://www.dust2.us/news/72948/breaking-fallen-announces-retirement-on-stage-at-iem-rio"
+    },
+    {
+      "nome": "Olhar Digital",
+      "url": "https://olhardigital.com.br/2026/06/22/games-e-consoles/furia-fica-com-vice-em-iem-cologne-major-2026/"
+    }
+  ],
+  "corpo": [
+    "Gabriel FalleN Toledo, o maior nome brasileiro do Counter-Strike, anunciou em 17 de abril de 2026, no palco da IEM Rio, que vai encerrar a carreira como jogador profissional no fim da temporada de 2026, aos 34 anos. Em entrevista ao Globo Esporte, disse que está em um momento da vida em que busca viver outras coisas, com a família e a esposa.",
+    "A despedida seguiu pelos campeonatos do ano: a FURIA, equipe de FalleN, chegou à final do IEM Cologne Major 2026 e perdeu para a Falcons por 3 a 0, em 21 de junho, em um evento visto como a despedida dele do palco de Colônia.",
+    "Tenho vários vídeos de CS e gosto muito do FalleN, campeão e multicampeão da modalidade, e a cena do anúncio é de partir o coração: quem não se emocionou não é um ser humano normal. A notícia é um pouco bad, e encerro com um F no chat."
+  ]
+}

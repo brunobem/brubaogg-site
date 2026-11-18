@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Controle de PS5 branco com detalhes azuis e estampa de GTA 6 sobre um fundo rosa, com a logo do jogo. Texto na arte: "SONY?".
+Thumb.png: Controle de PS5 branco com detalhes azuis e estampa de GTA 6 sobre um fundo rosa, com a logo do jogo. Texto na arte: "SONY?".

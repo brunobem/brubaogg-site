@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Link, de Zelda: Link's Awakening, de costas e olhando para o lado, com o escudo nas costas, numa floresta com uma fada brilhando ao lado, e a logo de The Legend of Zelda. Texto na arte: "PORT PC".
+Thumb.png: Link, de Zelda: Link's Awakening, de costas e olhando para o lado, com o escudo nas costas, numa floresta com uma fada brilhando ao lado, e a logo de The Legend of Zelda. Texto na arte: "PORT PC".

@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Personagem de South Park, uma senhora de cabelo loiro, olhando uma TV que mostra uma praia lotada, com a logo de GTA VI. Texto na arte: "SOUTH PARK".
+Thumb.png: Personagem de South Park, uma senhora de cabelo loiro, olhando uma TV que mostra uma praia lotada, com a logo de GTA VI. Texto na arte: "SOUTH PARK".
+img-1_geeksandgamers.com.jpg: Montagem com Jason e Lucia num píer, ele apontando uma arma, ao lado da arte de South Park com os personagens e a placa "South Park".
+img-2_gta.guide.jpg: Cena de South Park com Stan, Kyle e Cartman sentados a uma mesa de madeira, com um homem de chapéu de cowboy branco em pé ao lado.

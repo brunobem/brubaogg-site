@@ -1,0 +1,9 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Homem de barba e cabelo loiro comprido, de olhar sério, com o braço marcado por runas vermelhas cruzado na frente do rosto, sobre um fundo laranja, com a logo de The Blood of Dawnwalker. Texto na arte: "NÃO COMPRE AINDA!". Versão vertical.
+Thumb.png: Homem de barba e cabelo loiro comprido, de olhar sério, com o braço marcado por runas vermelhas cruzado na frente do rosto, sobre um fundo laranja, com a logo de The Blood of Dawnwalker. Texto na arte: "NÃO COMPRE AINDA!". Versão horizontal.
+img-1_steam.com.jpg: Homem sem camisa, de perfil, com tatuagens de runas vermelhas no braço, e uma mulher atrás dele com a mão em seu ombro, numa sala escura iluminada por uma tocha.
+img-2_steam.com.jpg: Quatro figuras pálidas de armaduras e roupas antigas, uma delas de rosto coberto por um pano, numa capela escura iluminada por velas.
+img-3_steam.com.jpg: Mulher de cabelo preso, olhos brilhantes e unhas longas e afiadas, olhando por cima do ombro numa sala escura iluminada por uma luz alaranjada.

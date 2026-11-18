@@ -1,0 +1,32 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-03",
+  "publicar_em": "2026-11-03T15:00:00-03:00",
+  "titulo": "Modern Warfare 4 volta à boa forma segundo a crítica",
+  "resumo": "A campanha de Modern Warfare 4 levou nota 9 na review da Flow Games, e o jogo ficou entre 84 e 86 no Metacritic. Quero entender o que o público espera.",
+  "tags": [
+    "Call of Duty: Modern Warfare 4"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/call-of-duty-modern-warfare-4-marca-retorno-boa-forma/"
+    },
+    {
+      "nome": "Windows Central",
+      "url": "https://www.windowscentral.com/gaming/call-of-duty/activision-marketing-chief-admits-black-ops-7-missed-the-mark-it-was-not-something-that-our-community-was-looking-for"
+    },
+    {
+      "nome": "GamerFuzion",
+      "url": "https://www.gamerfuzion.com/modern-warfare-4-review-roundup-metacritic-86-opencritic-85-multiplayer-reviews/"
+    }
+  ],
+  "corpo": [
+    "Call of Duty: Modern Warfare 4 saiu em 23 de outubro de 2026 para PS5, Xbox Series, Switch 2 e PC, pela Infinity Ward. A review da Flow Games, focada na campanha, deu nota 9 e disse que a série voltou à boa forma. A história mostra uma invasão da Coreia do Sul pela Coreia do Norte, com o Capitão Price atrás do ministro da Defesa russo, vivido por Mads Mikkelsen. A campanha dura de 6 a 8 horas e tem missões variadas.",
+    "Entre as críticas estão a falta de troféu de platina e o quarto episódio da história tratado como DLC. A recepção geral é boa: o Metacritic ficou entre 84 e 86, conforme a plataforma, e o OpenCritic em torno de 85, com todos os críticos recomendando o jogo.",
+    "O contraste é o Black Ops 7, de 2025, que tem nota 65 no Metacritic e menos de 40% de avaliações positivas na Steam. O diretor de marketing da Activision, Tyler Bahl, admitiu que a empresa não ficou feliz com todos os aspectos do jogo do ano passado e que ouviu o feedback. A Activision descreve o Modern Warfare 4 como um retorno ao jogo de tiro militar realista.",
+    "Para mim, o interessante é entender a expectativa do público. Entra jogo, sai jogo, e sempre tem gente frustrada com a história, a gameplay ou a guerra, e muita gente não gostou do Black Ops 7. Minha percepção, sem dado específico do Brasil, é que aqui existe uma base grande que não curte nada muito tecnológico ou futurista. Também tenho curiosidade sobre quanto o público gosta da campanha e não só do modo aberto, o Warzone, que acho que é o mais jogado."
+  ]
+}

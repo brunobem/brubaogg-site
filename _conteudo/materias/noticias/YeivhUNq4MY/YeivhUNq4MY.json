@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-09-21",
+  "titulo": "PlayStation Blackout não teve impacto medido, diz Circana",
+  "resumo": "A Circana diz que o boicote PlayStation Blackout, de 23 a 30 de agosto, não mudou jogadores nem engajamento no PS5. Os organizadores discordam.",
+  "tags": [
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "VGC",
+      "url": "https://www.videogameschronicle.com/news/fan-ps5-boycott-over-discs-seemingly-has-little-impact-in-us/"
+    },
+    {
+      "nome": "TweakTown",
+      "url": "https://www.tweaktown.com/news/113543/playstation-blackout-failed-to-cause-significant-change-in-us-circana-player-counts-or-engagement/index.html"
+    },
+    {
+      "nome": "Digital Citizen",
+      "url": "https://www.digitalcitizen.life/playstation-blackout-boycott-reportedly-failed-to-affect-player-activity/"
+    }
+  ],
+  "assunto": "fim-da-midia-fisica",
+  "corpo": [
+    "A Circana, empresa de análise de mercado, informou que o PlayStation Blackout, boicote organizado por jogadores contra o fim dos discos de jogos novos da Sony, não teve impacto mensurável no número de jogadores nem no engajamento do PS5. O analista Mat Piscatella escreveu no Bluesky que não houve nenhuma mudança significativa nos dados de acompanhamento da empresa.",
+    "O protesto foi organizado pelo grupo de preservação Does It Play e aconteceu de 23 a 30 de agosto de 2026: pediu que donos de PS5 desligassem o console por sete dias e evitassem comprar jogos, usar a PlayStation Store e renovar a PlayStation Plus. A Circana ressalva que seus dados cobrem só os Estados Unidos, medem usuários ativos semanais e olham os jogos mais populares, então não contam todo mundo.",
+    "A Does It Play rebateu a conclusão e disse, pelo que li, que o protesto foi bem-sucedido em muitos aspectos, já que ninguém esperava resolver tudo em uma semana. Eu não sabia do boicote e teria aderido; para mim, faltou divulgação, um erro na estrutura de marketing do movimento. A Sony mantém o plano de encerrar a produção de discos de jogos novos em janeiro de 2028."
+  ]
+}

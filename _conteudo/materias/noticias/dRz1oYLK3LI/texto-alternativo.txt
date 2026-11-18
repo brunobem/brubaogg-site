@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Close de um personagem de cabelo laranja e olhos azuis grandes, com o logo de The Legend of Zelda. Texto na arte: "ZELDA NO PC" e "BRUBAOGG".
+Thumb.png: Close de um personagem de cabelo laranja e olhos azuis grandes, com o logo de The Legend of Zelda. Texto na arte: "ZELDA NO PC" e "BRUBAOGG".
+img-1_br.ign.com.png: Arte de Zelda com Link montado a cavalo, de costas, olhando para uma montanha ao fundo, num campo ao pôr do sol.
+img-2_br.ign.com.webp: Cena do remake de Ocarina of Time: o Link jovem, de verde, diante de uma escada de pedra numa floresta, com outro personagem ao lado.

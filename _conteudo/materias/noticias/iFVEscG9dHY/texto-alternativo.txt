@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Prédios altos de Vice City ao entardecer, com um helicóptero no céu e a logo de GTA VI. Texto na arte: "MAPA GRANDE?".
+Thumb.png: Prédios altos de Vice City ao entardecer, com um helicóptero no céu e a logo de GTA VI. Texto na arte: "MAPA GRANDE?".
+img-1_antihype.com.br.webp: Mapa estilizado de Leonida em tons de roxo e rosa, com nomes como Ambrosia, Port Gellhorn, Vice City, Grassrivers e Southpoint, e a logo de GTA VI.
+img-2_oficinadanet.com.br.webp: Mapa detalhado em cores naturais, com um grande lago ao centro, rodovias e cidades, e a logo de GTA VI no canto.

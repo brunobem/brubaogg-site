@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-03",
+  "publicar_em": "2026-11-03T11:00:00-03:00",
+  "titulo": "Filme de Call of Duty não será só tiro, diz diretor",
+  "resumo": "Peter Berg diz que o filme de Call of Duty vai tratar do custo da guerra e não será só tiro. Para mim é óbvio, e meu receio é com o que o cinema inventa.",
+  "tags": [
+    "Call of Duty"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/movies-tv/call-of-dutys-director-explains-that-his-film-will-be-all-about-the-consequence-of-war-and-not-just-a-shoot-em-up/"
+    },
+    {
+      "nome": "KitGuru",
+      "url": "https://www.kitguru.net/tech-news/mustafa-mahmoud/the-call-of-duty-film-will-explore-the-cost-of-war-according-to-its-director/"
+    },
+    {
+      "nome": "Kotaku",
+      "url": "https://kotaku.com/call-of-duty-film-is-apparently-yet-another-nuanced-story-about-the-cost-of-war-2000750167"
+    }
+  ],
+  "assunto": "call-of-duty-filme",
+  "corpo": [
+    "O diretor do filme de Call of Duty, Peter Berg, disse que o longa não será só tiro. A fala vem de uma entrevista ao Comicbook, repercutida pela PC Gamer em 26 de outubro de 2026. Berg afirmou que o filme vai tratar do custo da guerra e do custo de ser um guerreiro, com menos violência explícita do que The Mosquito Bowl, outro filme dele, mas com, nas palavras dele, uma alma muito forte.",
+    "O filme é baseado na linha Modern Warfare. Berg citou o Capitão Price, Soap, Ghost e Alex como humanos complexos, e não como personagens de desenho ou de quadrinhos. O roteiro e a produção são de Taylor Sheridan, de Sicario e Yellowstone, e a estreia está marcada para 30 de junho de 2028, pela Paramount com a Activision.",
+    "Para mim, a notícia é meio óbvia. Se fosse só tiro, bastava assistir a uma gameplay, então claro que um filme precisa de história. Também vejo um pouco de marketing: o diretor tenta criar uma conexão emocional com o público.",
+    "Meu receio é outro. Diretores de cinema, quando adaptam um jogo, gostam de inventar demais e criar algo diferente do que a gente vê nos games. Se aparecer um romance, ou tentarem humanizar demais o soldado com uma história de amor, aí não dá. Para ser justo, Berg não falou de romance em nenhum momento, e as campanhas de Modern Warfare já têm peso, com mortes de personagens queridos e o lado sujo da guerra. Se o filme for fiel a isso, pode funcionar."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-14",
+  "publicar_em": "2026-11-14T15:00:00-03:00",
+  "titulo": "Bug faz Nier: Automata pular de 50 GB para 366 GB",
+  "resumo": "Uma atualização na Steam fez o Nier: Automata pedir 366 GB. A Square Enix investiga, e tudo indica que é bug nas DLCs, não conteúdo novo.",
+  "tags": [
+    "Nier: Automata",
+    "Steam"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/rpg/nier-automata-developer-is-currently-investigating-a-bizarre-update-bug-that-drastically-inflated-the-games-file-size-from-50gb-to-366gb/"
+    },
+    {
+      "nome": "Kotaku",
+      "url": "https://kotaku.com/mandatory-nier-automata-update-accidentally-requires-366gb-i-just-need-to-delete-90-percent-of-my-computer-to-install-this-2000754623"
+    },
+    {
+      "nome": "Automaton",
+      "url": "https://automaton-media.com/en/news/nier-automata-developers-working-on-fix-after-update-accidentally-raises-steam-versions-file-size-from-50gb-to-366gb"
+    }
+  ],
+  "corpo": [
+    "Uma atualização do Nier: Automata na Steam, feita para adicionar chinês simplificado, chinês tradicional e coreano, fez a instalação do jogo pular de cerca de 50 GB para 366,5 GB. O problema apareceu em 6 de novembro de 2026.",
+    "A Square Enix confirmou que a instalação exige muito mais espaço do que o previsto, disse que investiga a causa e pediu desculpas. Pelo que mostram os relatos, cada uma das 8 DLCs aparece na Steam com o mesmo tamanho do jogo base, como se a Steam fosse baixar o jogo várias vezes. A empresa não confirmou essa explicação.",
+    "Segundo o PC Gamer, depois de instalado o jogo volta a ocupar cerca de 50 GB, então não é conteúdo novo. Enquanto a correção não chega, a orientação da Square Enix é desmarcar as DLCs antes de baixar: na Steam, Propriedades, depois DLC, e desmarcar cada item. Não há data para a correção.",
+    "Eu nunca tinha visto um jogo de 50 GB pular para 366 GB. É mais de sete vezes o tamanho original, já que 366 dividido por 50 dá cerca de 7,3. A primeira coisa que pensei foi se era só bug, porque, se fosse conteúdo, seria conteúdo demais. A maioria dos jogos já passa de 100 GB, e o PC Gamer lembra que Call of Duty já passou de 200 GB, mas tanto assim seria exagero. Com a explicação das DLCs, para mim tudo indica que é bug mesmo."
+  ]
+}

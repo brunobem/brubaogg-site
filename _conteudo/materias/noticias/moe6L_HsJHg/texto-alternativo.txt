@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Cratera enorme numa paisagem escura de montanhas, com uma figura pequena carregando carga, e o título do anime. Texto na arte: "DEATH STRANDING ISOLATIONS" e "DISNEY +".
+Thumb.png: Cratera enorme numa paisagem escura de montanhas, com uma figura pequena carregando carga, e o título do anime. Texto na arte: "DEATH STRANDING ISOLATIONS" e "DISNEY +".
+img-1_flowgames.gg.jpg: Jovem loira de traje futurista ao lado de uma moto e de um robô, diante de uma cratera, com o título "Death Stranding Isolations".
+img-2_br.ign.com.jpg: Close de uma garota loira de olhos verdes, assustada, em cena escura do anime.

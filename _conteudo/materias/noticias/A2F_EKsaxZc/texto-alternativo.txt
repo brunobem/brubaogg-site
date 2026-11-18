@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Homem e mulher dentro de um carro, ela segurando uma arma, em cena de GTA 6, com a logo do jogo. Texto na arte: "JOGOS DE AZAR".
+thumb.png: Homem e mulher dentro de um carro, ela segurando uma arma, em cena de GTA 6, com a logo do jogo. Texto na arte: "JOGOS DE AZAR".

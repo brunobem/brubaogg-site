@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-03-23",
+  "titulo": "Parasite Z: terror gratuito no estilo Resident Evil clássico",
+  "resumo": "Parasite Z, jogo gratuito de sobrevivência inspirado em Resident Evil clássico, está em fase inicial no celular. As fontes só mostram Android.",
+  "tags": [
+    "Parasite Z"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "itch.io",
+      "url": "https://fyberaxe.itch.io/parasitez"
+    },
+    {
+      "nome": "Devlog",
+      "url": "https://fyberaxe.itch.io/parasitez/devlog"
+    },
+    {
+      "nome": "FileHippo",
+      "url": "https://filehippo.com/android/download_parasite-z/"
+    }
+  ],
+  "corpo": [
+    "Apresento o Parasite Z como uma opção gratuita para quem não tem console nem PC e quer jogar um jogo de zumbis depois do lançamento de Resident Evil Requiem, que joguei em live. Pelo que vi, o jogo já está disponível na loja de aplicativos, tanto para Apple quanto para Android, é totalmente em inglês e está em fase bem inicial.",
+    "As fontes consultadas mostram uma situação um pouco diferente: o Parasite Z é um jogo independente de sobrevivência e terror inspirado na jogabilidade dos Resident Evil clássicos, com página no itch.io que o descreve como uma demo, com o jogo completo em desenvolvimento.",
+    "Um diário de desenvolvimento de 1º de outubro de 2025 fala de um primeiro teste interno no Google Play, e outro, de janeiro de 2026, de uma demo inicial no ar. Um site de downloads listou, em maio de 2026, a versão 2.02 para Android, gratuita. As fontes não mostram uma versão para iOS.",
+    "Testei o jogo um pouco e há bugs, alguns bem engraçados, mas isso não é motivo para ficar de fora: é grátis."
+  ]
+}

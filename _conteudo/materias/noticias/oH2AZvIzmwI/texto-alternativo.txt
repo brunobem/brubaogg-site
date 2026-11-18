@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Colagem com as capas de GTA III, GTA Vice City e GTA San Andreas, em estilo de quadrinhos. Texto na arte: "GTA EM PROMOÇÃO" e "BRUBAOGG".
+Thumb.png: Colagem com as capas de GTA III, GTA Vice City e GTA San Andreas, em estilo de quadrinhos. Texto na arte: "GTA EM PROMOÇÃO" e "BRUBAOGG".
+img-1_viciados.net.jpg: Cena de GTA Vice City: Tommy Vercetti e dois homens de terno, um branco e um roxo, diante de uma escadaria vermelha.
+img-2_store.rockstargames.com.jpg: Cena de GTA San Andreas: CJ numa moto de estrada, com tiros ao fundo, numa estrada com árvores à noite.

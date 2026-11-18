@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Biblioteca de jogos da Epic Games Store aberta num monitor, com capas como Control Resonant, Crimson Desert e ARC Raiders. Texto na arte: "EPIC > STEAM??".
+Thumb.png: Biblioteca de jogos da Epic Games Store aberta num monitor, com capas como Control Resonant, Crimson Desert e ARC Raiders. Texto na arte: "EPIC > STEAM??".
+img-1_pousadamoderna.com.br.webp: Logos da Steam e da Epic Games Store sobre a grade de ventilação verde de um Xbox Series X, com o símbolo do Xbox.
+img-2_adrenaline.com.br.webp: Tela da biblioteca da Epic Games Store com coleções de jogos, como Spooky season, Game night e Indie gems, e a lista de amigos à direita.

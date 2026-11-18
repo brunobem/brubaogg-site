@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Faye, mulher ruiva de olhos azuis e sorriso discreto, ao centro; ao lado, Kratos gritando, de barba e tinta de guerra, e um guerreiro barbudo de olhos brilhantes. Texto na arte: "ADIADO PARA MAIO DE 2027" e "BRUBAOGG".
+Thumb.png: Close de Faye, mulher ruiva de olhos azuis e sorriso discreto, com o selo BGG no canto. Texto na arte: "ADIADO PARA MAIO DE 2027" e "BRUBAOGG".
+img-1_playstation.com.webp: Cena de God of War Laufey: uma mulher de costas, de cabelo ruivo, caminha por uma floresta rochosa. Texto no canto: "Captured on PS5 Pro".
+img-2_playstation.com.webp: Cena de God of War Laufey: uma figura pequena em frente a uma criatura gigante de chifres e pele rochosa. Texto no canto: "Captured on PS5 Pro".

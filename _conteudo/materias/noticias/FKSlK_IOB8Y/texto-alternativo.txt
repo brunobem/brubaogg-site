@@ -1,0 +1,6 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Lucia, de GTA 6, de cabelo castanho com franja e casaco de pele estampado, ao lado de um carro, com a logo do jogo. Texto na arte: "UNICA".
+Thumb.png: Lucia, de GTA 6, de cabelo castanho com franja e casaco de pele estampado, ao lado de um carro, com a logo do jogo. Texto na arte: "UNICA".
