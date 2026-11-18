@@ -19,7 +19,7 @@ export const ADS_ATIVOS = false;
 //   ADS_CLIENTE = o codigo da conta, no formato 'pub-1234567890123456' (sem o "ca-"). Preenchido, o site passa a levar a meta de verificacao do Google e o ads.txt.
 //   ADS_BLOCO   = o numero do bloco de anuncio (data-ad-slot) criado na conta. Com os dois preenchidos e ADS_ATIVOS = true, cada espaco reservado mostra anuncio.
 // Vazios = nada muda no site. Valor fora do formato faz o gerador parar e dizer qual.
-export const ADS_CLIENTE = '';
+export const ADS_CLIENTE = 'pub-5696215612784371';
 export const ADS_BLOCO = '';
 
 // ---- Espacos de anuncio (ADS) nas listas de cartoes ----
