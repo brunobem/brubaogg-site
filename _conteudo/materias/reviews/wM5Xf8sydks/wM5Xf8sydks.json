@@ -1,11 +1,26 @@
 {
   "formato": "horizontal",
-  "plataforma": "PS5",
+  "categoria": "reviews",
+  "publicado": "2026-09-17",
   "titulo": "Assassin's Creed Black Flag Resynced: vale a pena o remake?",
   "resumo": "Review do remake de Black Flag: fiel ao original de 2013 e mais bonito, mas achei caro e indico o original a quem tem pouca grana.",
   "tags": [
     "Assassin's Creed Black Flag Resynced",
     "Assassin's Creed IV: Black Flag"
+  ],
+  "veredito": {
+    "plataforma": "PS5",
+    "nota": 9,
+    "recomendacao": "espere-promocao",
+    "horas": "cerca de 40",
+    "paraQuem": "Quem é fã de Black Flag e tem uma graninha para o remake; com pouca grana, o original de 2013 ainda não decepciona."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PlayStation Store",
+      "url": "https://store.playstation.com/pt-br/concept/10013987"
+    }
   ],
   "subtitulos": [
     { "antes": 2, "texto": "A história de Edward Kenway" },

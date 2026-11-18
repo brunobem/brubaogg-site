@@ -1,10 +1,25 @@
 {
   "formato": "horizontal",
-  "plataforma": "PC",
+  "categoria": "reviews",
+  "publicado": "2026-10-15",
   "titulo": "Shift at Midnight: o terror que vira comédia com amigos",
   "resumo": "Review de Shift at Midnight: em dupla ou trio vira comédia de acusar clientes, mas o ciclo cansa sozinho. Dou nota 8 de 10.",
   "tags": [
     "Shift at Midnight"
+  ],
+  "veredito": {
+    "plataforma": "PC",
+    "nota": 8,
+    "recomendacao": "so-com-amigos",
+    "horas": "cerca de 10",
+    "paraQuem": "Quem tem dois amigos para jogar junto e quer rir mais do que se assustar; sozinho, o ciclo cansa em cerca de duas horas."
+  },
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Steam",
+      "url": "https://store.steampowered.com/app/3722330/"
+    }
   ],
   "subtitulos": [
     { "antes": 2, "texto": "O jogo e o visual" },
