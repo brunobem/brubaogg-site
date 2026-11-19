@@ -26,7 +26,8 @@
    13. Paginas legais (termos e privacidade)
    14. Tags
    15. Rodape: cena e palmeiras
-   16. Acessibilidade: foco do teclado, movimento reduzido e texto so para leitor de tela
+   16. Anuncios e aviso de cookies (todas as paginas)
+   17. Acessibilidade: foco do teclado, movimento reduzido e texto so para leitor de tela
 
    PONTOS DE MUDANCA DE LAYOUT (largura da tela; mantidos de proposito, o publico e muito celular)
      400  celular pequeno: marca e redes menores
@@ -579,35 +580,6 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 @media (max-width: 700px) {
   .convite .btn { width: 100%; margin-left: 0; text-align: center; }
 }
-
-/* Home: espacos reservados para anuncio (por enquanto so a palavra ADS, para saber onde cada um fica: depois do carrossel, da contagem e de cada secao). Altura
-   fixa, para a pagina nao pular quando o anuncio de verdade entrar: 90px no computador (faixa 728x90 ou 970x90) e 100px no celular (320x100). */
-.ads { display: grid; place-items: center; height: 90px; margin: var(--space-4) 0; border: 2px dashed var(--border); border-radius: var(--radius); color: var(--muted); font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 6px; background: rgba(var(--accent-2-rgb), .08); }
-@media (max-width: 700px) {
-  .ads { height: 100px; margin: var(--space-3) 0; }
-}
-/* dentro de uma lista de cartoes (grade) ou da lista de playlists o espaco de ADS ocupa a linha inteira; quem separa e o gap da grade */
-.news-grid > .ads, .pls > .ads { grid-column: 1 / -1; margin: 0; }
-/* ADS escondido (ADS_ATIVOS = false em config.mjs): o atributo hidden precisa vencer o display: grid de .ads */
-.ads[hidden] { display: none; }
-/* Anuncio de verdade (Google AdSense) dentro do espaco reservado: sai a moldura do marcador e o anuncio fica centralizado. O tamanho do anuncio e EXATO por largura
-   de tela (modificacao que o Google aprova: classe + media query): 320x100 no celular, 468x60 no meio, 728x90 no computador. Cabem na altura reservada de .ads. */
-.ads.ads-real { border: 0; background: none; letter-spacing: 0; overflow: hidden; }
-/* sem o aceite no aviso de cookies (assets/js/anuncio.js poe a classe no <html>), nenhum espaco de anuncio aparece nem ocupa lugar */
-.sem-anuncio .ads.ads-real { display: none; }
-/* Aviso de cookies (so existe com anuncio de verdade ligado; montado pelo anuncio.js). Faixa fixa no pe da tela. "Rejeitar" e "Aceitar" tem o MESMO
-   destaque (os dois sao .btn comum), como pede o guia de cookies da ANPD. */
-.cookies-aviso { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; gap: var(--space-2); justify-items: center; padding: var(--space-2); background: var(--surface-2); border-top: 2px solid var(--accent); box-shadow: 0 -8px 24px rgba(0, 0, 0, .35); }
-.cookies-aviso[hidden], .cookies-detalhe[hidden] { display: none; }
-.cookies-texto { margin: 0; max-width: 72ch; font-size: .95rem; line-height: 1.5; color: var(--text); }
-.cookies-detalhe { display: grid; gap: var(--space-1); max-width: 72ch; font-size: .9rem; line-height: 1.5; color: var(--text); }
-.cookies-detalhe p { margin: 0; }
-.cookies-opcao { display: flex; gap: var(--space-1); align-items: flex-start; cursor: pointer; }
-.cookies-opcao input { width: 20px; height: 20px; margin: 0; flex: none; accent-color: var(--accent); }
-.cookies-botoes { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
-.ads_bloco { width: 320px; height: 100px; }
-@media (min-width: 500px) { .ads_bloco { width: 468px; height: 60px; } }
-@media (min-width: 800px) { .ads_bloco { width: 728px; height: 90px; } }
 
 /* Home: cobertura em andamento (titulo, uma linha de texto e o bloco de cartoes) */
 .cobertura { padding: 0; }
@@ -1194,7 +1166,38 @@ nav.footer-col a:hover { color: var(--text); }
   nav.footer-col a { padding: 12px 0; }
 }
 
-/* ===== 16. Acessibilidade: foco do teclado, movimento reduzido e texto so para leitor de tela ===== */
+/* ===== 16. Anuncios e aviso de cookies (todas as paginas) ===== */
+/* Espacos reservados para anuncio (por enquanto so a palavra ADS, para saber onde cada um fica: depois do carrossel, da contagem e de cada secao). Altura
+   fixa, para a pagina nao pular quando o anuncio de verdade entrar: 90px no computador (faixa 728x90 ou 970x90) e 100px no celular (320x100). */
+.ads { display: grid; place-items: center; height: 90px; margin: var(--space-4) 0; border: 2px dashed var(--border); border-radius: var(--radius); color: var(--muted); font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 6px; background: rgba(var(--accent-2-rgb), .08); }
+@media (max-width: 700px) {
+  .ads { height: 100px; margin: var(--space-3) 0; }
+}
+/* dentro de uma lista de cartoes (grade) ou da lista de playlists o espaco de ADS ocupa a linha inteira; quem separa e o gap da grade */
+.news-grid > .ads, .pls > .ads { grid-column: 1 / -1; margin: 0; }
+/* ADS escondido (ADS_ATIVOS = false em config.mjs): o atributo hidden precisa vencer o display: grid de .ads */
+.ads[hidden] { display: none; }
+/* Anuncio de verdade (Google AdSense) dentro do espaco reservado: sai a moldura do marcador e o anuncio fica centralizado. O tamanho do anuncio e EXATO por largura
+   de tela (modificacao que o Google aprova: classe + media query): 320x100 no celular, 468x60 no meio, 728x90 no computador. Cabem na altura reservada de .ads. */
+.ads.ads-real { border: 0; background: none; letter-spacing: 0; overflow: hidden; }
+/* sem o aceite no aviso de cookies (assets/js/anuncio.js poe a classe no <html>), nenhum espaco de anuncio aparece nem ocupa lugar */
+.sem-anuncio .ads.ads-real { display: none; }
+/* Aviso de cookies (so existe com anuncio de verdade ligado; montado pelo anuncio.js). Faixa fixa no pe da tela. "Rejeitar" e "Aceitar" tem o MESMO
+   destaque (os dois sao .btn comum), como pede o guia de cookies da ANPD.
+   Sombra no padrao do site: dura, sem borrao, na cor --accent-2 (a mesma do letreiro, virada para cima). */
+.cookies-aviso { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; gap: var(--space-2); justify-items: center; padding: var(--space-2); background: var(--surface-2); border-top: 2px solid var(--accent); box-shadow: 0 -6px 0 var(--accent-2); }
+.cookies-aviso[hidden], .cookies-detalhe[hidden] { display: none; }
+.cookies-texto { margin: 0; max-width: 72ch; font-size: .95rem; line-height: 1.5; color: var(--text); }
+.cookies-detalhe { display: grid; gap: var(--space-1); max-width: 72ch; font-size: .9rem; line-height: 1.5; color: var(--text); }
+.cookies-detalhe p { margin: 0; }
+.cookies-opcao { display: flex; gap: var(--space-1); align-items: flex-start; cursor: pointer; }
+.cookies-opcao input { width: 20px; height: 20px; margin: 0; flex: none; accent-color: var(--accent); }
+.cookies-botoes { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+.ads_bloco { width: 320px; height: 100px; }
+@media (min-width: 500px) { .ads_bloco { width: 468px; height: 60px; } }
+@media (min-width: 800px) { .ads_bloco { width: 728px; height: 90px; } }
+
+/* ===== 17. Acessibilidade: foco do teclado, movimento reduzido e texto so para leitor de tela ===== */
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 main:focus-visible { outline: none; }
 .search-results a:focus-visible { outline-offset: -3px; }

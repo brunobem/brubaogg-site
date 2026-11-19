@@ -22,7 +22,7 @@ _config.yml                  Diz ao GitHub Pages o que não publicar (README, pa
 .github/workflows/publicar.yml   Publicação: o GitHub confere, monta o site, cria o índice da busca e publica (não apague)
 
 assets/
-  css/style.css              Todo o visual, num arquivo só, em 16 seções com índice no topo (cores no bloco :root)
+  css/style.css              Todo o visual, num arquivo só, em 17 seções com índice no topo (cores no bloco :root)
   js/                        busca.js (sugestões e página de resultados), contador.js (contagem do GTA 6), carrossel.js (controles e troca automática do carrossel da home)
   icones/                    Ícones SVG (veja assets/icones/LEIA-ME.md)  <- coloque os seus aqui
   img/logo.png               Logo usado no site
