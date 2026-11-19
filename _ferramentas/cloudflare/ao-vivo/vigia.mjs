@@ -38,6 +38,17 @@ export async function conferir(antes, d) {
   };
 
   if (!cfg.contaId || !cfg.tokenDoTunel || !cfg.chaveDoYoutube) return semLive('faltam-chaves');
+  const yt = (caminho, parametros) => `https://www.googleapis.com/youtube/v3/${caminho}?${new URLSearchParams({ ...parametros, key: cfg.chaveDoYoutube })}`;
+
+  // 0) o canal, pelo arroba: so na primeira vez (1 unidade de cota). Vem ANTES do tunel de proposito: confere a chave do YouTube no dia em que ela e
+  //    colada, com o PC2 desligado, e nao na hora da live. Chave recusada aparece na resposta como "chave-do-youtube-recusada".
+  if (!base.canalId) {
+    try {
+      const c = await pedir(yt('channels', { part: 'id', forHandle: cfg.canal }));
+      base.canalId = c?.items?.[0]?.id ?? null;
+    } catch { return falhou('chave-do-youtube-recusada'); }
+    if (!base.canalId) return semLive('canal-nao-encontrado');
+  }
 
   // 1) o tunel
   let ligado;
@@ -48,7 +59,6 @@ export async function conferir(antes, d) {
   } catch { return falhou('erro-ao-ler-o-tunel'); }
   if (!ligado) return semLive('tunel-desligado');
 
-  const yt = (caminho, parametros) => `https://www.googleapis.com/youtube/v3/${caminho}?${new URLSearchParams({ ...parametros, key: cfg.chaveDoYoutube })}`;
   try {
     // 2a) ja se conhece a live: confere so ela
     if (antes.id && ID_DE_VIDEO.test(antes.id)) {
@@ -60,12 +70,7 @@ export async function conferir(antes, d) {
     // 2b) ainda nao se conhece: procura, respeitando o intervalo e o limite do dia
     if (agora - base.ultimaBusca < INTERVALO_DE_BUSCA) return semLive('tunel-ligado-esperando-a-proxima-busca');
     if (buscas.n >= LIMITE_DE_BUSCAS_POR_DIA) return semLive('acabaram-as-buscas-de-hoje');
-    let canalId = base.canalId;
-    if (!canalId) {
-      const c = await pedir(yt('channels', { part: 'id', forHandle: cfg.canal }));
-      canalId = c?.items?.[0]?.id ?? null;
-      if (!canalId) return semLive('canal-nao-encontrado');
-    }
+    const canalId = base.canalId;
     buscas.n += 1;
     const r = await pedir(yt('search', { part: 'snippet', channelId: canalId, eventType: 'live', type: 'video', maxResults: '1' }));
     const achado = r?.items?.[0], id = achado?.id?.videoId;

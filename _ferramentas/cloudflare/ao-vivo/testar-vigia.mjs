@@ -28,7 +28,13 @@ function mundo({ tunel = 'healthy', live = false, quebra = '' } = {}) {
 
 // 2) tunel desligado: nao gasta YouTube
 for (const estado of ['down', 'inactive', null]) { const m = mundo({ tunel: estado, live: true }); const e = await conferir({}, { agora: T0, cfg: CFG, pedir: m.pedir });
-  confere(`tunel ${estado}`, !e.aoVivo && e.situacao === 'tunel-desligado' && m.chamadas.busca === 0 && m.chamadas.video === 0 && m.chamadas.canal === 0); }
+  confere(`tunel ${estado}`, !e.aoVivo && e.situacao === 'tunel-desligado' && m.chamadas.busca === 0 && m.chamadas.video === 0 && m.chamadas.canal === 1 && e.canalId === 'UCcanal');
+  const de_novo = await conferir(e, { agora: T0 + 60000, cfg: CFG, pedir: m.pedir });
+  confere(`tunel ${estado}: canal so uma vez`, m.chamadas.canal === 1 && de_novo.situacao === 'tunel-desligado'); }
+
+// 2b) chave do YouTube recusada: aparece na resposta, mesmo com o tunel desligado, e nem chega a olhar o tunel
+{ const m = mundo({ tunel: 'down', quebra: 'youtube' }); const e = await conferir({}, { agora: T0, cfg: CFG, pedir: m.pedir });
+  confere('chave do youtube recusada', !e.aoVivo && e.situacao === 'chave-do-youtube-recusada' && m.chamadas.tunel === 0); }
 
 // 3) tunel ligado, sem live: busca uma vez, e so de novo depois do intervalo
 { const m = mundo({ live: false }); let e = await conferir({}, { agora: T0, cfg: CFG, pedir: m.pedir });
@@ -68,7 +74,7 @@ for (const estado of ['down', 'inactive', null]) { const m = mundo({ tunel: esta
   for (let k = 1; k <= FALHAS_TOLERADAS; k++) { e = await conferir(e, { agora: T0 + k * 60000, cfg: CFG, pedir: m.pedir }); confere(`falha ${k} segura a live`, e.aoVivo && e.falhas === k && e.situacao === 'erro-no-youtube'); }
   e = await conferir(e, { agora: T0 + 10 * 60000, cfg: CFG, pedir: m.pedir });
   confere('falhas demais escondem', !e.aoVivo);
-  const t = mundo({ quebra: 'tunel' }); const semLive = await conferir({}, { agora: T0, cfg: CFG, pedir: t.pedir });
+  const t = mundo({ quebra: 'tunel' }); const semLive = await conferir({ canalId: 'UCcanal' }, { agora: T0, cfg: CFG, pedir: t.pedir });
   confere('falha no tunel sem live', !semLive.aoVivo && semLive.situacao === 'erro-ao-ler-o-tunel'); }
 
 // 9) ID estranho vindo do YouTube nunca vira "ao vivo"
