@@ -1244,8 +1244,11 @@ main:focus-visible { outline: none; }
 .ao-vivo-corpo.sem-chat { grid-template-columns: minmax(0, 1fr); max-width: 960px; margin: 0 auto; }
 .ao-vivo-tela { aspect-ratio: 16 / 9; min-height: 200px; width: 100%; border-radius: var(--radius); overflow: hidden; background: var(--black); }
 .ao-vivo-tela iframe { width: 100%; height: 100%; border: 0; display: block; }
-.ao-vivo-chat { position: relative; min-height: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.ao-vivo-chat iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.ao-vivo-chat { position: relative; min-height: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--bg); display: flex; align-items: center; justify-content: center; padding: var(--space-2); text-align: center; }
+/* o chat e um overlay de fundo transparente que so mostra mensagem NOVA: este aviso fica por baixo ate a primeira chegar */
+.ao-vivo-chat::before { content: "As mensagens do chat aparecem aqui."; color: var(--muted); font-size: .9rem; }
+/* color-scheme: o site e escuro e a pagina do chat nao declara esquema; sem isto o navegador pinta o quadro de BRANCO em vez de transparente */
+.ao-vivo-chat iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; color-scheme: light; }
 @media (max-width: 799px) {
   .ao-vivo-corpo { grid-template-columns: minmax(0, 1fr); }
   .ao-vivo-chat { height: 320px; }
