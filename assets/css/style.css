@@ -974,7 +974,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .short-item .fachada-play .ico { width: 24px; height: 24px; margin-left: 2px; }
 .short-legenda { margin: 0; font-size: .92rem; line-height: 1.35; overflow-wrap: anywhere; }
 .related { margin-top: 40px; }
-.related .news-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.related .news-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); } /* 240px: cabem 3 cartoes por fileira na coluna de 1000px da materia (com 220px cabiam 4 e os 3 de "Veja tambem" deixavam um vazio a direita) */
 /* fim da materia: compartilhar (WhatsApp e Telegram sao links; "Copiar link" e "Mais opcoes" o compartilhar.js mostra) e o convite para o canal */
 .compartilhar { margin: var(--space-4) 0 0; }
 .compartilhar-titulo { margin: 0 0 var(--space-1); font-size: 1.15rem; letter-spacing: .5px; }
@@ -1119,7 +1119,8 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 
 /* ===== 14. Tags ===== */
 .tag-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 16px; }
-.tag-list a {
+/* a tag sem pagina propria sai como <span> (sem link): mesma pilula, sem o realce de passar o mouse */
+.tag-list a, .tag-list li > span {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
@@ -1151,7 +1152,7 @@ body:has(.menu-painel[open]) { overflow: hidden; }
 .tag-cloud a:hover { text-decoration: none; border-color: var(--accent); }
 .tag-cloud span { padding: 0 8px; border-radius: 999px; font-size: .8rem; color: var(--on-accent); background: var(--accent); }
 @media (max-width: 820px) {
-  .tag-list a { padding: 8px 16px; min-height: 44px; } /* alvo de toque de 44px (UX-08) */
+  .tag-list a, .tag-list li > span { padding: 8px 16px; min-height: 44px; } /* alvo de toque de 44px (UX-08); o span acompanha para a fileira ficar da mesma altura */
 }
 
 /* ===== 15. Rodape: cena e palmeiras ===== */
