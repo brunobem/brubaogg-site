@@ -1,0 +1,22 @@
+// O VIGIA do "ao vivo agora" (fase 8 do plano: portal\tecnologia\pesquisa-site\fase8-ao-vivo.md).
+// E uma funcao SEPARADA do site ("brubaogg-ao-vivo"): nao tem rota no dominio brubaogg.com.br, so o endereco proprio *.workers.dev.
+// Publicar (a mao, na pasta do site): node node_modules/wrangler/bin/wrangler.js deploy -c _ferramentas/cloudflare/ao-vivo/wrangler.jsonc
+// NAO e publicado pelo publicar.yml. Para desligar tudo: apagar a funcao no painel da Cloudflare; o site continua igual.
+// Segredos (o Bruno cola no terminal ou no painel; NUNCA neste arquivo): YOUTUBE_CHAVE, CF_TOKEN_TUNEL, CONTA_ID.
+{
+  "name": "brubaogg-ao-vivo",
+  "main": "./worker.mjs",
+  "compatibility_date": "2026-11-17",
+  "workers_dev": true,
+  // roda a cada minuto
+  "triggers": { "crons": ["* * * * *"] },
+  // onde o resultado fica guardado (uma chave so: "estado")
+  "kv_namespaces": [
+    { "binding": "ESTADO", "id": "e6e618d07a2441ca9710de82f6f44758" }
+  ],
+  "vars": {
+    // o canal, pelo arroba publico; TUNEL_ID vazio = qualquer tunel ligado na conta conta como "PC2 ligado"
+    "CANAL": "@brubaogg",
+    "TUNEL_ID": ""
+  }
+}

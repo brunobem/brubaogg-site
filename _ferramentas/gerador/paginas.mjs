@@ -1,6 +1,6 @@
 // Monta as paginas do site em memoria (nada e gravado aqui; quem grava e saida.mjs):
 // materias e listas de categoria, paginas de tag, GTA 6 (destaque), feed da home, 404, busca (pagina e listas por mes) e atalhos da busca.
-import { ADS_ATIVOS, ADS_NAS_LISTAS, AUTOR, AUTOR_FOTO, BUSCA_DA_SECAO, CARROSSEL, COBERTURA, DOMINIO, GTA6, PALAVRAS_POR_MINUTO, PLAYERS, RECOMENDACOES, SOCIAIS, VIDEOS_POR_PLAYER, WIKI, abas, categorias, lorem, paginasFixasNaBusca, resumosLorem } from './config.mjs';
+import { ADS_ATIVOS, ADS_NAS_LISTAS, AO_VIVO, AUTOR, AUTOR_FOTO, BUSCA_DA_SECAO, CARROSSEL, COBERTURA, DOMINIO, GTA6, PALAVRAS_POR_MINUTO, PLAYERS, RECOMENDACOES, SOCIAIS, VIDEOS_POR_PLAYER, WIKI, abas, categorias, lorem, paginasFixasNaBusca, resumosLorem } from './config.mjs';
 import { caminhoAntigo } from './enderecos.mjs';
 import { fonteDaImagem } from './imagens.mjs';
 import { redeDoLink, SIZES_CARROSSEL, SIZES_CARTAO, SIZES_CARTAO_GRANDE, SIZES_CARTAO_PEQUENO, cortar, dataCurta, dataLonga, duracaoIso, esc, imagemDoCartao, limparTitulo, mesDe, miniatura, miniaturaGrande, slugify, urlDe } from './util.mjs';
@@ -555,7 +555,17 @@ ${slides}
         </div>
         <div class="car-controles"></div>
       </section>
-${conviteHtml(ctx)}`;
+${aoVivoHtml()}${conviteHtml(ctx)}`;
+}
+
+// AO VIVO AGORA (fase 8): a caixa onde assets/js/ao-vivo.js monta o player e o chat quando ha live. Fica logo abaixo do carrossel, antes do convite
+// para o canal. Sai VAZIA e escondida (hidden): sem live, sem JavaScript ou com o vigia fora do ar, a home e exatamente a de sempre. Com AO_VIVO.vigia
+// vazio (config.mjs) nao sai nada. O endereco do vigia e o do chat vao em atributos data-*, para o script nao ter endereco escrito dentro dele.
+function aoVivoHtml() {
+  if (!AO_VIVO.vigia) return '';
+  return `      <div class="ao-vivo" id="ao-vivo" data-vigia="${esc(AO_VIVO.vigia)}"${AO_VIVO.chat ? ` data-chat="${esc(AO_VIVO.chat)}"` : ''} hidden></div>
+      <script src="assets/js/ao-vivo.js" defer></script>
+`;
 }
 
 // contagem regressiva do GTA 6: a faixa da home (faixa: true) e o bloco grande de gta6.html. Marcadores <!--contagem:inicio-->...<!--contagem:fim--> nas duas paginas.

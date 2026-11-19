@@ -202,3 +202,9 @@ export const resumosLorem = [
   'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.',
   'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
 ];
+
+// AO VIVO AGORA (fase 8, 19/11/2026): quando o canal esta em live, a home mostra o player e o chat abaixo do carrossel (assets/js/ao-vivo.js).
+//   vigia ... o endereco da funcao que sabe se ha live (_ferramentas/cloudflare/ao-vivo/). VAZIO = tudo desligado: a home nao leva nem a caixa nem o script.
+//   chat .... o endereco publico do chat unificado (e do bloco de Lives; o site so o mostra). VAZIO = player sozinho, sem chat.
+// Sem live o visitante nao ve nada; quem decide e o vigia, nao este arquivo.
+export const AO_VIVO = { vigia: 'https://brubaogg-ao-vivo.brubaogg.workers.dev/', chat: 'https://live.brubaogg.com.br/chat' };

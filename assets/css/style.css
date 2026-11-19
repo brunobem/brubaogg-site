@@ -1224,3 +1224,25 @@ main:focus-visible { outline: none; }
   .news-excerpt mark { forced-color-adjust: none; color: MarkText; background: Mark; }
   .search input:focus, .secao-campo input:focus { outline: 3px solid Highlight; outline-offset: 2px; }
 }
+
+/* AO VIVO AGORA (fase 8): o bloco que assets/js/ao-vivo.js monta na home quando ha live. Player a esquerda (2 partes) e chat a direita (1 parte), com a
+   MESMA altura: quem manda na altura e o player (16:9). No celular o chat vai para baixo. O player nunca fica menor que 200 px de altura (regra do YouTube). */
+.ao-vivo { margin: var(--space-3) 0; padding: var(--space-2); background: var(--surface-2); border: 2px solid var(--accent-2); border-radius: var(--radius); }
+.ao-vivo[hidden] { display: none; }
+.ao-vivo-cab { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); align-items: center; margin-bottom: var(--space-2); }
+.ao-vivo-cab b { font-family: var(--font-display); letter-spacing: 1px; color: var(--accent); }
+.ao-vivo-cab .btn { margin-left: auto; }
+.ao-vivo-titulo { overflow-wrap: anywhere; }
+.ao-vivo-ponto { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); animation: ao-vivo-pulso 1.4s ease-in-out infinite; }
+@keyframes ao-vivo-pulso { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .ao-vivo-ponto { animation: none; } }
+.ao-vivo-corpo { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: var(--space-2); align-items: stretch; }
+.ao-vivo-corpo.sem-chat { grid-template-columns: minmax(0, 1fr); max-width: 960px; margin: 0 auto; }
+.ao-vivo-tela { aspect-ratio: 16 / 9; min-height: 200px; width: 100%; border-radius: var(--radius); overflow: hidden; background: var(--black); }
+.ao-vivo-tela iframe { width: 100%; height: 100%; border: 0; display: block; }
+.ao-vivo-chat { position: relative; min-height: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.ao-vivo-chat iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 799px) {
+  .ao-vivo-corpo { grid-template-columns: minmax(0, 1fr); }
+  .ao-vivo-chat { height: 320px; }
+}

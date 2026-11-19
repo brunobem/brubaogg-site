@@ -18,7 +18,7 @@ const PLAYLIST = /<article class="pl">(?:(?!<article)[\s\S])*<\/article>$/;
 const BOTOES = /<div class="links">(?:(?!<\/div>)[\s\S])*<\/div>$/;
 export const FIXOS = {
   'gta6.html': [
-    ['gta6-apos-contagem', /<section class="gta"[^>]*>(?:(?!<section)[\s\S])*<\/section>$/, /^<section class="gta-news"/],
+    ['gta6-apos-contagem', /<section class="gta(?: gta-lancado)?"[^>]*>(?:(?!<section)[\s\S])*<\/section>$/, /^<section class="gta-news"/],
     ['gta6-apos-destaque', /<article class="gta-destaque[^"]*"(?:(?!<article)[\s\S])*<\/article>$/, /^<h3 class="gd-mais">/],
     ['gta6-apos-playlist', /<p class="gd-todas">(?:(?!<\/p>)[\s\S])*Ver a playlist completa no YouTube<\/a><\/p>$/, /^<\/section>/],
   ],

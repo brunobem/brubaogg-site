@@ -48,7 +48,7 @@ export default async function () {
         const kicker = (secao.match(/<p class="gta-kicker">([^<]*)<\/p>/) ?? [])[1], tit = (secao.match(/<h2 id="gta-title" class="gta-title">GTA <span>VI<\/span> ([^<]*)<\/h2>/) ?? [])[1], data = (secao.match(/<p class="gta-date">([^<]*)<\/p>/) ?? [])[1];
         if (entidades(kicker ?? '') !== L.kicker || entidades(tit ?? '') !== L.titulo || entidades(data ?? '') !== texto) a.push(achado('alto', T, `texto do estado lancado diferente de config.mjs (kicker "${kicker}", titulo "${tit}", data "${data}")`, rel));
         const botao = secao.match(/<a class="btn primary gta-botao" href="([^"]*)">([^<]*)<\/a>/);
-        if (faixa && (!botao || botao[1] !== 'gta6.html' || entidades(botao[2]) !== L.botao)) a.push(achado('alto', T, 'a home no estado lancado precisa do botao para gta6.html', rel));
+        if (faixa && (!botao || !['gta6', 'gta6.html'].includes(botao[1]) || entidades(botao[2]) !== L.botao)) a.push(achado('alto', T, 'a home no estado lancado precisa do botao para a pagina do GTA 6 (gta6)', rel));
         if (!faixa && botao) a.push(achado('medio', T, 'a pagina do GTA 6 nao precisa do botao no estado lancado', rel));
       }
     }
