@@ -4,8 +4,8 @@
   "d": "2026-10-24"
  },
  "arquivo.html": {
-  "m": "0542d4b0c0b6",
-  "d": "2026-11-13"
+  "m": "6e00d72aa1b4",
+  "d": "2026-11-20"
  },
  "arquivo/2024-12.html": {
   "m": "e466686a9d72",
@@ -76,12 +76,12 @@
   "d": "2026-11-13"
  },
  "arquivo/2026-11.html": {
-  "m": "4ce4527c5844",
-  "d": "2026-11-13"
+  "m": "a0df59549a66",
+  "d": "2026-11-20"
  },
  "busca.html": {
-  "m": "34bca8826dd8",
-  "d": "2026-11-18"
+  "m": "96937eea1337",
+  "d": "2026-11-20"
  },
  "cortes.html": {
   "m": "2dee98c5f749",
@@ -356,8 +356,8 @@
   "d": "2026-11-18"
  },
  "index.html": {
-  "m": "cb7a672e687f",
-  "d": "2026-11-19"
+  "m": "edf4bcbb6270",
+  "d": "2026-11-20"
  },
  "lancamentos.html": {
   "m": "582c18a36519",
@@ -432,8 +432,8 @@
   "d": "2026-10-24"
  },
  "noticias.html": {
-  "m": "115a271b8c86",
-  "d": "2026-11-18"
+  "m": "6d1d976e82a2",
+  "d": "2026-11-20"
  },
  "noticias/1666-amsterdam-chegou-ao-acesso-antecipado-em-25-de-agosto.html": {
   "m": "73b1fc249928",
@@ -614,6 +614,10 @@
  "noticias/cyberpunk-2077-ganha-filme-live-action-da-paramount.html": {
   "m": "7b0d49f98090",
   "d": "2026-11-18"
+ },
+ "noticias/cyberpunk-2077-ganha-mod-de-npcs-estilo-red-dead-2.html": {
+  "m": "6ef5f3896727",
+  "d": "2026-11-20"
  },
  "noticias/cyberpunk-2077-ganha-update-2-5-de-edgerunners-2.html": {
   "m": "c56bbb4e1f86",
@@ -855,6 +859,10 @@
   "m": "0fd0c65df975",
   "d": "2026-11-18"
  },
+ "noticias/ia-acaba-com-campeonato-de-jogos-de-estudantes-na-australia.html": {
+  "m": "8b0713b122fb",
+  "d": "2026-11-20"
+ },
  "noticias/inside-jogo-curtinho-com-o-final-mais-bizarro-que-ja-vi.html": {
   "m": "56e29579472f",
   "d": "2026-10-24"
@@ -994,6 +1002,10 @@
  "noticias/peak-chega-aos-consoles-com-crossplay.html": {
   "m": "03ca8cc8132d",
   "d": "2026-11-18"
+ },
+ "noticias/pedido-de-patente-da-microsoft-quer-usar-sua-gpu-para-ia.html": {
+  "m": "205ac1ca5b4c",
+  "d": "2026-11-20"
  },
  "noticias/phantom-blade-zero-deve-ficar-sem-midia-fisica-no-ps5.html": {
   "m": "7571ce5e267a",
@@ -1764,8 +1776,8 @@
   "d": "2026-11-18"
  },
  "tag/cyberpunk-2077.html": {
-  "m": "cb7a7ff38dcb",
-  "d": "2026-11-18"
+  "m": "15b88d3ac8bd",
+  "d": "2026-11-20"
  },
  "tag/dlss-5.html": {
   "m": "f57aed03ad7c",
@@ -1808,8 +1820,8 @@
   "d": "2026-11-18"
  },
  "tag/ia.html": {
-  "m": "fcb8951ed572",
-  "d": "2026-11-18"
+  "m": "84d24541e306",
+  "d": "2026-11-20"
  },
  "tag/marvel-s-wolverine.html": {
   "m": "52ecab489ea3",
@@ -1912,8 +1924,8 @@
   "d": "2026-11-18"
  },
  "tags.html": {
-  "m": "e53d341df32b",
-  "d": "2026-11-13"
+  "m": "f484387784f5",
+  "d": "2026-11-20"
  },
  "termos-tiktok.html": {
   "m": "c1a0d43dd9c1",

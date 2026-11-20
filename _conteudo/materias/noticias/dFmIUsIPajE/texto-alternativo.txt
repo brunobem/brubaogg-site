@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Cena de Cyberpunk 2077: uma mulher de máscara metálica no rosto, de frente para uma personagem de cabelo escuro, com o logo do jogo. Texto na arte: "NPCS ESTILO RED DEAD" e "BRUBAOGG".
+Thumb.png: Cena de Cyberpunk 2077: uma mulher de máscara metálica no rosto, de frente para uma personagem de cabelo escuro, com o logo do jogo. Texto na arte: "NPCS ESTILO RED DEAD" e "BRUBAOGG".
+img-1_cbr.com.webp: Johnny Silverhand, de Cyberpunk 2077, de óculos escuros, colete e braço mecânico, com os braços abertos numa sala de luz amarela.
+img-2_ovicio.com.br.webp: V, de Cyberpunk 2077, de casaco longo e óculos escuros, apontando uma pistola dourada numa rua de Night City à noite, com carros de polícia atrás.

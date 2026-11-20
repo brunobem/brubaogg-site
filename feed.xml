@@ -6,7 +6,34 @@
   <description>Notícias, reviews, lançamentos e histórias de games do canal BRUBAOGG.</description>
   <language>pt-BR</language>
   <atom:link href="https://brubaogg.com.br/feed.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 14 Nov 2026 18:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 20 Nov 2026 15:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Cyberpunk 2077 ganha mod de NPCs estilo Red Dead 2</title>
+    <link>https://brubaogg.com.br/noticias/cyberpunk-2077-ganha-mod-de-npcs-estilo-red-dead-2</link>
+    <guid isPermaLink="true">https://brubaogg.com.br/noticias/cyberpunk-2077-ganha-mod-de-npcs-estilo-red-dead-2</guid>
+    <pubDate>Fri, 20 Nov 2026 15:00:00 GMT</pubDate>
+    <category>Notícia</category>
+    <description>O mod Immersive NPCs deixa cumprimentar, flertar e brigar com NPCs no Cyberpunk 2077, como no Red Dead 2. Para mim, deixa o mundo mais vivo.</description>
+    <media:thumbnail url="https://img.brubaogg.com.br/m/dfmiusipaje/card-882691ef-640.webp"/>
+  </item>
+  <item>
+    <title>IA acaba com campeonato de jogos de estudantes na Austrália</title>
+    <link>https://brubaogg.com.br/noticias/ia-acaba-com-campeonato-de-jogos-de-estudantes-na-australia</link>
+    <guid isPermaLink="true">https://brubaogg.com.br/noticias/ia-acaba-com-campeonato-de-jogos-de-estudantes-na-australia</guid>
+    <pubDate>Fri, 20 Nov 2026 15:00:00 GMT</pubDate>
+    <category>Notícia</category>
+    <description>O Australian STEM Videogame Challenge, de 12 anos, terá a última edição em 2026 por causa da IA generativa. Para mim, é muito triste.</description>
+    <media:thumbnail url="https://img.brubaogg.com.br/m/anq5klenfck/card-28d626ed-640.webp"/>
+  </item>
+  <item>
+    <title>Pedido de patente da Microsoft quer usar sua GPU para IA</title>
+    <link>https://brubaogg.com.br/noticias/pedido-de-patente-da-microsoft-quer-usar-sua-gpu-para-ia</link>
+    <guid isPermaLink="true">https://brubaogg.com.br/noticias/pedido-de-patente-da-microsoft-quer-usar-sua-gpu-para-ia</guid>
+    <pubDate>Fri, 20 Nov 2026 15:00:00 GMT</pubDate>
+    <category>Notícia</category>
+    <description>A Microsoft pediu uma patente para usar GPUs ociosas de jogadores no treino de IA, com recompensa sem valor definido. Para mim, o retorno tem que compensar.</description>
+    <media:thumbnail url="https://img.brubaogg.com.br/m/wuhj8lhqia0/card-7488de4f-640.webp"/>
+  </item>
   <item>
     <title>Bug faz Nier: Automata pular de 50 GB para 366 GB</title>
     <link>https://brubaogg.com.br/noticias/bug-faz-nier-automata-pular-de-50-gb-para-366-gb</link>
@@ -249,33 +276,6 @@
     <category>Notícia</category>
     <description>A partir de meados de dezembro, mensagens de servidores públicos do Discord com mais de mil membros poderão aparecer no Google. Acho a mudança meio perigosa.</description>
     <media:thumbnail url="https://img.brubaogg.com.br/m/j9xazfcd3ya/card-649988e7-640.webp"/>
-  </item>
-  <item>
-    <title>GameSir lança controles inspirados em GTA 6</title>
-    <link>https://brubaogg.com.br/noticias/gamesir-lanca-controles-inspirados-em-gta-6</link>
-    <guid isPermaLink="true">https://brubaogg.com.br/noticias/gamesir-lanca-controles-inspirados-em-gta-6</guid>
-    <pubDate>Thu, 05 Nov 2026 18:00:00 GMT</pubDate>
-    <category>Notícia</category>
-    <description>A GameSir abriu a pré-venda de duas versões do G7 Pro inspiradas em GTA 6, a US$ 89,99. Não são licenciados pela Rockstar. Para mim, é carona no hype.</description>
-    <media:thumbnail url="https://img.brubaogg.com.br/m/xwvnsmsymey/card-b651a2a1-640.webp"/>
-  </item>
-  <item>
-    <title>Tim Sweeney diz que a Valve atrasou os games</title>
-    <link>https://brubaogg.com.br/noticias/tim-sweeney-diz-que-a-valve-atrasou-os-games</link>
-    <guid isPermaLink="true">https://brubaogg.com.br/noticias/tim-sweeney-diz-que-a-valve-atrasou-os-games</guid>
-    <pubDate>Thu, 05 Nov 2026 14:00:00 GMT</pubDate>
-    <category>Notícia</category>
-    <description>O CEO da Epic acusa a Valve de prender jogos de PC na Steamworks. Para mim, a Steam é mais simples, e a crítica vem de quem é concorrente.</description>
-    <media:thumbnail url="https://img.brubaogg.com.br/m/evxukph2vua/card-43eb7aa2-640.webp"/>
-  </item>
-  <item>
-    <title>ARC Raiders avalia modo PvE depois de teste</title>
-    <link>https://brubaogg.com.br/noticias/arc-raiders-avalia-modo-pve-depois-de-teste</link>
-    <guid isPermaLink="true">https://brubaogg.com.br/noticias/arc-raiders-avalia-modo-pve-depois-de-teste</guid>
-    <pubDate>Thu, 05 Nov 2026 10:00:00 GMT</pubDate>
-    <category>Notícia</category>
-    <description>Depois do teste PvE de 13 a 20 de outubro, a Embark ainda decide o futuro do modo. Sou a favor: jogar contra trapaceiros desanima, e um modo calmo ajudaria.</description>
-    <media:thumbnail url="https://img.brubaogg.com.br/m/dhf7lcmg34q/card-626e34db-640.webp"/>
   </item>
 </channel>
 </rss>

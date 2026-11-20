@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Gabinete de computador com uma placa de vídeo, de onde sai uma nuvem formada por uma rede de pontos e linhas azuis. Texto na arte: "GPU PARA TREINAR IA" e "BRUBAOGG".
+Thumb.png: Gabinete de computador com uma placa de vídeo, de onde sai uma nuvem formada por uma rede de pontos e linhas azuis. Texto na arte: "GPU PARA TREINAR IA" e "BRUBAOGG".
+img-1_redata.com.br.png: Ilustração de um cérebro feito de engrenagens recebendo ícones de imagem, som e dados de mãos humanas, ao lado de um gráfico de barras em alta.
+img-2_redata.com.br.jpg: Ilustração de um rosto digital azul brilhante cercado de circuitos, um robô humanoide, um cérebro, computadores e celulares.

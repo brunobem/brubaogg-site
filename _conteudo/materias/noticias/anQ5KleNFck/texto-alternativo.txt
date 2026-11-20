@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Ilustração futurista de uma cidade luminosa com um dragão de engrenagens em volta de uma torre, num palco cercado de formas coloridas. Texto na arte: "The Australian STEM Project", "COMPETICAO DE JOGOS" e "BRUBAOGG".
+Thumb.png: Ilustração futurista de uma cidade luminosa com um dragão de engrenagens em volta de uma torre, num palco cercado de formas coloridas. Texto na arte: "The Australian STEM Project", "COMPETICAO DE JOGOS" e "BRUBAOGG".
+img-1_fastcompanybrasil.com.webp: Rosto de um robô humanoide de perfil, com o crânio aberto mostrando circuitos acesos, diante de uma tela com linhas de código azuis.
+img-2_infranewstelecom.com.br.jpg: Robô humanoide branco largando na frente de uma atleta numa pista de corrida de um estádio vazio.

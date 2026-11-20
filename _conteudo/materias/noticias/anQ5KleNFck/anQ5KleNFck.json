@@ -1,0 +1,28 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-20",
+  "titulo": "IA acaba com campeonato de jogos de estudantes na Austrália",
+  "resumo": "O Australian STEM Videogame Challenge, de 12 anos, terá a última edição em 2026 por causa da IA generativa. Para mim, é muito triste.",
+  "tags": [
+    "IA",
+    "Desenvolvimento de jogos"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/software/ai/educational-game-dev-program-cancelled-because-students-were-submitting-games-made-entirely-with-ai/"
+    },
+    {
+      "nome": "Kotaku",
+      "url": "https://kotaku.com/student-game-development-competition-shut-down-because-kids-kept-submitting-ai-slop-games-2000755605"
+    }
+  ],
+  "corpo": [
+    "O Australian STEM Videogame Challenge, competição nacional e gratuita de desenvolvimento de jogos para estudantes, vai ter a última edição em 2026. Ela existia havia 12 anos e servia para incentivar jovens a entrar na indústria. O fim foi confirmado pelo ACER, o Conselho Australiano de Pesquisa Educacional, que organiza o evento, e noticiado pelo PC Gamer em 10 de novembro de 2026.",
+    "O motivo oficial, dito por Cathy Zemaitis, do ACER, ao PC Gamer, foi o crescimento rápido e complexo da IA generativa no desenvolvimento de jogos. Jurados contaram, num post no Reddit, que alguns alunos simplesmente geravam o jogo inteiro com IA, e perguntaram como dar nota para isso, já que não dá para dar zero. O ACER disse que não planeja adaptar a competição, e o PC Gamer relata que ela simplesmente acaba.",
+    "Há pontos que as fontes não trazem: não se sabe quantos alunos fizeram isso, nem se as regras proibiam o uso de IA. Um dos jurados sugeriu que o corte de verba pode ter pesado, mas isso é especulação dele, e o motivo oficial é só a IA.",
+    "Para mim, é muito triste. Uma competição que formava gente nova para a indústria acabou porque ninguém conseguia separar o que o aluno fez, o que a máquina fez e o uso excessivo de IA. A IA generativa cresceu de forma exponencial nos últimos anos, mas a IA como apoio ao desenvolvimento já existia havia muito tempo, e isso torna difícil, para quem avalia, saber onde termina a ajuda e começa o jogo feito pela máquina. Essa é a minha leitura."
+  ]
+}

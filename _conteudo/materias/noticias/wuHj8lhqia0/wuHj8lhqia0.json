@@ -1,0 +1,32 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-20",
+  "titulo": "Pedido de patente da Microsoft quer usar sua GPU para IA",
+  "resumo": "A Microsoft pediu uma patente para usar GPUs ociosas de jogadores no treino de IA, com recompensa sem valor definido. Para mim, o retorno tem que compensar.",
+  "tags": [
+    "Microsoft",
+    "IA"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "KitGuru",
+      "url": "https://www.kitguru.net/gaming/joao-silva/microsoft-explores-paying-users-for-idle-gpu-compute/"
+    },
+    {
+      "nome": "RuntimeWire",
+      "url": "https://runtimewire.com/article/microsoft-patent-idle-gaming-pc-gpu-ai-training"
+    },
+    {
+      "nome": "TweakTown",
+      "url": "https://www.tweaktown.com/news/114577/microsoft-wants-to-pay-you-to-use-your-idle-gaming-gpu-for-ai-training/index.html"
+    }
+  ],
+  "corpo": [
+    "A Microsoft pediu uma patente, publicada em 5 de novembro de 2026, para usar placas de vídeo ociosas de jogadores no treinamento de IA. O pedido, US 2026/0349820, se chama \"Opportunistic Micro-training on Edge Devices Using Spare GPU Utilization\" e foi depositado em 30 de abril de 2025. A ideia é quebrar trabalhos grandes de IA em pedaços pequenos e distribuí-los para PCs de jogos, notebooks e celulares de quem aderir.",
+    "A participação seria voluntária. Em troca, o dono poderia receber dinheiro, software ou créditos, mas o documento não traz valores nem cálculo de quanto se ganharia. O sistema monitoraria uso da GPU, memória de vídeo, temperatura e consumo de energia, e reduziria a carga se a máquina esquentasse ou se um jogo pesado abrisse. A mesma tarefa poderia ir para vários PCs ao mesmo tempo, para detectar resultado errado ou manipulado.",
+    "É um pedido de patente, não uma patente concedida nem um produto anunciado: o próprio texto diz que não há garantia de que a Microsoft pretenda transformar o conceito em produto, e a empresa não comentou. Ceder máquina parada também não é inédito: o Folding@home faz isso para pesquisa científica há anos, e o PS3 chegou a ter o app. A diferença aqui é ser uma empresa treinando IA, com recompensa.",
+    "Para mim, parece bom no papel, mas tem muita coisa para pesar. A placa é minha, eu comprei e paguei caro, e ela trabalharia para uma empresa gigante treinar IA. Temperatura, desgaste e conta de luz ficam comigo, e ninguém sabe quanto vai pagar. Como exemplo meu, só navegando minha GPU usa uns 5% ou 6%, e a ideia seria ceder uns 30% ou 40% por um tempo; o documento não fala em percentual. Não sei se a conta se fecha, e o retorno teria que fazer muito sentido para cada pessoa."
+  ]
+}

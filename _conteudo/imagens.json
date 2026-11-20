@@ -3627,6 +3627,58 @@
    "fonte": "newsletter.jornaldosjogos.com.br"
   }
  },
+ "anQ5KleNFck": {
+  "thumb": {
+   "h": "1408699c",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "28d626ed",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "13cfc791",
+   "w": 1600,
+   "a": 900,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_fastcompanybrasil.com.webp",
+   "fonte": "fastcompanybrasil.com"
+  },
+  "img-2": {
+   "h": "ef41d3f0",
+   "w": 1165,
+   "a": 800,
+   "ls": [
+    480,
+    800,
+    1000,
+    1165
+   ],
+   "nome": "img-2_infranewstelecom.com.br.jpg",
+   "fonte": "infranewstelecom.com.br"
+  }
+ },
  "bDLZhQD3Nas": {
   "thumb": {
    "h": "fd086dbf",
@@ -4147,6 +4199,58 @@
     1200
    ],
    "nome": "card.png"
+  }
+ },
+ "dFmIUsIPajE": {
+  "thumb": {
+   "h": "80a3cd94",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "882691ef",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "3094a990",
+   "w": 1600,
+   "a": 900,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_cbr.com.webp",
+   "fonte": "cbr.com"
+  },
+  "img-2": {
+   "h": "4ec631cc",
+   "w": 1200,
+   "a": 675,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_ovicio.com.br.webp",
+   "fonte": "ovicio.com.br"
   }
  },
  "dRz1oYLK3LI": {
@@ -5802,6 +5906,58 @@
    ],
    "nome": "img-3_steam.com.jpg",
    "fonte": "steam.com"
+  }
+ },
+ "wuHj8lhqia0": {
+  "thumb": {
+   "h": "b068fb9a",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "7488de4f",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "5fbc2cc5",
+   "w": 1920,
+   "a": 1080,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_redata.com.br.png",
+   "fonte": "redata.com.br"
+  },
+  "img-2": {
+   "h": "605265dc",
+   "w": 1792,
+   "a": 1024,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_redata.com.br.jpg",
+   "fonte": "redata.com.br"
   }
  },
  "xI4qEFLfiPA": {

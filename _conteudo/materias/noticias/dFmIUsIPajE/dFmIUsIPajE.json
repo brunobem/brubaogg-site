@@ -1,0 +1,28 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-20",
+  "titulo": "Cyberpunk 2077 ganha mod de NPCs estilo Red Dead 2",
+  "resumo": "O mod Immersive NPCs deixa cumprimentar, flertar e brigar com NPCs no Cyberpunk 2077, como no Red Dead 2. Para mim, deixa o mundo mais vivo.",
+  "tags": [
+    "Cyberpunk 2077",
+    "Mods"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Flow Games",
+      "url": "https://flowgames.gg/cyberpunk-2077-ganha-mod-que-melhora-muito-os-npcs/"
+    },
+    {
+      "nome": "PC Games Hardware",
+      "url": "https://www.pcgameshardware.de/Cyberpunk-2077-Spiel-20697/News/Mod-Immersive-NPCs-Begleiter-rekrutieren-1558568/"
+    }
+  ],
+  "corpo": [
+    "O mod gratuito Immersive NPCs muda o jeito de lidar com os pedestres de Night City, no Cyberpunk 2077. Ao chegar perto de um NPC, aparecem opções de cumprimentar, flertar, provocar, desafiar para uma briga de soco, que não é letal, e acalmar a situação. Tudo usa o sistema de diálogo do próprio jogo, sem menu extra. O Flow Games, que repercutiu o mod em 7 de novembro de 2026, o compara ao Red Dead Redemption 2 pelas interações.",
+    "Na versão 1.1, dois flertes bem-sucedidos transformam o NPC num companheiro, que segue o V e luta ao lado dele, e alguns inimigos podem ser recrutados durante a luta. A opção \"Goodbye\" libera o companheiro. Há limites: não funciona com crianças, lojistas e NPCs importantes da história, policiais não podem ser flertados nem convertidos, e alguns pedestres não podem ser recrutados por limitação do comportamento dos NPCs do jogo. Há também um bug conhecido: em ataque furtivo, as novas opções podem cobrir a de dominar o alvo, e um usuário ainda relatou isso na versão 1.1.",
+    "O mod não mexe na rotina dos NPCs; essa é a minha comparação com o Red Dead 2. Lá, tem gente que segue um NPC para vê-lo acordar, cuidar do sítio, ir à cidade e voltar para fazer comida na fogueira, e é esse tipo de coisa que faz um mundo aberto parecer de verdade. O Cyberpunk, lançado em 2020, sempre teve uma Night City linda, mas com pouca interação com os pedestres.",
+    "Para mim, é mais um mod que mostra o tamanho da comunidade do jogo, que abraçou o Cyberpunk e leva funções de um jogo para o outro, como já aconteceu com o mod do sistema Nemesis no Red Dead 2. Acho que é engenharia reversa do Red Dead 2, mas é palpite meu: as fontes não dizem como o mod foi feito. A CD Projekt Red ainda lança atualizações, como o 2.5 de Edgerunners 2, em 22 de outubro, mas, na minha leitura, o que a galera mais pede vem da comunidade."
+  ]
+}
