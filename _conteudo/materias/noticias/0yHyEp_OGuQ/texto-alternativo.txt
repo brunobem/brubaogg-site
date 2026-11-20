@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Cena de Fairgames: ladrões mascarados com armas coloridas num salão luxuoso, sob um lustre vermelho, com o logo do jogo. Texto na arte: "JOGO CANCELADO" e "BRUBAOGG".
+Thumb.png: Cena de Fairgames: ladrões mascarados com armas coloridas num salão luxuoso, sob um lustre vermelho, com o logo do jogo. Texto na arte: "JOGO CANCELADO" e "BRUBAOGG".
+img-1_polygon.com.webp: Cena do trailer de Fairgames: um ladrão de balaclava escala um poço cortado por lasers vermelhos, com faíscas saindo da parede. Texto na imagem: "Captured from Cinematic Trailer".
+img-2_kotaku.com.webp: Cena de jogo de Fairgames: ladrões armados avançam num museu cheio de lasers vermelhos, entre vitrines com estátuas. Texto na imagem: "PRE ALPHA FOOTAGE CAPTURED ON PC".

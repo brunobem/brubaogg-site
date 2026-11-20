@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Leon e Grace, protagonistas de Resident Evil Requiem, de costas um para o outro sobre uma cidade em ruínas sob névoa. Texto na arte: logo "Resident Evil Requiem", "JOGO DO ANO" e "BRUBAOGG".
+Thumb.png: Versão vertical da mesma arte, com Leon em destaque e o logo de Resident Evil Requiem. Texto na arte: "JOGO DO ANO" e "BRUBAOGG".
+img-1_psxbrasil.com.br.jpg: Leon S. Kennedy em Resident Evil Requiem: close do rosto de perfil, com jaqueta de couro e gola de pelo, e o personagem de corpo inteiro ao lado, sobre fundo cinza escuro.
+img-2_polygon.com.webp: Um homem de rabo de cavalo corre por uma rua molhada enquanto uma massa de blocos escuros explode e voa atrás dele, num cenário cinza e enevoado.

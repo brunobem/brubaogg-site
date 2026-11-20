@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Arte de GTA 6: um bar de praia lotado à noite, com gente dançando ao fundo e, na frente, um homem de cabelo comprido brindando com duas mulheres, uma delas de óculos cor-de-rosa; logo "VI" no canto. Texto na arte: "FOLGA PARA FUNCIONARIOS" e "BRUBAOGG".
+Thumb.png: Arte de GTA 6: num bar de praia, um homem de cabelo comprido brinda com duas mulheres, uma delas de óculos cor-de-rosa, com o logo "VI" no centro. Texto na arte: "FOLGA PARA FUNCIONARIOS" e "BRUBAOGG".
+img-1_dw.com.jpg: Arte oficial de GTA 6: Jason pilota uma moto de trilha com Lucia na garupa apontando uma pistola, perseguidos por uma viatura e um helicóptero da polícia, entre palmeiras e uma roda-gigante. Texto na arte: "© Rockstar Games".
+img-2_rollingstone.com.br.jpg: Cena de GTA 6: Lucia e Jason, cada um com uma garrafa de cerveja na mão, conversam encostados no balcão de um bar ao ar livre, sob a luz do fim de tarde.

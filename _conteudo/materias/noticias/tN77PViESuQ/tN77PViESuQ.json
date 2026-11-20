@@ -1,0 +1,27 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-20",
+  "titulo": "Helldivers 2 vai liberar mods cosméticos após críticas",
+  "resumo": "Depois de mais de 10 mil avaliações negativas na Steam pela troca do anti-cheat, a Arrowhead promete liberar alguns mods cosméticos no próximo hotfix.",
+  "tags": [
+    "Helldivers 2"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/games/third-person-shooter/after-cracking-down-on-cheat-mods-in-helldivers-2-and-taking-another-steam-review-beating-arrowhead-plans-hotfix-that-should-allow-harmless-cosmetics/"
+    },
+    {
+      "nome": "GamesRadar+",
+      "url": "https://www.gamesradar.com/games/third-person-shooter/helldivers-2-is-getting-new-anti-cheat-targeting-modifications-that-create-unfair-advantages-but-the-community-argues-these-gameplay-mods-are-only-used-to-target-glitches-the-devs-havent-fixed/"
+    }
+  ],
+  "corpo": [
+    "O Helldivers 2 tomou mais de 10 mil avaliações negativas novas na Steam, e as avaliações recentes ficaram como majoritariamente negativas. Tudo começou em 20 de outubro de 2026, com a atualização 7.2.0, Devoid of Liberty, em que a Arrowhead Game Studios trocou o anti-cheat do jogo: saiu o GameGuard e entrou o Easy Anti-Cheat.",
+    "A ideia era fechar a porta para os cheaters. Um dos truques mais comuns usava mod para farmar Super Credits, a moeda premium, que também é vendida por dinheiro de verdade. Ou seja, não era só a experiência do jogador: mexia direto no caixa do jogo. Só que a mudança quebrou um monte de mods, trouxe bugs, e a galera do PC sentiu que o estúdio estava caçando modders em vez de arrumar o jogo. Muita gente diz que usava mod justamente para contornar bugs que nunca foram corrigidos.",
+    "Depois da enxurrada de avaliações negativas, a Arrowhead se mexeu. No blog de desenvolvimento, o estúdio disse que ajustes devem permitir que alguns mods cosméticos voltem a funcionar no próximo hotfix, ainda sem data. Os mods que mexem na jogabilidade continuam proibidos.",
+    "Para mim, essa é a força da Steam: a avaliação virou a arma da comunidade, e quando ela dispara, o estúdio escuta. Não quero passar pano para a empresa, mas é uma sinuca de bico, e eu também não gosto de cheater, mesmo quando o alvo é uma empresa milionária. Agora, se liberar só os cosméticos vai resolver de verdade, eu tenho minhas dúvidas. Talvez seja tapar o sol com a peneira."
+  ]
+}

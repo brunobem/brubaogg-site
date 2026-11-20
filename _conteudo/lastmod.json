@@ -4,7 +4,7 @@
   "d": "2026-10-24"
  },
  "arquivo.html": {
-  "m": "6e00d72aa1b4",
+  "m": "b3382f6eabcd",
   "d": "2026-11-20"
  },
  "arquivo/2024-12.html": {
@@ -76,11 +76,11 @@
   "d": "2026-11-13"
  },
  "arquivo/2026-11.html": {
-  "m": "a0df59549a66",
+  "m": "d90fc553107a",
   "d": "2026-11-20"
  },
  "busca.html": {
-  "m": "96937eea1337",
+  "m": "bdf99b61fde2",
   "d": "2026-11-20"
  },
  "cortes.html": {
@@ -114,6 +114,10 @@
  "gta6-novidades/gta-6-as-6-primeiras-radios-e-a-volta-da-flash-fm.html": {
   "m": "00723da63a5f",
   "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-as-empresas-que-deram-folga-para-jogar-no-lancamento.html": {
+  "m": "b9690336291f",
+  "d": "2026-11-20"
  },
  "gta6-novidades/gta-6-atrasou-em-parte-por-causa-dos-npcs-e-ainda-bem.html": {
   "m": "2e08b2425bc6",
@@ -152,8 +156,8 @@
   "d": "2026-11-18"
  },
  "gta6-novidades/gta-6-entra-no-the-game-awards-2026-por-um-dia.html": {
-  "m": "0ce2d4e4c190",
-  "d": "2026-11-18"
+  "m": "248851ca39d4",
+  "d": "2026-11-20"
  },
  "gta6-novidades/gta-6-funcionarios-da-rockstar-na-india-relatam-crunch.html": {
   "m": "e5cf2dfc9511",
@@ -178,6 +182,10 @@
  "gta6-novidades/gta-6-miami-heat-lanca-roupas-e-uniforme-de-vice-city.html": {
   "m": "29eb7cb8dd3d",
   "d": "2026-11-18"
+ },
+ "gta6-novidades/gta-6-no-xbox-one-jogo-chega-pela-nuvem-no-lancamento.html": {
+  "m": "70e140c40eea",
+  "d": "2026-11-20"
  },
  "gta6-novidades/gta-6-o-assalto-a-banco-do-trailer-e-a-lucia.html": {
   "m": "c13807948fb2",
@@ -352,11 +360,11 @@
   "d": "2026-11-18"
  },
  "gta6.html": {
-  "m": "3595254d4a9b",
-  "d": "2026-11-18"
+  "m": "be6778037622",
+  "d": "2026-11-20"
  },
  "index.html": {
-  "m": "edf4bcbb6270",
+  "m": "50efcef20c7f",
   "d": "2026-11-20"
  },
  "lancamentos.html": {
@@ -432,7 +440,7 @@
   "d": "2026-10-24"
  },
  "noticias.html": {
-  "m": "6d1d976e82a2",
+  "m": "f8f38c0e471e",
   "d": "2026-11-20"
  },
  "noticias/1666-amsterdam-chegou-ao-acesso-antecipado-em-25-de-agosto.html": {
@@ -470,6 +478,10 @@
  "noticias/amd-fsr-4-1-vai-chegar-ao-xbox-series-x-e-s.html": {
   "m": "85c35278bf2e",
   "d": "2026-11-18"
+ },
+ "noticias/anbernic-rg-dds-o-portatil-que-cria-jogos-com-ia.html": {
+  "m": "f4b232f1c00d",
+  "d": "2026-11-20"
  },
  "noticias/anthropic-faz-o-claude-code-evitar-recriar-jogos.html": {
   "m": "a8fda1a20ae2",
@@ -707,6 +719,10 @@
   "m": "93c8c77cedf4",
   "d": "2026-11-18"
  },
+ "noticias/fairgames-e-cancelado-pela-sony-antes-do-lancamento.html": {
+  "m": "ab177645be65",
+  "d": "2026-11-20"
+ },
  "noticias/fallen-anuncia-aposentadoria-no-fim-de-2026.html": {
   "m": "cec597e34e8e",
   "d": "2026-11-18"
@@ -787,6 +803,10 @@
   "m": "1c14ec91707c",
   "d": "2026-11-18"
  },
+ "noticias/gamer-leva-o-radiador-do-pc-para-fora-de-casa-no-frio.html": {
+  "m": "d746cbc617a9",
+  "d": "2026-11-20"
+ },
  "noticias/gamesir-lanca-controles-inspirados-em-gta-6.html": {
   "m": "9b970f9ca1d6",
   "d": "2026-11-18"
@@ -827,6 +847,10 @@
   "m": "db1543a263de",
   "d": "2026-11-18"
  },
+ "noticias/golden-joystick-2026.html": {
+  "m": "da28e4c816b0",
+  "d": "2026-11-20"
+ },
  "noticias/gta-6-colecionador-custa-cerca-de-r-2-mil-sem-o-jogo.html": {
   "m": "ef2f2e673f38",
   "d": "2026-10-24"
@@ -858,6 +882,10 @@
  "noticias/helldivers-2-troca-anti-cheat-e-quebra-mods.html": {
   "m": "0fd0c65df975",
   "d": "2026-11-18"
+ },
+ "noticias/helldivers-2-vai-liberar-mods-cosmeticos-apos-criticas.html": {
+  "m": "e7ab651e06ae",
+  "d": "2026-11-20"
  },
  "noticias/ia-acaba-com-campeonato-de-jogos-de-estudantes-na-australia.html": {
   "m": "8b0713b122fb",
@@ -1047,6 +1075,10 @@
   "m": "56f6c5666976",
   "d": "2026-11-18"
  },
+ "noticias/playstation-plus-sony-desliga-o-app-do-pc-em-dezembro.html": {
+  "m": "8a382eb50f9f",
+  "d": "2026-11-20"
+ },
  "noticias/playstation-vai-exigir-verificacao-de-idade-no-brasil.html": {
   "m": "52c31c90d933",
   "d": "2026-11-18"
@@ -1087,6 +1119,10 @@
   "m": "3b43dc8c91bb",
   "d": "2026-11-18"
  },
+ "noticias/ps5-passa-de-100-milhoes-vende-muito-marca-pouco.html": {
+  "m": "1cabc48ee117",
+  "d": "2026-11-20"
+ },
  "noticias/ps5-tera-hub-de-anime-ligado-a-crunchyroll-em-2027.html": {
   "m": "71355e4d90eb",
   "d": "2026-11-18"
@@ -1126,6 +1162,14 @@
  "noticias/resident-evil-filme.html": {
   "m": "86347e7ce927",
   "d": "2026-11-18"
+ },
+ "noticias/resident-evil-requiem-aguenta-o-gta-6-no-the-game-awards.html": {
+  "m": "80eb06fa6fc4",
+  "d": "2026-11-20"
+ },
+ "noticias/resident-evil-requiem-e-o-jogo-do-ano-no-golden-joystick.html": {
+  "m": "e9a362bc66d7",
+  "d": "2026-11-20"
  },
  "noticias/resident-evil-requiem-ganha-o-modo-leon-must-die-forever.html": {
   "m": "6dc5f7f7baad",
@@ -1234,6 +1278,10 @@
  "noticias/steam-libera-conjuntos-de-conquistas-no-cliente-beta.html": {
   "m": "5caa86d94914",
   "d": "2026-11-18"
+ },
+ "noticias/steam-verifica-idade-sem-documento-e-no-brasil.html": {
+  "m": "93ef2c4ec769",
+  "d": "2026-11-20"
  },
  "noticias/steamos-roda-no-mac-com-o-projeto-fx-steam-launcher.html": {
   "m": "b2d6f167d18a",
@@ -1356,8 +1404,8 @@
   "d": "2026-11-18"
  },
  "noticias/xbox-testa-cobranca-por-hora-na-nuvem.html": {
-  "m": "c4030689404c",
-  "d": "2026-11-18"
+  "m": "bf36d45461fa",
+  "d": "2026-11-20"
  },
  "noticias/xbox-xp-nova-divisao-leva-franquias-a-filmes-e-tv.html": {
   "m": "c031a83871bb",
@@ -1816,8 +1864,8 @@
   "d": "2026-11-18"
  },
  "tag/helldivers-2.html": {
-  "m": "3e71a92bbbbb",
-  "d": "2026-11-18"
+  "m": "578e51e24a6c",
+  "d": "2026-11-20"
  },
  "tag/ia.html": {
   "m": "84d24541e306",
@@ -1852,12 +1900,12 @@
   "d": "2026-11-18"
  },
  "tag/playstation-5.html": {
-  "m": "905fba3f70a0",
-  "d": "2026-11-18"
+  "m": "eac18ddd2905",
+  "d": "2026-11-20"
  },
  "tag/playstation.html": {
-  "m": "b79113fe9aef",
-  "d": "2026-11-18"
+  "m": "59f052ccb635",
+  "d": "2026-11-20"
  },
  "tag/pragmata.html": {
   "m": "fa4d5be55e7f",
@@ -1868,16 +1916,16 @@
   "d": "2026-11-18"
  },
  "tag/resident-evil-requiem.html": {
-  "m": "2f512f1612eb",
-  "d": "2026-11-18"
+  "m": "529695913f39",
+  "d": "2026-11-20"
  },
  "tag/resident-evil-veronica.html": {
   "m": "246369e40647",
   "d": "2026-10-24"
  },
  "tag/resident-evil.html": {
-  "m": "af8019f2bf11",
-  "d": "2026-11-18"
+  "m": "6b61de632858",
+  "d": "2026-11-20"
  },
  "tag/samson.html": {
   "m": "2a85efd8be64",
@@ -1892,8 +1940,8 @@
   "d": "2026-10-24"
  },
  "tag/steam.html": {
-  "m": "b1a7117553e9",
-  "d": "2026-11-18"
+  "m": "cdeac86cdeb1",
+  "d": "2026-11-20"
  },
  "tag/stellar-blade.html": {
   "m": "7fa3d3787e32",
@@ -1919,12 +1967,20 @@
   "m": "b0164a9adc2b",
   "d": "2026-10-24"
  },
+ "tag/the-game-awards.html": {
+  "m": "62b7782a4d03",
+  "d": "2026-11-20"
+ },
+ "tag/xbox-cloud-gaming.html": {
+  "m": "f8e4134b1498",
+  "d": "2026-11-20"
+ },
  "tag/xbox.html": {
   "m": "521c0b99e08a",
   "d": "2026-11-18"
  },
  "tags.html": {
-  "m": "f484387784f5",
+  "m": "01b374c1d911",
   "d": "2026-11-20"
  },
  "termos-tiktok.html": {
@@ -1940,15 +1996,15 @@
   "d": "2026-10-24"
  },
  "wiki.html": {
-  "m": "81d43e71d504",
-  "d": "2026-11-18"
+  "m": "eccae504692f",
+  "d": "2026-11-20"
  },
  "wiki/gta.html": {
-  "m": "052f1e917390",
-  "d": "2026-11-18"
+  "m": "b82336333708",
+  "d": "2026-11-20"
  },
  "wiki/resident-evil.html": {
-  "m": "571719ee4757",
-  "d": "2026-11-18"
+  "m": "14d4b335a447",
+  "d": "2026-11-20"
  }
 }

@@ -1,0 +1,28 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-20",
+  "titulo": "Anbernic RG DDS: o portátil que cria jogos com IA",
+  "resumo": "O Anbernic RG DDS, portátil de duas telas no estilo 3DS, cria jogos simples com IA a partir de uma descrição. Para mim, é o começo de algo muito interessante.",
+  "tags": [
+    "Anbernic RG DDS"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "Time Extension",
+      "url": "https://timeextension.com/news/2026/11/start-by-describing-the-game-you-want-to-create-anbernics-3ds-style-rg-dds-lets-you-vibe-code-games-using-ai"
+    },
+    {
+      "nome": "Pocket Tactics",
+      "url": "https://www.pockettactics.com/anbernic-rg-dds"
+    }
+  ],
+  "corpo": [
+    "Já pensou num videogame que cria o próprio jogo? Ele existe. É o RG DDS, sigla de Dream Dual Screen, um portátil da Anbernic, fabricante chinesa conhecida pelos aparelhos de emulação retrô. Ele tem duas telas, igualzinho a um 3DS, um botão dedicado de inteligência artificial e uma função chamada AI Game Workshop, que transforma um pedido seu em jogo.",
+    "Funciona assim: você descreve o jogo que quer, com as regras, os controles e o estilo, e a IA cria um jogo em HTML5 que roda ali mesmo, no aparelho. Você pede e joga logo em seguida. Segundo a Anbernic, a função usa modelos de IA na nuvem e no próprio portátil, mas a empresa não disse qual. Claro, são jogos simples: não espere um GTA saindo do prompt.",
+    "A IA aparece em outras funções também. Tem um assistente que pesquisa na internet quando você trava num jogo e uma tradução automática do texto da tela. No hardware, a tela de cima tem 4,7 polegadas, a de baixo tem 4 polegadas, o processador é o Snapdragon G2 Gen 2 e a bateria tem 6.000 mAh. Não tem 3D sem óculos. A pré-venda está no site da Anbernic, a partir de US$ 284,99, com lançamento previsto para dezembro de 2026.",
+    "Nem todo mundo se animou. Parte da imprensa especializada recebeu a ideia com ceticismo, e a Anbernic já arrumou polêmica ao mostrar, num vídeo promocional, uma versão não oficial do emulador de 3DS Azahar. A equipe do Azahar disse que não vai dar suporte ao aparelho.",
+    "Mesmo assim, para mim, isso é muito interessante. Imagina pedir um joguinho retrô, no estilo 8-bit, de nave ou de plataforma, e jogar dois minutos depois. Hoje são jogos simples, mas eu vejo aqui o comecinho de algo que pode crescer bastante."
+  ]
+}

@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Uma placa de vídeo com três ventoinhas, iluminada em rosa e azul. Texto na arte: "RESFRIAMENTO DO PC" e "BRUBAOGG".
+Thumb.png: Uma placa de vídeo com três ventoinhas, iluminada em rosa e azul. Texto na arte: "RESFRIAMENTO DO PC" e "BRUBAOGG".
+img-1_blog.oficinadosbits.com.br.jpg: Um PC montado numa bancada aberta, com water cooler de tubos transparentes, um reservatório iluminado e três ventoinhas verdes ao lado da placa de vídeo. Texto na imagem: a marca d'água "VOVO".
+img-2_br.ign.com.jpg: Um radiador com duas ventoinhas preso do lado de fora de uma casa, na parede ao lado de uma janela, com os tubos entrando por ela.

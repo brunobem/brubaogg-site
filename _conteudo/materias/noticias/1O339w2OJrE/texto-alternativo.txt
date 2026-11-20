@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Logo da Steam no centro, sobre um mosaico de capas de jogos com selos de desconto como -45%, -49% e Up to -85%. Texto na arte: "VERIFICAR IDADE" e "BRUBAOGG".
+Thumb.png: Versão vertical da mesma arte: o logo da Steam sobre capas de jogos em promoção. Texto na arte: "VERIFICAR IDADE" e "BRUBAOGG".
+img-1_adrenaline.com.br.webp: Montagem com o logo da Steam em fundo azul escuro à esquerda e, à direita, uma mão segurando um celular com um escudo de segurança na tela e um balão laranja com sinal de confirmado.
+img-2_steam.com.png: Tela de idade da loja Steam na página de Cyberpunk 2077, com o aviso de que o jogo pode ter conteúdo impróprio para todas as idades e os campos de dia, mês e ano de nascimento, com os botões View Page e Cancel.

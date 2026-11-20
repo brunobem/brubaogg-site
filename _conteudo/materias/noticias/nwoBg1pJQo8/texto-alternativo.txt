@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Mãos segurando um portátil preto de duas telas, no estilo do 3DS, aberto sobre uma mesa escura. Texto na arte: "IA NO PORTATIL" e "BRUBAOGG".
+Thumb.png: Versão vertical da mesma arte: o portátil preto de duas telas aberto. Texto na arte: "IA NO PORTATIL" e "BRUBAOGG".
+img-1_culpadolag.com.br.webp: Ilustração de um portátil cinza com controles dos dois lados, apoiado numa mesa de madeira, com uma interface azul e um grande "A" no centro da tela.
+img-2_culpadolag.com.br.webp: Ilustração de dois portáteis de duas telas lado a lado, com capas de jogos coloridos nas telas e mais telas desfocadas ao fundo.

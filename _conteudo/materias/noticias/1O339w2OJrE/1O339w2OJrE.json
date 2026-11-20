@@ -1,0 +1,36 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-20",
+  "titulo": "Steam verifica idade sem documento: e no Brasil?",
+  "resumo": "Na Austrália, a Steam verifica a idade com cartão ou conta antiga, sem documento. Com o ECA Digital aqui, prefiro mil vezes esse modelo a mandar o rosto.",
+  "tags": [
+    "Steam"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/software/platforms/steams-age-verification-in-australia-now-takes-your-accounts-age-into-consideration/"
+    },
+    {
+      "nome": "GamesRadar+",
+      "url": "https://www.gamesradar.com/games/valve-locks-australian-steam-users-out-of-age-restricted-store-pages-if-they-dont-have-a-credit-card-even-if-their-account-is-over-18-years-old/"
+    },
+    {
+      "nome": "Acessa.com",
+      "url": "https://www.acessa.com/noticias/2026/03/amp/315823-plataformas-de-jogos-adotam-medidas-desiguais-diante-do-eca-digital.html"
+    },
+    {
+      "nome": "Olhar Digital",
+      "url": "https://olhardigital.com.br/2026/06/12/games-e-consoles/playstation-exigira-verificacao-de-idade/"
+    }
+  ],
+  "corpo": [
+    "A verificação de idade pode chegar na sua Steam aqui no Brasil? Olha o que aconteceu na Austrália. As regras de lá passaram a exigir confirmação de idade para jogos classificados para maiores de 18, e, por volta de setembro de 2026, a Steam australiana começou a pedir essa verificação. Quem não verificava simplesmente deixava de ver esses jogos na loja, como Doom, sem aviso prévio.",
+    "E a Steam resolveu do jeito dela. No começo, a conta era considerada verificada se tivesse um cartão de crédito cadastrado. Em novembro de 2026, a Valve acrescentou outra saída: contas com pelo menos nove anos e e-mail ou dados de cobrança consistentes passam a contar como verificadas. Nada de documento, nada de foto do rosto. Outras lojas fazem diferente, com escaneamento de documento ou do rosto por empresas como a Yoti, e a Microsoft Store usa a VerifyMy.",
+    "O método tem um furo, e a própria Valve admite que nem todo australiano consegue se verificar assim. Fica de fora quem não tem cartão e tem conta com menos de nove anos. Para mim, que vejo o cartão de crédito como algo que vem junto com a conta no banco, isso soou estranho, mas lá o uso é menor e há relatos de gente que recebe auxílio do governo e não consegue um.",
+    "Aqui no Brasil, o ECA Digital está valendo desde março de 2026 e pode exigir verificação de idade em serviços digitais. O PlayStation e o Xbox já anunciaram verificação para comprar jogo para maiores de 18, e a Riot restringiu jogos para menores. Já da Steam, eu não vi nada específico para o Brasil até agora. Se chegar, será que vai ser do mesmo jeito da Austrália?",
+    "Eu prefiro mil vezes o modelo da Steam, que pede o mínimo, do que mandar documento e rosto para uma empresa terceira. Isso combina com o que a gente sempre vê da Valve: ela fala em limitar os dados que coleta e guarda, não quer correr o risco de vazamento e quer ser só um lugar para você comprar e jogar. Para mim, faz todo o sentido."
+  ]
+}

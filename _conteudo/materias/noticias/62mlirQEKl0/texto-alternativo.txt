@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: O logo do PlayStation Plus, uma cruz amarela com os símbolos dos botões, sobre um círculo laranja e roxo, com outros logos ao fundo. Texto na arte: "SONY DESLIGA O APP DO PLAYSTATION PLUS NO PC" e "BRUBAOGG".
+Thumb.png: O logo do PlayStation Plus, uma cruz amarela com os símbolos dos botões, sobre um círculo laranja e roxo, com outros logos ao fundo. Texto na arte: "SONY DESLIGA O APP DO PLAYSTATION PLUS NO PC" e "BRUBAOGG".
+img-1_blog.br.playstation.com.jpg: Arte oficial com o logo do PlayStation Plus, uma cruz amarela com os símbolos dos botões, em relevo sobre fundo cinza. Texto na arte: "PlayStation Plus Collection" e "Coming to PlayStation®5".
+img-2_fastcompanybrasil.com.webp: Uma mão segurando um controle DualSense do PS5, em ilustração com retícula rosa e bege.

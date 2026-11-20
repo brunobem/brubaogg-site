@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Um Xbox 360 preto com o controle ao lado e o logo de Grand Theft Auto VI. Texto na arte: "RODANDO A 30FPS" e "BRUBAOGG".
+Thumb.png: Um Xbox 360 preto com o controle ao lado e o logo de Grand Theft Auto VI. Texto na arte: "RODANDO A 30FPS" e "BRUBAOGG".
+img-1_reveio.com.br.webp: Um controle preto de Xbox com o botão aceso em verde, diante de um gráfico de bolsa em alta e do logo de Grand Theft Auto VI sobre uma cidade com palmeiras ao pôr do sol. Texto na arte: "+12.48%".
+img-2_arkade.com.br.webp: Arte de GTA 6 com Lucia e Jason de bandana no rosto e armados, diante de um posto de gasolina, ao lado do logo verde do Xbox Cloud Gaming. Texto na arte: "CLOUD GAMING".

@@ -313,6 +313,110 @@
    "fonte": "pcgamer.com"
   }
  },
+ "0yHyEp_OGuQ": {
+  "thumb": {
+   "h": "bb1b7a57",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "4244c336",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "23eb0f15",
+   "w": 1650,
+   "a": 928,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_polygon.com.webp",
+   "fonte": "polygon.com"
+  },
+  "img-2": {
+   "h": "4b82bfd7",
+   "w": 1920,
+   "a": 1080,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_kotaku.com.webp",
+   "fonte": "kotaku.com"
+  }
+ },
+ "1O339w2OJrE": {
+  "thumb": {
+   "h": "afff2f13",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "ab3e909f",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "d9efca2b",
+   "w": 1200,
+   "a": 750,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_adrenaline.com.br.webp",
+   "fonte": "adrenaline.com.br"
+  },
+  "img-2": {
+   "h": "6a0f5cc6",
+   "w": 1410,
+   "a": 808,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_steam.com.png",
+   "fonte": "steam.com"
+  }
+ },
  "1WbMLF4am5U": {
   "img-1": {
    "h": "e3126587",
@@ -786,6 +890,58 @@
    ],
    "nome": "img-3_steam.com.jpg",
    "fonte": "steam.com"
+  }
+ },
+ "62mlirQEKl0": {
+  "thumb": {
+   "h": "8f94cab5",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "ff4a01cf",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "db5f7db4",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_blog.br.playstation.com.jpg",
+   "fonte": "blog.br.playstation.com"
+  },
+  "img-2": {
+   "h": "37134a51",
+   "w": 1600,
+   "a": 900,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_fastcompanybrasil.com.webp",
+   "fonte": "fastcompanybrasil.com"
   }
  },
  "6iAX0UsxGMg": {
@@ -1476,6 +1632,58 @@
    ],
    "nome": "img-2_steam.com.jpg",
    "fonte": "steam.com"
+  }
+ },
+ "DVvKF6qgFSM": {
+  "thumb": {
+   "h": "43e9ef78",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "75231b17",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "e6b25ecd",
+   "w": 1199,
+   "a": 674,
+   "ls": [
+    480,
+    800,
+    1000,
+    1199
+   ],
+   "nome": "img-1_dw.com.jpg",
+   "fonte": "dw.com"
+  },
+  "img-2": {
+   "h": "5abbc763",
+   "w": 1920,
+   "a": 1080,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_rollingstone.com.br.jpg",
+   "fonte": "rollingstone.com.br"
   }
  },
  "Df-7qTD67Rc": {
@@ -2463,6 +2671,58 @@
    "fonte": "steam.com"
   }
  },
+ "M8IrCRnGibk": {
+  "thumb": {
+   "h": "acef0ddb",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "3b9c7cf3",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "ce573870",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_psxbrasil.com.br.jpg",
+   "fonte": "psxbrasil.com.br"
+  },
+  "img-2": {
+   "h": "08e3a27e",
+   "w": 1600,
+   "a": 900,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_polygon.com.webp",
+   "fonte": "polygon.com"
+  }
+ },
  "MDX2kSaUPMs": {
   "thumb": {
    "h": "6bdbbb54",
@@ -3432,6 +3692,58 @@
    "fonte": "estadao.com.br"
   }
  },
+ "YqxNB_u5kos": {
+  "thumb": {
+   "h": "3de9039f",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "817c3a2c",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "09ea085b",
+   "w": 1200,
+   "a": 675,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_reveio.com.br.webp",
+   "fonte": "reveio.com.br"
+  },
+  "img-2": {
+   "h": "a881b398",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_arkade.com.br.webp",
+   "fonte": "arkade.com.br"
+  }
+ },
  "YwLPPMND27c": {
   "img-1": {
    "h": "f9532c46",
@@ -3521,6 +3833,58 @@
    ],
    "nome": "img-2_newsletter.jornaldosjogos.com.br.jpg",
    "fonte": "newsletter.jornaldosjogos.com.br"
+  }
+ },
+ "_ZCSNKhI-0s": {
+  "thumb": {
+   "h": "1b3f2c3b",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "27a045f1",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "1805ed2f",
+   "w": 1200,
+   "a": 750,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_adrenaline.com.br.webp",
+   "fonte": "adrenaline.com.br"
+  },
+  "img-2": {
+   "h": "136e1258",
+   "w": 1200,
+   "a": 750,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_adrenaline.com.br.webp",
+   "fonte": "adrenaline.com.br"
   }
  },
  "a5CgtpZg2i0": {
@@ -4860,6 +5224,58 @@
    "nome": "card.png"
   }
  },
+ "k6lq98hCG-4": {
+  "thumb": {
+   "h": "23d707a6",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "bafc1877",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "10458f11",
+   "w": 2560,
+   "a": 1440,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_psxbrasil.com.br.jpg",
+   "fonte": "psxbrasil.com.br"
+  },
+  "img-2": {
+   "h": "5ebf5279",
+   "w": 1600,
+   "a": 900,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_polygon.com.webp",
+   "fonte": "polygon.com"
+  }
+ },
  "kgI3Z8A1iB0": {
   "thumb": {
    "h": "a9636b25",
@@ -5014,6 +5430,58 @@
    ],
    "nome": "img-4_steam.com.jpg",
    "fonte": "steam.com"
+  }
+ },
+ "l_Y1-wpFSuE": {
+  "thumb": {
+   "h": "692d0bc1",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "622a28b3",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "d5c94da0",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_blog.oficinadosbits.com.br.jpg",
+   "fonte": "blog.oficinadosbits.com.br"
+  },
+  "img-2": {
+   "h": "6d7eab8e",
+   "w": 1280,
+   "a": 929,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_br.ign.com.jpg",
+   "fonte": "br.ign.com"
   }
  },
  "m6s1FpV-jMI": {
@@ -5211,6 +5679,58 @@
     1200
    ],
    "nome": "card.png"
+  }
+ },
+ "nwoBg1pJQo8": {
+  "thumb": {
+   "h": "cbc2dbd4",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "4a4839c5",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "87051bfd",
+   "w": 1280,
+   "a": 1280,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_culpadolag.com.br.webp",
+   "fonte": "culpadolag.com.br"
+  },
+  "img-2": {
+   "h": "9444c0d7",
+   "w": 1280,
+   "a": 1280,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_culpadolag.com.br.webp",
+   "fonte": "culpadolag.com.br"
   }
  },
  "oH2AZvIzmwI": {
@@ -5666,6 +6186,58 @@
    ],
    "nome": "img-2_store.playstation.com.jpg",
    "fonte": "store.playstation.com"
+  }
+ },
+ "tN77PViESuQ": {
+  "thumb": {
+   "h": "87185d1c",
+   "w": 1080,
+   "a": 1920,
+   "ls": [
+    480,
+    640,
+    960,
+    1080
+   ],
+   "nome": "thumb.png"
+  },
+  "card": {
+   "h": "78e9ed78",
+   "w": 1280,
+   "a": 720,
+   "ls": [
+    480,
+    640,
+    800,
+    1200
+   ],
+   "nome": "card.png"
+  },
+  "img-1": {
+   "h": "c0ec0372",
+   "w": 1600,
+   "a": 900,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-1_svestate.com.br.webp",
+   "fonte": "svestate.com.br"
+  },
+  "img-2": {
+   "h": "249f0325",
+   "w": 2560,
+   "a": 1404,
+   "ls": [
+    480,
+    800,
+    1000,
+    1200
+   ],
+   "nome": "img-2_blog.br.playstation.com.webp",
+   "fonte": "blog.br.playstation.com"
   }
  },
  "tnUICEXDNPc": {

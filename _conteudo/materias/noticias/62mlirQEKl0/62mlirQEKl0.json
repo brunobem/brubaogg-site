@@ -1,0 +1,31 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-20",
+  "titulo": "PlayStation Plus: Sony desliga o app do PC em dezembro",
+  "resumo": "O app que levava clássicos do PlayStation Plus Premium ao PC por streaming sai do ar em 10 de dezembro de 2026. Menos de 0,4% dos assinantes usava.",
+  "tags": [
+    "PlayStation"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/gaming-industry/playstation-plus-pc-app-is-being-shut-down-in-december-because-less-than-0-4-percent-of-eligible-subscribers-are-using-it/"
+    },
+    {
+      "nome": "VGC (single-player fora do PC)",
+      "url": "https://www.videogameschronicle.com/news/playstation-boss-says-single-player-games-wont-come-to-pc-going-forward/"
+    },
+    {
+      "nome": "VGC (Xbox e exclusividade)",
+      "url": "https://www.videogameschronicle.com/news/xbox-confirms-its-reevaluating-exclusivity-as-it-shares-future-mission-statement/"
+    }
+  ],
+  "corpo": [
+    "A Sony vai desligar o aplicativo do PlayStation Plus para PC, e a data já está marcada: 10 de dezembro de 2026. Para quem não conhecia, o app deixava quem assina o PlayStation Plus Premium, o plano mais caro, jogar clássicos do PlayStation no computador por streaming, sem precisar do console.",
+    "O motivo, segundo a própria Sony, é o baixo uso: menos de 0,4% dos assinantes Premium que podiam usar o app de fato usavam. O aviso veio no PlayStation Blog, junto da lista de jogos de novembro do serviço, e a empresa só disse que o app não estará mais disponível. Não achei informação sobre desconto ou compensação para quem assina o Premium.",
+    "E não é um caso isolado. Em maio de 2026, Hermen Hulst, CEO da PlayStation Studios, disse à equipe que os grandes jogos single-player da marca passam a ser exclusivos do PlayStation. Os multiplayer continuam previstos para várias plataformas, inclusive o PC. O recado parece um só: o lugar de jogar PlayStation é no PlayStation. É o caminho contrário do Xbox, que ainda lança jogos no PC e no PS5, mesmo tendo dito em abril que vai reavaliar a exclusividade.",
+    "Para mim, mesmo sendo pouca gente, ainda é gente que estava pagando o plano mais caro e usando o recurso. Entendo que manter um serviço custa servidor e equipe, mas, se você oferece algo para a sua base, não deveria simplesmente tirar porque pouca gente usa. Eu achei um desrespeito. E o curioso é que o console da Sony fica cada dia mais parecido com um PC."
+  ]
+}

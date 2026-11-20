@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Arte de Helldivers 2: quatro soldados de armadura e capa, com armas pesadas, num campo de batalha com uma nave ao fundo, e o logo do jogo. Texto na arte: "MODS COSMETICOS" e "BRUBAOGG".
+Thumb.png: Arte de Helldivers 2: quatro soldados de armadura e capa, com armas pesadas, num campo de batalha com uma nave ao fundo, e o logo do jogo. Texto na arte: "MODS COSMETICOS" e "BRUBAOGG".
+img-1_svestate.com.br.webp: Arte de Helldivers 2: quatro soldados de armadura e capa, com fuzis e um lança-foguetes, num deserto com uma nave e um planeta ao fundo.
+img-2_blog.br.playstation.com.webp: Arte de Helldivers 2: soldados numa trincheira de lama, um oficial de quepe erguendo a pistola e outro atirando, com um robô de combate ao fundo.

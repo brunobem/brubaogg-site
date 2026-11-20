@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Um PS5 cinza da edição de 30 anos ao lado da caixa aberta com o logo antigo do PlayStation, com o controle e a base na mesa. Texto na arte: "SONY", "PS5 CHEGA A 100 MILHOES" e "BRUBAOGG".
+Thumb.png: Versão vertical da mesma arte: o PS5 cinza da edição de 30 anos com a caixa aberta. Texto na arte: "SONY", "PS5 CHEGA A 100 MILHOES" e "BRUBAOGG".
+img-1_adrenaline.com.br.webp: Caixa do PS5 Slim edição digital de 825 GB com os jogos Astro Bot e Gran Turismo 7, ao lado do console branco em pé e do controle DualSense, sobre fundo azul.
+img-2_adrenaline.com.br.webp: Três PS5 edição digital com tampas personalizadas de Marvel's Wolverine, em amarelo e em cinza, com marcas de garras, e dois controles no mesmo tema. Texto na arte: "Marvel Wolverine", "Edição limitada" e "Pack PlayStation 5 edição digital e acessórios".

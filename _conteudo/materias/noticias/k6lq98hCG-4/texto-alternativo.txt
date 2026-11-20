@@ -1,0 +1,8 @@
+# Texto alternativo das imagens desta pasta (acessibilidade e Google Imagens).
+# Uma linha por imagem, no formato:  nome-do-arquivo: descrição
+# Descreva o que aparece na imagem e o texto escrito nela, em uma ou duas frases, sem repetir "imagem de".
+
+Card.png: Close de um zumbi de olhos vermelhos no escuro, em cena de Resident Evil Requiem, com uma mão segurando um cano à direita. Texto na arte: "SONY", "GOLDEN JOYSTICK AWARDS" e "BRUBAOGG".
+Thumb.png: Versão vertical da mesma arte: o rosto de um zumbi de olhos vermelhos no escuro. Texto na arte: "SONY", "GOLDEN JOYSTICK AWARDS" e "BRUBAOGG".
+img-1_psxbrasil.com.br.jpg: Cena em primeira pessoa de Resident Evil Requiem: a mão do jogador aponta uma pistola para um zumbi de terno e camisa branca que avança por um corredor escuro com paredes de madeira.
+img-2_polygon.com.webp: Um enorme rosto de pedra rachado, com os olhos abertos, surge do chão no meio de poeira e pedaços de rocha flutuando, contra um céu amarelado.

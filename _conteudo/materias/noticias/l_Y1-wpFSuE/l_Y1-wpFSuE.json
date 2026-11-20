@@ -1,0 +1,23 @@
+{
+  "formato": "short",
+  "categoria": "noticias",
+  "publicado": "2026-11-20",
+  "titulo": "Gamer leva o radiador do PC para fora de casa no frio",
+  "resumo": "Cansado do quarto quente, um usuário do Reddit furou a parede e deixou o radiador do water cooler do lado de fora, a -4 graus.",
+  "tags": [
+    "Water cooler"
+  ],
+  "spoiler": false,
+  "fontes": [
+    {
+      "nome": "PC Gamer",
+      "url": "https://www.pcgamer.com/hardware/cooling/redditor-runs-pc-cooling-loop-outside-of-their-house-to-keep-it-cool-in-one-of-the-bravest-yet-unnecessary-mods-ive-ever-seen/"
+    }
+  ],
+  "corpo": [
+    "Esse é o jeito mais extremo que eu já vi alguém usar para jogar no PC. Um usuário do r/pcmasterrace, no Reddit, se cansou do quarto esquentando sempre que jogava. Como lá fora fazia 4 graus negativos, ele furou a parede, passou os tubos do water cooler por ali e deixou o radiador do lado de fora da casa. A ideia, nas palavras dele, era ter resfriamento de graça.",
+    "A placa de vídeo e o processador não saíram de casa. Eles continuam dentro do gabinete, com water blocks: uma RTX 4070 Ti e um Intel Core Ultra 7 270K Plus com delid. A água sai do PC quente, esfria no radiador lá fora e volta. Uma segunda bomba manda a água para fora quando precisa, e um Arduino com um script em Python controla tudo.",
+    "O cuidado maior é com a condensação. Se a água que entra no PC ficar fria demais, aparecem gotas nas peças. Por isso o Arduino usa o ponto de orvalho como referência, para deixar a água fria, mas não gelada. Segundo o PC Gamer, sob carga a placa ficou perto de 48 graus e o processador, de 52. O próprio autor chama o projeto de prova de conceito.",
+    "A galera sempre dá um jeitinho: ventilador apontado para o gabinete, gabinete aberto, PC do lado da janela. Mas esse cara foi longe, e o contexto dele é bem diferente do nosso, num país onde faz muito frio. Agora imagina o radiador do lado de fora pegando poeira, folha, chuva e inseto. Para mim, é loucura, e furar a parede deu um trabalho enorme para algo desnecessário. Mas é aquela loucura que eu admiro pela coragem, porque mostra até onde um gamer vai para continuar jogando."
+  ]
+}
